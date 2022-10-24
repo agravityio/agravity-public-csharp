@@ -40,7 +40,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicTranslationManagementApi(Configuration.Default);
-            var id = id_example;  // string | The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).
+            var id = "id_example";  // string | The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).
             var items = true;  // bool? | If the items should be included (only for entity type Collection and Asset). (optional) 
 
             try
@@ -126,8 +126,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicTranslationManagementApi(Configuration.Default);
-            var id = id_example;  // string | The ID of only translateable entities with custom fields (Asset, Collection).
-            var customField = customField_example;  // string | Limit the output to a specific custom field key.
+            var id = "id_example";  // string | The ID of only translateable entities with custom fields (Asset, Collection).
+            var customField = "customField_example";  // string | Limit the output to a specific custom field key.
 
             try
             {
@@ -212,8 +212,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicTranslationManagementApi(Configuration.Default);
-            var id = id_example;  // string | The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).
-            var property = property_example;  // string | Limit to one specific property (key)
+            var id = "id_example";  // string | The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).
+            var property = "property_example";  // string | Limit to one specific property (key)
             var items = true;  // bool? | If the items should be included (only for entity type Collection and Asset). (optional) 
 
             try

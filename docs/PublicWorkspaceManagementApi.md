@@ -118,7 +118,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicWorkspaceManagementApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the workspace.
+            var id = "id_example";  // string | The ID of the workspace.
 
             try
             {

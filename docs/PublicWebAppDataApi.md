@@ -39,7 +39,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicWebAppDataApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the collection type for which this web data should be prepared.
+            var id = "id_example";  // string | The ID of the collection type for which this web data should be prepared.
 
             try
             {
@@ -123,7 +123,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicWebAppDataApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the collection for which this web data should be prepared.
+            var id = "id_example";  // string | The ID of the collection for which this web data should be prepared.
 
             try
             {

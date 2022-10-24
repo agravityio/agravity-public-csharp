@@ -32,7 +32,7 @@ namespace AgravityPublic.Api
         /// Returns all user defined lists of all collection types
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;CollectionUDL&gt;</returns>
+        /// <returns>List<CollectionUDL></returns>
         List<CollectionUDL> HttpGetAllUserDefinedLists ();
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace AgravityPublic.Api
         /// Returns all user defined lists of all collection types
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;CollectionUDL&gt;</returns>
+        /// <returns>ApiResponse of List<CollectionUDL></returns>
         ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo ();
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace AgravityPublic.Api
         /// Returns all filterable items directly from the search index
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;string&gt;</returns>
+        /// <returns>List<string></returns>
         List<string> HttpGetAllowedFilterableItems ();
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace AgravityPublic.Api
         /// Returns all filterable items directly from the search index
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        /// <returns>ApiResponse of List<string></returns>
         ApiResponse<List<string>> HttpGetAllowedFilterableItemsWithHttpInfo ();
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace AgravityPublic.Api
         /// Returns all searchable items directly from the search index
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;string&gt;</returns>
+        /// <returns>List<string></returns>
         List<string> HttpGetAllowedSearchableItemNames ();
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace AgravityPublic.Api
         /// Returns all searchable items directly from the search index
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        /// <returns>ApiResponse of List<string></returns>
         ApiResponse<List<string>> HttpGetAllowedSearchableItemNamesWithHttpInfo ();
         /// <summary>
         /// 
@@ -89,7 +89,7 @@ namespace AgravityPublic.Api
         /// Returns all searchable items directly from the search index
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;SearchableItem&gt;</returns>
+        /// <returns>List<SearchableItem></returns>
         List<SearchableItem> HttpGetAllowedSearchableItems ();
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace AgravityPublic.Api
         /// Returns all searchable items directly from the search index
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;SearchableItem&gt;</returns>
+        /// <returns>ApiResponse of List<SearchableItem></returns>
         ApiResponse<List<SearchableItem>> HttpGetAllowedSearchableItemsWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
@@ -111,7 +111,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;CollectionUDL&gt;</returns>
+        /// <returns>Task of List<CollectionUDL></returns>
         System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync (CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;string&gt;</returns>
+        /// <returns>Task of List<string></returns>
         System.Threading.Tasks.Task<List<string>> HttpGetAllowedFilterableItemsAsync (CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;string&gt;</returns>
+        /// <returns>Task of List<string></returns>
         System.Threading.Tasks.Task<List<string>> HttpGetAllowedSearchableItemNamesAsync (CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;SearchableItem&gt;</returns>
+        /// <returns>Task of List<SearchableItem></returns>
         System.Threading.Tasks.Task<List<SearchableItem>> HttpGetAllowedSearchableItemsAsync (CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -302,7 +302,7 @@ namespace AgravityPublic.Api
         ///  Returns all user defined lists of all collection types
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;CollectionUDL&gt;</returns>
+        /// <returns>List<CollectionUDL></returns>
         public List<CollectionUDL> HttpGetAllUserDefinedLists ()
         {
              ApiResponse<List<CollectionUDL>> localVarResponse = HttpGetAllUserDefinedListsWithHttpInfo();
@@ -313,7 +313,7 @@ namespace AgravityPublic.Api
         ///  Returns all user defined lists of all collection types
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;CollectionUDL&gt;</returns>
+        /// <returns>ApiResponse of List<CollectionUDL></returns>
         public ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo ()
         {
 
@@ -368,7 +368,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;CollectionUDL&gt;</returns>
+        /// <returns>Task of List<CollectionUDL></returns>
         public async System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync (CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<CollectionUDL>> localVarResponse = await HttpGetAllUserDefinedListsWithHttpInfoAsync(cancellationToken);
@@ -435,7 +435,7 @@ namespace AgravityPublic.Api
         ///  Returns all filterable items directly from the search index
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;string&gt;</returns>
+        /// <returns>List<string></returns>
         public List<string> HttpGetAllowedFilterableItems ()
         {
              ApiResponse<List<string>> localVarResponse = HttpGetAllowedFilterableItemsWithHttpInfo();
@@ -446,7 +446,7 @@ namespace AgravityPublic.Api
         ///  Returns all filterable items directly from the search index
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        /// <returns>ApiResponse of List<string></returns>
         public ApiResponse<List<string>> HttpGetAllowedFilterableItemsWithHttpInfo ()
         {
 
@@ -501,7 +501,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;string&gt;</returns>
+        /// <returns>Task of List<string></returns>
         public async System.Threading.Tasks.Task<List<string>> HttpGetAllowedFilterableItemsAsync (CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<string>> localVarResponse = await HttpGetAllowedFilterableItemsWithHttpInfoAsync(cancellationToken);
@@ -568,7 +568,7 @@ namespace AgravityPublic.Api
         ///  Returns all searchable items directly from the search index
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;string&gt;</returns>
+        /// <returns>List<string></returns>
         public List<string> HttpGetAllowedSearchableItemNames ()
         {
              ApiResponse<List<string>> localVarResponse = HttpGetAllowedSearchableItemNamesWithHttpInfo();
@@ -579,7 +579,7 @@ namespace AgravityPublic.Api
         ///  Returns all searchable items directly from the search index
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        /// <returns>ApiResponse of List<string></returns>
         public ApiResponse<List<string>> HttpGetAllowedSearchableItemNamesWithHttpInfo ()
         {
 
@@ -634,7 +634,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;string&gt;</returns>
+        /// <returns>Task of List<string></returns>
         public async System.Threading.Tasks.Task<List<string>> HttpGetAllowedSearchableItemNamesAsync (CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<string>> localVarResponse = await HttpGetAllowedSearchableItemNamesWithHttpInfoAsync(cancellationToken);
@@ -701,7 +701,7 @@ namespace AgravityPublic.Api
         ///  Returns all searchable items directly from the search index
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;SearchableItem&gt;</returns>
+        /// <returns>List<SearchableItem></returns>
         public List<SearchableItem> HttpGetAllowedSearchableItems ()
         {
              ApiResponse<List<SearchableItem>> localVarResponse = HttpGetAllowedSearchableItemsWithHttpInfo();
@@ -712,7 +712,7 @@ namespace AgravityPublic.Api
         ///  Returns all searchable items directly from the search index
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;SearchableItem&gt;</returns>
+        /// <returns>ApiResponse of List<SearchableItem></returns>
         public ApiResponse<List<SearchableItem>> HttpGetAllowedSearchableItemsWithHttpInfo ()
         {
 
@@ -767,7 +767,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;SearchableItem&gt;</returns>
+        /// <returns>Task of List<SearchableItem></returns>
         public async System.Threading.Tasks.Task<List<SearchableItem>> HttpGetAllowedSearchableItemsAsync (CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<SearchableItem>> localVarResponse = await HttpGetAllowedSearchableItemsWithHttpInfoAsync(cancellationToken);

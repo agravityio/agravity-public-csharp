@@ -43,7 +43,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicCollectionManagementApi(Configuration.Default);
-            var collectiontypeid = collectiontypeid_example;  // string | The ID of the collection type where this collections should be assigned.
+            var collectiontypeid = "collectiontypeid_example";  // string | The ID of the collection type where this collections should be assigned.
             var collection = new Collection(); // Collection | This endpoint creates a unique collection ID and adds the information to the database.
 
             try
@@ -128,10 +128,10 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicCollectionManagementApi(Configuration.Default);
-            var collectiontypeid = collectiontypeid_example;  // string | The ID of the collection type where these collections should come from.
+            var collectiontypeid = "collectiontypeid_example";  // string | The ID of the collection type where these collections should come from.
             var level = 56;  // int? | The hierarchy level of collections which should be returned. (optional) 
-            var parentid = parentid_example;  // string | The ID of the parent collection which should be queried. (No collectiontypeid is required) (optional) 
-            var fields = fields_example;  // string | This limits the fields which are returned, separated by comma (','). (optional) 
+            var parentid = "parentid_example";  // string | The ID of the parent collection which should be queried. (No collectiontypeid is required) (optional) 
+            var fields = "fields_example";  // string | This limits the fields which are returned, separated by comma (','). (optional) 
 
             try
             {
@@ -217,8 +217,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicCollectionManagementApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the collection.
-            var fields = fields_example;  // string | This limits the fields which are returned, separated by comma (','). (optional) 
+            var id = "id_example";  // string | The ID of the collection.
+            var fields = "fields_example";  // string | This limits the fields which are returned, separated by comma (','). (optional) 
 
             try
             {
@@ -302,7 +302,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicCollectionManagementApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the collection.
+            var id = "id_example";  // string | The ID of the collection.
 
             try
             {
@@ -386,7 +386,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicCollectionManagementApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the collection.
+            var id = "id_example";  // string | The ID of the collection.
 
             try
             {
@@ -470,7 +470,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicCollectionManagementApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the collection.
+            var id = "id_example";  // string | The ID of the collection.
 
             try
             {

@@ -12,7 +12,7 @@ Contact: office@agravity.io
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5BD69E54-B701-46D7-82C3-6BFEB5D0BEFC}</ProjectGuid>
+    <ProjectGuid>{EF4D460D-90BF-4473-B094-831F1573296C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AgravityPublic</RootNamespace>
@@ -77,4 +77,3 @@ Contact: office@agravity.io
   </ItemGroup>
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
-

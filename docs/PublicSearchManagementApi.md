@@ -38,14 +38,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicSearchManagementApi(Configuration.Default);
-            var s = s_example;  // string | The search string which should be found.
+            var s = "s_example";  // string | The search string which should be found.
             var limit = 56;  // int? | How many results should be returend. 0 is backend limit. (optional) 
-            var collectiontypeid = collectiontypeid_example;  // string | Limits the result on all collections from the given collectiontypeid parameter. (optional) 
-            var collectionid = collectionid_example;  // string | Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional) 
-            var mode = mode_example;  // string | Two modes supported: \"any\" or \"all\" search terms should be applied. (Only if Azure Search is enabled) (optional) 
+            var collectiontypeid = "collectiontypeid_example";  // string | Limits the result on all collections from the given collectiontypeid parameter. (optional) 
+            var collectionid = "collectionid_example";  // string | Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional) 
+            var mode = "mode_example";  // string | Two modes supported: \"any\" or \"all\" search terms should be applied. (Only if Azure Search is enabled) (optional) 
             var expose = true;  // bool? | This will expose the thumbnail asset blob incl. URL with SAS Token. (optional) 
-            var filter = filter_example;  // string | Colon separated key value filter for filterable strings and string collections. For date or numbers \"<\", \"=\" and \">\" are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional) 
-            var orderby = orderby_example;  // string | Sortable fields can be used. For descendant sorting use leading \"!\". (Only if Azure Search is enabled) (optional) 
+            var filter = "filter_example";  // string | Colon separated key value filter for filterable strings and string collections. For date or numbers \"<\", \"=\" and \">\" are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional) 
+            var orderby = "orderby_example";  // string | Sortable fields can be used. For descendant sorting use leading \"!\". (Only if Azure Search is enabled) (optional) 
 
             try
             {

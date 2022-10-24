@@ -45,7 +45,7 @@ namespace AgravityPublic.Model
             this.Company = company;
             this.Customer = customer;
             this.Updated = updated;
-            this.Version = version;
+            this._Version = version;
             this.Region = region;
         }
 
@@ -74,10 +74,10 @@ namespace AgravityPublic.Model
         public DateTime Updated { get; set; }
 
         /// <summary>
-        /// Gets or Sets Version
+        /// Gets or Sets _Version
         /// </summary>
         [DataMember(Name="version", EmitDefaultValue=false)]
-        public string Version { get; set; }
+        public string _Version { get; set; }
 
         /// <summary>
         /// Gets or Sets Region
@@ -97,7 +97,7 @@ namespace AgravityPublic.Model
             sb.Append("  Company: ").Append(Company).Append("\n");
             sb.Append("  Customer: ").Append(Customer).Append("\n");
             sb.Append("  Updated: ").Append(Updated).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("  Region: ").Append(Region).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -154,9 +154,9 @@ namespace AgravityPublic.Model
                     this.Updated.Equals(input.Updated))
                 ) && 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 ) && 
                 (
                     this.Region == input.Region ||
@@ -182,8 +182,8 @@ namespace AgravityPublic.Model
                     hashCode = hashCode * 59 + this.Customer.GetHashCode();
                 if (this.Updated != null)
                     hashCode = hashCode * 59 + this.Updated.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 if (this.Region != null)
                     hashCode = hashCode * 59 + this.Region.GetHashCode();
                 return hashCode;

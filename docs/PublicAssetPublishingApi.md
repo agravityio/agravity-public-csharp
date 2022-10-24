@@ -39,7 +39,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetPublishingApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the asset.
+            var id = "id_example";  // string | The ID of the asset.
 
             try
             {
@@ -121,8 +121,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetPublishingApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the asset.
-            var pid = pid_example;  // string | The published asset ID.
+            var id = "id_example";  // string | The ID of the asset.
+            var pid = "pid_example";  // string | The published asset ID.
 
             try
             {

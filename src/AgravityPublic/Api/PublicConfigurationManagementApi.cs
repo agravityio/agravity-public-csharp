@@ -32,7 +32,7 @@ namespace AgravityPublic.Api
         /// Lists config value only for frontend stored in config table
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;FrontendAppConfig&gt;</returns>
+        /// <returns>List<FrontendAppConfig></returns>
         List<FrontendAppConfig> HttpConfigGetFrontendAll ();
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace AgravityPublic.Api
         /// Lists config value only for frontend stored in config table
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;FrontendAppConfig&gt;</returns>
+        /// <returns>ApiResponse of List<FrontendAppConfig></returns>
         ApiResponse<List<FrontendAppConfig>> HttpConfigGetFrontendAllWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
@@ -54,7 +54,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;FrontendAppConfig&gt;</returns>
+        /// <returns>Task of List<FrontendAppConfig></returns>
         System.Threading.Tasks.Task<List<FrontendAppConfig>> HttpConfigGetFrontendAllAsync (CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace AgravityPublic.Api
         ///  Lists config value only for frontend stored in config table
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;FrontendAppConfig&gt;</returns>
+        /// <returns>List<FrontendAppConfig></returns>
         public List<FrontendAppConfig> HttpConfigGetFrontendAll ()
         {
              ApiResponse<List<FrontendAppConfig>> localVarResponse = HttpConfigGetFrontendAllWithHttpInfo();
@@ -193,7 +193,7 @@ namespace AgravityPublic.Api
         ///  Lists config value only for frontend stored in config table
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;FrontendAppConfig&gt;</returns>
+        /// <returns>ApiResponse of List<FrontendAppConfig></returns>
         public ApiResponse<List<FrontendAppConfig>> HttpConfigGetFrontendAllWithHttpInfo ()
         {
 
@@ -243,7 +243,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;FrontendAppConfig&gt;</returns>
+        /// <returns>Task of List<FrontendAppConfig></returns>
         public async System.Threading.Tasks.Task<List<FrontendAppConfig>> HttpConfigGetFrontendAllAsync (CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<FrontendAppConfig>> localVarResponse = await HttpConfigGetFrontendAllWithHttpInfoAsync(cancellationToken);

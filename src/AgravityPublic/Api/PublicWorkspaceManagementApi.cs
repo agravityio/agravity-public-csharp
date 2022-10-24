@@ -29,20 +29,20 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all available workspaces which are stored in the database and not deleted (status \&quot;A\&quot;).
+        /// This lists all available workspaces which are stored in the database and not deleted (status \"A\").
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;Workspace&gt;</returns>
+        /// <returns>List<Workspace></returns>
         List<Workspace> HttpWorkspacesGet ();
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all available workspaces which are stored in the database and not deleted (status \&quot;A\&quot;).
+        /// This lists all available workspaces which are stored in the database and not deleted (status \"A\").
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;Workspace&gt;</returns>
+        /// <returns>ApiResponse of List<Workspace></returns>
         ApiResponse<List<Workspace>> HttpWorkspacesGetWithHttpInfo ();
         /// <summary>
         /// 
@@ -71,18 +71,18 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all available workspaces which are stored in the database and not deleted (status \&quot;A\&quot;).
+        /// This lists all available workspaces which are stored in the database and not deleted (status \"A\").
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;Workspace&gt;</returns>
+        /// <returns>Task of List<Workspace></returns>
         System.Threading.Tasks.Task<List<Workspace>> HttpWorkspacesGetAsync (CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all available workspaces which are stored in the database and not deleted (status \&quot;A\&quot;).
+        /// This lists all available workspaces which are stored in the database and not deleted (status \"A\").
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
@@ -223,10 +223,10 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This lists all available workspaces which are stored in the database and not deleted (status \&quot;A\&quot;).
+        ///  This lists all available workspaces which are stored in the database and not deleted (status \"A\").
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;Workspace&gt;</returns>
+        /// <returns>List<Workspace></returns>
         public List<Workspace> HttpWorkspacesGet ()
         {
              ApiResponse<List<Workspace>> localVarResponse = HttpWorkspacesGetWithHttpInfo();
@@ -234,10 +234,10 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This lists all available workspaces which are stored in the database and not deleted (status \&quot;A\&quot;).
+        ///  This lists all available workspaces which are stored in the database and not deleted (status \"A\").
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;Workspace&gt;</returns>
+        /// <returns>ApiResponse of List<Workspace></returns>
         public ApiResponse<List<Workspace>> HttpWorkspacesGetWithHttpInfo ()
         {
 
@@ -288,11 +288,11 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This lists all available workspaces which are stored in the database and not deleted (status \&quot;A\&quot;).
+        ///  This lists all available workspaces which are stored in the database and not deleted (status \"A\").
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;Workspace&gt;</returns>
+        /// <returns>Task of List<Workspace></returns>
         public async System.Threading.Tasks.Task<List<Workspace>> HttpWorkspacesGetAsync (CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<Workspace>> localVarResponse = await HttpWorkspacesGetWithHttpInfoAsync(cancellationToken);
@@ -301,7 +301,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This lists all available workspaces which are stored in the database and not deleted (status \&quot;A\&quot;).
+        ///  This lists all available workspaces which are stored in the database and not deleted (status \"A\").
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>

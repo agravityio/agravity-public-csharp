@@ -117,7 +117,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicStaticDefinedListManagementApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the static defined list.
+            var id = "id_example";  // string | The ID of the static defined list.
 
             try
             {

@@ -85,9 +85,9 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetManagementApi(Configuration.Default);
-            var name = name_example;  // string |  (optional) 
-            var collectionId = collectionId_example;  // string |  (optional) 
-            var file = BINARY_DATA_HERE;  // System.IO.Stream |  (optional) 
+            var name = "name_example";  // string |  (optional) 
+            var collectionId = "collectionId_example";  // string |  (optional) 
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
 
             try
             {

@@ -29,20 +29,20 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
+        /// This lists all available collection types which are stored in the database and not deleted (status \"A\").
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;CollectionType&gt;</returns>
+        /// <returns>List<CollectionType></returns>
         List<CollectionType> HttpCollectionTypesGet ();
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
+        /// This lists all available collection types which are stored in the database and not deleted (status \"A\").
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;CollectionType&gt;</returns>
+        /// <returns>ApiResponse of List<CollectionType></returns>
         ApiResponse<List<CollectionType>> HttpCollectionTypesGetWithHttpInfo ();
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
-        /// <returns>List&lt;CollTypeItem&gt;</returns>
+        /// <returns>List<CollTypeItem></returns>
         List<CollTypeItem> HttpGetCollectionTypeItems (bool? includeblueprint = default(bool?));
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
-        /// <returns>ApiResponse of List&lt;CollTypeItem&gt;</returns>
+        /// <returns>ApiResponse of List<CollTypeItem></returns>
         ApiResponse<List<CollTypeItem>> HttpGetCollectionTypeItemsWithHttpInfo (bool? includeblueprint = default(bool?));
         #endregion Synchronous Operations
         #region Asynchronous Operations
@@ -92,18 +92,18 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
+        /// This lists all available collection types which are stored in the database and not deleted (status \"A\").
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;CollectionType&gt;</returns>
+        /// <returns>Task of List<CollectionType></returns>
         System.Threading.Tasks.Task<List<CollectionType>> HttpCollectionTypesGetAsync (CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
+        /// This lists all available collection types which are stored in the database and not deleted (status \"A\").
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
@@ -141,7 +141,7 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;CollTypeItem&gt;</returns>
+        /// <returns>Task of List<CollTypeItem></returns>
         System.Threading.Tasks.Task<List<CollTypeItem>> HttpGetCollectionTypeItemsAsync (bool? includeblueprint = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -267,10 +267,10 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
+        ///  This lists all available collection types which are stored in the database and not deleted (status \"A\").
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;CollectionType&gt;</returns>
+        /// <returns>List<CollectionType></returns>
         public List<CollectionType> HttpCollectionTypesGet ()
         {
              ApiResponse<List<CollectionType>> localVarResponse = HttpCollectionTypesGetWithHttpInfo();
@@ -278,10 +278,10 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
+        ///  This lists all available collection types which are stored in the database and not deleted (status \"A\").
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;CollectionType&gt;</returns>
+        /// <returns>ApiResponse of List<CollectionType></returns>
         public ApiResponse<List<CollectionType>> HttpCollectionTypesGetWithHttpInfo ()
         {
 
@@ -332,11 +332,11 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
+        ///  This lists all available collection types which are stored in the database and not deleted (status \"A\").
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;CollectionType&gt;</returns>
+        /// <returns>Task of List<CollectionType></returns>
         public async System.Threading.Tasks.Task<List<CollectionType>> HttpCollectionTypesGetAsync (CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<CollectionType>> localVarResponse = await HttpCollectionTypesGetWithHttpInfoAsync(cancellationToken);
@@ -345,7 +345,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
+        ///  This lists all available collection types which are stored in the database and not deleted (status \"A\").
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
@@ -549,7 +549,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
-        /// <returns>List&lt;CollTypeItem&gt;</returns>
+        /// <returns>List<CollTypeItem></returns>
         public List<CollTypeItem> HttpGetCollectionTypeItems (bool? includeblueprint = default(bool?))
         {
              ApiResponse<List<CollTypeItem>> localVarResponse = HttpGetCollectionTypeItemsWithHttpInfo(includeblueprint);
@@ -561,7 +561,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
-        /// <returns>ApiResponse of List&lt;CollTypeItem&gt;</returns>
+        /// <returns>ApiResponse of List<CollTypeItem></returns>
         public ApiResponse<List<CollTypeItem>> HttpGetCollectionTypeItemsWithHttpInfo (bool? includeblueprint = default(bool?))
         {
 
@@ -618,7 +618,7 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;CollTypeItem&gt;</returns>
+        /// <returns>Task of List<CollTypeItem></returns>
         public async System.Threading.Tasks.Task<List<CollTypeItem>> HttpGetCollectionTypeItemsAsync (bool? includeblueprint = default(bool?), CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<CollTypeItem>> localVarResponse = await HttpGetCollectionTypeItemsWithHttpInfoAsync(includeblueprint, cancellationToken);

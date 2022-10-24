@@ -108,7 +108,7 @@ namespace Example
         {
             Configuration.Default.BasePath = "http://localhost:7072/api";
             var apiInstance = new PublicGeneralManagementApi(Configuration.Default);
-            var instanceId = instanceId_example;  // string | The instance ID of the durable function.
+            var instanceId = "instanceId_example";  // string | The instance ID of the durable function.
 
             try
             {
@@ -184,7 +184,7 @@ namespace Example
         {
             Configuration.Default.BasePath = "http://localhost:7072/api";
             var apiInstance = new PublicGeneralManagementApi(Configuration.Default);
-            var instanceId = instanceId_example;  // string | The instance ID of the durable function.
+            var instanceId = "instanceId_example";  // string | The instance ID of the durable function.
 
             try
             {

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Company** | **string** |  | [optional] 
 **Customer** | **string** |  | [optional] 
 **Updated** | **DateTime** |  | [optional] 
-**Version** | **string** |  | [optional] 
+**_Version** | **string** |  | [optional] 
 **Region** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

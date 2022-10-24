@@ -38,7 +38,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicPublishingApi(Configuration.Default);
-            var cid = cid_example;  // string | Filter response for collection (optional) 
+            var cid = "cid_example";  // string | Filter response for collection (optional) 
             var incldescendants = true;  // bool? | Include collections further down in hierarchy (optional) 
 
             try

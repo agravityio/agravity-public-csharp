@@ -44,7 +44,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the asset.
+            var id = "id_example";  // string | The ID of the asset.
 
             try
             {
@@ -128,7 +128,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the asset.
+            var id = "id_example";  // string | The ID of the asset.
 
             try
             {
@@ -212,7 +212,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the asset.
+            var id = "id_example";  // string | The ID of the asset.
 
             try
             {
@@ -296,7 +296,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the asset.
+            var id = "id_example";  // string | The ID of the asset.
 
             try
             {
@@ -379,8 +379,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the asset.
-            var c = c_example;  // string | \"t\" for thumbnail (default); \"o\" for optimized; \"i\" for internal.
+            var id = "id_example";  // string | The ID of the asset.
+            var c = "c_example";  // string | \"t\" for thumbnail (default); \"o\" for optimized; \"i\" for internal.
 
             try
             {
@@ -464,7 +464,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the asset.
+            var id = "id_example";  // string | The ID of the asset.
 
             try
             {
@@ -546,8 +546,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the asset.
-            var c = c_example;  // string | \"t\" for thumbnail (default); \"o\" for optimized; \"i\" for internal. (optional) 
+            var id = "id_example";  // string | The ID of the asset.
+            var c = "c_example";  // string | \"t\" for thumbnail (default); \"o\" for optimized; \"i\" for internal. (optional) 
 
             try
             {

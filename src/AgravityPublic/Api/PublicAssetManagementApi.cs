@@ -54,7 +54,7 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
+        /// This endpoint lists all the assets, which are stored in the database and not deleted (status \"A\")
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed)</param>
@@ -71,7 +71,7 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
+        /// This endpoint lists all the assets, which are stored in the database and not deleted (status \"A\")
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed)</param>
@@ -87,7 +87,7 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \&quot;AssetImage\&quot;) it returns the full entity.
+        /// This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \"AssetImage\") it returns the full entity.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -100,7 +100,7 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \&quot;AssetImage\&quot;) it returns the full entity.
+        /// This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \"AssetImage\") it returns the full entity.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -141,7 +141,7 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
+        /// This endpoint lists all the assets, which are stored in the database and not deleted (status \"A\")
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed)</param>
@@ -159,7 +159,7 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
+        /// This endpoint lists all the assets, which are stored in the database and not deleted (status \"A\")
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed)</param>
@@ -176,7 +176,7 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \&quot;AssetImage\&quot;) it returns the full entity.
+        /// This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \"AssetImage\") it returns the full entity.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -190,7 +190,7 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \&quot;AssetImage\&quot;) it returns the full entity.
+        /// This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \"AssetImage\") it returns the full entity.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -464,7 +464,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
+        ///  This endpoint lists all the assets, which are stored in the database and not deleted (status \"A\")
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed)</param>
@@ -482,7 +482,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
+        ///  This endpoint lists all the assets, which are stored in the database and not deleted (status \"A\")
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed)</param>
@@ -553,7 +553,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
+        ///  This endpoint lists all the assets, which are stored in the database and not deleted (status \"A\")
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed)</param>
@@ -573,7 +573,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
+        ///  This endpoint lists all the assets, which are stored in the database and not deleted (status \"A\")
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed)</param>
@@ -645,7 +645,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \&quot;AssetImage\&quot;) it returns the full entity.
+        ///  This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \"AssetImage\") it returns the full entity.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -659,7 +659,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \&quot;AssetImage\&quot;) it returns the full entity.
+        ///  This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \"AssetImage\") it returns the full entity.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -722,7 +722,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \&quot;AssetImage\&quot;) it returns the full entity.
+        ///  This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \"AssetImage\") it returns the full entity.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -738,7 +738,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \&quot;AssetImage\&quot;) it returns the full entity.
+        ///  This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \"AssetImage\") it returns the full entity.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>

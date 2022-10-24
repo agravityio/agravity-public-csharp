@@ -32,7 +32,7 @@ namespace AgravityPublic.Api
         /// This endpoint lists all static defined lists in database.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;StaticDefinedList&gt;</returns>
+        /// <returns>List<StaticDefinedList></returns>
         List<StaticDefinedList> HttpStaticDefinedListsGetAll ();
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace AgravityPublic.Api
         /// This endpoint lists all static defined lists in database.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;StaticDefinedList&gt;</returns>
+        /// <returns>ApiResponse of List<StaticDefinedList></returns>
         ApiResponse<List<StaticDefinedList>> HttpStaticDefinedListsGetAllWithHttpInfo ();
         /// <summary>
         /// 
@@ -52,7 +52,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the static defined list.</param>
-        /// <returns>List&lt;StaticDefinedList&gt;</returns>
+        /// <returns>List<StaticDefinedList></returns>
         List<StaticDefinedList> HttpStaticDefinedListsGetById (string id);
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the static defined list.</param>
-        /// <returns>ApiResponse of List&lt;StaticDefinedList&gt;</returns>
+        /// <returns>ApiResponse of List<StaticDefinedList></returns>
         ApiResponse<List<StaticDefinedList>> HttpStaticDefinedListsGetByIdWithHttpInfo (string id);
         #endregion Synchronous Operations
         #region Asynchronous Operations
@@ -75,7 +75,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;StaticDefinedList&gt;</returns>
+        /// <returns>Task of List<StaticDefinedList></returns>
         System.Threading.Tasks.Task<List<StaticDefinedList>> HttpStaticDefinedListsGetAllAsync (CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the static defined list.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;StaticDefinedList&gt;</returns>
+        /// <returns>Task of List<StaticDefinedList></returns>
         System.Threading.Tasks.Task<List<StaticDefinedList>> HttpStaticDefinedListsGetByIdAsync (string id, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -226,7 +226,7 @@ namespace AgravityPublic.Api
         ///  This endpoint lists all static defined lists in database.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;StaticDefinedList&gt;</returns>
+        /// <returns>List<StaticDefinedList></returns>
         public List<StaticDefinedList> HttpStaticDefinedListsGetAll ()
         {
              ApiResponse<List<StaticDefinedList>> localVarResponse = HttpStaticDefinedListsGetAllWithHttpInfo();
@@ -237,7 +237,7 @@ namespace AgravityPublic.Api
         ///  This endpoint lists all static defined lists in database.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;StaticDefinedList&gt;</returns>
+        /// <returns>ApiResponse of List<StaticDefinedList></returns>
         public ApiResponse<List<StaticDefinedList>> HttpStaticDefinedListsGetAllWithHttpInfo ()
         {
 
@@ -292,7 +292,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;StaticDefinedList&gt;</returns>
+        /// <returns>Task of List<StaticDefinedList></returns>
         public async System.Threading.Tasks.Task<List<StaticDefinedList>> HttpStaticDefinedListsGetAllAsync (CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<StaticDefinedList>> localVarResponse = await HttpStaticDefinedListsGetAllWithHttpInfoAsync(cancellationToken);
@@ -360,7 +360,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the static defined list.</param>
-        /// <returns>List&lt;StaticDefinedList&gt;</returns>
+        /// <returns>List<StaticDefinedList></returns>
         public List<StaticDefinedList> HttpStaticDefinedListsGetById (string id)
         {
              ApiResponse<List<StaticDefinedList>> localVarResponse = HttpStaticDefinedListsGetByIdWithHttpInfo(id);
@@ -372,7 +372,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the static defined list.</param>
-        /// <returns>ApiResponse of List&lt;StaticDefinedList&gt;</returns>
+        /// <returns>ApiResponse of List<StaticDefinedList></returns>
         public ApiResponse<List<StaticDefinedList>> HttpStaticDefinedListsGetByIdWithHttpInfo (string id)
         {
             // verify the required parameter 'id' is set
@@ -432,7 +432,7 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the static defined list.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;StaticDefinedList&gt;</returns>
+        /// <returns>Task of List<StaticDefinedList></returns>
         public async System.Threading.Tasks.Task<List<StaticDefinedList>> HttpStaticDefinedListsGetByIdAsync (string id, CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<StaticDefinedList>> localVarResponse = await HttpStaticDefinedListsGetByIdWithHttpInfoAsync(id, cancellationToken);

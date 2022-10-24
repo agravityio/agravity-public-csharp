@@ -81,9 +81,8 @@ Contact: office@agravity.io
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\AgravityPublic\AgravityPublic.csproj">
-          <Project>{5BD69E54-B701-46D7-82C3-6BFEB5D0BEFC}</Project>
+          <Project>{EF4D460D-90BF-4473-B094-831F1573296C}</Project>
           <Name>AgravityPublic</Name>
       </ProjectReference>
   </ItemGroup>
 </Project>
-

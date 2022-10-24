@@ -38,9 +38,9 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetManagementApi(Configuration.Default);
-            var name = name_example;  // string |  (optional) 
-            var collectionId = collectionId_example;  // string |  (optional) 
-            var file = BINARY_DATA_HERE;  // System.IO.Stream |  (optional) 
+            var name = "name_example";  // string |  (optional) 
+            var collectionId = "collectionId_example";  // string |  (optional) 
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
 
             try
             {
@@ -125,12 +125,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetManagementApi(Configuration.Default);
-            var collectionid = collectionid_example;  // string | The ID of the collection where these assets should come from. (\"empty\" is allowed)
-            var fields = fields_example;  // string | This limits the fields which are returned, separated by comma (','). Blobs can be limited with '.' on their container. (i.e. fields=blobs.thumbnails). Only if 'thumbnails' is set, the placeholder of this asset type are returned if no thumbnail blob is found. (optional) 
+            var collectionid = "collectionid_example";  // string | The ID of the collection where these assets should come from. (\"empty\" is allowed)
+            var fields = "fields_example";  // string | This limits the fields which are returned, separated by comma (','). Blobs can be limited with '.' on their container. (i.e. fields=blobs.thumbnails). Only if 'thumbnails' is set, the placeholder of this asset type are returned if no thumbnail blob is found. (optional) 
             var expose = true;  // bool? | This indicates if the given blobs should have URLs where these can be requested. (If not limited through 'fields' parameter it will expose all URLs of all blobs.) (optional) 
-            var continuationToken = continuationToken_example;  // string | Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional) 
+            var continuationToken = "continuationToken_example";  // string | Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional) 
             var limit = 56;  // int? | This number limits the page result of assets. (optional) 
-            var orderby = orderby_example;  // string | How the return assets are sorted. Default is property: created_date (newest first). (optional) 
+            var orderby = "orderby_example";  // string | How the return assets are sorted. Default is property: created_date (newest first). (optional) 
             var techdata = true;  // bool? | This parameter will include the techdata property inside orig_blob. (optional) 
 
             try
@@ -220,8 +220,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetManagementApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the asset.
-            var fields = fields_example;  // string | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional) 
+            var id = "id_example";  // string | The ID of the asset.
+            var fields = "fields_example";  // string | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional) 
             var expose = true;  // bool? | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no 'thumbnail' is found.) (optional) 
 
             try

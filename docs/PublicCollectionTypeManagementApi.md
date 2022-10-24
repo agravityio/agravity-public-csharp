@@ -119,7 +119,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicCollectionTypeManagementApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the collection type.
+            var id = "id_example";  // string | The ID of the collection type.
 
             try
             {

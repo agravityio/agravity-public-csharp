@@ -39,8 +39,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicCollectionSecureUploadApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the secure upload collection.
-            var code = code_example;  // string | The API key to access this endpoint. (Alternative using header x-function-keys with same value)
+            var id = "id_example";  // string | The ID of the secure upload collection.
+            var code = "code_example";  // string | The API key to access this endpoint. (Alternative using header x-function-keys with same value)
 
             try
             {
@@ -125,9 +125,9 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicCollectionSecureUploadApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the secure upload collection.
-            var code = code_example;  // string | The API key to access this endpoint. (Alternative using header x-function-keys with same value)
-            var body = ;  // Object | This endpoint allows to upload one asset which is put onto the storage (INBOX). Object has to be FormData (Add file).
+            var id = "id_example";  // string | The ID of the secure upload collection.
+            var code = "code_example";  // string | The API key to access this endpoint. (Alternative using header x-function-keys with same value)
+            var body = null;  // Object | This endpoint allows to upload one asset which is put onto the storage (INBOX). Object has to be FormData (Add file).
 
             try
             {

@@ -52,28 +52,28 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all the collections which are stored in the database and not deleted (status \&quot;A\&quot;). This will include all specific properties from collection type.
+        /// This lists all the collections which are stored in the database and not deleted (status \"A\"). This will include all specific properties from collection type.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectiontypeid">The ID of the collection type where these collections should come from.</param>
         /// <param name="level">The hierarchy level of collections which should be returned. (optional)</param>
         /// <param name="parentid">The ID of the parent collection which should be queried. (No collectiontypeid is required) (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
-        /// <returns>List&lt;Collection&gt;</returns>
+        /// <returns>List<Collection></returns>
         List<Collection> HttpCollectionsGet (string collectiontypeid, int? level = default(int?), string parentid = default(string), string fields = default(string));
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all the collections which are stored in the database and not deleted (status \&quot;A\&quot;). This will include all specific properties from collection type.
+        /// This lists all the collections which are stored in the database and not deleted (status \"A\"). This will include all specific properties from collection type.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectiontypeid">The ID of the collection type where these collections should come from.</param>
         /// <param name="level">The hierarchy level of collections which should be returned. (optional)</param>
         /// <param name="parentid">The ID of the parent collection which should be queried. (No collectiontypeid is required) (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
-        /// <returns>ApiResponse of List&lt;Collection&gt;</returns>
+        /// <returns>ApiResponse of List<Collection></returns>
         ApiResponse<List<Collection>> HttpCollectionsGetWithHttpInfo (string collectiontypeid, int? level = default(int?), string parentid = default(string), string fields = default(string));
         /// <summary>
         /// 
@@ -106,7 +106,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the collection.</param>
-        /// <returns>List&lt;Collection&gt;</returns>
+        /// <returns>List<Collection></returns>
         List<Collection> HttpCollectionsGetDescendantsTreeOfId (string id);
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the collection.</param>
-        /// <returns>ApiResponse of List&lt;Collection&gt;</returns>
+        /// <returns>ApiResponse of List<Collection></returns>
         ApiResponse<List<Collection>> HttpCollectionsGetDescendantsTreeOfIdWithHttpInfo (string id);
         /// <summary>
         /// 
@@ -127,7 +127,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the collection.</param>
-        /// <returns>List&lt;Collection&gt;</returns>
+        /// <returns>List<Collection></returns>
         List<Collection> HttpCollectionsGetTreeAncestorsOfId (string id);
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the collection.</param>
-        /// <returns>ApiResponse of List&lt;Collection&gt;</returns>
+        /// <returns>ApiResponse of List<Collection></returns>
         ApiResponse<List<Collection>> HttpCollectionsGetTreeAncestorsOfIdWithHttpInfo (string id);
         /// <summary>
         /// 
@@ -192,7 +192,7 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all the collections which are stored in the database and not deleted (status \&quot;A\&quot;). This will include all specific properties from collection type.
+        /// This lists all the collections which are stored in the database and not deleted (status \"A\"). This will include all specific properties from collection type.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectiontypeid">The ID of the collection type where these collections should come from.</param>
@@ -200,14 +200,14 @@ namespace AgravityPublic.Api
         /// <param name="parentid">The ID of the parent collection which should be queried. (No collectiontypeid is required) (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;Collection&gt;</returns>
+        /// <returns>Task of List<Collection></returns>
         System.Threading.Tasks.Task<List<Collection>> HttpCollectionsGetAsync (string collectiontypeid, int? level = default(int?), string parentid = default(string), string fields = default(string), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all the collections which are stored in the database and not deleted (status \&quot;A\&quot;). This will include all specific properties from collection type.
+        /// This lists all the collections which are stored in the database and not deleted (status \"A\"). This will include all specific properties from collection type.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectiontypeid">The ID of the collection type where these collections should come from.</param>
@@ -251,7 +251,7 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the collection.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;Collection&gt;</returns>
+        /// <returns>Task of List<Collection></returns>
         System.Threading.Tasks.Task<List<Collection>> HttpCollectionsGetDescendantsTreeOfIdAsync (string id, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -274,7 +274,7 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the collection.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;Collection&gt;</returns>
+        /// <returns>Task of List<Collection></returns>
         System.Threading.Tasks.Task<List<Collection>> HttpCollectionsGetTreeAncestorsOfIdAsync (string id, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -596,14 +596,14 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This lists all the collections which are stored in the database and not deleted (status \&quot;A\&quot;). This will include all specific properties from collection type.
+        ///  This lists all the collections which are stored in the database and not deleted (status \"A\"). This will include all specific properties from collection type.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectiontypeid">The ID of the collection type where these collections should come from.</param>
         /// <param name="level">The hierarchy level of collections which should be returned. (optional)</param>
         /// <param name="parentid">The ID of the parent collection which should be queried. (No collectiontypeid is required) (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
-        /// <returns>List&lt;Collection&gt;</returns>
+        /// <returns>List<Collection></returns>
         public List<Collection> HttpCollectionsGet (string collectiontypeid, int? level = default(int?), string parentid = default(string), string fields = default(string))
         {
              ApiResponse<List<Collection>> localVarResponse = HttpCollectionsGetWithHttpInfo(collectiontypeid, level, parentid, fields);
@@ -611,14 +611,14 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This lists all the collections which are stored in the database and not deleted (status \&quot;A\&quot;). This will include all specific properties from collection type.
+        ///  This lists all the collections which are stored in the database and not deleted (status \"A\"). This will include all specific properties from collection type.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectiontypeid">The ID of the collection type where these collections should come from.</param>
         /// <param name="level">The hierarchy level of collections which should be returned. (optional)</param>
         /// <param name="parentid">The ID of the parent collection which should be queried. (No collectiontypeid is required) (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
-        /// <returns>ApiResponse of List&lt;Collection&gt;</returns>
+        /// <returns>ApiResponse of List<Collection></returns>
         public ApiResponse<List<Collection>> HttpCollectionsGetWithHttpInfo (string collectiontypeid, int? level = default(int?), string parentid = default(string), string fields = default(string))
         {
             // verify the required parameter 'collectiontypeid' is set
@@ -676,7 +676,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This lists all the collections which are stored in the database and not deleted (status \&quot;A\&quot;). This will include all specific properties from collection type.
+        ///  This lists all the collections which are stored in the database and not deleted (status \"A\"). This will include all specific properties from collection type.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectiontypeid">The ID of the collection type where these collections should come from.</param>
@@ -684,7 +684,7 @@ namespace AgravityPublic.Api
         /// <param name="parentid">The ID of the parent collection which should be queried. (No collectiontypeid is required) (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;Collection&gt;</returns>
+        /// <returns>Task of List<Collection></returns>
         public async System.Threading.Tasks.Task<List<Collection>> HttpCollectionsGetAsync (string collectiontypeid, int? level = default(int?), string parentid = default(string), string fields = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<Collection>> localVarResponse = await HttpCollectionsGetWithHttpInfoAsync(collectiontypeid, level, parentid, fields, cancellationToken);
@@ -693,7 +693,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This lists all the collections which are stored in the database and not deleted (status \&quot;A\&quot;). This will include all specific properties from collection type.
+        ///  This lists all the collections which are stored in the database and not deleted (status \"A\"). This will include all specific properties from collection type.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectiontypeid">The ID of the collection type where these collections should come from.</param>
@@ -914,7 +914,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the collection.</param>
-        /// <returns>List&lt;Collection&gt;</returns>
+        /// <returns>List<Collection></returns>
         public List<Collection> HttpCollectionsGetDescendantsTreeOfId (string id)
         {
              ApiResponse<List<Collection>> localVarResponse = HttpCollectionsGetDescendantsTreeOfIdWithHttpInfo(id);
@@ -926,7 +926,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the collection.</param>
-        /// <returns>ApiResponse of List&lt;Collection&gt;</returns>
+        /// <returns>ApiResponse of List<Collection></returns>
         public ApiResponse<List<Collection>> HttpCollectionsGetDescendantsTreeOfIdWithHttpInfo (string id)
         {
             // verify the required parameter 'id' is set
@@ -986,7 +986,7 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the collection.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;Collection&gt;</returns>
+        /// <returns>Task of List<Collection></returns>
         public async System.Threading.Tasks.Task<List<Collection>> HttpCollectionsGetDescendantsTreeOfIdAsync (string id, CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<Collection>> localVarResponse = await HttpCollectionsGetDescendantsTreeOfIdWithHttpInfoAsync(id, cancellationToken);
@@ -1059,7 +1059,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the collection.</param>
-        /// <returns>List&lt;Collection&gt;</returns>
+        /// <returns>List<Collection></returns>
         public List<Collection> HttpCollectionsGetTreeAncestorsOfId (string id)
         {
              ApiResponse<List<Collection>> localVarResponse = HttpCollectionsGetTreeAncestorsOfIdWithHttpInfo(id);
@@ -1071,7 +1071,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the collection.</param>
-        /// <returns>ApiResponse of List&lt;Collection&gt;</returns>
+        /// <returns>ApiResponse of List<Collection></returns>
         public ApiResponse<List<Collection>> HttpCollectionsGetTreeAncestorsOfIdWithHttpInfo (string id)
         {
             // verify the required parameter 'id' is set
@@ -1131,7 +1131,7 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the collection.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;Collection&gt;</returns>
+        /// <returns>Task of List<Collection></returns>
         public async System.Threading.Tasks.Task<List<Collection>> HttpCollectionsGetTreeAncestorsOfIdAsync (string id, CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<Collection>> localVarResponse = await HttpCollectionsGetTreeAncestorsOfIdWithHttpInfoAsync(id, cancellationToken);

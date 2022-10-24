@@ -92,22 +92,22 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint is only for active image-assets (asset-type&#x3D;image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
+        /// This endpoint is only for active image-assets (asset-type=image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <returns>List&lt;PerHashResult&gt;</returns>
+        /// <returns>List<PerHashResult></returns>
         List<PerHashResult> HttpAssetsGetSimilarById (string id);
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint is only for active image-assets (asset-type&#x3D;image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
+        /// This endpoint is only for active image-assets (asset-type=image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <returns>ApiResponse of List&lt;PerHashResult&gt;</returns>
+        /// <returns>ApiResponse of List<PerHashResult></returns>
         ApiResponse<List<PerHashResult>> HttpAssetsGetSimilarByIdWithHttpInfo (string id);
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <returns>List&lt;Collection&gt;</returns>
+        /// <returns>List<Collection></returns>
         List<Collection> HttpGetAssetCollectionsById (string id);
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace AgravityPublic.Api
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <returns>ApiResponse of List&lt;Collection&gt;</returns>
+        /// <returns>ApiResponse of List<Collection></returns>
         ApiResponse<List<Collection>> HttpGetAssetCollectionsByIdWithHttpInfo (string id);
         /// <summary>
         /// 
@@ -251,19 +251,19 @@ namespace AgravityPublic.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint is only for active image-assets (asset-type&#x3D;image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
+        /// This endpoint is only for active image-assets (asset-type=image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;PerHashResult&gt;</returns>
+        /// <returns>Task of List<PerHashResult></returns>
         System.Threading.Tasks.Task<List<PerHashResult>> HttpAssetsGetSimilarByIdAsync (string id, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint is only for active image-assets (asset-type&#x3D;image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
+        /// This endpoint is only for active image-assets (asset-type=image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
         /// </remarks>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -304,7 +304,7 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;Collection&gt;</returns>
+        /// <returns>Task of List<Collection></returns>
         System.Threading.Tasks.Task<List<Collection>> HttpGetAssetCollectionsByIdAsync (string id, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -894,11 +894,11 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This endpoint is only for active image-assets (asset-type&#x3D;image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
+        ///  This endpoint is only for active image-assets (asset-type=image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <returns>List&lt;PerHashResult&gt;</returns>
+        /// <returns>List<PerHashResult></returns>
         public List<PerHashResult> HttpAssetsGetSimilarById (string id)
         {
              ApiResponse<List<PerHashResult>> localVarResponse = HttpAssetsGetSimilarByIdWithHttpInfo(id);
@@ -906,11 +906,11 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This endpoint is only for active image-assets (asset-type&#x3D;image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
+        ///  This endpoint is only for active image-assets (asset-type=image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <returns>ApiResponse of List&lt;PerHashResult&gt;</returns>
+        /// <returns>ApiResponse of List<PerHashResult></returns>
         public ApiResponse<List<PerHashResult>> HttpAssetsGetSimilarByIdWithHttpInfo (string id)
         {
             // verify the required parameter 'id' is set
@@ -965,12 +965,12 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This endpoint is only for active image-assets (asset-type&#x3D;image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
+        ///  This endpoint is only for active image-assets (asset-type=image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;PerHashResult&gt;</returns>
+        /// <returns>Task of List<PerHashResult></returns>
         public async System.Threading.Tasks.Task<List<PerHashResult>> HttpAssetsGetSimilarByIdAsync (string id, CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<PerHashResult>> localVarResponse = await HttpAssetsGetSimilarByIdWithHttpInfoAsync(id, cancellationToken);
@@ -979,7 +979,7 @@ namespace AgravityPublic.Api
         }
 
         /// <summary>
-        ///  This endpoint is only for active image-assets (asset-type&#x3D;image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
+        ///  This endpoint is only for active image-assets (asset-type=image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -1200,7 +1200,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <returns>List&lt;Collection&gt;</returns>
+        /// <returns>List<Collection></returns>
         public List<Collection> HttpGetAssetCollectionsById (string id)
         {
              ApiResponse<List<Collection>> localVarResponse = HttpGetAssetCollectionsByIdWithHttpInfo(id);
@@ -1212,7 +1212,7 @@ namespace AgravityPublic.Api
         /// </summary>
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <returns>ApiResponse of List&lt;Collection&gt;</returns>
+        /// <returns>ApiResponse of List<Collection></returns>
         public ApiResponse<List<Collection>> HttpGetAssetCollectionsByIdWithHttpInfo (string id)
         {
             // verify the required parameter 'id' is set
@@ -1272,7 +1272,7 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;Collection&gt;</returns>
+        /// <returns>Task of List<Collection></returns>
         public async System.Threading.Tasks.Task<List<Collection>> HttpGetAssetCollectionsByIdAsync (string id, CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<List<Collection>> localVarResponse = await HttpGetAssetCollectionsByIdWithHttpInfoAsync(id, cancellationToken);

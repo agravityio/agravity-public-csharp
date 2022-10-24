@@ -33,10 +33,10 @@ namespace Example
         {
             Configuration.Default.BasePath = "http://localhost:7072/api";
             var apiInstance = new PublicCollectionSharingApi(Configuration.Default);
-            var id = id_example;  // string | The ID of the shared collection.
-            var continuationToken = continuationToken_example;  // string | Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional) 
+            var id = "id_example";  // string | The ID of the shared collection.
+            var continuationToken = "continuationToken_example";  // string | Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional) 
             var limit = 56;  // int? | This number limits the page result of assets. (optional) 
-            var orderby = orderby_example;  // string | How the return assets are sorted. Default is property: created_date (newest first). (optional) 
+            var orderby = "orderby_example";  // string | How the return assets are sorted. Default is property: created_date (newest first). (optional) 
 
             try
             {

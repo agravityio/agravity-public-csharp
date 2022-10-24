@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Md5** | **string** |  | [optional] 
 **Group** | **string** |  | [optional] 
 **Order** | **int?** |  | [optional] 
-**Translations** | **Dictionary&lt;string, Dictionary&gt;** |  | [optional] 
+**Translations** | **Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt;** |  | [optional] 
 **Status** | **string** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 

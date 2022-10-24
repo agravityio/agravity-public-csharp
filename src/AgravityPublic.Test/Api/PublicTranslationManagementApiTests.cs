@@ -62,7 +62,7 @@ namespace AgravityPublic.Test
             //Assert.IsInstanceOf(typeof(PublicTranslationManagementApi), instance);
         }
 
-        
+
         /// <summary>
         /// Test HttpTranslationsById
         /// </summary>
@@ -73,9 +73,9 @@ namespace AgravityPublic.Test
             //string id = null;
             //bool? items = null;
             //var response = instance.HttpTranslationsById(id, items);
-            //Assert.IsInstanceOf(typeof(Dictionary<string, Dictionary>), response, "response is Dictionary<string, Dictionary>");
+            //Assert.IsInstanceOf(typeof(Dictionary<string, Dictionary<string,object>>), response, "response is Dictionary<string, Dictionary<string,object>>");
         }
-        
+
         /// <summary>
         /// Test HttpTranslationsByIdFilterByCustomField
         /// </summary>
@@ -86,9 +86,9 @@ namespace AgravityPublic.Test
             //string id = null;
             //string customField = null;
             //var response = instance.HttpTranslationsByIdFilterByCustomField(id, customField);
-            //Assert.IsInstanceOf(typeof(Dictionary<string, Dictionary>), response, "response is Dictionary<string, Dictionary>");
+            //Assert.IsInstanceOf(typeof(Dictionary<string, Dictionary<string,object>>), response, "response is Dictionary<string, Dictionary<string,object>>");
         }
-        
+
         /// <summary>
         /// Test HttpTranslationsByIdFilterByProperty
         /// </summary>
@@ -100,9 +100,9 @@ namespace AgravityPublic.Test
             //string property = null;
             //bool? items = null;
             //var response = instance.HttpTranslationsByIdFilterByProperty(id, property, items);
-            //Assert.IsInstanceOf(typeof(Dictionary<string, Dictionary>), response, "response is Dictionary<string, Dictionary>");
+            //Assert.IsInstanceOf(typeof(Dictionary<string, Dictionary<string,object>>), response, "response is Dictionary<string, Dictionary<string,object>>");
         }
-        
+
     }
 
 }

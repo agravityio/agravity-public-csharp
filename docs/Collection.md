@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Permissions** | [**List&lt;CollectionPermission&gt;**](CollectionPermission.md) |  | [optional] 
 **Custom** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Items** | [**List&lt;CollTypeItem&gt;**](CollTypeItem.md) |  | [optional] 
-**Translations** | **Dictionary&lt;string, Dictionary&gt;** |  | [optional] 
+**Translations** | **Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt;** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **AddProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 

@@ -34,8 +34,8 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
-        /// <returns>Dictionary<string, Dictionary></returns>
-        Dictionary<string, Dictionary> HttpTranslationsById (string id, bool? items = default(bool?));
+        /// <returns>Dictionary<string, Dictionary<string,object>></returns>
+        Dictionary<string, Dictionary<string, object>> HttpTranslationsById(string id, bool? items = default(bool?));
 
         /// <summary>
         /// 
@@ -46,8 +46,8 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
-        /// <returns>ApiResponse of Dictionary<string, Dictionary></returns>
-        ApiResponse<Dictionary<string, Dictionary>> HttpTranslationsByIdWithHttpInfo (string id, bool? items = default(bool?));
+        /// <returns>ApiResponse of Dictionary<string, Dictionary<string,object>></returns>
+        ApiResponse<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdWithHttpInfo(string id, bool? items = default(bool?));
         /// <summary>
         /// 
         /// </summary>
@@ -57,8 +57,8 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of only translateable entities with custom fields (Asset, Collection).</param>
         /// <param name="customField">Limit the output to a specific custom field key.</param>
-        /// <returns>Dictionary<string, Dictionary></returns>
-        Dictionary<string, Dictionary> HttpTranslationsByIdFilterByCustomField (string id, string customField);
+        /// <returns>Dictionary<string, Dictionary<string,object>></returns>
+        Dictionary<string, Dictionary<string, object>> HttpTranslationsByIdFilterByCustomField(string id, string customField);
 
         /// <summary>
         /// 
@@ -69,8 +69,8 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of only translateable entities with custom fields (Asset, Collection).</param>
         /// <param name="customField">Limit the output to a specific custom field key.</param>
-        /// <returns>ApiResponse of Dictionary<string, Dictionary></returns>
-        ApiResponse<Dictionary<string, Dictionary>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfo (string id, string customField);
+        /// <returns>ApiResponse of Dictionary<string, Dictionary<string,object>></returns>
+        ApiResponse<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfo(string id, string customField);
         /// <summary>
         /// 
         /// </summary>
@@ -81,8 +81,8 @@ namespace AgravityPublic.Api
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
-        /// <returns>Dictionary<string, Dictionary></returns>
-        Dictionary<string, Dictionary> HttpTranslationsByIdFilterByProperty (string id, string property, bool? items = default(bool?));
+        /// <returns>Dictionary<string, Dictionary<string,object>></returns>
+        Dictionary<string, Dictionary<string, object>> HttpTranslationsByIdFilterByProperty(string id, string property, bool? items = default(bool?));
 
         /// <summary>
         /// 
@@ -94,8 +94,8 @@ namespace AgravityPublic.Api
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
-        /// <returns>ApiResponse of Dictionary<string, Dictionary></returns>
-        ApiResponse<Dictionary<string, Dictionary>> HttpTranslationsByIdFilterByPropertyWithHttpInfo (string id, string property, bool? items = default(bool?));
+        /// <returns>ApiResponse of Dictionary<string, Dictionary<string,object>></returns>
+        ApiResponse<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByPropertyWithHttpInfo(string id, string property, bool? items = default(bool?));
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -108,8 +108,8 @@ namespace AgravityPublic.Api
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of Dictionary<string, Dictionary></returns>
-        System.Threading.Tasks.Task<Dictionary<string, Dictionary>> HttpTranslationsByIdAsync (string id, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of Dictionary<string, Dictionary<string,object>></returns>
+        System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdAsync(string id, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 
@@ -121,8 +121,8 @@ namespace AgravityPublic.Api
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary>>> HttpTranslationsByIdWithHttpInfoAsync (string id, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdWithHttpInfoAsync(string id, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -133,8 +133,8 @@ namespace AgravityPublic.Api
         /// <param name="id">The ID of only translateable entities with custom fields (Asset, Collection).</param>
         /// <param name="customField">Limit the output to a specific custom field key.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of Dictionary<string, Dictionary></returns>
-        System.Threading.Tasks.Task<Dictionary<string, Dictionary>> HttpTranslationsByIdFilterByCustomFieldAsync (string id, string customField, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of Dictionary<string, Dictionary<string,object>></returns>
+        System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByCustomFieldAsync(string id, string customField, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 
@@ -146,8 +146,8 @@ namespace AgravityPublic.Api
         /// <param name="id">The ID of only translateable entities with custom fields (Asset, Collection).</param>
         /// <param name="customField">Limit the output to a specific custom field key.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary>>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfoAsync (string id, string customField, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfoAsync(string id, string customField, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -159,8 +159,8 @@ namespace AgravityPublic.Api
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of Dictionary<string, Dictionary></returns>
-        System.Threading.Tasks.Task<Dictionary<string, Dictionary>> HttpTranslationsByIdFilterByPropertyAsync (string id, string property, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of Dictionary<string, Dictionary<string,object>></returns>
+        System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByPropertyAsync(string id, string property, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 
@@ -173,8 +173,8 @@ namespace AgravityPublic.Api
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary>>> HttpTranslationsByIdFilterByPropertyWithHttpInfoAsync (string id, string property, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdFilterByPropertyWithHttpInfoAsync(string id, string property, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -246,7 +246,7 @@ namespace AgravityPublic.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public AgravityPublic.Client.Configuration Configuration {get; set;}
+        public AgravityPublic.Client.Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -292,11 +292,11 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
-        /// <returns>Dictionary<string, Dictionary></returns>
-        public Dictionary<string, Dictionary> HttpTranslationsById (string id, bool? items = default(bool?))
+        /// <returns>Dictionary<string, Dictionary<string,object>></returns>
+        public Dictionary<string, Dictionary<string, object>> HttpTranslationsById(string id, bool? items = default(bool?))
         {
-             ApiResponse<Dictionary<string, Dictionary>> localVarResponse = HttpTranslationsByIdWithHttpInfo(id, items);
-             return localVarResponse.Data;
+            ApiResponse<Dictionary<string, Dictionary<string, object>>> localVarResponse = HttpTranslationsByIdWithHttpInfo(id, items);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -305,8 +305,8 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
-        /// <returns>ApiResponse of Dictionary<string, Dictionary></returns>
-        public ApiResponse<Dictionary<string, Dictionary>> HttpTranslationsByIdWithHttpInfo (string id, bool? items = default(bool?))
+        /// <returns>ApiResponse of Dictionary<string, Dictionary<string,object>></returns>
+        public ApiResponse<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdWithHttpInfo(string id, bool? items = default(bool?))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -343,11 +343,11 @@ namespace AgravityPublic.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -355,9 +355,9 @@ namespace AgravityPublic.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Dictionary<string, Dictionary>>(localVarStatusCode,
+            return new ApiResponse<Dictionary<string, Dictionary<string, object>>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Dictionary<string, Dictionary>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Dictionary>)));
+                (Dictionary<string, Dictionary<string, object>>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Dictionary<string, object>>)));
         }
 
         /// <summary>
@@ -367,11 +367,11 @@ namespace AgravityPublic.Api
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of Dictionary<string, Dictionary></returns>
-        public async System.Threading.Tasks.Task<Dictionary<string, Dictionary>> HttpTranslationsByIdAsync (string id, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of Dictionary<string, Dictionary<string,object>></returns>
+        public async System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdAsync(string id, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<Dictionary<string, Dictionary>> localVarResponse = await HttpTranslationsByIdWithHttpInfoAsync(id, items, cancellationToken);
-             return localVarResponse.Data;
+            ApiResponse<Dictionary<string, Dictionary<string, object>>> localVarResponse = await HttpTranslationsByIdWithHttpInfoAsync(id, items, cancellationToken);
+            return localVarResponse.Data;
 
         }
 
@@ -382,8 +382,8 @@ namespace AgravityPublic.Api
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary>>> HttpTranslationsByIdWithHttpInfoAsync (string id, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdWithHttpInfoAsync(string id, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -420,11 +420,11 @@ namespace AgravityPublic.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType, cancellationToken);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -432,9 +432,9 @@ namespace AgravityPublic.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Dictionary<string, Dictionary>>(localVarStatusCode,
+            return new ApiResponse<Dictionary<string, Dictionary<string, object>>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Dictionary<string, Dictionary>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Dictionary>)));
+                (Dictionary<string, Dictionary<string, object>>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Dictionary<string, object>>)));
         }
 
         /// <summary>
@@ -443,11 +443,11 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of only translateable entities with custom fields (Asset, Collection).</param>
         /// <param name="customField">Limit the output to a specific custom field key.</param>
-        /// <returns>Dictionary<string, Dictionary></returns>
-        public Dictionary<string, Dictionary> HttpTranslationsByIdFilterByCustomField (string id, string customField)
+        /// <returns>Dictionary<string, Dictionary<string,object>></returns>
+        public Dictionary<string, Dictionary<string, object>> HttpTranslationsByIdFilterByCustomField(string id, string customField)
         {
-             ApiResponse<Dictionary<string, Dictionary>> localVarResponse = HttpTranslationsByIdFilterByCustomFieldWithHttpInfo(id, customField);
-             return localVarResponse.Data;
+            ApiResponse<Dictionary<string, Dictionary<string, object>>> localVarResponse = HttpTranslationsByIdFilterByCustomFieldWithHttpInfo(id, customField);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -456,8 +456,8 @@ namespace AgravityPublic.Api
         /// <exception cref="AgravityPublic.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of only translateable entities with custom fields (Asset, Collection).</param>
         /// <param name="customField">Limit the output to a specific custom field key.</param>
-        /// <returns>ApiResponse of Dictionary<string, Dictionary></returns>
-        public ApiResponse<Dictionary<string, Dictionary>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfo (string id, string customField)
+        /// <returns>ApiResponse of Dictionary<string, Dictionary<string,object>></returns>
+        public ApiResponse<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfo(string id, string customField)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -497,11 +497,11 @@ namespace AgravityPublic.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -509,9 +509,9 @@ namespace AgravityPublic.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Dictionary<string, Dictionary>>(localVarStatusCode,
+            return new ApiResponse<Dictionary<string, Dictionary<string, object>>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Dictionary<string, Dictionary>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Dictionary>)));
+                (Dictionary<string, Dictionary<string, object>>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Dictionary<string, object>>)));
         }
 
         /// <summary>
@@ -521,11 +521,11 @@ namespace AgravityPublic.Api
         /// <param name="id">The ID of only translateable entities with custom fields (Asset, Collection).</param>
         /// <param name="customField">Limit the output to a specific custom field key.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of Dictionary<string, Dictionary></returns>
-        public async System.Threading.Tasks.Task<Dictionary<string, Dictionary>> HttpTranslationsByIdFilterByCustomFieldAsync (string id, string customField, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of Dictionary<string, Dictionary<string,object>></returns>
+        public async System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByCustomFieldAsync(string id, string customField, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<Dictionary<string, Dictionary>> localVarResponse = await HttpTranslationsByIdFilterByCustomFieldWithHttpInfoAsync(id, customField, cancellationToken);
-             return localVarResponse.Data;
+            ApiResponse<Dictionary<string, Dictionary<string, object>>> localVarResponse = await HttpTranslationsByIdFilterByCustomFieldWithHttpInfoAsync(id, customField, cancellationToken);
+            return localVarResponse.Data;
 
         }
 
@@ -536,8 +536,8 @@ namespace AgravityPublic.Api
         /// <param name="id">The ID of only translateable entities with custom fields (Asset, Collection).</param>
         /// <param name="customField">Limit the output to a specific custom field key.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary>>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfoAsync (string id, string customField, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfoAsync(string id, string customField, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -577,11 +577,11 @@ namespace AgravityPublic.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType, cancellationToken);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -589,9 +589,9 @@ namespace AgravityPublic.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Dictionary<string, Dictionary>>(localVarStatusCode,
+            return new ApiResponse<Dictionary<string, Dictionary<string, object>>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Dictionary<string, Dictionary>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Dictionary>)));
+                (Dictionary<string, Dictionary<string, object>>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Dictionary<string, object>>)));
         }
 
         /// <summary>
@@ -601,11 +601,11 @@ namespace AgravityPublic.Api
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
-        /// <returns>Dictionary<string, Dictionary></returns>
-        public Dictionary<string, Dictionary> HttpTranslationsByIdFilterByProperty (string id, string property, bool? items = default(bool?))
+        /// <returns>Dictionary<string, Dictionary<string,object>></returns>
+        public Dictionary<string, Dictionary<string, object>> HttpTranslationsByIdFilterByProperty(string id, string property, bool? items = default(bool?))
         {
-             ApiResponse<Dictionary<string, Dictionary>> localVarResponse = HttpTranslationsByIdFilterByPropertyWithHttpInfo(id, property, items);
-             return localVarResponse.Data;
+            ApiResponse<Dictionary<string, Dictionary<string, object>>> localVarResponse = HttpTranslationsByIdFilterByPropertyWithHttpInfo(id, property, items);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -615,8 +615,8 @@ namespace AgravityPublic.Api
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
-        /// <returns>ApiResponse of Dictionary<string, Dictionary></returns>
-        public ApiResponse<Dictionary<string, Dictionary>> HttpTranslationsByIdFilterByPropertyWithHttpInfo (string id, string property, bool? items = default(bool?))
+        /// <returns>ApiResponse of Dictionary<string, Dictionary<string,object>></returns>
+        public ApiResponse<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByPropertyWithHttpInfo(string id, string property, bool? items = default(bool?))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -657,11 +657,11 @@ namespace AgravityPublic.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -669,9 +669,9 @@ namespace AgravityPublic.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Dictionary<string, Dictionary>>(localVarStatusCode,
+            return new ApiResponse<Dictionary<string, Dictionary<string, object>>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Dictionary<string, Dictionary>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Dictionary>)));
+                (Dictionary<string, Dictionary<string, object>>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Dictionary<string, object>>)));
         }
 
         /// <summary>
@@ -682,11 +682,11 @@ namespace AgravityPublic.Api
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of Dictionary<string, Dictionary></returns>
-        public async System.Threading.Tasks.Task<Dictionary<string, Dictionary>> HttpTranslationsByIdFilterByPropertyAsync (string id, string property, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of Dictionary<string, Dictionary<string,object>></returns>
+        public async System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByPropertyAsync(string id, string property, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<Dictionary<string, Dictionary>> localVarResponse = await HttpTranslationsByIdFilterByPropertyWithHttpInfoAsync(id, property, items, cancellationToken);
-             return localVarResponse.Data;
+            ApiResponse<Dictionary<string, Dictionary<string, object>>> localVarResponse = await HttpTranslationsByIdFilterByPropertyWithHttpInfoAsync(id, property, items, cancellationToken);
+            return localVarResponse.Data;
 
         }
 
@@ -698,8 +698,8 @@ namespace AgravityPublic.Api
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary>>> HttpTranslationsByIdFilterByPropertyWithHttpInfoAsync (string id, string property, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdFilterByPropertyWithHttpInfoAsync(string id, string property, bool? items = default(bool?), CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -740,11 +740,11 @@ namespace AgravityPublic.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType, cancellationToken);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -752,9 +752,9 @@ namespace AgravityPublic.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Dictionary<string, Dictionary>>(localVarStatusCode,
+            return new ApiResponse<Dictionary<string, Dictionary<string, object>>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Dictionary<string, Dictionary>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Dictionary>)));
+                (Dictionary<string, Dictionary<string, object>>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Dictionary<string, object>>)));
         }
 
     }

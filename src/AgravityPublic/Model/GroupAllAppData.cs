@@ -28,7 +28,7 @@ namespace AgravityPublic.Model
     /// GroupAllAppData
     /// </summary>
     [DataContract]
-    public partial class GroupAllAppData :  IEquatable<GroupAllAppData>, IValidatableObject
+    public partial class GroupAllAppData : IEquatable<GroupAllAppData>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupAllAppData" /> class.
@@ -39,7 +39,7 @@ namespace AgravityPublic.Model
         /// <param name="createdDate">createdDate.</param>
         /// <param name="addInfo">addInfo.</param>
         /// <param name="dist">dist.</param>
-        public GroupAllAppData(CollectionType collectionType = default(CollectionType), List<Collection> collections = default(List<Collection>), List<Asset> assets = default(List<Asset>), DateTime createdDate = default(DateTime), List<Dictionary> addInfo = default(List<Dictionary>), DistZipResponse dist = default(DistZipResponse))
+        public GroupAllAppData(CollectionType collectionType = default(CollectionType), List<Collection> collections = default(List<Collection>), List<Asset> assets = default(List<Asset>), DateTime createdDate = default(DateTime), List<Dictionary<string, object>> addInfo = default(List<Dictionary<string, object>>), DistZipResponse dist = default(DistZipResponse))
         {
             this.CollectionType = collectionType;
             this.Collections = collections;
@@ -52,37 +52,37 @@ namespace AgravityPublic.Model
         /// <summary>
         /// Gets or Sets CollectionType
         /// </summary>
-        [DataMember(Name="collection_type", EmitDefaultValue=false)]
+        [DataMember(Name = "collection_type", EmitDefaultValue = false)]
         public CollectionType CollectionType { get; set; }
 
         /// <summary>
         /// Gets or Sets Collections
         /// </summary>
-        [DataMember(Name="collections", EmitDefaultValue=false)]
+        [DataMember(Name = "collections", EmitDefaultValue = false)]
         public List<Collection> Collections { get; set; }
 
         /// <summary>
         /// Gets or Sets Assets
         /// </summary>
-        [DataMember(Name="assets", EmitDefaultValue=false)]
+        [DataMember(Name = "assets", EmitDefaultValue = false)]
         public List<Asset> Assets { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name="created_date", EmitDefaultValue=false)]
+        [DataMember(Name = "created_date", EmitDefaultValue = false)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets AddInfo
         /// </summary>
-        [DataMember(Name="add_info", EmitDefaultValue=false)]
-        public List<Dictionary> AddInfo { get; set; }
+        [DataMember(Name = "add_info", EmitDefaultValue = false)]
+        public List<Dictionary<string, object>> AddInfo { get; set; }
 
         /// <summary>
         /// Gets or Sets Dist
         /// </summary>
-        [DataMember(Name="dist", EmitDefaultValue=false)]
+        [DataMember(Name = "dist", EmitDefaultValue = false)]
         public DistZipResponse Dist { get; set; }
 
         /// <summary>
@@ -132,35 +132,35 @@ namespace AgravityPublic.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.CollectionType == input.CollectionType ||
                     (this.CollectionType != null &&
                     this.CollectionType.Equals(input.CollectionType))
-                ) && 
+                ) &&
                 (
                     this.Collections == input.Collections ||
                     this.Collections != null &&
                     input.Collections != null &&
                     this.Collections.SequenceEqual(input.Collections)
-                ) && 
+                ) &&
                 (
                     this.Assets == input.Assets ||
                     this.Assets != null &&
                     input.Assets != null &&
                     this.Assets.SequenceEqual(input.Assets)
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.AddInfo == input.AddInfo ||
                     this.AddInfo != null &&
                     input.AddInfo != null &&
                     this.AddInfo.SequenceEqual(input.AddInfo)
-                ) && 
+                ) &&
                 (
                     this.Dist == input.Dist ||
                     (this.Dist != null &&

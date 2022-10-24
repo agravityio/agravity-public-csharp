@@ -28,7 +28,7 @@ namespace AgravityPublic.Model
     /// Asset
     /// </summary>
     [DataContract]
-    public partial class Asset :  IEquatable<Asset>, IValidatableObject
+    public partial class Asset : IEquatable<Asset>, IValidatableObject
     {
         /// <summary>
         /// Defines Access
@@ -53,7 +53,7 @@ namespace AgravityPublic.Model
         /// <summary>
         /// Gets or Sets Access
         /// </summary>
-        [DataMember(Name="access", EmitDefaultValue=false)]
+        [DataMember(Name = "access", EmitDefaultValue = false)]
         public AccessEnum? Access { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Asset" /> class.
@@ -88,7 +88,7 @@ namespace AgravityPublic.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Asset(string id = default(string), string entityType = default(string), string name = default(string), string assetType = default(string), AccessEnum? access = AccessEnum.OPEN, List<string> duplicates = default(List<string>), string textContent = default(string), List<ArtificialIntelligenceGroup> aiGroups = default(List<ArtificialIntelligenceGroup>), List<string> keywords = default(List<string>), AssetBlob origBlob = default(AssetBlob), List<AssetBlob> blobs = default(List<AssetBlob>), List<string> collections = default(List<string>), string failedReason = default(string), List<CollectionPermission> permissions = default(List<CollectionPermission>), string regionOfOrigin = default(string), string availability = default(string), DateTime? availableFrom = default(DateTime?), DateTime? availableTo = default(DateTime?), Dictionary<string, Object> custom = default(Dictionary<string, Object>), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary> translations = default(Dictionary<string, Dictionary>), string description = default(string), Dictionary<string, Object> addProperties = default(Dictionary<string, Object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public Asset(string id = default(string), string entityType = default(string), string name = default(string), string assetType = default(string), AccessEnum? access = AccessEnum.OPEN, List<string> duplicates = default(List<string>), string textContent = default(string), List<ArtificialIntelligenceGroup> aiGroups = default(List<ArtificialIntelligenceGroup>), List<string> keywords = default(List<string>), AssetBlob origBlob = default(AssetBlob), List<AssetBlob> blobs = default(List<AssetBlob>), List<string> collections = default(List<string>), string failedReason = default(string), List<CollectionPermission> permissions = default(List<CollectionPermission>), string regionOfOrigin = default(string), string availability = default(string), DateTime? availableFrom = default(DateTime?), DateTime? availableTo = default(DateTime?), Dictionary<string, Object> custom = default(Dictionary<string, Object>), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), string description = default(string), Dictionary<string, Object> addProperties = default(Dictionary<string, Object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.AvailableFrom = availableFrom;
             this.AvailableTo = availableTo;
@@ -137,176 +137,176 @@ namespace AgravityPublic.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityType
         /// </summary>
-        [DataMember(Name="entity_type", EmitDefaultValue=false)]
+        [DataMember(Name = "entity_type", EmitDefaultValue = false)]
         public string EntityType { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets AssetType
         /// </summary>
-        [DataMember(Name="asset_type", EmitDefaultValue=false)]
+        [DataMember(Name = "asset_type", EmitDefaultValue = false)]
         public string AssetType { get; set; }
 
 
         /// <summary>
         /// Gets or Sets Duplicates
         /// </summary>
-        [DataMember(Name="duplicates", EmitDefaultValue=false)]
+        [DataMember(Name = "duplicates", EmitDefaultValue = false)]
         public List<string> Duplicates { get; set; }
 
         /// <summary>
         /// Gets or Sets TextContent
         /// </summary>
-        [DataMember(Name="text_content", EmitDefaultValue=false)]
+        [DataMember(Name = "text_content", EmitDefaultValue = false)]
         public string TextContent { get; set; }
 
         /// <summary>
         /// Gets or Sets AiGroups
         /// </summary>
-        [DataMember(Name="ai_groups", EmitDefaultValue=false)]
+        [DataMember(Name = "ai_groups", EmitDefaultValue = false)]
         public List<ArtificialIntelligenceGroup> AiGroups { get; set; }
 
         /// <summary>
         /// Gets or Sets Keywords
         /// </summary>
-        [DataMember(Name="keywords", EmitDefaultValue=false)]
+        [DataMember(Name = "keywords", EmitDefaultValue = false)]
         public List<string> Keywords { get; set; }
 
         /// <summary>
         /// Gets or Sets OrigBlob
         /// </summary>
-        [DataMember(Name="orig_blob", EmitDefaultValue=false)]
+        [DataMember(Name = "orig_blob", EmitDefaultValue = false)]
         public AssetBlob OrigBlob { get; set; }
 
         /// <summary>
         /// Gets or Sets Blobs
         /// </summary>
-        [DataMember(Name="blobs", EmitDefaultValue=false)]
+        [DataMember(Name = "blobs", EmitDefaultValue = false)]
         public List<AssetBlob> Blobs { get; set; }
 
         /// <summary>
         /// Gets or Sets Collections
         /// </summary>
-        [DataMember(Name="collections", EmitDefaultValue=false)]
+        [DataMember(Name = "collections", EmitDefaultValue = false)]
         public List<string> Collections { get; set; }
 
         /// <summary>
         /// Gets or Sets FailedReason
         /// </summary>
-        [DataMember(Name="failed_reason", EmitDefaultValue=false)]
+        [DataMember(Name = "failed_reason", EmitDefaultValue = false)]
         public string FailedReason { get; set; }
 
         /// <summary>
         /// Gets or Sets Permissions
         /// </summary>
-        [DataMember(Name="permissions", EmitDefaultValue=false)]
+        [DataMember(Name = "permissions", EmitDefaultValue = false)]
         public List<CollectionPermission> Permissions { get; set; }
 
         /// <summary>
         /// Gets or Sets RegionOfOrigin
         /// </summary>
-        [DataMember(Name="region_of_origin", EmitDefaultValue=false)]
+        [DataMember(Name = "region_of_origin", EmitDefaultValue = false)]
         public string RegionOfOrigin { get; set; }
 
         /// <summary>
         /// Gets or Sets Availability
         /// </summary>
-        [DataMember(Name="availability", EmitDefaultValue=false)]
+        [DataMember(Name = "availability", EmitDefaultValue = false)]
         public string Availability { get; set; }
 
         /// <summary>
         /// Gets or Sets AvailableFrom
         /// </summary>
-        [DataMember(Name="available_from", EmitDefaultValue=true)]
+        [DataMember(Name = "available_from", EmitDefaultValue = true)]
         public DateTime? AvailableFrom { get; set; }
 
         /// <summary>
         /// Gets or Sets AvailableTo
         /// </summary>
-        [DataMember(Name="available_to", EmitDefaultValue=true)]
+        [DataMember(Name = "available_to", EmitDefaultValue = true)]
         public DateTime? AvailableTo { get; set; }
 
         /// <summary>
         /// Gets or Sets Custom
         /// </summary>
-        [DataMember(Name="custom", EmitDefaultValue=false)]
+        [DataMember(Name = "custom", EmitDefaultValue = false)]
         public Dictionary<string, Object> Custom { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<CollTypeItem> Items { get; set; }
 
         /// <summary>
         /// Gets or Sets Translations
         /// </summary>
-        [DataMember(Name="translations", EmitDefaultValue=false)]
-        public Dictionary<string, Dictionary> Translations { get; set; }
+        [DataMember(Name = "translations", EmitDefaultValue = false)]
+        public Dictionary<string, Dictionary<string, object>> Translations { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets AddProperties
         /// </summary>
-        [DataMember(Name="add_properties", EmitDefaultValue=false)]
+        [DataMember(Name = "add_properties", EmitDefaultValue = false)]
         public Dictionary<string, Object> AddProperties { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name="created_date", EmitDefaultValue=true)]
+        [DataMember(Name = "created_date", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name="created_by", EmitDefaultValue=false)]
+        [DataMember(Name = "created_by", EmitDefaultValue = false)]
         public string CreatedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        [DataMember(Name="modified_date", EmitDefaultValue=true)]
+        [DataMember(Name = "modified_date", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedBy
         /// </summary>
-        [DataMember(Name="modified_by", EmitDefaultValue=false)]
+        [DataMember(Name = "modified_by", EmitDefaultValue = false)]
         public string ModifiedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets Pk
         /// </summary>
-        [DataMember(Name="pk", EmitDefaultValue=false)]
+        [DataMember(Name = "pk", EmitDefaultValue = false)]
         public string Pk { get; set; }
 
         /// <summary>
         /// Gets or Sets Etag
         /// </summary>
-        [DataMember(Name="_etag", EmitDefaultValue=false)]
+        [DataMember(Name = "_etag", EmitDefaultValue = false)]
         public string Etag { get; set; }
 
         /// <summary>
@@ -380,162 +380,162 @@ namespace AgravityPublic.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.EntityType == input.EntityType ||
                     (this.EntityType != null &&
                     this.EntityType.Equals(input.EntityType))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.AssetType == input.AssetType ||
                     (this.AssetType != null &&
                     this.AssetType.Equals(input.AssetType))
-                ) && 
+                ) &&
                 (
                     this.Access == input.Access ||
                     (this.Access != null &&
                     this.Access.Equals(input.Access))
-                ) && 
+                ) &&
                 (
                     this.Duplicates == input.Duplicates ||
                     this.Duplicates != null &&
                     input.Duplicates != null &&
                     this.Duplicates.SequenceEqual(input.Duplicates)
-                ) && 
+                ) &&
                 (
                     this.TextContent == input.TextContent ||
                     (this.TextContent != null &&
                     this.TextContent.Equals(input.TextContent))
-                ) && 
+                ) &&
                 (
                     this.AiGroups == input.AiGroups ||
                     this.AiGroups != null &&
                     input.AiGroups != null &&
                     this.AiGroups.SequenceEqual(input.AiGroups)
-                ) && 
+                ) &&
                 (
                     this.Keywords == input.Keywords ||
                     this.Keywords != null &&
                     input.Keywords != null &&
                     this.Keywords.SequenceEqual(input.Keywords)
-                ) && 
+                ) &&
                 (
                     this.OrigBlob == input.OrigBlob ||
                     (this.OrigBlob != null &&
                     this.OrigBlob.Equals(input.OrigBlob))
-                ) && 
+                ) &&
                 (
                     this.Blobs == input.Blobs ||
                     this.Blobs != null &&
                     input.Blobs != null &&
                     this.Blobs.SequenceEqual(input.Blobs)
-                ) && 
+                ) &&
                 (
                     this.Collections == input.Collections ||
                     this.Collections != null &&
                     input.Collections != null &&
                     this.Collections.SequenceEqual(input.Collections)
-                ) && 
+                ) &&
                 (
                     this.FailedReason == input.FailedReason ||
                     (this.FailedReason != null &&
                     this.FailedReason.Equals(input.FailedReason))
-                ) && 
+                ) &&
                 (
                     this.Permissions == input.Permissions ||
                     this.Permissions != null &&
                     input.Permissions != null &&
                     this.Permissions.SequenceEqual(input.Permissions)
-                ) && 
+                ) &&
                 (
                     this.RegionOfOrigin == input.RegionOfOrigin ||
                     (this.RegionOfOrigin != null &&
                     this.RegionOfOrigin.Equals(input.RegionOfOrigin))
-                ) && 
+                ) &&
                 (
                     this.Availability == input.Availability ||
                     (this.Availability != null &&
                     this.Availability.Equals(input.Availability))
-                ) && 
+                ) &&
                 (
                     this.AvailableFrom == input.AvailableFrom ||
                     (this.AvailableFrom != null &&
                     this.AvailableFrom.Equals(input.AvailableFrom))
-                ) && 
+                ) &&
                 (
                     this.AvailableTo == input.AvailableTo ||
                     (this.AvailableTo != null &&
                     this.AvailableTo.Equals(input.AvailableTo))
-                ) && 
+                ) &&
                 (
                     this.Custom == input.Custom ||
                     this.Custom != null &&
                     input.Custom != null &&
                     this.Custom.SequenceEqual(input.Custom)
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&
                     input.Items != null &&
                     this.Items.SequenceEqual(input.Items)
-                ) && 
+                ) &&
                 (
                     this.Translations == input.Translations ||
                     this.Translations != null &&
                     input.Translations != null &&
                     this.Translations.SequenceEqual(input.Translations)
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.AddProperties == input.AddProperties ||
                     this.AddProperties != null &&
                     input.AddProperties != null &&
                     this.AddProperties.SequenceEqual(input.AddProperties)
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.CreatedBy == input.CreatedBy ||
                     (this.CreatedBy != null &&
                     this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
+                ) &&
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
+                ) &&
                 (
                     this.ModifiedBy == input.ModifiedBy ||
                     (this.ModifiedBy != null &&
                     this.ModifiedBy.Equals(input.ModifiedBy))
-                ) && 
+                ) &&
                 (
                     this.Pk == input.Pk ||
                     (this.Pk != null &&
                     this.Pk.Equals(input.Pk))
-                ) && 
+                ) &&
                 (
                     this.Etag == input.Etag ||
                     (this.Etag != null &&

@@ -28,7 +28,7 @@ namespace AgravityPublic.Model
     /// ArtificialIntelligenceGroup
     /// </summary>
     [DataContract]
-    public partial class ArtificialIntelligenceGroup :  IEquatable<ArtificialIntelligenceGroup>, IValidatableObject
+    public partial class ArtificialIntelligenceGroup : IEquatable<ArtificialIntelligenceGroup>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArtificialIntelligenceGroup" /> class.
@@ -37,7 +37,7 @@ namespace AgravityPublic.Model
         /// <param name="url">url.</param>
         /// <param name="minConfidence">minConfidence.</param>
         /// <param name="values">values.</param>
-        public ArtificialIntelligenceGroup(string origin = default(string), string url = default(string), double? minConfidence = default(double?), List<Dictionary> values = default(List<Dictionary>))
+        public ArtificialIntelligenceGroup(string origin = default(string), string url = default(string), double? minConfidence = default(double?), List<Dictionary<string, object>> values = default(List<Dictionary<string, object>>))
         {
             this.MinConfidence = minConfidence;
             this.Origin = origin;
@@ -49,26 +49,26 @@ namespace AgravityPublic.Model
         /// <summary>
         /// Gets or Sets Origin
         /// </summary>
-        [DataMember(Name="origin", EmitDefaultValue=false)]
+        [DataMember(Name = "origin", EmitDefaultValue = false)]
         public string Origin { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets MinConfidence
         /// </summary>
-        [DataMember(Name="min_confidence", EmitDefaultValue=true)]
+        [DataMember(Name = "min_confidence", EmitDefaultValue = true)]
         public double? MinConfidence { get; set; }
 
         /// <summary>
         /// Gets or Sets Values
         /// </summary>
-        [DataMember(Name="values", EmitDefaultValue=false)]
-        public List<Dictionary> Values { get; set; }
+        [DataMember(Name = "values", EmitDefaultValue = false)]
+        public List<Dictionary<string, object>> Values { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -115,22 +115,22 @@ namespace AgravityPublic.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Origin == input.Origin ||
                     (this.Origin != null &&
                     this.Origin.Equals(input.Origin))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     this.MinConfidence == input.MinConfidence ||
                     (this.MinConfidence != null &&
                     this.MinConfidence.Equals(input.MinConfidence))
-                ) && 
+                ) &&
                 (
                     this.Values == input.Values ||
                     this.Values != null &&

@@ -28,7 +28,7 @@ namespace AgravityPublic.Model
     /// StaticDefinedList
     /// </summary>
     [DataContract]
-    public partial class StaticDefinedList :  IEquatable<StaticDefinedList>, IValidatableObject
+    public partial class StaticDefinedList : IEquatable<StaticDefinedList>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StaticDefinedList" /> class.
@@ -47,7 +47,7 @@ namespace AgravityPublic.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public StaticDefinedList(string id = default(string), string entityType = default(string), Dictionary<string, Dictionary> translations = default(Dictionary<string, Dictionary>), List<string> values = default(List<string>), string name = default(string), string description = default(string), Dictionary<string, Object> addProperties = default(Dictionary<string, Object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public StaticDefinedList(string id = default(string), string entityType = default(string), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), List<string> values = default(List<string>), string name = default(string), string description = default(string), Dictionary<string, Object> addProperties = default(Dictionary<string, Object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
@@ -70,85 +70,85 @@ namespace AgravityPublic.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityType
         /// </summary>
-        [DataMember(Name="entity_type", EmitDefaultValue=false)]
+        [DataMember(Name = "entity_type", EmitDefaultValue = false)]
         public string EntityType { get; set; }
 
         /// <summary>
         /// Gets or Sets Translations
         /// </summary>
-        [DataMember(Name="translations", EmitDefaultValue=false)]
-        public Dictionary<string, Dictionary> Translations { get; set; }
+        [DataMember(Name = "translations", EmitDefaultValue = false)]
+        public Dictionary<string, Dictionary<string, object>> Translations { get; set; }
 
         /// <summary>
         /// Gets or Sets Values
         /// </summary>
-        [DataMember(Name="values", EmitDefaultValue=false)]
+        [DataMember(Name = "values", EmitDefaultValue = false)]
         public List<string> Values { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets AddProperties
         /// </summary>
-        [DataMember(Name="add_properties", EmitDefaultValue=false)]
+        [DataMember(Name = "add_properties", EmitDefaultValue = false)]
         public Dictionary<string, Object> AddProperties { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name="created_date", EmitDefaultValue=true)]
+        [DataMember(Name = "created_date", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name="created_by", EmitDefaultValue=false)]
+        [DataMember(Name = "created_by", EmitDefaultValue = false)]
         public string CreatedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        [DataMember(Name="modified_date", EmitDefaultValue=true)]
+        [DataMember(Name = "modified_date", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedBy
         /// </summary>
-        [DataMember(Name="modified_by", EmitDefaultValue=false)]
+        [DataMember(Name = "modified_by", EmitDefaultValue = false)]
         public string ModifiedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets Pk
         /// </summary>
-        [DataMember(Name="pk", EmitDefaultValue=false)]
+        [DataMember(Name = "pk", EmitDefaultValue = false)]
         public string Pk { get; set; }
 
         /// <summary>
         /// Gets or Sets Etag
         /// </summary>
-        [DataMember(Name="_etag", EmitDefaultValue=false)]
+        [DataMember(Name = "_etag", EmitDefaultValue = false)]
         public string Etag { get; set; }
 
         /// <summary>
@@ -206,75 +206,75 @@ namespace AgravityPublic.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.EntityType == input.EntityType ||
                     (this.EntityType != null &&
                     this.EntityType.Equals(input.EntityType))
-                ) && 
+                ) &&
                 (
                     this.Translations == input.Translations ||
                     this.Translations != null &&
                     input.Translations != null &&
                     this.Translations.SequenceEqual(input.Translations)
-                ) && 
+                ) &&
                 (
                     this.Values == input.Values ||
                     this.Values != null &&
                     input.Values != null &&
                     this.Values.SequenceEqual(input.Values)
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.AddProperties == input.AddProperties ||
                     this.AddProperties != null &&
                     input.AddProperties != null &&
                     this.AddProperties.SequenceEqual(input.AddProperties)
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.CreatedBy == input.CreatedBy ||
                     (this.CreatedBy != null &&
                     this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
+                ) &&
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
+                ) &&
                 (
                     this.ModifiedBy == input.ModifiedBy ||
                     (this.ModifiedBy != null &&
                     this.ModifiedBy.Equals(input.ModifiedBy))
-                ) && 
+                ) &&
                 (
                     this.Pk == input.Pk ||
                     (this.Pk != null &&
                     this.Pk.Equals(input.Pk))
-                ) && 
+                ) &&
                 (
                     this.Etag == input.Etag ||
                     (this.Etag != null &&

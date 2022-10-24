@@ -1,0 +1,178 @@
+# AgravityPublic.Api.PublicWebAppDataApi
+
+All URIs are relative to *http://localhost:7072/api*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**HttpGetDataCollectionType**](PublicWebAppDataApi.md#httpgetdatacollectiontype) | **GET** /data/collectiontype/{id} | 
+[**HttpGetWebAppData**](PublicWebAppDataApi.md#httpgetwebappdata) | **GET** /webappdata/{id} | 
+
+
+
+## HttpGetDataCollectionType
+
+> GroupAllAppData HttpGetDataCollectionType (string id)
+
+
+
+This returns all collections and assets from the given collection type.
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using AgravityPublic.Api;
+using AgravityPublic.Client;
+using AgravityPublic.Model;
+
+namespace Example
+{
+    public class HttpGetDataCollectionTypeExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicWebAppDataApi(Configuration.Default);
+            var id = id_example;  // string | The ID of the collection type for which this web data should be prepared.
+
+            try
+            {
+                GroupAllAppData result = apiInstance.HttpGetDataCollectionType(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling PublicWebAppDataApi.HttpGetDataCollectionType: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The ID of the collection type for which this web data should be prepared. | 
+
+### Return type
+
+[**GroupAllAppData**](GroupAllAppData.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | This returns all collections and assets from the given collection type. |  -  |
+| **400** | Unknown request method (Code: 2e7570d3-7667-4bc9-89ea-f5d6f5aa84c0) |  -  |
+| **404** | Collection Type not found - Never existed, not a collection type or already deleted. (Code: 8f939f77-1ba9-40b7-905e-bef8ddc720a1) or the web app data was never created (POST). (Code: 210910ed-68e8-4837-a58f-bfce0591cb49) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## HttpGetWebAppData
+
+> AllWebAppData HttpGetWebAppData (string id)
+
+
+
+This lists all elements of a given collection which can be used by the web frontend. It includes structure and all assets. All coming live from database.
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using AgravityPublic.Api;
+using AgravityPublic.Client;
+using AgravityPublic.Model;
+
+namespace Example
+{
+    public class HttpGetWebAppDataExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicWebAppDataApi(Configuration.Default);
+            var id = id_example;  // string | The ID of the collection for which this web data should be prepared.
+
+            try
+            {
+                AllWebAppData result = apiInstance.HttpGetWebAppData(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling PublicWebAppDataApi.HttpGetWebAppData: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The ID of the collection for which this web data should be prepared. | 
+
+### Return type
+
+[**AllWebAppData**](AllWebAppData.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | This lists all elements which should be used by the web frontend. |  -  |
+| **400** | Update failed. (Code: e85183ec-6183-4329-a74f-6ceb963967a3) |  -  |
+| **404** | Collection not found - Never existed, not a collection or already deleted. (Code: 1d6325bf-7c1c-41ae-ba95-e41dd037a29f) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+

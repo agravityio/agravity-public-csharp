@@ -1,0 +1,93 @@
+# AgravityPublic.Api.PublicPublishingApi
+
+All URIs are relative to *http://localhost:7072/api*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**HttpPublishedAssetsGetAll**](PublicPublishingApi.md#httppublishedassetsgetall) | **GET** /publish | 
+
+
+
+## HttpPublishedAssetsGetAll
+
+> PublishEntity HttpPublishedAssetsGetAll (string cid = null, bool? incldescendants = null)
+
+
+
+This endpoint lists all the published assets which are stored in the database
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using AgravityPublic.Api;
+using AgravityPublic.Client;
+using AgravityPublic.Model;
+
+namespace Example
+{
+    public class HttpPublishedAssetsGetAllExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicPublishingApi(Configuration.Default);
+            var cid = cid_example;  // string | Filter response for collection (optional) 
+            var incldescendants = true;  // bool? | Include collections further down in hierarchy (optional) 
+
+            try
+            {
+                PublishEntity result = apiInstance.HttpPublishedAssetsGetAll(cid, incldescendants);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling PublicPublishingApi.HttpPublishedAssetsGetAll: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cid** | **string**| Filter response for collection | [optional] 
+ **incldescendants** | **bool?**| Include collections further down in hierarchy | [optional] 
+
+### Return type
+
+[**PublishEntity**](PublishEntity.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the all published assets as . |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+

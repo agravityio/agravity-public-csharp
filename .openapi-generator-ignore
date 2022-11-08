@@ -22,4 +22,19 @@
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
 
-# generated with command: npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp -o . --additional-properties=packageName=AgravityPublic,targetFramework=net48
+# generated with command: 
+# npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp -o . --additional-properties=packageName=AgravityPublic,targetFramework=net48
+
+# replace Dictionary> with Dictionary<string, Object>> in the generated code
+
+# build files (with powershell)
+# .\build.bat
+
+# build nuget package
+# nuget pack -Build -OutputDirectory out .\src\AgravityPublic\AgravityPublic.csproj -Version 4.6.1
+
+# Set API Key (once)
+# nuget setApiKey xyz
+
+# Update Package
+# dotnet nuget push .\out\AgravityPublic.4.7.2.nupkg -s https://api.nuget.org/v3/index.json

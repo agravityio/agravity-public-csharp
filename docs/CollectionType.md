@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **EntityType** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Items** | [**List&lt;CollTypeItem&gt;**](CollTypeItem.md) |  | [optional] 
-**Translations** | **Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt;** |  | [optional] 
+**Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
 **Order** | **int?** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **AddProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 

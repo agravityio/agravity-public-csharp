@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **AvailableTo** | **DateTime?** |  | [optional] 
 **Custom** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Items** | [**List&lt;CollTypeItem&gt;**](CollTypeItem.md) |  | [optional] 
-**Translations** | **Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt;** |  | [optional] 
+**Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **AddProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Status** | **string** |  | [optional] 

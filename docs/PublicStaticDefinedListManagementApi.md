@@ -89,7 +89,7 @@ This endpoint does not need any parameter.
 
 ## HttpStaticDefinedListsGetById
 
-> List&lt;StaticDefinedList&gt; HttpStaticDefinedListsGetById (string id)
+> StaticDefinedList HttpStaticDefinedListsGetById (string id)
 
 
 
@@ -121,7 +121,7 @@ namespace Example
 
             try
             {
-                List<StaticDefinedList> result = apiInstance.HttpStaticDefinedListsGetById(id);
+                StaticDefinedList result = apiInstance.HttpStaticDefinedListsGetById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;StaticDefinedList&gt;**](StaticDefinedList.md)
+[**StaticDefinedList**](StaticDefinedList.md)
 
 ### Authorization
 

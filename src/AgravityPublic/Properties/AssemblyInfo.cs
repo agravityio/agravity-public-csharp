@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OpenAPI Library")]
-[assembly: AssemblyDescription("A library generated from a OpenAPI doc")]
+[assembly: AssemblyTitle("Agravity GlobalDAM Public API")]
+[assembly: AssemblyDescription("The public API to access GlobalDAM headless")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("OpenAPI")]
-[assembly: AssemblyProduct("OpenAPILibrary")]
-[assembly: AssemblyCopyright("No Copyright")]
+[assembly: AssemblyCompany("Agravity GmbH")]
+[assembly: AssemblyProduct("Agravity GlobalDAM")]
+[assembly: AssemblyCopyright("Agravity GmbH")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -28,5 +28,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0")]
-[assembly: AssemblyFileVersion("1.0.0")]
+[assembly: AssemblyVersion("4.7.2")]
+[assembly: AssemblyFileVersion("4.7.2")]

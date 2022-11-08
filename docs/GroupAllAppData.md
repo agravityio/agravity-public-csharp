@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Collections** | **List&lt;Collection&gt;** |  | [optional] 
 **Assets** | [**List&lt;Asset&gt;**](Asset.md) |  | [optional] 
 **CreatedDate** | **DateTime** |  | [optional] 
-**AddInfo** | **List&lt;Dictionary&lt;string, object&gt;&gt;** |  | [optional] 
+**AddInfo** | **List&lt;Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
 **Dist** | [**DistZipResponse**](DistZipResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## HttpTranslationsById
 
-> Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt; HttpTranslationsById (string id, bool? items = null)
+> Dictionary&lt;string, Dictionary&gt; HttpTranslationsById (string id, bool? items = null)
 
 
 
@@ -45,7 +45,7 @@ namespace Example
 
             try
             {
-                Dictionary<string, Dictionary<string,object>> result = apiInstance.HttpTranslationsById(id, items);
+                Dictionary<string, Dictionary> result = apiInstance.HttpTranslationsById(id, items);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Dictionary<string, Dictionary<string,object>>**
+**Dictionary<string, Dictionary>**
 
 ### Authorization
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ## HttpTranslationsByIdFilterByCustomField
 
-> Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt; HttpTranslationsByIdFilterByCustomField (string id, string customField)
+> Dictionary&lt;string, Dictionary&gt; HttpTranslationsByIdFilterByCustomField (string id, string customField)
 
 
 
@@ -131,7 +131,7 @@ namespace Example
 
             try
             {
-                Dictionary<string, Dictionary<string,object>> result = apiInstance.HttpTranslationsByIdFilterByCustomField(id, customField);
+                Dictionary<string, Dictionary> result = apiInstance.HttpTranslationsByIdFilterByCustomField(id, customField);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Dictionary<string, Dictionary<string,object>>**
+**Dictionary<string, Dictionary>**
 
 ### Authorization
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ## HttpTranslationsByIdFilterByProperty
 
-> Dictionary&lt;string, Dictionary&lt;string,object&gt;&gt; HttpTranslationsByIdFilterByProperty (string id, string property, bool? items = null)
+> Dictionary&lt;string, Dictionary&gt; HttpTranslationsByIdFilterByProperty (string id, string property, bool? items = null)
 
 
 
@@ -218,7 +218,7 @@ namespace Example
 
             try
             {
-                Dictionary<string, Dictionary<string,object>> result = apiInstance.HttpTranslationsByIdFilterByProperty(id, property, items);
+                Dictionary<string, Dictionary> result = apiInstance.HttpTranslationsByIdFilterByProperty(id, property, items);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Dictionary<string, Dictionary<string,object>>**
+**Dictionary<string, Dictionary>**
 
 ### Authorization
 

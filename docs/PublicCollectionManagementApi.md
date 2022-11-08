@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**HttpCollectionsGetDescendantsTreeOfId**](PublicCollectionManagementApi.md#httpcollectionsgetdescendantstreeofid) | **GET** /collections/{id}/descendants | 
 [**HttpCollectionsGetTreeAncestorsOfId**](PublicCollectionManagementApi.md#httpcollectionsgettreeancestorsofid) | **GET** /collections/{id}/ancestors | 
 [**HttpGetCollectionPreviewsById**](PublicCollectionManagementApi.md#httpgetcollectionpreviewsbyid) | **GET** /collections/{id}/previews | 
+[**HttpPublicCollectionsUpdateById**](PublicCollectionManagementApi.md#httppubliccollectionsupdatebyid) | **POST** /collections/{id} | 
 
 
 
@@ -515,6 +516,92 @@ Name | Type | Description  | Notes
 | **200** | Returns a generated png image as byte array. |  -  |
 | **404** | If the collection with the ID was not found. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## HttpPublicCollectionsUpdateById
+
+> Collection HttpPublicCollectionsUpdateById (string id, Collection collection)
+
+
+
+This endpoint updates the collection. Specific properties could be updated.
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using AgravityPublic.Api;
+using AgravityPublic.Client;
+using AgravityPublic.Model;
+
+namespace Example
+{
+    public class HttpPublicCollectionsUpdateByIdExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicCollectionManagementApi(Configuration.Default);
+            var id = "id_example";  // string | The ID of the collection.
+            var collection = new Collection(); // Collection | The body has to be a valid collection json.Not fitting properties are ignored.
+
+            try
+            {
+                Collection result = apiInstance.HttpPublicCollectionsUpdateById(id, collection);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling PublicCollectionManagementApi.HttpPublicCollectionsUpdateById: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The ID of the collection. | 
+ **collection** | [**Collection**](Collection.md)| The body has to be a valid collection json.Not fitting properties are ignored. | 
+
+### Return type
+
+**Collection**
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the updated collection and it includes all specific properties from collection type. |  -  |
+| **400** | Object is not a valid collection json. Parse error. (Code: 6910ae7e-6aea-4f15-8773-1c168a66d61d)&lt;br&gt;Can not update. Item value of \&quot;{item.name}\&quot; is not of the correct type \&quot;{item.type}\&quot;. (Code: ec1aa2cd-65be-48b9-8972-002561bbe8ef)&lt;br&gt;Can not update. The item \&quot;{item.name}\&quot; is marked as mandatory but no value was given. (Code: 2955994d-010d-4b5c-88e0-af35da5f357f)&lt;br&gt;Validation error parent \&quot;{collection.parent}\&quot; not a collection GUID. (Code: d72d01f0-1809-41fe-85ea-0e423fc8e6f6)&lt;br&gt;Parent \&quot;{collection.parent}\&quot; is not allowed because it has different collection type. (Code: 7dadb5e1-6b2f-4649-bddc-e3bed033d79b)&lt;br&gt;Parent \&quot;{collection.parent}\&quot; for collection not found (Code: 7dadb5e1-6b2f-4649-bddc-e3bed033d79b)&lt;br&gt;Parent \&quot;{collection.parent}\&quot; must not be the same as the child. (Code: fb629d4f-4b1c-41e7-a589-f5da1e6fcaff)&lt;br&gt; |  -  |
+| **404** | If the asset with the ID was not found. |  -  |
+| **401** | Unauthorized. Bearer Token not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#)

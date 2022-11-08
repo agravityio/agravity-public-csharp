@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**HttpAssetUploadFile**](PublicAssetManagementApi.md#httpassetuploadfile) | **POST** /assetsupload | 
 [**HttpAssetsGet**](PublicAssetManagementApi.md#httpassetsget) | **GET** /assets | 
 [**HttpAssetsGetById**](PublicAssetManagementApi.md#httpassetsgetbyid) | **GET** /assets/{id} | 
+[**HttpPublicAssetsUpdateById**](PublicAssetManagementApi.md#httppublicassetsupdatebyid) | **POST** /assets/{id} | 
 
 
 
@@ -192,7 +193,7 @@ Name | Type | Description  | Notes
 
 ## HttpAssetsGetById
 
-> Asset HttpAssetsGetById (string id, string fields = null, bool? expose = null)
+> Asset HttpAssetsGetById (string id, string fields = null, bool? expose = null, bool? uncomplete = null)
 
 
 
@@ -222,11 +223,12 @@ namespace Example
             var apiInstance = new PublicAssetManagementApi(Configuration.Default);
             var id = "id_example";  // string | The ID of the asset.
             var fields = "fields_example";  // string | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional) 
-            var expose = true;  // bool? | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no 'thumbnail' is found.) (optional) 
+            var expose = true;  // bool? | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no 'thumbnail' is found. (optional) 
+            var uncomplete = true;  // bool? | This parameter should be set to 'true' if the uncomplete asset should be shown. (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpAssetsGetById(id, fields, expose);
+                Asset result = apiInstance.HttpAssetsGetById(id, fields, expose, uncomplete);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -247,7 +249,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The ID of the asset. | 
  **fields** | **string**| Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. | [optional] 
- **expose** | **bool?**| This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found.) | [optional] 
+ **expose** | **bool?**| This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. | [optional] 
+ **uncomplete** | **bool?**| This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. | [optional] 
 
 ### Return type
 
@@ -269,6 +272,92 @@ Name | Type | Description  | Notes
 | **200** | Returns the the asset with the given ID include type specific fields. |  -  |
 | **404** | If the asset with the ID was not found. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## HttpPublicAssetsUpdateById
+
+> Asset HttpPublicAssetsUpdateById (string id, Asset asset)
+
+
+
+This endpoint updates one single asset (from ID)
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using AgravityPublic.Api;
+using AgravityPublic.Client;
+using AgravityPublic.Model;
+
+namespace Example
+{
+    public class HttpPublicAssetsUpdateByIdExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicAssetManagementApi(Configuration.Default);
+            var id = "id_example";  // string | The ID of the asset.
+            var asset = new Asset(); // Asset | The body has to contain one of the mentioned elements and a valid json. Not fitting properties are ignored.
+
+            try
+            {
+                Asset result = apiInstance.HttpPublicAssetsUpdateById(id, asset);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling PublicAssetManagementApi.HttpPublicAssetsUpdateById: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The ID of the asset. | 
+ **asset** | [**Asset**](Asset.md)| The body has to contain one of the mentioned elements and a valid json. Not fitting properties are ignored. | 
+
+### Return type
+
+[**Asset**](Asset.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the updated full (depending on asset type) asset including custom fields. |  -  |
+| **400** | A parameter is null. (Code: cea84d3b-ccb5-46c9-9768-11e1f81edf6c)&lt;br&gt;Object is not a valid asset. (Code: ea836a33-0d64-446f-8f67-2c3af564b18e)&lt;br&gt;Error on updating custom items. (Code: 9d044d04-53fb-4b6a-b629-554ad6ea19e2) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **404** | If the asset with the ID was not found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#)

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **CreatedDate** | **DateTime** |  | [optional] 
 **Url** | **string** |  | [optional] 
 **Cdn** | **string** |  | [optional] 
-**Original** | **bool** |  | [optional] 
+**Format** | **string** |  | [optional] 
 **Properties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

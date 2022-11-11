@@ -1,6 +1,6 @@
 ## <a name="recommended-version"></a> Recommended version
 
-The **minimum recommended version is [4.7.2](#4.7.2)**.
+The **minimum recommended version is [4.7.3](#4.7.3)**.
 
 Any known issues detected on that version are listed in the [known issues](#known-issues) section.
 
@@ -11,11 +11,14 @@ Preview features are treated as a separate branch and will not be included in th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## AgravityAPI <a name="4.7.2"/> [4.7.2](https://www.nuget.org/packages/Agravity.Public/4.7.2) (2022-10-31)
+## AgravityAPI <a name="4.7.3"/> [4.7.3](https://www.nuget.org/packages/Agravity.Public/4.7.3) (2022-10-31)
 ---
 > Just version upgrade to match backend
 
-## AgravityAPI 4.7.2 (2022-10-31)
+## AgravityAPI 4.7.2 (2022-11-02)
+---
+> Just version upgrade to match backend
+## AgravityAPI 4.7.1 (2022-10-31)
 ---
 > Just version upgrade to match backend
 

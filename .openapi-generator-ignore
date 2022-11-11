@@ -23,19 +23,19 @@
 #!docs/README.md
 
 # generated with command: 
-# npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp -o . --additional-properties=packageName=Agravity.Public,targetFramework=netstandard2.0,packageVersion=4.7.2
-# npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp-netcore -o . --additional-properties=packageName=Agravity.Public,library=httpclient,targetFramework=netstandard2.0,packageVersion=4.7.2
+# npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp -o . --additional-properties=packageName=Agravity.Public,targetFramework=netstandard2.0,packageVersion=4.7.3
+# npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp-netcore -o . --additional-properties=packageName=Agravity.Public,library=httpclient,targetFramework=netstandard2.0,packageVersion=4.7.3
 
 # replace Dictionary<string, object>> with Dictionary<string, Object>> in the generated code
 
 # build files (with powershell)
-# .\build.bat
+# dotnet build .\src\Agravity.Public\Agravity.Public.csproj -c Release
 
 # build nuget package
-# nuget pack -Build -OutputDirectory out .\src\Agravity.Public\Agravity.Public.csproj -Version 4.7.2
+# nuget pack -Build -OutputDirectory out .\src\Agravity.Public\Agravity.Public.csproj -Version 4.7.3
 
 # Set API Key (once)
 # nuget setApiKey xyz
 
 # Update Package
-# dotnet nuget push .\out\Agravity.Public.4.7.2.nupkg -s https://api.nuget.org/v3/index.json
+# dotnet nuget push .\out\Agravity.Public.4.7.3.nupkg -s https://api.nuget.org/v3/index.json

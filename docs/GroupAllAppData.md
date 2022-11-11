@@ -1,5 +1,4 @@
-
-# AgravityPublic.Model.GroupAllAppData
+# Agravity.Public.Model.GroupAllAppData
 
 ## Properties
 
@@ -12,7 +11,5 @@ Name | Type | Description | Notes
 **AddInfo** | **List&lt;Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
 **Dist** | [**DistZipResponse**](DistZipResponse.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

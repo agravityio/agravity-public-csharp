@@ -1,21 +1,19 @@
-# AgravityPublic.Api.PublicAssetOperationsApi
+# Agravity.Public.Api.PublicAssetOperationsApi
 
 All URIs are relative to *http://localhost:7072/api*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**HttpAssetImageEdit**](PublicAssetOperationsApi.md#httpassetimageedit) | **GET** /assets/{id}/imageedit | 
-[**HttpAssetImageRotateClockwise**](PublicAssetOperationsApi.md#httpassetimagerotateclockwise) | **POST** /assets/{id}/rotate | 
-[**HttpAssetResize**](PublicAssetOperationsApi.md#httpassetresize) | **GET** /assets/{id}/resize | 
-[**HttpAssetsGetSimilarById**](PublicAssetOperationsApi.md#httpassetsgetsimilarbyid) | **GET** /assets/{id}/similar | 
-[**HttpGetAssetBlob**](PublicAssetOperationsApi.md#httpgetassetblob) | **GET** /assets/{id}/blobs | 
-[**HttpGetAssetCollectionsById**](PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections | 
-[**HttpGetAssetDownload**](PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download | 
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**HttpAssetImageEdit**](PublicAssetOperationsApi.md#httpassetimageedit) | **GET** /assets/{id}/imageedit |  |
+| [**HttpAssetImageRotateClockwise**](PublicAssetOperationsApi.md#httpassetimagerotateclockwise) | **POST** /assets/{id}/rotate |  |
+| [**HttpAssetResize**](PublicAssetOperationsApi.md#httpassetresize) | **GET** /assets/{id}/resize |  |
+| [**HttpAssetsGetSimilarById**](PublicAssetOperationsApi.md#httpassetsgetsimilarbyid) | **GET** /assets/{id}/similar |  |
+| [**HttpGetAssetBlob**](PublicAssetOperationsApi.md#httpgetassetblob) | **GET** /assets/{id}/blobs |  |
+| [**HttpGetAssetCollectionsById**](PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections |  |
+| [**HttpGetAssetDownload**](PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download |  |
 
-
-
-## HttpAssetImageEdit
-
+<a name="httpassetimageedit"></a>
+# **HttpAssetImageEdit**
 > System.IO.Stream HttpAssetImageEdit (string id)
 
 
@@ -23,13 +21,12 @@ Method | HTTP request | Description
 This endpoint lets you resize/modify the image asset according to the given parameter(s).
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -37,13 +34,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
+            var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
 
             try
@@ -51,10 +49,10 @@ namespace Example
                 System.IO.Stream result = apiInstance.HttpAssetImageEdit(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetImageEdit: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetImageEdit: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -62,12 +60,30 @@ namespace Example
 }
 ```
 
+#### Using the HttpAssetImageEditWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<System.IO.Stream> response = apiInstance.HttpAssetImageEditWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetImageEditWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The ID of the asset. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
 
 ### Return type
 
@@ -79,8 +95,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: image/xyz, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: image/xyz, application/json
 
 
 ### HTTP response details
@@ -92,14 +108,10 @@ Name | Type | Description  | Notes
 | **404** | The requested item could not be found |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpAssetImageRotateClockwise
-
+<a name="httpassetimagerotateclockwise"></a>
+# **HttpAssetImageRotateClockwise**
 > Asset HttpAssetImageRotateClockwise (string id)
 
 
@@ -107,13 +119,12 @@ Name | Type | Description  | Notes
 This endpoint lets you rotate an image or video clockwise in 90 degrees steps.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -121,13 +132,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
+            var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
 
             try
@@ -135,10 +147,10 @@ namespace Example
                 Asset result = apiInstance.HttpAssetImageRotateClockwise(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetImageRotateClockwise: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetImageRotateClockwise: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -146,12 +158,30 @@ namespace Example
 }
 ```
 
+#### Using the HttpAssetImageRotateClockwiseWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Asset> response = apiInstance.HttpAssetImageRotateClockwiseWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetImageRotateClockwiseWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The ID of the asset. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
 
 ### Return type
 
@@ -163,8 +193,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -176,14 +206,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpAssetResize
-
+<a name="httpassetresize"></a>
+# **HttpAssetResize**
 > System.IO.Stream HttpAssetResize (string id)
 
 
@@ -191,13 +217,12 @@ Name | Type | Description  | Notes
 This endpoint lets you resize/modify the image asset according to the given parameter(s).
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -205,13 +230,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
+            var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
 
             try
@@ -219,10 +245,10 @@ namespace Example
                 System.IO.Stream result = apiInstance.HttpAssetResize(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetResize: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetResize: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -230,12 +256,30 @@ namespace Example
 }
 ```
 
+#### Using the HttpAssetResizeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<System.IO.Stream> response = apiInstance.HttpAssetResizeWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetResizeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The ID of the asset. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
 
 ### Return type
 
@@ -247,8 +291,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: image/xyz, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: image/xyz, application/json
 
 
 ### HTTP response details
@@ -260,14 +304,10 @@ Name | Type | Description  | Notes
 | **404** | The requested item could not be found |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpAssetsGetSimilarById
-
+<a name="httpassetsgetsimilarbyid"></a>
+# **HttpAssetsGetSimilarById**
 > List&lt;PerHashResult&gt; HttpAssetsGetSimilarById (string id)
 
 
@@ -275,13 +315,12 @@ Name | Type | Description  | Notes
 This endpoint is only for active image-assets (asset-type=image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -289,13 +328,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
+            var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
 
             try
@@ -303,10 +343,10 @@ namespace Example
                 List<PerHashResult> result = apiInstance.HttpAssetsGetSimilarById(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetsGetSimilarById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetsGetSimilarById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -314,12 +354,30 @@ namespace Example
 }
 ```
 
+#### Using the HttpAssetsGetSimilarByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<PerHashResult>> response = apiInstance.HttpAssetsGetSimilarByIdWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetsGetSimilarByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The ID of the asset. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
 
 ### Return type
 
@@ -331,8 +389,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -343,14 +401,10 @@ Name | Type | Description  | Notes
 | **404** | The requested item could not be found |  -  |
 | **422** | The requested item does not have a value |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpGetAssetBlob
-
+<a name="httpgetassetblob"></a>
+# **HttpGetAssetBlob**
 > AssetBlob HttpGetAssetBlob (string id, string c)
 
 
@@ -358,13 +412,12 @@ Name | Type | Description  | Notes
 This endpoint checks, if an asset exists and returns the url for the requested blob.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -372,13 +425,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
+            var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
             var c = "c_example";  // string | \"t\" for thumbnail (default); \"o\" for optimized; \"i\" for internal.
 
@@ -387,10 +441,10 @@ namespace Example
                 AssetBlob result = apiInstance.HttpGetAssetBlob(id, c);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetAssetBlob: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetAssetBlob: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -398,13 +452,31 @@ namespace Example
 }
 ```
 
+#### Using the HttpGetAssetBlobWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<AssetBlob> response = apiInstance.HttpGetAssetBlobWithHttpInfo(id, c);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetAssetBlobWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The ID of the asset. | 
- **c** | **string**| \&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
+| **c** | **string** | \&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. |  |
 
 ### Return type
 
@@ -416,8 +488,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -428,14 +500,10 @@ Name | Type | Description  | Notes
 | **404** | The requested item could not be found |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpGetAssetCollectionsById
-
+<a name="httpgetassetcollectionsbyid"></a>
+# **HttpGetAssetCollectionsById**
 > List&lt;Collection&gt; HttpGetAssetCollectionsById (string id)
 
 
@@ -443,13 +511,12 @@ Name | Type | Description  | Notes
 Returns all collections of a specific asset.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -457,13 +524,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
+            var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
 
             try
@@ -471,10 +539,10 @@ namespace Example
                 List<Collection> result = apiInstance.HttpGetAssetCollectionsById(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetAssetCollectionsById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetAssetCollectionsById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -482,12 +550,30 @@ namespace Example
 }
 ```
 
+#### Using the HttpGetAssetCollectionsByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<Collection>> response = apiInstance.HttpGetAssetCollectionsByIdWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetAssetCollectionsByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The ID of the asset. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
 
 ### Return type
 
@@ -499,8 +585,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -510,14 +596,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **404** | The requested item could not be found |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpGetAssetDownload
-
+<a name="httpgetassetdownload"></a>
+# **HttpGetAssetDownload**
 > AssetBlob HttpGetAssetDownload (string id, string c = null)
 
 
@@ -525,13 +607,12 @@ Name | Type | Description  | Notes
 This endpoint is similar to GetAssetBlob but with ContentDistribution and filename to let browser download the content.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -539,13 +620,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicAssetOperationsApi(Configuration.Default);
+            var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
             var c = "c_example";  // string | \"t\" for thumbnail (default); \"o\" for optimized; \"i\" for internal. (optional) 
 
@@ -554,10 +636,10 @@ namespace Example
                 AssetBlob result = apiInstance.HttpGetAssetDownload(id, c);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetAssetDownload: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetAssetDownload: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -565,13 +647,31 @@ namespace Example
 }
 ```
 
+#### Using the HttpGetAssetDownloadWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<AssetBlob> response = apiInstance.HttpGetAssetDownloadWithHttpInfo(id, c);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetAssetDownloadWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The ID of the asset. | 
- **c** | **string**| \&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
+| **c** | **string** | \&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. | [optional]  |
 
 ### Return type
 
@@ -583,8 +683,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -595,8 +695,5 @@ Name | Type | Description  | Notes
 | **404** | The requested item could not be found |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

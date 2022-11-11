@@ -1,15 +1,13 @@
-# AgravityPublic.Api.PublicSearchManagementApi
+# Agravity.Public.Api.PublicSearchManagementApi
 
 All URIs are relative to *http://localhost:7072/api*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**HttpGlobalSearch**](PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search | 
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**HttpGlobalSearch**](PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search |  |
 
-
-
-## HttpGlobalSearch
-
+<a name="httpglobalsearch"></a>
+# **HttpGlobalSearch**
 > SearchResult HttpGlobalSearch (string s, int? limit = null, string collectiontypeid = null, string collectionid = null, string mode = null, bool? expose = null, string filter = null, string orderby = null)
 
 
@@ -17,13 +15,12 @@ Method | HTTP request | Description
 This endpoint returns a configured max amount of results for search terms.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -31,13 +28,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicSearchManagementApi(Configuration.Default);
+            var apiInstance = new PublicSearchManagementApi(config);
             var s = "s_example";  // string | The search string which should be found.
             var limit = 56;  // int? | How many results should be returend. 0 is backend limit. (optional) 
             var collectiontypeid = "collectiontypeid_example";  // string | Limits the result on all collections from the given collectiontypeid parameter. (optional) 
@@ -52,10 +50,10 @@ namespace Example
                 SearchResult result = apiInstance.HttpGlobalSearch(s, limit, collectiontypeid, collectionid, mode, expose, filter, orderby);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicSearchManagementApi.HttpGlobalSearch: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicSearchManagementApi.HttpGlobalSearch: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -63,19 +61,37 @@ namespace Example
 }
 ```
 
+#### Using the HttpGlobalSearchWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<SearchResult> response = apiInstance.HttpGlobalSearchWithHttpInfo(s, limit, collectiontypeid, collectionid, mode, expose, filter, orderby);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicSearchManagementApi.HttpGlobalSearchWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **s** | **string**| The search string which should be found. | 
- **limit** | **int?**| How many results should be returend. 0 is backend limit. | [optional] 
- **collectiontypeid** | **string**| Limits the result on all collections from the given collectiontypeid parameter. | [optional] 
- **collectionid** | **string**| Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. | [optional] 
- **mode** | **string**| Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) | [optional] 
- **expose** | **bool?**| This will expose the thumbnail asset blob incl. URL with SAS Token. | [optional] 
- **filter** | **string**| Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) | [optional] 
- **orderby** | **string**| Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **s** | **string** | The search string which should be found. |  |
+| **limit** | **int?** | How many results should be returend. 0 is backend limit. | [optional]  |
+| **collectiontypeid** | **string** | Limits the result on all collections from the given collectiontypeid parameter. | [optional]  |
+| **collectionid** | **string** | Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. | [optional]  |
+| **mode** | **string** | Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) | [optional]  |
+| **expose** | **bool?** | This will expose the thumbnail asset blob incl. URL with SAS Token. | [optional]  |
+| **filter** | **string** | Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) | [optional]  |
+| **orderby** | **string** | Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) | [optional]  |
 
 ### Return type
 
@@ -87,8 +103,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -99,8 +115,5 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,5 +1,4 @@
-
-# AgravityPublic.Model.DataResult
+# Agravity.Public.Model.DataResult
 
 ## Properties
 
@@ -10,7 +9,5 @@ Name | Type | Description | Notes
 **Collection** | **List&lt;Collection&gt;** |  | [optional] 
 **SumCollectionResults** | **int** |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

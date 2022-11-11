@@ -1,30 +1,27 @@
-# AgravityPublic.Api.PublicAssetManagementApi
+# Agravity.Public.Api.PublicAssetManagementApi
 
 All URIs are relative to *http://localhost:7072/api*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**HttpAssetUploadFile**](PublicAssetManagementApi.md#httpassetuploadfile) | **POST** /assetsupload | 
-[**HttpAssetsGet**](PublicAssetManagementApi.md#httpassetsget) | **GET** /assets | 
-[**HttpAssetsGetById**](PublicAssetManagementApi.md#httpassetsgetbyid) | **GET** /assets/{id} | 
-[**HttpPublicAssetsUpdateById**](PublicAssetManagementApi.md#httppublicassetsupdatebyid) | **POST** /assets/{id} | 
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**HttpAssetUploadFile**](PublicAssetManagementApi.md#httpassetuploadfile) | **POST** /assetsupload |  |
+| [**HttpAssetsGet**](PublicAssetManagementApi.md#httpassetsget) | **GET** /assets |  |
+| [**HttpAssetsGetById**](PublicAssetManagementApi.md#httpassetsgetbyid) | **GET** /assets/{id} |  |
+| [**HttpPublicAssetsUpdateById**](PublicAssetManagementApi.md#httppublicassetsupdatebyid) | **POST** /assets/{id} |  |
 
-
-
-## HttpAssetUploadFile
-
+<a name="httpassetuploadfile"></a>
+# **HttpAssetUploadFile**
 > Asset HttpAssetUploadFile (string name = null, string collectionId = null, System.IO.Stream file = null)
 
 
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -32,13 +29,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicAssetManagementApi(Configuration.Default);
+            var apiInstance = new PublicAssetManagementApi(config);
             var name = "name_example";  // string |  (optional) 
             var collectionId = "collectionId_example";  // string |  (optional) 
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
@@ -48,10 +46,10 @@ namespace Example
                 Asset result = apiInstance.HttpAssetUploadFile(name, collectionId, file);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetUploadFile: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetUploadFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -59,14 +57,32 @@ namespace Example
 }
 ```
 
+#### Using the HttpAssetUploadFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Asset> response = apiInstance.HttpAssetUploadFileWithHttpInfo(name, collectionId, file);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetUploadFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **string**|  | [optional] 
- **collectionId** | **string**|  | [optional] 
- **file** | **System.IO.Stream**|  | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **name** | **string** |  | [optional]  |
+| **collectionId** | **string** |  | [optional]  |
+| **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 
 ### Return type
 
@@ -78,8 +94,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -90,14 +106,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpAssetsGet
-
+<a name="httpassetsget"></a>
+# **HttpAssetsGet**
 > AssetPageResult HttpAssetsGet (string collectionid, string fields = null, bool? expose = null, string continuationToken = null, int? limit = null, string orderby = null, bool? techdata = null)
 
 
@@ -105,13 +117,12 @@ Name | Type | Description  | Notes
 This endpoint lists all the assets, which are stored in the database and not deleted (status \"A\")
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -119,13 +130,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicAssetManagementApi(Configuration.Default);
+            var apiInstance = new PublicAssetManagementApi(config);
             var collectionid = "collectionid_example";  // string | The ID of the collection where these assets should come from. (\"empty\" is allowed)
             var fields = "fields_example";  // string | This limits the fields which are returned, separated by comma (','). Blobs can be limited with '.' on their container. (i.e. fields=blobs.thumbnails). Only if 'thumbnails' is set, the placeholder of this asset type are returned if no thumbnail blob is found. (optional) 
             var expose = true;  // bool? | This indicates if the given blobs should have URLs where these can be requested. (If not limited through 'fields' parameter it will expose all URLs of all blobs.) (optional) 
@@ -139,10 +151,10 @@ namespace Example
                 AssetPageResult result = apiInstance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, techdata);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsGet: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsGet: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -150,18 +162,36 @@ namespace Example
 }
 ```
 
+#### Using the HttpAssetsGetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<AssetPageResult> response = apiInstance.HttpAssetsGetWithHttpInfo(collectionid, fields, expose, continuationToken, limit, orderby, techdata);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsGetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionid** | **string**| The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed) | 
- **fields** | **string**| This limits the fields which are returned, separated by comma (&#39;,&#39;). Blobs can be limited with &#39;.&#39; on their container. (i.e. fields&#x3D;blobs.thumbnails). Only if &#39;thumbnails&#39; is set, the placeholder of this asset type are returned if no thumbnail blob is found. | [optional] 
- **expose** | **bool?**| This indicates if the given blobs should have URLs where these can be requested. (If not limited through &#39;fields&#39; parameter it will expose all URLs of all blobs.) | [optional] 
- **continuationToken** | **string**| Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) | [optional] 
- **limit** | **int?**| This number limits the page result of assets. | [optional] 
- **orderby** | **string**| How the return assets are sorted. Default is property: created_date (newest first). | [optional] 
- **techdata** | **bool?**| This parameter will include the techdata property inside orig_blob. | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionid** | **string** | The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed) |  |
+| **fields** | **string** | This limits the fields which are returned, separated by comma (&#39;,&#39;). Blobs can be limited with &#39;.&#39; on their container. (i.e. fields&#x3D;blobs.thumbnails). Only if &#39;thumbnails&#39; is set, the placeholder of this asset type are returned if no thumbnail blob is found. | [optional]  |
+| **expose** | **bool?** | This indicates if the given blobs should have URLs where these can be requested. (If not limited through &#39;fields&#39; parameter it will expose all URLs of all blobs.) | [optional]  |
+| **continuationToken** | **string** | Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) | [optional]  |
+| **limit** | **int?** | This number limits the page result of assets. | [optional]  |
+| **orderby** | **string** | How the return assets are sorted. Default is property: created_date (newest first). | [optional]  |
+| **techdata** | **bool?** | This parameter will include the techdata property inside orig_blob. | [optional]  |
 
 ### Return type
 
@@ -173,8 +203,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -185,14 +215,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpAssetsGetById
-
+<a name="httpassetsgetbyid"></a>
+# **HttpAssetsGetById**
 > Asset HttpAssetsGetById (string id, string fields = null, bool? expose = null, bool? uncomplete = null)
 
 
@@ -200,13 +226,12 @@ Name | Type | Description  | Notes
 This endpoint returns one single asset (from ID). If the returned asset is from a special asset type (e.g. \"AssetImage\") it returns the full entity.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -214,13 +239,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicAssetManagementApi(Configuration.Default);
+            var apiInstance = new PublicAssetManagementApi(config);
             var id = "id_example";  // string | The ID of the asset.
             var fields = "fields_example";  // string | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional) 
             var expose = true;  // bool? | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no 'thumbnail' is found. (optional) 
@@ -231,10 +257,10 @@ namespace Example
                 Asset result = apiInstance.HttpAssetsGetById(id, fields, expose, uncomplete);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsGetById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsGetById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -242,15 +268,33 @@ namespace Example
 }
 ```
 
+#### Using the HttpAssetsGetByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Asset> response = apiInstance.HttpAssetsGetByIdWithHttpInfo(id, fields, expose, uncomplete);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsGetByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The ID of the asset. | 
- **fields** | **string**| Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. | [optional] 
- **expose** | **bool?**| This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. | [optional] 
- **uncomplete** | **bool?**| This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
+| **fields** | **string** | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. | [optional]  |
+| **expose** | **bool?** | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. | [optional]  |
+| **uncomplete** | **bool?** | This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. | [optional]  |
 
 ### Return type
 
@@ -262,8 +306,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -274,14 +318,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpPublicAssetsUpdateById
-
+<a name="httppublicassetsupdatebyid"></a>
+# **HttpPublicAssetsUpdateById**
 > Asset HttpPublicAssetsUpdateById (string id, Asset asset)
 
 
@@ -289,13 +329,12 @@ Name | Type | Description  | Notes
 This endpoint updates one single asset (from ID)
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -303,13 +342,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicAssetManagementApi(Configuration.Default);
+            var apiInstance = new PublicAssetManagementApi(config);
             var id = "id_example";  // string | The ID of the asset.
             var asset = new Asset(); // Asset | The body has to contain one of the mentioned elements and a valid json. Not fitting properties are ignored.
 
@@ -318,10 +358,10 @@ namespace Example
                 Asset result = apiInstance.HttpPublicAssetsUpdateById(id, asset);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicAssetManagementApi.HttpPublicAssetsUpdateById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicAssetManagementApi.HttpPublicAssetsUpdateById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -329,13 +369,31 @@ namespace Example
 }
 ```
 
+#### Using the HttpPublicAssetsUpdateByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Asset> response = apiInstance.HttpPublicAssetsUpdateByIdWithHttpInfo(id, asset);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetManagementApi.HttpPublicAssetsUpdateByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The ID of the asset. | 
- **asset** | [**Asset**](Asset.md)| The body has to contain one of the mentioned elements and a valid json. Not fitting properties are ignored. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
+| **asset** | [**Asset**](Asset.md) | The body has to contain one of the mentioned elements and a valid json. Not fitting properties are ignored. |  |
 
 ### Return type
 
@@ -347,8 +405,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -360,8 +418,5 @@ Name | Type | Description  | Notes
 | **404** | If the asset with the ID was not found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

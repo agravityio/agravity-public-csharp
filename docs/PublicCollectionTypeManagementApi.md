@@ -1,17 +1,15 @@
-# AgravityPublic.Api.PublicCollectionTypeManagementApi
+# Agravity.Public.Api.PublicCollectionTypeManagementApi
 
 All URIs are relative to *http://localhost:7072/api*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**HttpCollectionTypesGet**](PublicCollectionTypeManagementApi.md#httpcollectiontypesget) | **GET** /collectiontypes | 
-[**HttpCollectionTypesGetById**](PublicCollectionTypeManagementApi.md#httpcollectiontypesgetbyid) | **GET** /collectiontypes/{id} | 
-[**HttpGetCollectionTypeItems**](PublicCollectionTypeManagementApi.md#httpgetcollectiontypeitems) | **GET** /collectiontypesitems | 
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**HttpCollectionTypesGet**](PublicCollectionTypeManagementApi.md#httpcollectiontypesget) | **GET** /collectiontypes |  |
+| [**HttpCollectionTypesGetById**](PublicCollectionTypeManagementApi.md#httpcollectiontypesgetbyid) | **GET** /collectiontypes/{id} |  |
+| [**HttpGetCollectionTypeItems**](PublicCollectionTypeManagementApi.md#httpgetcollectiontypeitems) | **GET** /collectiontypesitems |  |
 
-
-
-## HttpCollectionTypesGet
-
+<a name="httpcollectiontypesget"></a>
+# **HttpCollectionTypesGet**
 > List&lt;CollectionType&gt; HttpCollectionTypesGet ()
 
 
@@ -19,13 +17,12 @@ Method | HTTP request | Description
 This lists all available collection types which are stored in the database and not deleted (status \"A\").
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -33,23 +30,24 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicCollectionTypeManagementApi(Configuration.Default);
+            var apiInstance = new PublicCollectionTypeManagementApi(config);
 
             try
             {
                 List<CollectionType> result = apiInstance.HttpCollectionTypesGet();
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicCollectionTypeManagementApi.HttpCollectionTypesGet: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicCollectionTypeManagementApi.HttpCollectionTypesGet: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -57,10 +55,27 @@ namespace Example
 }
 ```
 
+#### Using the HttpCollectionTypesGetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<CollectionType>> response = apiInstance.HttpCollectionTypesGetWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicCollectionTypeManagementApi.HttpCollectionTypesGetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
-
 This endpoint does not need any parameter.
-
 ### Return type
 
 [**List&lt;CollectionType&gt;**](CollectionType.md)
@@ -71,8 +86,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -83,14 +98,10 @@ This endpoint does not need any parameter.
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpCollectionTypesGetById
-
+<a name="httpcollectiontypesgetbyid"></a>
+# **HttpCollectionTypesGetById**
 > CollectionType HttpCollectionTypesGetById (string id)
 
 
@@ -98,13 +109,12 @@ This endpoint does not need any parameter.
 Returns one single collection type (from ID).
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -112,13 +122,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicCollectionTypeManagementApi(Configuration.Default);
+            var apiInstance = new PublicCollectionTypeManagementApi(config);
             var id = "id_example";  // string | The ID of the collection type.
 
             try
@@ -126,10 +137,10 @@ namespace Example
                 CollectionType result = apiInstance.HttpCollectionTypesGetById(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicCollectionTypeManagementApi.HttpCollectionTypesGetById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicCollectionTypeManagementApi.HttpCollectionTypesGetById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -137,12 +148,30 @@ namespace Example
 }
 ```
 
+#### Using the HttpCollectionTypesGetByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<CollectionType> response = apiInstance.HttpCollectionTypesGetByIdWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicCollectionTypeManagementApi.HttpCollectionTypesGetByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The ID of the collection type. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the collection type. |  |
 
 ### Return type
 
@@ -154,8 +183,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -166,14 +195,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpGetCollectionTypeItems
-
+<a name="httpgetcollectiontypeitems"></a>
+# **HttpGetCollectionTypeItems**
 > List&lt;CollTypeItem&gt; HttpGetCollectionTypeItems (bool? includeblueprint = null)
 
 
@@ -181,13 +206,12 @@ Name | Type | Description  | Notes
 This method returns a list of collection types items.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -195,13 +219,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicCollectionTypeManagementApi(Configuration.Default);
+            var apiInstance = new PublicCollectionTypeManagementApi(config);
             var includeblueprint = true;  // bool? | True if the blueprint items should be included. (optional) 
 
             try
@@ -209,10 +234,10 @@ namespace Example
                 List<CollTypeItem> result = apiInstance.HttpGetCollectionTypeItems(includeblueprint);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicCollectionTypeManagementApi.HttpGetCollectionTypeItems: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicCollectionTypeManagementApi.HttpGetCollectionTypeItems: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -220,12 +245,30 @@ namespace Example
 }
 ```
 
+#### Using the HttpGetCollectionTypeItemsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<CollTypeItem>> response = apiInstance.HttpGetCollectionTypeItemsWithHttpInfo(includeblueprint);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicCollectionTypeManagementApi.HttpGetCollectionTypeItemsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **includeblueprint** | **bool?**| True if the blueprint items should be included. | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **includeblueprint** | **bool?** | True if the blueprint items should be included. | [optional]  |
 
 ### Return type
 
@@ -237,8 +280,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -248,8 +291,5 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **404** | If the no collection type items were not found. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

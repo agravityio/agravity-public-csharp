@@ -1,5 +1,4 @@
-
-# AgravityPublic.Model.AssetPageResult
+# Agravity.Public.Model.AssetPageResult
 
 ## Properties
 
@@ -11,7 +10,5 @@ Name | Type | Description | Notes
 **ContinuationToken** | **string** |  | [optional] 
 **Filter** | [**List&lt;WhereParam&gt;**](WhereParam.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

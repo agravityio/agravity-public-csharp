@@ -1,5 +1,4 @@
-
-# AgravityPublic.Model.AllWebAppData
+# Agravity.Public.Model.AllWebAppData
 
 ## Properties
 
@@ -11,7 +10,5 @@ Name | Type | Description | Notes
 **PubAssets** | [**List&lt;PublishedAsset&gt;**](PublishedAsset.md) |  | [optional] 
 **CreatedDate** | **DateTime** |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

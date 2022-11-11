@@ -1,16 +1,14 @@
-# AgravityPublic.Api.PublicCollectionSecureUploadApi
+# Agravity.Public.Api.PublicCollectionSecureUploadApi
 
 All URIs are relative to *http://localhost:7072/api*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**HttpSecureUploadEntityCheckById**](PublicCollectionSecureUploadApi.md#httpsecureuploadentitycheckbyid) | **GET** /secureupload/{id} | 
-[**HttpSecureUploadFileById**](PublicCollectionSecureUploadApi.md#httpsecureuploadfilebyid) | **POST** /secureupload/{id}/upload | 
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**HttpSecureUploadEntityCheckById**](PublicCollectionSecureUploadApi.md#httpsecureuploadentitycheckbyid) | **GET** /secureupload/{id} |  |
+| [**HttpSecureUploadFileById**](PublicCollectionSecureUploadApi.md#httpsecureuploadfilebyid) | **POST** /secureupload/{id}/upload |  |
 
-
-
-## HttpSecureUploadEntityCheckById
-
+<a name="httpsecureuploadentitycheckbyid"></a>
+# **HttpSecureUploadEntityCheckById**
 > SecureUploadEntity HttpSecureUploadEntityCheckById (string id, string code)
 
 
@@ -18,13 +16,12 @@ Method | HTTP request | Description
 Searchs for one single secure upload entity of an user and returns simple OK if found.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -32,13 +29,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicCollectionSecureUploadApi(Configuration.Default);
+            var apiInstance = new PublicCollectionSecureUploadApi(config);
             var id = "id_example";  // string | The ID of the secure upload collection.
             var code = "code_example";  // string | The API key to access this endpoint. (Alternative using header x-function-keys with same value)
 
@@ -47,10 +45,10 @@ namespace Example
                 SecureUploadEntity result = apiInstance.HttpSecureUploadEntityCheckById(id, code);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicCollectionSecureUploadApi.HttpSecureUploadEntityCheckById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicCollectionSecureUploadApi.HttpSecureUploadEntityCheckById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -58,13 +56,31 @@ namespace Example
 }
 ```
 
+#### Using the HttpSecureUploadEntityCheckByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<SecureUploadEntity> response = apiInstance.HttpSecureUploadEntityCheckByIdWithHttpInfo(id, code);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicCollectionSecureUploadApi.HttpSecureUploadEntityCheckByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The ID of the secure upload collection. | 
- **code** | **string**| The API key to access this endpoint. (Alternative using header x-function-keys with same value) | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the secure upload collection. |  |
+| **code** | **string** | The API key to access this endpoint. (Alternative using header x-function-keys with same value) |  |
 
 ### Return type
 
@@ -76,8 +92,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -89,14 +105,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpSecureUploadFileById
-
+<a name="httpsecureuploadfilebyid"></a>
+# **HttpSecureUploadFileById**
 > Asset HttpSecureUploadFileById (string id, string code, Object body)
 
 
@@ -104,13 +116,12 @@ Name | Type | Description  | Notes
 This endpoint allows to securly upload one asset which is put onto the storage (INBOX). Object has to be FormData (Add file).
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -118,13 +129,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicCollectionSecureUploadApi(Configuration.Default);
+            var apiInstance = new PublicCollectionSecureUploadApi(config);
             var id = "id_example";  // string | The ID of the secure upload collection.
             var code = "code_example";  // string | The API key to access this endpoint. (Alternative using header x-function-keys with same value)
             var body = null;  // Object | This endpoint allows to upload one asset which is put onto the storage (INBOX). Object has to be FormData (Add file).
@@ -134,10 +146,10 @@ namespace Example
                 Asset result = apiInstance.HttpSecureUploadFileById(id, code, body);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicCollectionSecureUploadApi.HttpSecureUploadFileById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicCollectionSecureUploadApi.HttpSecureUploadFileById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -145,14 +157,32 @@ namespace Example
 }
 ```
 
+#### Using the HttpSecureUploadFileByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Asset> response = apiInstance.HttpSecureUploadFileByIdWithHttpInfo(id, code, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicCollectionSecureUploadApi.HttpSecureUploadFileByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The ID of the secure upload collection. | 
- **code** | **string**| The API key to access this endpoint. (Alternative using header x-function-keys with same value) | 
- **body** | **Object**| This endpoint allows to upload one asset which is put onto the storage (INBOX). Object has to be FormData (Add file). | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the secure upload collection. |  |
+| **code** | **string** | The API key to access this endpoint. (Alternative using header x-function-keys with same value) |  |
+| **body** | **Object** | This endpoint allows to upload one asset which is put onto the storage (INBOX). Object has to be FormData (Add file). |  |
 
 ### Return type
 
@@ -164,8 +194,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -177,8 +207,5 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

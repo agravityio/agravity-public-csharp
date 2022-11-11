@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agravity.Public", "src\Agravity.Public\Agravity.Public.csproj", "{F3A64625-1684-4A62-9C72-50C7A076BFF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agravity.Public.Test", "src\Agravity.Public.Test\Agravity.Public.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3A64625-1684-4A62-9C72-50C7A076BFF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A64625-1684-4A62-9C72-50C7A076BFF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A64625-1684-4A62-9C72-50C7A076BFF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A64625-1684-4A62-9C72-50C7A076BFF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1F95545-46E1-4CF7-A401-1EA165560A47}
+	EndGlobalSection
+EndGlobal

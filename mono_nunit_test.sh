@@ -6,17 +6,17 @@
 wget -nc https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 mozroots --import --sync
 
-echo "[INFO] remove bin/Debug/AgravityPublic.Test.dll"
-rm src/AgravityPublic.Test/bin/Debug/AgravityPublic.Test.dll 2> /dev/null
+echo "[INFO] remove bin/Debug/Agravity.Public.Test.dll"
+rm src/Agravity.Public.Test/bin/Debug/Agravity.Public.Test.dll 2> /dev/null
 
 echo "[INFO] install NUnit runners via NuGet"
 wget -nc https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 mozroots --import --sync
-mono nuget.exe install src/AgravityPublic.Test/packages.config -o packages
+mono nuget.exe install src/Agravity.Public.Test/packages.config -o packages
 
 echo "[INFO] Install NUnit Console 3.x runners via NuGet"
 mono nuget.exe install NUnit.ConsoleRunner -Version 3.10.0 -OutputDirectory packages
 
 echo "[INFO] Build the solution and run the unit test"
-xbuild AgravityPublic.sln && \
-    mono ./packages/NUnit.ConsoleRunner.3.10.0/tools/nunit3-console.exe src/AgravityPublic.Test/bin/Debug/AgravityPublic.Test.dll
+xbuild Agravity.Public.sln && \
+    mono ./packages/NUnit.ConsoleRunner.3.10.0/tools/nunit3-console.exe src/Agravity.Public.Test/bin/Debug/Agravity.Public.Test.dll

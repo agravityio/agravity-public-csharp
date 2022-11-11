@@ -1,18 +1,16 @@
-# AgravityPublic.Api.PublicHelperToolsApi
+# Agravity.Public.Api.PublicHelperToolsApi
 
 All URIs are relative to *http://localhost:7072/api*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**HttpGetAllUserDefinedLists**](PublicHelperToolsApi.md#httpgetalluserdefinedlists) | **GET** /helper/userdefinedlists | 
-[**HttpGetAllowedFilterableItems**](PublicHelperToolsApi.md#httpgetallowedfilterableitems) | **GET** /helper/filterableitems | 
-[**HttpGetAllowedSearchableItemNames**](PublicHelperToolsApi.md#httpgetallowedsearchableitemnames) | **GET** /helper/searchableitemnames | 
-[**HttpGetAllowedSearchableItems**](PublicHelperToolsApi.md#httpgetallowedsearchableitems) | **GET** /helper/searchableitems | 
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**HttpGetAllUserDefinedLists**](PublicHelperToolsApi.md#httpgetalluserdefinedlists) | **GET** /helper/userdefinedlists |  |
+| [**HttpGetAllowedFilterableItems**](PublicHelperToolsApi.md#httpgetallowedfilterableitems) | **GET** /helper/filterableitems |  |
+| [**HttpGetAllowedSearchableItemNames**](PublicHelperToolsApi.md#httpgetallowedsearchableitemnames) | **GET** /helper/searchableitemnames |  |
+| [**HttpGetAllowedSearchableItems**](PublicHelperToolsApi.md#httpgetallowedsearchableitems) | **GET** /helper/searchableitems |  |
 
-
-
-## HttpGetAllUserDefinedLists
-
+<a name="httpgetalluserdefinedlists"></a>
+# **HttpGetAllUserDefinedLists**
 > List&lt;CollectionUDL&gt; HttpGetAllUserDefinedLists ()
 
 
@@ -20,13 +18,12 @@ Method | HTTP request | Description
 Returns all user defined lists of all collection types
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -34,23 +31,24 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicHelperToolsApi(Configuration.Default);
+            var apiInstance = new PublicHelperToolsApi(config);
 
             try
             {
                 List<CollectionUDL> result = apiInstance.HttpGetAllUserDefinedLists();
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicHelperToolsApi.HttpGetAllUserDefinedLists: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicHelperToolsApi.HttpGetAllUserDefinedLists: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -58,10 +56,27 @@ namespace Example
 }
 ```
 
+#### Using the HttpGetAllUserDefinedListsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<CollectionUDL>> response = apiInstance.HttpGetAllUserDefinedListsWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicHelperToolsApi.HttpGetAllUserDefinedListsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
-
 This endpoint does not need any parameter.
-
 ### Return type
 
 [**List&lt;CollectionUDL&gt;**](CollectionUDL.md)
@@ -72,8 +87,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -83,14 +98,10 @@ This endpoint does not need any parameter.
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpGetAllowedFilterableItems
-
+<a name="httpgetallowedfilterableitems"></a>
+# **HttpGetAllowedFilterableItems**
 > List&lt;string&gt; HttpGetAllowedFilterableItems ()
 
 
@@ -98,13 +109,12 @@ This endpoint does not need any parameter.
 Returns all filterable items directly from the search index
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -112,23 +122,24 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicHelperToolsApi(Configuration.Default);
+            var apiInstance = new PublicHelperToolsApi(config);
 
             try
             {
                 List<string> result = apiInstance.HttpGetAllowedFilterableItems();
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicHelperToolsApi.HttpGetAllowedFilterableItems: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicHelperToolsApi.HttpGetAllowedFilterableItems: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -136,10 +147,27 @@ namespace Example
 }
 ```
 
+#### Using the HttpGetAllowedFilterableItemsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<string>> response = apiInstance.HttpGetAllowedFilterableItemsWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicHelperToolsApi.HttpGetAllowedFilterableItemsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
-
 This endpoint does not need any parameter.
-
 ### Return type
 
 **List<string>**
@@ -150,8 +178,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -160,14 +188,10 @@ This endpoint does not need any parameter.
 | **200** | A string list of all filterable items. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpGetAllowedSearchableItemNames
-
+<a name="httpgetallowedsearchableitemnames"></a>
+# **HttpGetAllowedSearchableItemNames**
 > List&lt;string&gt; HttpGetAllowedSearchableItemNames ()
 
 
@@ -175,13 +199,12 @@ This endpoint does not need any parameter.
 Returns all searchable items directly from the search index
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -189,23 +212,24 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicHelperToolsApi(Configuration.Default);
+            var apiInstance = new PublicHelperToolsApi(config);
 
             try
             {
                 List<string> result = apiInstance.HttpGetAllowedSearchableItemNames();
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicHelperToolsApi.HttpGetAllowedSearchableItemNames: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicHelperToolsApi.HttpGetAllowedSearchableItemNames: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -213,10 +237,27 @@ namespace Example
 }
 ```
 
+#### Using the HttpGetAllowedSearchableItemNamesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<string>> response = apiInstance.HttpGetAllowedSearchableItemNamesWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicHelperToolsApi.HttpGetAllowedSearchableItemNamesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
-
 This endpoint does not need any parameter.
-
 ### Return type
 
 **List<string>**
@@ -227,8 +268,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -237,14 +278,10 @@ This endpoint does not need any parameter.
 | **200** | A string list of all searchable items. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## HttpGetAllowedSearchableItems
-
+<a name="httpgetallowedsearchableitems"></a>
+# **HttpGetAllowedSearchableItems**
 > List&lt;SearchableItem&gt; HttpGetAllowedSearchableItems ()
 
 
@@ -252,13 +289,12 @@ This endpoint does not need any parameter.
 Returns all searchable items directly from the search index
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using AgravityPublic.Api;
-using AgravityPublic.Client;
-using AgravityPublic.Model;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
 
 namespace Example
 {
@@ -266,23 +302,24 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "http://localhost:7072/api";
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
             // Configure API key authorization: function_key
-            Configuration.Default.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("x-functions-key", "Bearer");
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicHelperToolsApi(Configuration.Default);
+            var apiInstance = new PublicHelperToolsApi(config);
 
             try
             {
                 List<SearchableItem> result = apiInstance.HttpGetAllowedSearchableItems();
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicHelperToolsApi.HttpGetAllowedSearchableItems: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PublicHelperToolsApi.HttpGetAllowedSearchableItems: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -290,10 +327,27 @@ namespace Example
 }
 ```
 
+#### Using the HttpGetAllowedSearchableItemsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<SearchableItem>> response = apiInstance.HttpGetAllowedSearchableItemsWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicHelperToolsApi.HttpGetAllowedSearchableItemsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
-
 This endpoint does not need any parameter.
-
 ### Return type
 
 [**List&lt;SearchableItem&gt;**](SearchableItem.md)
@@ -304,8 +358,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -314,8 +368,5 @@ This endpoint does not need any parameter.
 | **200** | A list of all searchable items. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

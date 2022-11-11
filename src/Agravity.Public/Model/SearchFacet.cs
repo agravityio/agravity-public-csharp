@@ -99,12 +99,12 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Entities == input.Entities ||
                     this.Entities != null &&

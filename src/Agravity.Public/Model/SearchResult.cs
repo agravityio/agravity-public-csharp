@@ -171,53 +171,53 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.ReasonResult == input.ReasonResult ||
                     this.ReasonResult != null &&
                     input.ReasonResult != null &&
                     this.ReasonResult.SequenceEqual(input.ReasonResult)
-                ) && 
+                ) &&
                 (
                     this.DataResult == input.DataResult ||
                     (this.DataResult != null &&
                     this.DataResult.Equals(input.DataResult))
-                ) && 
+                ) &&
                 (
                     this.MaxSumResults == input.MaxSumResults ||
                     this.MaxSumResults.Equals(input.MaxSumResults)
-                ) && 
+                ) &&
                 (
                     this.Facets == input.Facets ||
                     this.Facets != null &&
                     input.Facets != null &&
                     this.Facets.SequenceEqual(input.Facets)
-                ) && 
+                ) &&
                 (
                     this.Count == input.Count ||
                     (this.Count != null &&
                     this.Count.Equals(input.Count))
-                ) && 
+                ) &&
                 (
                     this.SearchQuery == input.SearchQuery ||
                     (this.SearchQuery != null &&
                     this.SearchQuery.Equals(input.SearchQuery))
-                ) && 
+                ) &&
                 (
                     this.SearchFilter == input.SearchFilter ||
                     (this.SearchFilter != null &&
                     this.SearchFilter.Equals(input.SearchFilter))
-                ) && 
+                ) &&
                 (
                     this.SearchOrderBy == input.SearchOrderBy ||
                     (this.SearchOrderBy != null &&
                     this.SearchOrderBy.Equals(input.SearchOrderBy))
-                ) && 
+                ) &&
                 (
                     this.SearchMode == input.SearchMode ||
                     (this.SearchMode != null &&
                     this.SearchMode.Equals(input.SearchMode))
-                ) && 
+                ) &&
                 (
                     this.Origin == input.Origin ||
                     (this.Origin != null &&

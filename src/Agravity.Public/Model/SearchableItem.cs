@@ -171,52 +171,52 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.IsKey == input.IsKey ||
                     (this.IsKey != null &&
                     this.IsKey.Equals(input.IsKey))
-                ) && 
+                ) &&
                 (
                     this.Filterable == input.Filterable ||
                     (this.Filterable != null &&
                     this.Filterable.Equals(input.Filterable))
-                ) && 
+                ) &&
                 (
                     this.Hidden == input.Hidden ||
                     (this.Hidden != null &&
                     this.Hidden.Equals(input.Hidden))
-                ) && 
+                ) &&
                 (
                     this.Searchable == input.Searchable ||
                     (this.Searchable != null &&
                     this.Searchable.Equals(input.Searchable))
-                ) && 
+                ) &&
                 (
                     this.Facetable == input.Facetable ||
                     (this.Facetable != null &&
                     this.Facetable.Equals(input.Facetable))
-                ) && 
+                ) &&
                 (
                     this.Sortable == input.Sortable ||
                     (this.Sortable != null &&
                     this.Sortable.Equals(input.Sortable))
-                ) && 
+                ) &&
                 (
                     this.IsCollection == input.IsCollection ||
                     (this.IsCollection != null &&
                     this.IsCollection.Equals(input.IsCollection))
-                ) && 
+                ) &&
                 (
                     this.Searchtype == input.Searchtype ||
                     (this.Searchtype != null &&
                     this.Searchtype.Equals(input.Searchtype))
-                ) && 
+                ) &&
                 (
                     this.Fields == input.Fields ||
                     this.Fields != null &&

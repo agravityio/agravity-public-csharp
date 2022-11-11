@@ -90,7 +90,7 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.StatusCode == input.StatusCode ||
                     this.StatusCode.Equals(input.StatusCode)

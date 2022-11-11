@@ -108,17 +108,17 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.CollectionId == input.CollectionId ||
                     (this.CollectionId != null &&
                     this.CollectionId.Equals(input.CollectionId))
-                ) && 
+                ) &&
                 (
                     this.GroupId == input.GroupId ||
                     (this.GroupId != null &&
                     this.GroupId.Equals(input.GroupId))
-                ) && 
+                ) &&
                 (
                     this.Role == input.Role ||
                     (this.Role != null &&

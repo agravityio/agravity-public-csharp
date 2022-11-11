@@ -562,226 +562,226 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.BlobType == input.BlobType ||
                     this.BlobType.Equals(input.BlobType)
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Container == input.Container ||
                     (this.Container != null &&
                     this.Container.Equals(input.Container))
-                ) && 
+                ) &&
                 (
                     this.Size == input.Size ||
                     this.Size.Equals(input.Size)
-                ) && 
+                ) &&
                 (
                     this.Extension == input.Extension ||
                     (this.Extension != null &&
                     this.Extension.Equals(input.Extension))
-                ) && 
+                ) &&
                 (
                     this.ContentType == input.ContentType ||
                     (this.ContentType != null &&
                     this.ContentType.Equals(input.ContentType))
-                ) && 
+                ) &&
                 (
                     this.Md5 == input.Md5 ||
                     (this.Md5 != null &&
                     this.Md5.Equals(input.Md5))
-                ) && 
+                ) &&
                 (
                     this.Techdata == input.Techdata ||
                     this.Techdata != null &&
                     input.Techdata != null &&
                     this.Techdata.SequenceEqual(input.Techdata)
-                ) && 
+                ) &&
                 (
                     this.AddData == input.AddData ||
                     this.AddData != null &&
                     input.AddData != null &&
                     this.AddData.SequenceEqual(input.AddData)
-                ) && 
+                ) &&
                 (
                     this.Width == input.Width ||
                     (this.Width != null &&
                     this.Width.Equals(input.Width))
-                ) && 
+                ) &&
                 (
                     this.Height == input.Height ||
                     (this.Height != null &&
                     this.Height.Equals(input.Height))
-                ) && 
+                ) &&
                 (
                     this.Maxwidthheight == input.Maxwidthheight ||
                     (this.Maxwidthheight != null &&
                     this.Maxwidthheight.Equals(input.Maxwidthheight))
-                ) && 
+                ) &&
                 (
                     this.Quality == input.Quality ||
                     (this.Quality != null &&
                     this.Quality.Equals(input.Quality))
-                ) && 
+                ) &&
                 (
                     this.Orientation == input.Orientation ||
                     this.Orientation.Equals(input.Orientation)
-                ) && 
+                ) &&
                 (
                     this.Colorspace == input.Colorspace ||
                     (this.Colorspace != null &&
                     this.Colorspace.Equals(input.Colorspace))
-                ) && 
+                ) &&
                 (
                     this.Transparency == input.Transparency ||
                     (this.Transparency != null &&
                     this.Transparency.Equals(input.Transparency))
-                ) && 
+                ) &&
                 (
                     this.Mode == input.Mode ||
                     (this.Mode != null &&
                     this.Mode.Equals(input.Mode))
-                ) && 
+                ) &&
                 (
                     this.Target == input.Target ||
                     (this.Target != null &&
                     this.Target.Equals(input.Target))
-                ) && 
+                ) &&
                 (
                     this.Filter == input.Filter ||
                     (this.Filter != null &&
                     this.Filter.Equals(input.Filter))
-                ) && 
+                ) &&
                 (
                     this.DpiX == input.DpiX ||
                     (this.DpiX != null &&
                     this.DpiX.Equals(input.DpiX))
-                ) && 
+                ) &&
                 (
                     this.DpiY == input.DpiY ||
                     (this.DpiY != null &&
                     this.DpiY.Equals(input.DpiY))
-                ) && 
+                ) &&
                 (
                     this.Perhash == input.Perhash ||
                     (this.Perhash != null &&
                     this.Perhash.Equals(input.Perhash))
-                ) && 
+                ) &&
                 (
                     this.Dominantcolor == input.Dominantcolor ||
                     (this.Dominantcolor != null &&
                     this.Dominantcolor.Equals(input.Dominantcolor))
-                ) && 
+                ) &&
                 (
                     this.Depth == input.Depth ||
                     (this.Depth != null &&
                     this.Depth.Equals(input.Depth))
-                ) && 
+                ) &&
                 (
                     this.Animated == input.Animated ||
                     (this.Animated != null &&
                     this.Animated.Equals(input.Animated))
-                ) && 
+                ) &&
                 (
                     this.Duration == input.Duration ||
                     (this.Duration != null &&
                     this.Duration.Equals(input.Duration))
-                ) && 
+                ) &&
                 (
                     this.Videocodec == input.Videocodec ||
                     (this.Videocodec != null &&
                     this.Videocodec.Equals(input.Videocodec))
-                ) && 
+                ) &&
                 (
                     this.Videobitrate == input.Videobitrate ||
                     (this.Videobitrate != null &&
                     this.Videobitrate.Equals(input.Videobitrate))
-                ) && 
+                ) &&
                 (
                     this.Fps == input.Fps ||
                     (this.Fps != null &&
                     this.Fps.Equals(input.Fps))
-                ) && 
+                ) &&
                 (
                     this.Colormode == input.Colormode ||
                     (this.Colormode != null &&
                     this.Colormode.Equals(input.Colormode))
-                ) && 
+                ) &&
                 (
                     this.Audiocodec == input.Audiocodec ||
                     (this.Audiocodec != null &&
                     this.Audiocodec.Equals(input.Audiocodec))
-                ) && 
+                ) &&
                 (
                     this.Audiosamplerate == input.Audiosamplerate ||
                     (this.Audiosamplerate != null &&
                     this.Audiosamplerate.Equals(input.Audiosamplerate))
-                ) && 
+                ) &&
                 (
                     this.Audiochanneloutput == input.Audiochanneloutput ||
                     (this.Audiochanneloutput != null &&
                     this.Audiochanneloutput.Equals(input.Audiochanneloutput))
-                ) && 
+                ) &&
                 (
                     this.Audiobitrate == input.Audiobitrate ||
                     (this.Audiobitrate != null &&
                     this.Audiobitrate.Equals(input.Audiobitrate))
-                ) && 
+                ) &&
                 (
                     this.Author == input.Author ||
                     (this.Author != null &&
                     this.Author.Equals(input.Author))
-                ) && 
+                ) &&
                 (
                     this.Language == input.Language ||
                     (this.Language != null &&
                     this.Language.Equals(input.Language))
-                ) && 
+                ) &&
                 (
                     this.Wordcount == input.Wordcount ||
                     (this.Wordcount != null &&
                     this.Wordcount.Equals(input.Wordcount))
-                ) && 
+                ) &&
                 (
                     this.Pages == input.Pages ||
                     (this.Pages != null &&
                     this.Pages.Equals(input.Pages))
-                ) && 
+                ) &&
                 (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     this.EncodingName == input.EncodingName ||
                     (this.EncodingName != null &&
                     this.EncodingName.Equals(input.EncodingName))
-                ) && 
+                ) &&
                 (
                     this.EncodingCode == input.EncodingCode ||
                     (this.EncodingCode != null &&
                     this.EncodingCode.Equals(input.EncodingCode))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     this.SizeReadable == input.SizeReadable ||
                     (this.SizeReadable != null &&
                     this.SizeReadable.Equals(input.SizeReadable))
-                ) && 
+                ) &&
                 (
                     this.Downloadable == input.Downloadable ||
                     (this.Downloadable != null &&
                     this.Downloadable.Equals(input.Downloadable))
-                ) && 
+                ) &&
                 (
                     this.Expires == input.Expires ||
                     (this.Expires != null &&

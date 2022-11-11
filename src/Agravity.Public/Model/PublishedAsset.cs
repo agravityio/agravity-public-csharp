@@ -162,48 +162,48 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.Usecases == input.Usecases ||
                     this.Usecases != null &&
                     input.Usecases != null &&
                     this.Usecases.SequenceEqual(input.Usecases)
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     this.Cdn == input.Cdn ||
                     (this.Cdn != null &&
                     this.Cdn.Equals(input.Cdn))
-                ) && 
+                ) &&
                 (
                     this.Format == input.Format ||
                     (this.Format != null &&
                     this.Format.Equals(input.Format))
-                ) && 
+                ) &&
                 (
                     this.Properties == input.Properties ||
                     this.Properties != null &&

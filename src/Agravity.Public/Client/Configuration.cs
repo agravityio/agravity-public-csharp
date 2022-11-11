@@ -33,7 +33,7 @@ namespace Agravity.Public.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.0.0";
+        public const string Version = "4.7.2";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -110,7 +110,7 @@ namespace Agravity.Public.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/1.0.0/csharp");
+            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/4.7.2/csharp");
             BasePath = "http://localhost:7072/api";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -176,7 +176,8 @@ namespace Agravity.Public.Client
         /// <summary>
         /// Gets or sets the base path for API access.
         /// </summary>
-        public virtual string BasePath {
+        public virtual string BasePath
+        {
             get { return _basePath; }
             set { _basePath = value; }
         }
@@ -516,9 +517,9 @@ namespace Agravity.Public.Client
         {
             string report = "C# SDK (Agravity.Public) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
-            report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
+            report += "    .NET Framework Version: " + System.Environment.Version + "\n";
             report += "    Version of the API: 4.7.2\n";
-            report += "    SDK Package Version: 1.0.0\n";
+            report += "    SDK Package Version: 4.7.2\n";
 
             return report;
         }

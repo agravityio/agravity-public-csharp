@@ -189,62 +189,62 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Page == input.Page ||
                     this.Page != null &&
                     input.Page != null &&
                     this.Page.SequenceEqual(input.Page)
-                ) && 
+                ) &&
                 (
                     this.PageSize == input.PageSize ||
                     this.PageSize.Equals(input.PageSize)
-                ) && 
+                ) &&
                 (
                     this.Size == input.Size ||
                     (this.Size != null &&
                     this.Size.Equals(input.Size))
-                ) && 
+                ) &&
                 (
                     this.ContinuationToken == input.ContinuationToken ||
                     (this.ContinuationToken != null &&
                     this.ContinuationToken.Equals(input.ContinuationToken))
-                ) && 
+                ) &&
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.CollectionId == input.CollectionId ||
                     (this.CollectionId != null &&
                     this.CollectionId.Equals(input.CollectionId))
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     this.ValidUntil == input.ValidUntil ||
                     (this.ValidUntil != null &&
                     this.ValidUntil.Equals(input.ValidUntil))
-                ) && 
+                ) &&
                 (
                     this.ValidFor == input.ValidFor ||
                     (this.ValidFor != null &&
                     this.ValidFor.Equals(input.ValidFor))
-                ) && 
+                ) &&
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
+                ) &&
                 (
                     this.Global == input.Global ||
                     this.Global.Equals(input.Global)

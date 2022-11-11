@@ -170,16 +170,16 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Operator == input.Operator ||
                     this.Operator.Equals(input.Operator)
-                ) && 
+                ) &&
                 (
                     this.Field == input.Field ||
                     (this.Field != null &&
                     this.Field.Equals(input.Field))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&

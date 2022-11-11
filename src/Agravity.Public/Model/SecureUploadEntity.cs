@@ -171,53 +171,53 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.CollectionId == input.CollectionId ||
                     (this.CollectionId != null &&
                     this.CollectionId.Equals(input.CollectionId))
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.CreatedBy == input.CreatedBy ||
                     (this.CreatedBy != null &&
                     this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     this.ValidUntil == input.ValidUntil ||
                     (this.ValidUntil != null &&
                     this.ValidUntil.Equals(input.ValidUntil))
-                ) && 
+                ) &&
                 (
                     this.Password == input.Password ||
                     (this.Password != null &&
                     this.Password.Equals(input.Password))
-                ) && 
+                ) &&
                 (
                     this.AssetTags == input.AssetTags ||
                     this.AssetTags != null &&
                     input.AssetTags != null &&
                     this.AssetTags.SequenceEqual(input.AssetTags)
-                ) && 
+                ) &&
                 (
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
-                ) && 
+                ) &&
                 (
                     this.SftpConnection == input.SftpConnection ||
                     (this.SftpConnection != null &&

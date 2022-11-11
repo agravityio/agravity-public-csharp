@@ -117,23 +117,23 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Asset == input.Asset ||
                     this.Asset != null &&
                     input.Asset != null &&
                     this.Asset.SequenceEqual(input.Asset)
-                ) && 
+                ) &&
                 (
                     this.SumAssetResults == input.SumAssetResults ||
                     this.SumAssetResults.Equals(input.SumAssetResults)
-                ) && 
+                ) &&
                 (
                     this.Collection == input.Collection ||
                     this.Collection != null &&
                     input.Collection != null &&
                     this.Collection.SequenceEqual(input.Collection)
-                ) && 
+                ) &&
                 (
                     this.SumCollectionResults == input.SumCollectionResults ||
                     this.SumCollectionResults.Equals(input.SumCollectionResults)

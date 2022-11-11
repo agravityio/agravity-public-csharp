@@ -108,17 +108,17 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.ErrorId == input.ErrorId ||
                     (this.ErrorId != null &&
                     this.ErrorId.Equals(input.ErrorId))
-                ) && 
+                ) &&
                 (
                     this.ErrorMessage == input.ErrorMessage ||
                     (this.ErrorMessage != null &&
                     this.ErrorMessage.Equals(input.ErrorMessage))
-                ) && 
+                ) &&
                 (
                     this.Exception == input.Exception ||
                     (this.Exception != null &&

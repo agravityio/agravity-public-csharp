@@ -207,75 +207,75 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.EntityType == input.EntityType ||
                     (this.EntityType != null &&
                     this.EntityType.Equals(input.EntityType))
-                ) && 
+                ) &&
                 (
                     this.Translations == input.Translations ||
                     this.Translations != null &&
                     input.Translations != null &&
                     this.Translations.SequenceEqual(input.Translations)
-                ) && 
+                ) &&
                 (
                     this.Values == input.Values ||
                     this.Values != null &&
                     input.Values != null &&
                     this.Values.SequenceEqual(input.Values)
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.AddProperties == input.AddProperties ||
                     this.AddProperties != null &&
                     input.AddProperties != null &&
                     this.AddProperties.SequenceEqual(input.AddProperties)
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.CreatedBy == input.CreatedBy ||
                     (this.CreatedBy != null &&
                     this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
+                ) &&
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
+                ) &&
                 (
                     this.ModifiedBy == input.ModifiedBy ||
                     (this.ModifiedBy != null &&
                     this.ModifiedBy.Equals(input.ModifiedBy))
-                ) && 
+                ) &&
                 (
                     this.Pk == input.Pk ||
                     (this.Pk != null &&
                     this.Pk.Equals(input.Pk))
-                ) && 
+                ) &&
                 (
                     this.Etag == input.Etag ||
                     (this.Etag != null &&

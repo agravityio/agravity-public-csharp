@@ -135,32 +135,32 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Company == input.Company ||
                     (this.Company != null &&
                     this.Company.Equals(input.Company))
-                ) && 
+                ) &&
                 (
                     this.Customer == input.Customer ||
                     (this.Customer != null &&
                     this.Customer.Equals(input.Customer))
-                ) && 
+                ) &&
                 (
                     this.Updated == input.Updated ||
                     (this.Updated != null &&
                     this.Updated.Equals(input.Updated))
-                ) && 
+                ) &&
                 (
                     this._Version == input._Version ||
                     (this._Version != null &&
                     this._Version.Equals(input._Version))
-                ) && 
+                ) &&
                 (
                     this.Region == input.Region ||
                     (this.Region != null &&

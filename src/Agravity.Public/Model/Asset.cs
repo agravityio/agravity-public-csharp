@@ -371,161 +371,161 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.EntityType == input.EntityType ||
                     (this.EntityType != null &&
                     this.EntityType.Equals(input.EntityType))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.AssetType == input.AssetType ||
                     (this.AssetType != null &&
                     this.AssetType.Equals(input.AssetType))
-                ) && 
+                ) &&
                 (
                     this.Access == input.Access ||
                     this.Access.Equals(input.Access)
-                ) && 
+                ) &&
                 (
                     this.Duplicates == input.Duplicates ||
                     this.Duplicates != null &&
                     input.Duplicates != null &&
                     this.Duplicates.SequenceEqual(input.Duplicates)
-                ) && 
+                ) &&
                 (
                     this.TextContent == input.TextContent ||
                     (this.TextContent != null &&
                     this.TextContent.Equals(input.TextContent))
-                ) && 
+                ) &&
                 (
                     this.AiGroups == input.AiGroups ||
                     this.AiGroups != null &&
                     input.AiGroups != null &&
                     this.AiGroups.SequenceEqual(input.AiGroups)
-                ) && 
+                ) &&
                 (
                     this.Keywords == input.Keywords ||
                     this.Keywords != null &&
                     input.Keywords != null &&
                     this.Keywords.SequenceEqual(input.Keywords)
-                ) && 
+                ) &&
                 (
                     this.OrigBlob == input.OrigBlob ||
                     (this.OrigBlob != null &&
                     this.OrigBlob.Equals(input.OrigBlob))
-                ) && 
+                ) &&
                 (
                     this.Blobs == input.Blobs ||
                     this.Blobs != null &&
                     input.Blobs != null &&
                     this.Blobs.SequenceEqual(input.Blobs)
-                ) && 
+                ) &&
                 (
                     this.Collections == input.Collections ||
                     this.Collections != null &&
                     input.Collections != null &&
                     this.Collections.SequenceEqual(input.Collections)
-                ) && 
+                ) &&
                 (
                     this.FailedReason == input.FailedReason ||
                     (this.FailedReason != null &&
                     this.FailedReason.Equals(input.FailedReason))
-                ) && 
+                ) &&
                 (
                     this.Permissions == input.Permissions ||
                     this.Permissions != null &&
                     input.Permissions != null &&
                     this.Permissions.SequenceEqual(input.Permissions)
-                ) && 
+                ) &&
                 (
                     this.RegionOfOrigin == input.RegionOfOrigin ||
                     (this.RegionOfOrigin != null &&
                     this.RegionOfOrigin.Equals(input.RegionOfOrigin))
-                ) && 
+                ) &&
                 (
                     this.Availability == input.Availability ||
                     (this.Availability != null &&
                     this.Availability.Equals(input.Availability))
-                ) && 
+                ) &&
                 (
                     this.AvailableFrom == input.AvailableFrom ||
                     (this.AvailableFrom != null &&
                     this.AvailableFrom.Equals(input.AvailableFrom))
-                ) && 
+                ) &&
                 (
                     this.AvailableTo == input.AvailableTo ||
                     (this.AvailableTo != null &&
                     this.AvailableTo.Equals(input.AvailableTo))
-                ) && 
+                ) &&
                 (
                     this.Custom == input.Custom ||
                     this.Custom != null &&
                     input.Custom != null &&
                     this.Custom.SequenceEqual(input.Custom)
-                ) && 
+                ) &&
                 (
                     this.Items == input.Items ||
                     this.Items != null &&
                     input.Items != null &&
                     this.Items.SequenceEqual(input.Items)
-                ) && 
+                ) &&
                 (
                     this.Translations == input.Translations ||
                     this.Translations != null &&
                     input.Translations != null &&
                     this.Translations.SequenceEqual(input.Translations)
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.AddProperties == input.AddProperties ||
                     this.AddProperties != null &&
                     input.AddProperties != null &&
                     this.AddProperties.SequenceEqual(input.AddProperties)
-                ) && 
+                ) &&
                 (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.CreatedBy == input.CreatedBy ||
                     (this.CreatedBy != null &&
                     this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
+                ) &&
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
+                ) &&
                 (
                     this.ModifiedBy == input.ModifiedBy ||
                     (this.ModifiedBy != null &&
                     this.ModifiedBy.Equals(input.ModifiedBy))
-                ) && 
+                ) &&
                 (
                     this.Pk == input.Pk ||
                     (this.Pk != null &&
                     this.Pk.Equals(input.Pk))
-                ) && 
+                ) &&
                 (
                     this.Etag == input.Etag ||
                     (this.Etag != null &&

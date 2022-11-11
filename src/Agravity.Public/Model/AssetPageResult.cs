@@ -126,27 +126,27 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Page == input.Page ||
                     this.Page != null &&
                     input.Page != null &&
                     this.Page.SequenceEqual(input.Page)
-                ) && 
+                ) &&
                 (
                     this.PageSize == input.PageSize ||
                     this.PageSize.Equals(input.PageSize)
-                ) && 
+                ) &&
                 (
                     this.Size == input.Size ||
                     (this.Size != null &&
                     this.Size.Equals(input.Size))
-                ) && 
+                ) &&
                 (
                     this.ContinuationToken == input.ContinuationToken ||
                     (this.ContinuationToken != null &&
                     this.ContinuationToken.Equals(input.ContinuationToken))
-                ) && 
+                ) &&
                 (
                     this.Filter == input.Filter ||
                     this.Filter != null &&

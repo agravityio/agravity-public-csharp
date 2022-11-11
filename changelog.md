@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ---
 > Just version upgrade to match backend
 
-## AgravityAPI 4.7.1 (2022-10-31)
+## AgravityAPI 4.7.2 (2022-10-31)
 ---
 > Just version upgrade to match backend
 

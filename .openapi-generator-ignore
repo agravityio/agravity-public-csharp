@@ -24,9 +24,9 @@
 
 # generated with command: 
 # npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp -o . --additional-properties=packageName=Agravity.Public,targetFramework=net48
-# npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp-netcore -o . --location=global --additional-properties=packageName=Agravity.Public,library=httpclient,targetFramework=netstandard2.0,packageVersion=4.7.2
+# npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp-netcore -o . --additional-properties=packageName=Agravity.Public,library=httpclient,targetFramework=netstandard2.0,packageVersion=4.7.2
 
-# replace Dictionary> with Dictionary<string, Object>> in the generated code
+# replace Dictionary<string, object>> with Dictionary<string, Object>> in the generated code
 
 # build files (with powershell)
 # .\build.bat

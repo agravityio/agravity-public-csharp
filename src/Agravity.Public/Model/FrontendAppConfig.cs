@@ -126,27 +126,27 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Key == input.Key ||
                     (this.Key != null &&
                     this.Key.Equals(input.Key))
-                ) && 
+                ) &&
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.ContentType == input.ContentType ||
                     (this.ContentType != null &&
                     this.ContentType.Equals(input.ContentType))
-                ) && 
+                ) &&
                 (
                     this.SinceApiVersion == input.SinceApiVersion ||
                     (this.SinceApiVersion != null &&

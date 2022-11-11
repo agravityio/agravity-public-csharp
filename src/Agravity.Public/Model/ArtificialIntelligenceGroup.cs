@@ -117,22 +117,22 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Origin == input.Origin ||
                     (this.Origin != null &&
                     this.Origin.Equals(input.Origin))
-                ) && 
+                ) &&
                 (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     this.MinConfidence == input.MinConfidence ||
                     (this.MinConfidence != null &&
                     this.MinConfidence.Equals(input.MinConfidence))
-                ) && 
+                ) &&
                 (
                     this.Values == input.Values ||
                     this.Values != null &&

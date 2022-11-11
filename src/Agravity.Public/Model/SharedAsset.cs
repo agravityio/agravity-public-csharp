@@ -153,42 +153,42 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&
                     this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
+                ) &&
                 (
                     this.ModifiedDate == input.ModifiedDate ||
                     (this.ModifiedDate != null &&
                     this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
+                ) &&
                 (
                     this.AssetType == input.AssetType ||
                     (this.AssetType != null &&
                     this.AssetType.Equals(input.AssetType))
-                ) && 
+                ) &&
                 (
                     this.OrigBlob == input.OrigBlob ||
                     (this.OrigBlob != null &&
                     this.OrigBlob.Equals(input.OrigBlob))
-                ) && 
+                ) &&
                 (
                     this.Blobs == input.Blobs ||
                     this.Blobs != null &&

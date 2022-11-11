@@ -126,30 +126,30 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.RootCollection == input.RootCollection ||
                     (this.RootCollection != null &&
                     this.RootCollection.Equals(input.RootCollection))
-                ) && 
+                ) &&
                 (
                     this.Subcollections == input.Subcollections ||
                     this.Subcollections != null &&
                     input.Subcollections != null &&
                     this.Subcollections.SequenceEqual(input.Subcollections)
-                ) && 
+                ) &&
                 (
                     this.Assets == input.Assets ||
                     this.Assets != null &&
                     input.Assets != null &&
                     this.Assets.SequenceEqual(input.Assets)
-                ) && 
+                ) &&
                 (
                     this.PubAssets == input.PubAssets ||
                     this.PubAssets != null &&
                     input.PubAssets != null &&
                     this.PubAssets.SequenceEqual(input.PubAssets)
-                ) && 
+                ) &&
                 (
                     this.CreatedDate == input.CreatedDate ||
                     (this.CreatedDate != null &&

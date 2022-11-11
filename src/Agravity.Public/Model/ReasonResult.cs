@@ -126,25 +126,25 @@ namespace Agravity.Public.Model
             {
                 return false;
             }
-            return 
+            return
                 (
                     this.Reason == input.Reason ||
                     (this.Reason != null &&
                     this.Reason.Equals(input.Reason))
-                ) && 
+                ) &&
                 (
                     this.EntityType == input.EntityType ||
                     (this.EntityType != null &&
                     this.EntityType.Equals(input.EntityType))
-                ) && 
+                ) &&
                 (
                     this.Ranking == input.Ranking ||
                     this.Ranking.Equals(input.Ranking)
-                ) && 
+                ) &&
                 (
                     this.Size == input.Size ||
                     this.Size.Equals(input.Size)
-                ) && 
+                ) &&
                 (
                     this.Ids == input.Ids ||
                     this.Ids != null &&

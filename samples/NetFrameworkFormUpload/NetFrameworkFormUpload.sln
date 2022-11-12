@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetFrameworkFormUpload", "NetFrameworkFormUpload\NetFrameworkFormUpload.csproj", "{0356E98C-B6CC-4E5D-B3B0-6D8FC07125EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0356E98C-B6CC-4E5D-B3B0-6D8FC07125EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0356E98C-B6CC-4E5D-B3B0-6D8FC07125EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0356E98C-B6CC-4E5D-B3B0-6D8FC07125EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0356E98C-B6CC-4E5D-B3B0-6D8FC07125EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BDA1493-D9D8-401A-A231-660300DA29B1}
+	EndGlobalSection
+EndGlobal

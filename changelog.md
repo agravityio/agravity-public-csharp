@@ -1,6 +1,6 @@
 ## <a name="recommended-version"></a> Recommended version
 
-The **minimum recommended version is [4.7.3](#4.7.3)**.
+The **minimum recommended version is [4.8.1](#4.8.1)**.
 
 Any known issues detected on that version are listed in the [known issues](#known-issues) section.
 
@@ -10,6 +10,18 @@ Preview features are treated as a separate branch and will not be included in th
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## AgravityAPI <a name="4.8.1"/> [4.8.1](https://www.nuget.org/packages/Agravity.Public/4.8.1) (2022-11-14)
+---
+- Change GET `/assetsenhancer/{id}` to GET `/helper/skillenhancer/{id}` - Show the result of the SkillEnhancer for assets and collections
+
+## AgravityAPI 4.8.0 (2022-11-13)
+---
+- Add methods to public functions:
+  - Update GET `/assets/{id}` - Add "uncomplete" flag return uncomplete
+  - Add POST `/assets/{id}` - Update asset via API key
+  - Add POST `/collections/{id}` - Update collection via API
+  - Fix return value from HttpStaticDefinedListsGetById
 
 ## AgravityAPI <a name="4.7.3"/> [4.7.3](https://www.nuget.org/packages/Agravity.Public/4.7.3) (2022-10-31)
 ---

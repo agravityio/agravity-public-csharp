@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Agravity.Public, Version=4.7.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Agravity.Public.4.7.3\lib\netstandard2.0\Agravity.Public.dll</HintPath>
+    <Reference Include="Agravity.Public, Version=4.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Agravity.Public.4.8.1\lib\netstandard2.0\Agravity.Public.dll</HintPath>
     </Reference>
     <Reference Include="JsonSubTypes, Version=2.0.1.0, Culture=neutral, PublicKeyToken=ee75fc290dbc1176, processorArchitecture=MSIL">
       <HintPath>..\packages\JsonSubTypes.2.0.1\lib\net47\JsonSubTypes.dll</HintPath>

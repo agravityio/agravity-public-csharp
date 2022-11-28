@@ -1,9 +1,9 @@
 
-while getopts v: flag
+while getopts v:o: flag
 do
     case "${flag}" in
         v) version=${OPTARG};;
-#        a) age=${OPTARG};;
+        o) oldVersion=${OPTARG};;
 #        f) fullname=${OPTARG};;
     esac
 done
@@ -16,7 +16,6 @@ then
 fi
 
 echo "Generate version: $version"
-
 
 
 rm -rf src
@@ -37,8 +36,10 @@ ESCAPED_REPLACE=$(printf '%s\n' "$2" | sed -e 's/[\/&]/\\&/g')
 sed -i -e "$4s/$ESCAPED_KEYWORD/$ESCAPED_REPLACE/g" $3
 }
 
-replace_in_files "Dictionary<string, object>>" "Dictionary<string, object>>"
-replace_in_files "Dictionary&lt;string, object&gt;&gt;" "Dictionary&lt;string, object&gt;&gt;"
+cd src
+replace_in_files "Dictionary>" "Dictionary<string, object>>"
+replace_in_files "Dictionary&gt;" "Dictionary&lt;string, object&gt;&gt;"
+cd ..
 
 # git discard files
 git checkout -- Agravity.Public.sln
@@ -47,6 +48,11 @@ git checkout -- icon.png
 git checkout -- nuget.exe
 git checkout -- openapitools.json
 git checkout -- ./src/Agravity.Public/Agravity.Public.nuspec
+git checkout -- ./src/Agravity.Public/Agravity.Public.csproj
+
+#Replace old version in tag in csproj with apiVersion
+replace_in_file "<version>$oldVersion</version>" "<version>$version</version>" "./src/Agravity.Public/Agravity.Public.csproj" "1"
+
 
 # replace_in_files "'image/xyz' | 'application/json'}): Observable<string>" "'image/xyz'}): Observable<Blob>" 
 # replace_in_files "'image/xyz' | 'application/json'}): Observable<HttpResponse<string>>;" "'image/xyz'}): Observable<HttpResponse<Blob>>;"

@@ -1,4 +1,23 @@
-version=4.8.1
+
+while getopts v: flag
+do
+    case "${flag}" in
+        v) version=${OPTARG};;
+#        a) age=${OPTARG};;
+#        f) fullname=${OPTARG};;
+    esac
+done
+
+# check if version is set
+if [ -z "$version" ]
+then
+      echo "Version is not set"
+      exit 1
+fi
+
+echo "Generate version: $version"
+
+
 
 rm -rf src
 npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp-netcore -o . --additional-properties=packageName=Agravity.Public,library=httpclient,targetFramework=netstandard2.0,packageVersion=$version
@@ -20,7 +39,15 @@ sed -i -e "$4s/$ESCAPED_KEYWORD/$ESCAPED_REPLACE/g" $3
 
 replace_in_files "Dictionary<string, object>>" "Dictionary<string, object>>"
 replace_in_files "Dictionary&lt;string, object&gt;&gt;" "Dictionary&lt;string, object&gt;&gt;"
-    
+
+# git discard files
+git checkout -- Agravity.Public.sln
+git checkout -- extract_thirdparty_licenses.bat
+git checkout -- icon.png
+git checkout -- nuget.exe
+git checkout -- openapitools.json
+git checkout -- ./src/Agravity.Public/Agravity.Public.nuspec
+
 # replace_in_files "'image/xyz' | 'application/json'}): Observable<string>" "'image/xyz'}): Observable<Blob>" 
 # replace_in_files "'image/xyz' | 'application/json'}): Observable<HttpResponse<string>>;" "'image/xyz'}): Observable<HttpResponse<Blob>>;"
 # replace_in_files "'image/xyz' | 'application/json'}): Observable<HttpEvent<string>>;" "'image/xyz'}): Observable<HttpEvent<Blob>>;"

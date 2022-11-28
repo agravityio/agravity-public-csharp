@@ -101,7 +101,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Returns the created simple asset. |  -  |
+| **201** | Returns the created uploaded asset. |  -  |
 | **400** | Request or Database client is null. (Code: feda1ab0-1477-4a76-abdd-3fa6fbdd0def)&lt;br&gt;Could not find file in multi-part data. (Code: b473c560-3ea1-4065-92e6-607973af9d9c)&lt;br&gt;This file is not supported. (Code: 12ac8746-349a-42c0-b73c-33257b73c728) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
@@ -110,7 +110,7 @@ catch (ApiException e)
 
 <a name="httpassetsget"></a>
 # **HttpAssetsGet**
-> AssetPageResult HttpAssetsGet (string collectionid, string fields = null, bool? expose = null, string continuationToken = null, int? limit = null, string orderby = null, bool? techdata = null)
+> AssetPageResult HttpAssetsGet (string collectionid, string fields = null, bool? expose = null, string continuationToken = null, int? limit = null, string orderby = null, bool? techdata = null, bool? items = null, bool? translations = null)
 
 
 
@@ -145,10 +145,12 @@ namespace Example
             var limit = 56;  // int? | This number limits the page result of assets. (optional) 
             var orderby = "orderby_example";  // string | How the return assets are sorted. Default is property: created_date (newest first). (optional) 
             var techdata = true;  // bool? | This parameter will include the techdata property inside orig_blob. (optional) 
+            var items = true;  // bool? | The items can be extended to fully filled items. (optional) 
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                AssetPageResult result = apiInstance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, techdata);
+                AssetPageResult result = apiInstance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, techdata, items, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -168,7 +170,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<AssetPageResult> response = apiInstance.HttpAssetsGetWithHttpInfo(collectionid, fields, expose, continuationToken, limit, orderby, techdata);
+    ApiResponse<AssetPageResult> response = apiInstance.HttpAssetsGetWithHttpInfo(collectionid, fields, expose, continuationToken, limit, orderby, techdata, items, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -192,6 +194,8 @@ catch (ApiException e)
 | **limit** | **int?** | This number limits the page result of assets. | [optional]  |
 | **orderby** | **string** | How the return assets are sorted. Default is property: created_date (newest first). | [optional]  |
 | **techdata** | **bool?** | This parameter will include the techdata property inside orig_blob. | [optional]  |
+| **items** | **bool?** | The items can be extended to fully filled items. | [optional]  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 
@@ -219,7 +223,7 @@ catch (ApiException e)
 
 <a name="httpassetsgetbyid"></a>
 # **HttpAssetsGetById**
-> Asset HttpAssetsGetById (string id, string fields = null, bool? expose = null, bool? uncomplete = null)
+> Asset HttpAssetsGetById (string id, string fields = null, bool? expose = null, bool? uncomplete = null, bool? translations = null)
 
 
 
@@ -251,10 +255,11 @@ namespace Example
             var fields = "fields_example";  // string | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional) 
             var expose = true;  // bool? | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no 'thumbnail' is found. (optional) 
             var uncomplete = true;  // bool? | This parameter should be set to 'true' if the uncomplete asset should be shown. (optional) 
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpAssetsGetById(id, fields, expose, uncomplete);
+                Asset result = apiInstance.HttpAssetsGetById(id, fields, expose, uncomplete, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -274,7 +279,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Asset> response = apiInstance.HttpAssetsGetByIdWithHttpInfo(id, fields, expose, uncomplete);
+    ApiResponse<Asset> response = apiInstance.HttpAssetsGetByIdWithHttpInfo(id, fields, expose, uncomplete, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -295,6 +300,7 @@ catch (ApiException e)
 | **fields** | **string** | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. | [optional]  |
 | **expose** | **bool?** | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. | [optional]  |
 | **uncomplete** | **bool?** | This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. | [optional]  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 
@@ -322,7 +328,7 @@ catch (ApiException e)
 
 <a name="httppublicassetsupdatebyid"></a>
 # **HttpPublicAssetsUpdateById**
-> Asset HttpPublicAssetsUpdateById (string id, Asset asset)
+> Asset HttpPublicAssetsUpdateById (string id, Asset asset, bool? translations = null)
 
 
 
@@ -352,10 +358,11 @@ namespace Example
             var apiInstance = new PublicAssetManagementApi(config);
             var id = "id_example";  // string | The ID of the asset.
             var asset = new Asset(); // Asset | The body has to contain one of the mentioned elements and a valid json. Not fitting properties are ignored.
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpPublicAssetsUpdateById(id, asset);
+                Asset result = apiInstance.HttpPublicAssetsUpdateById(id, asset, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -375,7 +382,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Asset> response = apiInstance.HttpPublicAssetsUpdateByIdWithHttpInfo(id, asset);
+    ApiResponse<Asset> response = apiInstance.HttpPublicAssetsUpdateByIdWithHttpInfo(id, asset, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -394,6 +401,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the asset. |  |
 | **asset** | [**Asset**](Asset.md) | The body has to contain one of the mentioned elements and a valid json. Not fitting properties are ignored. |  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 

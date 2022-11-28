@@ -62,7 +62,8 @@ namespace Agravity.Public.Test.Api
         public void HttpWorkspacesGetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.HttpWorkspacesGet();
+            //bool? translations = null;
+            //var response = instance.HttpWorkspacesGet(translations);
             //Assert.IsType<List<Workspace>>(response);
         }
 
@@ -74,7 +75,8 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
-            //var response = instance.HttpWorkspacesGetById(id);
+            //bool? translations = null;
+            //var response = instance.HttpWorkspacesGetById(id, translations);
             //Assert.IsType<Workspace>(response);
         }
     }

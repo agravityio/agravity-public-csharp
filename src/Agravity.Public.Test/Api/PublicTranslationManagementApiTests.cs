@@ -65,7 +65,7 @@ namespace Agravity.Public.Test.Api
             //string id = null;
             //bool? items = null;
             //var response = instance.HttpTranslationsById(id, items);
-            //Assert.IsType<Dictionary<string, Dictionary<string, object>>>(response);
+            //Assert.IsType<Dictionary<string, Dictionary>>(response);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Agravity.Public.Test.Api
             //string id = null;
             //string customField = null;
             //var response = instance.HttpTranslationsByIdFilterByCustomField(id, customField);
-            //Assert.IsType<Dictionary<string, Dictionary<string, object>>>(response);
+            //Assert.IsType<Dictionary<string, Dictionary>>(response);
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Agravity.Public.Test.Api
             //string property = null;
             //bool? items = null;
             //var response = instance.HttpTranslationsByIdFilterByProperty(id, property, items);
-            //Assert.IsType<Dictionary<string, Dictionary<string, object>>>(response);
+            //Assert.IsType<Dictionary<string, Dictionary>>(response);
         }
     }
 }

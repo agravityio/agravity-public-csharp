@@ -113,7 +113,7 @@ catch (ApiException e)
 
 <a name="httpcollectionsget"></a>
 # **HttpCollectionsGet**
-> List&lt;Collection&gt; HttpCollectionsGet (string collectiontypeid, int? level = null, string parentid = null, string fields = null)
+> List&lt;Collection&gt; HttpCollectionsGet (string collectiontypeid, int? level = null, string parentid = null, string fields = null, bool? items = null, bool? translations = null)
 
 
 
@@ -145,10 +145,12 @@ namespace Example
             var level = 56;  // int? | The hierarchy level of collections which should be returned. (optional) 
             var parentid = "parentid_example";  // string | The ID of the parent collection which should be queried. (No collectiontypeid is required) (optional) 
             var fields = "fields_example";  // string | This limits the fields which are returned, separated by comma (','). (optional) 
+            var items = true;  // bool? | The items can be extended to fully filled items. (optional) 
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                List<Collection> result = apiInstance.HttpCollectionsGet(collectiontypeid, level, parentid, fields);
+                List<Collection> result = apiInstance.HttpCollectionsGet(collectiontypeid, level, parentid, fields, items, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -168,7 +170,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<Collection>> response = apiInstance.HttpCollectionsGetWithHttpInfo(collectiontypeid, level, parentid, fields);
+    ApiResponse<List<Collection>> response = apiInstance.HttpCollectionsGetWithHttpInfo(collectiontypeid, level, parentid, fields, items, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -189,6 +191,8 @@ catch (ApiException e)
 | **level** | **int?** | The hierarchy level of collections which should be returned. | [optional]  |
 | **parentid** | **string** | The ID of the parent collection which should be queried. (No collectiontypeid is required) | [optional]  |
 | **fields** | **string** | This limits the fields which are returned, separated by comma (&#39;,&#39;). | [optional]  |
+| **items** | **bool?** | The items can be extended to fully filled items. | [optional]  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 
@@ -216,7 +220,7 @@ catch (ApiException e)
 
 <a name="httpcollectionsgetbyid"></a>
 # **HttpCollectionsGetById**
-> Collection HttpCollectionsGetById (string id, string fields = null)
+> Collection HttpCollectionsGetById (string id, string fields = null, bool? items = null, bool? translations = null)
 
 
 
@@ -246,10 +250,12 @@ namespace Example
             var apiInstance = new PublicCollectionManagementApi(config);
             var id = "id_example";  // string | The ID of the collection.
             var fields = "fields_example";  // string | This limits the fields which are returned, separated by comma (','). (optional) 
+            var items = true;  // bool? | The items can be extended to fully filled items. (optional) 
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                Collection result = apiInstance.HttpCollectionsGetById(id, fields);
+                Collection result = apiInstance.HttpCollectionsGetById(id, fields, items, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -269,7 +275,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Collection> response = apiInstance.HttpCollectionsGetByIdWithHttpInfo(id, fields);
+    ApiResponse<Collection> response = apiInstance.HttpCollectionsGetByIdWithHttpInfo(id, fields, items, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -288,6 +294,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the collection. |  |
 | **fields** | **string** | This limits the fields which are returned, separated by comma (&#39;,&#39;). | [optional]  |
+| **items** | **bool?** | The items can be extended to fully filled items. | [optional]  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 
@@ -315,7 +323,7 @@ catch (ApiException e)
 
 <a name="httpcollectionsgetdescendantstreeofid"></a>
 # **HttpCollectionsGetDescendantsTreeOfId**
-> List&lt;Collection&gt; HttpCollectionsGetDescendantsTreeOfId (string id)
+> List&lt;Collection&gt; HttpCollectionsGetDescendantsTreeOfId (string id, bool? translations = null)
 
 
 
@@ -344,10 +352,11 @@ namespace Example
 
             var apiInstance = new PublicCollectionManagementApi(config);
             var id = "id_example";  // string | The ID of the collection.
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                List<Collection> result = apiInstance.HttpCollectionsGetDescendantsTreeOfId(id);
+                List<Collection> result = apiInstance.HttpCollectionsGetDescendantsTreeOfId(id, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -367,7 +376,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<Collection>> response = apiInstance.HttpCollectionsGetDescendantsTreeOfIdWithHttpInfo(id);
+    ApiResponse<List<Collection>> response = apiInstance.HttpCollectionsGetDescendantsTreeOfIdWithHttpInfo(id, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -385,6 +394,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the collection. |  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 
@@ -413,7 +423,7 @@ catch (ApiException e)
 
 <a name="httpcollectionsgettreeancestorsofid"></a>
 # **HttpCollectionsGetTreeAncestorsOfId**
-> List&lt;Collection&gt; HttpCollectionsGetTreeAncestorsOfId (string id)
+> List&lt;Collection&gt; HttpCollectionsGetTreeAncestorsOfId (string id, bool? translations = null)
 
 
 
@@ -442,10 +452,11 @@ namespace Example
 
             var apiInstance = new PublicCollectionManagementApi(config);
             var id = "id_example";  // string | The ID of the collection.
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                List<Collection> result = apiInstance.HttpCollectionsGetTreeAncestorsOfId(id);
+                List<Collection> result = apiInstance.HttpCollectionsGetTreeAncestorsOfId(id, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -465,7 +476,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<Collection>> response = apiInstance.HttpCollectionsGetTreeAncestorsOfIdWithHttpInfo(id);
+    ApiResponse<List<Collection>> response = apiInstance.HttpCollectionsGetTreeAncestorsOfIdWithHttpInfo(id, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -483,6 +494,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the collection. |  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 
@@ -608,7 +620,7 @@ catch (ApiException e)
 
 <a name="httppubliccollectionsupdatebyid"></a>
 # **HttpPublicCollectionsUpdateById**
-> Collection HttpPublicCollectionsUpdateById (string id, Collection collection)
+> Collection HttpPublicCollectionsUpdateById (string id, Collection collection, bool? translations = null)
 
 
 
@@ -638,10 +650,11 @@ namespace Example
             var apiInstance = new PublicCollectionManagementApi(config);
             var id = "id_example";  // string | The ID of the collection.
             var collection = new Collection(); // Collection | The body has to be a valid collection json.Not fitting properties are ignored.
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                Collection result = apiInstance.HttpPublicCollectionsUpdateById(id, collection);
+                Collection result = apiInstance.HttpPublicCollectionsUpdateById(id, collection, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -661,7 +674,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Collection> response = apiInstance.HttpPublicCollectionsUpdateByIdWithHttpInfo(id, collection);
+    ApiResponse<Collection> response = apiInstance.HttpPublicCollectionsUpdateByIdWithHttpInfo(id, collection, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -680,6 +693,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the collection. |  |
 | **collection** | [**Collection**](Collection.md) | The body has to be a valid collection json.Not fitting properties are ignored. |  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 

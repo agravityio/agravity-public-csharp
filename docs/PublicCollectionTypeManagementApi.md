@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a name="httpcollectiontypesget"></a>
 # **HttpCollectionTypesGet**
-> List&lt;CollectionType&gt; HttpCollectionTypesGet ()
+> List&lt;CollectionType&gt; HttpCollectionTypesGet (bool? translations = null)
 
 
 
@@ -38,10 +38,11 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicCollectionTypeManagementApi(config);
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                List<CollectionType> result = apiInstance.HttpCollectionTypesGet();
+                List<CollectionType> result = apiInstance.HttpCollectionTypesGet(translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -61,7 +62,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<CollectionType>> response = apiInstance.HttpCollectionTypesGetWithHttpInfo();
+    ApiResponse<List<CollectionType>> response = apiInstance.HttpCollectionTypesGetWithHttpInfo(translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -75,7 +76,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+
 ### Return type
 
 [**List&lt;CollectionType&gt;**](CollectionType.md)
@@ -102,7 +107,7 @@ This endpoint does not need any parameter.
 
 <a name="httpcollectiontypesgetbyid"></a>
 # **HttpCollectionTypesGetById**
-> CollectionType HttpCollectionTypesGetById (string id)
+> CollectionType HttpCollectionTypesGetById (string id, bool? translations = null)
 
 
 
@@ -131,10 +136,11 @@ namespace Example
 
             var apiInstance = new PublicCollectionTypeManagementApi(config);
             var id = "id_example";  // string | The ID of the collection type.
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                CollectionType result = apiInstance.HttpCollectionTypesGetById(id);
+                CollectionType result = apiInstance.HttpCollectionTypesGetById(id, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -154,7 +160,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<CollectionType> response = apiInstance.HttpCollectionTypesGetByIdWithHttpInfo(id);
+    ApiResponse<CollectionType> response = apiInstance.HttpCollectionTypesGetByIdWithHttpInfo(id, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -172,6 +178,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the collection type. |  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 
@@ -199,7 +206,7 @@ catch (ApiException e)
 
 <a name="httpgetcollectiontypeitems"></a>
 # **HttpGetCollectionTypeItems**
-> List&lt;CollTypeItem&gt; HttpGetCollectionTypeItems (bool? includeblueprint = null)
+> List&lt;CollTypeItem&gt; HttpGetCollectionTypeItems (bool? includeblueprint = null, bool? translations = null)
 
 
 
@@ -228,10 +235,11 @@ namespace Example
 
             var apiInstance = new PublicCollectionTypeManagementApi(config);
             var includeblueprint = true;  // bool? | True if the blueprint items should be included. (optional) 
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                List<CollTypeItem> result = apiInstance.HttpGetCollectionTypeItems(includeblueprint);
+                List<CollTypeItem> result = apiInstance.HttpGetCollectionTypeItems(includeblueprint, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -251,7 +259,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<CollTypeItem>> response = apiInstance.HttpGetCollectionTypeItemsWithHttpInfo(includeblueprint);
+    ApiResponse<List<CollTypeItem>> response = apiInstance.HttpGetCollectionTypeItemsWithHttpInfo(includeblueprint, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -269,6 +277,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **includeblueprint** | **bool?** | True if the blueprint items should be included. | [optional]  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 

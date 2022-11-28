@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a name="httpgetalluserdefinedlists"></a>
 # **HttpGetAllUserDefinedLists**
-> List&lt;CollectionUDL&gt; HttpGetAllUserDefinedLists ()
+> List&lt;CollectionUDL&gt; HttpGetAllUserDefinedLists (bool? translations = null)
 
 
 
@@ -39,10 +39,11 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicHelperToolsApi(config);
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                List<CollectionUDL> result = apiInstance.HttpGetAllUserDefinedLists();
+                List<CollectionUDL> result = apiInstance.HttpGetAllUserDefinedLists(translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -62,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<CollectionUDL>> response = apiInstance.HttpGetAllUserDefinedListsWithHttpInfo();
+    ApiResponse<List<CollectionUDL>> response = apiInstance.HttpGetAllUserDefinedListsWithHttpInfo(translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -76,7 +77,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+
 ### Return type
 
 [**List&lt;CollectionUDL&gt;**](CollectionUDL.md)

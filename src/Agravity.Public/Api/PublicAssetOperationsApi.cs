@@ -58,9 +58,10 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Asset</returns>
-        Asset HttpAssetImageRotateClockwise(string id, int operationIndex = 0);
+        Asset HttpAssetImageRotateClockwise(string id, bool? translations = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -70,9 +71,10 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
-        ApiResponse<Asset> HttpAssetImageRotateClockwiseWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<Asset> HttpAssetImageRotateClockwiseWithHttpInfo(string id, bool? translations = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -152,9 +154,11 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Collection&gt;</returns>
-        List<Collection> HttpGetAssetCollectionsById(string id, int operationIndex = 0);
+        List<Collection> HttpGetAssetCollectionsById(string id, string fields = default(string), bool? translations = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -164,9 +168,11 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Collection&gt;</returns>
-        ApiResponse<List<Collection>> HttpGetAssetCollectionsByIdWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<List<Collection>> HttpGetAssetCollectionsByIdWithHttpInfo(string id, string fields = default(string), bool? translations = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -234,10 +240,11 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        System.Threading.Tasks.Task<Asset> HttpAssetImageRotateClockwiseAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Asset> HttpAssetImageRotateClockwiseAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -247,10 +254,11 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetImageRotateClockwiseWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetImageRotateClockwiseWithHttpInfoAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -336,10 +344,12 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Collection&gt;</returns>
-        System.Threading.Tasks.Task<List<Collection>> HttpGetAssetCollectionsByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Collection>> HttpGetAssetCollectionsByIdAsync(string id, string fields = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -349,10 +359,12 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Collection&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Collection>>> HttpGetAssetCollectionsByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Collection>>> HttpGetAssetCollectionsByIdWithHttpInfoAsync(string id, string fields = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -661,11 +673,12 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Asset</returns>
-        public Asset HttpAssetImageRotateClockwise(string id, int operationIndex = 0)
+        public Asset HttpAssetImageRotateClockwise(string id, bool? translations = default(bool?), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = HttpAssetImageRotateClockwiseWithHttpInfo(id);
+            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = HttpAssetImageRotateClockwiseWithHttpInfo(id, translations);
             return localVarResponse.Data;
         }
 
@@ -674,9 +687,10 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
-        public Agravity.Public.Client.ApiResponse<Asset> HttpAssetImageRotateClockwiseWithHttpInfo(string id, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<Asset> HttpAssetImageRotateClockwiseWithHttpInfo(string id, bool? translations = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -707,6 +721,10 @@ namespace Agravity.Public.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
 
             localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpAssetImageRotateClockwise";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -736,12 +754,13 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        public async System.Threading.Tasks.Task<Asset> HttpAssetImageRotateClockwiseAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Asset> HttpAssetImageRotateClockwiseAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = await HttpAssetImageRotateClockwiseWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = await HttpAssetImageRotateClockwiseWithHttpInfoAsync(id, translations, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -750,10 +769,11 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Asset>> HttpAssetImageRotateClockwiseWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Asset>> HttpAssetImageRotateClockwiseWithHttpInfoAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -785,6 +805,10 @@ namespace Agravity.Public.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
 
             localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpAssetImageRotateClockwise";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1297,11 +1321,13 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Collection&gt;</returns>
-        public List<Collection> HttpGetAssetCollectionsById(string id, int operationIndex = 0)
+        public List<Collection> HttpGetAssetCollectionsById(string id, string fields = default(string), bool? translations = default(bool?), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<List<Collection>> localVarResponse = HttpGetAssetCollectionsByIdWithHttpInfo(id);
+            Agravity.Public.Client.ApiResponse<List<Collection>> localVarResponse = HttpGetAssetCollectionsByIdWithHttpInfo(id, fields, translations);
             return localVarResponse.Data;
         }
 
@@ -1310,9 +1336,11 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Collection&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<Collection>> HttpGetAssetCollectionsByIdWithHttpInfo(string id, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<Collection>> HttpGetAssetCollectionsByIdWithHttpInfo(string id, string fields = default(string), bool? translations = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1343,6 +1371,14 @@ namespace Agravity.Public.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (fields != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "fields", fields));
+            }
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
 
             localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpGetAssetCollectionsById";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1372,12 +1408,14 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Collection&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Collection>> HttpGetAssetCollectionsByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Collection>> HttpGetAssetCollectionsByIdAsync(string id, string fields = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<List<Collection>> localVarResponse = await HttpGetAssetCollectionsByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<List<Collection>> localVarResponse = await HttpGetAssetCollectionsByIdWithHttpInfoAsync(id, fields, translations, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1386,10 +1424,12 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Collection&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<Collection>>> HttpGetAssetCollectionsByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<Collection>>> HttpGetAssetCollectionsByIdWithHttpInfoAsync(string id, string fields = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1421,6 +1461,14 @@ namespace Agravity.Public.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (fields != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "fields", fields));
+            }
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
 
             localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpGetAssetCollectionsById";
             localVarRequestOptions.OperationIndex = operationIndex;

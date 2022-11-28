@@ -35,6 +35,7 @@ docs/PublicConfigurationManagementApi.md
 docs/PublicGeneralManagementApi.md
 docs/PublicHelperToolsApi.md
 docs/PublicPublishingApi.md
+docs/PublicSavedSearchApi.md
 docs/PublicSearchManagementApi.md
 docs/PublicStaticDefinedListManagementApi.md
 docs/PublicTranslationManagementApi.md
@@ -43,6 +44,7 @@ docs/PublicWorkspaceManagementApi.md
 docs/PublishEntity.md
 docs/PublishedAsset.md
 docs/ReasonResult.md
+docs/SavedSearch.md
 docs/SearchFacet.md
 docs/SearchFacetEntity.md
 docs/SearchResult.md
@@ -66,6 +68,7 @@ src/Agravity.Public.Test/Api/PublicConfigurationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicGeneralManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicHelperToolsApiTests.cs
 src/Agravity.Public.Test/Api/PublicPublishingApiTests.cs
+src/Agravity.Public.Test/Api/PublicSavedSearchApiTests.cs
 src/Agravity.Public.Test/Api/PublicSearchManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicStaticDefinedListManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicTranslationManagementApiTests.cs
@@ -96,6 +99,7 @@ src/Agravity.Public.Test/Model/PerHashResultTests.cs
 src/Agravity.Public.Test/Model/PublishEntityTests.cs
 src/Agravity.Public.Test/Model/PublishedAssetTests.cs
 src/Agravity.Public.Test/Model/ReasonResultTests.cs
+src/Agravity.Public.Test/Model/SavedSearchTests.cs
 src/Agravity.Public.Test/Model/SearchFacetEntityTests.cs
 src/Agravity.Public.Test/Model/SearchFacetTests.cs
 src/Agravity.Public.Test/Model/SearchResultTests.cs
@@ -118,6 +122,7 @@ src/Agravity.Public/Api/PublicConfigurationManagementApi.cs
 src/Agravity.Public/Api/PublicGeneralManagementApi.cs
 src/Agravity.Public/Api/PublicHelperToolsApi.cs
 src/Agravity.Public/Api/PublicPublishingApi.cs
+src/Agravity.Public/Api/PublicSavedSearchApi.cs
 src/Agravity.Public/Api/PublicSearchManagementApi.cs
 src/Agravity.Public/Api/PublicStaticDefinedListManagementApi.cs
 src/Agravity.Public/Api/PublicTranslationManagementApi.cs
@@ -165,6 +170,7 @@ src/Agravity.Public/Model/PerHashResult.cs
 src/Agravity.Public/Model/PublishEntity.cs
 src/Agravity.Public/Model/PublishedAsset.cs
 src/Agravity.Public/Model/ReasonResult.cs
+src/Agravity.Public/Model/SavedSearch.cs
 src/Agravity.Public/Model/SearchFacet.cs
 src/Agravity.Public/Model/SearchFacetEntity.cs
 src/Agravity.Public/Model/SearchResult.cs

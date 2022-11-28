@@ -83,7 +83,9 @@ namespace Agravity.Public.Test.Api
             //int? limit = null;
             //string orderby = null;
             //bool? techdata = null;
-            //var response = instance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, techdata);
+            //bool? items = null;
+            //bool? translations = null;
+            //var response = instance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, techdata, items, translations);
             //Assert.IsType<AssetPageResult>(response);
         }
 
@@ -98,7 +100,8 @@ namespace Agravity.Public.Test.Api
             //string fields = null;
             //bool? expose = null;
             //bool? uncomplete = null;
-            //var response = instance.HttpAssetsGetById(id, fields, expose, uncomplete);
+            //bool? translations = null;
+            //var response = instance.HttpAssetsGetById(id, fields, expose, uncomplete, translations);
             //Assert.IsType<Asset>(response);
         }
 
@@ -111,7 +114,8 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //Asset asset = null;
-            //var response = instance.HttpPublicAssetsUpdateById(id, asset);
+            //bool? translations = null;
+            //var response = instance.HttpPublicAssetsUpdateById(id, asset, translations);
             //Assert.IsType<Asset>(response);
         }
     }

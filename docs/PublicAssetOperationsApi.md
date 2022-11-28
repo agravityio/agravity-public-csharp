@@ -112,7 +112,7 @@ catch (ApiException e)
 
 <a name="httpassetimagerotateclockwise"></a>
 # **HttpAssetImageRotateClockwise**
-> Asset HttpAssetImageRotateClockwise (string id)
+> Asset HttpAssetImageRotateClockwise (string id, bool? translations = null)
 
 
 
@@ -141,10 +141,11 @@ namespace Example
 
             var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpAssetImageRotateClockwise(id);
+                Asset result = apiInstance.HttpAssetImageRotateClockwise(id, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -164,7 +165,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Asset> response = apiInstance.HttpAssetImageRotateClockwiseWithHttpInfo(id);
+    ApiResponse<Asset> response = apiInstance.HttpAssetImageRotateClockwiseWithHttpInfo(id, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -182,6 +183,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the asset. |  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 
@@ -504,7 +506,7 @@ catch (ApiException e)
 
 <a name="httpgetassetcollectionsbyid"></a>
 # **HttpGetAssetCollectionsById**
-> List&lt;Collection&gt; HttpGetAssetCollectionsById (string id)
+> List&lt;Collection&gt; HttpGetAssetCollectionsById (string id, string fields = null, bool? translations = null)
 
 
 
@@ -533,10 +535,12 @@ namespace Example
 
             var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
+            var fields = "fields_example";  // string | This limits the fields which are returned, separated by comma (','). (optional) 
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                List<Collection> result = apiInstance.HttpGetAssetCollectionsById(id);
+                List<Collection> result = apiInstance.HttpGetAssetCollectionsById(id, fields, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -556,7 +560,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<Collection>> response = apiInstance.HttpGetAssetCollectionsByIdWithHttpInfo(id);
+    ApiResponse<List<Collection>> response = apiInstance.HttpGetAssetCollectionsByIdWithHttpInfo(id, fields, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -574,6 +578,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the asset. |  |
+| **fields** | **string** | This limits the fields which are returned, separated by comma (&#39;,&#39;). | [optional]  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 

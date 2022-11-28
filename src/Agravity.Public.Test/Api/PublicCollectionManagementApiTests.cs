@@ -79,7 +79,9 @@ namespace Agravity.Public.Test.Api
             //int? level = null;
             //string parentid = null;
             //string fields = null;
-            //var response = instance.HttpCollectionsGet(collectiontypeid, level, parentid, fields);
+            //bool? items = null;
+            //bool? translations = null;
+            //var response = instance.HttpCollectionsGet(collectiontypeid, level, parentid, fields, items, translations);
             //Assert.IsType<List<Collection>>(response);
         }
 
@@ -92,7 +94,9 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //string fields = null;
-            //var response = instance.HttpCollectionsGetById(id, fields);
+            //bool? items = null;
+            //bool? translations = null;
+            //var response = instance.HttpCollectionsGetById(id, fields, items, translations);
             //Assert.IsType<Collection>(response);
         }
 
@@ -104,7 +108,8 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
-            //var response = instance.HttpCollectionsGetDescendantsTreeOfId(id);
+            //bool? translations = null;
+            //var response = instance.HttpCollectionsGetDescendantsTreeOfId(id, translations);
             //Assert.IsType<List<Collection>>(response);
         }
 
@@ -116,7 +121,8 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
-            //var response = instance.HttpCollectionsGetTreeAncestorsOfId(id);
+            //bool? translations = null;
+            //var response = instance.HttpCollectionsGetTreeAncestorsOfId(id, translations);
             //Assert.IsType<List<Collection>>(response);
         }
 
@@ -141,7 +147,8 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //Collection collection = null;
-            //var response = instance.HttpPublicCollectionsUpdateById(id, collection);
+            //bool? translations = null;
+            //var response = instance.HttpPublicCollectionsUpdateById(id, collection, translations);
             //Assert.IsType<Collection>(response);
         }
     }

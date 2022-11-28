@@ -37,11 +37,13 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="children">children.</param>
         /// <param name="name">name.</param>
+        /// <param name="translations">translations.</param>
         /// <param name="id">id.</param>
-        public CollectionUDL(List<EntityIdName> children = default(List<EntityIdName>), string name = default(string), string id = default(string))
+        public CollectionUDL(List<EntityIdName> children = default(List<EntityIdName>), string name = default(string), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), string id = default(string))
         {
             this.Children = children;
             this.Name = name;
+            this.Translations = translations;
             this.Id = id;
         }
 
@@ -56,6 +58,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Translations
+        /// </summary>
+        [DataMember(Name = "translations", EmitDefaultValue = false)]
+        public Dictionary<string, Dictionary<string, Object>> Translations { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -73,6 +81,7 @@ namespace Agravity.Public.Model
             sb.Append("class CollectionUDL {\n");
             sb.Append("  Children: ").Append(Children).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Translations: ").Append(Translations).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -121,6 +130,12 @@ namespace Agravity.Public.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Translations == input.Translations ||
+                    this.Translations != null &&
+                    input.Translations != null &&
+                    this.Translations.SequenceEqual(input.Translations)
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -143,6 +158,10 @@ namespace Agravity.Public.Model
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Translations != null)
+                {
+                    hashCode = (hashCode * 59) + this.Translations.GetHashCode();
                 }
                 if (this.Id != null)
                 {

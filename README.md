@@ -143,6 +143,7 @@ Class | Method | HTTP request | Description
 *PublicHelperToolsApi* | [**HttpGetAllowedSearchableItemNames**](docs\PublicHelperToolsApi.md#httpgetallowedsearchableitemnames) | **GET** /helper/searchableitemnames | 
 *PublicHelperToolsApi* | [**HttpGetAllowedSearchableItems**](docs\PublicHelperToolsApi.md#httpgetallowedsearchableitems) | **GET** /helper/searchableitems | 
 *PublicPublishingApi* | [**HttpPublishedAssetsGetAll**](docs\PublicPublishingApi.md#httppublishedassetsgetall) | **GET** /publish | 
+*PublicSavedSearchApi* | [**HttpSavedSearchesGetAll**](docs\PublicSavedSearchApi.md#httpsavedsearchesgetall) | **GET** /savedsearches | 
 *PublicSearchManagementApi* | [**HttpGlobalSearch**](docs\PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search | 
 *PublicStaticDefinedListManagementApi* | [**HttpStaticDefinedListsGetAll**](docs\PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsgetall) | **GET** /staticdefinedlists | 
 *PublicStaticDefinedListManagementApi* | [**HttpStaticDefinedListsGetById**](docs\PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsgetbyid) | **GET** /staticdefinedlists/{id} | 
@@ -183,6 +184,7 @@ Class | Method | HTTP request | Description
  - [Model.PublishEntity](docs\PublishEntity.md)
  - [Model.PublishedAsset](docs\PublishedAsset.md)
  - [Model.ReasonResult](docs\ReasonResult.md)
+ - [Model.SavedSearch](docs\SavedSearch.md)
  - [Model.SearchFacet](docs\SearchFacet.md)
  - [Model.SearchFacetEntity](docs\SearchFacetEntity.md)
  - [Model.SearchResult](docs\SearchResult.md)

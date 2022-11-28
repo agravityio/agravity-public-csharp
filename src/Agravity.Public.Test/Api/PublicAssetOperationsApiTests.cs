@@ -75,7 +75,8 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
-            //var response = instance.HttpAssetImageRotateClockwise(id);
+            //bool? translations = null;
+            //var response = instance.HttpAssetImageRotateClockwise(id, translations);
             //Assert.IsType<Asset>(response);
         }
 
@@ -124,7 +125,9 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
-            //var response = instance.HttpGetAssetCollectionsById(id);
+            //string fields = null;
+            //bool? translations = null;
+            //var response = instance.HttpGetAssetCollectionsById(id, fields, translations);
             //Assert.IsType<List<Collection>>(response);
         }
 

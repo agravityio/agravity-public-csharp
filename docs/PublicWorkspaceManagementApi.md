@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a name="httpworkspacesget"></a>
 # **HttpWorkspacesGet**
-> List&lt;Workspace&gt; HttpWorkspacesGet ()
+> List&lt;Workspace&gt; HttpWorkspacesGet (bool? translations = null)
 
 
 
@@ -37,10 +37,11 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicWorkspaceManagementApi(config);
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                List<Workspace> result = apiInstance.HttpWorkspacesGet();
+                List<Workspace> result = apiInstance.HttpWorkspacesGet(translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -60,7 +61,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<Workspace>> response = apiInstance.HttpWorkspacesGetWithHttpInfo();
+    ApiResponse<List<Workspace>> response = apiInstance.HttpWorkspacesGetWithHttpInfo(translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -74,7 +75,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+
 ### Return type
 
 [**List&lt;Workspace&gt;**](Workspace.md)
@@ -101,7 +106,7 @@ This endpoint does not need any parameter.
 
 <a name="httpworkspacesgetbyid"></a>
 # **HttpWorkspacesGetById**
-> Workspace HttpWorkspacesGetById (string id)
+> Workspace HttpWorkspacesGetById (string id, bool? translations = null)
 
 
 
@@ -130,10 +135,11 @@ namespace Example
 
             var apiInstance = new PublicWorkspaceManagementApi(config);
             var id = "id_example";  // string | The ID of the workspace.
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                Workspace result = apiInstance.HttpWorkspacesGetById(id);
+                Workspace result = apiInstance.HttpWorkspacesGetById(id, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -153,7 +159,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Workspace> response = apiInstance.HttpWorkspacesGetByIdWithHttpInfo(id);
+    ApiResponse<Workspace> response = apiInstance.HttpWorkspacesGetByIdWithHttpInfo(id, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -171,6 +177,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the workspace. |  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 

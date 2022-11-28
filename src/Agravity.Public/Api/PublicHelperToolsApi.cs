@@ -34,9 +34,10 @@ namespace Agravity.Public.Api
         /// Returns all user defined lists of all collection types
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CollectionUDL&gt;</returns>
-        List<CollectionUDL> HttpGetAllUserDefinedLists(int operationIndex = 0);
+        List<CollectionUDL> HttpGetAllUserDefinedLists(bool? translations = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -45,9 +46,10 @@ namespace Agravity.Public.Api
         /// Returns all user defined lists of all collection types
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CollectionUDL&gt;</returns>
-        ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo(int operationIndex = 0);
+        ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo(bool? translations = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -127,10 +129,11 @@ namespace Agravity.Public.Api
         /// Returns all user defined lists of all collection types
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CollectionUDL&gt;</returns>
-        System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync(bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -139,10 +142,11 @@ namespace Agravity.Public.Api
         /// Returns all user defined lists of all collection types
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CollectionUDL&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CollectionUDL>>> HttpGetAllUserDefinedListsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<CollectionUDL>>> HttpGetAllUserDefinedListsWithHttpInfoAsync(bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -336,11 +340,12 @@ namespace Agravity.Public.Api
         ///  Returns all user defined lists of all collection types
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CollectionUDL&gt;</returns>
-        public List<CollectionUDL> HttpGetAllUserDefinedLists(int operationIndex = 0)
+        public List<CollectionUDL> HttpGetAllUserDefinedLists(bool? translations = default(bool?), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<List<CollectionUDL>> localVarResponse = HttpGetAllUserDefinedListsWithHttpInfo();
+            Agravity.Public.Client.ApiResponse<List<CollectionUDL>> localVarResponse = HttpGetAllUserDefinedListsWithHttpInfo(translations);
             return localVarResponse.Data;
         }
 
@@ -348,9 +353,10 @@ namespace Agravity.Public.Api
         ///  Returns all user defined lists of all collection types
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CollectionUDL&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo(int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo(bool? translations = default(bool?), int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -374,6 +380,10 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
 
             localVarRequestOptions.Operation = "PublicHelperToolsApi.HttpGetAllUserDefinedLists";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -402,12 +412,13 @@ namespace Agravity.Public.Api
         ///  Returns all user defined lists of all collection types
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CollectionUDL&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync(bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<List<CollectionUDL>> localVarResponse = await HttpGetAllUserDefinedListsWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<List<CollectionUDL>> localVarResponse = await HttpGetAllUserDefinedListsWithHttpInfoAsync(translations, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -415,10 +426,11 @@ namespace Agravity.Public.Api
         ///  Returns all user defined lists of all collection types
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CollectionUDL&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollectionUDL>>> HttpGetAllUserDefinedListsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollectionUDL>>> HttpGetAllUserDefinedListsWithHttpInfoAsync(bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -443,6 +455,10 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
 
             localVarRequestOptions.Operation = "PublicHelperToolsApi.HttpGetAllUserDefinedLists";
             localVarRequestOptions.OperationIndex = operationIndex;

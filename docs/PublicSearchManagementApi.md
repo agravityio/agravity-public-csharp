@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a name="httpglobalsearch"></a>
 # **HttpGlobalSearch**
-> SearchResult HttpGlobalSearch (string s, int? limit = null, string collectiontypeid = null, string collectionid = null, string mode = null, bool? expose = null, string filter = null, string orderby = null)
+> SearchResult HttpGlobalSearch (string s, int? limit = null, string collectiontypeid = null, string collectionid = null, string mode = null, bool? expose = null, string filter = null, string orderby = null, bool? translations = null)
 
 
 
@@ -44,10 +44,11 @@ namespace Example
             var expose = true;  // bool? | This will expose the thumbnail asset blob incl. URL with SAS Token. (optional) 
             var filter = "filter_example";  // string | Colon separated key value filter for filterable strings and string collections. For date or numbers \"<\", \"=\" and \">\" are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional) 
             var orderby = "orderby_example";  // string | Sortable fields can be used. For descendant sorting use leading \"!\". (Only if Azure Search is enabled) (optional) 
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                SearchResult result = apiInstance.HttpGlobalSearch(s, limit, collectiontypeid, collectionid, mode, expose, filter, orderby);
+                SearchResult result = apiInstance.HttpGlobalSearch(s, limit, collectiontypeid, collectionid, mode, expose, filter, orderby, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -67,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<SearchResult> response = apiInstance.HttpGlobalSearchWithHttpInfo(s, limit, collectiontypeid, collectionid, mode, expose, filter, orderby);
+    ApiResponse<SearchResult> response = apiInstance.HttpGlobalSearchWithHttpInfo(s, limit, collectiontypeid, collectionid, mode, expose, filter, orderby, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -92,6 +93,7 @@ catch (ApiException e)
 | **expose** | **bool?** | This will expose the thumbnail asset blob incl. URL with SAS Token. | [optional]  |
 | **filter** | **string** | Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) | [optional]  |
 | **orderby** | **string** | Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) | [optional]  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 

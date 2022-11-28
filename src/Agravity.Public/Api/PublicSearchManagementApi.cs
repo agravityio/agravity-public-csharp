@@ -42,9 +42,10 @@ namespace Agravity.Public.Api
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchResult</returns>
-        SearchResult HttpGlobalSearch(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), int operationIndex = 0);
+        SearchResult HttpGlobalSearch(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), bool? translations = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -61,9 +62,10 @@ namespace Agravity.Public.Api
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchResult</returns>
-        ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), int operationIndex = 0);
+        ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), bool? translations = default(bool?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -88,10 +90,11 @@ namespace Agravity.Public.Api
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchResult</returns>
-        System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchAsync(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchAsync(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -108,10 +111,11 @@ namespace Agravity.Public.Api
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -244,11 +248,12 @@ namespace Agravity.Public.Api
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchResult</returns>
-        public SearchResult HttpGlobalSearch(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), int operationIndex = 0)
+        public SearchResult HttpGlobalSearch(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), bool? translations = default(bool?), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = HttpGlobalSearchWithHttpInfo(s, limit, collectiontypeid, collectionid, mode, expose, filter, orderby);
+            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = HttpGlobalSearchWithHttpInfo(s, limit, collectiontypeid, collectionid, mode, expose, filter, orderby, translations);
             return localVarResponse.Data;
         }
 
@@ -264,9 +269,10 @@ namespace Agravity.Public.Api
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchResult</returns>
-        public Agravity.Public.Client.ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), bool? translations = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 's' is set
             if (s == null)
@@ -324,6 +330,10 @@ namespace Agravity.Public.Api
             if (orderby != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "orderby", orderby));
+            }
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
             }
 
             localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpGlobalSearch";
@@ -361,12 +371,13 @@ namespace Agravity.Public.Api
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchResult</returns>
-        public async System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchAsync(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchAsync(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = await HttpGlobalSearchWithHttpInfoAsync(s, limit, collectiontypeid, collectionid, mode, expose, filter, orderby, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = await HttpGlobalSearchWithHttpInfoAsync(s, limit, collectiontypeid, collectionid, mode, expose, filter, orderby, translations, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -382,10 +393,11 @@ namespace Agravity.Public.Api
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchResult)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 's' is set
             if (s == null)
@@ -444,6 +456,10 @@ namespace Agravity.Public.Api
             if (orderby != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "orderby", orderby));
+            }
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
             }
 
             localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpGlobalSearch";

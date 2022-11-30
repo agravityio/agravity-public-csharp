@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ReasonResult** | [**List&lt;ReasonResult&gt;**](ReasonResult.md) |  | [optional] 
 **DataResult** | [**DataResult**](DataResult.md) |  | [optional] 
 **MaxSumResults** | **int** |  | [optional] 
+**Options** | [**AzSearchOptions**](AzSearchOptions.md) |  | [optional] 
 **Facets** | [**List&lt;SearchFacet&gt;**](SearchFacet.md) |  | [optional] 
 **Count** | **long?** |  | [optional] 
 **SearchQuery** | **string** |  | [optional] 

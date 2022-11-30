@@ -38,6 +38,7 @@ namespace Agravity.Public.Model
         /// <param name="reasonResult">reasonResult.</param>
         /// <param name="dataResult">dataResult.</param>
         /// <param name="maxSumResults">maxSumResults.</param>
+        /// <param name="options">options.</param>
         /// <param name="facets">facets.</param>
         /// <param name="count">count.</param>
         /// <param name="searchQuery">searchQuery.</param>
@@ -45,11 +46,12 @@ namespace Agravity.Public.Model
         /// <param name="searchOrderBy">searchOrderBy.</param>
         /// <param name="searchMode">searchMode.</param>
         /// <param name="origin">origin.</param>
-        public SearchResult(List<ReasonResult> reasonResult = default(List<ReasonResult>), DataResult dataResult = default(DataResult), int maxSumResults = default(int), List<SearchFacet> facets = default(List<SearchFacet>), long? count = default(long?), string searchQuery = default(string), string searchFilter = default(string), string searchOrderBy = default(string), string searchMode = default(string), string origin = default(string))
+        public SearchResult(List<ReasonResult> reasonResult = default(List<ReasonResult>), DataResult dataResult = default(DataResult), int maxSumResults = default(int), AzSearchOptions options = default(AzSearchOptions), List<SearchFacet> facets = default(List<SearchFacet>), long? count = default(long?), string searchQuery = default(string), string searchFilter = default(string), string searchOrderBy = default(string), string searchMode = default(string), string origin = default(string))
         {
             this.ReasonResult = reasonResult;
             this.DataResult = dataResult;
             this.MaxSumResults = maxSumResults;
+            this.Options = options;
             this.Facets = facets;
             this.Count = count;
             this.SearchQuery = searchQuery;
@@ -76,6 +78,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "max_sum_results", EmitDefaultValue = false)]
         public int MaxSumResults { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Options
+        /// </summary>
+        [DataMember(Name = "options", EmitDefaultValue = false)]
+        public AzSearchOptions Options { get; set; }
 
         /// <summary>
         /// Gets or Sets Facets
@@ -130,6 +138,7 @@ namespace Agravity.Public.Model
             sb.Append("  ReasonResult: ").Append(ReasonResult).Append("\n");
             sb.Append("  DataResult: ").Append(DataResult).Append("\n");
             sb.Append("  MaxSumResults: ").Append(MaxSumResults).Append("\n");
+            sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("  Facets: ").Append(Facets).Append("\n");
             sb.Append("  Count: ").Append(Count).Append("\n");
             sb.Append("  SearchQuery: ").Append(SearchQuery).Append("\n");
@@ -188,6 +197,11 @@ namespace Agravity.Public.Model
                     this.MaxSumResults.Equals(input.MaxSumResults)
                 ) && 
                 (
+                    this.Options == input.Options ||
+                    (this.Options != null &&
+                    this.Options.Equals(input.Options))
+                ) && 
+                (
                     this.Facets == input.Facets ||
                     this.Facets != null &&
                     input.Facets != null &&
@@ -243,6 +257,10 @@ namespace Agravity.Public.Model
                     hashCode = (hashCode * 59) + this.DataResult.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.MaxSumResults.GetHashCode();
+                if (this.Options != null)
+                {
+                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
+                }
                 if (this.Facets != null)
                 {
                     hashCode = (hashCode * 59) + this.Facets.GetHashCode();

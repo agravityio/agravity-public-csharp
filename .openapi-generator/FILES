@@ -9,6 +9,7 @@ docs/ArtificialIntelligenceGroup.md
 docs/Asset.md
 docs/AssetBlob.md
 docs/AssetPageResult.md
+docs/AzSearchOptions.md
 docs/BadRequestResult.md
 docs/CollTypeItem.md
 docs/Collection.md
@@ -81,6 +82,7 @@ src/Agravity.Public.Test/Model/ArtificialIntelligenceGroupTests.cs
 src/Agravity.Public.Test/Model/AssetBlobTests.cs
 src/Agravity.Public.Test/Model/AssetPageResultTests.cs
 src/Agravity.Public.Test/Model/AssetTests.cs
+src/Agravity.Public.Test/Model/AzSearchOptionsTests.cs
 src/Agravity.Public.Test/Model/BadRequestResultTests.cs
 src/Agravity.Public.Test/Model/CollTypeItemTests.cs
 src/Agravity.Public.Test/Model/CollectionPermissionTests.cs
@@ -152,6 +154,7 @@ src/Agravity.Public/Model/ArtificialIntelligenceGroup.cs
 src/Agravity.Public/Model/Asset.cs
 src/Agravity.Public/Model/AssetBlob.cs
 src/Agravity.Public/Model/AssetPageResult.cs
+src/Agravity.Public/Model/AzSearchOptions.cs
 src/Agravity.Public/Model/BadRequestResult.cs
 src/Agravity.Public/Model/CollTypeItem.cs
 src/Agravity.Public/Model/Collection.cs

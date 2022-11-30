@@ -166,6 +166,7 @@ Class | Method | HTTP request | Description
  - [Model.Asset](docs\Asset.md)
  - [Model.AssetBlob](docs\AssetBlob.md)
  - [Model.AssetPageResult](docs\AssetPageResult.md)
+ - [Model.AzSearchOptions](docs\AzSearchOptions.md)
  - [Model.BadRequestResult](docs\BadRequestResult.md)
  - [Model.CollTypeItem](docs\CollTypeItem.md)
  - [Model.Collection](docs\Collection.md)

@@ -19,6 +19,8 @@ docs/CollectionUDL.md
 docs/CreateSftpUserResult.md
 docs/DataResult.md
 docs/DistZipResponse.md
+docs/DownloadFormat.md
+docs/DynamicImageOperation.md
 docs/EntityIdName.md
 docs/FrontendAppConfig.md
 docs/GroupAllAppData.md
@@ -33,6 +35,7 @@ docs/PublicCollectionSecureUploadApi.md
 docs/PublicCollectionSharingApi.md
 docs/PublicCollectionTypeManagementApi.md
 docs/PublicConfigurationManagementApi.md
+docs/PublicDownloadFormatManagementApi.md
 docs/PublicGeneralManagementApi.md
 docs/PublicHelperToolsApi.md
 docs/PublicPublishingApi.md
@@ -66,6 +69,7 @@ src/Agravity.Public.Test/Api/PublicCollectionSecureUploadApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionSharingApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionTypeManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicConfigurationManagementApiTests.cs
+src/Agravity.Public.Test/Api/PublicDownloadFormatManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicGeneralManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicHelperToolsApiTests.cs
 src/Agravity.Public.Test/Api/PublicPublishingApiTests.cs
@@ -92,6 +96,8 @@ src/Agravity.Public.Test/Model/CollectionUDLTests.cs
 src/Agravity.Public.Test/Model/CreateSftpUserResultTests.cs
 src/Agravity.Public.Test/Model/DataResultTests.cs
 src/Agravity.Public.Test/Model/DistZipResponseTests.cs
+src/Agravity.Public.Test/Model/DownloadFormatTests.cs
+src/Agravity.Public.Test/Model/DynamicImageOperationTests.cs
 src/Agravity.Public.Test/Model/EntityIdNameTests.cs
 src/Agravity.Public.Test/Model/FrontendAppConfigTests.cs
 src/Agravity.Public.Test/Model/GroupAllAppDataTests.cs
@@ -121,6 +127,7 @@ src/Agravity.Public/Api/PublicCollectionSecureUploadApi.cs
 src/Agravity.Public/Api/PublicCollectionSharingApi.cs
 src/Agravity.Public/Api/PublicCollectionTypeManagementApi.cs
 src/Agravity.Public/Api/PublicConfigurationManagementApi.cs
+src/Agravity.Public/Api/PublicDownloadFormatManagementApi.cs
 src/Agravity.Public/Api/PublicGeneralManagementApi.cs
 src/Agravity.Public/Api/PublicHelperToolsApi.cs
 src/Agravity.Public/Api/PublicPublishingApi.cs
@@ -164,6 +171,8 @@ src/Agravity.Public/Model/CollectionUDL.cs
 src/Agravity.Public/Model/CreateSftpUserResult.cs
 src/Agravity.Public/Model/DataResult.cs
 src/Agravity.Public/Model/DistZipResponse.cs
+src/Agravity.Public/Model/DownloadFormat.cs
+src/Agravity.Public/Model/DynamicImageOperation.cs
 src/Agravity.Public/Model/EntityIdName.cs
 src/Agravity.Public/Model/FrontendAppConfig.cs
 src/Agravity.Public/Model/GroupAllAppData.cs

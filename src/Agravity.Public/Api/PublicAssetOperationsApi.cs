@@ -35,9 +35,24 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="width">The width of the final image. (optional)</param>
+        /// <param name="height">The height of the final image. (optional)</param>
+        /// <param name="mode">The supported modes: contain (default), cover, fill, crop, none (optional)</param>
+        /// <param name="target">The file type which the image should be (i.e. webp, png, jpg, gif) (optional)</param>
+        /// <param name="bgcolor">The color of the background color if background is visible (crop outside, png). RGB(A) in hex code (i.e. 00FFAA or with alpha channel: 44AABB77) and color names (i.e. lightgray) supported - default: transparent (optional)</param>
+        /// <param name="dpi">The density (counts for X and Y) of the target image. (optional)</param>
+        /// <param name="depth">The bit depth of the target image. (optional)</param>
+        /// <param name="quality">The quality of the target image (1-100). (optional)</param>
+        /// <param name="colorspace">The color space of the image (Default: sRGB). (optional)</param>
+        /// <param name="cropX">If mode is crop: The x coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropY">If mode is crop: The y coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropWidth">If mode&#x3D;crop: The width of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="cropHeight">If mode&#x3D;crop: The height of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="filter">Which filter should be applied. To get all filters available use: /api/helper/imageeditfilters (optional)</param>
+        /// <param name="original">If set to true the internal image is used instead of the default original (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
-        System.IO.Stream HttpAssetImageEdit(string id, int operationIndex = 0);
+        System.IO.Stream HttpAssetImageEdit(string id, int? width = default(int?), int? height = default(int?), string mode = default(string), string target = default(string), string bgcolor = default(string), int? dpi = default(int?), int? depth = default(int?), int? quality = default(int?), string colorspace = default(string), int? cropX = default(int?), int? cropY = default(int?), int? cropWidth = default(int?), int? cropHeight = default(int?), string filter = default(string), bool? original = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -47,34 +62,24 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="width">The width of the final image. (optional)</param>
+        /// <param name="height">The height of the final image. (optional)</param>
+        /// <param name="mode">The supported modes: contain (default), cover, fill, crop, none (optional)</param>
+        /// <param name="target">The file type which the image should be (i.e. webp, png, jpg, gif) (optional)</param>
+        /// <param name="bgcolor">The color of the background color if background is visible (crop outside, png). RGB(A) in hex code (i.e. 00FFAA or with alpha channel: 44AABB77) and color names (i.e. lightgray) supported - default: transparent (optional)</param>
+        /// <param name="dpi">The density (counts for X and Y) of the target image. (optional)</param>
+        /// <param name="depth">The bit depth of the target image. (optional)</param>
+        /// <param name="quality">The quality of the target image (1-100). (optional)</param>
+        /// <param name="colorspace">The color space of the image (Default: sRGB). (optional)</param>
+        /// <param name="cropX">If mode is crop: The x coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropY">If mode is crop: The y coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropWidth">If mode&#x3D;crop: The width of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="cropHeight">If mode&#x3D;crop: The height of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="filter">Which filter should be applied. To get all filters available use: /api/helper/imageeditfilters (optional)</param>
+        /// <param name="original">If set to true the internal image is used instead of the default original (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> HttpAssetImageEditWithHttpInfo(string id, int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// This endpoint lets you rotate an image or video clockwise in 90 degrees steps.
-        /// </remarks>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the asset.</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Asset</returns>
-        Asset HttpAssetImageRotateClockwise(string id, bool? translations = default(bool?), int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// This endpoint lets you rotate an image or video clockwise in 90 degrees steps.
-        /// </remarks>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the asset.</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Asset</returns>
-        ApiResponse<Asset> HttpAssetImageRotateClockwiseWithHttpInfo(string id, bool? translations = default(bool?), int operationIndex = 0);
+        ApiResponse<System.IO.Stream> HttpAssetImageEditWithHttpInfo(string id, int? width = default(int?), int? height = default(int?), string mode = default(string), string target = default(string), string bgcolor = default(string), int? dpi = default(int?), int? depth = default(int?), int? quality = default(int?), string colorspace = default(string), int? cropX = default(int?), int? cropY = default(int?), int? cropWidth = default(int?), int? cropHeight = default(int?), string filter = default(string), bool? original = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -198,6 +203,56 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetBlob</returns>
         ApiResponse<AssetBlob> HttpGetAssetDownloadWithHttpInfo(string id, string c = default(string), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint lets you use the entire api of Imagemagick to edit the image.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream HttpImageDynamicEdit(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint lets you use the entire api of Imagemagick to edit the image.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        ApiResponse<System.IO.Stream> HttpImageDynamicEditWithHttpInfo(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns an image with the requested download format applied.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="downloadFormatId">The ID of the download format.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream HttpImageDynamicGetFromDownloadId(string id, string downloadFormatId, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns an image with the requested download format applied.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="downloadFormatId">The ID of the download format.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        ApiResponse<System.IO.Stream> HttpImageDynamicGetFromDownloadIdWithHttpInfo(string id, string downloadFormatId, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -215,10 +270,25 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="width">The width of the final image. (optional)</param>
+        /// <param name="height">The height of the final image. (optional)</param>
+        /// <param name="mode">The supported modes: contain (default), cover, fill, crop, none (optional)</param>
+        /// <param name="target">The file type which the image should be (i.e. webp, png, jpg, gif) (optional)</param>
+        /// <param name="bgcolor">The color of the background color if background is visible (crop outside, png). RGB(A) in hex code (i.e. 00FFAA or with alpha channel: 44AABB77) and color names (i.e. lightgray) supported - default: transparent (optional)</param>
+        /// <param name="dpi">The density (counts for X and Y) of the target image. (optional)</param>
+        /// <param name="depth">The bit depth of the target image. (optional)</param>
+        /// <param name="quality">The quality of the target image (1-100). (optional)</param>
+        /// <param name="colorspace">The color space of the image (Default: sRGB). (optional)</param>
+        /// <param name="cropX">If mode is crop: The x coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropY">If mode is crop: The y coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropWidth">If mode&#x3D;crop: The width of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="cropHeight">If mode&#x3D;crop: The height of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="filter">Which filter should be applied. To get all filters available use: /api/helper/imageeditfilters (optional)</param>
+        /// <param name="original">If set to true the internal image is used instead of the default original (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> HttpAssetImageEditAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.IO.Stream> HttpAssetImageEditAsync(string id, int? width = default(int?), int? height = default(int?), string mode = default(string), string target = default(string), string bgcolor = default(string), int? dpi = default(int?), int? depth = default(int?), int? quality = default(int?), string colorspace = default(string), int? cropX = default(int?), int? cropY = default(int?), int? cropWidth = default(int?), int? cropHeight = default(int?), string filter = default(string), bool? original = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -228,37 +298,25 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="width">The width of the final image. (optional)</param>
+        /// <param name="height">The height of the final image. (optional)</param>
+        /// <param name="mode">The supported modes: contain (default), cover, fill, crop, none (optional)</param>
+        /// <param name="target">The file type which the image should be (i.e. webp, png, jpg, gif) (optional)</param>
+        /// <param name="bgcolor">The color of the background color if background is visible (crop outside, png). RGB(A) in hex code (i.e. 00FFAA or with alpha channel: 44AABB77) and color names (i.e. lightgray) supported - default: transparent (optional)</param>
+        /// <param name="dpi">The density (counts for X and Y) of the target image. (optional)</param>
+        /// <param name="depth">The bit depth of the target image. (optional)</param>
+        /// <param name="quality">The quality of the target image (1-100). (optional)</param>
+        /// <param name="colorspace">The color space of the image (Default: sRGB). (optional)</param>
+        /// <param name="cropX">If mode is crop: The x coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropY">If mode is crop: The y coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropWidth">If mode&#x3D;crop: The width of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="cropHeight">If mode&#x3D;crop: The height of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="filter">Which filter should be applied. To get all filters available use: /api/helper/imageeditfilters (optional)</param>
+        /// <param name="original">If set to true the internal image is used instead of the default original (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> HttpAssetImageEditWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// This endpoint lets you rotate an image or video clockwise in 90 degrees steps.
-        /// </remarks>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the asset.</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Asset</returns>
-        System.Threading.Tasks.Task<Asset> HttpAssetImageRotateClockwiseAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// This endpoint lets you rotate an image or video clockwise in 90 degrees steps.
-        /// </remarks>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the asset.</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Asset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetImageRotateClockwiseWithHttpInfoAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> HttpAssetImageEditWithHttpInfoAsync(string id, int? width = default(int?), int? height = default(int?), string mode = default(string), string target = default(string), string bgcolor = default(string), int? dpi = default(int?), int? depth = default(int?), int? quality = default(int?), string colorspace = default(string), int? cropX = default(int?), int? cropY = default(int?), int? cropWidth = default(int?), int? cropHeight = default(int?), string filter = default(string), bool? original = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -392,6 +450,60 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetBlob)</returns>
         System.Threading.Tasks.Task<ApiResponse<AssetBlob>> HttpGetAssetDownloadWithHttpInfoAsync(string id, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint lets you use the entire api of Imagemagick to edit the image.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> HttpImageDynamicEditAsync(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint lets you use the entire api of Imagemagick to edit the image.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> HttpImageDynamicEditWithHttpInfoAsync(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns an image with the requested download format applied.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="downloadFormatId">The ID of the download format.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> HttpImageDynamicGetFromDownloadIdAsync(string id, string downloadFormatId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns an image with the requested download format applied.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="downloadFormatId">The ID of the download format.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> HttpImageDynamicGetFromDownloadIdWithHttpInfoAsync(string id, string downloadFormatId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -517,11 +629,26 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="width">The width of the final image. (optional)</param>
+        /// <param name="height">The height of the final image. (optional)</param>
+        /// <param name="mode">The supported modes: contain (default), cover, fill, crop, none (optional)</param>
+        /// <param name="target">The file type which the image should be (i.e. webp, png, jpg, gif) (optional)</param>
+        /// <param name="bgcolor">The color of the background color if background is visible (crop outside, png). RGB(A) in hex code (i.e. 00FFAA or with alpha channel: 44AABB77) and color names (i.e. lightgray) supported - default: transparent (optional)</param>
+        /// <param name="dpi">The density (counts for X and Y) of the target image. (optional)</param>
+        /// <param name="depth">The bit depth of the target image. (optional)</param>
+        /// <param name="quality">The quality of the target image (1-100). (optional)</param>
+        /// <param name="colorspace">The color space of the image (Default: sRGB). (optional)</param>
+        /// <param name="cropX">If mode is crop: The x coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropY">If mode is crop: The y coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropWidth">If mode&#x3D;crop: The width of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="cropHeight">If mode&#x3D;crop: The height of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="filter">Which filter should be applied. To get all filters available use: /api/helper/imageeditfilters (optional)</param>
+        /// <param name="original">If set to true the internal image is used instead of the default original (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream HttpAssetImageEdit(string id, int operationIndex = 0)
+        public System.IO.Stream HttpAssetImageEdit(string id, int? width = default(int?), int? height = default(int?), string mode = default(string), string target = default(string), string bgcolor = default(string), int? dpi = default(int?), int? depth = default(int?), int? quality = default(int?), string colorspace = default(string), int? cropX = default(int?), int? cropY = default(int?), int? cropWidth = default(int?), int? cropHeight = default(int?), string filter = default(string), bool? original = default(bool?), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = HttpAssetImageEditWithHttpInfo(id);
+            Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = HttpAssetImageEditWithHttpInfo(id, width, height, mode, target, bgcolor, dpi, depth, quality, colorspace, cropX, cropY, cropWidth, cropHeight, filter, original);
             return localVarResponse.Data;
         }
 
@@ -530,9 +657,24 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="width">The width of the final image. (optional)</param>
+        /// <param name="height">The height of the final image. (optional)</param>
+        /// <param name="mode">The supported modes: contain (default), cover, fill, crop, none (optional)</param>
+        /// <param name="target">The file type which the image should be (i.e. webp, png, jpg, gif) (optional)</param>
+        /// <param name="bgcolor">The color of the background color if background is visible (crop outside, png). RGB(A) in hex code (i.e. 00FFAA or with alpha channel: 44AABB77) and color names (i.e. lightgray) supported - default: transparent (optional)</param>
+        /// <param name="dpi">The density (counts for X and Y) of the target image. (optional)</param>
+        /// <param name="depth">The bit depth of the target image. (optional)</param>
+        /// <param name="quality">The quality of the target image (1-100). (optional)</param>
+        /// <param name="colorspace">The color space of the image (Default: sRGB). (optional)</param>
+        /// <param name="cropX">If mode is crop: The x coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropY">If mode is crop: The y coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropWidth">If mode&#x3D;crop: The width of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="cropHeight">If mode&#x3D;crop: The height of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="filter">Which filter should be applied. To get all filters available use: /api/helper/imageeditfilters (optional)</param>
+        /// <param name="original">If set to true the internal image is used instead of the default original (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Agravity.Public.Client.ApiResponse<System.IO.Stream> HttpAssetImageEditWithHttpInfo(string id, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<System.IO.Stream> HttpAssetImageEditWithHttpInfo(string id, int? width = default(int?), int? height = default(int?), string mode = default(string), string target = default(string), string bgcolor = default(string), int? dpi = default(int?), int? depth = default(int?), int? quality = default(int?), string colorspace = default(string), int? cropX = default(int?), int? cropY = default(int?), int? cropWidth = default(int?), int? cropHeight = default(int?), string filter = default(string), bool? original = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -564,6 +706,66 @@ namespace Agravity.Public.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (width != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "width", width));
+            }
+            if (height != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "height", height));
+            }
+            if (mode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "mode", mode));
+            }
+            if (target != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "target", target));
+            }
+            if (bgcolor != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "bgcolor", bgcolor));
+            }
+            if (dpi != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "dpi", dpi));
+            }
+            if (depth != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "depth", depth));
+            }
+            if (quality != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "quality", quality));
+            }
+            if (colorspace != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "colorspace", colorspace));
+            }
+            if (cropX != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "crop_x", cropX));
+            }
+            if (cropY != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "crop_y", cropY));
+            }
+            if (cropWidth != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "crop_width", cropWidth));
+            }
+            if (cropHeight != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "crop_height", cropHeight));
+            }
+            if (filter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+            }
+            if (original != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "original", original));
+            }
 
             localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpAssetImageEdit";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -593,12 +795,27 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="width">The width of the final image. (optional)</param>
+        /// <param name="height">The height of the final image. (optional)</param>
+        /// <param name="mode">The supported modes: contain (default), cover, fill, crop, none (optional)</param>
+        /// <param name="target">The file type which the image should be (i.e. webp, png, jpg, gif) (optional)</param>
+        /// <param name="bgcolor">The color of the background color if background is visible (crop outside, png). RGB(A) in hex code (i.e. 00FFAA or with alpha channel: 44AABB77) and color names (i.e. lightgray) supported - default: transparent (optional)</param>
+        /// <param name="dpi">The density (counts for X and Y) of the target image. (optional)</param>
+        /// <param name="depth">The bit depth of the target image. (optional)</param>
+        /// <param name="quality">The quality of the target image (1-100). (optional)</param>
+        /// <param name="colorspace">The color space of the image (Default: sRGB). (optional)</param>
+        /// <param name="cropX">If mode is crop: The x coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropY">If mode is crop: The y coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropWidth">If mode&#x3D;crop: The width of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="cropHeight">If mode&#x3D;crop: The height of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="filter">Which filter should be applied. To get all filters available use: /api/helper/imageeditfilters (optional)</param>
+        /// <param name="original">If set to true the internal image is used instead of the default original (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> HttpAssetImageEditAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<System.IO.Stream> HttpAssetImageEditAsync(string id, int? width = default(int?), int? height = default(int?), string mode = default(string), string target = default(string), string bgcolor = default(string), int? dpi = default(int?), int? depth = default(int?), int? quality = default(int?), string colorspace = default(string), int? cropX = default(int?), int? cropY = default(int?), int? cropWidth = default(int?), int? cropHeight = default(int?), string filter = default(string), bool? original = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = await HttpAssetImageEditWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = await HttpAssetImageEditWithHttpInfoAsync(id, width, height, mode, target, bgcolor, dpi, depth, quality, colorspace, cropX, cropY, cropWidth, cropHeight, filter, original, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -607,10 +824,25 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
+        /// <param name="width">The width of the final image. (optional)</param>
+        /// <param name="height">The height of the final image. (optional)</param>
+        /// <param name="mode">The supported modes: contain (default), cover, fill, crop, none (optional)</param>
+        /// <param name="target">The file type which the image should be (i.e. webp, png, jpg, gif) (optional)</param>
+        /// <param name="bgcolor">The color of the background color if background is visible (crop outside, png). RGB(A) in hex code (i.e. 00FFAA or with alpha channel: 44AABB77) and color names (i.e. lightgray) supported - default: transparent (optional)</param>
+        /// <param name="dpi">The density (counts for X and Y) of the target image. (optional)</param>
+        /// <param name="depth">The bit depth of the target image. (optional)</param>
+        /// <param name="quality">The quality of the target image (1-100). (optional)</param>
+        /// <param name="colorspace">The color space of the image (Default: sRGB). (optional)</param>
+        /// <param name="cropX">If mode is crop: The x coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropY">If mode is crop: The y coordinate of the point (if image is extended (outside) it is negative) (optional)</param>
+        /// <param name="cropWidth">If mode&#x3D;crop: The width of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="cropHeight">If mode&#x3D;crop: The height of the cropping rectangle (from original pixel) (optional)</param>
+        /// <param name="filter">Which filter should be applied. To get all filters available use: /api/helper/imageeditfilters (optional)</param>
+        /// <param name="original">If set to true the internal image is used instead of the default original (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<System.IO.Stream>> HttpAssetImageEditWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<System.IO.Stream>> HttpAssetImageEditWithHttpInfoAsync(string id, int? width = default(int?), int? height = default(int?), string mode = default(string), string target = default(string), string bgcolor = default(string), int? dpi = default(int?), int? depth = default(int?), int? quality = default(int?), string colorspace = default(string), int? cropX = default(int?), int? cropY = default(int?), int? cropWidth = default(int?), int? cropHeight = default(int?), string filter = default(string), bool? original = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -643,6 +875,66 @@ namespace Agravity.Public.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (width != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "width", width));
+            }
+            if (height != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "height", height));
+            }
+            if (mode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "mode", mode));
+            }
+            if (target != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "target", target));
+            }
+            if (bgcolor != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "bgcolor", bgcolor));
+            }
+            if (dpi != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "dpi", dpi));
+            }
+            if (depth != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "depth", depth));
+            }
+            if (quality != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "quality", quality));
+            }
+            if (colorspace != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "colorspace", colorspace));
+            }
+            if (cropX != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "crop_x", cropX));
+            }
+            if (cropY != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "crop_y", cropY));
+            }
+            if (cropWidth != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "crop_width", cropWidth));
+            }
+            if (cropHeight != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "crop_height", cropHeight));
+            }
+            if (filter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+            }
+            if (original != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "original", original));
+            }
 
             localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpAssetImageEdit";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -659,172 +951,6 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpAssetImageEdit", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  This endpoint lets you rotate an image or video clockwise in 90 degrees steps.
-        /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the asset.</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Asset</returns>
-        public Asset HttpAssetImageRotateClockwise(string id, bool? translations = default(bool?), int operationIndex = 0)
-        {
-            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = HttpAssetImageRotateClockwiseWithHttpInfo(id, translations);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  This endpoint lets you rotate an image or video clockwise in 90 degrees steps.
-        /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the asset.</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Asset</returns>
-        public Agravity.Public.Client.ApiResponse<Asset> HttpAssetImageRotateClockwiseWithHttpInfo(string id, bool? translations = default(bool?), int operationIndex = 0)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetOperationsApi->HttpAssetImageRotateClockwise");
-            }
-
-            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (translations != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
-            }
-
-            localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpAssetImageRotateClockwise";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (function_key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<Asset>("/assets/{id}/rotate", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("HttpAssetImageRotateClockwise", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  This endpoint lets you rotate an image or video clockwise in 90 degrees steps.
-        /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the asset.</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Asset</returns>
-        public async System.Threading.Tasks.Task<Asset> HttpAssetImageRotateClockwiseAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = await HttpAssetImageRotateClockwiseWithHttpInfoAsync(id, translations, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  This endpoint lets you rotate an image or video clockwise in 90 degrees steps.
-        /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the asset.</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Asset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Asset>> HttpAssetImageRotateClockwiseWithHttpInfoAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetOperationsApi->HttpAssetImageRotateClockwise");
-            }
-
-
-            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (translations != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
-            }
-
-            localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpAssetImageRotateClockwise";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (function_key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Asset>("/assets/{id}/rotate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("HttpAssetImageRotateClockwise", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1651,6 +1777,356 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpGetAssetDownload", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint lets you use the entire api of Imagemagick to edit the image.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream HttpImageDynamicEdit(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = HttpImageDynamicEditWithHttpInfo(id, dynamicImageOperation);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint lets you use the entire api of Imagemagick to edit the image.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public Agravity.Public.Client.ApiResponse<System.IO.Stream> HttpImageDynamicEditWithHttpInfo(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetOperationsApi->HttpImageDynamicEdit");
+            }
+
+            // verify the required parameter 'dynamicImageOperation' is set
+            if (dynamicImageOperation == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'dynamicImageOperation' when calling PublicAssetOperationsApi->HttpImageDynamicEdit");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "image/xyz",
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = dynamicImageOperation;
+
+            localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpImageDynamicEdit";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<System.IO.Stream>("/assets/{id}/imageedit", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpImageDynamicEdit", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint lets you use the entire api of Imagemagick to edit the image.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> HttpImageDynamicEditAsync(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = await HttpImageDynamicEditWithHttpInfoAsync(id, dynamicImageOperation, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint lets you use the entire api of Imagemagick to edit the image.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<System.IO.Stream>> HttpImageDynamicEditWithHttpInfoAsync(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetOperationsApi->HttpImageDynamicEdit");
+            }
+
+            // verify the required parameter 'dynamicImageOperation' is set
+            if (dynamicImageOperation == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'dynamicImageOperation' when calling PublicAssetOperationsApi->HttpImageDynamicEdit");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "image/xyz",
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = dynamicImageOperation;
+
+            localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpImageDynamicEdit";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<System.IO.Stream>("/assets/{id}/imageedit", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpImageDynamicEdit", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint returns an image with the requested download format applied.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="downloadFormatId">The ID of the download format.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream HttpImageDynamicGetFromDownloadId(string id, string downloadFormatId, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = HttpImageDynamicGetFromDownloadIdWithHttpInfo(id, downloadFormatId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint returns an image with the requested download format applied.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="downloadFormatId">The ID of the download format.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public Agravity.Public.Client.ApiResponse<System.IO.Stream> HttpImageDynamicGetFromDownloadIdWithHttpInfo(string id, string downloadFormatId, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetOperationsApi->HttpImageDynamicGetFromDownloadId");
+            }
+
+            // verify the required parameter 'downloadFormatId' is set
+            if (downloadFormatId == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'downloadFormatId' when calling PublicAssetOperationsApi->HttpImageDynamicGetFromDownloadId");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "image/xyz",
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("download_format_id", Agravity.Public.Client.ClientUtils.ParameterToString(downloadFormatId)); // path parameter
+
+            localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpImageDynamicGetFromDownloadId";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<System.IO.Stream>("/assets/{id}/imageedit/{download_format_id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpImageDynamicGetFromDownloadId", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint returns an image with the requested download format applied.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="downloadFormatId">The ID of the download format.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> HttpImageDynamicGetFromDownloadIdAsync(string id, string downloadFormatId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = await HttpImageDynamicGetFromDownloadIdWithHttpInfoAsync(id, downloadFormatId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint returns an image with the requested download format applied.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="downloadFormatId">The ID of the download format.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<System.IO.Stream>> HttpImageDynamicGetFromDownloadIdWithHttpInfoAsync(string id, string downloadFormatId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetOperationsApi->HttpImageDynamicGetFromDownloadId");
+            }
+
+            // verify the required parameter 'downloadFormatId' is set
+            if (downloadFormatId == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'downloadFormatId' when calling PublicAssetOperationsApi->HttpImageDynamicGetFromDownloadId");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "image/xyz",
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("download_format_id", Agravity.Public.Client.ClientUtils.ParameterToString(downloadFormatId)); // path parameter
+
+            localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpImageDynamicGetFromDownloadId";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/assets/{id}/imageedit/{download_format_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpImageDynamicGetFromDownloadId", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -5,16 +5,17 @@ All URIs are relative to *http://localhost:7072/api*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**HttpAssetImageEdit**](PublicAssetOperationsApi.md#httpassetimageedit) | **GET** /assets/{id}/imageedit |  |
-| [**HttpAssetImageRotateClockwise**](PublicAssetOperationsApi.md#httpassetimagerotateclockwise) | **POST** /assets/{id}/rotate |  |
 | [**HttpAssetResize**](PublicAssetOperationsApi.md#httpassetresize) | **GET** /assets/{id}/resize |  |
 | [**HttpAssetsGetSimilarById**](PublicAssetOperationsApi.md#httpassetsgetsimilarbyid) | **GET** /assets/{id}/similar |  |
 | [**HttpGetAssetBlob**](PublicAssetOperationsApi.md#httpgetassetblob) | **GET** /assets/{id}/blobs |  |
 | [**HttpGetAssetCollectionsById**](PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections |  |
 | [**HttpGetAssetDownload**](PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download |  |
+| [**HttpImageDynamicEdit**](PublicAssetOperationsApi.md#httpimagedynamicedit) | **POST** /assets/{id}/imageedit |  |
+| [**HttpImageDynamicGetFromDownloadId**](PublicAssetOperationsApi.md#httpimagedynamicgetfromdownloadid) | **GET** /assets/{id}/imageedit/{download_format_id} |  |
 
 <a name="httpassetimageedit"></a>
 # **HttpAssetImageEdit**
-> System.IO.Stream HttpAssetImageEdit (string id)
+> System.IO.Stream HttpAssetImageEdit (string id, int? width = null, int? height = null, string mode = null, string target = null, string bgcolor = null, int? dpi = null, int? depth = null, int? quality = null, string colorspace = null, int? cropX = null, int? cropY = null, int? cropWidth = null, int? cropHeight = null, string filter = null, bool? original = null)
 
 
 
@@ -43,10 +44,25 @@ namespace Example
 
             var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
+            var width = 56;  // int? | The width of the final image. (optional) 
+            var height = 56;  // int? | The height of the final image. (optional) 
+            var mode = "mode_example";  // string | The supported modes: contain (default), cover, fill, crop, none (optional) 
+            var target = "target_example";  // string | The file type which the image should be (i.e. webp, png, jpg, gif) (optional) 
+            var bgcolor = "bgcolor_example";  // string | The color of the background color if background is visible (crop outside, png). RGB(A) in hex code (i.e. 00FFAA or with alpha channel: 44AABB77) and color names (i.e. lightgray) supported - default: transparent (optional) 
+            var dpi = 56;  // int? | The density (counts for X and Y) of the target image. (optional) 
+            var depth = 56;  // int? | The bit depth of the target image. (optional) 
+            var quality = 56;  // int? | The quality of the target image (1-100). (optional) 
+            var colorspace = "colorspace_example";  // string | The color space of the image (Default: sRGB). (optional) 
+            var cropX = 56;  // int? | If mode is crop: The x coordinate of the point (if image is extended (outside) it is negative) (optional) 
+            var cropY = 56;  // int? | If mode is crop: The y coordinate of the point (if image is extended (outside) it is negative) (optional) 
+            var cropWidth = 56;  // int? | If mode=crop: The width of the cropping rectangle (from original pixel) (optional) 
+            var cropHeight = 56;  // int? | If mode=crop: The height of the cropping rectangle (from original pixel) (optional) 
+            var filter = "filter_example";  // string | Which filter should be applied. To get all filters available use: /api/helper/imageeditfilters (optional) 
+            var original = true;  // bool? | If set to true the internal image is used instead of the default original (optional) 
 
             try
             {
-                System.IO.Stream result = apiInstance.HttpAssetImageEdit(id);
+                System.IO.Stream result = apiInstance.HttpAssetImageEdit(id, width, height, mode, target, bgcolor, dpi, depth, quality, colorspace, cropX, cropY, cropWidth, cropHeight, filter, original);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -66,7 +82,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<System.IO.Stream> response = apiInstance.HttpAssetImageEditWithHttpInfo(id);
+    ApiResponse<System.IO.Stream> response = apiInstance.HttpAssetImageEditWithHttpInfo(id, width, height, mode, target, bgcolor, dpi, depth, quality, colorspace, cropX, cropY, cropWidth, cropHeight, filter, original);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,6 +100,21 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the asset. |  |
+| **width** | **int?** | The width of the final image. | [optional]  |
+| **height** | **int?** | The height of the final image. | [optional]  |
+| **mode** | **string** | The supported modes: contain (default), cover, fill, crop, none | [optional]  |
+| **target** | **string** | The file type which the image should be (i.e. webp, png, jpg, gif) | [optional]  |
+| **bgcolor** | **string** | The color of the background color if background is visible (crop outside, png). RGB(A) in hex code (i.e. 00FFAA or with alpha channel: 44AABB77) and color names (i.e. lightgray) supported - default: transparent | [optional]  |
+| **dpi** | **int?** | The density (counts for X and Y) of the target image. | [optional]  |
+| **depth** | **int?** | The bit depth of the target image. | [optional]  |
+| **quality** | **int?** | The quality of the target image (1-100). | [optional]  |
+| **colorspace** | **string** | The color space of the image (Default: sRGB). | [optional]  |
+| **cropX** | **int?** | If mode is crop: The x coordinate of the point (if image is extended (outside) it is negative) | [optional]  |
+| **cropY** | **int?** | If mode is crop: The y coordinate of the point (if image is extended (outside) it is negative) | [optional]  |
+| **cropWidth** | **int?** | If mode&#x3D;crop: The width of the cropping rectangle (from original pixel) | [optional]  |
+| **cropHeight** | **int?** | If mode&#x3D;crop: The height of the cropping rectangle (from original pixel) | [optional]  |
+| **filter** | **string** | Which filter should be applied. To get all filters available use: /api/helper/imageeditfilters | [optional]  |
+| **original** | **bool?** | If set to true the internal image is used instead of the default original | [optional]  |
 
 ### Return type
 
@@ -106,106 +137,6 @@ catch (ApiException e)
 | **400** | Asset has to be image! Not allowed on type (Code: ec482f52-0ec8-4a8b-89fd-65b9d6b624cd) Asset does not have origsize or optimized blob reference. (Code: b6733be7 -8560-4b1a-8dfc-657ac668ffea) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **404** | The requested item could not be found |  -  |
-| **500** | Internal server error. Please contact administrator. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="httpassetimagerotateclockwise"></a>
-# **HttpAssetImageRotateClockwise**
-> Asset HttpAssetImageRotateClockwise (string id, bool? translations = null)
-
-
-
-This endpoint lets you rotate an image or video clockwise in 90 degrees steps.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Agravity.Public.Api;
-using Agravity.Public.Client;
-using Agravity.Public.Model;
-
-namespace Example
-{
-    public class HttpAssetImageRotateClockwiseExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost:7072/api";
-            // Configure API key authorization: function_key
-            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
-
-            var apiInstance = new PublicAssetOperationsApi(config);
-            var id = "id_example";  // string | The ID of the asset.
-            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
-
-            try
-            {
-                Asset result = apiInstance.HttpAssetImageRotateClockwise(id, translations);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetImageRotateClockwise: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the HttpAssetImageRotateClockwiseWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<Asset> response = apiInstance.HttpAssetImageRotateClockwiseWithHttpInfo(id, translations);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetImageRotateClockwiseWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **string** | The ID of the asset. |  |
-| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
-
-### Return type
-
-[**Asset**](Asset.md)
-
-### Authorization
-
-[function_key](../README.md#function_key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Rotates the image (including configured formats e.g. thumbnail, optimized) in 90 degree steps clockwise and returns the full asset including exposed blobs. |  -  |
-| **400** | Please include a valid UUID (Code: 1e4b5087-fa0c-489d-ba18-b25ffa41d6ab)&lt;br/&gt;The document is not valid asset of type image or video or already deleted. (Code: eaa36577-c5de-4bd3-8572-eef7ed407b74)&lt;br/&gt;Blob not found with UUID: {id} (Code: 1523618d-4705-4efb-9409-03c791f4380e)&lt;br/&gt;Something went wrong on rotating thumbnail ({id}) rotate: {error message} - Type: ({exception type}) (Code: f28ec238-66b3-405c-b84e-27b691e6e4d9)&lt;br/&gt;Something went wrong on rotating optimized video ({id}) rotate: {error message} - Type: ({exception type}) (Code: d166322c-bf98-46b5-b2cc-ab1112fcc5d1)&lt;br/&gt;Something went wrong on rotate origsize image (&lt;id&gt;) rotate: &lt;error message&gt; - Type: (&lt;exception type&gt;) (Code: b501b995-6c87-4459-b8b0-82f6a09f6f73)&lt;br/&gt;Something went wrong on rotate optimized image ({id}) rotate: {error message} - Type: ({exception type}) (Code: 022ea0e8-b4b3-4988-a001-a88aea7362ce) |  -  |
-| **404** | The requested item could not be found |  -  |
-| **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -697,6 +628,206 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | This function checks if asset exist on storage and returns the asset blob (incl. url to download). |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **404** | The requested item could not be found |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="httpimagedynamicedit"></a>
+# **HttpImageDynamicEdit**
+> System.IO.Stream HttpImageDynamicEdit (string id, List<DynamicImageOperation> dynamicImageOperation)
+
+
+
+This endpoint lets you use the entire api of Imagemagick to edit the image.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpImageDynamicEditExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicAssetOperationsApi(config);
+            var id = "id_example";  // string | The ID of the asset.
+            var dynamicImageOperation = new List<DynamicImageOperation>(); // List<DynamicImageOperation> | Operations to be performed on the image directly mapped to c# imagemagick sdk
+
+            try
+            {
+                System.IO.Stream result = apiInstance.HttpImageDynamicEdit(id, dynamicImageOperation);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpImageDynamicEdit: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpImageDynamicEditWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<System.IO.Stream> response = apiInstance.HttpImageDynamicEditWithHttpInfo(id, dynamicImageOperation);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpImageDynamicEditWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
+| **dynamicImageOperation** | [**List&lt;DynamicImageOperation&gt;**](DynamicImageOperation.md) | Operations to be performed on the image directly mapped to c# imagemagick sdk |  |
+
+### Return type
+
+**System.IO.Stream**
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: image/xyz, application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the resized/modified image according to the input parameter(s) |  -  |
+| **400** | Asset has to be image! Not allowed on type: {type} (Code: ec482f52-0ec8-4a8b-89fd-65b9d6b624cd) Not a valid asset used. It has to be an asset, not deleted and from type {type} (Code: 320cda1c-7dd8-4b23-9b59-51ccee5e0a98)  |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **404** | The requested item could not be found |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="httpimagedynamicgetfromdownloadid"></a>
+# **HttpImageDynamicGetFromDownloadId**
+> System.IO.Stream HttpImageDynamicGetFromDownloadId (string id, string downloadFormatId)
+
+
+
+This endpoint returns an image with the requested download format applied.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpImageDynamicGetFromDownloadIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicAssetOperationsApi(config);
+            var id = "id_example";  // string | The ID of the asset.
+            var downloadFormatId = "downloadFormatId_example";  // string | The ID of the download format.
+
+            try
+            {
+                System.IO.Stream result = apiInstance.HttpImageDynamicGetFromDownloadId(id, downloadFormatId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpImageDynamicGetFromDownloadId: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpImageDynamicGetFromDownloadIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<System.IO.Stream> response = apiInstance.HttpImageDynamicGetFromDownloadIdWithHttpInfo(id, downloadFormatId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpImageDynamicGetFromDownloadIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
+| **downloadFormatId** | **string** | The ID of the download format. |  |
+
+### Return type
+
+**System.IO.Stream**
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: image/xyz, application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the resized/modified image according to the input parameter(s) |  -  |
+| **400** | Asset has to be image! Not allowed on type: {type} (Code: ec482f52-0ec8-4a8b-89fd-65b9d6b624cd) The ID given is missing or not a valid download format ID. (Code: 7ec8d75d-3da4-4dce-8ab2-e52f0cf5f1f1) Not a valid asset used. It has to be an asset, not deleted and from type {type} (Code: 320cda1c-7dd8-4b23-9b59-51ccee5e0a98) Could not find requested download format. (Code: 05985771-df5e-4620-9b58-785177a1b223)  |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **404** | The requested item could not be found |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |

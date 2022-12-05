@@ -113,12 +113,13 @@ Class | Method | HTTP request | Description
 *PublicAssetManagementApi* | [**HttpAssetsGetById**](docs\PublicAssetManagementApi.md#httpassetsgetbyid) | **GET** /assets/{id} | 
 *PublicAssetManagementApi* | [**HttpPublicAssetsUpdateById**](docs\PublicAssetManagementApi.md#httppublicassetsupdatebyid) | **POST** /assets/{id} | 
 *PublicAssetOperationsApi* | [**HttpAssetImageEdit**](docs\PublicAssetOperationsApi.md#httpassetimageedit) | **GET** /assets/{id}/imageedit | 
-*PublicAssetOperationsApi* | [**HttpAssetImageRotateClockwise**](docs\PublicAssetOperationsApi.md#httpassetimagerotateclockwise) | **POST** /assets/{id}/rotate | 
 *PublicAssetOperationsApi* | [**HttpAssetResize**](docs\PublicAssetOperationsApi.md#httpassetresize) | **GET** /assets/{id}/resize | 
 *PublicAssetOperationsApi* | [**HttpAssetsGetSimilarById**](docs\PublicAssetOperationsApi.md#httpassetsgetsimilarbyid) | **GET** /assets/{id}/similar | 
 *PublicAssetOperationsApi* | [**HttpGetAssetBlob**](docs\PublicAssetOperationsApi.md#httpgetassetblob) | **GET** /assets/{id}/blobs | 
 *PublicAssetOperationsApi* | [**HttpGetAssetCollectionsById**](docs\PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections | 
 *PublicAssetOperationsApi* | [**HttpGetAssetDownload**](docs\PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download | 
+*PublicAssetOperationsApi* | [**HttpImageDynamicEdit**](docs\PublicAssetOperationsApi.md#httpimagedynamicedit) | **POST** /assets/{id}/imageedit | 
+*PublicAssetOperationsApi* | [**HttpImageDynamicGetFromDownloadId**](docs\PublicAssetOperationsApi.md#httpimagedynamicgetfromdownloadid) | **GET** /assets/{id}/imageedit/{download_format_id} | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsGet**](docs\PublicAssetPublishingApi.md#httppublishedassetsget) | **GET** /assets/{id}/publish | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsGetById**](docs\PublicAssetPublishingApi.md#httppublishedassetsgetbyid) | **GET** /assets/{id}/publish/{pid} | 
 *PublicCollectionManagementApi* | [**HttpCollectionsCreate**](docs\PublicCollectionManagementApi.md#httpcollectionscreate) | **POST** /collections | 
@@ -135,6 +136,7 @@ Class | Method | HTTP request | Description
 *PublicCollectionTypeManagementApi* | [**HttpCollectionTypesGetById**](docs\PublicCollectionTypeManagementApi.md#httpcollectiontypesgetbyid) | **GET** /collectiontypes/{id} | 
 *PublicCollectionTypeManagementApi* | [**HttpGetCollectionTypeItems**](docs\PublicCollectionTypeManagementApi.md#httpgetcollectiontypeitems) | **GET** /collectiontypesitems | 
 *PublicConfigurationManagementApi* | [**HttpConfigGetFrontendAll**](docs\PublicConfigurationManagementApi.md#httpconfiggetfrontendall) | **GET** /config/frontend | 
+*PublicDownloadFormatManagementApi* | [**HttpDownloadFormatsGetAll**](docs\PublicDownloadFormatManagementApi.md#httpdownloadformatsgetall) | **GET** /downloadformats | 
 *PublicGeneralManagementApi* | [**HttpAgravityVersionInfo**](docs\PublicGeneralManagementApi.md#httpagravityversioninfo) | **GET** /version | 
 *PublicGeneralManagementApi* | [**HttpTriggerDurableContinue**](docs\PublicGeneralManagementApi.md#httptriggerdurablecontinue) | **GET** /durable/{instanceId} | 
 *PublicGeneralManagementApi* | [**HttpTriggerDurableScchTrainingDone**](docs\PublicGeneralManagementApi.md#httptriggerdurablescchtrainingdone) | **GET** /durable/scch/{instanceId} | 
@@ -176,6 +178,8 @@ Class | Method | HTTP request | Description
  - [Model.CreateSftpUserResult](docs\CreateSftpUserResult.md)
  - [Model.DataResult](docs\DataResult.md)
  - [Model.DistZipResponse](docs\DistZipResponse.md)
+ - [Model.DownloadFormat](docs\DownloadFormat.md)
+ - [Model.DynamicImageOperation](docs\DynamicImageOperation.md)
  - [Model.EntityIdName](docs\EntityIdName.md)
  - [Model.FrontendAppConfig](docs\FrontendAppConfig.md)
  - [Model.GroupAllAppData](docs\GroupAllAppData.md)

@@ -63,21 +63,23 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
-            //var response = instance.HttpAssetImageEdit(id);
+            //int? width = null;
+            //int? height = null;
+            //string mode = null;
+            //string target = null;
+            //string bgcolor = null;
+            //int? dpi = null;
+            //int? depth = null;
+            //int? quality = null;
+            //string colorspace = null;
+            //int? cropX = null;
+            //int? cropY = null;
+            //int? cropWidth = null;
+            //int? cropHeight = null;
+            //string filter = null;
+            //bool? original = null;
+            //var response = instance.HttpAssetImageEdit(id, width, height, mode, target, bgcolor, dpi, depth, quality, colorspace, cropX, cropY, cropWidth, cropHeight, filter, original);
             //Assert.IsType<System.IO.Stream>(response);
-        }
-
-        /// <summary>
-        /// Test HttpAssetImageRotateClockwise
-        /// </summary>
-        [Fact]
-        public void HttpAssetImageRotateClockwiseTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string id = null;
-            //bool? translations = null;
-            //var response = instance.HttpAssetImageRotateClockwise(id, translations);
-            //Assert.IsType<Asset>(response);
         }
 
         /// <summary>
@@ -142,6 +144,32 @@ namespace Agravity.Public.Test.Api
             //string c = null;
             //var response = instance.HttpGetAssetDownload(id, c);
             //Assert.IsType<AssetBlob>(response);
+        }
+
+        /// <summary>
+        /// Test HttpImageDynamicEdit
+        /// </summary>
+        [Fact]
+        public void HttpImageDynamicEditTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //List<DynamicImageOperation> dynamicImageOperation = null;
+            //var response = instance.HttpImageDynamicEdit(id, dynamicImageOperation);
+            //Assert.IsType<System.IO.Stream>(response);
+        }
+
+        /// <summary>
+        /// Test HttpImageDynamicGetFromDownloadId
+        /// </summary>
+        [Fact]
+        public void HttpImageDynamicGetFromDownloadIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //string downloadFormatId = null;
+            //var response = instance.HttpImageDynamicGetFromDownloadId(id, downloadFormatId);
+            //Assert.IsType<System.IO.Stream>(response);
         }
     }
 }

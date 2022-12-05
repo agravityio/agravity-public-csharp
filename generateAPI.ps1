@@ -13,7 +13,9 @@ Write-Host "Generate API with apiVersion: $apiVersion"
 Remove-Item -Path .\src -Recurse -Force
 
 # generate API
-npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp-netcore -o . --additional-properties=packageName=Agravity.Public,library=httpclient,targetFramework=netstandard2.0,packageVersion=$apiVersion
+$params="packageName=Agravity.Public,library=httpclient,targetFramework=netstandard2.0,packageVersion="+$apiVersion
+# Write-Host("Executing: openapi-generator generate -i https://api.agravity.com/v2/swagger.json -g csharp-netcore -o src -p "+$params);
+npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp-netcore -o . --additional-properties=$params
 
 #change directory to src
 Set-Location .\src

@@ -1,7 +1,3 @@
-## <a name="recommended-version"></a> Recommended version
-
-The **minimum recommended version is [4.9.1](#4.9.1)**.
-
 Any known issues detected on that version are listed in the [known issues](#known-issues) section.
 
 ## Release notes
@@ -10,6 +6,16 @@ Preview features are treated as a separate branch and will not be included in th
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+---
+
+## AgravityAPI <a name="4.9.2"/> [4.9.2](https://www.nuget.org/packages/Agravity.Public/4.9.2) (2022-12-05)
+
+- Add to Public the Download Format Management and Custom Image Manipulation (with DownloadID):
+  - Add POST `assets/{id}/imageedit` to Public Asset Operation Management
+  - Add GET `assets/{id}/imageedit/{download_format_id}` to Public Asset Operation Management
+  - Fix missing OpenAPI parameter change the param `use_internal_image` to `original` in GET `assets/{id}/imageedit` in Public Asset Operation Management
+  - Remove POST `assets/{id}/rotate` from Public Asset Operation Management
 
 ---
 

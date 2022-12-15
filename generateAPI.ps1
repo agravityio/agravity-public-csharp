@@ -9,8 +9,8 @@ if ($null -eq $apiVersion) {
 # echo apiVersion
 Write-Host "Generate API with apiVersion: $apiVersion"
 
-# fully remove folder src
-Remove-Item -Path .\src -Recurse -Force
+# delete folder .\src without error output
+Remove-Item -Path .\src -Recurse -Force -ErrorAction SilentlyContinue
 
 # generate API
 $params="packageName=Agravity.Public,library=httpclient,targetFramework=netstandard2.0,packageVersion="+$apiVersion

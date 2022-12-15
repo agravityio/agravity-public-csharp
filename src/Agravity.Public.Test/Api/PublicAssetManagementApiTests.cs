@@ -70,6 +70,20 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpAssetsCreate
+        /// </summary>
+        [Fact]
+        public void HttpAssetsCreateTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string collectionid = null;
+            //Asset asset = null;
+            //bool? translations = null;
+            //var response = instance.HttpAssetsCreate(collectionid, asset, translations);
+            //Assert.IsType<Asset>(response);
+        }
+
+        /// <summary>
         /// Test HttpAssetsGet
         /// </summary>
         [Fact]

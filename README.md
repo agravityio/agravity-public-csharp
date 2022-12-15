@@ -109,6 +109,7 @@ All URIs are relative to *http://localhost:7072/api*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *PublicAssetManagementApi* | [**HttpAssetUploadFile**](docs\PublicAssetManagementApi.md#httpassetuploadfile) | **POST** /assetsupload | 
+*PublicAssetManagementApi* | [**HttpAssetsCreate**](docs\PublicAssetManagementApi.md#httpassetscreate) | **POST** /assets | 
 *PublicAssetManagementApi* | [**HttpAssetsGet**](docs\PublicAssetManagementApi.md#httpassetsget) | **GET** /assets | 
 *PublicAssetManagementApi* | [**HttpAssetsGetById**](docs\PublicAssetManagementApi.md#httpassetsgetbyid) | **GET** /assets/{id} | 
 *PublicAssetManagementApi* | [**HttpPublicAssetsUpdateById**](docs\PublicAssetManagementApi.md#httppublicassetsupdatebyid) | **POST** /assets/{id} | 
@@ -120,8 +121,10 @@ Class | Method | HTTP request | Description
 *PublicAssetOperationsApi* | [**HttpGetAssetDownload**](docs\PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download | 
 *PublicAssetOperationsApi* | [**HttpImageDynamicEdit**](docs\PublicAssetOperationsApi.md#httpimagedynamicedit) | **POST** /assets/{id}/imageedit | 
 *PublicAssetOperationsApi* | [**HttpImageDynamicGetFromDownloadId**](docs\PublicAssetOperationsApi.md#httpimagedynamicgetfromdownloadid) | **GET** /assets/{id}/imageedit/{download_format_id} | 
+*PublicAssetPublishingApi* | [**HttpPublishedAssetsCreate**](docs\PublicAssetPublishingApi.md#httppublishedassetscreate) | **POST** /assets/{id}/publish | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsGet**](docs\PublicAssetPublishingApi.md#httppublishedassetsget) | **GET** /assets/{id}/publish | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsGetById**](docs\PublicAssetPublishingApi.md#httppublishedassetsgetbyid) | **GET** /assets/{id}/publish/{pid} | 
+*PublicAuthenticationManagementApi* | [**HttpAuthGetInboxContainerWriteSasToken**](docs\PublicAuthenticationManagementApi.md#httpauthgetinboxcontainerwritesastoken) | **GET** /auth/inbox | 
 *PublicCollectionManagementApi* | [**HttpCollectionsCreate**](docs\PublicCollectionManagementApi.md#httpcollectionscreate) | **POST** /collections | 
 *PublicCollectionManagementApi* | [**HttpCollectionsGet**](docs\PublicCollectionManagementApi.md#httpcollectionsget) | **GET** /collections | 
 *PublicCollectionManagementApi* | [**HttpCollectionsGetById**](docs\PublicCollectionManagementApi.md#httpcollectionsgetbyid) | **GET** /collections/{id} | 
@@ -156,6 +159,7 @@ Class | Method | HTTP request | Description
 *PublicWebAppDataApi* | [**HttpGetWebAppData**](docs\PublicWebAppDataApi.md#httpgetwebappdata) | **GET** /webappdata/{id} | 
 *PublicWorkspaceManagementApi* | [**HttpWorkspacesGet**](docs\PublicWorkspaceManagementApi.md#httpworkspacesget) | **GET** /workspaces | 
 *PublicWorkspaceManagementApi* | [**HttpWorkspacesGetById**](docs\PublicWorkspaceManagementApi.md#httpworkspacesgetbyid) | **GET** /workspaces/{id} | 
+*SignalRConnectionManagementApi* | [**HttpSignalRNegotiate**](docs\SignalRConnectionManagementApi.md#httpsignalrnegotiate) | **POST** /signalr/negotiate | 
 
 
 <a name="documentation-for-models"></a>
@@ -189,6 +193,7 @@ Class | Method | HTTP request | Description
  - [Model.PublishEntity](docs\PublishEntity.md)
  - [Model.PublishedAsset](docs\PublishedAsset.md)
  - [Model.ReasonResult](docs\ReasonResult.md)
+ - [Model.SasToken](docs\SasToken.md)
  - [Model.SavedSearch](docs\SavedSearch.md)
  - [Model.SearchFacet](docs\SearchFacet.md)
  - [Model.SearchFacetEntity](docs\SearchFacetEntity.md)
@@ -197,6 +202,7 @@ Class | Method | HTTP request | Description
  - [Model.SecureUploadEntity](docs\SecureUploadEntity.md)
  - [Model.SharedAsset](docs\SharedAsset.md)
  - [Model.SharedCollectionFull](docs\SharedCollectionFull.md)
+ - [Model.SignalRConnectionInfo](docs\SignalRConnectionInfo.md)
  - [Model.StaticDefinedList](docs\StaticDefinedList.md)
  - [Model.WhereParam](docs\WhereParam.md)
  - [Model.Workspace](docs\Workspace.md)

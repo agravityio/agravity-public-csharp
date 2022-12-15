@@ -55,6 +55,33 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// This endpoint creates one asset entry in the database.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>Asset</returns>
+        Asset HttpAssetsCreate(string collectionid, Asset asset, bool? translations = default(bool?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint creates one asset entry in the database.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Asset</returns>
+        ApiResponse<Asset> HttpAssetsCreateWithHttpInfo(string collectionid, Asset asset, bool? translations = default(bool?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
@@ -186,6 +213,35 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
         System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetUploadFileWithHttpInfoAsync(string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint creates one asset entry in the database.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Asset</returns>
+        System.Threading.Tasks.Task<Asset> HttpAssetsCreateAsync(string collectionid, Asset asset, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint creates one asset entry in the database.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Asset)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetsCreateWithHttpInfoAsync(string collectionid, Asset asset, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -574,6 +630,192 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpAssetUploadFile", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint creates one asset entry in the database.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>Asset</returns>
+        public Asset HttpAssetsCreate(string collectionid, Asset asset, bool? translations = default(bool?), int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = HttpAssetsCreateWithHttpInfo(collectionid, asset, translations);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint creates one asset entry in the database.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Asset</returns>
+        public Agravity.Public.Client.ApiResponse<Asset> HttpAssetsCreateWithHttpInfo(string collectionid, Asset asset, bool? translations = default(bool?), int operationIndex = 0)
+        {
+            // verify the required parameter 'collectionid' is set
+            if (collectionid == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'collectionid' when calling PublicAssetManagementApi->HttpAssetsCreate");
+            }
+
+            // verify the required parameter 'asset' is set
+            if (asset == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'asset' when calling PublicAssetManagementApi->HttpAssetsCreate");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "collectionid", collectionid));
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            localVarRequestOptions.Data = asset;
+
+            localVarRequestOptions.Operation = "PublicAssetManagementApi.HttpAssetsCreate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Asset>("/assets", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAssetsCreate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint creates one asset entry in the database.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Asset</returns>
+        public async System.Threading.Tasks.Task<Asset> HttpAssetsCreateAsync(string collectionid, Asset asset, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = await HttpAssetsCreateWithHttpInfoAsync(collectionid, asset, translations, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint creates one asset entry in the database.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Asset)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Asset>> HttpAssetsCreateWithHttpInfoAsync(string collectionid, Asset asset, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'collectionid' is set
+            if (collectionid == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'collectionid' when calling PublicAssetManagementApi->HttpAssetsCreate");
+            }
+
+            // verify the required parameter 'asset' is set
+            if (asset == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'asset' when calling PublicAssetManagementApi->HttpAssetsCreate");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "collectionid", collectionid));
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            localVarRequestOptions.Data = asset;
+
+            localVarRequestOptions.Operation = "PublicAssetManagementApi.HttpAssetsCreate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Asset>("/assets", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAssetsCreate", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

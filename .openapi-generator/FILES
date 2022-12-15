@@ -30,6 +30,7 @@ docs/PerHashResult.md
 docs/PublicAssetManagementApi.md
 docs/PublicAssetOperationsApi.md
 docs/PublicAssetPublishingApi.md
+docs/PublicAuthenticationManagementApi.md
 docs/PublicCollectionManagementApi.md
 docs/PublicCollectionSecureUploadApi.md
 docs/PublicCollectionSharingApi.md
@@ -48,6 +49,7 @@ docs/PublicWorkspaceManagementApi.md
 docs/PublishEntity.md
 docs/PublishedAsset.md
 docs/ReasonResult.md
+docs/SasToken.md
 docs/SavedSearch.md
 docs/SearchFacet.md
 docs/SearchFacetEntity.md
@@ -56,6 +58,8 @@ docs/SearchableItem.md
 docs/SecureUploadEntity.md
 docs/SharedAsset.md
 docs/SharedCollectionFull.md
+docs/SignalRConnectionInfo.md
+docs/SignalRConnectionManagementApi.md
 docs/StaticDefinedList.md
 docs/WhereParam.md
 docs/Workspace.md
@@ -64,6 +68,7 @@ src/Agravity.Public.Test/Agravity.Public.Test.csproj
 src/Agravity.Public.Test/Api/PublicAssetManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicAssetOperationsApiTests.cs
 src/Agravity.Public.Test/Api/PublicAssetPublishingApiTests.cs
+src/Agravity.Public.Test/Api/PublicAuthenticationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionSecureUploadApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionSharingApiTests.cs
@@ -79,6 +84,7 @@ src/Agravity.Public.Test/Api/PublicStaticDefinedListManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicTranslationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicWebAppDataApiTests.cs
 src/Agravity.Public.Test/Api/PublicWorkspaceManagementApiTests.cs
+src/Agravity.Public.Test/Api/SignalRConnectionManagementApiTests.cs
 src/Agravity.Public.Test/Model/AgravityErrorResponseTests.cs
 src/Agravity.Public.Test/Model/AgravityVersionTests.cs
 src/Agravity.Public.Test/Model/AllWebAppDataTests.cs
@@ -107,6 +113,7 @@ src/Agravity.Public.Test/Model/PerHashResultTests.cs
 src/Agravity.Public.Test/Model/PublishEntityTests.cs
 src/Agravity.Public.Test/Model/PublishedAssetTests.cs
 src/Agravity.Public.Test/Model/ReasonResultTests.cs
+src/Agravity.Public.Test/Model/SasTokenTests.cs
 src/Agravity.Public.Test/Model/SavedSearchTests.cs
 src/Agravity.Public.Test/Model/SearchFacetEntityTests.cs
 src/Agravity.Public.Test/Model/SearchFacetTests.cs
@@ -115,6 +122,7 @@ src/Agravity.Public.Test/Model/SearchableItemTests.cs
 src/Agravity.Public.Test/Model/SecureUploadEntityTests.cs
 src/Agravity.Public.Test/Model/SharedAssetTests.cs
 src/Agravity.Public.Test/Model/SharedCollectionFullTests.cs
+src/Agravity.Public.Test/Model/SignalRConnectionInfoTests.cs
 src/Agravity.Public.Test/Model/StaticDefinedListTests.cs
 src/Agravity.Public.Test/Model/WhereParamTests.cs
 src/Agravity.Public.Test/Model/WorkspaceTests.cs
@@ -122,6 +130,7 @@ src/Agravity.Public/Agravity.Public.csproj
 src/Agravity.Public/Api/PublicAssetManagementApi.cs
 src/Agravity.Public/Api/PublicAssetOperationsApi.cs
 src/Agravity.Public/Api/PublicAssetPublishingApi.cs
+src/Agravity.Public/Api/PublicAuthenticationManagementApi.cs
 src/Agravity.Public/Api/PublicCollectionManagementApi.cs
 src/Agravity.Public/Api/PublicCollectionSecureUploadApi.cs
 src/Agravity.Public/Api/PublicCollectionSharingApi.cs
@@ -137,6 +146,7 @@ src/Agravity.Public/Api/PublicStaticDefinedListManagementApi.cs
 src/Agravity.Public/Api/PublicTranslationManagementApi.cs
 src/Agravity.Public/Api/PublicWebAppDataApi.cs
 src/Agravity.Public/Api/PublicWorkspaceManagementApi.cs
+src/Agravity.Public/Api/SignalRConnectionManagementApi.cs
 src/Agravity.Public/Client/ApiClient.cs
 src/Agravity.Public/Client/ApiException.cs
 src/Agravity.Public/Client/ApiResponse.cs
@@ -182,6 +192,7 @@ src/Agravity.Public/Model/PerHashResult.cs
 src/Agravity.Public/Model/PublishEntity.cs
 src/Agravity.Public/Model/PublishedAsset.cs
 src/Agravity.Public/Model/ReasonResult.cs
+src/Agravity.Public/Model/SasToken.cs
 src/Agravity.Public/Model/SavedSearch.cs
 src/Agravity.Public/Model/SearchFacet.cs
 src/Agravity.Public/Model/SearchFacetEntity.cs
@@ -190,6 +201,7 @@ src/Agravity.Public/Model/SearchableItem.cs
 src/Agravity.Public/Model/SecureUploadEntity.cs
 src/Agravity.Public/Model/SharedAsset.cs
 src/Agravity.Public/Model/SharedCollectionFull.cs
+src/Agravity.Public/Model/SignalRConnectionInfo.cs
 src/Agravity.Public/Model/StaticDefinedList.cs
 src/Agravity.Public/Model/WhereParam.cs
 src/Agravity.Public/Model/Workspace.cs

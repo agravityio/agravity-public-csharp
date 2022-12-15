@@ -31,6 +31,31 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// This endpoint creates an additional published asset
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="publishedAsset">This creates / adds an unique published asset ID and adds the information to the asset (in DB).</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PublishedAsset</returns>
+        PublishedAsset HttpPublishedAssetsCreate(string id, PublishedAsset publishedAsset, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint creates an additional published asset
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="publishedAsset">This creates / adds an unique published asset ID and adds the information to the asset (in DB).</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PublishedAsset</returns>
+        ApiResponse<PublishedAsset> HttpPublishedAssetsCreateWithHttpInfo(string id, PublishedAsset publishedAsset, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// This endpoint lists all the published assets which are stored in the database if asset is still valid.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
@@ -84,6 +109,33 @@ namespace Agravity.Public.Api
     public interface IPublicAssetPublishingApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint creates an additional published asset
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="publishedAsset">This creates / adds an unique published asset ID and adds the information to the asset (in DB).</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PublishedAsset</returns>
+        System.Threading.Tasks.Task<PublishedAsset> HttpPublishedAssetsCreateAsync(string id, PublishedAsset publishedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint creates an additional published asset
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="publishedAsset">This creates / adds an unique published asset ID and adds the information to the asset (in DB).</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PublishedAsset)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PublishedAsset>> HttpPublishedAssetsCreateWithHttpInfoAsync(string id, PublishedAsset publishedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -254,6 +306,180 @@ namespace Agravity.Public.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  This endpoint creates an additional published asset
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="publishedAsset">This creates / adds an unique published asset ID and adds the information to the asset (in DB).</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PublishedAsset</returns>
+        public PublishedAsset HttpPublishedAssetsCreate(string id, PublishedAsset publishedAsset, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<PublishedAsset> localVarResponse = HttpPublishedAssetsCreateWithHttpInfo(id, publishedAsset);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint creates an additional published asset
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="publishedAsset">This creates / adds an unique published asset ID and adds the information to the asset (in DB).</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PublishedAsset</returns>
+        public Agravity.Public.Client.ApiResponse<PublishedAsset> HttpPublishedAssetsCreateWithHttpInfo(string id, PublishedAsset publishedAsset, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetPublishingApi->HttpPublishedAssetsCreate");
+            }
+
+            // verify the required parameter 'publishedAsset' is set
+            if (publishedAsset == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'publishedAsset' when calling PublicAssetPublishingApi->HttpPublishedAssetsCreate");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = publishedAsset;
+
+            localVarRequestOptions.Operation = "PublicAssetPublishingApi.HttpPublishedAssetsCreate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<PublishedAsset>("/assets/{id}/publish", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPublishedAssetsCreate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint creates an additional published asset
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="publishedAsset">This creates / adds an unique published asset ID and adds the information to the asset (in DB).</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PublishedAsset</returns>
+        public async System.Threading.Tasks.Task<PublishedAsset> HttpPublishedAssetsCreateAsync(string id, PublishedAsset publishedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<PublishedAsset> localVarResponse = await HttpPublishedAssetsCreateWithHttpInfoAsync(id, publishedAsset, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint creates an additional published asset
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="publishedAsset">This creates / adds an unique published asset ID and adds the information to the asset (in DB).</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PublishedAsset)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PublishedAsset>> HttpPublishedAssetsCreateWithHttpInfoAsync(string id, PublishedAsset publishedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetPublishingApi->HttpPublishedAssetsCreate");
+            }
+
+            // verify the required parameter 'publishedAsset' is set
+            if (publishedAsset == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'publishedAsset' when calling PublicAssetPublishingApi->HttpPublishedAssetsCreate");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = publishedAsset;
+
+            localVarRequestOptions.Operation = "PublicAssetPublishingApi.HttpPublishedAssetsCreate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<PublishedAsset>("/assets/{id}/publish", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPublishedAssetsCreate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

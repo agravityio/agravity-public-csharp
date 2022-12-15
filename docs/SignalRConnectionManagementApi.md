@@ -1,18 +1,18 @@
-# Agravity.Public.Api.PublicSavedSearchApi
+# Agravity.Public.Api.SignalRConnectionManagementApi
 
 All URIs are relative to *http://localhost:7072/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**HttpSavedSearchesGetAll**](PublicSavedSearchApi.md#httpsavedsearchesgetall) | **GET** /savedsearches |  |
+| [**HttpSignalRNegotiate**](SignalRConnectionManagementApi.md#httpsignalrnegotiate) | **POST** /signalr/negotiate |  |
 
-<a name="httpsavedsearchesgetall"></a>
-# **HttpSavedSearchesGetAll**
-> List&lt;SavedSearch&gt; HttpSavedSearchesGetAll (bool? external = null, bool? translations = null)
+<a name="httpsignalrnegotiate"></a>
+# **HttpSignalRNegotiate**
+> SignalRConnectionInfo HttpSignalRNegotiate ()
 
 
 
-This endpoint lists all saved searches in database.
+This endpoint delivers the connection data for a client.
 
 ### Example
 ```csharp
@@ -24,7 +24,7 @@ using Agravity.Public.Model;
 
 namespace Example
 {
-    public class HttpSavedSearchesGetAllExample
+    public class HttpSignalRNegotiateExample
     {
         public static void Main()
         {
@@ -35,18 +35,16 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicSavedSearchApi(config);
-            var external = true;  // bool? | This parameter filters out all saved searches on basis this boolean. (optional) 
-            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var apiInstance = new SignalRConnectionManagementApi(config);
 
             try
             {
-                List<SavedSearch> result = apiInstance.HttpSavedSearchesGetAll(external, translations);
+                SignalRConnectionInfo result = apiInstance.HttpSignalRNegotiate();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicSavedSearchApi.HttpSavedSearchesGetAll: " + e.Message);
+                Debug.Print("Exception when calling SignalRConnectionManagementApi.HttpSignalRNegotiate: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -55,35 +53,30 @@ namespace Example
 }
 ```
 
-#### Using the HttpSavedSearchesGetAllWithHttpInfo variant
+#### Using the HttpSignalRNegotiateWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<SavedSearch>> response = apiInstance.HttpSavedSearchesGetAllWithHttpInfo(external, translations);
+    ApiResponse<SignalRConnectionInfo> response = apiInstance.HttpSignalRNegotiateWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PublicSavedSearchApi.HttpSavedSearchesGetAllWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling SignalRConnectionManagementApi.HttpSignalRNegotiateWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
 ```
 
 ### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **external** | **bool?** | This parameter filters out all saved searches on basis this boolean. | [optional]  |
-| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
-
+This endpoint does not need any parameter.
 ### Return type
 
-[**List&lt;SavedSearch&gt;**](SavedSearch.md)
+[**SignalRConnectionInfo**](SignalRConnectionInfo.md)
 
 ### Authorization
 
@@ -98,9 +91,8 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns all saved searches in database. |  -  |
+| **200** | The signlar connection info for further processing. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
-| **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

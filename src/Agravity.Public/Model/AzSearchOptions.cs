@@ -37,16 +37,18 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="searchString">searchString.</param>
         /// <param name="limit">limit.</param>
+        /// <param name="skip">skip.</param>
         /// <param name="collectiontypeid">collectiontypeid.</param>
         /// <param name="collectionid">collectionid.</param>
         /// <param name="filter">filter.</param>
         /// <param name="orderby">orderby.</param>
         /// <param name="mode">mode.</param>
         /// <param name="ids">ids.</param>
-        public AzSearchOptions(string searchString = default(string), int? limit = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string filter = default(string), string orderby = default(string), string mode = default(string), string ids = default(string))
+        public AzSearchOptions(string searchString = default(string), int? limit = default(int?), int skip = default(int), string collectiontypeid = default(string), string collectionid = default(string), string filter = default(string), string orderby = default(string), string mode = default(string), string ids = default(string))
         {
             this.SearchString = searchString;
             this.Limit = limit;
+            this.Skip = skip;
             this.Collectiontypeid = collectiontypeid;
             this.Collectionid = collectionid;
             this.Filter = filter;
@@ -66,6 +68,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "limit", EmitDefaultValue = true)]
         public int? Limit { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Skip
+        /// </summary>
+        [DataMember(Name = "skip", EmitDefaultValue = false)]
+        public int Skip { get; set; }
 
         /// <summary>
         /// Gets or Sets Collectiontypeid
@@ -113,6 +121,7 @@ namespace Agravity.Public.Model
             sb.Append("class AzSearchOptions {\n");
             sb.Append("  SearchString: ").Append(SearchString).Append("\n");
             sb.Append("  Limit: ").Append(Limit).Append("\n");
+            sb.Append("  Skip: ").Append(Skip).Append("\n");
             sb.Append("  Collectiontypeid: ").Append(Collectiontypeid).Append("\n");
             sb.Append("  Collectionid: ").Append(Collectionid).Append("\n");
             sb.Append("  Filter: ").Append(Filter).Append("\n");
@@ -165,6 +174,10 @@ namespace Agravity.Public.Model
                     this.Limit.Equals(input.Limit))
                 ) && 
                 (
+                    this.Skip == input.Skip ||
+                    this.Skip.Equals(input.Skip)
+                ) && 
+                (
                     this.Collectiontypeid == input.Collectiontypeid ||
                     (this.Collectiontypeid != null &&
                     this.Collectiontypeid.Equals(input.Collectiontypeid))
@@ -213,6 +226,7 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.Limit.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Skip.GetHashCode();
                 if (this.Collectiontypeid != null)
                 {
                     hashCode = (hashCode * 59) + this.Collectiontypeid.GetHashCode();

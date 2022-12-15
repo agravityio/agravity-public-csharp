@@ -24,77 +24,69 @@ namespace Agravity.Public.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPublicSavedSearchApiSync : IApiAccessor
+    public interface ISignalRConnectionManagementApiSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint lists all saved searches in database.
+        /// This endpoint delivers the connection data for a client.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;SavedSearch&gt;</returns>
-        List<SavedSearch> HttpSavedSearchesGetAll(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
+        /// <returns>SignalRConnectionInfo</returns>
+        SignalRConnectionInfo HttpSignalRNegotiate(int operationIndex = 0);
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint lists all saved searches in database.
+        /// This endpoint delivers the connection data for a client.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;SavedSearch&gt;</returns>
-        ApiResponse<List<SavedSearch>> HttpSavedSearchesGetAllWithHttpInfo(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
+        /// <returns>ApiResponse of SignalRConnectionInfo</returns>
+        ApiResponse<SignalRConnectionInfo> HttpSignalRNegotiateWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPublicSavedSearchApiAsync : IApiAccessor
+    public interface ISignalRConnectionManagementApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint lists all saved searches in database.
+        /// This endpoint delivers the connection data for a client.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;SavedSearch&gt;</returns>
-        System.Threading.Tasks.Task<List<SavedSearch>> HttpSavedSearchesGetAllAsync(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of SignalRConnectionInfo</returns>
+        System.Threading.Tasks.Task<SignalRConnectionInfo> HttpSignalRNegotiateAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint lists all saved searches in database.
+        /// This endpoint delivers the connection data for a client.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;SavedSearch&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<SavedSearch>>> HttpSavedSearchesGetAllWithHttpInfoAsync(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (SignalRConnectionInfo)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SignalRConnectionInfo>> HttpSignalRNegotiateWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPublicSavedSearchApi : IPublicSavedSearchApiSync, IPublicSavedSearchApiAsync
+    public interface ISignalRConnectionManagementApi : ISignalRConnectionManagementApiSync, ISignalRConnectionManagementApiAsync
     {
 
     }
@@ -102,23 +94,23 @@ namespace Agravity.Public.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class PublicSavedSearchApi : IPublicSavedSearchApi
+    public partial class SignalRConnectionManagementApi : ISignalRConnectionManagementApi
     {
         private Agravity.Public.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicSavedSearchApi"/> class.
+        /// Initializes a new instance of the <see cref="SignalRConnectionManagementApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PublicSavedSearchApi() : this((string)null)
+        public SignalRConnectionManagementApi() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicSavedSearchApi"/> class.
+        /// Initializes a new instance of the <see cref="SignalRConnectionManagementApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PublicSavedSearchApi(string basePath)
+        public SignalRConnectionManagementApi(string basePath)
         {
             this.Configuration = Agravity.Public.Client.Configuration.MergeConfigurations(
                 Agravity.Public.Client.GlobalConfiguration.Instance,
@@ -130,12 +122,12 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicSavedSearchApi"/> class
+        /// Initializes a new instance of the <see cref="SignalRConnectionManagementApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public PublicSavedSearchApi(Agravity.Public.Client.Configuration configuration)
+        public SignalRConnectionManagementApi(Agravity.Public.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -149,13 +141,13 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicSavedSearchApi"/> class
+        /// Initializes a new instance of the <see cref="SignalRConnectionManagementApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public PublicSavedSearchApi(Agravity.Public.Client.ISynchronousClient client, Agravity.Public.Client.IAsynchronousClient asyncClient, Agravity.Public.Client.IReadableConfiguration configuration)
+        public SignalRConnectionManagementApi(Agravity.Public.Client.ISynchronousClient client, Agravity.Public.Client.IAsynchronousClient asyncClient, Agravity.Public.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -209,28 +201,24 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint lists all saved searches in database.
+        ///  This endpoint delivers the connection data for a client.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;SavedSearch&gt;</returns>
-        public List<SavedSearch> HttpSavedSearchesGetAll(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
+        /// <returns>SignalRConnectionInfo</returns>
+        public SignalRConnectionInfo HttpSignalRNegotiate(int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<List<SavedSearch>> localVarResponse = HttpSavedSearchesGetAllWithHttpInfo(external, translations);
+            Agravity.Public.Client.ApiResponse<SignalRConnectionInfo> localVarResponse = HttpSignalRNegotiateWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  This endpoint lists all saved searches in database.
+        ///  This endpoint delivers the connection data for a client.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;SavedSearch&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<SavedSearch>> HttpSavedSearchesGetAllWithHttpInfo(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
+        /// <returns>ApiResponse of SignalRConnectionInfo</returns>
+        public Agravity.Public.Client.ApiResponse<SignalRConnectionInfo> HttpSignalRNegotiateWithHttpInfo(int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -254,16 +242,8 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (external != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "external", external));
-            }
-            if (translations != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
-            }
 
-            localVarRequestOptions.Operation = "PublicSavedSearchApi.HttpSavedSearchesGetAll";
+            localVarRequestOptions.Operation = "SignalRConnectionManagementApi.HttpSignalRNegotiate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (function_key) required
@@ -273,10 +253,10 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<SavedSearch>>("/savedsearches", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<SignalRConnectionInfo>("/signalr/negotiate", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("HttpSavedSearchesGetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("HttpSignalRNegotiate", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -287,30 +267,26 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint lists all saved searches in database.
+        ///  This endpoint delivers the connection data for a client.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;SavedSearch&gt;</returns>
-        public async System.Threading.Tasks.Task<List<SavedSearch>> HttpSavedSearchesGetAllAsync(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of SignalRConnectionInfo</returns>
+        public async System.Threading.Tasks.Task<SignalRConnectionInfo> HttpSignalRNegotiateAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<List<SavedSearch>> localVarResponse = await HttpSavedSearchesGetAllWithHttpInfoAsync(external, translations, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<SignalRConnectionInfo> localVarResponse = await HttpSignalRNegotiateWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  This endpoint lists all saved searches in database.
+        ///  This endpoint delivers the connection data for a client.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;SavedSearch&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<SavedSearch>>> HttpSavedSearchesGetAllWithHttpInfoAsync(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (SignalRConnectionInfo)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SignalRConnectionInfo>> HttpSignalRNegotiateWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -335,16 +311,8 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (external != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "external", external));
-            }
-            if (translations != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
-            }
 
-            localVarRequestOptions.Operation = "PublicSavedSearchApi.HttpSavedSearchesGetAll";
+            localVarRequestOptions.Operation = "SignalRConnectionManagementApi.HttpSignalRNegotiate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (function_key) required
@@ -354,11 +322,11 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<SavedSearch>>("/savedsearches", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SignalRConnectionInfo>("/signalr/negotiate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("HttpSavedSearchesGetAll", localVarResponse);
+                Exception _exception = this.ExceptionFactory("HttpSignalRNegotiate", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

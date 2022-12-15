@@ -8,6 +8,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## AgravityAPI <a name="4.9.3"/> [4.9.3](https://www.nuget.org/packages/Agravity.Public/4.9.3) (2022-12-15)
+
+Add parameter:
+- Paging with param `skip` in GET `/api/search`
+
+Copy more endpoints from private to public:
+- Create Asset (without data) POST `{{url}}/api/assets?collectionid={{collectionId}}`
+- Get Inbox Token GET `{{url}}/api/auth/inbox` (for upload)
+- Create Published AssetImage POST `{{url}}/api/assets/{{assetId}}/publish`
+- Get All Published of Asset GET `{{url}}/api/assets/asset_id/publish`
+- SignalR GET `/api/signalr/negotiate?negotiateVersion=1`
+
+Repaired some annotations 
+- `x-functions-key` header was missing (saved search)
+- API Key instead of Bearer `401` message
+- Comma instead of colon separation in search param `ids`
+
+---
 
 ## AgravityAPI <a name="4.9.2"/> [4.9.2](https://www.nuget.org/packages/Agravity.Public/4.9.2) (2022-12-05)
 

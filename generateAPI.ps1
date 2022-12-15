@@ -40,6 +40,7 @@ git checkout -- .\nuget.exe
 git checkout -- .\openapitools.json
 git checkout -- .\src\Agravity.Public\Agravity.Public.nuspec
 git checkout -- .\src\Agravity.Public\Agravity.Public.csproj
+git checkout -- .\src\Agravity.Public\THIRD-PARTY-NOTICES.TXT
 
 #replace old version with new version in csproj file
 $csproj = Get-Content .\src\Agravity.Public\Agravity.Public.csproj

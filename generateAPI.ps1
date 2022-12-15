@@ -31,6 +31,8 @@ Set-Location ..
 # git discard all neccessary files
 
 # git discard files
+git checkout -- .\.gitignore
+git checkout -- .\generateAPI.ps1
 git checkout -- .\Agravity.Public.sln
 git checkout -- .\extract_thirdparty_licenses.bat
 git checkout -- .\icon.png

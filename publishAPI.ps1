@@ -9,6 +9,15 @@ if ($null -eq $apiVersion) {
 # echo apiVersion
 Write-Host "Build and Publish with apiVersion: $apiVersion"
 
+# check if AgravityKeyFile.snk exists
+if (!(Test-Path .\AgravityKeyFile.snk)) {
+    Write-Host "Please provide AgravityKeyFile.snk in root folder!"
+    exit
+}
+
+# copy AgravityKeyFile.snk to project file
+Copy-Item .\AgravityKeyFile.snk .\src\Agravity.Public\AgravityKeyFile.snk
+
 # build project with release
 dotnet build .\src\Agravity.Public\Agravity.Public.csproj -c Release
 

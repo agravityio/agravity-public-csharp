@@ -40,7 +40,6 @@ namespace Agravity.Public.Model
         /// <param name="parent">parent.</param>
         /// <param name="path">path.</param>
         /// <param name="level">level.</param>
-        /// <param name="permissions">permissions.</param>
         /// <param name="custom">custom.</param>
         /// <param name="items">items.</param>
         /// <param name="translations">translations.</param>
@@ -54,14 +53,13 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Collection(string id = default(string), string entityType = default(string), string parent = default(string), string path = default(string), int? level = default(int?), List<CollectionPermission> permissions = default(List<CollectionPermission>), Dictionary<string, Object> custom = default(Dictionary<string, Object>), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), string name = default(string), string description = default(string), Dictionary<string, Object> addProperties = default(Dictionary<string, Object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public Collection(string id = default(string), string entityType = default(string), string parent = default(string), string path = default(string), int? level = default(int?), Dictionary<string, Object> custom = default(Dictionary<string, Object>), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), string name = default(string), string description = default(string), Dictionary<string, Object> addProperties = default(Dictionary<string, Object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
             this.Parent = parent;
             this.Path = path;
             this.Level = level;
-            this.Permissions = permissions;
             this.Custom = custom;
             this.Items = items;
             this.Translations = translations;
@@ -106,12 +104,6 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "level", EmitDefaultValue = true)]
         public int? Level { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Permissions
-        /// </summary>
-        [DataMember(Name = "permissions", EmitDefaultValue = false)]
-        public List<CollectionPermission> Permissions { get; set; }
 
         /// <summary>
         /// Gets or Sets Custom
@@ -204,7 +196,6 @@ namespace Agravity.Public.Model
             sb.Append("  Parent: ").Append(Parent).Append("\n");
             sb.Append("  Path: ").Append(Path).Append("\n");
             sb.Append("  Level: ").Append(Level).Append("\n");
-            sb.Append("  Permissions: ").Append(Permissions).Append("\n");
             sb.Append("  Custom: ").Append(Custom).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  Translations: ").Append(Translations).Append("\n");
@@ -277,12 +268,6 @@ namespace Agravity.Public.Model
                     this.Level == input.Level ||
                     (this.Level != null &&
                     this.Level.Equals(input.Level))
-                ) && 
-                (
-                    this.Permissions == input.Permissions ||
-                    this.Permissions != null &&
-                    input.Permissions != null &&
-                    this.Permissions.SequenceEqual(input.Permissions)
                 ) && 
                 (
                     this.Custom == input.Custom ||
@@ -383,10 +368,6 @@ namespace Agravity.Public.Model
                 if (this.Level != null)
                 {
                     hashCode = (hashCode * 59) + this.Level.GetHashCode();
-                }
-                if (this.Permissions != null)
-                {
-                    hashCode = (hashCode * 59) + this.Permissions.GetHashCode();
                 }
                 if (this.Custom != null)
                 {

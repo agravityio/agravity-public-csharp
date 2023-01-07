@@ -33,39 +33,12 @@ namespace Agravity.Public.Model
     public partial class Asset : IEquatable<Asset>, IValidatableObject
     {
         /// <summary>
-        /// Defines Access
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum AccessEnum
-        {
-            /// <summary>
-            /// Enum OPEN for value: OPEN
-            /// </summary>
-            [EnumMember(Value = "OPEN")]
-            OPEN = 1,
-
-            /// <summary>
-            /// Enum RESTRICTED for value: RESTRICTED
-            /// </summary>
-            [EnumMember(Value = "RESTRICTED")]
-            RESTRICTED = 2
-
-        }
-
-
-        /// <summary>
-        /// Gets or Sets Access
-        /// </summary>
-        [DataMember(Name = "access", EmitDefaultValue = false)]
-        public AccessEnum? Access { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="Asset" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="entityType">entityType.</param>
         /// <param name="name">name.</param>
         /// <param name="assetType">assetType.</param>
-        /// <param name="access">access (default to AccessEnum.OPEN).</param>
         /// <param name="duplicates">duplicates.</param>
         /// <param name="textContent">textContent.</param>
         /// <param name="aiGroups">aiGroups.</param>
@@ -74,7 +47,6 @@ namespace Agravity.Public.Model
         /// <param name="blobs">blobs.</param>
         /// <param name="collections">collections.</param>
         /// <param name="failedReason">failedReason.</param>
-        /// <param name="permissions">permissions.</param>
         /// <param name="regionOfOrigin">regionOfOrigin.</param>
         /// <param name="availability">availability.</param>
         /// <param name="availableFrom">availableFrom.</param>
@@ -91,13 +63,12 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Asset(string id = default(string), string entityType = default(string), string name = default(string), string assetType = default(string), AccessEnum? access = AccessEnum.OPEN, List<string> duplicates = default(List<string>), string textContent = default(string), List<ArtificialIntelligenceGroup> aiGroups = default(List<ArtificialIntelligenceGroup>), List<string> keywords = default(List<string>), AssetBlob origBlob = default(AssetBlob), List<AssetBlob> blobs = default(List<AssetBlob>), List<string> collections = default(List<string>), string failedReason = default(string), List<CollectionPermission> permissions = default(List<CollectionPermission>), string regionOfOrigin = default(string), string availability = default(string), DateTime? availableFrom = default(DateTime?), DateTime? availableTo = default(DateTime?), Dictionary<string, Object> custom = default(Dictionary<string, Object>), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), string description = default(string), Dictionary<string, Object> addProperties = default(Dictionary<string, Object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public Asset(string id = default(string), string entityType = default(string), string name = default(string), string assetType = default(string), List<string> duplicates = default(List<string>), string textContent = default(string), List<ArtificialIntelligenceGroup> aiGroups = default(List<ArtificialIntelligenceGroup>), List<string> keywords = default(List<string>), AssetBlob origBlob = default(AssetBlob), List<AssetBlob> blobs = default(List<AssetBlob>), List<string> collections = default(List<string>), string failedReason = default(string), string regionOfOrigin = default(string), string availability = default(string), DateTime? availableFrom = default(DateTime?), DateTime? availableTo = default(DateTime?), Dictionary<string, Object> custom = default(Dictionary<string, Object>), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), string description = default(string), Dictionary<string, Object> addProperties = default(Dictionary<string, Object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
             this.Name = name;
             this.AssetType = assetType;
-            this.Access = access;
             this.Duplicates = duplicates;
             this.TextContent = textContent;
             this.AiGroups = aiGroups;
@@ -106,7 +77,6 @@ namespace Agravity.Public.Model
             this.Blobs = blobs;
             this.Collections = collections;
             this.FailedReason = failedReason;
-            this.Permissions = permissions;
             this.RegionOfOrigin = regionOfOrigin;
             this.Availability = availability;
             this.AvailableFrom = availableFrom;
@@ -196,12 +166,6 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "failed_reason", EmitDefaultValue = false)]
         public string FailedReason { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Permissions
-        /// </summary>
-        [DataMember(Name = "permissions", EmitDefaultValue = false)]
-        public List<CollectionPermission> Permissions { get; set; }
 
         /// <summary>
         /// Gets or Sets RegionOfOrigin
@@ -311,7 +275,6 @@ namespace Agravity.Public.Model
             sb.Append("  EntityType: ").Append(EntityType).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  AssetType: ").Append(AssetType).Append("\n");
-            sb.Append("  Access: ").Append(Access).Append("\n");
             sb.Append("  Duplicates: ").Append(Duplicates).Append("\n");
             sb.Append("  TextContent: ").Append(TextContent).Append("\n");
             sb.Append("  AiGroups: ").Append(AiGroups).Append("\n");
@@ -320,7 +283,6 @@ namespace Agravity.Public.Model
             sb.Append("  Blobs: ").Append(Blobs).Append("\n");
             sb.Append("  Collections: ").Append(Collections).Append("\n");
             sb.Append("  FailedReason: ").Append(FailedReason).Append("\n");
-            sb.Append("  Permissions: ").Append(Permissions).Append("\n");
             sb.Append("  RegionOfOrigin: ").Append(RegionOfOrigin).Append("\n");
             sb.Append("  Availability: ").Append(Availability).Append("\n");
             sb.Append("  AvailableFrom: ").Append(AvailableFrom).Append("\n");
@@ -393,10 +355,6 @@ namespace Agravity.Public.Model
                     this.AssetType.Equals(input.AssetType))
                 ) && 
                 (
-                    this.Access == input.Access ||
-                    this.Access.Equals(input.Access)
-                ) && 
-                (
                     this.Duplicates == input.Duplicates ||
                     this.Duplicates != null &&
                     input.Duplicates != null &&
@@ -440,12 +398,6 @@ namespace Agravity.Public.Model
                     this.FailedReason == input.FailedReason ||
                     (this.FailedReason != null &&
                     this.FailedReason.Equals(input.FailedReason))
-                ) && 
-                (
-                    this.Permissions == input.Permissions ||
-                    this.Permissions != null &&
-                    input.Permissions != null &&
-                    this.Permissions.SequenceEqual(input.Permissions)
                 ) && 
                 (
                     this.RegionOfOrigin == input.RegionOfOrigin ||
@@ -558,7 +510,6 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.AssetType.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Access.GetHashCode();
                 if (this.Duplicates != null)
                 {
                     hashCode = (hashCode * 59) + this.Duplicates.GetHashCode();
@@ -590,10 +541,6 @@ namespace Agravity.Public.Model
                 if (this.FailedReason != null)
                 {
                     hashCode = (hashCode * 59) + this.FailedReason.GetHashCode();
-                }
-                if (this.Permissions != null)
-                {
-                    hashCode = (hashCode * 59) + this.Permissions.GetHashCode();
                 }
                 if (this.RegionOfOrigin != null)
                 {

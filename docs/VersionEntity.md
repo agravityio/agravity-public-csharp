@@ -1,4 +1,4 @@
-# Agravity.Public.Model.Collection
+# Agravity.Public.Model.VersionEntity
 
 ## Properties
 
@@ -6,15 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
 **EntityType** | **string** |  | [optional] 
-**Parent** | **string** |  | [optional] 
-**Path** | **string** |  | [optional] 
-**Level** | **int?** |  | [optional] 
-**Custom** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
-**Items** | [**List&lt;CollTypeItem&gt;**](CollTypeItem.md) |  | [optional] 
-**Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**Description** | **string** |  | [optional] 
-**AddProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
+**Versions** | [**List&lt;VersionedAsset&gt;**](VersionedAsset.md) |  | [optional] 
+**RegionOfOrigin** | **string** |  | [optional] 
 **Status** | **string** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 

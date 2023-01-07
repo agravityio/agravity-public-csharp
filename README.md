@@ -115,7 +115,6 @@ Class | Method | HTTP request | Description
 *PublicAssetManagementApi* | [**HttpPublicAssetsUpdateById**](docs\PublicAssetManagementApi.md#httppublicassetsupdatebyid) | **POST** /assets/{id} | 
 *PublicAssetOperationsApi* | [**HttpAssetImageEdit**](docs\PublicAssetOperationsApi.md#httpassetimageedit) | **GET** /assets/{id}/imageedit | 
 *PublicAssetOperationsApi* | [**HttpAssetResize**](docs\PublicAssetOperationsApi.md#httpassetresize) | **GET** /assets/{id}/resize | 
-*PublicAssetOperationsApi* | [**HttpAssetsGetSimilarById**](docs\PublicAssetOperationsApi.md#httpassetsgetsimilarbyid) | **GET** /assets/{id}/similar | 
 *PublicAssetOperationsApi* | [**HttpGetAssetBlob**](docs\PublicAssetOperationsApi.md#httpgetassetblob) | **GET** /assets/{id}/blobs | 
 *PublicAssetOperationsApi* | [**HttpGetAssetCollectionsById**](docs\PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections | 
 *PublicAssetOperationsApi* | [**HttpGetAssetDownload**](docs\PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download | 
@@ -124,6 +123,11 @@ Class | Method | HTTP request | Description
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsCreate**](docs\PublicAssetPublishingApi.md#httppublishedassetscreate) | **POST** /assets/{id}/publish | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsGet**](docs\PublicAssetPublishingApi.md#httppublishedassetsget) | **GET** /assets/{id}/publish | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsGetById**](docs\PublicAssetPublishingApi.md#httppublishedassetsgetbyid) | **GET** /assets/{id}/publish/{pid} | 
+*PublicAssetVersioningApi* | [**HttpAssetNewVersion**](docs\PublicAssetVersioningApi.md#httpassetnewversion) | **POST** /assets/{id}/versions | 
+*PublicAssetVersioningApi* | [**HttpDeleteVersionedAssetsById**](docs\PublicAssetVersioningApi.md#httpdeleteversionedassetsbyid) | **DELETE** /assets/{id}/versions/{vNr} | 
+*PublicAssetVersioningApi* | [**HttpGetVersionedAssetBlobById**](docs\PublicAssetVersioningApi.md#httpgetversionedassetblobbyid) | **GET** /assets/{id}/versions/{vNr}/blobs | 
+*PublicAssetVersioningApi* | [**HttpRestoreVersionedAssetsById**](docs\PublicAssetVersioningApi.md#httprestoreversionedassetsbyid) | **POST** /assets/{id}/versions/{vNr}/restore | 
+*PublicAssetVersioningApi* | [**HttpVersionedAssetsGet**](docs\PublicAssetVersioningApi.md#httpversionedassetsget) | **GET** /assets/{id}/versions | 
 *PublicAuthenticationManagementApi* | [**HttpAuthGetInboxContainerWriteSasToken**](docs\PublicAuthenticationManagementApi.md#httpauthgetinboxcontainerwritesastoken) | **GET** /auth/inbox | 
 *PublicCollectionManagementApi* | [**HttpCollectionsCreate**](docs\PublicCollectionManagementApi.md#httpcollectionscreate) | **POST** /collections | 
 *PublicCollectionManagementApi* | [**HttpCollectionsGet**](docs\PublicCollectionManagementApi.md#httpcollectionsget) | **GET** /collections | 
@@ -176,7 +180,6 @@ Class | Method | HTTP request | Description
  - [Model.BadRequestResult](docs\BadRequestResult.md)
  - [Model.CollTypeItem](docs\CollTypeItem.md)
  - [Model.Collection](docs\Collection.md)
- - [Model.CollectionPermission](docs\CollectionPermission.md)
  - [Model.CollectionType](docs\CollectionType.md)
  - [Model.CollectionUDL](docs\CollectionUDL.md)
  - [Model.CreateSftpUserResult](docs\CreateSftpUserResult.md)
@@ -184,15 +187,14 @@ Class | Method | HTTP request | Description
  - [Model.DistZipResponse](docs\DistZipResponse.md)
  - [Model.DownloadFormat](docs\DownloadFormat.md)
  - [Model.DynamicImageOperation](docs\DynamicImageOperation.md)
+ - [Model.EntityId](docs\EntityId.md)
  - [Model.EntityIdName](docs\EntityIdName.md)
  - [Model.FrontendAppConfig](docs\FrontendAppConfig.md)
  - [Model.GroupAllAppData](docs\GroupAllAppData.md)
  - [Model.Metadata](docs\Metadata.md)
  - [Model.OkResult](docs\OkResult.md)
- - [Model.PerHashResult](docs\PerHashResult.md)
  - [Model.PublishEntity](docs\PublishEntity.md)
  - [Model.PublishedAsset](docs\PublishedAsset.md)
- - [Model.ReasonResult](docs\ReasonResult.md)
  - [Model.SasToken](docs\SasToken.md)
  - [Model.SavedSearch](docs\SavedSearch.md)
  - [Model.SearchFacet](docs\SearchFacet.md)
@@ -204,6 +206,8 @@ Class | Method | HTTP request | Description
  - [Model.SharedCollectionFull](docs\SharedCollectionFull.md)
  - [Model.SignalRConnectionInfo](docs\SignalRConnectionInfo.md)
  - [Model.StaticDefinedList](docs\StaticDefinedList.md)
+ - [Model.VersionEntity](docs\VersionEntity.md)
+ - [Model.VersionedAsset](docs\VersionedAsset.md)
  - [Model.WhereParam](docs\WhereParam.md)
  - [Model.Workspace](docs\Workspace.md)
 

@@ -41,6 +41,8 @@ namespace Agravity.Public.Model
         /// <param name="items">items.</param>
         /// <param name="translations">translations.</param>
         /// <param name="order">order.</param>
+        /// <param name="permissions">permissions.</param>
+        /// <param name="permissionless">permissionless.</param>
         /// <param name="description">description.</param>
         /// <param name="addProperties">addProperties.</param>
         /// <param name="status">status.</param>
@@ -50,7 +52,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public CollectionType(string id = default(string), string entityType = default(string), string name = default(string), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), int? order = default(int?), string description = default(string), Dictionary<string, Object> addProperties = default(Dictionary<string, Object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public CollectionType(string id = default(string), string entityType = default(string), string name = default(string), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), int? order = default(int?), List<EntityId> permissions = default(List<EntityId>), bool? permissionless = default(bool?), string description = default(string), Dictionary<string, Object> addProperties = default(Dictionary<string, Object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -58,6 +60,8 @@ namespace Agravity.Public.Model
             this.Items = items;
             this.Translations = translations;
             this.Order = order;
+            this.Permissions = permissions;
+            this.Permissionless = permissionless;
             this.Description = description;
             this.AddProperties = addProperties;
             this.Status = status;
@@ -104,6 +108,18 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "order", EmitDefaultValue = true)]
         public int? Order { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Permissions
+        /// </summary>
+        [DataMember(Name = "permissions", EmitDefaultValue = false)]
+        public List<EntityId> Permissions { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Permissionless
+        /// </summary>
+        [DataMember(Name = "permissionless", EmitDefaultValue = true)]
+        public bool? Permissionless { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
@@ -173,6 +189,8 @@ namespace Agravity.Public.Model
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  Translations: ").Append(Translations).Append("\n");
             sb.Append("  Order: ").Append(Order).Append("\n");
+            sb.Append("  Permissions: ").Append(Permissions).Append("\n");
+            sb.Append("  Permissionless: ").Append(Permissionless).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  AddProperties: ").Append(AddProperties).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -248,6 +266,17 @@ namespace Agravity.Public.Model
                     this.Order == input.Order ||
                     (this.Order != null &&
                     this.Order.Equals(input.Order))
+                ) && 
+                (
+                    this.Permissions == input.Permissions ||
+                    this.Permissions != null &&
+                    input.Permissions != null &&
+                    this.Permissions.SequenceEqual(input.Permissions)
+                ) && 
+                (
+                    this.Permissionless == input.Permissionless ||
+                    (this.Permissionless != null &&
+                    this.Permissionless.Equals(input.Permissionless))
                 ) && 
                 (
                     this.Description == input.Description ||
@@ -329,6 +358,14 @@ namespace Agravity.Public.Model
                 if (this.Order != null)
                 {
                     hashCode = (hashCode * 59) + this.Order.GetHashCode();
+                }
+                if (this.Permissions != null)
+                {
+                    hashCode = (hashCode * 59) + this.Permissions.GetHashCode();
+                }
+                if (this.Permissionless != null)
+                {
+                    hashCode = (hashCode * 59) + this.Permissionless.GetHashCode();
                 }
                 if (this.Description != null)
                 {

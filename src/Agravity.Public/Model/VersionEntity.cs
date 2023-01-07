@@ -27,23 +27,18 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// Workspace
+    /// VersionEntity
     /// </summary>
-    [DataContract(Name = "workspace")]
-    public partial class Workspace : IEquatable<Workspace>, IValidatableObject
+    [DataContract(Name = "versionEntity")]
+    public partial class VersionEntity : IEquatable<VersionEntity>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Workspace" /> class.
+        /// Initializes a new instance of the <see cref="VersionEntity" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="entityType">entityType.</param>
-        /// <param name="name">name.</param>
-        /// <param name="collectionTypes">collectionTypes.</param>
-        /// <param name="translations">translations.</param>
-        /// <param name="order">order.</param>
-        /// <param name="permissions">permissions.</param>
-        /// <param name="description">description.</param>
-        /// <param name="addProperties">addProperties.</param>
+        /// <param name="versions">versions.</param>
+        /// <param name="regionOfOrigin">regionOfOrigin.</param>
         /// <param name="status">status.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="createdBy">createdBy.</param>
@@ -51,17 +46,12 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Workspace(string id = default(string), string entityType = default(string), string name = default(string), List<CollectionType> collectionTypes = default(List<CollectionType>), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), int? order = default(int?), List<EntityId> permissions = default(List<EntityId>), string description = default(string), Dictionary<string, Object> addProperties = default(Dictionary<string, Object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public VersionEntity(string id = default(string), string entityType = default(string), List<VersionedAsset> versions = default(List<VersionedAsset>), string regionOfOrigin = default(string), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
-            this.Name = name;
-            this.CollectionTypes = collectionTypes;
-            this.Translations = translations;
-            this.Order = order;
-            this.Permissions = permissions;
-            this.Description = description;
-            this.AddProperties = addProperties;
+            this.Versions = versions;
+            this.RegionOfOrigin = regionOfOrigin;
             this.Status = status;
             this.CreatedDate = createdDate;
             this.CreatedBy = createdBy;
@@ -84,46 +74,16 @@ namespace Agravity.Public.Model
         public string EntityType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets Versions
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        [DataMember(Name = "versions", EmitDefaultValue = false)]
+        public List<VersionedAsset> Versions { get; set; }
 
         /// <summary>
-        /// Gets or Sets CollectionTypes
+        /// Gets or Sets RegionOfOrigin
         /// </summary>
-        [DataMember(Name = "collection_types", EmitDefaultValue = false)]
-        public List<CollectionType> CollectionTypes { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Translations
-        /// </summary>
-        [DataMember(Name = "translations", EmitDefaultValue = false)]
-        public Dictionary<string, Dictionary<string, Object>> Translations { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Order
-        /// </summary>
-        [DataMember(Name = "order", EmitDefaultValue = true)]
-        public int? Order { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Permissions
-        /// </summary>
-        [DataMember(Name = "permissions", EmitDefaultValue = false)]
-        public List<EntityId> Permissions { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Description
-        /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AddProperties
-        /// </summary>
-        [DataMember(Name = "add_properties", EmitDefaultValue = false)]
-        public Dictionary<string, Object> AddProperties { get; set; }
+        [DataMember(Name = "region_of_origin", EmitDefaultValue = false)]
+        public string RegionOfOrigin { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
@@ -174,16 +134,11 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Workspace {\n");
+            sb.Append("class VersionEntity {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  EntityType: ").Append(EntityType).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  CollectionTypes: ").Append(CollectionTypes).Append("\n");
-            sb.Append("  Translations: ").Append(Translations).Append("\n");
-            sb.Append("  Order: ").Append(Order).Append("\n");
-            sb.Append("  Permissions: ").Append(Permissions).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  AddProperties: ").Append(AddProperties).Append("\n");
+            sb.Append("  Versions: ").Append(Versions).Append("\n");
+            sb.Append("  RegionOfOrigin: ").Append(RegionOfOrigin).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -211,15 +166,15 @@ namespace Agravity.Public.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Workspace);
+            return this.Equals(input as VersionEntity);
         }
 
         /// <summary>
-        /// Returns true if Workspace instances are equal
+        /// Returns true if VersionEntity instances are equal
         /// </summary>
-        /// <param name="input">Instance of Workspace to be compared</param>
+        /// <param name="input">Instance of VersionEntity to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Workspace input)
+        public bool Equals(VersionEntity input)
         {
             if (input == null)
             {
@@ -237,43 +192,15 @@ namespace Agravity.Public.Model
                     this.EntityType.Equals(input.EntityType))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Versions == input.Versions ||
+                    this.Versions != null &&
+                    input.Versions != null &&
+                    this.Versions.SequenceEqual(input.Versions)
                 ) && 
                 (
-                    this.CollectionTypes == input.CollectionTypes ||
-                    this.CollectionTypes != null &&
-                    input.CollectionTypes != null &&
-                    this.CollectionTypes.SequenceEqual(input.CollectionTypes)
-                ) && 
-                (
-                    this.Translations == input.Translations ||
-                    this.Translations != null &&
-                    input.Translations != null &&
-                    this.Translations.SequenceEqual(input.Translations)
-                ) && 
-                (
-                    this.Order == input.Order ||
-                    (this.Order != null &&
-                    this.Order.Equals(input.Order))
-                ) && 
-                (
-                    this.Permissions == input.Permissions ||
-                    this.Permissions != null &&
-                    input.Permissions != null &&
-                    this.Permissions.SequenceEqual(input.Permissions)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.AddProperties == input.AddProperties ||
-                    this.AddProperties != null &&
-                    input.AddProperties != null &&
-                    this.AddProperties.SequenceEqual(input.AddProperties)
+                    this.RegionOfOrigin == input.RegionOfOrigin ||
+                    (this.RegionOfOrigin != null &&
+                    this.RegionOfOrigin.Equals(input.RegionOfOrigin))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -329,33 +256,13 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.EntityType.GetHashCode();
                 }
-                if (this.Name != null)
+                if (this.Versions != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Versions.GetHashCode();
                 }
-                if (this.CollectionTypes != null)
+                if (this.RegionOfOrigin != null)
                 {
-                    hashCode = (hashCode * 59) + this.CollectionTypes.GetHashCode();
-                }
-                if (this.Translations != null)
-                {
-                    hashCode = (hashCode * 59) + this.Translations.GetHashCode();
-                }
-                if (this.Order != null)
-                {
-                    hashCode = (hashCode * 59) + this.Order.GetHashCode();
-                }
-                if (this.Permissions != null)
-                {
-                    hashCode = (hashCode * 59) + this.Permissions.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.AddProperties != null)
-                {
-                    hashCode = (hashCode * 59) + this.AddProperties.GetHashCode();
+                    hashCode = (hashCode * 59) + this.RegionOfOrigin.GetHashCode();
                 }
                 if (this.Status != null)
                 {

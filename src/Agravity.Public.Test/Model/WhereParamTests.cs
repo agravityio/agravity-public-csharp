@@ -81,6 +81,14 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Value'
         }
+        /// <summary>
+        /// Test the property 'ValueType'
+        /// </summary>
+        [Fact]
+        public void ValueTypeTest()
+        {
+            // TODO unit test for the property 'ValueType'
+        }
 
     }
 

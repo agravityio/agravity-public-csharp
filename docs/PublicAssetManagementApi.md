@@ -325,7 +325,7 @@ catch (ApiException e)
 
 <a name="httpassetsgetbyid"></a>
 # **HttpAssetsGetById**
-> Asset HttpAssetsGetById (string id, string fields = null, bool? expose = null, bool? uncomplete = null, bool? translations = null)
+> Asset HttpAssetsGetById (string id, string fields = null, bool? expose = null, bool? translations = null)
 
 
 
@@ -356,12 +356,11 @@ namespace Example
             var id = "id_example";  // string | The ID of the asset.
             var fields = "fields_example";  // string | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional) 
             var expose = true;  // bool? | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no 'thumbnail' is found. (optional) 
-            var uncomplete = true;  // bool? | This parameter should be set to 'true' if the uncomplete asset should be shown. (optional) 
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpAssetsGetById(id, fields, expose, uncomplete, translations);
+                Asset result = apiInstance.HttpAssetsGetById(id, fields, expose, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -381,7 +380,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Asset> response = apiInstance.HttpAssetsGetByIdWithHttpInfo(id, fields, expose, uncomplete, translations);
+    ApiResponse<Asset> response = apiInstance.HttpAssetsGetByIdWithHttpInfo(id, fields, expose, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -401,7 +400,6 @@ catch (ApiException e)
 | **id** | **string** | The ID of the asset. |  |
 | **fields** | **string** | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. | [optional]  |
 | **expose** | **bool?** | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. | [optional]  |
-| **uncomplete** | **bool?** | This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. | [optional]  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type

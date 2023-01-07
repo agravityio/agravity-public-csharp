@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a name="httpstaticdefinedlistsgetall"></a>
 # **HttpStaticDefinedListsGetAll**
-> List&lt;StaticDefinedList&gt; HttpStaticDefinedListsGetAll ()
+> List&lt;StaticDefinedList&gt; HttpStaticDefinedListsGetAll (bool? translations = null)
 
 
 
@@ -37,10 +37,11 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicStaticDefinedListManagementApi(config);
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                List<StaticDefinedList> result = apiInstance.HttpStaticDefinedListsGetAll();
+                List<StaticDefinedList> result = apiInstance.HttpStaticDefinedListsGetAll(translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -60,7 +61,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<StaticDefinedList>> response = apiInstance.HttpStaticDefinedListsGetAllWithHttpInfo();
+    ApiResponse<List<StaticDefinedList>> response = apiInstance.HttpStaticDefinedListsGetAllWithHttpInfo(translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -74,7 +75,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+
 ### Return type
 
 [**List&lt;StaticDefinedList&gt;**](StaticDefinedList.md)
@@ -100,7 +105,7 @@ This endpoint does not need any parameter.
 
 <a name="httpstaticdefinedlistsgetbyid"></a>
 # **HttpStaticDefinedListsGetById**
-> StaticDefinedList HttpStaticDefinedListsGetById (string id)
+> StaticDefinedList HttpStaticDefinedListsGetById (string id, bool? translations = null)
 
 
 
@@ -129,10 +134,11 @@ namespace Example
 
             var apiInstance = new PublicStaticDefinedListManagementApi(config);
             var id = "id_example";  // string | The ID of the static defined list.
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                StaticDefinedList result = apiInstance.HttpStaticDefinedListsGetById(id);
+                StaticDefinedList result = apiInstance.HttpStaticDefinedListsGetById(id, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -152,7 +158,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<StaticDefinedList> response = apiInstance.HttpStaticDefinedListsGetByIdWithHttpInfo(id);
+    ApiResponse<StaticDefinedList> response = apiInstance.HttpStaticDefinedListsGetByIdWithHttpInfo(id, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -170,6 +176,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the static defined list. |  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type
 

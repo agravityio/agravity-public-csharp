@@ -1,13 +1,13 @@
-# Agravity.Public.Model.WhereParam
+# Agravity.Public.Model.VersionedAsset
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Operator** | **string** |  | [optional] [default to OperatorEnum.Equals]
-**Field** | **string** |  | [optional] 
-**Value** | **Object** |  | [optional] 
-**ValueType** | **string** |  | [optional] [default to ValueTypeEnum.String]
+**VersionNr** | **int** |  | [optional] 
+**UntilDate** | **DateTime** |  | [optional] 
+**VersionInfo** | **string** |  | [optional] 
+**CreatedBy** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

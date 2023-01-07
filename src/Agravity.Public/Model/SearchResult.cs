@@ -35,49 +35,23 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchResult" /> class.
         /// </summary>
-        /// <param name="reasonResult">reasonResult.</param>
         /// <param name="dataResult">dataResult.</param>
-        /// <param name="maxSumResults">maxSumResults.</param>
         /// <param name="options">options.</param>
         /// <param name="facets">facets.</param>
         /// <param name="count">count.</param>
-        /// <param name="searchQuery">searchQuery.</param>
-        /// <param name="searchFilter">searchFilter.</param>
-        /// <param name="searchOrderBy">searchOrderBy.</param>
-        /// <param name="searchMode">searchMode.</param>
-        /// <param name="origin">origin.</param>
-        public SearchResult(List<ReasonResult> reasonResult = default(List<ReasonResult>), DataResult dataResult = default(DataResult), int maxSumResults = default(int), AzSearchOptions options = default(AzSearchOptions), List<SearchFacet> facets = default(List<SearchFacet>), long? count = default(long?), string searchQuery = default(string), string searchFilter = default(string), string searchOrderBy = default(string), string searchMode = default(string), string origin = default(string))
+        public SearchResult(DataResult dataResult = default(DataResult), AzSearchOptions options = default(AzSearchOptions), List<SearchFacet> facets = default(List<SearchFacet>), long? count = default(long?))
         {
-            this.ReasonResult = reasonResult;
             this.DataResult = dataResult;
-            this.MaxSumResults = maxSumResults;
             this.Options = options;
             this.Facets = facets;
             this.Count = count;
-            this.SearchQuery = searchQuery;
-            this.SearchFilter = searchFilter;
-            this.SearchOrderBy = searchOrderBy;
-            this.SearchMode = searchMode;
-            this.Origin = origin;
         }
-
-        /// <summary>
-        /// Gets or Sets ReasonResult
-        /// </summary>
-        [DataMember(Name = "reason_result", EmitDefaultValue = false)]
-        public List<ReasonResult> ReasonResult { get; set; }
 
         /// <summary>
         /// Gets or Sets DataResult
         /// </summary>
         [DataMember(Name = "data_result", EmitDefaultValue = false)]
         public DataResult DataResult { get; set; }
-
-        /// <summary>
-        /// Gets or Sets MaxSumResults
-        /// </summary>
-        [DataMember(Name = "max_sum_results", EmitDefaultValue = false)]
-        public int MaxSumResults { get; set; }
 
         /// <summary>
         /// Gets or Sets Options
@@ -98,36 +72,6 @@ namespace Agravity.Public.Model
         public long? Count { get; set; }
 
         /// <summary>
-        /// Gets or Sets SearchQuery
-        /// </summary>
-        [DataMember(Name = "search_query", EmitDefaultValue = false)]
-        public string SearchQuery { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SearchFilter
-        /// </summary>
-        [DataMember(Name = "search_filter", EmitDefaultValue = false)]
-        public string SearchFilter { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SearchOrderBy
-        /// </summary>
-        [DataMember(Name = "search_order_by", EmitDefaultValue = false)]
-        public string SearchOrderBy { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SearchMode
-        /// </summary>
-        [DataMember(Name = "search_mode", EmitDefaultValue = false)]
-        public string SearchMode { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Origin
-        /// </summary>
-        [DataMember(Name = "origin", EmitDefaultValue = false)]
-        public string Origin { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -135,17 +79,10 @@ namespace Agravity.Public.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class SearchResult {\n");
-            sb.Append("  ReasonResult: ").Append(ReasonResult).Append("\n");
             sb.Append("  DataResult: ").Append(DataResult).Append("\n");
-            sb.Append("  MaxSumResults: ").Append(MaxSumResults).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("  Facets: ").Append(Facets).Append("\n");
             sb.Append("  Count: ").Append(Count).Append("\n");
-            sb.Append("  SearchQuery: ").Append(SearchQuery).Append("\n");
-            sb.Append("  SearchFilter: ").Append(SearchFilter).Append("\n");
-            sb.Append("  SearchOrderBy: ").Append(SearchOrderBy).Append("\n");
-            sb.Append("  SearchMode: ").Append(SearchMode).Append("\n");
-            sb.Append("  Origin: ").Append(Origin).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -182,19 +119,9 @@ namespace Agravity.Public.Model
             }
             return 
                 (
-                    this.ReasonResult == input.ReasonResult ||
-                    this.ReasonResult != null &&
-                    input.ReasonResult != null &&
-                    this.ReasonResult.SequenceEqual(input.ReasonResult)
-                ) && 
-                (
                     this.DataResult == input.DataResult ||
                     (this.DataResult != null &&
                     this.DataResult.Equals(input.DataResult))
-                ) && 
-                (
-                    this.MaxSumResults == input.MaxSumResults ||
-                    this.MaxSumResults.Equals(input.MaxSumResults)
                 ) && 
                 (
                     this.Options == input.Options ||
@@ -211,31 +138,6 @@ namespace Agravity.Public.Model
                     this.Count == input.Count ||
                     (this.Count != null &&
                     this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.SearchQuery == input.SearchQuery ||
-                    (this.SearchQuery != null &&
-                    this.SearchQuery.Equals(input.SearchQuery))
-                ) && 
-                (
-                    this.SearchFilter == input.SearchFilter ||
-                    (this.SearchFilter != null &&
-                    this.SearchFilter.Equals(input.SearchFilter))
-                ) && 
-                (
-                    this.SearchOrderBy == input.SearchOrderBy ||
-                    (this.SearchOrderBy != null &&
-                    this.SearchOrderBy.Equals(input.SearchOrderBy))
-                ) && 
-                (
-                    this.SearchMode == input.SearchMode ||
-                    (this.SearchMode != null &&
-                    this.SearchMode.Equals(input.SearchMode))
-                ) && 
-                (
-                    this.Origin == input.Origin ||
-                    (this.Origin != null &&
-                    this.Origin.Equals(input.Origin))
                 );
         }
 
@@ -248,15 +150,10 @@ namespace Agravity.Public.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ReasonResult != null)
-                {
-                    hashCode = (hashCode * 59) + this.ReasonResult.GetHashCode();
-                }
                 if (this.DataResult != null)
                 {
                     hashCode = (hashCode * 59) + this.DataResult.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.MaxSumResults.GetHashCode();
                 if (this.Options != null)
                 {
                     hashCode = (hashCode * 59) + this.Options.GetHashCode();
@@ -268,26 +165,6 @@ namespace Agravity.Public.Model
                 if (this.Count != null)
                 {
                     hashCode = (hashCode * 59) + this.Count.GetHashCode();
-                }
-                if (this.SearchQuery != null)
-                {
-                    hashCode = (hashCode * 59) + this.SearchQuery.GetHashCode();
-                }
-                if (this.SearchFilter != null)
-                {
-                    hashCode = (hashCode * 59) + this.SearchFilter.GetHashCode();
-                }
-                if (this.SearchOrderBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.SearchOrderBy.GetHashCode();
-                }
-                if (this.SearchMode != null)
-                {
-                    hashCode = (hashCode * 59) + this.SearchMode.GetHashCode();
-                }
-                if (this.Origin != null)
-                {
-                    hashCode = (hashCode * 59) + this.Origin.GetHashCode();
                 }
                 return hashCode;
             }

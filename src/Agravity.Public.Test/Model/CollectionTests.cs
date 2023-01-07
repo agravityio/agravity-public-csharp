@@ -98,14 +98,6 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Level'
         }
         /// <summary>
-        /// Test the property 'Permissions'
-        /// </summary>
-        [Fact]
-        public void PermissionsTest()
-        {
-            // TODO unit test for the property 'Permissions'
-        }
-        /// <summary>
         /// Test the property 'Custom'
         /// </summary>
         [Fact]

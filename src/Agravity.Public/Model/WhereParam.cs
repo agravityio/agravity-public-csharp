@@ -90,7 +90,13 @@ namespace Agravity.Public.Model
             /// Enum ArrayContains for value: ArrayContains
             /// </summary>
             [EnumMember(Value = "ArrayContains")]
-            ArrayContains = 9
+            ArrayContains = 9,
+
+            /// <summary>
+            /// Enum ArrayContainsPartial for value: ArrayContainsPartial
+            /// </summary>
+            [EnumMember(Value = "ArrayContainsPartial")]
+            ArrayContainsPartial = 10
 
         }
 
@@ -101,16 +107,50 @@ namespace Agravity.Public.Model
         [DataMember(Name = "operator", EmitDefaultValue = false)]
         public OperatorEnum? Operator { get; set; }
         /// <summary>
+        /// Defines ValueType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ValueTypeEnum
+        {
+            /// <summary>
+            /// Enum String for value: String
+            /// </summary>
+            [EnumMember(Value = "String")]
+            String = 1,
+
+            /// <summary>
+            /// Enum Bool for value: Bool
+            /// </summary>
+            [EnumMember(Value = "Bool")]
+            Bool = 2,
+
+            /// <summary>
+            /// Enum Number for value: Number
+            /// </summary>
+            [EnumMember(Value = "Number")]
+            Number = 3
+
+        }
+
+
+        /// <summary>
+        /// Gets or Sets ValueType
+        /// </summary>
+        [DataMember(Name = "valueType", EmitDefaultValue = false)]
+        public ValueTypeEnum? ValueType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="WhereParam" /> class.
         /// </summary>
         /// <param name="_operator">_operator (default to OperatorEnum.Equals).</param>
         /// <param name="field">field.</param>
         /// <param name="value">value.</param>
-        public WhereParam(OperatorEnum? _operator = OperatorEnum.Equals, string field = default(string), Object value = default(Object))
+        /// <param name="valueType">valueType (default to ValueTypeEnum.String).</param>
+        public WhereParam(OperatorEnum? _operator = OperatorEnum.Equals, string field = default(string), Object value = default(Object), ValueTypeEnum? valueType = ValueTypeEnum.String)
         {
             this.Operator = _operator;
             this.Field = field;
             this.Value = value;
+            this.ValueType = valueType;
         }
 
         /// <summary>
@@ -136,6 +176,7 @@ namespace Agravity.Public.Model
             sb.Append("  Operator: ").Append(Operator).Append("\n");
             sb.Append("  Field: ").Append(Field).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  ValueType: ").Append(ValueType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -184,6 +225,10 @@ namespace Agravity.Public.Model
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
+                ) && 
+                (
+                    this.ValueType == input.ValueType ||
+                    this.ValueType.Equals(input.ValueType)
                 );
         }
 
@@ -205,6 +250,7 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.ValueType.GetHashCode();
                 return hashCode;
             }
         }

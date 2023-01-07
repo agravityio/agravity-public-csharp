@@ -27,41 +27,49 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// CollectionPermission
+    /// VersionedAsset
     /// </summary>
-    [DataContract(Name = "collectionPermission")]
-    public partial class CollectionPermission : IEquatable<CollectionPermission>, IValidatableObject
+    [DataContract(Name = "versionedAsset")]
+    public partial class VersionedAsset : IEquatable<VersionedAsset>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CollectionPermission" /> class.
+        /// Initializes a new instance of the <see cref="VersionedAsset" /> class.
         /// </summary>
-        /// <param name="collectionId">collectionId.</param>
-        /// <param name="groupId">groupId.</param>
-        /// <param name="role">role.</param>
-        public CollectionPermission(string collectionId = default(string), string groupId = default(string), string role = default(string))
+        /// <param name="versionNr">versionNr.</param>
+        /// <param name="untilDate">untilDate.</param>
+        /// <param name="versionInfo">versionInfo.</param>
+        /// <param name="createdBy">createdBy.</param>
+        public VersionedAsset(int versionNr = default(int), DateTime untilDate = default(DateTime), string versionInfo = default(string), string createdBy = default(string))
         {
-            this.CollectionId = collectionId;
-            this.GroupId = groupId;
-            this.Role = role;
+            this.VersionNr = versionNr;
+            this.UntilDate = untilDate;
+            this.VersionInfo = versionInfo;
+            this.CreatedBy = createdBy;
         }
 
         /// <summary>
-        /// Gets or Sets CollectionId
+        /// Gets or Sets VersionNr
         /// </summary>
-        [DataMember(Name = "collection_id", EmitDefaultValue = false)]
-        public string CollectionId { get; set; }
+        [DataMember(Name = "version_nr", EmitDefaultValue = false)]
+        public int VersionNr { get; set; }
 
         /// <summary>
-        /// Gets or Sets GroupId
+        /// Gets or Sets UntilDate
         /// </summary>
-        [DataMember(Name = "group_id", EmitDefaultValue = false)]
-        public string GroupId { get; set; }
+        [DataMember(Name = "until_date", EmitDefaultValue = false)]
+        public DateTime UntilDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets Role
+        /// Gets or Sets VersionInfo
         /// </summary>
-        [DataMember(Name = "role", EmitDefaultValue = false)]
-        public string Role { get; set; }
+        [DataMember(Name = "version_info", EmitDefaultValue = false)]
+        public string VersionInfo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedBy
+        /// </summary>
+        [DataMember(Name = "created_by", EmitDefaultValue = false)]
+        public string CreatedBy { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,10 +78,11 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CollectionPermission {\n");
-            sb.Append("  CollectionId: ").Append(CollectionId).Append("\n");
-            sb.Append("  GroupId: ").Append(GroupId).Append("\n");
-            sb.Append("  Role: ").Append(Role).Append("\n");
+            sb.Append("class VersionedAsset {\n");
+            sb.Append("  VersionNr: ").Append(VersionNr).Append("\n");
+            sb.Append("  UntilDate: ").Append(UntilDate).Append("\n");
+            sb.Append("  VersionInfo: ").Append(VersionInfo).Append("\n");
+            sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,15 +103,15 @@ namespace Agravity.Public.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CollectionPermission);
+            return this.Equals(input as VersionedAsset);
         }
 
         /// <summary>
-        /// Returns true if CollectionPermission instances are equal
+        /// Returns true if VersionedAsset instances are equal
         /// </summary>
-        /// <param name="input">Instance of CollectionPermission to be compared</param>
+        /// <param name="input">Instance of VersionedAsset to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CollectionPermission input)
+        public bool Equals(VersionedAsset input)
         {
             if (input == null)
             {
@@ -110,19 +119,23 @@ namespace Agravity.Public.Model
             }
             return 
                 (
-                    this.CollectionId == input.CollectionId ||
-                    (this.CollectionId != null &&
-                    this.CollectionId.Equals(input.CollectionId))
+                    this.VersionNr == input.VersionNr ||
+                    this.VersionNr.Equals(input.VersionNr)
                 ) && 
                 (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
+                    this.UntilDate == input.UntilDate ||
+                    (this.UntilDate != null &&
+                    this.UntilDate.Equals(input.UntilDate))
                 ) && 
                 (
-                    this.Role == input.Role ||
-                    (this.Role != null &&
-                    this.Role.Equals(input.Role))
+                    this.VersionInfo == input.VersionInfo ||
+                    (this.VersionInfo != null &&
+                    this.VersionInfo.Equals(input.VersionInfo))
+                ) && 
+                (
+                    this.CreatedBy == input.CreatedBy ||
+                    (this.CreatedBy != null &&
+                    this.CreatedBy.Equals(input.CreatedBy))
                 );
         }
 
@@ -135,17 +148,18 @@ namespace Agravity.Public.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CollectionId != null)
+                hashCode = (hashCode * 59) + this.VersionNr.GetHashCode();
+                if (this.UntilDate != null)
                 {
-                    hashCode = (hashCode * 59) + this.CollectionId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.UntilDate.GetHashCode();
                 }
-                if (this.GroupId != null)
+                if (this.VersionInfo != null)
                 {
-                    hashCode = (hashCode * 59) + this.GroupId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VersionInfo.GetHashCode();
                 }
-                if (this.Role != null)
+                if (this.CreatedBy != null)
                 {
-                    hashCode = (hashCode * 59) + this.Role.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
                 }
                 return hashCode;
             }

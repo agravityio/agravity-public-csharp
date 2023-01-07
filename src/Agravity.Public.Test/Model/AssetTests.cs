@@ -90,14 +90,6 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'AssetType'
         }
         /// <summary>
-        /// Test the property 'Access'
-        /// </summary>
-        [Fact]
-        public void AccessTest()
-        {
-            // TODO unit test for the property 'Access'
-        }
-        /// <summary>
         /// Test the property 'Duplicates'
         /// </summary>
         [Fact]
@@ -160,14 +152,6 @@ namespace Agravity.Public.Test.Model
         public void FailedReasonTest()
         {
             // TODO unit test for the property 'FailedReason'
-        }
-        /// <summary>
-        /// Test the property 'Permissions'
-        /// </summary>
-        [Fact]
-        public void PermissionsTest()
-        {
-            // TODO unit test for the property 'Permissions'
         }
         /// <summary>
         /// Test the property 'RegionOfOrigin'

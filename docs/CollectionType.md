@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **Items** | [**List&lt;CollTypeItem&gt;**](CollTypeItem.md) |  | [optional] 
 **Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
 **Order** | **int?** |  | [optional] 
+**Permissions** | [**List&lt;EntityId&gt;**](EntityId.md) |  | [optional] 
+**Permissionless** | **bool?** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **AddProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Status** | **string** |  | [optional] 

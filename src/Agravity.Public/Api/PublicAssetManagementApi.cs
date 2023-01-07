@@ -127,11 +127,10 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
-        /// <param name="uncomplete">This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Asset</returns>
-        Asset HttpAssetsGetById(string id, string fields = default(string), bool? expose = default(bool?), bool? uncomplete = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
+        Asset HttpAssetsGetById(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -143,11 +142,10 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
-        /// <param name="uncomplete">This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
-        ApiResponse<Asset> HttpAssetsGetByIdWithHttpInfo(string id, string fields = default(string), bool? expose = default(bool?), bool? uncomplete = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
+        ApiResponse<Asset> HttpAssetsGetByIdWithHttpInfo(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -293,12 +291,11 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
-        /// <param name="uncomplete">This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        System.Threading.Tasks.Task<Asset> HttpAssetsGetByIdAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? uncomplete = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Asset> HttpAssetsGetByIdAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -310,12 +307,11 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
-        /// <param name="uncomplete">This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetsGetByIdWithHttpInfoAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? uncomplete = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetsGetByIdWithHttpInfoAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1082,13 +1078,12 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
-        /// <param name="uncomplete">This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Asset</returns>
-        public Asset HttpAssetsGetById(string id, string fields = default(string), bool? expose = default(bool?), bool? uncomplete = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
+        public Asset HttpAssetsGetById(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = HttpAssetsGetByIdWithHttpInfo(id, fields, expose, uncomplete, translations);
+            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = HttpAssetsGetByIdWithHttpInfo(id, fields, expose, translations);
             return localVarResponse.Data;
         }
 
@@ -1099,11 +1094,10 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
-        /// <param name="uncomplete">This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
-        public Agravity.Public.Client.ApiResponse<Asset> HttpAssetsGetByIdWithHttpInfo(string id, string fields = default(string), bool? expose = default(bool?), bool? uncomplete = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<Asset> HttpAssetsGetByIdWithHttpInfo(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1141,10 +1135,6 @@ namespace Agravity.Public.Api
             if (expose != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "expose", expose));
-            }
-            if (uncomplete != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "uncomplete", uncomplete));
             }
             if (translations != null)
             {
@@ -1181,14 +1171,13 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
-        /// <param name="uncomplete">This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        public async System.Threading.Tasks.Task<Asset> HttpAssetsGetByIdAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? uncomplete = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Asset> HttpAssetsGetByIdAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = await HttpAssetsGetByIdWithHttpInfoAsync(id, fields, expose, uncomplete, translations, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = await HttpAssetsGetByIdWithHttpInfoAsync(id, fields, expose, translations, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1199,12 +1188,11 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
-        /// <param name="uncomplete">This parameter should be set to &#39;true&#39; if the uncomplete asset should be shown. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Asset>> HttpAssetsGetByIdWithHttpInfoAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? uncomplete = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Asset>> HttpAssetsGetByIdWithHttpInfoAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1243,10 +1231,6 @@ namespace Agravity.Public.Api
             if (expose != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "expose", expose));
-            }
-            if (uncomplete != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "uncomplete", uncomplete));
             }
             if (translations != null)
             {

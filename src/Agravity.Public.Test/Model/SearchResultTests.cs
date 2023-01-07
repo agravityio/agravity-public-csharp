@@ -58,28 +58,12 @@ namespace Agravity.Public.Test.Model
 
 
         /// <summary>
-        /// Test the property 'ReasonResult'
-        /// </summary>
-        [Fact]
-        public void ReasonResultTest()
-        {
-            // TODO unit test for the property 'ReasonResult'
-        }
-        /// <summary>
         /// Test the property 'DataResult'
         /// </summary>
         [Fact]
         public void DataResultTest()
         {
             // TODO unit test for the property 'DataResult'
-        }
-        /// <summary>
-        /// Test the property 'MaxSumResults'
-        /// </summary>
-        [Fact]
-        public void MaxSumResultsTest()
-        {
-            // TODO unit test for the property 'MaxSumResults'
         }
         /// <summary>
         /// Test the property 'Options'
@@ -104,46 +88,6 @@ namespace Agravity.Public.Test.Model
         public void CountTest()
         {
             // TODO unit test for the property 'Count'
-        }
-        /// <summary>
-        /// Test the property 'SearchQuery'
-        /// </summary>
-        [Fact]
-        public void SearchQueryTest()
-        {
-            // TODO unit test for the property 'SearchQuery'
-        }
-        /// <summary>
-        /// Test the property 'SearchFilter'
-        /// </summary>
-        [Fact]
-        public void SearchFilterTest()
-        {
-            // TODO unit test for the property 'SearchFilter'
-        }
-        /// <summary>
-        /// Test the property 'SearchOrderBy'
-        /// </summary>
-        [Fact]
-        public void SearchOrderByTest()
-        {
-            // TODO unit test for the property 'SearchOrderBy'
-        }
-        /// <summary>
-        /// Test the property 'SearchMode'
-        /// </summary>
-        [Fact]
-        public void SearchModeTest()
-        {
-            // TODO unit test for the property 'SearchMode'
-        }
-        /// <summary>
-        /// Test the property 'Origin'
-        /// </summary>
-        [Fact]
-        public void OriginTest()
-        {
-            // TODO unit test for the property 'Origin'
         }
 
     }

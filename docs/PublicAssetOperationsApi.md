@@ -6,7 +6,6 @@ All URIs are relative to *http://localhost:7072/api*
 |--------|--------------|-------------|
 | [**HttpAssetImageEdit**](PublicAssetOperationsApi.md#httpassetimageedit) | **GET** /assets/{id}/imageedit |  |
 | [**HttpAssetResize**](PublicAssetOperationsApi.md#httpassetresize) | **GET** /assets/{id}/resize |  |
-| [**HttpAssetsGetSimilarById**](PublicAssetOperationsApi.md#httpassetsgetsimilarbyid) | **GET** /assets/{id}/similar |  |
 | [**HttpGetAssetBlob**](PublicAssetOperationsApi.md#httpgetassetblob) | **GET** /assets/{id}/blobs |  |
 | [**HttpGetAssetCollectionsById**](PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections |  |
 | [**HttpGetAssetDownload**](PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download |  |
@@ -236,103 +235,6 @@ catch (ApiException e)
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **404** | The requested item could not be found |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="httpassetsgetsimilarbyid"></a>
-# **HttpAssetsGetSimilarById**
-> List&lt;PerHashResult&gt; HttpAssetsGetSimilarById (string id)
-
-
-
-This endpoint is only for active image-assets (asset-type=image) and given perhash property. It compares against all other image assets and calculates distances for similar images.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Agravity.Public.Api;
-using Agravity.Public.Client;
-using Agravity.Public.Model;
-
-namespace Example
-{
-    public class HttpAssetsGetSimilarByIdExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost:7072/api";
-            // Configure API key authorization: function_key
-            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
-
-            var apiInstance = new PublicAssetOperationsApi(config);
-            var id = "id_example";  // string | The ID of the asset.
-
-            try
-            {
-                List<PerHashResult> result = apiInstance.HttpAssetsGetSimilarById(id);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetsGetSimilarById: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the HttpAssetsGetSimilarByIdWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<List<PerHashResult>> response = apiInstance.HttpAssetsGetSimilarByIdWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetsGetSimilarByIdWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **id** | **string** | The ID of the asset. |  |
-
-### Return type
-
-[**List&lt;PerHashResult&gt;**](PerHashResult.md)
-
-### Authorization
-
-[function_key](../README.md#function_key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Returns similar images (based on a configurable perceptual hash distance). |  -  |
-| **401** | Unauthorized. API Key not provided. |  -  |
-| **404** | The requested item could not be found |  -  |
-| **422** | The requested item does not have a value |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

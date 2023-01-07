@@ -40,14 +40,16 @@ namespace Agravity.Public.Model
         /// <param name="customer">customer.</param>
         /// <param name="updated">updated.</param>
         /// <param name="version">version.</param>
+        /// <param name="permissionEnabled">permissionEnabled.</param>
         /// <param name="region">region.</param>
-        public AgravityVersion(string name = default(string), string company = default(string), string customer = default(string), DateTime updated = default(DateTime), string version = default(string), string region = default(string))
+        public AgravityVersion(string name = default(string), string company = default(string), string customer = default(string), DateTime updated = default(DateTime), string version = default(string), bool permissionEnabled = default(bool), string region = default(string))
         {
             this.Name = name;
             this.Company = company;
             this.Customer = customer;
             this.Updated = updated;
             this._Version = version;
+            this.PermissionEnabled = permissionEnabled;
             this.Region = region;
         }
 
@@ -82,6 +84,12 @@ namespace Agravity.Public.Model
         public string _Version { get; set; }
 
         /// <summary>
+        /// Gets or Sets PermissionEnabled
+        /// </summary>
+        [DataMember(Name = "permission_enabled", EmitDefaultValue = true)]
+        public bool PermissionEnabled { get; set; }
+
+        /// <summary>
         /// Gets or Sets Region
         /// </summary>
         [DataMember(Name = "region", EmitDefaultValue = false)]
@@ -100,6 +108,7 @@ namespace Agravity.Public.Model
             sb.Append("  Customer: ").Append(Customer).Append("\n");
             sb.Append("  Updated: ").Append(Updated).Append("\n");
             sb.Append("  _Version: ").Append(_Version).Append("\n");
+            sb.Append("  PermissionEnabled: ").Append(PermissionEnabled).Append("\n");
             sb.Append("  Region: ").Append(Region).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -162,6 +171,10 @@ namespace Agravity.Public.Model
                     this._Version.Equals(input._Version))
                 ) && 
                 (
+                    this.PermissionEnabled == input.PermissionEnabled ||
+                    this.PermissionEnabled.Equals(input.PermissionEnabled)
+                ) && 
+                (
                     this.Region == input.Region ||
                     (this.Region != null &&
                     this.Region.Equals(input.Region))
@@ -197,6 +210,7 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this._Version.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.PermissionEnabled.GetHashCode();
                 if (this.Region != null)
                 {
                     hashCode = (hashCode * 59) + this.Region.GetHashCode();

@@ -95,18 +95,6 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
-        /// Test HttpAssetsGetSimilarById
-        /// </summary>
-        [Fact]
-        public void HttpAssetsGetSimilarByIdTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string id = null;
-            //var response = instance.HttpAssetsGetSimilarById(id);
-            //Assert.IsType<List<PerHashResult>>(response);
-        }
-
-        /// <summary>
         /// Test HttpGetAssetBlob
         /// </summary>
         [Fact]

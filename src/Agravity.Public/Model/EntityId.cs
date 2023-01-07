@@ -27,57 +27,25 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// ReasonResult
+    /// EntityId
     /// </summary>
-    [DataContract(Name = "reasonResult")]
-    public partial class ReasonResult : IEquatable<ReasonResult>, IValidatableObject
+    [DataContract(Name = "entityId")]
+    public partial class EntityId : IEquatable<EntityId>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ReasonResult" /> class.
+        /// Initializes a new instance of the <see cref="EntityId" /> class.
         /// </summary>
-        /// <param name="reason">reason.</param>
-        /// <param name="entityType">entityType.</param>
-        /// <param name="ranking">ranking.</param>
-        /// <param name="size">size.</param>
-        /// <param name="ids">ids.</param>
-        public ReasonResult(string reason = default(string), string entityType = default(string), int ranking = default(int), int size = default(int), List<string> ids = default(List<string>))
+        /// <param name="id">id.</param>
+        public EntityId(string id = default(string))
         {
-            this.Reason = reason;
-            this.EntityType = entityType;
-            this.Ranking = ranking;
-            this.Size = size;
-            this.Ids = ids;
+            this.Id = id;
         }
 
         /// <summary>
-        /// Gets or Sets Reason
+        /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "reason", EmitDefaultValue = false)]
-        public string Reason { get; set; }
-
-        /// <summary>
-        /// Gets or Sets EntityType
-        /// </summary>
-        [DataMember(Name = "entity_type", EmitDefaultValue = false)]
-        public string EntityType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Ranking
-        /// </summary>
-        [DataMember(Name = "ranking", EmitDefaultValue = false)]
-        public int Ranking { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Size
-        /// </summary>
-        [DataMember(Name = "size", EmitDefaultValue = false)]
-        public int Size { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Ids
-        /// </summary>
-        [DataMember(Name = "ids", EmitDefaultValue = false)]
-        public List<string> Ids { get; set; }
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -86,12 +54,8 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ReasonResult {\n");
-            sb.Append("  Reason: ").Append(Reason).Append("\n");
-            sb.Append("  EntityType: ").Append(EntityType).Append("\n");
-            sb.Append("  Ranking: ").Append(Ranking).Append("\n");
-            sb.Append("  Size: ").Append(Size).Append("\n");
-            sb.Append("  Ids: ").Append(Ids).Append("\n");
+            sb.Append("class EntityId {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,15 +76,15 @@ namespace Agravity.Public.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ReasonResult);
+            return this.Equals(input as EntityId);
         }
 
         /// <summary>
-        /// Returns true if ReasonResult instances are equal
+        /// Returns true if EntityId instances are equal
         /// </summary>
-        /// <param name="input">Instance of ReasonResult to be compared</param>
+        /// <param name="input">Instance of EntityId to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ReasonResult input)
+        public bool Equals(EntityId input)
         {
             if (input == null)
             {
@@ -128,28 +92,9 @@ namespace Agravity.Public.Model
             }
             return 
                 (
-                    this.Reason == input.Reason ||
-                    (this.Reason != null &&
-                    this.Reason.Equals(input.Reason))
-                ) && 
-                (
-                    this.EntityType == input.EntityType ||
-                    (this.EntityType != null &&
-                    this.EntityType.Equals(input.EntityType))
-                ) && 
-                (
-                    this.Ranking == input.Ranking ||
-                    this.Ranking.Equals(input.Ranking)
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
-                ) && 
-                (
-                    this.Ids == input.Ids ||
-                    this.Ids != null &&
-                    input.Ids != null &&
-                    this.Ids.SequenceEqual(input.Ids)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 );
         }
 
@@ -162,19 +107,9 @@ namespace Agravity.Public.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Reason != null)
+                if (this.Id != null)
                 {
-                    hashCode = (hashCode * 59) + this.Reason.GetHashCode();
-                }
-                if (this.EntityType != null)
-                {
-                    hashCode = (hashCode * 59) + this.EntityType.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Ranking.GetHashCode();
-                hashCode = (hashCode * 59) + this.Size.GetHashCode();
-                if (this.Ids != null)
-                {
-                    hashCode = (hashCode * 59) + this.Ids.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 return hashCode;
             }

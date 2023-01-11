@@ -5,9 +5,52 @@ Any known issues detected on that version are listed in the [known issues](#know
 Preview features are treated as a separate branch and will not be included in the official release until the feature is ready. Each preview release lists all the additional features that are enabled.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project does not adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
 ---
+
+## AgravityAPI <a name="5.0.0"/> [5.0.0](https://www.nuget.org/packages/Agravity.Public/5.0.0) (2023-01-07)
+
+- Add new permission endpoints:
+  - CollectionType Management: POST `/collectiontypes/{id}/permissions`
+  - Workspace Management: POST `/workspaces/{id}/permissions`
+  - (new)  PermissionManagement:
+    - POST `/permissions/settings/identities` update all allowed permissions (ADD, REPLACE, REMOVE);
+    - GET `/permissions/settings` - Get the permission settings
+    - PUT `/permissions/settings` - Fully replace the settings;
+- Changed POST `/signalr/messages/{id}` to GET `/signalr/info/{id}`
+- Add `permissionless` property on collection type;
+- Add `permission_enabled` property on Agravity version;
+- Corrected properties of infoEntitySkillEnhanced to be alligned to other objects;
+- Removed `enabled` property in Permission Settings (Permissions are now globally set in Environment Variables);
+- Removed `uncomplete` flag in get assets by id;
+- Allow viewer to edit images
+- Change and add admin asset operations:
+  - PATCH `/assets/{id}/repair` (was GET)
+  - PATCH `/assets/{id}/renew` (was GET)
+  - PATCH `/assets/renew!!` (was GET)
+  - Add PATCH `/assets/{id}/reindex`
+- Add new Asset Versioning methods to public function:
+  - POST `/assets/{id}/versions` - This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+  - DELETE `/assets/[id}/versions/{vNr}` - This endpoint deletes a version of an asset.
+  - GET `/assets/{id}/versions/{vNr}/blobs` - This endpoint checks if assets and version exists and returns the url for the requested blob.
+  - POST `/assets/{id}}/versions/{vNr}/restore` - This endpoint restores a version nr to be the current version and saves the current asset as version.
+  - GET `/assets/{id}/versions` - This endpoint lists all the versioned assets which are stored in the database if asset is still valid.
+- Remove some endpoints:
+  - AssetOperations: GET `/assets/{id}/similar`- Perhash removed because it is not working as expected;
+  - CollectionManagement: POST & GET: `/collections/{id}/permissions`- Currently not used (will have a comeback soon)
+  - HelperTools: GET `/helpers/allqueryrus` not in use anymore - show RUs in portal;
+  - Remove deprecated Search result entries (`reason_result`, `max_sum_results`, `search_query`, `search_filter`, `search_order_by`, `search_mode` and `origin`)
+- Update asset version to create empty versions of assets (removes orig blob) - additional PUT blob on azure storage inbox is neccessary:
+- Add SearchAdmin status endpoint: GET `/searchadmin/status`;
+- Changed SearchAdmin endpoints:
+  - Recreate index: PATCH `/searchadmin/recreate`
+  - Delete index (and search resources): PATCH `/searchadmin/delete`
+- Add `translations`parameter to GET StaticDefinedLists and StaticDefinedListById endpoints (private & public)
+
+---
+
 ## AgravityAPI <a name="4.9.3"/> [4.9.3](https://www.nuget.org/packages/Agravity.Public/4.9.3) (2022-12-15)
 
 Add parameter:

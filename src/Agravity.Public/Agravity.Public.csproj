@@ -36,6 +36,8 @@
     <IncludeSource>false</IncludeSource>
     <RootNamespace>Agravity.Public</RootNamespace>
     <NoWarn>NU5125;MSB3245;MSB3243</NoWarn>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\SigningKey\AgravityKeyFile.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

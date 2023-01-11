@@ -9,6 +9,7 @@ using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Enums;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using System;
 using System.Diagnostics;
 using System.Net;
 
@@ -33,19 +34,17 @@ namespace TestFunctionDLL
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
-            string id = req.Query["id"];
-
             var config = new Configuration
             {
-                BasePath = "http://localhost:7072/api"
+                BasePath = Environment.GetEnvironmentVariable("AgravityPublicUrl")
             };
-            config.ApiKey.Add("x-functions-key", "YOUR_API_KEY");
+            config.ApiKey.Add("x-functions-key", Environment.GetEnvironmentVariable("AgravityApiKey"));
 
             var apiInstance = new PublicCollectionTypeManagementApi(config);
 
-
             try
             {
+                string id = req.Query["id"];
                 if (!string.IsNullOrEmpty(id))
                 {
                     try

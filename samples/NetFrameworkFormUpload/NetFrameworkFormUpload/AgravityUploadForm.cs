@@ -1,4 +1,5 @@
 ﻿using AgravityPublicLib;
+using AgravityPublicUpload.Properties;
 using NetFrameworkFormUpload.model;
 using System;
 using System.IO;
@@ -18,7 +19,7 @@ namespace NetFrameworkFormUpload
         public AgravityUploadForm()
         {
             InitializeComponent();
-            dam = new AgravityDam();
+            dam = new AgravityDam(Settings.Default.AgravityPublicUrl, Settings.Default.AgravityApiKey, Settings.Default.CollectionTypeId);
 
             AddOutput("Initialized Backend");
 

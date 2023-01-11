@@ -10,17 +10,16 @@ namespace AgravityPublicLib
     public class AgravityDam
     {
         private string CollectionTypeId { get; set; }
-        private Configuration Config { get; set; }
-        public AgravityDam()
+        private Agravity.Public.Client.Configuration Config { get; set; }
+        public AgravityDam(string baseUrl, string apiKey, string collectionTypeId)
         {
-            Config = new Configuration()
+            Config = new Agravity.Public.Client.Configuration()
             {
-                BasePath = "http://localhost:7072/api"
+                BasePath = baseUrl
             };
-            Config.ApiKey.Add("x-functions-key", "YOUR_API_KEY");
+            Config.ApiKey.Add("x-functions-key", apiKey);
 
-            //TODO: Get collection type id from config
-            CollectionTypeId = "t000000000000";
+            CollectionTypeId = collectionTypeId;
         }
 
         public string UploadAssetFile(string assetName, string collectionId, string filePath)

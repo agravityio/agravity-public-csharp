@@ -45,6 +45,7 @@
             this.btCollectionCreate = new System.Windows.Forms.Button();
             this.lOutput = new System.Windows.Forms.Label();
             this.pbAssetUpload = new System.Windows.Forms.ProgressBar();
+            this.btUploadAssetStorage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btUploadAsset
@@ -52,9 +53,9 @@
             this.btUploadAsset.Enabled = false;
             this.btUploadAsset.Location = new System.Drawing.Point(351, 108);
             this.btUploadAsset.Name = "btUploadAsset";
-            this.btUploadAsset.Size = new System.Drawing.Size(192, 23);
+            this.btUploadAsset.Size = new System.Drawing.Size(135, 23);
             this.btUploadAsset.TabIndex = 0;
-            this.btUploadAsset.Text = "Upload Asset";
+            this.btUploadAsset.Text = "Upload Asset HTTP";
             this.btUploadAsset.UseVisualStyleBackColor = true;
             this.btUploadAsset.Click += new System.EventHandler(this.btUploadAsset_Click);
             // 
@@ -62,7 +63,7 @@
             // 
             this.tbAssetName.Location = new System.Drawing.Point(424, 69);
             this.tbAssetName.Name = "tbAssetName";
-            this.tbAssetName.Size = new System.Drawing.Size(119, 20);
+            this.tbAssetName.Size = new System.Drawing.Size(203, 20);
             this.tbAssetName.TabIndex = 1;
             this.tbAssetName.TextChanged += new System.EventHandler(this.assetNameTb_TextChanged);
             // 
@@ -127,7 +128,7 @@
             // 
             this.tbCollectionId.Location = new System.Drawing.Point(424, 18);
             this.tbCollectionId.Name = "tbCollectionId";
-            this.tbCollectionId.Size = new System.Drawing.Size(119, 20);
+            this.tbCollectionId.Size = new System.Drawing.Size(203, 20);
             this.tbCollectionId.TabIndex = 7;
             this.tbCollectionId.TextChanged += new System.EventHandler(this.tbCollectionId_TextChanged);
             // 
@@ -180,14 +181,26 @@
             // 
             this.pbAssetUpload.Location = new System.Drawing.Point(351, 138);
             this.pbAssetUpload.Name = "pbAssetUpload";
-            this.pbAssetUpload.Size = new System.Drawing.Size(192, 23);
+            this.pbAssetUpload.Size = new System.Drawing.Size(276, 23);
             this.pbAssetUpload.TabIndex = 16;
+            // 
+            // btUploadAssetStorage
+            // 
+            this.btUploadAssetStorage.Enabled = false;
+            this.btUploadAssetStorage.Location = new System.Drawing.Point(492, 109);
+            this.btUploadAssetStorage.Name = "btUploadAssetStorage";
+            this.btUploadAssetStorage.Size = new System.Drawing.Size(135, 23);
+            this.btUploadAssetStorage.TabIndex = 17;
+            this.btUploadAssetStorage.Text = "Upload Asset Storage";
+            this.btUploadAssetStorage.UseVisualStyleBackColor = true;
+            this.btUploadAssetStorage.Click += new System.EventHandler(this.btUploadAssetStorage_Click);
             // 
             // AgravityUploadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btUploadAssetStorage);
             this.Controls.Add(this.pbAssetUpload);
             this.Controls.Add(this.lOutput);
             this.Controls.Add(this.btCollectionCreate);
@@ -230,6 +243,7 @@
         private System.Windows.Forms.Button btCollectionCreate;
         private System.Windows.Forms.Label lOutput;
         private System.Windows.Forms.ProgressBar pbAssetUpload;
+        private System.Windows.Forms.Button btUploadAssetStorage;
     }
 }
 

@@ -1,6 +1,7 @@
 ﻿using AgravityPublicLib;
 using AgravityPublicUpload.Properties;
 using NetFrameworkFormUpload.model;
+using RestSharp;
 using System;
 using System.IO;
 using System.Linq;
@@ -70,7 +71,7 @@ namespace NetFrameworkFormUpload
 
         private void checkUploadButton()
         {
-            btUploadAsset.Enabled = (!string.IsNullOrEmpty(currentFile) && !string.IsNullOrEmpty(tbAssetName.Text) && !string.IsNullOrEmpty(tbCollectionId.Text));
+            btUploadAsset.Enabled = btUploadAssetStorage.Enabled = (!string.IsNullOrEmpty(currentFile) && !string.IsNullOrEmpty(tbAssetName.Text) && !string.IsNullOrEmpty(tbCollectionId.Text));
         }
 
         private void btUploadAsset_Click(object sender, EventArgs e)
@@ -91,6 +92,65 @@ namespace NetFrameworkFormUpload
             {
                 AddOutput($"Asset failed.");
             }
+            pbAssetUpload.Enabled = false;
+            checkUploadButton();
+        }
+
+        private void btUploadAssetStorage_Click(object sender, EventArgs e)
+        {
+            btUploadAsset.Enabled = false;
+            btUploadAssetStorage.Enabled = false;
+            pbAssetUpload.Enabled = true;
+            pbAssetUpload.ForeColor = System.Drawing.Color.Green;
+            pbAssetUpload.Value = 1;
+            var assetId = dam.CreateAsset(tbAssetName.Text, tbCollectionId.Text);
+            if (!string.IsNullOrEmpty(assetId))
+            {
+                AddOutput($"Asset {assetId} created.");
+                pbAssetUpload.Value = 15;
+
+                var inboxToken = dam.GetInboxToken();
+
+                var client = new RestClient(new RestClientOptions(inboxToken.Url));
+
+                var fileName = Path.GetFileName(currentFile);
+
+                var uploadFileUrl = inboxToken.Container + $"/{fileName}" + inboxToken.Token;
+
+                var request = new RestRequest(uploadFileUrl, Method.Put);
+                request.AddHeader("x-ms-version", "2021-06-08");
+                request.AddHeader("x-ms-date", DateTime.UtcNow.ToString("o"));
+                request.AddHeader("x-ms-blob-type", "BlockBlob");
+
+                request.AddHeader("x-ms-meta-assetid", assetId);
+                request.AddFile(fileName, currentFile);
+
+                var response = client.Execute(request);
+
+                if (response.StatusCode == System.Net.HttpStatusCode.Created)
+                {
+                    currentFile = null;
+                    tbAssetName.Text = "";
+                    lbFileSelected.Text = "No file selected.";
+                    pbAssetUpload.ForeColor = System.Drawing.Color.Green;
+                    pbAssetUpload.Value = 100;
+
+                    AddOutput($"Upload completed.");
+                }
+                else
+                {
+                    pbAssetUpload.ForeColor = System.Drawing.Color.Red;
+                    pbAssetUpload.Value = 100;
+                    AddOutput($"Asset upload failed with status code {response.StatusCode}.");
+                }
+            }
+            else
+            {
+                pbAssetUpload.ForeColor = System.Drawing.Color.Red;
+                pbAssetUpload.Value = 100;
+                AddOutput($"Asset failed.");
+            }
+
             pbAssetUpload.Enabled = false;
             checkUploadButton();
         }

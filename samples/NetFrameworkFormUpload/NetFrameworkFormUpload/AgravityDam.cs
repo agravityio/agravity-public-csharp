@@ -22,6 +22,13 @@ namespace AgravityPublicLib
             CollectionTypeId = collectionTypeId;
         }
 
+        /// <summary>
+        /// The HTTP method to update asset. It's a "all-in-one" package which creates an asset in a collection and uploads the file.
+        /// </summary>
+        /// <param name="assetName">How the name of file should be.</param>
+        /// <param name="collectionId">The Agravity collection ID where the asset should be created.</param>
+        /// <param name="filePath">The path of the corresponding file.</param>
+        /// <returns></returns>
         public string UploadAssetFile(string assetName, string collectionId, string filePath)
         {
             var apiInstance = new PublicAssetManagementApi(Config);
@@ -43,6 +50,32 @@ namespace AgravityPublicLib
 
             return result?.Id;
 
+        }
+
+        /// <summary>
+        /// This method just create a asset and adds it to a collection. It will return the ID of the asset.
+        /// </summary>
+        /// <param name="assetName">How the assets name should be (must not be file name).</param>
+        /// <param name="collectionId">The Agravity collection ID where the asset should be created.</param>
+        /// <returns></returns>
+        public string CreateAsset(string assetName, string collectionId)
+        {
+            var apiInstance = new PublicAssetManagementApi(Config);
+
+            Asset result = null;
+            try
+            {
+                result = apiInstance.HttpAssetsCreate(collectionId, new Asset() { Name = assetName });
+                Debug.WriteLine(result.Name);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetUploadFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+
+            return result?.Id;
         }
 
         /// <summary>
@@ -90,6 +123,28 @@ namespace AgravityPublicLib
             {
                 var result = apiInstance.HttpCollectionsGet(CollectionTypeId);
                 return result?.Select(c => (c.Id, c.Name)).ToList();
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling PublicCollectionManagementApi.HttpCollectionsGet: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Get the inbox token to upload assets
+        /// </summary>
+        /// <returns>The SasToken which contains information about storage and access to it.</returns>
+        public SasToken GetInboxToken()
+        {
+            var apiInstance = new PublicAuthenticationManagementApi(Config);
+
+            try
+            {
+                return apiInstance.HttpAuthGetInboxContainerWriteSasToken();
             }
             catch (ApiException e)
             {

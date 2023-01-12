@@ -9,6 +9,23 @@ namespace AgravityPublicLib
 {
     public class AgravityDam
     {
+        /*
+        // Create a dictionary to map file extensions to their corresponding content types
+        public static Dictionary<string, string> ContentTypesDict = new Dictionary<string, string>
+        {
+            {".txt", "text/plain"},
+            {".html", "text/html"},
+            {".jpg", "image/jpeg"},
+            {".jpeg", "image/jpeg"},
+            {".png", "image/png"},
+            {".tif", "image/tiff"},
+            {".tiff", "image/tiff"},
+            {".pdf", "application/pdf"},
+            {".doc", "application/msword"},
+            {".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+        };
+        */
+
         private string CollectionTypeId { get; set; }
         private Agravity.Public.Client.Configuration Config { get; set; }
         public AgravityDam(string baseUrl, string apiKey, string collectionTypeId)

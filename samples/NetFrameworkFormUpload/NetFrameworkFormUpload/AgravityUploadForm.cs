@@ -1,7 +1,7 @@
 ﻿using AgravityPublicLib;
 using AgravityPublicUpload.Properties;
+using Azure.Storage.Blobs;
 using NetFrameworkFormUpload.model;
-using RestSharp;
 using System;
 using System.IO;
 using System.Linq;
@@ -111,9 +111,34 @@ namespace NetFrameworkFormUpload
 
                 var inboxToken = dam.GetInboxToken();
 
-                var client = new RestClient(new RestClientOptions(inboxToken.Url));
+                var inboxContainer = new BlobContainerClient(new Uri(inboxToken.FullToken));
 
                 var fileName = Path.GetFileName(currentFile);
+
+                var uploadSucceded = inboxContainer.UploadBlob(fileName, new BinaryData(File.ReadAllBytes(currentFile)));
+
+                if (uploadSucceded.GetRawResponse().Status == (int)System.Net.HttpStatusCode.Created)
+                {
+                    currentFile = null;
+                    tbAssetName.Text = "";
+                    lbFileSelected.Text = "No file selected.";
+                    pbAssetUpload.ForeColor = System.Drawing.Color.Green;
+                    pbAssetUpload.Value = 100;
+
+                    AddOutput($"Upload completed.");
+                }
+                else
+                {
+                    pbAssetUpload.ForeColor = System.Drawing.Color.Red;
+                    pbAssetUpload.Value = 100;
+                    AddOutput($"Asset upload failed with status code {uploadSucceded.GetRawResponse().Status}.");
+                }
+
+                /*
+                var client = new RestClient(new RestClientOptions(inboxToken.Url));
+
+               
+                string fileExtension = Path.GetExtension(currentFile);
 
                 var uploadFileUrl = inboxToken.Container + $"/{fileName}" + inboxToken.Token;
 
@@ -121,11 +146,26 @@ namespace NetFrameworkFormUpload
                 request.AddHeader("x-ms-version", "2021-06-08");
                 request.AddHeader("x-ms-date", DateTime.UtcNow.ToString("o"));
                 request.AddHeader("x-ms-blob-type", "BlockBlob");
-
                 request.AddHeader("x-ms-meta-assetid", assetId);
+
+                // var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes(currentFile));
+
+                string contentType;
+                if (AgravityDam.ContentTypesDict.TryGetValue(fileExtension, out string cT))
+                {
+                    contentType = cT;
+                }
+                else
+                {
+                    // Content type was not found, default to "application/octet-stream"
+                    contentType = "application/octet-stream";
+                }
+                request.AddHeader("Content-Type", contentType);
+
+                // request.AddFile(fileName, currentFile);
                 request.AddFile(fileName, currentFile);
 
-                var response = client.Execute(request);
+                var response = client.ExecutePut(request);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.Created)
                 {
@@ -143,6 +183,7 @@ namespace NetFrameworkFormUpload
                     pbAssetUpload.Value = 100;
                     AddOutput($"Asset upload failed with status code {response.StatusCode}.");
                 }
+                */
             }
             else
             {

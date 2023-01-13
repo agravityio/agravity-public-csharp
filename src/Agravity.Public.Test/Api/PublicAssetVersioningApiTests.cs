@@ -56,15 +56,30 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
-        /// Test HttpAssetNewVersion
+        /// Test HttpAssetCreateUploadVersion
         /// </summary>
         [Fact]
-        public void HttpAssetNewVersionTest()
+        public void HttpAssetCreateUploadVersionTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
-            //Object body = null;
-            //var response = instance.HttpAssetNewVersion(id, body);
+            //string name = null;
+            //string collectionId = null;
+            //System.IO.Stream file = null;
+            //var response = instance.HttpAssetCreateUploadVersion(id, name, collectionId, file);
+            //Assert.IsType<VersionedAsset>(response);
+        }
+
+        /// <summary>
+        /// Test HttpAssetCreateVersion
+        /// </summary>
+        [Fact]
+        public void HttpAssetCreateVersionTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //VersionedAsset versionedAsset = null;
+            //var response = instance.HttpAssetCreateVersion(id, versionedAsset);
             //Assert.IsType<VersionedAsset>(response);
         }
 

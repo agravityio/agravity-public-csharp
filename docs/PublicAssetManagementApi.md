@@ -212,7 +212,7 @@ catch (ApiException e)
 
 <a name="httpassetsget"></a>
 # **HttpAssetsGet**
-> AssetPageResult HttpAssetsGet (string collectionid, string fields = null, bool? expose = null, string continuationToken = null, int? limit = null, string orderby = null, bool? techdata = null, bool? items = null, bool? translations = null)
+> AssetPageResult HttpAssetsGet (string collectionid = null, string fields = null, bool? expose = null, string continuationToken = null, int? limit = null, string orderby = null, bool? techdata = null, string filter = null, bool? items = null, bool? translations = null)
 
 
 
@@ -240,19 +240,20 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetManagementApi(config);
-            var collectionid = "collectionid_example";  // string | The ID of the collection where these assets should come from. (\"empty\" is allowed)
+            var collectionid = "collectionid_example";  // string | The ID of the collection where these assets should come from. (\"empty\" is allowed) (optional) 
             var fields = "fields_example";  // string | This limits the fields which are returned, separated by comma (','). Blobs can be limited with '.' on their container. (i.e. fields=blobs.thumbnails). Only if 'thumbnails' is set, the placeholder of this asset type are returned if no thumbnail blob is found. (optional) 
             var expose = true;  // bool? | This indicates if the given blobs should have URLs where these can be requested. (If not limited through 'fields' parameter it will expose all URLs of all blobs.) (optional) 
             var continuationToken = "continuationToken_example";  // string | Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional) 
             var limit = 56;  // int? | This number limits the page result of assets. (optional) 
             var orderby = "orderby_example";  // string | How the return assets are sorted. Default is property: created_date (newest first). (optional) 
             var techdata = true;  // bool? | This parameter will include the techdata property inside orig_blob. (optional) 
+            var filter = "filter_example";  // string | This will limit the output on specific parameters which are separated by ':', '!:', '>', '>=', '<', '<=' (optional) 
             var items = true;  // bool? | The items can be extended to fully filled items. (optional) 
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                AssetPageResult result = apiInstance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, techdata, items, translations);
+                AssetPageResult result = apiInstance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, techdata, filter, items, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -272,7 +273,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<AssetPageResult> response = apiInstance.HttpAssetsGetWithHttpInfo(collectionid, fields, expose, continuationToken, limit, orderby, techdata, items, translations);
+    ApiResponse<AssetPageResult> response = apiInstance.HttpAssetsGetWithHttpInfo(collectionid, fields, expose, continuationToken, limit, orderby, techdata, filter, items, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -289,13 +290,14 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **collectionid** | **string** | The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed) |  |
+| **collectionid** | **string** | The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed) | [optional]  |
 | **fields** | **string** | This limits the fields which are returned, separated by comma (&#39;,&#39;). Blobs can be limited with &#39;.&#39; on their container. (i.e. fields&#x3D;blobs.thumbnails). Only if &#39;thumbnails&#39; is set, the placeholder of this asset type are returned if no thumbnail blob is found. | [optional]  |
 | **expose** | **bool?** | This indicates if the given blobs should have URLs where these can be requested. (If not limited through &#39;fields&#39; parameter it will expose all URLs of all blobs.) | [optional]  |
 | **continuationToken** | **string** | Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) | [optional]  |
 | **limit** | **int?** | This number limits the page result of assets. | [optional]  |
 | **orderby** | **string** | How the return assets are sorted. Default is property: created_date (newest first). | [optional]  |
 | **techdata** | **bool?** | This parameter will include the techdata property inside orig_blob. | [optional]  |
+| **filter** | **string** | This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; | [optional]  |
 | **items** | **bool?** | The items can be extended to fully filled items. | [optional]  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 

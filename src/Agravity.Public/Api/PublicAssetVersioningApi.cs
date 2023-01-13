@@ -35,10 +35,12 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="body">This endpoint allows two types of body. One is the VersionedAsset with version_info to create empty version (need to upload file with metadata to blob storage) or&lt;br&gt;use form/multi-part data to upload one file which is the new version of the given asset. Object has to be FormData.</param>
+        /// <param name="name"> (optional)</param>
+        /// <param name="collectionId"> (optional)</param>
+        /// <param name="file"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VersionedAsset</returns>
-        VersionedAsset HttpAssetNewVersion(string id, Object body, int operationIndex = 0);
+        VersionedAsset HttpAssetCreateUploadVersion(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -48,10 +50,37 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="body">This endpoint allows two types of body. One is the VersionedAsset with version_info to create empty version (need to upload file with metadata to blob storage) or&lt;br&gt;use form/multi-part data to upload one file which is the new version of the given asset. Object has to be FormData.</param>
+        /// <param name="name"> (optional)</param>
+        /// <param name="collectionId"> (optional)</param>
+        /// <param name="file"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VersionedAsset</returns>
-        ApiResponse<VersionedAsset> HttpAssetNewVersionWithHttpInfo(string id, Object body, int operationIndex = 0);
+        ApiResponse<VersionedAsset> HttpAssetCreateUploadVersionWithHttpInfo(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="versionedAsset">This VersionedAsset to create empty version (need to upload file with metadata to blob storage)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>VersionedAsset</returns>
+        VersionedAsset HttpAssetCreateVersion(string id, VersionedAsset versionedAsset, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="versionedAsset">This VersionedAsset to create empty version (need to upload file with metadata to blob storage)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of VersionedAsset</returns>
+        ApiResponse<VersionedAsset> HttpAssetCreateVersionWithHttpInfo(string id, VersionedAsset versionedAsset, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -171,11 +200,13 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="body">This endpoint allows two types of body. One is the VersionedAsset with version_info to create empty version (need to upload file with metadata to blob storage) or&lt;br&gt;use form/multi-part data to upload one file which is the new version of the given asset. Object has to be FormData.</param>
+        /// <param name="name"> (optional)</param>
+        /// <param name="collectionId"> (optional)</param>
+        /// <param name="file"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VersionedAsset</returns>
-        System.Threading.Tasks.Task<VersionedAsset> HttpAssetNewVersionAsync(string id, Object body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateUploadVersionAsync(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -185,11 +216,40 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="body">This endpoint allows two types of body. One is the VersionedAsset with version_info to create empty version (need to upload file with metadata to blob storage) or&lt;br&gt;use form/multi-part data to upload one file which is the new version of the given asset. Object has to be FormData.</param>
+        /// <param name="name"> (optional)</param>
+        /// <param name="collectionId"> (optional)</param>
+        /// <param name="file"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VersionedAsset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VersionedAsset>> HttpAssetNewVersionWithHttpInfoAsync(string id, Object body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<VersionedAsset>> HttpAssetCreateUploadVersionWithHttpInfoAsync(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="versionedAsset">This VersionedAsset to create empty version (need to upload file with metadata to blob storage)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of VersionedAsset</returns>
+        System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateVersionAsync(string id, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="versionedAsset">This VersionedAsset to create empty version (need to upload file with metadata to blob storage)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (VersionedAsset)</returns>
+        System.Threading.Tasks.Task<ApiResponse<VersionedAsset>> HttpAssetCreateVersionWithHttpInfoAsync(string id, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -425,12 +485,14 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="body">This endpoint allows two types of body. One is the VersionedAsset with version_info to create empty version (need to upload file with metadata to blob storage) or&lt;br&gt;use form/multi-part data to upload one file which is the new version of the given asset. Object has to be FormData.</param>
+        /// <param name="name"> (optional)</param>
+        /// <param name="collectionId"> (optional)</param>
+        /// <param name="file"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VersionedAsset</returns>
-        public VersionedAsset HttpAssetNewVersion(string id, Object body, int operationIndex = 0)
+        public VersionedAsset HttpAssetCreateUploadVersion(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = HttpAssetNewVersionWithHttpInfo(id, body);
+            Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = HttpAssetCreateUploadVersionWithHttpInfo(id, name, collectionId, file);
             return localVarResponse.Data;
         }
 
@@ -439,27 +501,23 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="body">This endpoint allows two types of body. One is the VersionedAsset with version_info to create empty version (need to upload file with metadata to blob storage) or&lt;br&gt;use form/multi-part data to upload one file which is the new version of the given asset. Object has to be FormData.</param>
+        /// <param name="name"> (optional)</param>
+        /// <param name="collectionId"> (optional)</param>
+        /// <param name="file"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VersionedAsset</returns>
-        public Agravity.Public.Client.ApiResponse<VersionedAsset> HttpAssetNewVersionWithHttpInfo(string id, Object body, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<VersionedAsset> HttpAssetCreateUploadVersionWithHttpInfo(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetVersioningApi->HttpAssetNewVersion");
-            }
-
-            // verify the required parameter 'body' is set
-            if (body == null)
-            {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'body' when calling PublicAssetVersioningApi->HttpAssetNewVersion");
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetVersioningApi->HttpAssetCreateUploadVersion");
             }
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json"
+                "multipart/form-data"
             };
 
             // to determine the Accept header
@@ -480,9 +538,20 @@ namespace Agravity.Public.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = body;
+            if (name != null)
+            {
+                localVarRequestOptions.FormParameters.Add("name", Agravity.Public.Client.ClientUtils.ParameterToString(name)); // form parameter
+            }
+            if (collectionId != null)
+            {
+                localVarRequestOptions.FormParameters.Add("collectionId", Agravity.Public.Client.ClientUtils.ParameterToString(collectionId)); // form parameter
+            }
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
 
-            localVarRequestOptions.Operation = "PublicAssetVersioningApi.HttpAssetNewVersion";
+            localVarRequestOptions.Operation = "PublicAssetVersioningApi.HttpAssetCreateUploadVersion";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (function_key) required
@@ -492,10 +561,10 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<VersionedAsset>("/assets/{id}/versions", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<VersionedAsset>("/assets/{id}/versionsupload", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("HttpAssetNewVersion", localVarResponse);
+                Exception _exception = this.ExceptionFactory("HttpAssetCreateUploadVersion", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -510,13 +579,15 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="body">This endpoint allows two types of body. One is the VersionedAsset with version_info to create empty version (need to upload file with metadata to blob storage) or&lt;br&gt;use form/multi-part data to upload one file which is the new version of the given asset. Object has to be FormData.</param>
+        /// <param name="name"> (optional)</param>
+        /// <param name="collectionId"> (optional)</param>
+        /// <param name="file"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VersionedAsset</returns>
-        public async System.Threading.Tasks.Task<VersionedAsset> HttpAssetNewVersionAsync(string id, Object body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateUploadVersionAsync(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = await HttpAssetNewVersionWithHttpInfoAsync(id, body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = await HttpAssetCreateUploadVersionWithHttpInfoAsync(id, name, collectionId, file, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -525,22 +596,203 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="body">This endpoint allows two types of body. One is the VersionedAsset with version_info to create empty version (need to upload file with metadata to blob storage) or&lt;br&gt;use form/multi-part data to upload one file which is the new version of the given asset. Object has to be FormData.</param>
+        /// <param name="name"> (optional)</param>
+        /// <param name="collectionId"> (optional)</param>
+        /// <param name="file"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VersionedAsset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionedAsset>> HttpAssetNewVersionWithHttpInfoAsync(string id, Object body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionedAsset>> HttpAssetCreateUploadVersionWithHttpInfoAsync(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetVersioningApi->HttpAssetNewVersion");
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetVersioningApi->HttpAssetCreateUploadVersion");
             }
 
-            // verify the required parameter 'body' is set
-            if (body == null)
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
             {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'body' when calling PublicAssetVersioningApi->HttpAssetNewVersion");
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (name != null)
+            {
+                localVarRequestOptions.FormParameters.Add("name", Agravity.Public.Client.ClientUtils.ParameterToString(name)); // form parameter
+            }
+            if (collectionId != null)
+            {
+                localVarRequestOptions.FormParameters.Add("collectionId", Agravity.Public.Client.ClientUtils.ParameterToString(collectionId)); // form parameter
+            }
+            if (file != null)
+            {
+                localVarRequestOptions.FileParameters.Add("file", file);
+            }
+
+            localVarRequestOptions.Operation = "PublicAssetVersioningApi.HttpAssetCreateUploadVersion";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<VersionedAsset>("/assets/{id}/versionsupload", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAssetCreateUploadVersion", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="versionedAsset">This VersionedAsset to create empty version (need to upload file with metadata to blob storage)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>VersionedAsset</returns>
+        public VersionedAsset HttpAssetCreateVersion(string id, VersionedAsset versionedAsset, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = HttpAssetCreateVersionWithHttpInfo(id, versionedAsset);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="versionedAsset">This VersionedAsset to create empty version (need to upload file with metadata to blob storage)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of VersionedAsset</returns>
+        public Agravity.Public.Client.ApiResponse<VersionedAsset> HttpAssetCreateVersionWithHttpInfo(string id, VersionedAsset versionedAsset, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetVersioningApi->HttpAssetCreateVersion");
+            }
+
+            // verify the required parameter 'versionedAsset' is set
+            if (versionedAsset == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'versionedAsset' when calling PublicAssetVersioningApi->HttpAssetCreateVersion");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = versionedAsset;
+
+            localVarRequestOptions.Operation = "PublicAssetVersioningApi.HttpAssetCreateVersion";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<VersionedAsset>("/assets/{id}/versions", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAssetCreateVersion", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="versionedAsset">This VersionedAsset to create empty version (need to upload file with metadata to blob storage)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of VersionedAsset</returns>
+        public async System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateVersionAsync(string id, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = await HttpAssetCreateVersionWithHttpInfoAsync(id, versionedAsset, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="versionedAsset">This VersionedAsset to create empty version (need to upload file with metadata to blob storage)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (VersionedAsset)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionedAsset>> HttpAssetCreateVersionWithHttpInfoAsync(string id, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetVersioningApi->HttpAssetCreateVersion");
+            }
+
+            // verify the required parameter 'versionedAsset' is set
+            if (versionedAsset == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'versionedAsset' when calling PublicAssetVersioningApi->HttpAssetCreateVersion");
             }
 
 
@@ -568,9 +820,9 @@ namespace Agravity.Public.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.Data = versionedAsset;
 
-            localVarRequestOptions.Operation = "PublicAssetVersioningApi.HttpAssetNewVersion";
+            localVarRequestOptions.Operation = "PublicAssetVersioningApi.HttpAssetCreateVersion";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (function_key) required
@@ -584,7 +836,7 @@ namespace Agravity.Public.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("HttpAssetNewVersion", localVarResponse);
+                Exception _exception = this.ExceptionFactory("HttpAssetCreateVersion", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

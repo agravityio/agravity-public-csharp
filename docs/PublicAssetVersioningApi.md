@@ -4,15 +4,16 @@ All URIs are relative to *http://localhost:7072/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**HttpAssetNewVersion**](PublicAssetVersioningApi.md#httpassetnewversion) | **POST** /assets/{id}/versions |  |
+| [**HttpAssetCreateUploadVersion**](PublicAssetVersioningApi.md#httpassetcreateuploadversion) | **POST** /assets/{id}/versionsupload |  |
+| [**HttpAssetCreateVersion**](PublicAssetVersioningApi.md#httpassetcreateversion) | **POST** /assets/{id}/versions |  |
 | [**HttpDeleteVersionedAssetsById**](PublicAssetVersioningApi.md#httpdeleteversionedassetsbyid) | **DELETE** /assets/{id}/versions/{vNr} |  |
 | [**HttpGetVersionedAssetBlobById**](PublicAssetVersioningApi.md#httpgetversionedassetblobbyid) | **GET** /assets/{id}/versions/{vNr}/blobs |  |
 | [**HttpRestoreVersionedAssetsById**](PublicAssetVersioningApi.md#httprestoreversionedassetsbyid) | **POST** /assets/{id}/versions/{vNr}/restore |  |
 | [**HttpVersionedAssetsGet**](PublicAssetVersioningApi.md#httpversionedassetsget) | **GET** /assets/{id}/versions |  |
 
-<a name="httpassetnewversion"></a>
-# **HttpAssetNewVersion**
-> VersionedAsset HttpAssetNewVersion (string id, Object body)
+<a name="httpassetcreateuploadversion"></a>
+# **HttpAssetCreateUploadVersion**
+> VersionedAsset HttpAssetCreateUploadVersion (string id, string name = null, string collectionId = null, System.IO.Stream file = null)
 
 
 
@@ -28,7 +29,7 @@ using Agravity.Public.Model;
 
 namespace Example
 {
-    public class HttpAssetNewVersionExample
+    public class HttpAssetCreateUploadVersionExample
     {
         public static void Main()
         {
@@ -41,16 +42,18 @@ namespace Example
 
             var apiInstance = new PublicAssetVersioningApi(config);
             var id = "id_example";  // string | The ID of the asset.
-            var body = null;  // Object | This endpoint allows two types of body. One is the VersionedAsset with version_info to create empty version (need to upload file with metadata to blob storage) or<br>use form/multi-part data to upload one file which is the new version of the given asset. Object has to be FormData.
+            var name = "name_example";  // string |  (optional) 
+            var collectionId = "collectionId_example";  // string |  (optional) 
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
 
             try
             {
-                VersionedAsset result = apiInstance.HttpAssetNewVersion(id, body);
+                VersionedAsset result = apiInstance.HttpAssetCreateUploadVersion(id, name, collectionId, file);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicAssetVersioningApi.HttpAssetNewVersion: " + e.Message);
+                Debug.Print("Exception when calling PublicAssetVersioningApi.HttpAssetCreateUploadVersion: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -59,20 +62,20 @@ namespace Example
 }
 ```
 
-#### Using the HttpAssetNewVersionWithHttpInfo variant
+#### Using the HttpAssetCreateUploadVersionWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<VersionedAsset> response = apiInstance.HttpAssetNewVersionWithHttpInfo(id, body);
+    ApiResponse<VersionedAsset> response = apiInstance.HttpAssetCreateUploadVersionWithHttpInfo(id, name, collectionId, file);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PublicAssetVersioningApi.HttpAssetNewVersionWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PublicAssetVersioningApi.HttpAssetCreateUploadVersionWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -83,7 +86,109 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the asset. |  |
-| **body** | **Object** | This endpoint allows two types of body. One is the VersionedAsset with version_info to create empty version (need to upload file with metadata to blob storage) or&lt;br&gt;use form/multi-part data to upload one file which is the new version of the given asset. Object has to be FormData. |  |
+| **name** | **string** |  | [optional]  |
+| **collectionId** | **string** |  | [optional]  |
+| **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
+
+### Return type
+
+[**VersionedAsset**](VersionedAsset.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Returns the created version of the asset. |  -  |
+| **400** | Asset is not active yet. Wait until process is finished. (Code: 2e1fbeb0-b405-4985-8bac-aa604d5cd125) &lt;br&gt;or Asset upload failed. Content length is insuffient (0 or too big) (Code: b9fd835c-5456-4101-a643-ed5c1d5e5335) &lt;br&gt;or Wrong content media type. Please upload file with multipart/form-data. (Code: 553ccca6-c06f-4a1d-9b1e-ff140fbcd389) &lt;br&gt;or Could not find file in multi-part data. (Code: 0a66cf65-8926-44f3-9e7e-89de614828ad) &lt;br&gt;or This file is not supported. (Code: 214ef18f-0dca-4128-8543-e20339114e11) &lt;br&gt;or This file has to be from same file type! (Code: 0bcf2586-ac2a-426f-b757-2352f50b53ef) &lt;br&gt;or AgravityProcessingException occured (see message). (Code: 37eb0897-6c1b-4147-9b6d-d0e756180623) |  -  |
+| **404** | Asset could not be found in database. (Code: 9a84addc-14b7-4a29-9f33-6f8f35e16bf3) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="httpassetcreateversion"></a>
+# **HttpAssetCreateVersion**
+> VersionedAsset HttpAssetCreateVersion (string id, VersionedAsset versionedAsset)
+
+
+
+This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpAssetCreateVersionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicAssetVersioningApi(config);
+            var id = "id_example";  // string | The ID of the asset.
+            var versionedAsset = new VersionedAsset(); // VersionedAsset | This VersionedAsset to create empty version (need to upload file with metadata to blob storage)
+
+            try
+            {
+                VersionedAsset result = apiInstance.HttpAssetCreateVersion(id, versionedAsset);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicAssetVersioningApi.HttpAssetCreateVersion: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpAssetCreateVersionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<VersionedAsset> response = apiInstance.HttpAssetCreateVersionWithHttpInfo(id, versionedAsset);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetVersioningApi.HttpAssetCreateVersionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
+| **versionedAsset** | [**VersionedAsset**](VersionedAsset.md) | This VersionedAsset to create empty version (need to upload file with metadata to blob storage) |  |
 
 ### Return type
 
@@ -103,7 +208,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Returns the created version of the asset. |  -  |
-| **400** | Request or Database client is null (Code: a41a4879-1276-4b59-9f57-b53e1b2920f8) &lt;br&gt;or Asset is not active yet. Wait until process is finished. (Code: 2e1fbeb0-b405-4985-8bac-aa604d5cd125) &lt;br&gt;or Asset upload failed. Content length is insuffient (0 or too big) (Code: b9fd835c-5456-4101-a643-ed5c1d5e5335) &lt;br&gt;or Wrong content media type. Please upload file with multipart/form-data. (Code: 553ccca6-c06f-4a1d-9b1e-ff140fbcd389) &lt;br&gt;or Could not find file in multi-part data. (Code: 0a66cf65-8926-44f3-9e7e-89de614828ad) &lt;br&gt;or This file is not supported. (Code: 214ef18f-0dca-4128-8543-e20339114e11) &lt;br&gt;or This file has to be from same file type! (Code: 0bcf2586-ac2a-426f-b757-2352f50b53ef) &lt;br&gt;or AgravityProcessingException occured (see message). (Code: 37eb0897-6c1b-4147-9b6d-d0e756180623) |  -  |
+| **400** | Asset is not active yet. Wait until process is finished. (Code: 2e1fbeb0-b405-4985-8bac-aa604d5cd125) &lt;br&gt;or AgravityProcessingException occured (see message). (Code: 37eb0897-6c1b-4147-9b6d-d0e756180623) |  -  |
 | **404** | Asset could not be found in database. (Code: 9a84addc-14b7-4a29-9f33-6f8f35e16bf3) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |

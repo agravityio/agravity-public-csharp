@@ -39,14 +39,16 @@ namespace Agravity.Public.Model
         /// <param name="container">container.</param>
         /// <param name="blob">blob.</param>
         /// <param name="url">url.</param>
-        /// <param name="fullToken">fullToken.</param>
-        public SasToken(string token = default(string), string container = default(string), string blob = default(string), string url = default(string), string fullToken = default(string))
+        /// <param name="fulltoken">fulltoken.</param>
+        /// <param name="expires">expires.</param>
+        public SasToken(string token = default(string), string container = default(string), string blob = default(string), string url = default(string), string fulltoken = default(string), DateTime expires = default(DateTime))
         {
             this.Token = token;
             this.Container = container;
             this.Blob = blob;
             this.Url = url;
-            this.FullToken = fullToken;
+            this.Fulltoken = fulltoken;
+            this.Expires = expires;
         }
 
         /// <summary>
@@ -74,10 +76,16 @@ namespace Agravity.Public.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// Gets or Sets FullToken
+        /// Gets or Sets Fulltoken
         /// </summary>
-        [DataMember(Name = "fullToken", EmitDefaultValue = false)]
-        public string FullToken { get; set; }
+        [DataMember(Name = "fulltoken", EmitDefaultValue = false)]
+        public string Fulltoken { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Expires
+        /// </summary>
+        [DataMember(Name = "expires", EmitDefaultValue = false)]
+        public DateTime Expires { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -91,7 +99,8 @@ namespace Agravity.Public.Model
             sb.Append("  Container: ").Append(Container).Append("\n");
             sb.Append("  Blob: ").Append(Blob).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
-            sb.Append("  FullToken: ").Append(FullToken).Append("\n");
+            sb.Append("  Fulltoken: ").Append(Fulltoken).Append("\n");
+            sb.Append("  Expires: ").Append(Expires).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -148,9 +157,14 @@ namespace Agravity.Public.Model
                     this.Url.Equals(input.Url))
                 ) && 
                 (
-                    this.FullToken == input.FullToken ||
-                    (this.FullToken != null &&
-                    this.FullToken.Equals(input.FullToken))
+                    this.Fulltoken == input.Fulltoken ||
+                    (this.Fulltoken != null &&
+                    this.Fulltoken.Equals(input.Fulltoken))
+                ) && 
+                (
+                    this.Expires == input.Expires ||
+                    (this.Expires != null &&
+                    this.Expires.Equals(input.Expires))
                 );
         }
 
@@ -179,9 +193,13 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.Url.GetHashCode();
                 }
-                if (this.FullToken != null)
+                if (this.Fulltoken != null)
                 {
-                    hashCode = (hashCode * 59) + this.FullToken.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Fulltoken.GetHashCode();
+                }
+                if (this.Expires != null)
+                {
+                    hashCode = (hashCode * 59) + this.Expires.GetHashCode();
                 }
                 return hashCode;
             }

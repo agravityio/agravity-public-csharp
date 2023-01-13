@@ -123,7 +123,8 @@ Class | Method | HTTP request | Description
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsCreate**](docs\PublicAssetPublishingApi.md#httppublishedassetscreate) | **POST** /assets/{id}/publish | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsGet**](docs\PublicAssetPublishingApi.md#httppublishedassetsget) | **GET** /assets/{id}/publish | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsGetById**](docs\PublicAssetPublishingApi.md#httppublishedassetsgetbyid) | **GET** /assets/{id}/publish/{pid} | 
-*PublicAssetVersioningApi* | [**HttpAssetNewVersion**](docs\PublicAssetVersioningApi.md#httpassetnewversion) | **POST** /assets/{id}/versions | 
+*PublicAssetVersioningApi* | [**HttpAssetCreateUploadVersion**](docs\PublicAssetVersioningApi.md#httpassetcreateuploadversion) | **POST** /assets/{id}/versionsupload | 
+*PublicAssetVersioningApi* | [**HttpAssetCreateVersion**](docs\PublicAssetVersioningApi.md#httpassetcreateversion) | **POST** /assets/{id}/versions | 
 *PublicAssetVersioningApi* | [**HttpDeleteVersionedAssetsById**](docs\PublicAssetVersioningApi.md#httpdeleteversionedassetsbyid) | **DELETE** /assets/{id}/versions/{vNr} | 
 *PublicAssetVersioningApi* | [**HttpGetVersionedAssetBlobById**](docs\PublicAssetVersioningApi.md#httpgetversionedassetblobbyid) | **GET** /assets/{id}/versions/{vNr}/blobs | 
 *PublicAssetVersioningApi* | [**HttpRestoreVersionedAssetsById**](docs\PublicAssetVersioningApi.md#httprestoreversionedassetsbyid) | **POST** /assets/{id}/versions/{vNr}/restore | 

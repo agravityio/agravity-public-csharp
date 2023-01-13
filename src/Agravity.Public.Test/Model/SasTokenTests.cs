@@ -90,12 +90,20 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Url'
         }
         /// <summary>
-        /// Test the property 'FullToken'
+        /// Test the property 'Fulltoken'
         /// </summary>
         [Fact]
-        public void FullTokenTest()
+        public void FulltokenTest()
         {
-            // TODO unit test for the property 'FullToken'
+            // TODO unit test for the property 'Fulltoken'
+        }
+        /// <summary>
+        /// Test the property 'Expires'
+        /// </summary>
+        [Fact]
+        public void ExpiresTest()
+        {
+            // TODO unit test for the property 'Expires'
         }
 
     }

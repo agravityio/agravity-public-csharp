@@ -97,9 +97,10 @@ namespace Agravity.Public.Test.Api
             //int? limit = null;
             //string orderby = null;
             //bool? techdata = null;
+            //string filter = null;
             //bool? items = null;
             //bool? translations = null;
-            //var response = instance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, techdata, items, translations);
+            //var response = instance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, techdata, filter, items, translations);
             //Assert.IsType<AssetPageResult>(response);
         }
 

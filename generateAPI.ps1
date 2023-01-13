@@ -9,6 +9,13 @@ if ($null -eq $apiVersion) {
 # echo apiVersion
 Write-Host "Generate API with apiVersion: $apiVersion"
 
+# check REST API endpoint /version if backend is running, catch it and if it is not running: exit
+$version = Invoke-RestMethod -Uri http://localhost:7072/api/version -Method Get -ContentType "application/json" -ErrorAction SilentlyContinue
+if ($null -eq $version) {
+    Write-Host "Please start backend before generating API"
+    exit
+}
+
 # delete folder .\src without error output
 Remove-Item -Path .\src -Recurse -Force -ErrorAction SilentlyContinue
 

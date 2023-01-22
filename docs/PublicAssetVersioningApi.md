@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 
 
-This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.
 
 ### Example
 ```csharp

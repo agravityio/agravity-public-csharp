@@ -144,12 +144,14 @@ namespace Agravity.Public.Model
         /// <param name="_operator">_operator (default to OperatorEnum.Equals).</param>
         /// <param name="field">field.</param>
         /// <param name="value">value.</param>
+        /// <param name="notPrefix">notPrefix.</param>
         /// <param name="valueType">valueType (default to ValueTypeEnum.String).</param>
-        public WhereParam(OperatorEnum? _operator = OperatorEnum.Equals, string field = default(string), Object value = default(Object), ValueTypeEnum? valueType = ValueTypeEnum.String)
+        public WhereParam(OperatorEnum? _operator = OperatorEnum.Equals, string field = default(string), Object value = default(Object), bool notPrefix = default(bool), ValueTypeEnum? valueType = ValueTypeEnum.String)
         {
             this.Operator = _operator;
             this.Field = field;
             this.Value = value;
+            this.NotPrefix = notPrefix;
             this.ValueType = valueType;
         }
 
@@ -166,6 +168,12 @@ namespace Agravity.Public.Model
         public Object Value { get; set; }
 
         /// <summary>
+        /// Gets or Sets NotPrefix
+        /// </summary>
+        [DataMember(Name = "notPrefix", EmitDefaultValue = true)]
+        public bool NotPrefix { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -176,6 +184,7 @@ namespace Agravity.Public.Model
             sb.Append("  Operator: ").Append(Operator).Append("\n");
             sb.Append("  Field: ").Append(Field).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  NotPrefix: ").Append(NotPrefix).Append("\n");
             sb.Append("  ValueType: ").Append(ValueType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -227,6 +236,10 @@ namespace Agravity.Public.Model
                     this.Value.Equals(input.Value))
                 ) && 
                 (
+                    this.NotPrefix == input.NotPrefix ||
+                    this.NotPrefix.Equals(input.NotPrefix)
+                ) && 
+                (
                     this.ValueType == input.ValueType ||
                     this.ValueType.Equals(input.ValueType)
                 );
@@ -250,6 +263,7 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.NotPrefix.GetHashCode();
                 hashCode = (hashCode * 59) + this.ValueType.GetHashCode();
                 return hashCode;
             }

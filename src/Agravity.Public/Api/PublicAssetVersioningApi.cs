@@ -31,7 +31,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        /// This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -46,7 +46,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        /// This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -196,7 +196,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        /// This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -212,7 +212,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        /// This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -481,7 +481,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        ///  This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -497,7 +497,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        ///  This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -575,7 +575,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        ///  This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
@@ -592,7 +592,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint allows to create empty version or upload one asset which replaces the asset with given id and creates version.
+        ///  This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>

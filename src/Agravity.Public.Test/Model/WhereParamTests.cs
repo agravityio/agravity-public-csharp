@@ -82,6 +82,14 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Value'
         }
         /// <summary>
+        /// Test the property 'NotPrefix'
+        /// </summary>
+        [Fact]
+        public void NotPrefixTest()
+        {
+            // TODO unit test for the property 'NotPrefix'
+        }
+        /// <summary>
         /// Test the property 'ValueType'
         /// </summary>
         [Fact]

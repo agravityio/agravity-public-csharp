@@ -10,6 +10,15 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="5.0.1"/> [5.0.1](https://www.nuget.org/packages/Agravity.Public/5.0.1) (2023-01-27)
+---
+- Add / modifiy multipart/formdata endpoint POST `/assets/{id}/versionsupload`: This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.
+- modified `/assets/{id}/versions` to now only take json as input (VersionedAsset)
+- add missing `filter` parameter to HttpAssetsGet and made collectionId not mandatory.
+- add `expires` property to SasToken for easy access;
+- Add upload to storage use case;
+- Add `notPrefix`to WhereParam (only used in backend);
+
 ## AgravityAPI <a name="5.0.0"/> [5.0.0](https://www.nuget.org/packages/Agravity.Public/5.0.0) (2023-01-07)
 
 - Add new permission endpoints:

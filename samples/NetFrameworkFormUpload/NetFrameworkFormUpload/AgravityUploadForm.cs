@@ -3,9 +3,11 @@ using AgravityPublicUpload.Properties;
 using Azure.Storage.Blobs;
 using NetFrameworkFormUpload.model;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFrameworkFormUpload
@@ -20,7 +22,7 @@ namespace NetFrameworkFormUpload
         public AgravityUploadForm()
         {
             InitializeComponent();
-            dam = new AgravityDam(Settings.Default.AgravityPublicUrl, Settings.Default.AgravityApiKey, Settings.Default.CollectionTypeId);
+            dam = new AgravityDam(Settings.Default.AgravityPublicUrl, Settings.Default.AgravityApiKey);
 
             AddOutput("Initialized Backend");
 
@@ -208,7 +210,7 @@ namespace NetFrameworkFormUpload
 
         private void AgravityUploadForm_Load(object sender, EventArgs e)
         {
-            var collIdNames = dam.GetAllCollections()?.Select(cb => new Collection(cb.Id, cb.Name)).ToList();
+            var collIdNames = dam.GetAllCollections(Settings.Default.CollectionTypeId)?.Select(cb => new Collection(cb.Id, cb.Name)).ToList();
             listCollectionList.Items.Clear();
             if (collIdNames != null && collIdNames.Count > 0)
             {
@@ -232,7 +234,7 @@ namespace NetFrameworkFormUpload
 
         private void btCollectionCreate_Click(object sender, EventArgs e)
         {
-            var coll = dam.CreateCollection(tbCollName.Text);
+            var coll = dam.CreateCollection(tbCollName.Text, Settings.Default.CollectionTypeId);
             if (coll.Id != null)
             {
                 listCollectionList.Items.Add(new Collection(coll.Id, coll.Name));
@@ -249,6 +251,52 @@ namespace NetFrameworkFormUpload
         private void tbCollName_TextChanged(object sender, EventArgs e)
         {
             btCollectionCreate.Enabled = !string.IsNullOrEmpty(tbCollName.Text);
+        }
+
+        public static async Task SetBlobMetadataAsync(BlobClient blob, Dictionary<string, string> keyValue)
+        {
+            var metadata = new Dictionary<string, string>();
+
+            foreach (var item in keyValue)
+            {
+                if (!metadata.ContainsKey(item.Key))
+                {
+                    // Add Metadata to blob
+                    metadata.Add(item.Key, item.Value);
+                }
+                else
+                {
+                    // simply set value to existing
+                    metadata[item.Key] = item.Value;
+                }
+            }
+
+            await blob.SetMetadataAsync(metadata);
+
+        }
+
+        public static async Task SetBlobMetadataSingleAsync(BlobClient blob, string key, string value)
+        {
+            var metadata = blob.GetProperties().Value.Metadata;
+            metadata[key] = value;
+            await blob.SetMetadataAsync(metadata);
+
+            /*
+            IDictionary<string, string> metadata = (await blob.GetPropertiesAsync()).Value.Metadata;
+            if (!metadata.ContainsKey(key))
+            {
+                // Add Metadata to blob
+                metadata.Add(key, value);
+            }
+            else
+            {
+                // simply set value to existing
+                metadata[key] = value;
+            }
+
+            // Set the blob's metadata
+            await blob.SetMetadataAsync(metadata).ConfigureAwait(false);
+            */
         }
     }
 }

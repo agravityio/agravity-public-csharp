@@ -1,42 +1,55 @@
 ﻿using Agravity.Public.Api;
 using Agravity.Public.Client;
 using Agravity.Public.Model;
+using Azure.Storage.Blobs;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace AgravityPublicLib
 {
     public class AgravityDam
     {
         /*
-        // Create a dictionary to map file extensions to their corresponding content types
-        public static Dictionary<string, string> ContentTypesDict = new Dictionary<string, string>
+// Create a dictionary to map file extensions to their corresponding content types
+public static Dictionary<string, string> ContentTypesDict = new Dictionary<string, string>
+{
+{".txt", "text/plain"},
+{".html", "text/html"},
+{".jpg", "image/jpeg"},
+{".jpeg", "image/jpeg"},
+{".png", "image/png"},
+{".tif", "image/tiff"},
+{".tiff", "image/tiff"},
+{".pdf", "application/pdf"},
+{".doc", "application/msword"},
+{".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+};
+*/
+        private Configuration config;
+        public Configuration Config
         {
-            {".txt", "text/plain"},
-            {".html", "text/html"},
-            {".jpg", "image/jpeg"},
-            {".jpeg", "image/jpeg"},
-            {".png", "image/png"},
-            {".tif", "image/tiff"},
-            {".tiff", "image/tiff"},
-            {".pdf", "application/pdf"},
-            {".doc", "application/msword"},
-            {".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
-        };
-        */
-
-        private string CollectionTypeId { get; set; }
-        private Agravity.Public.Client.Configuration Config { get; set; }
-        public AgravityDam(string baseUrl, string apiKey, string collectionTypeId)
+            get
+            {
+                if (config == null)
+                {
+                    throw new System.Exception("Agravity GlobalDAM SDK not initialized!");
+                }
+                return config;
+            }
+            private set
+            {
+                config = value;
+            }
+        }
+        public AgravityDam(string baseUrl, string apiKey)
         {
-            Config = new Agravity.Public.Client.Configuration()
+            config = new Configuration()
             {
                 BasePath = baseUrl
             };
-            Config.ApiKey.Add("x-functions-key", apiKey);
-
-            CollectionTypeId = collectionTypeId;
+            config.ApiKey.Add("x-functions-key", apiKey);
         }
 
         /// <summary>
@@ -48,7 +61,7 @@ namespace AgravityPublicLib
         /// <returns></returns>
         public string UploadAssetFile(string assetName, string collectionId, string filePath)
         {
-            var apiInstance = new PublicAssetManagementApi(Config);
+            var apiInstance = new PublicAssetManagementApi(config);
 
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes(filePath));  // System.IO.Stream |  (optional) 
 
@@ -77,7 +90,7 @@ namespace AgravityPublicLib
         /// <returns></returns>
         public string CreateAsset(string assetName, string collectionId)
         {
-            var apiInstance = new PublicAssetManagementApi(Config);
+            var apiInstance = new PublicAssetManagementApi(config);
 
             Asset result = null;
             try
@@ -100,9 +113,9 @@ namespace AgravityPublicLib
         /// </summary>
         /// <param name="collectionName">How the name of the collection should be.</param>
         /// <returns></returns>
-        public (string Id, string Name) CreateCollection(string collectionName)
+        public (string Id, string Name) CreateCollection(string collectionName, string collTypeId)
         {
-            var apiInstance = new PublicCollectionManagementApi(Config);
+            var apiInstance = new PublicCollectionManagementApi(config);
 
             Collection coll = new Collection()
             {
@@ -110,7 +123,7 @@ namespace AgravityPublicLib
             };
             try
             {
-                var result = apiInstance.HttpCollectionsCreate(CollectionTypeId, coll);
+                var result = apiInstance.HttpCollectionsCreate(collTypeId, coll);
                 if (result?.Id != null)
                 {
                     coll = result;
@@ -132,13 +145,13 @@ namespace AgravityPublicLib
         /// Method which gets all collections from API
         /// </summary>
         /// <returns>A tuple of collection id and collection name</returns>
-        public List<(string Id, string Name)> GetAllCollections()
+        public List<(string Id, string Name)> GetAllCollections(string collTypeId)
         {
-            var apiInstance = new PublicCollectionManagementApi(Config);
+            var apiInstance = new PublicCollectionManagementApi(config);
 
             try
             {
-                var result = apiInstance.HttpCollectionsGet(CollectionTypeId);
+                var result = apiInstance.HttpCollectionsGet(collTypeId);
                 return result?.Select(c => (c.Id, c.Name)).ToList();
             }
             catch (ApiException e)
@@ -157,7 +170,7 @@ namespace AgravityPublicLib
         /// <returns>The SasToken which contains information about storage and access to it.</returns>
         public SasToken GetInboxToken()
         {
-            var apiInstance = new PublicAuthenticationManagementApi(Config);
+            var apiInstance = new PublicAuthenticationManagementApi(config);
 
             try
             {
@@ -171,6 +184,99 @@ namespace AgravityPublicLib
             }
 
             return null;
+        }
+
+
+        /// <summary>
+        /// Returns the current version of Agravity
+        /// </summary>
+        /// <returns></returns>
+        public async Task<AgravityVersion> GetAgravityVersion()
+        {
+            var apiInstance = new PublicGeneralManagementApi(config);
+            return await apiInstance.HttpAgravityVersionInfoAsync();
+        }
+
+        /// <summary>
+        /// Return all workspaces
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<Workspace>> GetWorkspaces()
+        {
+            var apiInstance = new PublicWorkspaceManagementApi(config);
+            List<Workspace> workspaces = (await apiInstance.HttpWorkspacesGetAsync()).ToList() ?? new List<Workspace>();
+            return workspaces;
+        }
+
+        /// <summary>
+        /// This returns the collection type from the collection id stored in properties.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<CollectionType> GetCollectionType(string collTypeId)
+        {
+            var apiInstance = new PublicCollectionTypeManagementApi(config);
+            return await apiInstance.HttpCollectionTypesGetByIdAsync(collTypeId);
+        }
+
+
+        /// <summary>
+        /// Set all the metadata of the dictionary on a blob and sync them.
+        /// </summary>
+        /// <param name="blob">The blob on which the metadata is written on.</param>
+        /// <param name="keyValue">The dictionary containing all the metadata.</param>
+        /// <returns></returns>
+        private static async Task SetBlobMetadataAsync(BlobClient blob, Dictionary<string, string> keyValue)
+        {
+            var metadata = new Dictionary<string, string>();
+
+            foreach (var item in keyValue)
+            {
+                if (!metadata.ContainsKey(item.Key))
+                {
+                    // Add Metadata to blob
+                    metadata.Add(item.Key, item.Value);
+                }
+                else
+                {
+                    // simply set value to existing
+                    metadata[item.Key] = item.Value;
+                }
+            }
+
+            await blob.SetMetadataAsync(metadata);
+
+        }
+
+        /// <summary>
+        /// Set all the metadata of the key and value on a blob and sync them.
+        /// </summary>
+        /// <param name="blob">The blob on which the metadata is written on.</param>
+        /// <param name="key">The metadata key.</param>
+        /// <param name="value">The metadata value.</param>
+        /// <returns></returns>
+
+        private static async Task SetBlobMetadataSingleAsync(BlobClient blob, string key, string value)
+        {
+            var metadata = blob.GetProperties().Value.Metadata;
+            metadata[key] = value;
+            await blob.SetMetadataAsync(metadata);
+
+            /*
+            IDictionary<string, string> metadata = (await blob.GetPropertiesAsync()).Value.Metadata;
+            if (!metadata.ContainsKey(key))
+            {
+                // Add Metadata to blob
+                metadata.Add(key, value);
+            }
+            else
+            {
+                // simply set value to existing
+                metadata[key] = value;
+            }
+
+            // Set the blob's metadata
+            await blob.SetMetadataAsync(metadata).ConfigureAwait(false);
+            */
         }
     }
 }

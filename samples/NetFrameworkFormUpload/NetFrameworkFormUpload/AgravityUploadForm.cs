@@ -16,7 +16,10 @@ namespace NetFrameworkFormUpload
 
         public StringBuilder Output { get; set; } = new StringBuilder();
 
-        private string currentFile { get; set; }
+        private string createAssetFile { get; set; }
+        private string createVersionFile { get; set; }
+        private bool createVersionAssetReady { get; set; }
+        private bool loadAssetReadiness { get; set; }
         public AgravityUploadForm()
         {
             InitializeComponent();
@@ -53,17 +56,17 @@ namespace NetFrameworkFormUpload
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                currentFile = openFileDialog1.FileName;
-                lbFileSelected.Text = currentFile;
+                createAssetFile = openFileDialog1.FileName;
+                lbFileSelected.Text = createAssetFile;
                 if (string.IsNullOrEmpty(tbAssetName.Text))
                 {
-                    tbAssetName.Text = Path.GetFileNameWithoutExtension(currentFile);
+                    tbAssetName.Text = Path.GetFileNameWithoutExtension(createAssetFile);
                 }
                 checkUploadButton();
             }
             else
             {
-                currentFile = null;
+                createAssetFile = null;
                 lbFileSelected.Text = "No file selected.";
                 checkUploadButton();
             }
@@ -71,7 +74,7 @@ namespace NetFrameworkFormUpload
 
         private void checkUploadButton()
         {
-            btUploadAsset.Enabled = btUploadAssetStorage.Enabled = (!string.IsNullOrEmpty(currentFile) && !string.IsNullOrEmpty(tbAssetName.Text) && !string.IsNullOrEmpty(tbCollectionId.Text));
+            btUploadAsset.Enabled = btUploadAssetStorage.Enabled = (!string.IsNullOrEmpty(createAssetFile) && !string.IsNullOrEmpty(tbAssetName.Text) && !string.IsNullOrEmpty(tbCollectionId.Text));
         }
 
         private void btUploadAsset_Click(object sender, EventArgs e)
@@ -79,12 +82,12 @@ namespace NetFrameworkFormUpload
             btUploadAsset.Enabled = false;
             pbAssetUpload.Enabled = true;
             pbAssetUpload.Value = 1;
-            var assetId = dam.UploadAssetFile(tbAssetName.Text, tbCollectionId.Text, currentFile);
+            var assetId = dam.UploadAssetFile(tbAssetName.Text, tbCollectionId.Text, createAssetFile);
             if (!string.IsNullOrEmpty(assetId))
             {
                 AddOutput($"Asset {assetId} uploaded.");
                 pbAssetUpload.Value = 100;
-                currentFile = null;
+                createAssetFile = null;
                 tbAssetName.Text = "";
                 lbFileSelected.Text = "No file selected.";
             }
@@ -104,9 +107,10 @@ namespace NetFrameworkFormUpload
             pbAssetUpload.ForeColor = System.Drawing.Color.Green;
             pbAssetUpload.Value = 1;
 
-            if (dam.UploadAssetStorageRest2(tbAssetName.Text, currentFile, tbCollectionId.Text))
+            var asset = dam.UploadCreateAssetStorageRest(tbAssetName.Text, createAssetFile, tbCollectionId.Text);
+            if (asset != null)
             {
-                currentFile = null;
+                createAssetFile = null;
                 tbAssetName.Text = "";
                 lbFileSelected.Text = "No file selected.";
                 pbAssetUpload.ForeColor = System.Drawing.Color.Green;
@@ -114,6 +118,9 @@ namespace NetFrameworkFormUpload
 
                 AddOutput($"Upload completed.");
 
+                tbAssetId.Text = asset.Id;
+                lAssetStatus.Text = "Processing...";
+                createVersionAssetReady = false;
             }
 
             else
@@ -174,12 +181,134 @@ namespace NetFrameworkFormUpload
             {
                 AddOutput($"Create collection failed.");
             }
-
         }
 
         private void tbCollName_TextChanged(object sender, EventArgs e)
         {
             btCollectionCreate.Enabled = !string.IsNullOrEmpty(tbCollName.Text);
+        }
+
+        private void btVersionOpenDialog_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                InitialDirectory = @"C:\",
+                Title = "Browse Any Files",
+
+                CheckFileExists = true,
+                CheckPathExists = true,
+
+                DefaultExt = "",
+                Filter = "All files (*.*)|*.*",
+                FilterIndex = 2,
+                RestoreDirectory = true,
+
+                ReadOnlyChecked = true,
+                ShowReadOnly = true
+            };
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                createVersionFile = openFileDialog1.FileName;
+                lVersionFile.Text = createVersionFile;
+                checkVersionButton();
+            }
+            else
+            {
+                createVersionFile = null;
+                lVersionFile.Text = "No file selected.";
+                checkVersionButton();
+            }
+        }
+
+        private void btCreateVersion_Click(object sender, EventArgs e)
+        {
+            createVersionAssetReady = false;
+            checkVersionButton();
+            lVersionFile.Text = "Processing version...";
+            AddOutput($"Creating new version for asset {tbAssetId.Text}...");
+            var versionedAsset = dam.UploadAssetVersionToStorageRest(tbAssetId.Text, createVersionFile);
+            if (versionedAsset != null)
+            {
+                AddOutput($"Created new version for asset with number: {versionedAsset.VersionNr}!");
+                createVersionFile = null;
+                lVersionFile.Text = "No file selected.";
+                btCheckAsset_Click(sender, e);
+            }
+            else
+            {
+                AddOutput($"Creating new version failed!");
+            }
+            checkVersionButton();
+        }
+        private void checkVersionButton()
+        {
+            btCreateVersion.Enabled = createVersionAssetReady && (!string.IsNullOrEmpty(createVersionFile) && !string.IsNullOrEmpty(tbAssetId.Text));
+        }
+
+        private void tbAssetId_TextChanged(object sender, EventArgs e)
+        {
+            checkVersionButton();
+            btCheckAsset.Enabled = !string.IsNullOrEmpty(tbAssetId.Text);
+        }
+
+        private void btCheckAsset_Click(object sender, EventArgs e)
+        {
+            if (loadAssetReadiness)
+            {
+                AddOutput($"Asset not ready from last check!");
+                return;
+            }
+            loadAssetReadiness = true;
+            lAssetStatus.Text = "Checking status...";
+
+            AddOutput($"Checking asset with id {tbAssetId.Text}...");
+
+            createVersionAssetReady = false;
+            if (!string.IsNullOrEmpty(tbAssetId.Text))
+            {
+                Agravity.Public.Model.Asset asset = null;
+                try
+                {
+                    asset = dam.GetAsset(tbAssetId.Text);
+                }
+                catch (Exception)
+                {
+                    AddOutput($"Error on checking asset with id: {tbAssetId.Text}...");
+                    lAssetStatus.Text = "Error";
+                }
+                if (asset != null)
+                {
+                    tbAssetName.Text = asset.Name;
+                    switch (asset.Status)
+                    {
+                        case "I":
+                        case "P":
+                            {
+                                lAssetStatus.Text = "Processing...";
+                                break;
+                            }
+                        case "A":
+                            {
+                                lAssetStatus.Text = "Ready!";
+                                createVersionAssetReady = true;
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    lAssetStatus.Text = "Unknown asset";
+                }
+            }
+            else
+            {
+                lAssetStatus.Text = "Enter valid assetID";
+            }
+            loadAssetReadiness = false;
+            AddOutput($"Done...");
         }
     }
 }

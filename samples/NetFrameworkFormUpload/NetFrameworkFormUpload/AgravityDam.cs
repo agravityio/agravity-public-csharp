@@ -90,7 +90,7 @@ namespace AgravityPublicLib
         /// <param name="assetName">How the assets name should be (must not be file name).</param>
         /// <param name="collectionId">The Agravity collection ID where the asset should be created.</param>
         /// <returns></returns>
-        public string CreateAsset(string assetName, string collectionId)
+        public Asset CreateAsset(string assetName, string collectionId)
         {
             var apiInstance = new PublicAssetManagementApi(config);
 
@@ -107,7 +107,7 @@ namespace AgravityPublicLib
                 Debug.Print(e.StackTrace);
             }
 
-            return result?.Id;
+            return result;
         }
 
         /// <summary>
@@ -220,6 +220,26 @@ namespace AgravityPublicLib
             return await apiInstance.HttpCollectionTypesGetByIdAsync(collTypeId);
         }
 
+        /// <summary>
+        /// This returns the asset from the given ID.
+        /// </summary>
+        /// <returns></returns>
+        public Asset GetAsset(string assetId)
+        {
+            var apiInstance = new PublicAssetManagementApi(config);
+            return apiInstance.HttpAssetsGetById(assetId);
+        }
+
+        /// <summary>
+        /// Create empty asset version
+        /// </summary>
+        /// <returns></returns>
+        public VersionedAsset CreateVersionedAsset(string assetId)
+        {
+            var apiInstance = new PublicAssetVersioningApi(config);
+            return apiInstance.HttpAssetCreateVersion(assetId, new VersionedAsset());
+        }
+
 
         /* Upload using Azure.Storage.Blobs, Version=12.14.1.0 (working - but big bloat on packages
         /// <summary>
@@ -313,47 +333,91 @@ namespace AgravityPublicLib
            return false;
        }
        */
-
-        internal bool UploadAssetStorageRest2(string assetName, string filePath, string collectionId)
+        internal Asset UploadCreateAssetStorageRest(string assetName, string filePath, string collectionId)
         {
-            var assetId = CreateAsset(assetName, collectionId);
+            var asset = CreateAsset(assetName, collectionId);
+            if (asset != null)
+            {
+                var metaDict = new Dictionary<string, string>()
+                {
+                    {"assetId", asset.Id }
+                };
+                if (UploadFileToStorageRest(filePath, metaDict))
+                {
+                    return asset;
+                }
+            }
+            return null;
+        }
+
+        internal VersionedAsset UploadAssetVersionToStorageRest(string assetId, string filePath)
+        {
             if (!string.IsNullOrEmpty(assetId))
             {
-                var inboxToken = GetInboxToken();
-
-                // var client = new RestClient(inboxToken.Url);
-
-                string fileName = Path.GetFileName(filePath);
-                string fileExtension = Path.GetExtension(filePath);
-
-                string contentType;
-                if (AgravityDam.ContentTypesDict.TryGetValue(fileExtension, out string cT))
+                var asset = GetAsset(assetId);
+                if (asset == null)
                 {
-                    contentType = cT;
+                    return null;
                 }
-                else
+                var versionedAsset = CreateVersionedAsset(assetId);
+
+                var metaDict = new Dictionary<string, string>()
                 {
-                    // Content type was not found, default to "application/octet-stream"
-                    contentType = "application/octet-stream";
+                    {"assetId", assetId },
+                    {"versionNr", ""+versionedAsset.VersionNr},
+                    {"assetversion", assetId+"_"+versionedAsset.VersionNr},
+                };
+                if (UploadFileToStorageRest(filePath, metaDict))
+                {
+                    return versionedAsset;
                 }
-
-                var uploadFileUrl = inboxToken.Url + inboxToken.Container + $"/{fileName}" + inboxToken.Token;
-
-                var client = new RestClient(uploadFileUrl);
-
-                var request = new RestRequest();
-                request.Method = Method.Put;
-                request.AddHeader("x-ms-version", "2021-06-08");
-                request.AddHeader("x-ms-date", DateTimeOffset.Now.ToUnixTimeMilliseconds());
-                request.AddHeader("x-ms-blob-type", "BlockBlob");
-                request.AddHeader("x-ms-meta-assetid", assetId);
-                request.AddHeader("Content-Type", contentType);
-                request.AddParameter(contentType, File.ReadAllBytes(filePath), ParameterType.RequestBody);
-
-                var response = client.Execute(request);
-                return response.StatusCode == System.Net.HttpStatusCode.Created;
             }
-            return false;
+            return null;
         }
+
+        internal bool UploadFileToStorageRest(string filePath, Dictionary<string, string> metaDataDict = null)
+        {
+            var inboxToken = GetInboxToken();
+
+            // var client = new RestClient(inboxToken.Url);
+
+            string fileName = Path.GetFileName(filePath);
+            string fileExtension = Path.GetExtension(filePath);
+
+            string contentType;
+            if (AgravityDam.ContentTypesDict.TryGetValue(fileExtension, out string cT))
+            {
+                contentType = cT;
+            }
+            else
+            {
+                // Content type was not found, default to "application/octet-stream"
+                contentType = "application/octet-stream";
+            }
+
+            var uploadFileUrl = inboxToken.Url + inboxToken.Container + $"/{fileName}" + inboxToken.Token;
+
+            var client = new RestClient(uploadFileUrl);
+
+            var request = new RestRequest();
+            request.Method = Method.Put;
+            request.AddHeader("x-ms-version", "2021-06-08");
+            request.AddHeader("x-ms-date", DateTimeOffset.Now.ToUnixTimeMilliseconds());
+            request.AddHeader("x-ms-blob-type", "BlockBlob");
+            if (metaDataDict != null && metaDataDict.Count > 0)
+            {
+                foreach (var kv in metaDataDict)
+                {
+                    var key = kv.Key.StartsWith("x-ms-meta-") ? kv.Key : "x-ms-meta-" + kv.Key;
+                    request.AddHeader(key, kv.Value);
+                }
+            }
+            request.AddHeader("Content-Type", contentType);
+            request.AddParameter(contentType, File.ReadAllBytes(filePath), ParameterType.RequestBody);
+
+            var response = client.Execute(request);
+            return response.StatusCode == System.Net.HttpStatusCode.Created;
+        }
+
     }
 }

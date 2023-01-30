@@ -46,6 +46,13 @@
             this.lOutput = new System.Windows.Forms.Label();
             this.pbAssetUpload = new System.Windows.Forms.ProgressBar();
             this.btUploadAssetStorage = new System.Windows.Forms.Button();
+            this.lAssetId = new System.Windows.Forms.Label();
+            this.tbAssetId = new System.Windows.Forms.TextBox();
+            this.lVersionFile = new System.Windows.Forms.Label();
+            this.btVersionOpenDialog = new System.Windows.Forms.Button();
+            this.btCreateVersion = new System.Windows.Forms.Button();
+            this.lAssetStatus = new System.Windows.Forms.Label();
+            this.btCheckAsset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btUploadAsset
@@ -88,12 +95,14 @@
             // 
             // lbFileSelected
             // 
-            this.lbFileSelected.AutoSize = true;
+            this.lbFileSelected.AutoEllipsis = true;
             this.lbFileSelected.Location = new System.Drawing.Point(434, 49);
+            this.lbFileSelected.MaximumSize = new System.Drawing.Size(200, 0);
             this.lbFileSelected.Name = "lbFileSelected";
-            this.lbFileSelected.Size = new System.Drawing.Size(83, 13);
+            this.lbFileSelected.Size = new System.Drawing.Size(200, 17);
             this.lbFileSelected.TabIndex = 4;
             this.lbFileSelected.Text = "No file selected.";
+            this.lbFileSelected.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // listCollectionList
             // 
@@ -136,7 +145,7 @@
             // 
             this.rtbOutput.Location = new System.Drawing.Point(351, 204);
             this.rtbOutput.Name = "rtbOutput";
-            this.rtbOutput.Size = new System.Drawing.Size(428, 234);
+            this.rtbOutput.Size = new System.Drawing.Size(641, 234);
             this.rtbOutput.TabIndex = 9;
             this.rtbOutput.Text = "";
             // 
@@ -195,11 +204,86 @@
             this.btUploadAssetStorage.UseVisualStyleBackColor = true;
             this.btUploadAssetStorage.Click += new System.EventHandler(this.btUploadAssetStorage_Click);
             // 
+            // lAssetId
+            // 
+            this.lAssetId.AutoSize = true;
+            this.lAssetId.Location = new System.Drawing.Point(687, 24);
+            this.lAssetId.Name = "lAssetId";
+            this.lAssetId.Size = new System.Drawing.Size(50, 13);
+            this.lAssetId.TabIndex = 19;
+            this.lAssetId.Text = "Asset ID:";
+            // 
+            // tbAssetId
+            // 
+            this.tbAssetId.Location = new System.Drawing.Point(743, 21);
+            this.tbAssetId.Name = "tbAssetId";
+            this.tbAssetId.Size = new System.Drawing.Size(203, 20);
+            this.tbAssetId.TabIndex = 18;
+            this.tbAssetId.TextChanged += new System.EventHandler(this.tbAssetId_TextChanged);
+            // 
+            // lVersionFile
+            // 
+            this.lVersionFile.AutoSize = true;
+            this.lVersionFile.Location = new System.Drawing.Point(771, 114);
+            this.lVersionFile.Name = "lVersionFile";
+            this.lVersionFile.Size = new System.Drawing.Size(83, 13);
+            this.lVersionFile.TabIndex = 23;
+            this.lVersionFile.Text = "No file selected.";
+            // 
+            // btVersionOpenDialog
+            // 
+            this.btVersionOpenDialog.Location = new System.Drawing.Point(688, 109);
+            this.btVersionOpenDialog.Name = "btVersionOpenDialog";
+            this.btVersionOpenDialog.Size = new System.Drawing.Size(74, 23);
+            this.btVersionOpenDialog.TabIndex = 22;
+            this.btVersionOpenDialog.Text = "Select";
+            this.btVersionOpenDialog.UseVisualStyleBackColor = true;
+            this.btVersionOpenDialog.Click += new System.EventHandler(this.btVersionOpenDialog_Click);
+            // 
+            // btCreateVersion
+            // 
+            this.btCreateVersion.Enabled = false;
+            this.btCreateVersion.Location = new System.Drawing.Point(688, 138);
+            this.btCreateVersion.Name = "btCreateVersion";
+            this.btCreateVersion.Size = new System.Drawing.Size(135, 23);
+            this.btCreateVersion.TabIndex = 24;
+            this.btCreateVersion.Text = "Create version";
+            this.btCreateVersion.UseVisualStyleBackColor = true;
+            this.btCreateVersion.Click += new System.EventHandler(this.btCreateVersion_Click);
+            // 
+            // lAssetStatus
+            // 
+            this.lAssetStatus.AutoSize = true;
+            this.lAssetStatus.Location = new System.Drawing.Point(862, 54);
+            this.lAssetStatus.Name = "lAssetStatus";
+            this.lAssetStatus.Size = new System.Drawing.Size(84, 13);
+            this.lAssetStatus.TabIndex = 25;
+            this.lAssetStatus.Text = "Status unknown";
+            this.lAssetStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btCheckAsset
+            // 
+            this.btCheckAsset.Enabled = false;
+            this.btCheckAsset.Location = new System.Drawing.Point(690, 49);
+            this.btCheckAsset.Name = "btCheckAsset";
+            this.btCheckAsset.Size = new System.Drawing.Size(135, 23);
+            this.btCheckAsset.TabIndex = 26;
+            this.btCheckAsset.Text = "Check Asset";
+            this.btCheckAsset.UseVisualStyleBackColor = true;
+            this.btCheckAsset.Click += new System.EventHandler(this.btCheckAsset_Click);
+            // 
             // AgravityUploadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1023, 450);
+            this.Controls.Add(this.btCheckAsset);
+            this.Controls.Add(this.lAssetStatus);
+            this.Controls.Add(this.btCreateVersion);
+            this.Controls.Add(this.lVersionFile);
+            this.Controls.Add(this.btVersionOpenDialog);
+            this.Controls.Add(this.lAssetId);
+            this.Controls.Add(this.tbAssetId);
             this.Controls.Add(this.btUploadAssetStorage);
             this.Controls.Add(this.pbAssetUpload);
             this.Controls.Add(this.lOutput);
@@ -244,6 +328,13 @@
         private System.Windows.Forms.Label lOutput;
         private System.Windows.Forms.ProgressBar pbAssetUpload;
         private System.Windows.Forms.Button btUploadAssetStorage;
+        private System.Windows.Forms.Label lAssetId;
+        private System.Windows.Forms.TextBox tbAssetId;
+        private System.Windows.Forms.Label lVersionFile;
+        private System.Windows.Forms.Button btVersionOpenDialog;
+        private System.Windows.Forms.Button btCreateVersion;
+        private System.Windows.Forms.Label lAssetStatus;
+        private System.Windows.Forms.Button btCheckAsset;
     }
 }
 

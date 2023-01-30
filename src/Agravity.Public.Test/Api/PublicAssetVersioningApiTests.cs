@@ -124,6 +124,18 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpUpdateVersionedAssetsById
+        /// </summary>
+        [Fact]
+        public void HttpUpdateVersionedAssetsByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //string vNr = null;
+            //instance.HttpUpdateVersionedAssetsById(id, vNr);
+        }
+
+        /// <summary>
         /// Test HttpVersionedAssetsGet
         /// </summary>
         [Fact]

@@ -128,6 +128,7 @@ Class | Method | HTTP request | Description
 *PublicAssetVersioningApi* | [**HttpDeleteVersionedAssetsById**](docs\PublicAssetVersioningApi.md#httpdeleteversionedassetsbyid) | **DELETE** /assets/{id}/versions/{vNr} | 
 *PublicAssetVersioningApi* | [**HttpGetVersionedAssetBlobById**](docs\PublicAssetVersioningApi.md#httpgetversionedassetblobbyid) | **GET** /assets/{id}/versions/{vNr}/blobs | 
 *PublicAssetVersioningApi* | [**HttpRestoreVersionedAssetsById**](docs\PublicAssetVersioningApi.md#httprestoreversionedassetsbyid) | **POST** /assets/{id}/versions/{vNr}/restore | 
+*PublicAssetVersioningApi* | [**HttpUpdateVersionedAssetsById**](docs\PublicAssetVersioningApi.md#httpupdateversionedassetsbyid) | **POST** /assets/{id}/versions/{vNr} | 
 *PublicAssetVersioningApi* | [**HttpVersionedAssetsGet**](docs\PublicAssetVersioningApi.md#httpversionedassetsget) | **GET** /assets/{id}/versions | 
 *PublicAuthenticationManagementApi* | [**HttpAuthGetInboxContainerWriteSasToken**](docs\PublicAuthenticationManagementApi.md#httpauthgetinboxcontainerwritesastoken) | **GET** /auth/inbox | 
 *PublicCollectionManagementApi* | [**HttpCollectionsCreate**](docs\PublicCollectionManagementApi.md#httpcollectionscreate) | **POST** /collections | 

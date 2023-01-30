@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpDeleteVersionedAssetsById**](PublicAssetVersioningApi.md#httpdeleteversionedassetsbyid) | **DELETE** /assets/{id}/versions/{vNr} |  |
 | [**HttpGetVersionedAssetBlobById**](PublicAssetVersioningApi.md#httpgetversionedassetblobbyid) | **GET** /assets/{id}/versions/{vNr}/blobs |  |
 | [**HttpRestoreVersionedAssetsById**](PublicAssetVersioningApi.md#httprestoreversionedassetsbyid) | **POST** /assets/{id}/versions/{vNr}/restore |  |
+| [**HttpUpdateVersionedAssetsById**](PublicAssetVersioningApi.md#httpupdateversionedassetsbyid) | **POST** /assets/{id}/versions/{vNr} |  |
 | [**HttpVersionedAssetsGet**](PublicAssetVersioningApi.md#httpversionedassetsget) | **GET** /assets/{id}/versions |  |
 
 <a name="httpassetcreateuploadversion"></a>
@@ -510,6 +511,102 @@ catch (ApiException e)
 | **200** | Returns the versioned asset. |  -  |
 | **400** | If the version is not a number.&lt;br&gt;If blobs or internal, thumbs or optimized are missing. Only assets can be restored which are complete processed. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
+| **404** | If the asset or versioned asset with the IDs were not found. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="httpupdateversionedassetsbyid"></a>
+# **HttpUpdateVersionedAssetsById**
+> void HttpUpdateVersionedAssetsById (string id, string vNr)
+
+
+
+This endpoint updates a version of an asset.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpUpdateVersionedAssetsByIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicAssetVersioningApi(config);
+            var id = "id_example";  // string | The ID of the asset.
+            var vNr = "vNr_example";  // string | The version number of the asset.
+
+            try
+            {
+                apiInstance.HttpUpdateVersionedAssetsById(id, vNr);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicAssetVersioningApi.HttpUpdateVersionedAssetsById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpUpdateVersionedAssetsByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    apiInstance.HttpUpdateVersionedAssetsByIdWithHttpInfo(id, vNr);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetVersioningApi.HttpUpdateVersionedAssetsByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
+| **vNr** | **string** | The version number of the asset. |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **400** | Given version of this asset is not a number (Code: 10fb9f76-1ee5-4b58-a642-bf37efa6c230) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **204** | No description |  -  |
 | **404** | If the asset or versioned asset with the IDs were not found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 

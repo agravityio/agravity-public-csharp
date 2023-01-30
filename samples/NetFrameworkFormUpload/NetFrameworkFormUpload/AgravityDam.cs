@@ -1,9 +1,11 @@
 ﻿using Agravity.Public.Api;
 using Agravity.Public.Client;
 using Agravity.Public.Model;
-using Azure.Storage.Blobs;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,22 +13,22 @@ namespace AgravityPublicLib
 {
     public class AgravityDam
     {
-        /*
-// Create a dictionary to map file extensions to their corresponding content types
-public static Dictionary<string, string> ContentTypesDict = new Dictionary<string, string>
-{
-{".txt", "text/plain"},
-{".html", "text/html"},
-{".jpg", "image/jpeg"},
-{".jpeg", "image/jpeg"},
-{".png", "image/png"},
-{".tif", "image/tiff"},
-{".tiff", "image/tiff"},
-{".pdf", "application/pdf"},
-{".doc", "application/msword"},
-{".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
-};
-*/
+
+        // Create a dictionary to map file extensions to their corresponding content types
+        public static Dictionary<string, string> ContentTypesDict = new Dictionary<string, string>
+        {
+            {".txt", "text/plain"},
+            {".html", "text/html"},
+            {".jpg", "image/jpeg"},
+            {".jpeg", "image/jpeg"},
+            {".png", "image/png"},
+            {".tif", "image/tiff"},
+            {".tiff", "image/tiff"},
+            {".pdf", "application/pdf"},
+            {".doc", "application/msword"},
+            {".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+        };
+
         private Configuration config;
         public Configuration Config
         {
@@ -219,6 +221,7 @@ public static Dictionary<string, string> ContentTypesDict = new Dictionary<strin
         }
 
 
+        /* Upload using Azure.Storage.Blobs, Version=12.14.1.0 (working - but big bloat on packages
         /// <summary>
         /// Set all the metadata of the dictionary on a blob and sync them.
         /// </summary>
@@ -255,28 +258,102 @@ public static Dictionary<string, string> ContentTypesDict = new Dictionary<strin
         /// <param name="value">The metadata value.</param>
         /// <returns></returns>
 
-        private static async Task SetBlobMetadataSingleAsync(BlobClient blob, string key, string value)
+       private static async Task SetBlobMetadataSingleAsync(BlobClient blob, string key, string value)
+       {
+           var metadata = blob.GetProperties().Value.Metadata;
+           metadata[key] = value;
+           await blob.SetMetadataAsync(metadata);
+
+           / *
+           IDictionary<string, string> metadata = (await blob.GetPropertiesAsync()).Value.Metadata;
+           if (!metadata.ContainsKey(key))
+           {
+               // Add Metadata to blob
+               metadata.Add(key, value);
+           }
+           else
+           {
+               // simply set value to existing
+               metadata[key] = value;
+           }
+
+           // Set the blob's metadata
+           await blob.SetMetadataAsync(metadata).ConfigureAwait(false);
+           * /
+       }
+
+       /* Upload using Azure.Storage.Blobs, Version=12.14.1.0 (working - but big bloat on packages
+       internal bool UploadAssetStorage(string assetName, string filePath, string collectionId)
+       {
+           var assetId = CreateAsset(assetName, collectionId);
+           if (!string.IsNullOrEmpty(assetId))
+           {
+               var inboxToken = GetInboxToken();
+
+               var inboxContainer = new BlobContainerClient(new Uri(inboxToken.FullToken));
+               var fileName = Path.GetFileName(filePath);
+               var blobClient = inboxContainer.GetBlobClient(fileName);
+
+               IDictionary<string, string> metadata = new Dictionary<string, string>
+               {
+                   { "assetId", assetId }
+               };
+               BlobHttpHeaders httpHeaders = new BlobHttpHeaders()
+               {
+                   ContentType = "image/tiff"
+               };
+               // metadata.Add(ModelHelper.JSON_PROPERTY_DOWNLOAD_ID, downloadId);
+
+               var uploadSucceded = blobClient.Upload(filePath, new BlobUploadOptions() { Metadata = metadata, HttpHeaders = httpHeaders });
+
+               // var uploadSucceded = inboxContainer.UploadBlob(fileName, new BinaryData(File.ReadAllBytes(currentFile)));
+
+               return uploadSucceded.GetRawResponse().Status == (int)System.Net.HttpStatusCode.Created;
+           }
+           return false;
+       }
+       */
+
+        internal bool UploadAssetStorageRest2(string assetName, string filePath, string collectionId)
         {
-            var metadata = blob.GetProperties().Value.Metadata;
-            metadata[key] = value;
-            await blob.SetMetadataAsync(metadata);
-
-            /*
-            IDictionary<string, string> metadata = (await blob.GetPropertiesAsync()).Value.Metadata;
-            if (!metadata.ContainsKey(key))
+            var assetId = CreateAsset(assetName, collectionId);
+            if (!string.IsNullOrEmpty(assetId))
             {
-                // Add Metadata to blob
-                metadata.Add(key, value);
-            }
-            else
-            {
-                // simply set value to existing
-                metadata[key] = value;
-            }
+                var inboxToken = GetInboxToken();
 
-            // Set the blob's metadata
-            await blob.SetMetadataAsync(metadata).ConfigureAwait(false);
-            */
+                // var client = new RestClient(inboxToken.Url);
+
+                string fileName = Path.GetFileName(filePath);
+                string fileExtension = Path.GetExtension(filePath);
+
+                string contentType;
+                if (AgravityDam.ContentTypesDict.TryGetValue(fileExtension, out string cT))
+                {
+                    contentType = cT;
+                }
+                else
+                {
+                    // Content type was not found, default to "application/octet-stream"
+                    contentType = "application/octet-stream";
+                }
+
+                var uploadFileUrl = inboxToken.Url + inboxToken.Container + $"/{fileName}" + inboxToken.Token;
+
+                var client = new RestClient(uploadFileUrl);
+
+                var request = new RestRequest();
+                request.Method = Method.Put;
+                request.AddHeader("x-ms-version", "2021-06-08");
+                request.AddHeader("x-ms-date", DateTimeOffset.Now.ToUnixTimeMilliseconds());
+                request.AddHeader("x-ms-blob-type", "BlockBlob");
+                request.AddHeader("x-ms-meta-assetid", assetId);
+                request.AddHeader("Content-Type", contentType);
+                request.AddParameter(contentType, File.ReadAllBytes(filePath), ParameterType.RequestBody);
+
+                var response = client.Execute(request);
+                return response.StatusCode == System.Net.HttpStatusCode.Created;
+            }
+            return false;
         }
     }
 }

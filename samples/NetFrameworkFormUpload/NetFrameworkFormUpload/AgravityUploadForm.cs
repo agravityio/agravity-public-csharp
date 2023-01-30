@@ -1,13 +1,11 @@
-﻿using AgravityPublicLib;
+﻿
+using AgravityPublicLib;
 using AgravityPublicUpload.Properties;
-using Azure.Storage.Blobs;
 using NetFrameworkFormUpload.model;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetFrameworkFormUpload
@@ -105,88 +103,19 @@ namespace NetFrameworkFormUpload
             pbAssetUpload.Enabled = true;
             pbAssetUpload.ForeColor = System.Drawing.Color.Green;
             pbAssetUpload.Value = 1;
-            var assetId = dam.CreateAsset(tbAssetName.Text, tbCollectionId.Text);
-            if (!string.IsNullOrEmpty(assetId))
+
+            if (dam.UploadAssetStorageRest2(tbAssetName.Text, currentFile, tbCollectionId.Text))
             {
-                AddOutput($"Asset {assetId} created.");
-                pbAssetUpload.Value = 15;
+                currentFile = null;
+                tbAssetName.Text = "";
+                lbFileSelected.Text = "No file selected.";
+                pbAssetUpload.ForeColor = System.Drawing.Color.Green;
+                pbAssetUpload.Value = 100;
 
-                var inboxToken = dam.GetInboxToken();
+                AddOutput($"Upload completed.");
 
-                var inboxContainer = new BlobContainerClient(new Uri(inboxToken.FullToken));
-
-                var fileName = Path.GetFileName(currentFile);
-
-                var uploadSucceded = inboxContainer.UploadBlob(fileName, new BinaryData(File.ReadAllBytes(currentFile)));
-
-                if (uploadSucceded.GetRawResponse().Status == (int)System.Net.HttpStatusCode.Created)
-                {
-                    currentFile = null;
-                    tbAssetName.Text = "";
-                    lbFileSelected.Text = "No file selected.";
-                    pbAssetUpload.ForeColor = System.Drawing.Color.Green;
-                    pbAssetUpload.Value = 100;
-
-                    AddOutput($"Upload completed.");
-                }
-                else
-                {
-                    pbAssetUpload.ForeColor = System.Drawing.Color.Red;
-                    pbAssetUpload.Value = 100;
-                    AddOutput($"Asset upload failed with status code {uploadSucceded.GetRawResponse().Status}.");
-                }
-
-                /*
-                var client = new RestClient(new RestClientOptions(inboxToken.Url));
-
-               
-                string fileExtension = Path.GetExtension(currentFile);
-
-                var uploadFileUrl = inboxToken.Container + $"/{fileName}" + inboxToken.Token;
-
-                var request = new RestRequest(uploadFileUrl, Method.Put);
-                request.AddHeader("x-ms-version", "2021-06-08");
-                request.AddHeader("x-ms-date", DateTime.UtcNow.ToString("o"));
-                request.AddHeader("x-ms-blob-type", "BlockBlob");
-                request.AddHeader("x-ms-meta-assetid", assetId);
-
-                // var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes(currentFile));
-
-                string contentType;
-                if (AgravityDam.ContentTypesDict.TryGetValue(fileExtension, out string cT))
-                {
-                    contentType = cT;
-                }
-                else
-                {
-                    // Content type was not found, default to "application/octet-stream"
-                    contentType = "application/octet-stream";
-                }
-                request.AddHeader("Content-Type", contentType);
-
-                // request.AddFile(fileName, currentFile);
-                request.AddFile(fileName, currentFile);
-
-                var response = client.ExecutePut(request);
-
-                if (response.StatusCode == System.Net.HttpStatusCode.Created)
-                {
-                    currentFile = null;
-                    tbAssetName.Text = "";
-                    lbFileSelected.Text = "No file selected.";
-                    pbAssetUpload.ForeColor = System.Drawing.Color.Green;
-                    pbAssetUpload.Value = 100;
-
-                    AddOutput($"Upload completed.");
-                }
-                else
-                {
-                    pbAssetUpload.ForeColor = System.Drawing.Color.Red;
-                    pbAssetUpload.Value = 100;
-                    AddOutput($"Asset upload failed with status code {response.StatusCode}.");
-                }
-                */
             }
+
             else
             {
                 pbAssetUpload.ForeColor = System.Drawing.Color.Red;
@@ -251,52 +180,6 @@ namespace NetFrameworkFormUpload
         private void tbCollName_TextChanged(object sender, EventArgs e)
         {
             btCollectionCreate.Enabled = !string.IsNullOrEmpty(tbCollName.Text);
-        }
-
-        public static async Task SetBlobMetadataAsync(BlobClient blob, Dictionary<string, string> keyValue)
-        {
-            var metadata = new Dictionary<string, string>();
-
-            foreach (var item in keyValue)
-            {
-                if (!metadata.ContainsKey(item.Key))
-                {
-                    // Add Metadata to blob
-                    metadata.Add(item.Key, item.Value);
-                }
-                else
-                {
-                    // simply set value to existing
-                    metadata[item.Key] = item.Value;
-                }
-            }
-
-            await blob.SetMetadataAsync(metadata);
-
-        }
-
-        public static async Task SetBlobMetadataSingleAsync(BlobClient blob, string key, string value)
-        {
-            var metadata = blob.GetProperties().Value.Metadata;
-            metadata[key] = value;
-            await blob.SetMetadataAsync(metadata);
-
-            /*
-            IDictionary<string, string> metadata = (await blob.GetPropertiesAsync()).Value.Metadata;
-            if (!metadata.ContainsKey(key))
-            {
-                // Add Metadata to blob
-                metadata.Add(key, value);
-            }
-            else
-            {
-                // simply set value to existing
-                metadata[key] = value;
-            }
-
-            // Set the blob's metadata
-            await blob.SetMetadataAsync(metadata).ConfigureAwait(false);
-            */
         }
     }
 }

@@ -53,6 +53,7 @@
             this.btCreateVersion = new System.Windows.Forms.Button();
             this.lAssetStatus = new System.Windows.Forms.Label();
             this.btCheckAsset = new System.Windows.Forms.Button();
+            this.cbOverwrite = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btUploadAsset
@@ -99,7 +100,7 @@
             this.lbFileSelected.Location = new System.Drawing.Point(434, 49);
             this.lbFileSelected.MaximumSize = new System.Drawing.Size(200, 0);
             this.lbFileSelected.Name = "lbFileSelected";
-            this.lbFileSelected.Size = new System.Drawing.Size(200, 17);
+            this.lbFileSelected.Size = new System.Drawing.Size(200, 0);
             this.lbFileSelected.TabIndex = 4;
             this.lbFileSelected.Text = "No file selected.";
             this.lbFileSelected.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -272,11 +273,23 @@
             this.btCheckAsset.UseVisualStyleBackColor = true;
             this.btCheckAsset.Click += new System.EventHandler(this.btCheckAsset_Click);
             // 
+            // cbOverwrite
+            // 
+            this.cbOverwrite.AutoSize = true;
+            this.cbOverwrite.Location = new System.Drawing.Point(690, 168);
+            this.cbOverwrite.Name = "cbOverwrite";
+            this.cbOverwrite.Size = new System.Drawing.Size(125, 17);
+            this.cbOverwrite.TabIndex = 27;
+            this.cbOverwrite.Text = "overwrite last version";
+            this.cbOverwrite.UseVisualStyleBackColor = true;
+            this.cbOverwrite.CheckedChanged += new System.EventHandler(this.cbOverwrite_CheckedChanged);
+            // 
             // AgravityUploadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 450);
+            this.Controls.Add(this.cbOverwrite);
             this.Controls.Add(this.btCheckAsset);
             this.Controls.Add(this.lAssetStatus);
             this.Controls.Add(this.btCreateVersion);
@@ -335,6 +348,7 @@
         private System.Windows.Forms.Button btCreateVersion;
         private System.Windows.Forms.Label lAssetStatus;
         private System.Windows.Forms.Button btCheckAsset;
+        private System.Windows.Forms.CheckBox cbOverwrite;
     }
 }
 

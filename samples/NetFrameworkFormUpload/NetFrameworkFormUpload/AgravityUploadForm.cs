@@ -227,17 +227,35 @@ namespace NetFrameworkFormUpload
             checkVersionButton();
             lVersionFile.Text = "Processing version...";
             AddOutput($"Creating new version for asset {tbAssetId.Text}...");
-            var versionedAsset = dam.UploadAssetVersionToStorageRest(tbAssetId.Text, createVersionFile);
-            if (versionedAsset != null)
+            if (cbOverwrite.Checked)
             {
-                AddOutput($"Created new version for asset with number: {versionedAsset.VersionNr}!");
-                createVersionFile = null;
-                lVersionFile.Text = "No file selected.";
-                btCheckAsset_Click(sender, e);
+                var versionedAsset = dam.UploadAssetOverwriteToStorageRest(tbAssetId.Text, createVersionFile);
+                if (versionedAsset != null)
+                {
+                    AddOutput($"Overwrote asset with new file!");
+                    createVersionFile = null;
+                    lVersionFile.Text = "No file selected.";
+                    btCheckAsset_Click(sender, e);
+                }
+                else
+                {
+                    AddOutput($"Overwriting asset failed!");
+                }
             }
             else
             {
-                AddOutput($"Creating new version failed!");
+                var versionedAsset = dam.UploadAssetVersionToStorageRest(tbAssetId.Text, createVersionFile);
+                if (versionedAsset != null)
+                {
+                    AddOutput($"Created new version for asset with number: {versionedAsset.VersionNr}!");
+                    createVersionFile = null;
+                    lVersionFile.Text = "No file selected.";
+                    btCheckAsset_Click(sender, e);
+                }
+                else
+                {
+                    AddOutput($"Creating new version failed!");
+                }
             }
             checkVersionButton();
         }
@@ -309,6 +327,11 @@ namespace NetFrameworkFormUpload
             }
             loadAssetReadiness = false;
             AddOutput($"Done...");
+        }
+
+        private void cbOverwrite_CheckedChanged(object sender, EventArgs e)
+        {
+            btCreateVersion.Text = cbOverwrite.Checked ? "Overwrite version" : "Create version";
         }
     }
 }

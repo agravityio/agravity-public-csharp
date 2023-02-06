@@ -364,12 +364,38 @@ namespace AgravityPublicLib
                 var metaDict = new Dictionary<string, string>()
                 {
                     {"assetId", assetId },
-                    {"versionNr", ""+versionedAsset.VersionNr},
-                    {"assetversion", assetId+"_"+versionedAsset.VersionNr},
+                    { "versionNr", $"{versionedAsset.VersionNr}" }
+                    // {"assetversion", assetId+"_"+versionedAsset.VersionNr},
                 };
+
                 if (UploadFileToStorageRest(filePath, metaDict))
                 {
                     return versionedAsset;
+                }
+            }
+            return null;
+        }
+
+
+        internal Asset UploadAssetOverwriteToStorageRest(string assetId, string filePath)
+        {
+            if (!string.IsNullOrEmpty(assetId))
+            {
+                var asset = GetAsset(assetId);
+                if (asset == null)
+                {
+                    return null;
+                }
+
+                var metaDict = new Dictionary<string, string>()
+                {
+                    {"assetId", assetId },
+                    {"overwrite", "true" }
+                };
+
+                if (UploadFileToStorageRest(filePath, metaDict))
+                {
+                    return asset;
                 }
             }
             return null;

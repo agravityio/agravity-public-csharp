@@ -10,6 +10,14 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="5.1.0"/> [5.1.0](https://www.nuget.org/packages/Agravity.Public/5.1.0) (2023-02-19)
+---
+(no changes - just update according to backend version)
+
+## AgravityAPI <a name="5.0.2"/> [5.0.2](https://www.nuget.org/packages/Agravity.Public/5.0.2) (2023-02-06)
+---
+(no changes - just update according to backend version)
+
 ## AgravityAPI <a name="5.0.1"/> [5.0.1](https://www.nuget.org/packages/Agravity.Public/5.0.1) (2023-01-27)
 ---
 - Add / modifiy multipart/formdata endpoint POST `/assets/{id}/versionsupload`: This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.

@@ -29,6 +29,9 @@ Set-Location .\src
 # replace all "Dictionary>" with "Dictionary<string, object>>"
 Get-ChildItem -Recurse -File | ForEach-Object { (Get-Content $_.FullName) -replace "Dictionary>", "Dictionary<string, object>>" | Set-Content $_.FullName }
 
+# replace all "Dictionary<string, Object>" with "Dictionary<string, object>"
+Get-ChildItem -Recurse -File | ForEach-Object { (Get-Content $_.FullName) -replace "Dictionary<string, Object>", "Dictionary<string, object>" | Set-Content $_.FullName }
+
 #replace all "Dictionary&gt;" with "Dictionary&lt;string, object&gt;&gt;"
 Get-ChildItem -Recurse -File | ForEach-Object { (Get-Content $_.FullName) -replace "Dictionary&gt;", "Dictionary&lt;string, object&gt;&gt;" | Set-Content $_.FullName }
 

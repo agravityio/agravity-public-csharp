@@ -9,6 +9,17 @@ and this project does not adheres to [Semantic Versioning](https://semver.org/sp
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
 ---
+## AgravityAPI <a name="5.1.2"/> [5.1.2](https://www.nuget.org/packages/Agravity.Public/5.1.2) (2023-03-23)
+---
+
+- Change all `AddProperties` from  `Dictionary<string, Object>` to `Dictionary<string, object>`
+- Add property `Profile` which could have the ICC-Profile name for the original blob
+- Add `Format` property to CollTypeItem model to get and store additional information about the format of the item_type
+- Add `ClientId` property to VersionInfo
+
+## AgravityAPI 5.1.1 (2023-03-16)
+---
+(no changes - was not published on nuget - just update according to backend version)
 
 ## AgravityAPI <a name="5.1.0"/> [5.1.0](https://www.nuget.org/packages/Agravity.Public/5.1.0) (2023-02-19)
 ---

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Company** | **string** |  | [optional] 
 **Customer** | **string** |  | [optional] 
 **Updated** | **DateTime** |  | [optional] 
+**ClientId** | **string** |  | [optional] 
 **_Version** | **string** |  | [optional] 
 **PermissionEnabled** | **bool** |  | [optional] 
 **Region** | **string** |  | [optional] 

@@ -39,6 +39,7 @@ namespace Agravity.Public.Model
         /// <param name="entityType">entityType.</param>
         /// <param name="name">name.</param>
         /// <param name="itemType">itemType.</param>
+        /// <param name="format">format.</param>
         /// <param name="label">label.</param>
         /// <param name="defaultValue">defaultValue.</param>
         /// <param name="mandatory">mandatory.</param>
@@ -56,12 +57,13 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public CollTypeItem(string id = default(string), string entityType = default(string), string name = default(string), string itemType = default(string), string label = default(string), Object defaultValue = default(Object), bool? mandatory = default(bool?), bool? searchable = default(bool?), bool? onlyasset = default(bool?), bool? multi = default(bool?), string md5 = default(string), string group = default(string), int? order = default(int?), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public CollTypeItem(string id = default(string), string entityType = default(string), string name = default(string), string itemType = default(string), string format = default(string), string label = default(string), Object defaultValue = default(Object), bool? mandatory = default(bool?), bool? searchable = default(bool?), bool? onlyasset = default(bool?), bool? multi = default(bool?), string md5 = default(string), string group = default(string), int? order = default(int?), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
             this.Name = name;
             this.ItemType = itemType;
+            this.Format = format;
             this.Label = label;
             this.DefaultValue = defaultValue;
             this.Mandatory = mandatory;
@@ -104,6 +106,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "item_type", EmitDefaultValue = false)]
         public string ItemType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Format
+        /// </summary>
+        [DataMember(Name = "format", EmitDefaultValue = false)]
+        public string Format { get; set; }
 
         /// <summary>
         /// Gets or Sets Label
@@ -219,6 +227,7 @@ namespace Agravity.Public.Model
             sb.Append("  EntityType: ").Append(EntityType).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ItemType: ").Append(ItemType).Append("\n");
+            sb.Append("  Format: ").Append(Format).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  DefaultValue: ").Append(DefaultValue).Append("\n");
             sb.Append("  Mandatory: ").Append(Mandatory).Append("\n");
@@ -290,6 +299,11 @@ namespace Agravity.Public.Model
                     this.ItemType == input.ItemType ||
                     (this.ItemType != null &&
                     this.ItemType.Equals(input.ItemType))
+                ) && 
+                (
+                    this.Format == input.Format ||
+                    (this.Format != null &&
+                    this.Format.Equals(input.Format))
                 ) && 
                 (
                     this.Label == input.Label ||
@@ -403,6 +417,10 @@ namespace Agravity.Public.Model
                 if (this.ItemType != null)
                 {
                     hashCode = (hashCode * 59) + this.ItemType.GetHashCode();
+                }
+                if (this.Format != null)
+                {
+                    hashCode = (hashCode * 59) + this.Format.GetHashCode();
                 }
                 if (this.Label != null)
                 {

@@ -90,6 +90,14 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'ItemType'
         }
         /// <summary>
+        /// Test the property 'Format'
+        /// </summary>
+        [Fact]
+        public void FormatTest()
+        {
+            // TODO unit test for the property 'Format'
+        }
+        /// <summary>
         /// Test the property 'Label'
         /// </summary>
         [Fact]

@@ -90,6 +90,14 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Updated'
         }
         /// <summary>
+        /// Test the property 'ClientId'
+        /// </summary>
+        [Fact]
+        public void ClientIdTest()
+        {
+            // TODO unit test for the property 'ClientId'
+        }
+        /// <summary>
         /// Test the property '_Version'
         /// </summary>
         [Fact]

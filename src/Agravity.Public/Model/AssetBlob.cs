@@ -138,6 +138,7 @@ namespace Agravity.Public.Model
         /// <param name="quality">quality.</param>
         /// <param name="orientation">orientation (default to OrientationEnum.PORTRAIT).</param>
         /// <param name="colorspace">colorspace.</param>
+        /// <param name="profile">profile.</param>
         /// <param name="transparency">transparency.</param>
         /// <param name="mode">mode.</param>
         /// <param name="target">target.</param>
@@ -168,7 +169,7 @@ namespace Agravity.Public.Model
         /// <param name="sizeReadable">sizeReadable.</param>
         /// <param name="downloadable">downloadable.</param>
         /// <param name="expires">expires.</param>
-        public AssetBlob(BlobTypeEnum? blobType = BlobTypeEnum.UNKNOWN, string name = default(string), string container = default(string), long size = default(long), string extension = default(string), string contentType = default(string), string md5 = default(string), List<Metadata> techdata = default(List<Metadata>), List<Metadata> addData = default(List<Metadata>), int? width = default(int?), int? height = default(int?), int? maxwidthheight = default(int?), double? quality = default(double?), OrientationEnum? orientation = OrientationEnum.PORTRAIT, string colorspace = default(string), bool? transparency = default(bool?), string mode = default(string), string target = default(string), string filter = default(string), double? dpiX = default(double?), double? dpiY = default(double?), string perhash = default(string), string dominantcolor = default(string), int? depth = default(int?), bool? animated = default(bool?), int? duration = default(int?), string videocodec = default(string), int? videobitrate = default(int?), double? fps = default(double?), string colormode = default(string), string audiocodec = default(string), string audiosamplerate = default(string), string audiochanneloutput = default(string), int? audiobitrate = default(int?), string author = default(string), string language = default(string), int? wordcount = default(int?), int? pages = default(int?), string title = default(string), string encodingName = default(string), string encodingCode = default(string), string url = default(string), string sizeReadable = default(string), bool? downloadable = default(bool?), DateTime? expires = default(DateTime?))
+        public AssetBlob(BlobTypeEnum? blobType = BlobTypeEnum.UNKNOWN, string name = default(string), string container = default(string), long size = default(long), string extension = default(string), string contentType = default(string), string md5 = default(string), List<Metadata> techdata = default(List<Metadata>), List<Metadata> addData = default(List<Metadata>), int? width = default(int?), int? height = default(int?), int? maxwidthheight = default(int?), double? quality = default(double?), OrientationEnum? orientation = OrientationEnum.PORTRAIT, string colorspace = default(string), string profile = default(string), bool? transparency = default(bool?), string mode = default(string), string target = default(string), string filter = default(string), double? dpiX = default(double?), double? dpiY = default(double?), string perhash = default(string), string dominantcolor = default(string), int? depth = default(int?), bool? animated = default(bool?), int? duration = default(int?), string videocodec = default(string), int? videobitrate = default(int?), double? fps = default(double?), string colormode = default(string), string audiocodec = default(string), string audiosamplerate = default(string), string audiochanneloutput = default(string), int? audiobitrate = default(int?), string author = default(string), string language = default(string), int? wordcount = default(int?), int? pages = default(int?), string title = default(string), string encodingName = default(string), string encodingCode = default(string), string url = default(string), string sizeReadable = default(string), bool? downloadable = default(bool?), DateTime? expires = default(DateTime?))
         {
             this.BlobType = blobType;
             this.Name = name;
@@ -185,6 +186,7 @@ namespace Agravity.Public.Model
             this.Quality = quality;
             this.Orientation = orientation;
             this.Colorspace = colorspace;
+            this.Profile = profile;
             this.Transparency = transparency;
             this.Mode = mode;
             this.Target = target;
@@ -294,6 +296,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "colorspace", EmitDefaultValue = false)]
         public string Colorspace { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Profile
+        /// </summary>
+        [DataMember(Name = "profile", EmitDefaultValue = false)]
+        public string Profile { get; set; }
 
         /// <summary>
         /// Gets or Sets Transparency
@@ -498,6 +506,7 @@ namespace Agravity.Public.Model
             sb.Append("  Quality: ").Append(Quality).Append("\n");
             sb.Append("  Orientation: ").Append(Orientation).Append("\n");
             sb.Append("  Colorspace: ").Append(Colorspace).Append("\n");
+            sb.Append("  Profile: ").Append(Profile).Append("\n");
             sb.Append("  Transparency: ").Append(Transparency).Append("\n");
             sb.Append("  Mode: ").Append(Mode).Append("\n");
             sb.Append("  Target: ").Append(Target).Append("\n");
@@ -636,6 +645,11 @@ namespace Agravity.Public.Model
                     this.Colorspace == input.Colorspace ||
                     (this.Colorspace != null &&
                     this.Colorspace.Equals(input.Colorspace))
+                ) && 
+                (
+                    this.Profile == input.Profile ||
+                    (this.Profile != null &&
+                    this.Profile.Equals(input.Profile))
                 ) && 
                 (
                     this.Transparency == input.Transparency ||
@@ -848,6 +862,10 @@ namespace Agravity.Public.Model
                 if (this.Colorspace != null)
                 {
                     hashCode = (hashCode * 59) + this.Colorspace.GetHashCode();
+                }
+                if (this.Profile != null)
+                {
+                    hashCode = (hashCode * 59) + this.Profile.GetHashCode();
                 }
                 if (this.Transparency != null)
                 {

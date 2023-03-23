@@ -178,6 +178,14 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Colorspace'
         }
         /// <summary>
+        /// Test the property 'Profile'
+        /// </summary>
+        [Fact]
+        public void ProfileTest()
+        {
+            // TODO unit test for the property 'Profile'
+        }
+        /// <summary>
         /// Test the property 'Transparency'
         /// </summary>
         [Fact]

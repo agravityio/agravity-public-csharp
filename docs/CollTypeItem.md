@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **EntityType** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **ItemType** | **string** |  | [optional] 
+**Format** | **string** |  | [optional] 
 **Label** | **string** |  | [optional] 
 **DefaultValue** | **Object** |  | [optional] 
 **Mandatory** | **bool?** |  | [optional] 

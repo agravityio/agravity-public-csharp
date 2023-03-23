@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Quality** | **double?** |  | [optional] 
 **Orientation** | **string** |  | [optional] [default to OrientationEnum.PORTRAIT]
 **Colorspace** | **string** |  | [optional] 
+**Profile** | **string** |  | [optional] 
 **Transparency** | **bool?** |  | [optional] 
 **Mode** | **string** |  | [optional] 
 **Target** | **string** |  | [optional] 

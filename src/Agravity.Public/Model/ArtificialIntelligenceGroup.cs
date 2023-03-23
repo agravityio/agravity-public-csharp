@@ -39,7 +39,7 @@ namespace Agravity.Public.Model
         /// <param name="url">url.</param>
         /// <param name="minConfidence">minConfidence.</param>
         /// <param name="values">values.</param>
-        public ArtificialIntelligenceGroup(string origin = default(string), string url = default(string), double? minConfidence = default(double?), List<Dictionary<string, Object>> values = default(List<Dictionary<string, Object>>))
+        public ArtificialIntelligenceGroup(string origin = default(string), string url = default(string), double? minConfidence = default(double?), List<Dictionary<string, object>> values = default(List<Dictionary<string, object>>))
         {
             this.Origin = origin;
             this.Url = url;
@@ -69,7 +69,7 @@ namespace Agravity.Public.Model
         /// Gets or Sets Values
         /// </summary>
         [DataMember(Name = "values", EmitDefaultValue = false)]
-        public List<Dictionary<string, Object>> Values { get; set; }
+        public List<Dictionary<string, object>> Values { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

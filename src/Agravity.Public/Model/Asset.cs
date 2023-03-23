@@ -63,7 +63,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Asset(string id = default(string), string entityType = default(string), string name = default(string), string assetType = default(string), List<string> duplicates = default(List<string>), string textContent = default(string), List<ArtificialIntelligenceGroup> aiGroups = default(List<ArtificialIntelligenceGroup>), List<string> keywords = default(List<string>), AssetBlob origBlob = default(AssetBlob), List<AssetBlob> blobs = default(List<AssetBlob>), List<string> collections = default(List<string>), string failedReason = default(string), string regionOfOrigin = default(string), string availability = default(string), DateTime? availableFrom = default(DateTime?), DateTime? availableTo = default(DateTime?), Dictionary<string, Object> custom = default(Dictionary<string, Object>), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), string description = default(string), Dictionary<string, Object> addProperties = default(Dictionary<string, Object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public Asset(string id = default(string), string entityType = default(string), string name = default(string), string assetType = default(string), List<string> duplicates = default(List<string>), string textContent = default(string), List<ArtificialIntelligenceGroup> aiGroups = default(List<ArtificialIntelligenceGroup>), List<string> keywords = default(List<string>), AssetBlob origBlob = default(AssetBlob), List<AssetBlob> blobs = default(List<AssetBlob>), List<string> collections = default(List<string>), string failedReason = default(string), string regionOfOrigin = default(string), string availability = default(string), DateTime? availableFrom = default(DateTime?), DateTime? availableTo = default(DateTime?), Dictionary<string, object> custom = default(Dictionary<string, object>), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -195,7 +195,7 @@ namespace Agravity.Public.Model
         /// Gets or Sets Custom
         /// </summary>
         [DataMember(Name = "custom", EmitDefaultValue = false)]
-        public Dictionary<string, Object> Custom { get; set; }
+        public Dictionary<string, object> Custom { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
@@ -207,7 +207,7 @@ namespace Agravity.Public.Model
         /// Gets or Sets Translations
         /// </summary>
         [DataMember(Name = "translations", EmitDefaultValue = false)]
-        public Dictionary<string, Dictionary<string, Object>> Translations { get; set; }
+        public Dictionary<string, Dictionary<string, object>> Translations { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
@@ -219,7 +219,7 @@ namespace Agravity.Public.Model
         /// Gets or Sets AddProperties
         /// </summary>
         [DataMember(Name = "add_properties", EmitDefaultValue = false)]
-        public Dictionary<string, Object> AddProperties { get; set; }
+        public Dictionary<string, object> AddProperties { get; set; }
 
         /// <summary>
         /// Gets or Sets Status

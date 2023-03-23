@@ -44,7 +44,7 @@ namespace Agravity.Public.Model
         /// <param name="cdn">cdn.</param>
         /// <param name="format">format.</param>
         /// <param name="properties">properties.</param>
-        public PublishedAsset(string id = default(string), string name = default(string), string description = default(string), List<string> usecases = default(List<string>), DateTime createdDate = default(DateTime), string url = default(string), string cdn = default(string), string format = default(string), Dictionary<string, Object> properties = default(Dictionary<string, Object>))
+        public PublishedAsset(string id = default(string), string name = default(string), string description = default(string), List<string> usecases = default(List<string>), DateTime createdDate = default(DateTime), string url = default(string), string cdn = default(string), string format = default(string), Dictionary<string, object> properties = default(Dictionary<string, object>))
         {
             this.Id = id;
             this.Name = name;
@@ -109,7 +109,7 @@ namespace Agravity.Public.Model
         /// Gets or Sets Properties
         /// </summary>
         [DataMember(Name = "properties", EmitDefaultValue = false)]
-        public Dictionary<string, Object> Properties { get; set; }
+        public Dictionary<string, object> Properties { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

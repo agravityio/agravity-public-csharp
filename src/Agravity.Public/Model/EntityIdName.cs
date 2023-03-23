@@ -38,7 +38,7 @@ namespace Agravity.Public.Model
         /// <param name="name">name.</param>
         /// <param name="translations">translations.</param>
         /// <param name="id">id.</param>
-        public EntityIdName(string name = default(string), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), string id = default(string))
+        public EntityIdName(string name = default(string), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), string id = default(string))
         {
             this.Name = name;
             this.Translations = translations;
@@ -55,7 +55,7 @@ namespace Agravity.Public.Model
         /// Gets or Sets Translations
         /// </summary>
         [DataMember(Name = "translations", EmitDefaultValue = false)]
-        public Dictionary<string, Dictionary<string, Object>> Translations { get; set; }
+        public Dictionary<string, Dictionary<string, object>> Translations { get; set; }
 
         /// <summary>
         /// Gets or Sets Id

@@ -57,7 +57,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public CollTypeItem(string id = default(string), string entityType = default(string), string name = default(string), string itemType = default(string), string format = default(string), string label = default(string), Object defaultValue = default(Object), bool? mandatory = default(bool?), bool? searchable = default(bool?), bool? onlyasset = default(bool?), bool? multi = default(bool?), string md5 = default(string), string group = default(string), int? order = default(int?), Dictionary<string, Dictionary<string, Object>> translations = default(Dictionary<string, Dictionary<string, Object>>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public CollTypeItem(string id = default(string), string entityType = default(string), string name = default(string), string itemType = default(string), string format = default(string), string label = default(string), Object defaultValue = default(Object), bool? mandatory = default(bool?), bool? searchable = default(bool?), bool? onlyasset = default(bool?), bool? multi = default(bool?), string md5 = default(string), string group = default(string), int? order = default(int?), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -171,7 +171,7 @@ namespace Agravity.Public.Model
         /// Gets or Sets Translations
         /// </summary>
         [DataMember(Name = "translations", EmitDefaultValue = false)]
-        public Dictionary<string, Dictionary<string, Object>> Translations { get; set; }
+        public Dictionary<string, Dictionary<string, object>> Translations { get; set; }
 
         /// <summary>
         /// Gets or Sets Status

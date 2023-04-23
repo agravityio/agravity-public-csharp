@@ -1,5 +1,11 @@
-# read parameter
-$apiVersion = $args[0]
+# check REST API endpoint /version if backend is running, catch it and if it is not running: exit
+$version = (Invoke-RestMethod -Uri http://localhost:7072/api/version -Method Get -ContentType "application/json" -ErrorAction SilentlyContinue)
+if ($null -eq $version) {
+    Write-Host "Please start backend before generating API"
+    exit
+}
+
+$apiVersion = $version.version
 
 # check if apiVersion is valid
 if ($null -eq $apiVersion) {
@@ -9,16 +15,17 @@ if ($null -eq $apiVersion) {
 # echo apiVersion
 Write-Host "Generate API with apiVersion: $apiVersion"
 
-# check REST API endpoint /version if backend is running, catch it and if it is not running: exit
-$version = Invoke-RestMethod -Uri http://localhost:7072/api/version -Method Get -ContentType "application/json" -ErrorAction SilentlyContinue
-if ($null -eq $version) {
-    Write-Host "Please start backend before generating API"
-    exit
-}
+# wait for user input
+Write-Host "Press any key to continue ..."
+$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+
+Write-Host "Delete folder .\src"
 
 # delete folder .\src without error output
 Remove-Item -Path .\src -Recurse -Force -ErrorAction SilentlyContinue
 
+Write-Host "Calling public API"
+exit 0
 # generate API
 $params="packageName=Agravity.Public,library=httpclient,targetFramework=netstandard2.0,packageVersion="+$apiVersion
 # Write-Host("Executing: openapi-generator generate -i https://api.agravity.com/v2/swagger.json -g csharp-netcore -o src -p "+$params);

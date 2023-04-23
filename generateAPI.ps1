@@ -25,7 +25,7 @@ Write-Host "Delete folder .\src"
 Remove-Item -Path .\src -Recurse -Force -ErrorAction SilentlyContinue
 
 Write-Host "Calling public API"
-exit 0
+
 # generate API
 $params="packageName=Agravity.Public,library=httpclient,targetFramework=netstandard2.0,packageVersion="+$apiVersion
 # Write-Host("Executing: openapi-generator generate -i https://api.agravity.com/v2/swagger.json -g csharp-netcore -o src -p "+$params);

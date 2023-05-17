@@ -91,13 +91,12 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
-        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetPageResult</returns>
-        AssetPageResult HttpAssetsGet(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), bool? techdata = default(bool?), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
+        AssetPageResult HttpAssetsGet(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -112,13 +111,12 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
-        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetPageResult</returns>
-        ApiResponse<AssetPageResult> HttpAssetsGetWithHttpInfo(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), bool? techdata = default(bool?), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
+        ApiResponse<AssetPageResult> HttpAssetsGetWithHttpInfo(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -129,10 +127,11 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
+        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Asset</returns>
-        Asset HttpAssetsGetById(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
+        Asset HttpAssetsGetById(string id, string fields = default(string), bool? expose = default(bool?), bool? techdata = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -144,10 +143,11 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
+        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
-        ApiResponse<Asset> HttpAssetsGetByIdWithHttpInfo(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
+        ApiResponse<Asset> HttpAssetsGetByIdWithHttpInfo(string id, string fields = default(string), bool? expose = default(bool?), bool? techdata = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -255,14 +255,13 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
-        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetPageResult</returns>
-        System.Threading.Tasks.Task<AssetPageResult> HttpAssetsGetAsync(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), bool? techdata = default(bool?), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AssetPageResult> HttpAssetsGetAsync(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -277,14 +276,13 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
-        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetPageResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AssetPageResult>> HttpAssetsGetWithHttpInfoAsync(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), bool? techdata = default(bool?), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AssetPageResult>> HttpAssetsGetWithHttpInfoAsync(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -295,11 +293,12 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
+        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        System.Threading.Tasks.Task<Asset> HttpAssetsGetByIdAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Asset> HttpAssetsGetByIdAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? techdata = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -311,11 +310,12 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
+        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetsGetByIdWithHttpInfoAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetsGetByIdWithHttpInfoAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? techdata = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -835,15 +835,14 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
-        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetPageResult</returns>
-        public AssetPageResult HttpAssetsGet(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), bool? techdata = default(bool?), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
+        public AssetPageResult HttpAssetsGet(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<AssetPageResult> localVarResponse = HttpAssetsGetWithHttpInfo(collectionid, fields, expose, continuationToken, limit, orderby, techdata, filter, items, translations);
+            Agravity.Public.Client.ApiResponse<AssetPageResult> localVarResponse = HttpAssetsGetWithHttpInfo(collectionid, fields, expose, continuationToken, limit, orderby, filter, items, translations);
             return localVarResponse.Data;
         }
 
@@ -857,13 +856,12 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
-        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetPageResult</returns>
-        public Agravity.Public.Client.ApiResponse<AssetPageResult> HttpAssetsGetWithHttpInfo(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), bool? techdata = default(bool?), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<AssetPageResult> HttpAssetsGetWithHttpInfo(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -910,10 +908,6 @@ namespace Agravity.Public.Api
             if (orderby != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "orderby", orderby));
-            }
-            if (techdata != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "techdata", techdata));
             }
             if (filter != null)
             {
@@ -961,16 +955,15 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
-        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetPageResult</returns>
-        public async System.Threading.Tasks.Task<AssetPageResult> HttpAssetsGetAsync(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), bool? techdata = default(bool?), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AssetPageResult> HttpAssetsGetAsync(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<AssetPageResult> localVarResponse = await HttpAssetsGetWithHttpInfoAsync(collectionid, fields, expose, continuationToken, limit, orderby, techdata, filter, items, translations, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<AssetPageResult> localVarResponse = await HttpAssetsGetWithHttpInfoAsync(collectionid, fields, expose, continuationToken, limit, orderby, filter, items, translations, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -984,14 +977,13 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
-        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetPageResult)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetPageResult>> HttpAssetsGetWithHttpInfoAsync(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), bool? techdata = default(bool?), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetPageResult>> HttpAssetsGetWithHttpInfoAsync(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -1040,10 +1032,6 @@ namespace Agravity.Public.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "orderby", orderby));
             }
-            if (techdata != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "techdata", techdata));
-            }
             if (filter != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
@@ -1088,12 +1076,13 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
+        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Asset</returns>
-        public Asset HttpAssetsGetById(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
+        public Asset HttpAssetsGetById(string id, string fields = default(string), bool? expose = default(bool?), bool? techdata = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = HttpAssetsGetByIdWithHttpInfo(id, fields, expose, translations);
+            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = HttpAssetsGetByIdWithHttpInfo(id, fields, expose, techdata, translations);
             return localVarResponse.Data;
         }
 
@@ -1104,10 +1093,11 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
+        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
-        public Agravity.Public.Client.ApiResponse<Asset> HttpAssetsGetByIdWithHttpInfo(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<Asset> HttpAssetsGetByIdWithHttpInfo(string id, string fields = default(string), bool? expose = default(bool?), bool? techdata = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1145,6 +1135,10 @@ namespace Agravity.Public.Api
             if (expose != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "expose", expose));
+            }
+            if (techdata != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "techdata", techdata));
             }
             if (translations != null)
             {
@@ -1181,13 +1175,14 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
+        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        public async System.Threading.Tasks.Task<Asset> HttpAssetsGetByIdAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Asset> HttpAssetsGetByIdAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? techdata = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = await HttpAssetsGetByIdWithHttpInfoAsync(id, fields, expose, translations, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = await HttpAssetsGetByIdWithHttpInfoAsync(id, fields, expose, techdata, translations, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1198,11 +1193,12 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="fields">Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. (optional)</param>
+        /// <param name="techdata">This parameter will include the techdata property inside orig_blob. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Asset>> HttpAssetsGetByIdWithHttpInfoAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Asset>> HttpAssetsGetByIdWithHttpInfoAsync(string id, string fields = default(string), bool? expose = default(bool?), bool? techdata = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1241,6 +1237,10 @@ namespace Agravity.Public.Api
             if (expose != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "expose", expose));
+            }
+            if (techdata != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "techdata", techdata));
             }
             if (translations != null)
             {

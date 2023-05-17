@@ -212,7 +212,7 @@ catch (ApiException e)
 
 <a name="httpassetsget"></a>
 # **HttpAssetsGet**
-> AssetPageResult HttpAssetsGet (string collectionid = null, string fields = null, bool? expose = null, string continuationToken = null, int? limit = null, string orderby = null, bool? techdata = null, string filter = null, bool? items = null, bool? translations = null)
+> AssetPageResult HttpAssetsGet (string collectionid = null, string fields = null, bool? expose = null, string continuationToken = null, int? limit = null, string orderby = null, string filter = null, bool? items = null, bool? translations = null)
 
 
 
@@ -246,14 +246,13 @@ namespace Example
             var continuationToken = "continuationToken_example";  // string | Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional) 
             var limit = 56;  // int? | This number limits the page result of assets. (optional) 
             var orderby = "orderby_example";  // string | How the return assets are sorted. Default is property: created_date (newest first). (optional) 
-            var techdata = true;  // bool? | This parameter will include the techdata property inside orig_blob. (optional) 
             var filter = "filter_example";  // string | This will limit the output on specific parameters which are separated by ':', '!:', '>', '>=', '<', '<=' (optional) 
             var items = true;  // bool? | The items can be extended to fully filled items. (optional) 
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                AssetPageResult result = apiInstance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, techdata, filter, items, translations);
+                AssetPageResult result = apiInstance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, filter, items, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -273,7 +272,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<AssetPageResult> response = apiInstance.HttpAssetsGetWithHttpInfo(collectionid, fields, expose, continuationToken, limit, orderby, techdata, filter, items, translations);
+    ApiResponse<AssetPageResult> response = apiInstance.HttpAssetsGetWithHttpInfo(collectionid, fields, expose, continuationToken, limit, orderby, filter, items, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -296,7 +295,6 @@ catch (ApiException e)
 | **continuationToken** | **string** | Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) | [optional]  |
 | **limit** | **int?** | This number limits the page result of assets. | [optional]  |
 | **orderby** | **string** | How the return assets are sorted. Default is property: created_date (newest first). | [optional]  |
-| **techdata** | **bool?** | This parameter will include the techdata property inside orig_blob. | [optional]  |
 | **filter** | **string** | This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; | [optional]  |
 | **items** | **bool?** | The items can be extended to fully filled items. | [optional]  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
@@ -327,7 +325,7 @@ catch (ApiException e)
 
 <a name="httpassetsgetbyid"></a>
 # **HttpAssetsGetById**
-> Asset HttpAssetsGetById (string id, string fields = null, bool? expose = null, bool? translations = null)
+> Asset HttpAssetsGetById (string id, string fields = null, bool? expose = null, bool? techdata = null, bool? translations = null)
 
 
 
@@ -358,11 +356,12 @@ namespace Example
             var id = "id_example";  // string | The ID of the asset.
             var fields = "fields_example";  // string | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional) 
             var expose = true;  // bool? | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no 'thumbnail' is found. (optional) 
+            var techdata = true;  // bool? | This parameter will include the techdata property inside orig_blob. (optional) 
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpAssetsGetById(id, fields, expose, translations);
+                Asset result = apiInstance.HttpAssetsGetById(id, fields, expose, techdata, translations);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -382,7 +381,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Asset> response = apiInstance.HttpAssetsGetByIdWithHttpInfo(id, fields, expose, translations);
+    ApiResponse<Asset> response = apiInstance.HttpAssetsGetByIdWithHttpInfo(id, fields, expose, techdata, translations);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -402,6 +401,7 @@ catch (ApiException e)
 | **id** | **string** | The ID of the asset. |  |
 | **fields** | **string** | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. | [optional]  |
 | **expose** | **bool?** | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. | [optional]  |
+| **techdata** | **bool?** | This parameter will include the techdata property inside orig_blob. | [optional]  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 
 ### Return type

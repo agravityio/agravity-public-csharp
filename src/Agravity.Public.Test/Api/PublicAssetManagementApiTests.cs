@@ -96,11 +96,10 @@ namespace Agravity.Public.Test.Api
             //string continuationToken = null;
             //int? limit = null;
             //string orderby = null;
-            //bool? techdata = null;
             //string filter = null;
             //bool? items = null;
             //bool? translations = null;
-            //var response = instance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, techdata, filter, items, translations);
+            //var response = instance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, filter, items, translations);
             //Assert.IsType<AssetPageResult>(response);
         }
 
@@ -114,8 +113,9 @@ namespace Agravity.Public.Test.Api
             //string id = null;
             //string fields = null;
             //bool? expose = null;
+            //bool? techdata = null;
             //bool? translations = null;
-            //var response = instance.HttpAssetsGetById(id, fields, expose, translations);
+            //var response = instance.HttpAssetsGetById(id, fields, expose, techdata, translations);
             //Assert.IsType<Asset>(response);
         }
 

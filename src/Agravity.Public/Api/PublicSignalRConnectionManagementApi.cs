@@ -24,7 +24,7 @@ namespace Agravity.Public.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ISignalRConnectionManagementApiSync : IApiAccessor
+    public interface IPublicSignalRConnectionManagementApiSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -54,7 +54,7 @@ namespace Agravity.Public.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ISignalRConnectionManagementApiAsync : IApiAccessor
+    public interface IPublicSignalRConnectionManagementApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -86,7 +86,7 @@ namespace Agravity.Public.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ISignalRConnectionManagementApi : ISignalRConnectionManagementApiSync, ISignalRConnectionManagementApiAsync
+    public interface IPublicSignalRConnectionManagementApi : IPublicSignalRConnectionManagementApiSync, IPublicSignalRConnectionManagementApiAsync
     {
 
     }
@@ -94,23 +94,23 @@ namespace Agravity.Public.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class SignalRConnectionManagementApi : ISignalRConnectionManagementApi
+    public partial class PublicSignalRConnectionManagementApi : IPublicSignalRConnectionManagementApi
     {
         private Agravity.Public.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SignalRConnectionManagementApi"/> class.
+        /// Initializes a new instance of the <see cref="PublicSignalRConnectionManagementApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public SignalRConnectionManagementApi() : this((string)null)
+        public PublicSignalRConnectionManagementApi() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SignalRConnectionManagementApi"/> class.
+        /// Initializes a new instance of the <see cref="PublicSignalRConnectionManagementApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public SignalRConnectionManagementApi(string basePath)
+        public PublicSignalRConnectionManagementApi(string basePath)
         {
             this.Configuration = Agravity.Public.Client.Configuration.MergeConfigurations(
                 Agravity.Public.Client.GlobalConfiguration.Instance,
@@ -122,12 +122,12 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SignalRConnectionManagementApi"/> class
+        /// Initializes a new instance of the <see cref="PublicSignalRConnectionManagementApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public SignalRConnectionManagementApi(Agravity.Public.Client.Configuration configuration)
+        public PublicSignalRConnectionManagementApi(Agravity.Public.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -141,13 +141,13 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SignalRConnectionManagementApi"/> class
+        /// Initializes a new instance of the <see cref="PublicSignalRConnectionManagementApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public SignalRConnectionManagementApi(Agravity.Public.Client.ISynchronousClient client, Agravity.Public.Client.IAsynchronousClient asyncClient, Agravity.Public.Client.IReadableConfiguration configuration)
+        public PublicSignalRConnectionManagementApi(Agravity.Public.Client.ISynchronousClient client, Agravity.Public.Client.IAsynchronousClient asyncClient, Agravity.Public.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -243,7 +243,7 @@ namespace Agravity.Public.Api
             }
 
 
-            localVarRequestOptions.Operation = "SignalRConnectionManagementApi.HttpSignalRNegotiate";
+            localVarRequestOptions.Operation = "PublicSignalRConnectionManagementApi.HttpSignalRNegotiate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (function_key) required
@@ -312,7 +312,7 @@ namespace Agravity.Public.Api
             }
 
 
-            localVarRequestOptions.Operation = "SignalRConnectionManagementApi.HttpSignalRNegotiate";
+            localVarRequestOptions.Operation = "PublicSignalRConnectionManagementApi.HttpSignalRNegotiate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (function_key) required

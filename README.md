@@ -156,6 +156,7 @@ Class | Method | HTTP request | Description
 *PublicPublishingApi* | [**HttpPublishedAssetsGetAll**](docs\PublicPublishingApi.md#httppublishedassetsgetall) | **GET** /publish | 
 *PublicSavedSearchApi* | [**HttpSavedSearchesGetAll**](docs\PublicSavedSearchApi.md#httpsavedsearchesgetall) | **GET** /savedsearches | 
 *PublicSearchManagementApi* | [**HttpGlobalSearch**](docs\PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search | 
+*PublicSignalRConnectionManagementApi* | [**HttpSignalRNegotiate**](docs\PublicSignalRConnectionManagementApi.md#httpsignalrnegotiate) | **POST** /signalr/negotiate | 
 *PublicStaticDefinedListManagementApi* | [**HttpStaticDefinedListsGetAll**](docs\PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsgetall) | **GET** /staticdefinedlists | 
 *PublicStaticDefinedListManagementApi* | [**HttpStaticDefinedListsGetById**](docs\PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsgetbyid) | **GET** /staticdefinedlists/{id} | 
 *PublicTranslationManagementApi* | [**HttpTranslationsById**](docs\PublicTranslationManagementApi.md#httptranslationsbyid) | **GET** /translations/{id} | 
@@ -165,7 +166,6 @@ Class | Method | HTTP request | Description
 *PublicWebAppDataApi* | [**HttpGetWebAppData**](docs\PublicWebAppDataApi.md#httpgetwebappdata) | **GET** /webappdata/{id} | 
 *PublicWorkspaceManagementApi* | [**HttpWorkspacesGet**](docs\PublicWorkspaceManagementApi.md#httpworkspacesget) | **GET** /workspaces | 
 *PublicWorkspaceManagementApi* | [**HttpWorkspacesGetById**](docs\PublicWorkspaceManagementApi.md#httpworkspacesgetbyid) | **GET** /workspaces/{id} | 
-*SignalRConnectionManagementApi* | [**HttpSignalRNegotiate**](docs\SignalRConnectionManagementApi.md#httpsignalrnegotiate) | **POST** /signalr/negotiate | 
 
 
 <a name="documentation-for-models"></a>

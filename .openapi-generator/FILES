@@ -42,6 +42,7 @@ docs/PublicHelperToolsApi.md
 docs/PublicPublishingApi.md
 docs/PublicSavedSearchApi.md
 docs/PublicSearchManagementApi.md
+docs/PublicSignalRConnectionManagementApi.md
 docs/PublicStaticDefinedListManagementApi.md
 docs/PublicTranslationManagementApi.md
 docs/PublicWebAppDataApi.md
@@ -58,7 +59,6 @@ docs/SecureUploadEntity.md
 docs/SharedAsset.md
 docs/SharedCollectionFull.md
 docs/SignalRConnectionInfo.md
-docs/SignalRConnectionManagementApi.md
 docs/StaticDefinedList.md
 docs/VersionEntity.md
 docs/VersionedAsset.md
@@ -82,11 +82,11 @@ src/Agravity.Public.Test/Api/PublicHelperToolsApiTests.cs
 src/Agravity.Public.Test/Api/PublicPublishingApiTests.cs
 src/Agravity.Public.Test/Api/PublicSavedSearchApiTests.cs
 src/Agravity.Public.Test/Api/PublicSearchManagementApiTests.cs
+src/Agravity.Public.Test/Api/PublicSignalRConnectionManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicStaticDefinedListManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicTranslationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicWebAppDataApiTests.cs
 src/Agravity.Public.Test/Api/PublicWorkspaceManagementApiTests.cs
-src/Agravity.Public.Test/Api/SignalRConnectionManagementApiTests.cs
 src/Agravity.Public.Test/Model/AgravityErrorResponseTests.cs
 src/Agravity.Public.Test/Model/AgravityVersionTests.cs
 src/Agravity.Public.Test/Model/AllWebAppDataTests.cs
@@ -145,11 +145,11 @@ src/Agravity.Public/Api/PublicHelperToolsApi.cs
 src/Agravity.Public/Api/PublicPublishingApi.cs
 src/Agravity.Public/Api/PublicSavedSearchApi.cs
 src/Agravity.Public/Api/PublicSearchManagementApi.cs
+src/Agravity.Public/Api/PublicSignalRConnectionManagementApi.cs
 src/Agravity.Public/Api/PublicStaticDefinedListManagementApi.cs
 src/Agravity.Public/Api/PublicTranslationManagementApi.cs
 src/Agravity.Public/Api/PublicWebAppDataApi.cs
 src/Agravity.Public/Api/PublicWorkspaceManagementApi.cs
-src/Agravity.Public/Api/SignalRConnectionManagementApi.cs
 src/Agravity.Public/Client/ApiClient.cs
 src/Agravity.Public/Client/ApiException.cs
 src/Agravity.Public/Client/ApiResponse.cs

@@ -9,6 +9,17 @@ and this project does not adheres to [Semantic Versioning](https://semver.org/sp
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
 ---
+## AgravityAPI <a name="5.1.6"/> [5.1.6](https://www.nuget.org/packages/Agravity.Public/5.1.6) (2023-05-23)
+---
+
+- Remove techdata from all assets get endpoint and moved to GetAssetById:
+  - add query parameter `techdata` to public GetAssetById endpoint
+- Refactor public SignalR management class to have the prefix "public"
+
+## AgravityAPI <a name="5.1.5"/> [5.1.5](https://www.nuget.org/packages/Agravity.Public/5.1.5) (2023-05-03)
+---
+(no changes - was not published on nuget - just update according to backend version)
+
 ## AgravityAPI <a name="5.1.4"/> [5.1.4](https://www.nuget.org/packages/Agravity.Public/5.1.4) (2023-04-27)
 ---
 (no changes - was not published on nuget - just update according to backend version)

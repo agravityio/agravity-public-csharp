@@ -99,7 +99,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | This returns all collections and assets from the given collection type. |  -  |
 | **400** | Unknown request method (Code: 2e7570d3-7667-4bc9-89ea-f5d6f5aa84c0) |  -  |
-| **404** | Collection Type not found - Never existed, not a collection type or already deleted. (Code: 8f939f77-1ba9-40b7-905e-bef8ddc720a1) or the web app data was never created (POST). (Code: 210910ed-68e8-4837-a58f-bfce0591cb49) |  -  |
+| **404** | Collection Type not found - Never existed, not a collection type or already deleted. (Code: 8f939f77-1ba9-40b7-905e-bef8ddc720a1)&lt;br&gt;or the web app data was never created (POST). (Code: 210910ed-68e8-4837-a58f-bfce0591cb49) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 

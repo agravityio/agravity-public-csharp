@@ -8,6 +8,7 @@ docs/AllWebAppData.md
 docs/ArtificialIntelligenceGroup.md
 docs/Asset.md
 docs/AssetBlob.md
+docs/AssetIdContainer.md
 docs/AssetPageResult.md
 docs/AzSearchOptions.md
 docs/BadRequestResult.md
@@ -33,7 +34,6 @@ docs/PublicAssetVersioningApi.md
 docs/PublicAuthenticationManagementApi.md
 docs/PublicCollectionManagementApi.md
 docs/PublicCollectionSecureUploadApi.md
-docs/PublicCollectionSharingApi.md
 docs/PublicCollectionTypeManagementApi.md
 docs/PublicConfigurationManagementApi.md
 docs/PublicDownloadFormatManagementApi.md
@@ -42,6 +42,7 @@ docs/PublicHelperToolsApi.md
 docs/PublicPublishingApi.md
 docs/PublicSavedSearchApi.md
 docs/PublicSearchManagementApi.md
+docs/PublicSharingManagementApi.md
 docs/PublicSignalRConnectionManagementApi.md
 docs/PublicStaticDefinedListManagementApi.md
 docs/PublicTranslationManagementApi.md
@@ -49,6 +50,7 @@ docs/PublicWebAppDataApi.md
 docs/PublicWorkspaceManagementApi.md
 docs/PublishEntity.md
 docs/PublishedAsset.md
+docs/QuickShareFull.md
 docs/SasToken.md
 docs/SavedSearch.md
 docs/SearchFacet.md
@@ -73,7 +75,6 @@ src/Agravity.Public.Test/Api/PublicAssetVersioningApiTests.cs
 src/Agravity.Public.Test/Api/PublicAuthenticationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionSecureUploadApiTests.cs
-src/Agravity.Public.Test/Api/PublicCollectionSharingApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionTypeManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicConfigurationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicDownloadFormatManagementApiTests.cs
@@ -82,6 +83,7 @@ src/Agravity.Public.Test/Api/PublicHelperToolsApiTests.cs
 src/Agravity.Public.Test/Api/PublicPublishingApiTests.cs
 src/Agravity.Public.Test/Api/PublicSavedSearchApiTests.cs
 src/Agravity.Public.Test/Api/PublicSearchManagementApiTests.cs
+src/Agravity.Public.Test/Api/PublicSharingManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicSignalRConnectionManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicStaticDefinedListManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicTranslationManagementApiTests.cs
@@ -92,6 +94,7 @@ src/Agravity.Public.Test/Model/AgravityVersionTests.cs
 src/Agravity.Public.Test/Model/AllWebAppDataTests.cs
 src/Agravity.Public.Test/Model/ArtificialIntelligenceGroupTests.cs
 src/Agravity.Public.Test/Model/AssetBlobTests.cs
+src/Agravity.Public.Test/Model/AssetIdContainerTests.cs
 src/Agravity.Public.Test/Model/AssetPageResultTests.cs
 src/Agravity.Public.Test/Model/AssetTests.cs
 src/Agravity.Public.Test/Model/AzSearchOptionsTests.cs
@@ -113,6 +116,7 @@ src/Agravity.Public.Test/Model/MetadataTests.cs
 src/Agravity.Public.Test/Model/OkResultTests.cs
 src/Agravity.Public.Test/Model/PublishEntityTests.cs
 src/Agravity.Public.Test/Model/PublishedAssetTests.cs
+src/Agravity.Public.Test/Model/QuickShareFullTests.cs
 src/Agravity.Public.Test/Model/SasTokenTests.cs
 src/Agravity.Public.Test/Model/SavedSearchTests.cs
 src/Agravity.Public.Test/Model/SearchFacetEntityTests.cs
@@ -136,7 +140,6 @@ src/Agravity.Public/Api/PublicAssetVersioningApi.cs
 src/Agravity.Public/Api/PublicAuthenticationManagementApi.cs
 src/Agravity.Public/Api/PublicCollectionManagementApi.cs
 src/Agravity.Public/Api/PublicCollectionSecureUploadApi.cs
-src/Agravity.Public/Api/PublicCollectionSharingApi.cs
 src/Agravity.Public/Api/PublicCollectionTypeManagementApi.cs
 src/Agravity.Public/Api/PublicConfigurationManagementApi.cs
 src/Agravity.Public/Api/PublicDownloadFormatManagementApi.cs
@@ -145,6 +148,7 @@ src/Agravity.Public/Api/PublicHelperToolsApi.cs
 src/Agravity.Public/Api/PublicPublishingApi.cs
 src/Agravity.Public/Api/PublicSavedSearchApi.cs
 src/Agravity.Public/Api/PublicSearchManagementApi.cs
+src/Agravity.Public/Api/PublicSharingManagementApi.cs
 src/Agravity.Public/Api/PublicSignalRConnectionManagementApi.cs
 src/Agravity.Public/Api/PublicStaticDefinedListManagementApi.cs
 src/Agravity.Public/Api/PublicTranslationManagementApi.cs
@@ -173,6 +177,7 @@ src/Agravity.Public/Model/AllWebAppData.cs
 src/Agravity.Public/Model/ArtificialIntelligenceGroup.cs
 src/Agravity.Public/Model/Asset.cs
 src/Agravity.Public/Model/AssetBlob.cs
+src/Agravity.Public/Model/AssetIdContainer.cs
 src/Agravity.Public/Model/AssetPageResult.cs
 src/Agravity.Public/Model/AzSearchOptions.cs
 src/Agravity.Public/Model/BadRequestResult.cs
@@ -193,6 +198,7 @@ src/Agravity.Public/Model/Metadata.cs
 src/Agravity.Public/Model/OkResult.cs
 src/Agravity.Public/Model/PublishEntity.cs
 src/Agravity.Public/Model/PublishedAsset.cs
+src/Agravity.Public/Model/QuickShareFull.cs
 src/Agravity.Public/Model/SasToken.cs
 src/Agravity.Public/Model/SavedSearch.cs
 src/Agravity.Public/Model/SearchFacet.cs

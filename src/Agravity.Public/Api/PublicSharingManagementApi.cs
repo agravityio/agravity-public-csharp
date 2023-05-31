@@ -24,9 +24,38 @@ namespace Agravity.Public.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPublicCollectionSharingApiSync : IApiAccessor
+    public interface IPublicSharingManagementApiSync : IApiAccessor
     {
         #region Synchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Returns one single quick share (from ID)
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the quick share.</param>
+        /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
+        /// <param name="limit">This number limits the page result of assets. (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>QuickShareFull</returns>
+        QuickShareFull HttpQuickShareGetById(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Returns one single quick share (from ID)
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the quick share.</param>
+        /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
+        /// <param name="limit">This number limits the page result of assets. (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of QuickShareFull</returns>
+        ApiResponse<QuickShareFull> HttpQuickShareGetByIdWithHttpInfo(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -62,9 +91,40 @@ namespace Agravity.Public.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPublicCollectionSharingApiAsync : IApiAccessor
+    public interface IPublicSharingManagementApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Returns one single quick share (from ID)
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the quick share.</param>
+        /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
+        /// <param name="limit">This number limits the page result of assets. (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of QuickShareFull</returns>
+        System.Threading.Tasks.Task<QuickShareFull> HttpQuickShareGetByIdAsync(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Returns one single quick share (from ID)
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the quick share.</param>
+        /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
+        /// <param name="limit">This number limits the page result of assets. (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (QuickShareFull)</returns>
+        System.Threading.Tasks.Task<ApiResponse<QuickShareFull>> HttpQuickShareGetByIdWithHttpInfoAsync(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -102,7 +162,7 @@ namespace Agravity.Public.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPublicCollectionSharingApi : IPublicCollectionSharingApiSync, IPublicCollectionSharingApiAsync
+    public interface IPublicSharingManagementApi : IPublicSharingManagementApiSync, IPublicSharingManagementApiAsync
     {
 
     }
@@ -110,23 +170,23 @@ namespace Agravity.Public.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class PublicCollectionSharingApi : IPublicCollectionSharingApi
+    public partial class PublicSharingManagementApi : IPublicSharingManagementApi
     {
         private Agravity.Public.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCollectionSharingApi"/> class.
+        /// Initializes a new instance of the <see cref="PublicSharingManagementApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PublicCollectionSharingApi() : this((string)null)
+        public PublicSharingManagementApi() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCollectionSharingApi"/> class.
+        /// Initializes a new instance of the <see cref="PublicSharingManagementApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PublicCollectionSharingApi(string basePath)
+        public PublicSharingManagementApi(string basePath)
         {
             this.Configuration = Agravity.Public.Client.Configuration.MergeConfigurations(
                 Agravity.Public.Client.GlobalConfiguration.Instance,
@@ -138,12 +198,12 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCollectionSharingApi"/> class
+        /// Initializes a new instance of the <see cref="PublicSharingManagementApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public PublicCollectionSharingApi(Agravity.Public.Client.Configuration configuration)
+        public PublicSharingManagementApi(Agravity.Public.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -157,13 +217,13 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCollectionSharingApi"/> class
+        /// Initializes a new instance of the <see cref="PublicSharingManagementApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public PublicCollectionSharingApi(Agravity.Public.Client.ISynchronousClient client, Agravity.Public.Client.IAsynchronousClient asyncClient, Agravity.Public.Client.IReadableConfiguration configuration)
+        public PublicSharingManagementApi(Agravity.Public.Client.ISynchronousClient client, Agravity.Public.Client.IAsynchronousClient asyncClient, Agravity.Public.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -217,37 +277,37 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  Returns one single shared collection (from ID)
+        ///  Returns one single quick share (from ID)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the shared collection.</param>
+        /// <param name="id">The ID of the quick share.</param>
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>SharedCollectionFull</returns>
-        public SharedCollectionFull HttpSharedCollectionsGetById(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0)
+        /// <returns>QuickShareFull</returns>
+        public QuickShareFull HttpQuickShareGetById(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<SharedCollectionFull> localVarResponse = HttpSharedCollectionsGetByIdWithHttpInfo(id, continuationToken, limit, orderby);
+            Agravity.Public.Client.ApiResponse<QuickShareFull> localVarResponse = HttpQuickShareGetByIdWithHttpInfo(id, continuationToken, limit, orderby);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Returns one single shared collection (from ID)
+        ///  Returns one single quick share (from ID)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the shared collection.</param>
+        /// <param name="id">The ID of the quick share.</param>
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of SharedCollectionFull</returns>
-        public Agravity.Public.Client.ApiResponse<SharedCollectionFull> HttpSharedCollectionsGetByIdWithHttpInfo(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of QuickShareFull</returns>
+        public Agravity.Public.Client.ApiResponse<QuickShareFull> HttpQuickShareGetByIdWithHttpInfo(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicCollectionSharingApi->HttpSharedCollectionsGetById");
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicSharingManagementApi->HttpQuickShareGetById");
             }
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -286,7 +346,187 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "orderby", orderby));
             }
 
-            localVarRequestOptions.Operation = "PublicCollectionSharingApi.HttpSharedCollectionsGetById";
+            localVarRequestOptions.Operation = "PublicSharingManagementApi.HttpQuickShareGetById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<QuickShareFull>("/quickshares/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpQuickShareGetById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Returns one single quick share (from ID)
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the quick share.</param>
+        /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
+        /// <param name="limit">This number limits the page result of assets. (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of QuickShareFull</returns>
+        public async System.Threading.Tasks.Task<QuickShareFull> HttpQuickShareGetByIdAsync(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<QuickShareFull> localVarResponse = await HttpQuickShareGetByIdWithHttpInfoAsync(id, continuationToken, limit, orderby, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Returns one single quick share (from ID)
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the quick share.</param>
+        /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
+        /// <param name="limit">This number limits the page result of assets. (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (QuickShareFull)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<QuickShareFull>> HttpQuickShareGetByIdWithHttpInfoAsync(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicSharingManagementApi->HttpQuickShareGetById");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (continuationToken != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "continuation_token", continuationToken));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (orderby != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "orderby", orderby));
+            }
+
+            localVarRequestOptions.Operation = "PublicSharingManagementApi.HttpQuickShareGetById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<QuickShareFull>("/quickshares/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpQuickShareGetById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Returns one single shared collection (from ID)
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the shared collection.</param>
+        /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
+        /// <param name="limit">This number limits the page result of assets. (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SharedCollectionFull</returns>
+        public SharedCollectionFull HttpSharedCollectionsGetById(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<SharedCollectionFull> localVarResponse = HttpSharedCollectionsGetByIdWithHttpInfo(id, continuationToken, limit, orderby);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Returns one single shared collection (from ID)
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the shared collection.</param>
+        /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
+        /// <param name="limit">This number limits the page result of assets. (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SharedCollectionFull</returns>
+        public Agravity.Public.Client.ApiResponse<SharedCollectionFull> HttpSharedCollectionsGetByIdWithHttpInfo(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicSharingManagementApi->HttpSharedCollectionsGetById");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (continuationToken != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "continuation_token", continuationToken));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (orderby != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "orderby", orderby));
+            }
+
+            localVarRequestOptions.Operation = "PublicSharingManagementApi.HttpSharedCollectionsGetById";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
@@ -337,7 +577,7 @@ namespace Agravity.Public.Api
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicCollectionSharingApi->HttpSharedCollectionsGetById");
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicSharingManagementApi->HttpSharedCollectionsGetById");
             }
 
 
@@ -377,7 +617,7 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "orderby", orderby));
             }
 
-            localVarRequestOptions.Operation = "PublicCollectionSharingApi.HttpSharedCollectionsGetById";
+            localVarRequestOptions.Operation = "PublicSharingManagementApi.HttpSharedCollectionsGetById";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 

@@ -140,7 +140,6 @@ Class | Method | HTTP request | Description
 *PublicCollectionManagementApi* | [**HttpPublicCollectionsUpdateById**](docs\PublicCollectionManagementApi.md#httppubliccollectionsupdatebyid) | **POST** /collections/{id} | 
 *PublicCollectionSecureUploadApi* | [**HttpSecureUploadEntityCheckById**](docs\PublicCollectionSecureUploadApi.md#httpsecureuploadentitycheckbyid) | **GET** /secureupload/{id} | 
 *PublicCollectionSecureUploadApi* | [**HttpSecureUploadFileById**](docs\PublicCollectionSecureUploadApi.md#httpsecureuploadfilebyid) | **POST** /secureupload/{id}/upload | 
-*PublicCollectionSharingApi* | [**HttpSharedCollectionsGetById**](docs\PublicCollectionSharingApi.md#httpsharedcollectionsgetbyid) | **GET** /shared/{id} | 
 *PublicCollectionTypeManagementApi* | [**HttpCollectionTypesGet**](docs\PublicCollectionTypeManagementApi.md#httpcollectiontypesget) | **GET** /collectiontypes | 
 *PublicCollectionTypeManagementApi* | [**HttpCollectionTypesGetById**](docs\PublicCollectionTypeManagementApi.md#httpcollectiontypesgetbyid) | **GET** /collectiontypes/{id} | 
 *PublicCollectionTypeManagementApi* | [**HttpGetCollectionTypeItems**](docs\PublicCollectionTypeManagementApi.md#httpgetcollectiontypeitems) | **GET** /collectiontypesitems | 
@@ -156,6 +155,8 @@ Class | Method | HTTP request | Description
 *PublicPublishingApi* | [**HttpPublishedAssetsGetAll**](docs\PublicPublishingApi.md#httppublishedassetsgetall) | **GET** /publish | 
 *PublicSavedSearchApi* | [**HttpSavedSearchesGetAll**](docs\PublicSavedSearchApi.md#httpsavedsearchesgetall) | **GET** /savedsearches | 
 *PublicSearchManagementApi* | [**HttpGlobalSearch**](docs\PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search | 
+*PublicSharingManagementApi* | [**HttpQuickShareGetById**](docs\PublicSharingManagementApi.md#httpquicksharegetbyid) | **GET** /quickshares/{id} | 
+*PublicSharingManagementApi* | [**HttpSharedCollectionsGetById**](docs\PublicSharingManagementApi.md#httpsharedcollectionsgetbyid) | **GET** /shared/{id} | 
 *PublicSignalRConnectionManagementApi* | [**HttpSignalRNegotiate**](docs\PublicSignalRConnectionManagementApi.md#httpsignalrnegotiate) | **POST** /signalr/negotiate | 
 *PublicStaticDefinedListManagementApi* | [**HttpStaticDefinedListsGetAll**](docs\PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsgetall) | **GET** /staticdefinedlists | 
 *PublicStaticDefinedListManagementApi* | [**HttpStaticDefinedListsGetById**](docs\PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsgetbyid) | **GET** /staticdefinedlists/{id} | 
@@ -177,6 +178,7 @@ Class | Method | HTTP request | Description
  - [Model.ArtificialIntelligenceGroup](docs\ArtificialIntelligenceGroup.md)
  - [Model.Asset](docs\Asset.md)
  - [Model.AssetBlob](docs\AssetBlob.md)
+ - [Model.AssetIdContainer](docs\AssetIdContainer.md)
  - [Model.AssetPageResult](docs\AssetPageResult.md)
  - [Model.AzSearchOptions](docs\AzSearchOptions.md)
  - [Model.BadRequestResult](docs\BadRequestResult.md)
@@ -197,6 +199,7 @@ Class | Method | HTTP request | Description
  - [Model.OkResult](docs\OkResult.md)
  - [Model.PublishEntity](docs\PublishEntity.md)
  - [Model.PublishedAsset](docs\PublishedAsset.md)
+ - [Model.QuickShareFull](docs\QuickShareFull.md)
  - [Model.SasToken](docs\SasToken.md)
  - [Model.SavedSearch](docs\SavedSearch.md)
  - [Model.SearchFacet](docs\SearchFacet.md)

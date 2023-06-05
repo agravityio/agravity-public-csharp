@@ -120,6 +120,7 @@ Class | Method | HTTP request | Description
 *PublicAssetOperationsApi* | [**HttpGetAssetDownload**](docs\PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download | 
 *PublicAssetOperationsApi* | [**HttpImageDynamicEdit**](docs\PublicAssetOperationsApi.md#httpimagedynamicedit) | **POST** /assets/{id}/imageedit | 
 *PublicAssetOperationsApi* | [**HttpImageDynamicGetFromDownloadId**](docs\PublicAssetOperationsApi.md#httpimagedynamicgetfromdownloadid) | **GET** /assets/{id}/imageedit/{download_format_id} | 
+*PublicAssetOperationsApi* | [**HttpPutAssetAvailability**](docs\PublicAssetOperationsApi.md#httpputassetavailability) | **PUT** /assets/{id}/availability | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsCreate**](docs\PublicAssetPublishingApi.md#httppublishedassetscreate) | **POST** /assets/{id}/publish | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsGet**](docs\PublicAssetPublishingApi.md#httppublishedassetsget) | **GET** /assets/{id}/publish | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsGetById**](docs\PublicAssetPublishingApi.md#httppublishedassetsgetbyid) | **GET** /assets/{id}/publish/{pid} | 
@@ -177,6 +178,7 @@ Class | Method | HTTP request | Description
  - [Model.AllWebAppData](docs\AllWebAppData.md)
  - [Model.ArtificialIntelligenceGroup](docs\ArtificialIntelligenceGroup.md)
  - [Model.Asset](docs\Asset.md)
+ - [Model.AssetAvailability](docs\AssetAvailability.md)
  - [Model.AssetBlob](docs\AssetBlob.md)
  - [Model.AssetIdContainer](docs\AssetIdContainer.md)
  - [Model.AssetPageResult](docs\AssetPageResult.md)

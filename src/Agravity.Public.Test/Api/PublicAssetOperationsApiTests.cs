@@ -159,5 +159,18 @@ namespace Agravity.Public.Test.Api
             //var response = instance.HttpImageDynamicGetFromDownloadId(id, downloadFormatId);
             //Assert.IsType<System.IO.Stream>(response);
         }
+
+        /// <summary>
+        /// Test HttpPutAssetAvailability
+        /// </summary>
+        [Fact]
+        public void HttpPutAssetAvailabilityTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //AssetAvailability assetAvailability = null;
+            //var response = instance.HttpPutAssetAvailability(id, assetAvailability);
+            //Assert.IsType<AssetAvailability>(response);
+        }
     }
 }

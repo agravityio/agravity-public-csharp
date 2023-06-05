@@ -11,6 +11,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpGetAssetDownload**](PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download |  |
 | [**HttpImageDynamicEdit**](PublicAssetOperationsApi.md#httpimagedynamicedit) | **POST** /assets/{id}/imageedit |  |
 | [**HttpImageDynamicGetFromDownloadId**](PublicAssetOperationsApi.md#httpimagedynamicgetfromdownloadid) | **GET** /assets/{id}/imageedit/{download_format_id} |  |
+| [**HttpPutAssetAvailability**](PublicAssetOperationsApi.md#httpputassetavailability) | **PUT** /assets/{id}/availability |  |
 
 <a name="httpassetimageedit"></a>
 # **HttpAssetImageEdit**
@@ -733,6 +734,105 @@ catch (ApiException e)
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **404** | The requested item could not be found |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="httpputassetavailability"></a>
+# **HttpPutAssetAvailability**
+> AssetAvailability HttpPutAssetAvailability (string id, AssetAvailability assetAvailability)
+
+
+
+This endpoint sets the availability of the asset. All properties are put on the asset and replace previous values.To make an asset unavailable set the `availability` property to 'locked' or set the `available_from` property below the current date. To make it available set empty string to `availability` property or `available_to` property into past.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpPutAssetAvailabilityExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicAssetOperationsApi(config);
+            var id = "id_example";  // string | The ID of the asset.
+            var assetAvailability = new AssetAvailability(); // AssetAvailability | The values are validated and put directly on the asset.
+
+            try
+            {
+                AssetAvailability result = apiInstance.HttpPutAssetAvailability(id, assetAvailability);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpPutAssetAvailability: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpPutAssetAvailabilityWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<AssetAvailability> response = apiInstance.HttpPutAssetAvailabilityWithHttpInfo(id, assetAvailability);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpPutAssetAvailabilityWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
+| **assetAvailability** | [**AssetAvailability**](AssetAvailability.md) | The values are validated and put directly on the asset. |  |
+
+### Return type
+
+[**AssetAvailability**](AssetAvailability.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The values are return which are put on the asset. |  -  |
+| **400** | Could not parse the asset availability object. (Code: 85ba8328-9181-4d74-a326-4073b17346d8)&lt;br&gt;Object is not a valid asset availability object. (Code: 5515ebe5-2751-4760-a864-47812126b9a1)&lt;br&gt;Asset availability has a confusing state: {updated.Availability}. (Code: 5515ebe5-2751-4760-a864-47812126b9a1)&lt;br&gt;Ambiguous information: Asset available_from can not be greater or equal as available_to when asset should be available.(Code: 16338bcd-614c-4322-a164-e3112d622392 )&lt;br&gt;Ambiguous information: Asset available_from can not be less or equal as available_to when asset should be locked and is not in the future. (Code: 092ddb50-2af8-49a1-b005-68c9d5c600d1)&lt;br&gt;Error on upsert asset availability in database - max retry count is reached. (Code: 98a80b23-bf8d-4cc1-ad6c-08cd69214dcd) &lt;br&gt; |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator.(Code: afe4e8f5-758f-4eac-9d7b-aa3124f9fe51) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

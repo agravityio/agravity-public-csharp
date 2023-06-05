@@ -7,6 +7,7 @@ docs/AgravityVersion.md
 docs/AllWebAppData.md
 docs/ArtificialIntelligenceGroup.md
 docs/Asset.md
+docs/AssetAvailability.md
 docs/AssetBlob.md
 docs/AssetIdContainer.md
 docs/AssetPageResult.md
@@ -93,6 +94,7 @@ src/Agravity.Public.Test/Model/AgravityErrorResponseTests.cs
 src/Agravity.Public.Test/Model/AgravityVersionTests.cs
 src/Agravity.Public.Test/Model/AllWebAppDataTests.cs
 src/Agravity.Public.Test/Model/ArtificialIntelligenceGroupTests.cs
+src/Agravity.Public.Test/Model/AssetAvailabilityTests.cs
 src/Agravity.Public.Test/Model/AssetBlobTests.cs
 src/Agravity.Public.Test/Model/AssetIdContainerTests.cs
 src/Agravity.Public.Test/Model/AssetPageResultTests.cs
@@ -176,6 +178,7 @@ src/Agravity.Public/Model/AgravityVersion.cs
 src/Agravity.Public/Model/AllWebAppData.cs
 src/Agravity.Public/Model/ArtificialIntelligenceGroup.cs
 src/Agravity.Public/Model/Asset.cs
+src/Agravity.Public/Model/AssetAvailability.cs
 src/Agravity.Public/Model/AssetBlob.cs
 src/Agravity.Public/Model/AssetIdContainer.cs
 src/Agravity.Public/Model/AssetPageResult.cs

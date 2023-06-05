@@ -230,6 +230,31 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
         ApiResponse<System.IO.Stream> HttpImageDynamicGetFromDownloadIdWithHttpInfo(string id, string downloadFormatId, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint sets the availability of the asset. All properties are put on the asset and replace previous values.To make an asset unavailable set the &#x60;availability&#x60; property to &#39;locked&#39; or set the &#x60;available_from&#x60; property below the current date. To make it available set empty string to &#x60;availability&#x60; property or &#x60;available_to&#x60; property into past.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="assetAvailability">The values are validated and put directly on the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AssetAvailability</returns>
+        AssetAvailability HttpPutAssetAvailability(string id, AssetAvailability assetAvailability, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint sets the availability of the asset. All properties are put on the asset and replace previous values.To make an asset unavailable set the &#x60;availability&#x60; property to &#39;locked&#39; or set the &#x60;available_from&#x60; property below the current date. To make it available set empty string to &#x60;availability&#x60; property or &#x60;available_to&#x60; property into past.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="assetAvailability">The values are validated and put directly on the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AssetAvailability</returns>
+        ApiResponse<AssetAvailability> HttpPutAssetAvailabilityWithHttpInfo(string id, AssetAvailability assetAvailability, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -456,6 +481,33 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> HttpImageDynamicGetFromDownloadIdWithHttpInfoAsync(string id, string downloadFormatId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint sets the availability of the asset. All properties are put on the asset and replace previous values.To make an asset unavailable set the &#x60;availability&#x60; property to &#39;locked&#39; or set the &#x60;available_from&#x60; property below the current date. To make it available set empty string to &#x60;availability&#x60; property or &#x60;available_to&#x60; property into past.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="assetAvailability">The values are validated and put directly on the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AssetAvailability</returns>
+        System.Threading.Tasks.Task<AssetAvailability> HttpPutAssetAvailabilityAsync(string id, AssetAvailability assetAvailability, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint sets the availability of the asset. All properties are put on the asset and replace previous values.To make an asset unavailable set the &#x60;availability&#x60; property to &#39;locked&#39; or set the &#x60;available_from&#x60; property below the current date. To make it available set empty string to &#x60;availability&#x60; property or &#x60;available_to&#x60; property into past.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="assetAvailability">The values are validated and put directly on the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AssetAvailability)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AssetAvailability>> HttpPutAssetAvailabilityWithHttpInfoAsync(string id, AssetAvailability assetAvailability, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1925,6 +1977,180 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpImageDynamicGetFromDownloadId", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint sets the availability of the asset. All properties are put on the asset and replace previous values.To make an asset unavailable set the &#x60;availability&#x60; property to &#39;locked&#39; or set the &#x60;available_from&#x60; property below the current date. To make it available set empty string to &#x60;availability&#x60; property or &#x60;available_to&#x60; property into past.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="assetAvailability">The values are validated and put directly on the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AssetAvailability</returns>
+        public AssetAvailability HttpPutAssetAvailability(string id, AssetAvailability assetAvailability, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<AssetAvailability> localVarResponse = HttpPutAssetAvailabilityWithHttpInfo(id, assetAvailability);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint sets the availability of the asset. All properties are put on the asset and replace previous values.To make an asset unavailable set the &#x60;availability&#x60; property to &#39;locked&#39; or set the &#x60;available_from&#x60; property below the current date. To make it available set empty string to &#x60;availability&#x60; property or &#x60;available_to&#x60; property into past.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="assetAvailability">The values are validated and put directly on the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AssetAvailability</returns>
+        public Agravity.Public.Client.ApiResponse<AssetAvailability> HttpPutAssetAvailabilityWithHttpInfo(string id, AssetAvailability assetAvailability, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetOperationsApi->HttpPutAssetAvailability");
+            }
+
+            // verify the required parameter 'assetAvailability' is set
+            if (assetAvailability == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'assetAvailability' when calling PublicAssetOperationsApi->HttpPutAssetAvailability");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = assetAvailability;
+
+            localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpPutAssetAvailability";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<AssetAvailability>("/assets/{id}/availability", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPutAssetAvailability", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint sets the availability of the asset. All properties are put on the asset and replace previous values.To make an asset unavailable set the &#x60;availability&#x60; property to &#39;locked&#39; or set the &#x60;available_from&#x60; property below the current date. To make it available set empty string to &#x60;availability&#x60; property or &#x60;available_to&#x60; property into past.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="assetAvailability">The values are validated and put directly on the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AssetAvailability</returns>
+        public async System.Threading.Tasks.Task<AssetAvailability> HttpPutAssetAvailabilityAsync(string id, AssetAvailability assetAvailability, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<AssetAvailability> localVarResponse = await HttpPutAssetAvailabilityWithHttpInfoAsync(id, assetAvailability, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint sets the availability of the asset. All properties are put on the asset and replace previous values.To make an asset unavailable set the &#x60;availability&#x60; property to &#39;locked&#39; or set the &#x60;available_from&#x60; property below the current date. To make it available set empty string to &#x60;availability&#x60; property or &#x60;available_to&#x60; property into past.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="assetAvailability">The values are validated and put directly on the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AssetAvailability)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetAvailability>> HttpPutAssetAvailabilityWithHttpInfoAsync(string id, AssetAvailability assetAvailability, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetOperationsApi->HttpPutAssetAvailability");
+            }
+
+            // verify the required parameter 'assetAvailability' is set
+            if (assetAvailability == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'assetAvailability' when calling PublicAssetOperationsApi->HttpPutAssetAvailability");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = assetAvailability;
+
+            localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpPutAssetAvailability";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<AssetAvailability>("/assets/{id}/availability", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPutAssetAvailability", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

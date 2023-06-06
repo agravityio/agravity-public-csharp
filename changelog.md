@@ -9,6 +9,14 @@ and this project does not adheres to [Semantic Versioning](https://semver.org/sp
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
 ---
+
+## AgravityAPI <a name="5.2.0"/> [5.2.0](https://www.nuget.org/packages/Agravity.Public/5.2.0) (2023-06-06)
+---
+
+- Add GET `/quickshares/{id}` to get a full QuickShares (incl. asset paging)
+- Add PUT `/assets/{id}/availability` to set the availability of an asset
+
+
 ## AgravityAPI <a name="5.1.6"/> [5.1.6](https://www.nuget.org/packages/Agravity.Public/5.1.6) (2023-05-23)
 ---
 

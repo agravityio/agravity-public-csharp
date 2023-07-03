@@ -9,7 +9,7 @@ docs/ArtificialIntelligenceGroup.md
 docs/Asset.md
 docs/AssetAvailability.md
 docs/AssetBlob.md
-docs/AssetIdContainer.md
+docs/AssetIdFormat.md
 docs/AssetPageResult.md
 docs/AzSearchOptions.md
 docs/BadRequestResult.md
@@ -96,7 +96,7 @@ src/Agravity.Public.Test/Model/AllWebAppDataTests.cs
 src/Agravity.Public.Test/Model/ArtificialIntelligenceGroupTests.cs
 src/Agravity.Public.Test/Model/AssetAvailabilityTests.cs
 src/Agravity.Public.Test/Model/AssetBlobTests.cs
-src/Agravity.Public.Test/Model/AssetIdContainerTests.cs
+src/Agravity.Public.Test/Model/AssetIdFormatTests.cs
 src/Agravity.Public.Test/Model/AssetPageResultTests.cs
 src/Agravity.Public.Test/Model/AssetTests.cs
 src/Agravity.Public.Test/Model/AzSearchOptionsTests.cs
@@ -180,7 +180,7 @@ src/Agravity.Public/Model/ArtificialIntelligenceGroup.cs
 src/Agravity.Public/Model/Asset.cs
 src/Agravity.Public/Model/AssetAvailability.cs
 src/Agravity.Public/Model/AssetBlob.cs
-src/Agravity.Public/Model/AssetIdContainer.cs
+src/Agravity.Public/Model/AssetIdFormat.cs
 src/Agravity.Public/Model/AssetPageResult.cs
 src/Agravity.Public/Model/AzSearchOptions.cs
 src/Agravity.Public/Model/BadRequestResult.cs

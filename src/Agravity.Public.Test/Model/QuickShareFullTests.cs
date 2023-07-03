@@ -138,6 +138,14 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Url'
         }
         /// <summary>
+        /// Test the property 'ZipUrl'
+        /// </summary>
+        [Fact]
+        public void ZipUrlTest()
+        {
+            // TODO unit test for the property 'ZipUrl'
+        }
+        /// <summary>
         /// Test the property 'Status'
         /// </summary>
         [Fact]

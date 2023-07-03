@@ -45,6 +45,7 @@ namespace Agravity.Public.Model
         /// <param name="users">users.</param>
         /// <param name="expires">expires.</param>
         /// <param name="url">url.</param>
+        /// <param name="zipUrl">zipUrl.</param>
         /// <param name="status">status.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="createdBy">createdBy.</param>
@@ -52,7 +53,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public QuickShareFull(List<SharedAsset> page = default(List<SharedAsset>), int pageSize = default(int), int? size = default(int?), string continuationToken = default(string), string id = default(string), string entityType = default(string), List<AssetIdContainer> assets = default(List<AssetIdContainer>), List<EntityId> users = default(List<EntityId>), DateTime expires = default(DateTime), string url = default(string), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public QuickShareFull(List<SharedAsset> page = default(List<SharedAsset>), int pageSize = default(int), int? size = default(int?), string continuationToken = default(string), string id = default(string), string entityType = default(string), List<AssetIdFormat> assets = default(List<AssetIdFormat>), List<EntityId> users = default(List<EntityId>), DateTime expires = default(DateTime), string url = default(string), string zipUrl = default(string), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Page = page;
             this.PageSize = pageSize;
@@ -64,6 +65,7 @@ namespace Agravity.Public.Model
             this.Users = users;
             this.Expires = expires;
             this.Url = url;
+            this.ZipUrl = zipUrl;
             this.Status = status;
             this.CreatedDate = createdDate;
             this.CreatedBy = createdBy;
@@ -113,7 +115,7 @@ namespace Agravity.Public.Model
         /// Gets or Sets Assets
         /// </summary>
         [DataMember(Name = "assets", EmitDefaultValue = false)]
-        public List<AssetIdContainer> Assets { get; set; }
+        public List<AssetIdFormat> Assets { get; set; }
 
         /// <summary>
         /// Gets or Sets Users
@@ -132,6 +134,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ZipUrl
+        /// </summary>
+        [DataMember(Name = "zip_url", EmitDefaultValue = false)]
+        public string ZipUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
@@ -193,6 +201,7 @@ namespace Agravity.Public.Model
             sb.Append("  Users: ").Append(Users).Append("\n");
             sb.Append("  Expires: ").Append(Expires).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
+            sb.Append("  ZipUrl: ").Append(ZipUrl).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -288,6 +297,11 @@ namespace Agravity.Public.Model
                     this.Url.Equals(input.Url))
                 ) && 
                 (
+                    this.ZipUrl == input.ZipUrl ||
+                    (this.ZipUrl != null &&
+                    this.ZipUrl.Equals(input.ZipUrl))
+                ) && 
+                (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
@@ -369,6 +383,10 @@ namespace Agravity.Public.Model
                 if (this.Url != null)
                 {
                     hashCode = (hashCode * 59) + this.Url.GetHashCode();
+                }
+                if (this.ZipUrl != null)
+                {
+                    hashCode = (hashCode * 59) + this.ZipUrl.GetHashCode();
                 }
                 if (this.Status != null)
                 {

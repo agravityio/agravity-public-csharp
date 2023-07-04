@@ -10,6 +10,12 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="5.2.1"/> [5.2.1](https://www.nuget.org/packages/Agravity.Public/5.2.1) (2023-07-04)
+---
+
+- Refactor `AssetIdContainer` to `AssetIdFormat`
+- Add `zip_url` to quickshare (and full)
+
 ## AgravityAPI <a name="5.2.0"/> [5.2.0](https://www.nuget.org/packages/Agravity.Public/5.2.0) (2023-06-06)
 ---
 

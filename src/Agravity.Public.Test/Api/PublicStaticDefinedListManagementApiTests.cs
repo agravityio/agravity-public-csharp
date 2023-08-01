@@ -79,5 +79,20 @@ namespace Agravity.Public.Test.Api
             //var response = instance.HttpStaticDefinedListsGetById(id, translations);
             //Assert.IsType<StaticDefinedList>(response);
         }
+
+        /// <summary>
+        /// Test HttpStaticDefinedListsUpdateById
+        /// </summary>
+        [Fact]
+        public void HttpStaticDefinedListsUpdateByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //string updatemode = null;
+            //StaticDefinedList staticDefinedList = null;
+            //bool? translations = null;
+            //var response = instance.HttpStaticDefinedListsUpdateById(id, updatemode, staticDefinedList, translations);
+            //Assert.IsType<StaticDefinedList>(response);
+        }
     }
 }

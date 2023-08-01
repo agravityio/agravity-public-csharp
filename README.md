@@ -161,6 +161,7 @@ Class | Method | HTTP request | Description
 *PublicSignalRConnectionManagementApi* | [**HttpSignalRNegotiate**](docs\PublicSignalRConnectionManagementApi.md#httpsignalrnegotiate) | **POST** /signalr/negotiate | 
 *PublicStaticDefinedListManagementApi* | [**HttpStaticDefinedListsGetAll**](docs\PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsgetall) | **GET** /staticdefinedlists | 
 *PublicStaticDefinedListManagementApi* | [**HttpStaticDefinedListsGetById**](docs\PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsgetbyid) | **GET** /staticdefinedlists/{id} | 
+*PublicStaticDefinedListManagementApi* | [**HttpStaticDefinedListsUpdateById**](docs\PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsupdatebyid) | **POST** /staticdefinedlists/{id} | 
 *PublicTranslationManagementApi* | [**HttpTranslationsById**](docs\PublicTranslationManagementApi.md#httptranslationsbyid) | **GET** /translations/{id} | 
 *PublicTranslationManagementApi* | [**HttpTranslationsByIdFilterByCustomField**](docs\PublicTranslationManagementApi.md#httptranslationsbyidfilterbycustomfield) | **GET** /translations/{id}/custom/{customField} | 
 *PublicTranslationManagementApi* | [**HttpTranslationsByIdFilterByProperty**](docs\PublicTranslationManagementApi.md#httptranslationsbyidfilterbyproperty) | **GET** /translations/{id}/{property} | 

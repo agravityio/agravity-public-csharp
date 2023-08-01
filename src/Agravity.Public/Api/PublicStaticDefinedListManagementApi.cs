@@ -75,6 +75,35 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of StaticDefinedList</returns>
         ApiResponse<StaticDefinedList> HttpStaticDefinedListsGetByIdWithHttpInfo(string id, bool? translations = default(bool?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint update a static defined list in database (add, delete or replace values).
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the static defined list.</param>
+        /// <param name="updatemode">The mode how the list should be updated. Available values are: add, delete and replace.</param>
+        /// <param name="staticDefinedList">The values which should be updated.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>StaticDefinedList</returns>
+        StaticDefinedList HttpStaticDefinedListsUpdateById(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint update a static defined list in database (add, delete or replace values).
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the static defined list.</param>
+        /// <param name="updatemode">The mode how the list should be updated. Available values are: add, delete and replace.</param>
+        /// <param name="staticDefinedList">The values which should be updated.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of StaticDefinedList</returns>
+        ApiResponse<StaticDefinedList> HttpStaticDefinedListsUpdateByIdWithHttpInfo(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -136,6 +165,37 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StaticDefinedList)</returns>
         System.Threading.Tasks.Task<ApiResponse<StaticDefinedList>> HttpStaticDefinedListsGetByIdWithHttpInfoAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint update a static defined list in database (add, delete or replace values).
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the static defined list.</param>
+        /// <param name="updatemode">The mode how the list should be updated. Available values are: add, delete and replace.</param>
+        /// <param name="staticDefinedList">The values which should be updated.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of StaticDefinedList</returns>
+        System.Threading.Tasks.Task<StaticDefinedList> HttpStaticDefinedListsUpdateByIdAsync(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint update a static defined list in database (add, delete or replace values).
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the static defined list.</param>
+        /// <param name="updatemode">The mode how the list should be updated. Available values are: add, delete and replace.</param>
+        /// <param name="staticDefinedList">The values which should be updated.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (StaticDefinedList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<StaticDefinedList>> HttpStaticDefinedListsUpdateByIdWithHttpInfoAsync(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -561,6 +621,210 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpStaticDefinedListsGetById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint update a static defined list in database (add, delete or replace values).
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the static defined list.</param>
+        /// <param name="updatemode">The mode how the list should be updated. Available values are: add, delete and replace.</param>
+        /// <param name="staticDefinedList">The values which should be updated.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>StaticDefinedList</returns>
+        public StaticDefinedList HttpStaticDefinedListsUpdateById(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<StaticDefinedList> localVarResponse = HttpStaticDefinedListsUpdateByIdWithHttpInfo(id, updatemode, staticDefinedList, translations);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint update a static defined list in database (add, delete or replace values).
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the static defined list.</param>
+        /// <param name="updatemode">The mode how the list should be updated. Available values are: add, delete and replace.</param>
+        /// <param name="staticDefinedList">The values which should be updated.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of StaticDefinedList</returns>
+        public Agravity.Public.Client.ApiResponse<StaticDefinedList> HttpStaticDefinedListsUpdateByIdWithHttpInfo(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicStaticDefinedListManagementApi->HttpStaticDefinedListsUpdateById");
+            }
+
+            // verify the required parameter 'updatemode' is set
+            if (updatemode == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'updatemode' when calling PublicStaticDefinedListManagementApi->HttpStaticDefinedListsUpdateById");
+            }
+
+            // verify the required parameter 'staticDefinedList' is set
+            if (staticDefinedList == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'staticDefinedList' when calling PublicStaticDefinedListManagementApi->HttpStaticDefinedListsUpdateById");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "updatemode", updatemode));
+            localVarRequestOptions.Data = staticDefinedList;
+
+            localVarRequestOptions.Operation = "PublicStaticDefinedListManagementApi.HttpStaticDefinedListsUpdateById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<StaticDefinedList>("/staticdefinedlists/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpStaticDefinedListsUpdateById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint update a static defined list in database (add, delete or replace values).
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the static defined list.</param>
+        /// <param name="updatemode">The mode how the list should be updated. Available values are: add, delete and replace.</param>
+        /// <param name="staticDefinedList">The values which should be updated.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of StaticDefinedList</returns>
+        public async System.Threading.Tasks.Task<StaticDefinedList> HttpStaticDefinedListsUpdateByIdAsync(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<StaticDefinedList> localVarResponse = await HttpStaticDefinedListsUpdateByIdWithHttpInfoAsync(id, updatemode, staticDefinedList, translations, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint update a static defined list in database (add, delete or replace values).
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the static defined list.</param>
+        /// <param name="updatemode">The mode how the list should be updated. Available values are: add, delete and replace.</param>
+        /// <param name="staticDefinedList">The values which should be updated.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (StaticDefinedList)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<StaticDefinedList>> HttpStaticDefinedListsUpdateByIdWithHttpInfoAsync(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicStaticDefinedListManagementApi->HttpStaticDefinedListsUpdateById");
+            }
+
+            // verify the required parameter 'updatemode' is set
+            if (updatemode == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'updatemode' when calling PublicStaticDefinedListManagementApi->HttpStaticDefinedListsUpdateById");
+            }
+
+            // verify the required parameter 'staticDefinedList' is set
+            if (staticDefinedList == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'staticDefinedList' when calling PublicStaticDefinedListManagementApi->HttpStaticDefinedListsUpdateById");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "updatemode", updatemode));
+            localVarRequestOptions.Data = staticDefinedList;
+
+            localVarRequestOptions.Operation = "PublicStaticDefinedListManagementApi.HttpStaticDefinedListsUpdateById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<StaticDefinedList>("/staticdefinedlists/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpStaticDefinedListsUpdateById", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

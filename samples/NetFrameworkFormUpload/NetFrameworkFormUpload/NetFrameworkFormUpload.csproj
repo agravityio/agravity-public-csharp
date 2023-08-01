@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Agravity.Public, Version=5.0.1.0, Culture=neutral, PublicKeyToken=ed79167b0b08c6ed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Agravity.Public.5.0.1\lib\netstandard2.0\Agravity.Public.dll</HintPath>
-    </Reference>
     <Reference Include="JsonSubTypes, Version=2.0.1.0, Culture=neutral, PublicKeyToken=ee75fc290dbc1176, processorArchitecture=MSIL">
       <HintPath>..\packages\JsonSubTypes.2.0.1\lib\net47\JsonSubTypes.dll</HintPath>
     </Reference>
@@ -178,6 +175,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Agravity.Public\Agravity.Public.csproj">
+      <Project>{188c0a32-d96b-431c-9c4e-84401bfe4bad}</Project>
+      <Name>Agravity.Public</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

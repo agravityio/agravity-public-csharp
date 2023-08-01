@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetFrameworkFormUpload", "NetFrameworkFormUpload\NetFrameworkFormUpload.csproj", "{0356E98C-B6CC-4E5D-B3B0-6D8FC07125EB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agravity.Public", "..\..\src\Agravity.Public\Agravity.Public.csproj", "{188C0A32-D96B-431C-9C4E-84401BFE4BAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0356E98C-B6CC-4E5D-B3B0-6D8FC07125EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0356E98C-B6CC-4E5D-B3B0-6D8FC07125EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0356E98C-B6CC-4E5D-B3B0-6D8FC07125EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{188C0A32-D96B-431C-9C4E-84401BFE4BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{188C0A32-D96B-431C-9C4E-84401BFE4BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{188C0A32-D96B-431C-9C4E-84401BFE4BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{188C0A32-D96B-431C-9C4E-84401BFE4BAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

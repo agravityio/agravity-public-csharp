@@ -10,6 +10,11 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="5.3.1"/> [5.3.1](https://www.nuget.org/packages/Agravity.Public/5.3.1) (2023-08-01)
+---
+
+- Allow managing SDLs (add, remove, replace) in Public API
+
 ## AgravityAPI <a name="5.3.0"/> [5.3.0](https://www.nuget.org/packages/Agravity.Public/5.3.0) (2023-07-21)
 ---
 

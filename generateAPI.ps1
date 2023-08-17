@@ -88,4 +88,6 @@ $publish = Read-Host
 if ($publish -eq "y") {
     # publish nuget package
     dotnet nuget push .\out\Agravity.Public."$apiVersion".nupkg -s https://api.nuget.org/v3/index.json
+
+    code.cmd .\changelog.md
 }

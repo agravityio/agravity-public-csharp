@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a name="httpassetuploadfile"></a>
 # **HttpAssetUploadFile**
-> Asset HttpAssetUploadFile (string name = null, string collectionId = null, System.IO.Stream file = null)
+> Asset HttpAssetUploadFile (string name = null, string collectionId = null, System.IO.Stream file = null, string filename = null)
 
 
 
@@ -41,10 +41,11 @@ namespace Example
             var name = "name_example";  // string |  (optional) 
             var collectionId = "collectionId_example";  // string |  (optional) 
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
+            var filename = "filename_example";  // string |  (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpAssetUploadFile(name, collectionId, file);
+                Asset result = apiInstance.HttpAssetUploadFile(name, collectionId, file, filename);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Asset> response = apiInstance.HttpAssetUploadFileWithHttpInfo(name, collectionId, file);
+    ApiResponse<Asset> response = apiInstance.HttpAssetUploadFileWithHttpInfo(name, collectionId, file, filename);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,6 +85,7 @@ catch (ApiException e)
 | **name** | **string** |  | [optional]  |
 | **collectionId** | **string** |  | [optional]  |
 | **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
+| **filename** | **string** |  | [optional]  |
 
 ### Return type
 

@@ -83,10 +83,11 @@ namespace Example
             var name = "name_example";  // string |  (optional) 
             var collectionId = "collectionId_example";  // string |  (optional) 
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
+            var filename = "filename_example";  // string |  (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpAssetUploadFile(name, collectionId, file);
+                Asset result = apiInstance.HttpAssetUploadFile(name, collectionId, file, filename);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)

@@ -79,7 +79,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This method returns a list of collection types items.
+        /// This method returns a list of collection types items. (Regardless of the permissions)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
@@ -92,7 +92,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This method returns a list of collection types items.
+        /// This method returns a list of collection types items. (Regardless of the permissions)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
@@ -165,7 +165,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This method returns a list of collection types items.
+        /// This method returns a list of collection types items. (Regardless of the permissions)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
@@ -179,7 +179,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This method returns a list of collection types items.
+        /// This method returns a list of collection types items. (Regardless of the permissions)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
@@ -623,7 +623,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This method returns a list of collection types items.
+        ///  This method returns a list of collection types items. (Regardless of the permissions)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
@@ -637,7 +637,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This method returns a list of collection types items.
+        ///  This method returns a list of collection types items. (Regardless of the permissions)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
@@ -701,7 +701,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This method returns a list of collection types items.
+        ///  This method returns a list of collection types items. (Regardless of the permissions)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
@@ -716,7 +716,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This method returns a list of collection types items.
+        ///  This method returns a list of collection types items. (Regardless of the permissions)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>

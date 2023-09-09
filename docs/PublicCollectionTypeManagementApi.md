@@ -210,7 +210,7 @@ catch (ApiException e)
 
 
 
-This method returns a list of collection types items.
+This method returns a list of collection types items. (Regardless of the permissions)
 
 ### Example
 ```csharp

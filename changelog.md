@@ -10,50 +10,64 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="5.3.5"/> [5.3.5](https://www.nuget.org/packages/Agravity.Public/5.3.5) (2023-09-18)
+
+---
+
+- Just version upgrade to match backend
+
 ## AgravityAPI <a name="5.3.4"/> [5.3.4](https://www.nuget.org/packages/Agravity.Public/5.3.4) (2023-09-10)
+
 ---
 
 - Return list of collection type items now contains ALL items (regardless of permissions)
 
 ## AgravityAPI <a name="5.3.3"/> [5.3.3](https://www.nuget.org/packages/Agravity.Public/5.3.3) (2023-08-27)
+
 ---
 
 - Add optional filename as property for httpAssetUploadFile
 
 ## AgravityAPI <a name="5.3.2"/> [5.3.2](https://www.nuget.org/packages/Agravity.Public/5.3.2) (2023-08-17)
+
 ---
 
 - Just version upgrade to match backend
 
 ## AgravityAPI <a name="5.3.1"/> [5.3.1](https://www.nuget.org/packages/Agravity.Public/5.3.1) (2023-08-01)
+
 ---
 
 - Allow managing SDLs (add, remove, replace) in Public API
 
 ## AgravityAPI <a name="5.3.0"/> [5.3.0](https://www.nuget.org/packages/Agravity.Public/5.3.0) (2023-07-21)
+
 ---
 
 - Just version upgrade to match backend
 
 ## AgravityAPI <a name="5.2.2"/> [5.2.2](https://www.nuget.org/packages/Agravity.Public/5.2.2) (2023-07-06)
+
 ---
 
 - Just version upgrade to match backend
 
 ## AgravityAPI <a name="5.2.1"/> [5.2.1](https://www.nuget.org/packages/Agravity.Public/5.2.1) (2023-07-04)
+
 ---
 
 - Refactor `AssetIdContainer` to `AssetIdFormat`
 - Add `zip_url` to quickshare (and full)
 
 ## AgravityAPI <a name="5.2.0"/> [5.2.0](https://www.nuget.org/packages/Agravity.Public/5.2.0) (2023-06-06)
+
 ---
 
 - Add GET `/quickshares/{id}` to get a full QuickShares (incl. asset paging)
 - Add PUT `/assets/{id}/availability` to set the availability of an asset
 
-
 ## AgravityAPI <a name="5.1.6"/> [5.1.6](https://www.nuget.org/packages/Agravity.Public/5.1.6) (2023-05-23)
+
 ---
 
 - Remove techdata from all assets get endpoint and moved to GetAssetById:
@@ -61,39 +75,54 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 - Refactor public SignalR management class to have the prefix "public"
 
 ## AgravityAPI <a name="5.1.5"/> [5.1.5](https://www.nuget.org/packages/Agravity.Public/5.1.5) (2023-05-03)
+
 ---
+
 (no changes - was not published on nuget - just update according to backend version)
 
 ## AgravityAPI <a name="5.1.4"/> [5.1.4](https://www.nuget.org/packages/Agravity.Public/5.1.4) (2023-04-27)
+
 ---
+
 (no changes - was not published on nuget - just update according to backend version)
 
 ## AgravityAPI <a name="5.1.3"/> [5.1.3](https://www.nuget.org/packages/Agravity.Public/5.1.3) (2023-04-23)
+
 ---
+
 (no changes - was not published on nuget - just update according to backend version)
 
 ## AgravityAPI <a name="5.1.2"/> [5.1.2](https://www.nuget.org/packages/Agravity.Public/5.1.2) (2023-03-23)
+
 ---
 
-- Change all `AddProperties` from  `Dictionary<string, Object>` to `Dictionary<string, object>`
+- Change all `AddProperties` from `Dictionary<string, Object>` to `Dictionary<string, object>`
 - Add property `Profile` which could have the ICC-Profile name for the original blob
 - Add `Format` property to CollTypeItem model to get and store additional information about the format of the item_type
 - Add `ClientId` property to VersionInfo
 
 ## AgravityAPI 5.1.1 (2023-03-16)
+
 ---
+
 (no changes - was not published on nuget - just update according to backend version)
 
 ## AgravityAPI <a name="5.1.0"/> [5.1.0](https://www.nuget.org/packages/Agravity.Public/5.1.0) (2023-02-19)
+
 ---
+
 (no changes - just update according to backend version)
 
 ## AgravityAPI <a name="5.0.2"/> [5.0.2](https://www.nuget.org/packages/Agravity.Public/5.0.2) (2023-02-06)
+
 ---
+
 (no changes - just update according to backend version)
 
 ## AgravityAPI <a name="5.0.1"/> [5.0.1](https://www.nuget.org/packages/Agravity.Public/5.0.1) (2023-01-27)
+
 ---
+
 - Add / modifiy multipart/formdata endpoint POST `/assets/{id}/versionsupload`: This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.
 - modified `/assets/{id}/versions` to now only take json as input (VersionedAsset)
 - add missing `filter` parameter to HttpAssetsGet and made collectionId not mandatory.
@@ -106,7 +135,7 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 - Add new permission endpoints:
   - CollectionType Management: POST `/collectiontypes/{id}/permissions`
   - Workspace Management: POST `/workspaces/{id}/permissions`
-  - (new)  PermissionManagement:
+  - (new) PermissionManagement:
     - POST `/permissions/settings/identities` update all allowed permissions (ADD, REPLACE, REMOVE);
     - GET `/permissions/settings` - Get the permission settings
     - PUT `/permissions/settings` - Fully replace the settings;
@@ -145,16 +174,19 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 ## AgravityAPI <a name="4.9.3"/> [4.9.3](https://www.nuget.org/packages/Agravity.Public/4.9.3) (2022-12-15)
 
 Add parameter:
+
 - Paging with param `skip` in GET `/api/search`
 
 Copy more endpoints from private to public:
+
 - Create Asset (without data) POST `{{url}}/api/assets?collectionid={{collectionId}}`
 - Get Inbox Token GET `{{url}}/api/auth/inbox` (for upload)
 - Create Published AssetImage POST `{{url}}/api/assets/{{assetId}}/publish`
 - Get All Published of Asset GET `{{url}}/api/assets/asset_id/publish`
 - SignalR GET `/api/signalr/negotiate?negotiateVersion=1`
 
-Repaired some annotations 
+Repaired some annotations
+
 - `x-functions-key` header was missing (saved search)
 - API Key instead of Bearer `401` message
 - Comma instead of colon separation in search param `ids`
@@ -190,16 +222,21 @@ Add `translations` param in nearly all endpoints which receives translateable ob
 Add missing `items` as param PublicAssetManagement
 Add missing `fields` as param PublicAssetOperations and PublicCollectionManagement
 Add Saved Search Management:
+
 - POST `/savedsearches` (editor + admin) This endpoint creates one saved search entry in the database.
 - GET `/savedsearches` (all + public) This endpoint lists all saved searchs in database.
 - DELETE `/savedsearches/{id}` (editor + admin) This endpoint deletes a single saved search.
 
 ---
+
 ## AgravityAPI <a name="4.8.1"/> [4.8.1](https://www.nuget.org/packages/Agravity.Public/4.8.1) (2022-11-14)
+
 - Change GET `/assetsenhancer/{id}` to GET `/helper/skillenhancer/{id}` - Show the result of the SkillEnhancer for assets and collections
 
 ---
+
 ## AgravityAPI 4.8.0 (2022-11-13)
+
 - Add methods to public functions:
   - Update GET `/assets/{id}` - Add "uncomplete" flag return uncomplete
   - Add POST `/assets/{id}` - Update asset via API key
@@ -207,31 +244,44 @@ Add Saved Search Management:
   - Fix return value from HttpStaticDefinedListsGetById
 
 ---
+
 ## AgravityAPI <a name="4.7.3"/> [4.7.3](https://www.nuget.org/packages/Agravity.Public/4.7.3) (2022-10-31)
+
 > Just version upgrade to match backend
 
 ---
+
 ## AgravityAPI 4.7.2 (2022-11-02)
-> Just version upgrade to match backend
----
-## AgravityAPI 4.7.1 (2022-10-31)
+
 > Just version upgrade to match backend
 
 ---
+
+## AgravityAPI 4.7.1 (2022-10-31)
+
+> Just version upgrade to match backend
+
+---
+
 ## AgravityAPI 4.7.0 (2022-10-30)
 
 ### New Features (in public):
+
 - Add helper methods to public functions:
-  - Add POST `/assetsupload` - Upload asset via API key 
+  - Add POST `/assetsupload` - Upload asset via API key
   - Add POST `/collections` - Create collection via API key
 
 ### Improvements:
+
 - Changed publish asset - removed "original" and replaced with "format";
 - Add origin to downloadFormat (where this format is based on);
 
 ---
+
 ## AgravityAPI 4.6.0 (2022-10-18)
+
 ### New Features (in public):
+
 - Repair `/collections` endpoint (level and parentid are now optional);
 - Add GET `/collectiontypeitems` - This method returns a list of collection types items.
 - Add helper methods to public functions:
@@ -240,83 +290,106 @@ Add Saved Search Management:
   - Add GET `/helper/searchableitemnames` - Returns all searchable items directly from the search index
   - Add GET `/helper/searchableitems` - Returns all searchable items directly from the search index
 - Add Translations Management to public functions;
-  - Add GET  `/translations/{id}` - Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
+  - Add GET `/translations/{id}` - Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
   - Add GET `/translations/{id]}/custom/{customProperty}` - Get the translation of custom field on the entity (Asset, Collection)
-  - Add GET `/translations/{id}/{property}` -  Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
-
+  - Add GET `/translations/{id}/{property}` - Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
 
 ---
+
 ## AgravityAPI 4.5.5 (2022-10-14)
+
 > Just version upgrade to match backend
 
 ---
+
 ## AgravityAPI 4.5.4 (2022-09-28)
+
 ### Improvements:
-- PublishAsset body now allows 
+
+- PublishAsset body now allows
   - "usecases" (string list) (also to be updated)
   - "original" (boolean) to publish original asset (with new name)
 
-
 ---
+
 ## AgravityAPI 4.5.3 (2022-09-21)
+
 > Just version upgrade to match backend
 
 ---
+
 ## AgravityAPI 4.5.2 (2022-09-12)
+
 > Just version upgrade to match backend
 
 ---
-## AgravityAPI 4.5.1 (2022-09-11)
-### New Features:
-- Add new endpoint POST ```/translations``` which takes a list of string (assetIds) to return all translations of these assets;
-  - Has optional ```property``` query param where it can be filtered down to a specific property;
 
+## AgravityAPI 4.5.1 (2022-09-11)
+
+### New Features:
+
+- Add new endpoint POST `/translations` which takes a list of string (assetIds) to return all translations of these assets;
+  - Has optional `property` query param where it can be filtered down to a specific property;
 
 ###Improvements:
-- Make ```includeblueprint``` in ```/collectiontypeitems``` as query parameter (not path param);
+
+- Make `includeblueprint` in `/collectiontypeitems` as query parameter (not path param);
 
 > Others: Just reordering of properties (no changes on content) - because C# source based on new base classes
 
 ---
+
 ## AgravityAPI 4.5.0 (2022-09-04)
+
 ### New Features:
-- Add endpoint PUT ```/assets/{id}/availability``` to set the availibility of the asset (asset operation);
+
+- Add endpoint PUT `/assets/{id}/availability` to set the availibility of the asset (asset operation);
   - Add availability properties to asset (only set, when asset is locked or availability is timed);
-  -  Add assetAvailability as separate model;
+  - Add assetAvailability as separate model;
 - Add Ordering of entities in Workspace/CollectionType and Items of CollectionTypes and CollTypeItemBlueprints
-- Add AssetIconRuleManagement CRUD ```/asseticonrules``` to have asset icon rules which are displayed on assets;
-- Add ```includeBlueprint``` parameter at GET ```/collectiontypeitems``` (to get even the items of blueprints)
+- Add AssetIconRuleManagement CRUD `/asseticonrules` to have asset icon rules which are displayed on assets;
+- Add `includeBlueprint` parameter at GET `/collectiontypeitems` (to get even the items of blueprints)
 
-
-> Not possible to update the asset availability asset update  (asset mangement) endpoint;
+> Not possible to update the asset availability asset update (asset mangement) endpoint;
 
 ###Improvements:
-- Add param for body POST ```/colltypeitemgroup``` (was missing)
-- Add security annotation to GET ```/collectiontypeitems``` (was missing in openAPI)
+
+- Add param for body POST `/colltypeitemgroup` (was missing)
+- Add security annotation to GET `/collectiontypeitems` (was missing in openAPI)
 
 ---
+
 ## AgravityAPI 4.4.2 (2022-08-29)
+
 ### New Features:
+
 - Add ICC Profile Management:
-  - GET ```/iccprofiles``` This endpoint lists all icc profiles in blob container.
-- POST ```/colltypeitemgroups/{{collTypeItemGroupId}}``` (editor, admin) This endpoint updates a single collection type item group. (Roles: Editor, Admin)
-- Add new endpoint GET ```/searchableitems``` which now returns full items with lots of new information;
+  - GET `/iccprofiles` This endpoint lists all icc profiles in blob container.
+- POST `/colltypeitemgroups/{{collTypeItemGroupId}}` (editor, admin) This endpoint updates a single collection type item group. (Roles: Editor, Admin)
+- Add new endpoint GET `/searchableitems` which now returns full items with lots of new information;
 
 ###Improvements:
- - Change items of translationManagement.agravity.ts to optional and type bool
- - Changed endpoint ```/searchableitems``` to ```/searchableitemnames```
+
+- Change items of translationManagement.agravity.ts to optional and type bool
+- Changed endpoint `/searchableitems` to `/searchableitemnames`
 
 ---
+
 ## AgravityAPI 4.4.1 (2022-08-11)
+
 ###Improvements:
- - Add missing OpenApiHeader at sdl update
- - Extend WhereParam
- - Update the agravityuser to save name/email/roles/groups
-   - add tutorial list (without any function yet)
+
+- Add missing OpenApiHeader at sdl update
+- Extend WhereParam
+- Update the agravityuser to save name/email/roles/groups
+  - add tutorial list (without any function yet)
 
 ---
+
 ## AgravityAPI 4.4.0 (2022-07-22)
+
 Add Static Defined List Management:
+
 - POST `/staticdefinedlists` (admin) This endpoint creates one static defined list entry in the database.
 - GET `/staticdefinedlists` (all) This endpoint lists all static defined lists in database.
 - GET `/staticdefinedlists/{id}` (all) This endpoint gets a static defined list from database.
@@ -324,27 +397,34 @@ Add Static Defined List Management:
 - DELETE `/staticdefinedlists/{id}` (admin) This endpoint deletes a single static defined list.
 
 Add AssetOperations with new endpoints:
- - PATCH `assets/{id}/runqueue/{queue}` (editor/admin) This endpoint execute a specific queue of the asset. E.g. Recreation of previews, AI recognition, hash values, ...
- - PATCH `assets/{id}/purgecdn` (editor/admin) This endpoint purges all published assets of this asset when CDN is enabled
+
+- PATCH `assets/{id}/runqueue/{queue}` (editor/admin) This endpoint execute a specific queue of the asset. E.g. Recreation of previews, AI recognition, hash values, ...
+- PATCH `assets/{id}/purgecdn` (editor/admin) This endpoint purges all published assets of this asset when CDN is enabled
 
 Add AssetPublishing with new endpoint:
- - POST `assets/{id}/publish/{pid}` (editor/admin) This endpoint currently updates only the description of the published asset with the given ID.
+
+- POST `assets/{id}/publish/{pid}` (editor/admin) This endpoint currently updates only the description of the published asset with the given ID.
 
 Add HelperTools with new endpoint:
- - POST `helper/excel/export` (admin)  This endpoint creates an excel export of the db
+
+- POST `helper/excel/export` (admin) This endpoint creates an excel export of the db
 
 ---
+
 ## AgravityAPI 4.3.0 (2022-06-27)
+
 Add GeneralManagement with new endpoint:
+
 - POST `/cleanup` (admin) to check all original blobs if all elements are set correctly in database
   - will be removed if not found in database
   - will be moved to archive if found in database but set as deleted (status "D")
 
 Add AssetOperations with new endpoint:
- - GET `assets/{id}/repair` (editor/admin) which refills (or corrects) the collection type items based on collections
 
+- GET `assets/{id}/repair` (editor/admin) which refills (or corrects) the collection type items based on collections
 
 Improvements:
+
 - Remove the assets on collections
 - Replaced PublishEntity with PublishedAssets
 - Add param `workspaceid` to create collection type;
@@ -353,25 +433,33 @@ Improvements:
 - Add `region` to version, versionEntity, publishEntity, asset;
 
 ---
-## AgravityAPI 4.2.0 (2022-06-15)
-Add CollTypeItemGroups Management with new endpoints:
-  - POST `/colltypeitemgroups` (editor/admin) : This endpoint creates a item collection type group with a subset of items as preparation
-  - GET `/colltypeitemgroups` (editor/admin) : This endpoint delivers a list all item collection type groups.
-  - DELETE `/colltypeitemgroups/{id}` (editor/admin) : This endpoint deletes a specific item collection type group.
 
-> A CollTypeItemGroup is a collection of prepared items which could be assigned to collection types. These items don't have any relation to collection types, collections or assets. 
+## AgravityAPI 4.2.0 (2022-06-15)
+
+Add CollTypeItemGroups Management with new endpoints:
+
+- POST `/colltypeitemgroups` (editor/admin) : This endpoint creates a item collection type group with a subset of items as preparation
+- GET `/colltypeitemgroups` (editor/admin) : This endpoint delivers a list all item collection type groups.
+- DELETE `/colltypeitemgroups/{id}` (editor/admin) : This endpoint deletes a specific item collection type group.
+
+> A CollTypeItemGroup is a collection of prepared items which could be assigned to collection types. These items don't have any relation to collection types, collections or assets.
 
 Improvements:
+
 - Add `items` parameter to assets and collection to expand all items (with corresponding language);
 - CollTypeItem boolean fields are now nullable (mandatory, searchable, onlyasset,multi)
 - Add `group` (translateable label of grouping items within a collection type) and `order` (bring the items in order) properties to CollTypeItem which can be filled.
 
 ---
+
 ## AgravityAPI 4.1.1 (2022-05-26)
+
 - Add publicCollectionTypeManagement and updated routes in publicWorkspaceManagement;
 
 ---
+
 ## AgravityAPI 4.1.0 (2022-05-15)
+
 - #441
   - POST `/workspaces` (editor/admin) : This endpoint creates a unique workspace ID and adds the information to the database.
   - GET `/workspaces` (all - private & public) : This endpoint lists all available workspaces, which are stored in the database and not deleted (status "A"). It will never be empty. If no workspace is stored in the database, one is constructed (id: "w0000") with all available collection types.
@@ -381,13 +469,17 @@ Improvements:
   - DELETE `/workspaces` (admin) : This endpoint deletes all workspaces
 
 ---
+
 ## AgravityAPI 4.0.1 (2022-05-05)
+
 - Add `filter` query param to GET `/assets` endpoint;
   - extended assetPageResult with filter criterion;
   - new "WhereParam" model
 
 ---
+
 ## AgravityAPI 4.0.0 V4 .NET6 UPGRADE (2022-04-27)
+
 - Add new private ConfigurationManagementService with new endpoints:
   - GET `/config` (only admin) : Lists all config values stored in config table
   - GET `/config/frontend` (all) : Lists config value only for frontend stored in config table
@@ -400,28 +492,36 @@ Improvements:
 - Add upgrade v3tov4 endpoint `/upgrade/V3toV4`
 
 ---
-##AgravityAPI 3.4.5: Just version update
----
+
+## ##AgravityAPI 3.4.5: Just version update
+
 ##AgravityAPI 3.4.4: Translations Custom Fields
 ###API:
+
 - `/translations/{id}/custom/{customField}` GET Get the translation of custom field on the entity (Asset, Collection)
 - `/collections/{id}/repair` PATCH This endpoint checks if collection and assets from collection are the same. If not, the collection is corrected.
+
 ---
-##AgravityAPI 3.4.3: Just version update
----
+
+## ##AgravityAPI 3.4.3: Just version update
+
 ##AgravityAPI 3.4.2: Translation Management (Bulk)
 ###API:
+
 - `/translations/{id}` GET all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
 - `/translations/{id}/{property}` GET the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
 - `/translations/{id}` POST Updates the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
+
 ---
+
 ##AgravityAPI 3.4.0: Translations / Download Formats / Search Improvement
 ###Model:
+
 - `pageResultAsset` was refactored to `assetPageResult`
 - `downloadFormat` has now `operations` and `asset_type` instead of `image_operations` to be more flexible
 - `shareCollectionFull` has `page` instead of `assets` and `page_size` in return model;
 - Translations added to asset, collection, collectionType, collTypeItem and downloadFormat
-###API:
+  ###API:
 - `/assets` POST has now collection id as mandatory parameter
 - `/assets` GET has now new assetPageResult return value
 - `/shared` GET has now continuous token + limit + order by parameter
@@ -434,4 +534,4 @@ Improvements:
 Below is a list of any know issues affecting the [recommended minimum version](#recommended-version):
 
 | Issue | Impact | Mitigation | Tracking link |
-| --- | --- | --- | --- |
+| ----- | ------ | ---------- | ------------- |

@@ -10,6 +10,12 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="5.3.6"/> [5.3.6](https://www.nuget.org/packages/Agravity.Public/5.3.6) (2023-09-18)
+
+---
+
+- Just version upgrade to match backend
+
 ## AgravityAPI <a name="5.3.5"/> [5.3.5](https://www.nuget.org/packages/Agravity.Public/5.3.5) (2023-09-18)
 
 ---

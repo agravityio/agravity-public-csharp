@@ -10,124 +10,121 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="6.0.0"/> [6.0.0](https://www.nuget.org/packages/Agravity.Public/6.0.0) (2023-10-02)
+
+#70 Alternative thumbnails for assets
+  - Add new optional param previewofto /assetupload endpoint
+  - Respect versionendpoint as well for preview
+
+#784 Add Roles to Permission System
+- Add role property to Asset, Collection and CollectionType which can be NONE, VIEWER, EDITOR
+- Change permissions property from workspace and collection to to be an array of PermissionEntity (role and id)
+
+#974 Add custom configs for frontends
+- Update endpoint GET `/config/frontend` - add param `customonly` - This returns only the custom created configurations.
+
+#930 Allow versioning of assets (not dependent on the type), if not published
+- Add `mime_type` to version to be optionally checked in backend
+
+---
 ## AgravityAPI <a name="5.3.6"/> [5.3.6](https://www.nuget.org/packages/Agravity.Public/5.3.6) (2023-09-18)
 
----
-
 - Just version upgrade to match backend
 
+---
 ## AgravityAPI <a name="5.3.5"/> [5.3.5](https://www.nuget.org/packages/Agravity.Public/5.3.5) (2023-09-18)
 
----
-
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="5.3.4"/> [5.3.4](https://www.nuget.org/packages/Agravity.Public/5.3.4) (2023-09-10)
-
 ---
+## AgravityAPI <a name="5.3.4"/> [5.3.4](https://www.nuget.org/packages/Agravity.Public/5.3.4) (2023-09-10)
 
 - Return list of collection type items now contains ALL items (regardless of permissions)
 
-## AgravityAPI <a name="5.3.3"/> [5.3.3](https://www.nuget.org/packages/Agravity.Public/5.3.3) (2023-08-27)
-
 ---
+## AgravityAPI <a name="5.3.3"/> [5.3.3](https://www.nuget.org/packages/Agravity.Public/5.3.3) (2023-08-27)
 
 - Add optional filename as property for httpAssetUploadFile
 
-## AgravityAPI <a name="5.3.2"/> [5.3.2](https://www.nuget.org/packages/Agravity.Public/5.3.2) (2023-08-17)
-
 ---
+## AgravityAPI <a name="5.3.2"/> [5.3.2](https://www.nuget.org/packages/Agravity.Public/5.3.2) (2023-08-17)
 
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="5.3.1"/> [5.3.1](https://www.nuget.org/packages/Agravity.Public/5.3.1) (2023-08-01)
-
 ---
+## AgravityAPI <a name="5.3.1"/> [5.3.1](https://www.nuget.org/packages/Agravity.Public/5.3.1) (2023-08-01)
 
 - Allow managing SDLs (add, remove, replace) in Public API
 
+---
 ## AgravityAPI <a name="5.3.0"/> [5.3.0](https://www.nuget.org/packages/Agravity.Public/5.3.0) (2023-07-21)
 
----
-
 - Just version upgrade to match backend
 
+---
 ## AgravityAPI <a name="5.2.2"/> [5.2.2](https://www.nuget.org/packages/Agravity.Public/5.2.2) (2023-07-06)
 
----
-
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="5.2.1"/> [5.2.1](https://www.nuget.org/packages/Agravity.Public/5.2.1) (2023-07-04)
-
 ---
+## AgravityAPI <a name="5.2.1"/> [5.2.1](https://www.nuget.org/packages/Agravity.Public/5.2.1) (2023-07-04)
 
 - Refactor `AssetIdContainer` to `AssetIdFormat`
 - Add `zip_url` to quickshare (and full)
 
-## AgravityAPI <a name="5.2.0"/> [5.2.0](https://www.nuget.org/packages/Agravity.Public/5.2.0) (2023-06-06)
-
 ---
+## AgravityAPI <a name="5.2.0"/> [5.2.0](https://www.nuget.org/packages/Agravity.Public/5.2.0) (2023-06-06)
 
 - Add GET `/quickshares/{id}` to get a full QuickShares (incl. asset paging)
 - Add PUT `/assets/{id}/availability` to set the availability of an asset
 
-## AgravityAPI <a name="5.1.6"/> [5.1.6](https://www.nuget.org/packages/Agravity.Public/5.1.6) (2023-05-23)
-
 ---
+## AgravityAPI <a name="5.1.6"/> [5.1.6](https://www.nuget.org/packages/Agravity.Public/5.1.6) (2023-05-23)
 
 - Remove techdata from all assets get endpoint and moved to GetAssetById:
   - add query parameter `techdata` to public GetAssetById endpoint
 - Refactor public SignalR management class to have the prefix "public"
 
+---
 ## AgravityAPI <a name="5.1.5"/> [5.1.5](https://www.nuget.org/packages/Agravity.Public/5.1.5) (2023-05-03)
 
----
-
 (no changes - was not published on nuget - just update according to backend version)
 
+---
 ## AgravityAPI <a name="5.1.4"/> [5.1.4](https://www.nuget.org/packages/Agravity.Public/5.1.4) (2023-04-27)
 
----
-
 (no changes - was not published on nuget - just update according to backend version)
 
+---
 ## AgravityAPI <a name="5.1.3"/> [5.1.3](https://www.nuget.org/packages/Agravity.Public/5.1.3) (2023-04-23)
 
----
-
 (no changes - was not published on nuget - just update according to backend version)
 
-## AgravityAPI <a name="5.1.2"/> [5.1.2](https://www.nuget.org/packages/Agravity.Public/5.1.2) (2023-03-23)
-
 ---
+## AgravityAPI <a name="5.1.2"/> [5.1.2](https://www.nuget.org/packages/Agravity.Public/5.1.2) (2023-03-23)
 
 - Change all `AddProperties` from `Dictionary<string, Object>` to `Dictionary<string, object>`
 - Add property `Profile` which could have the ICC-Profile name for the original blob
 - Add `Format` property to CollTypeItem model to get and store additional information about the format of the item_type
 - Add `ClientId` property to VersionInfo
 
-## AgravityAPI 5.1.1 (2023-03-16)
-
 ---
+## AgravityAPI 5.1.1 (2023-03-16)
 
 (no changes - was not published on nuget - just update according to backend version)
 
+---
 ## AgravityAPI <a name="5.1.0"/> [5.1.0](https://www.nuget.org/packages/Agravity.Public/5.1.0) (2023-02-19)
 
----
-
 (no changes - just update according to backend version)
 
+---
 ## AgravityAPI <a name="5.0.2"/> [5.0.2](https://www.nuget.org/packages/Agravity.Public/5.0.2) (2023-02-06)
 
----
-
 (no changes - just update according to backend version)
 
-## AgravityAPI <a name="5.0.1"/> [5.0.1](https://www.nuget.org/packages/Agravity.Public/5.0.1) (2023-01-27)
-
 ---
+## AgravityAPI <a name="5.0.1"/> [5.0.1](https://www.nuget.org/packages/Agravity.Public/5.0.1) (2023-01-27)
 
 - Add / modifiy multipart/formdata endpoint POST `/assets/{id}/versionsupload`: This endpoint allows to upload one asset which replaces the asset with given id and creates a version which is returned.
 - modified `/assets/{id}/versions` to now only take json as input (VersionedAsset)
@@ -136,6 +133,7 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 - Add upload to storage use case;
 - Add `notPrefix`to WhereParam (only used in backend);
 
+---
 ## AgravityAPI <a name="5.0.0"/> [5.0.0](https://www.nuget.org/packages/Agravity.Public/5.0.0) (2023-01-07)
 
 - Add new permission endpoints:
@@ -176,7 +174,6 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 - Add `translations`parameter to GET StaticDefinedLists and StaticDefinedListById endpoints (private & public)
 
 ---
-
 ## AgravityAPI <a name="4.9.3"/> [4.9.3](https://www.nuget.org/packages/Agravity.Public/4.9.3) (2022-12-15)
 
 Add parameter:
@@ -199,6 +196,7 @@ Repaired some annotations
 
 ---
 
+---
 ## AgravityAPI <a name="4.9.2"/> [4.9.2](https://www.nuget.org/packages/Agravity.Public/4.9.2) (2022-12-05)
 
 - Add to Public the Download Format Management and Custom Image Manipulation (with DownloadID):
@@ -209,6 +207,7 @@ Repaired some annotations
 
 ---
 
+---
 ## AgravityAPI <a name="4.9.1"/> [4.9.1](https://www.nuget.org/packages/Agravity.Public/4.9.1) (2022-12-01)
 
 - Add `ids` param to search endpoint (private and public) to limit the results to given ids (comma separated);
@@ -222,6 +221,7 @@ Repaired some annotations
 
 ---
 
+---
 ## AgravityAPI <a name="4.9.0"/> [4.9.0](https://www.nuget.org/packages/Agravity.Public/4.9.0) (2022-11-28)
 
 Add `translations` param in nearly all endpoints which receives translateable objects
@@ -235,12 +235,14 @@ Add Saved Search Management:
 
 ---
 
+---
 ## AgravityAPI <a name="4.8.1"/> [4.8.1](https://www.nuget.org/packages/Agravity.Public/4.8.1) (2022-11-14)
 
 - Change GET `/assetsenhancer/{id}` to GET `/helper/skillenhancer/{id}` - Show the result of the SkillEnhancer for assets and collections
 
 ---
 
+---
 ## AgravityAPI 4.8.0 (2022-11-13)
 
 - Add methods to public functions:
@@ -251,24 +253,28 @@ Add Saved Search Management:
 
 ---
 
+---
 ## AgravityAPI <a name="4.7.3"/> [4.7.3](https://www.nuget.org/packages/Agravity.Public/4.7.3) (2022-10-31)
 
 > Just version upgrade to match backend
 
 ---
 
+---
 ## AgravityAPI 4.7.2 (2022-11-02)
 
 > Just version upgrade to match backend
 
 ---
 
+---
 ## AgravityAPI 4.7.1 (2022-10-31)
 
 > Just version upgrade to match backend
 
 ---
 
+---
 ## AgravityAPI 4.7.0 (2022-10-30)
 
 ### New Features (in public):
@@ -284,6 +290,7 @@ Add Saved Search Management:
 
 ---
 
+---
 ## AgravityAPI 4.6.0 (2022-10-18)
 
 ### New Features (in public):
@@ -301,13 +308,13 @@ Add Saved Search Management:
   - Add GET `/translations/{id}/{property}` - Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
 
 ---
-
 ## AgravityAPI 4.5.5 (2022-10-14)
 
 > Just version upgrade to match backend
 
 ---
 
+---
 ## AgravityAPI 4.5.4 (2022-09-28)
 
 ### Improvements:
@@ -317,19 +324,20 @@ Add Saved Search Management:
   - "original" (boolean) to publish original asset (with new name)
 
 ---
-
 ## AgravityAPI 4.5.3 (2022-09-21)
 
 > Just version upgrade to match backend
 
 ---
 
+---
 ## AgravityAPI 4.5.2 (2022-09-12)
 
 > Just version upgrade to match backend
 
 ---
 
+---
 ## AgravityAPI 4.5.1 (2022-09-11)
 
 ### New Features:
@@ -345,6 +353,7 @@ Add Saved Search Management:
 
 ---
 
+---
 ## AgravityAPI 4.5.0 (2022-09-04)
 
 ### New Features:
@@ -364,7 +373,6 @@ Add Saved Search Management:
 - Add security annotation to GET `/collectiontypeitems` (was missing in openAPI)
 
 ---
-
 ## AgravityAPI 4.4.2 (2022-08-29)
 
 ### New Features:
@@ -381,6 +389,7 @@ Add Saved Search Management:
 
 ---
 
+---
 ## AgravityAPI 4.4.1 (2022-08-11)
 
 ###Improvements:
@@ -391,7 +400,6 @@ Add Saved Search Management:
   - add tutorial list (without any function yet)
 
 ---
-
 ## AgravityAPI 4.4.0 (2022-07-22)
 
 Add Static Defined List Management:
@@ -417,6 +425,7 @@ Add HelperTools with new endpoint:
 
 ---
 
+---
 ## AgravityAPI 4.3.0 (2022-06-27)
 
 Add GeneralManagement with new endpoint:
@@ -440,6 +449,7 @@ Improvements:
 
 ---
 
+---
 ## AgravityAPI 4.2.0 (2022-06-15)
 
 Add CollTypeItemGroups Management with new endpoints:
@@ -458,12 +468,14 @@ Improvements:
 
 ---
 
+---
 ## AgravityAPI 4.1.1 (2022-05-26)
 
 - Add publicCollectionTypeManagement and updated routes in publicWorkspaceManagement;
 
 ---
 
+---
 ## AgravityAPI 4.1.0 (2022-05-15)
 
 - #441
@@ -476,6 +488,7 @@ Improvements:
 
 ---
 
+---
 ## AgravityAPI 4.0.1 (2022-05-05)
 
 - Add `filter` query param to GET `/assets` endpoint;
@@ -484,6 +497,7 @@ Improvements:
 
 ---
 
+---
 ## AgravityAPI 4.0.0 V4 .NET6 UPGRADE (2022-04-27)
 
 - Add new private ConfigurationManagementService with new endpoints:
@@ -517,8 +531,6 @@ Improvements:
 - `/translations/{id}` GET all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
 - `/translations/{id}/{property}` GET the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
 - `/translations/{id}` POST Updates the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
-
----
 
 ##AgravityAPI 3.4.0: Translations / Download Formats / Search Improvement
 ###Model:

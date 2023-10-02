@@ -8,11 +8,11 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a name="httpconfiggetfrontendall"></a>
 # **HttpConfigGetFrontendAll**
-> List&lt;FrontendAppConfig&gt; HttpConfigGetFrontendAll ()
+> List&lt;FrontendAppConfig&gt; HttpConfigGetFrontendAll (bool? customonly = null)
 
 
 
-Lists config value only for frontend stored in config table
+Lists config value only for frontend stored in config table. Optional to filter for custom values only.
 
 ### Example
 ```csharp
@@ -31,10 +31,11 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:7072/api";
             var apiInstance = new PublicConfigurationManagementApi(config);
+            var customonly = true;  // bool? | This returns only the custom created configurations. (optional) 
 
             try
             {
-                List<FrontendAppConfig> result = apiInstance.HttpConfigGetFrontendAll();
+                List<FrontendAppConfig> result = apiInstance.HttpConfigGetFrontendAll(customonly);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -54,7 +55,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<FrontendAppConfig>> response = apiInstance.HttpConfigGetFrontendAllWithHttpInfo();
+    ApiResponse<List<FrontendAppConfig>> response = apiInstance.HttpConfigGetFrontendAllWithHttpInfo(customonly);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -68,7 +69,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **customonly** | **bool?** | This returns only the custom created configurations. | [optional]  |
+
 ### Return type
 
 [**List&lt;FrontendAppConfig&gt;**](FrontendAppConfig.md)

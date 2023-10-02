@@ -31,23 +31,25 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// Lists config value only for frontend stored in config table
+        /// Lists config value only for frontend stored in config table. Optional to filter for custom values only.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="customonly">This returns only the custom created configurations. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;FrontendAppConfig&gt;</returns>
-        List<FrontendAppConfig> HttpConfigGetFrontendAll(int operationIndex = 0);
+        List<FrontendAppConfig> HttpConfigGetFrontendAll(bool? customonly = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// Lists config value only for frontend stored in config table
+        /// Lists config value only for frontend stored in config table. Optional to filter for custom values only.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="customonly">This returns only the custom created configurations. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;FrontendAppConfig&gt;</returns>
-        ApiResponse<List<FrontendAppConfig>> HttpConfigGetFrontendAllWithHttpInfo(int operationIndex = 0);
+        ApiResponse<List<FrontendAppConfig>> HttpConfigGetFrontendAllWithHttpInfo(bool? customonly = default(bool?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -61,25 +63,27 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// Lists config value only for frontend stored in config table
+        /// Lists config value only for frontend stored in config table. Optional to filter for custom values only.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="customonly">This returns only the custom created configurations. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;FrontendAppConfig&gt;</returns>
-        System.Threading.Tasks.Task<List<FrontendAppConfig>> HttpConfigGetFrontendAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<FrontendAppConfig>> HttpConfigGetFrontendAllAsync(bool? customonly = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// Lists config value only for frontend stored in config table
+        /// Lists config value only for frontend stored in config table. Optional to filter for custom values only.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="customonly">This returns only the custom created configurations. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;FrontendAppConfig&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<FrontendAppConfig>>> HttpConfigGetFrontendAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<FrontendAppConfig>>> HttpConfigGetFrontendAllWithHttpInfoAsync(bool? customonly = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -201,24 +205,26 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  Lists config value only for frontend stored in config table
+        ///  Lists config value only for frontend stored in config table. Optional to filter for custom values only.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="customonly">This returns only the custom created configurations. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;FrontendAppConfig&gt;</returns>
-        public List<FrontendAppConfig> HttpConfigGetFrontendAll(int operationIndex = 0)
+        public List<FrontendAppConfig> HttpConfigGetFrontendAll(bool? customonly = default(bool?), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>> localVarResponse = HttpConfigGetFrontendAllWithHttpInfo();
+            Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>> localVarResponse = HttpConfigGetFrontendAllWithHttpInfo(customonly);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Lists config value only for frontend stored in config table
+        ///  Lists config value only for frontend stored in config table. Optional to filter for custom values only.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="customonly">This returns only the custom created configurations. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;FrontendAppConfig&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>> HttpConfigGetFrontendAllWithHttpInfo(int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>> HttpConfigGetFrontendAllWithHttpInfo(bool? customonly = default(bool?), int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -242,6 +248,10 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (customonly != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "customonly", customonly));
+            }
 
             localVarRequestOptions.Operation = "PublicConfigurationManagementApi.HttpConfigGetFrontendAll";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -262,26 +272,28 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  Lists config value only for frontend stored in config table
+        ///  Lists config value only for frontend stored in config table. Optional to filter for custom values only.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="customonly">This returns only the custom created configurations. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;FrontendAppConfig&gt;</returns>
-        public async System.Threading.Tasks.Task<List<FrontendAppConfig>> HttpConfigGetFrontendAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<FrontendAppConfig>> HttpConfigGetFrontendAllAsync(bool? customonly = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>> localVarResponse = await HttpConfigGetFrontendAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>> localVarResponse = await HttpConfigGetFrontendAllWithHttpInfoAsync(customonly, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Lists config value only for frontend stored in config table
+        ///  Lists config value only for frontend stored in config table. Optional to filter for custom values only.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="customonly">This returns only the custom created configurations. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;FrontendAppConfig&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>>> HttpConfigGetFrontendAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>>> HttpConfigGetFrontendAllWithHttpInfoAsync(bool? customonly = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -306,6 +318,10 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (customonly != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "customonly", customonly));
+            }
 
             localVarRequestOptions.Operation = "PublicConfigurationManagementApi.HttpConfigGetFrontendAll";
             localVarRequestOptions.OperationIndex = operationIndex;

@@ -39,12 +39,14 @@ namespace Agravity.Public.Model
         /// <param name="untilDate">untilDate.</param>
         /// <param name="versionInfo">versionInfo.</param>
         /// <param name="createdBy">createdBy.</param>
-        public VersionedAsset(int versionNr = default(int), DateTime untilDate = default(DateTime), string versionInfo = default(string), string createdBy = default(string))
+        /// <param name="mimeType">mimeType.</param>
+        public VersionedAsset(int versionNr = default(int), DateTime untilDate = default(DateTime), string versionInfo = default(string), string createdBy = default(string), string mimeType = default(string))
         {
             this.VersionNr = versionNr;
             this.UntilDate = untilDate;
             this.VersionInfo = versionInfo;
             this.CreatedBy = createdBy;
+            this.MimeType = mimeType;
         }
 
         /// <summary>
@@ -72,6 +74,12 @@ namespace Agravity.Public.Model
         public string CreatedBy { get; set; }
 
         /// <summary>
+        /// Gets or Sets MimeType
+        /// </summary>
+        [DataMember(Name = "mime_type", EmitDefaultValue = false)]
+        public string MimeType { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -83,6 +91,7 @@ namespace Agravity.Public.Model
             sb.Append("  UntilDate: ").Append(UntilDate).Append("\n");
             sb.Append("  VersionInfo: ").Append(VersionInfo).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
+            sb.Append("  MimeType: ").Append(MimeType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -136,6 +145,11 @@ namespace Agravity.Public.Model
                     this.CreatedBy == input.CreatedBy ||
                     (this.CreatedBy != null &&
                     this.CreatedBy.Equals(input.CreatedBy))
+                ) && 
+                (
+                    this.MimeType == input.MimeType ||
+                    (this.MimeType != null &&
+                    this.MimeType.Equals(input.MimeType))
                 );
         }
 
@@ -160,6 +174,10 @@ namespace Agravity.Public.Model
                 if (this.CreatedBy != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
+                }
+                if (this.MimeType != null)
+                {
+                    hashCode = (hashCode * 59) + this.MimeType.GetHashCode();
                 }
                 return hashCode;
             }

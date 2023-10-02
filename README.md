@@ -84,10 +84,11 @@ namespace Example
             var collectionId = "collectionId_example";  // string |  (optional) 
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
             var filename = "filename_example";  // string |  (optional) 
+            var previewof = "previewof_example";  // string |  (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpAssetUploadFile(name, collectionId, file, filename);
+                Asset result = apiInstance.HttpAssetUploadFile(name, collectionId, file, filename, previewof);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -201,6 +202,7 @@ Class | Method | HTTP request | Description
  - [Model.GroupAllAppData](docs\GroupAllAppData.md)
  - [Model.Metadata](docs\Metadata.md)
  - [Model.OkResult](docs\OkResult.md)
+ - [Model.PermissionEntity](docs\PermissionEntity.md)
  - [Model.PublishEntity](docs\PublishEntity.md)
  - [Model.PublishedAsset](docs\PublishedAsset.md)
  - [Model.QuickShareFull](docs\QuickShareFull.md)

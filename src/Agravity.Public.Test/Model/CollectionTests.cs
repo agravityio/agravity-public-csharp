@@ -122,6 +122,14 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Translations'
         }
         /// <summary>
+        /// Test the property 'Role'
+        /// </summary>
+        [Fact]
+        public void RoleTest()
+        {
+            // TODO unit test for the property 'Role'
+        }
+        /// <summary>
         /// Test the property 'Name'
         /// </summary>
         [Fact]

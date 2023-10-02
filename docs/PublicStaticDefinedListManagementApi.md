@@ -197,7 +197,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns a static defined list with the given id. |  -  |
-| **404** | The requested item could not be found |  -  |
+| **404** | The requested item could not be found. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 

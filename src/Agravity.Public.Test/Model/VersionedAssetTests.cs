@@ -89,6 +89,14 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'CreatedBy'
         }
+        /// <summary>
+        /// Test the property 'MimeType'
+        /// </summary>
+        [Fact]
+        public void MimeTypeTest()
+        {
+            // TODO unit test for the property 'MimeType'
+        }
 
     }
 

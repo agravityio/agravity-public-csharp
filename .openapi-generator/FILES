@@ -28,6 +28,7 @@ docs/FrontendAppConfig.md
 docs/GroupAllAppData.md
 docs/Metadata.md
 docs/OkResult.md
+docs/PermissionEntity.md
 docs/PublicAssetManagementApi.md
 docs/PublicAssetOperationsApi.md
 docs/PublicAssetPublishingApi.md
@@ -116,6 +117,7 @@ src/Agravity.Public.Test/Model/FrontendAppConfigTests.cs
 src/Agravity.Public.Test/Model/GroupAllAppDataTests.cs
 src/Agravity.Public.Test/Model/MetadataTests.cs
 src/Agravity.Public.Test/Model/OkResultTests.cs
+src/Agravity.Public.Test/Model/PermissionEntityTests.cs
 src/Agravity.Public.Test/Model/PublishEntityTests.cs
 src/Agravity.Public.Test/Model/PublishedAssetTests.cs
 src/Agravity.Public.Test/Model/QuickShareFullTests.cs
@@ -199,6 +201,7 @@ src/Agravity.Public/Model/FrontendAppConfig.cs
 src/Agravity.Public/Model/GroupAllAppData.cs
 src/Agravity.Public/Model/Metadata.cs
 src/Agravity.Public/Model/OkResult.cs
+src/Agravity.Public/Model/PermissionEntity.cs
 src/Agravity.Public/Model/PublishEntity.cs
 src/Agravity.Public/Model/PublishedAsset.cs
 src/Agravity.Public/Model/QuickShareFull.cs

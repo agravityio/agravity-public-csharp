@@ -94,7 +94,7 @@ This endpoint does not need any parameter.
 | **200** | Returns SAS-Token for write access for the inbox. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **400** | A parameter is null. (Code: e30b767a-79e0-41f0-b3fd-dcb621fad0f1)&lt;br&gt;Could not generate token for inbox. (Code: 25b3843e-dbe2-4fc2-946f-3af17943c500) |  -  |
-| **404** | The requested item could not be found |  -  |
+| **404** | The requested item could not be found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

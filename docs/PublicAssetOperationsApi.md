@@ -136,7 +136,7 @@ catch (ApiException e)
 | **200** | Returns the resized/modified image according to the input parameter(s) |  -  |
 | **400** | Asset has to be image! Not allowed on type (Code: ec482f52-0ec8-4a8b-89fd-65b9d6b624cd)&lt;br&gt;Asset does not have origsize or optimized blob reference. (Code: b6733be7 -8560-4b1a-8dfc-657ac668ffea) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
-| **404** | The requested item could not be found |  -  |
+| **404** | The requested item could not be found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -234,7 +234,7 @@ catch (ApiException e)
 | **200** | Returns the resized/modified image according to the input parameter(s) |  -  |
 | **400** | Asset has to be image! Not allowed on type (Code: ec482f52-0ec8-4a8b-89fd-65b9d6b624cd) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
-| **404** | The requested item could not be found |  -  |
+| **404** | The requested item could not be found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -333,7 +333,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | This function checks if asset exist on storage and returns the asset blob (incl. url). |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
-| **404** | The requested item could not be found |  -  |
+| **404** | The requested item could not be found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -434,7 +434,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Returns all collections of a specific asset. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
-| **404** | The requested item could not be found |  -  |
+| **404** | The requested item could not be found. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -532,7 +532,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | This function checks if asset exist on storage and returns the asset blob (incl. url to download). |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
-| **404** | The requested item could not be found |  -  |
+| **404** | The requested item could not be found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -632,7 +632,7 @@ catch (ApiException e)
 | **200** | Returns the resized/modified image according to the input parameter(s) |  -  |
 | **400** | Asset has to be image! Not allowed on type: {type} (Code: ec482f52-0ec8-4a8b-89fd-65b9d6b624cd)&lt;br&gt;Not a valid asset used. It has to be an asset, not deleted and from type {type} (Code: 320cda1c-7dd8-4b23-9b59-51ccee5e0a98)&lt;br&gt; |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
-| **404** | The requested item could not be found |  -  |
+| **404** | The requested item could not be found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -732,7 +732,7 @@ catch (ApiException e)
 | **200** | Returns the resized/modified image according to the input parameter(s) |  -  |
 | **400** | Asset has to be image! Not allowed on type: {type} (Code: ec482f52-0ec8-4a8b-89fd-65b9d6b624cd)&lt;br&gt;The ID given is missing or not a valid download format ID. (Code: 7ec8d75d-3da4-4dce-8ab2-e52f0cf5f1f1)&lt;br&gt;Not a valid asset used. It has to be an asset, not deleted and from type {type} (Code: 320cda1c-7dd8-4b23-9b59-51ccee5e0a98)&lt;br&gt;Could not find requested download format. (Code: 05985771-df5e-4620-9b58-785177a1b223)&lt;br&gt; |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
-| **404** | The requested item could not be found |  -  |
+| **404** | The requested item could not be found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

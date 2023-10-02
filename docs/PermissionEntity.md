@@ -1,14 +1,11 @@
-# Agravity.Public.Model.VersionedAsset
+# Agravity.Public.Model.PermissionEntity
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VersionNr** | **int** |  | [optional] 
-**UntilDate** | **DateTime** |  | [optional] 
-**VersionInfo** | **string** |  | [optional] 
-**CreatedBy** | **string** |  | [optional] 
-**MimeType** | **string** |  | [optional] 
+**Id** | **string** |  | [optional] 
+**Role** | **string** |  | [optional] [default to RoleEnum.NONE]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

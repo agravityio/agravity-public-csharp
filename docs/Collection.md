@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Custom** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Items** | [**List&lt;CollTypeItem&gt;**](CollTypeItem.md) |  | [optional] 
 **Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
+**Role** | **string** |  | [optional] [default to RoleEnum.NONE]
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **AddProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 

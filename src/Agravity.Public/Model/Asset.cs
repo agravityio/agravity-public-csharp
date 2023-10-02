@@ -33,6 +33,38 @@ namespace Agravity.Public.Model
     public partial class Asset : IEquatable<Asset>, IValidatableObject
     {
         /// <summary>
+        /// Defines Role
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum RoleEnum
+        {
+            /// <summary>
+            /// Enum NONE for value: NONE
+            /// </summary>
+            [EnumMember(Value = "NONE")]
+            NONE = 1,
+
+            /// <summary>
+            /// Enum VIEWER for value: VIEWER
+            /// </summary>
+            [EnumMember(Value = "VIEWER")]
+            VIEWER = 2,
+
+            /// <summary>
+            /// Enum EDITOR for value: EDITOR
+            /// </summary>
+            [EnumMember(Value = "EDITOR")]
+            EDITOR = 3
+
+        }
+
+
+        /// <summary>
+        /// Gets or Sets Role
+        /// </summary>
+        [DataMember(Name = "role", EmitDefaultValue = false)]
+        public RoleEnum? Role { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="Asset" /> class.
         /// </summary>
         /// <param name="id">id.</param>
@@ -54,6 +86,7 @@ namespace Agravity.Public.Model
         /// <param name="custom">custom.</param>
         /// <param name="items">items.</param>
         /// <param name="translations">translations.</param>
+        /// <param name="role">role (default to RoleEnum.NONE).</param>
         /// <param name="description">description.</param>
         /// <param name="addProperties">addProperties.</param>
         /// <param name="status">status.</param>
@@ -63,7 +96,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Asset(string id = default(string), string entityType = default(string), string name = default(string), string assetType = default(string), List<string> duplicates = default(List<string>), string textContent = default(string), List<ArtificialIntelligenceGroup> aiGroups = default(List<ArtificialIntelligenceGroup>), List<string> keywords = default(List<string>), AssetBlob origBlob = default(AssetBlob), List<AssetBlob> blobs = default(List<AssetBlob>), List<string> collections = default(List<string>), string failedReason = default(string), string regionOfOrigin = default(string), string availability = default(string), DateTime? availableFrom = default(DateTime?), DateTime? availableTo = default(DateTime?), Dictionary<string, object> custom = default(Dictionary<string, object>), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public Asset(string id = default(string), string entityType = default(string), string name = default(string), string assetType = default(string), List<string> duplicates = default(List<string>), string textContent = default(string), List<ArtificialIntelligenceGroup> aiGroups = default(List<ArtificialIntelligenceGroup>), List<string> keywords = default(List<string>), AssetBlob origBlob = default(AssetBlob), List<AssetBlob> blobs = default(List<AssetBlob>), List<string> collections = default(List<string>), string failedReason = default(string), string regionOfOrigin = default(string), string availability = default(string), DateTime? availableFrom = default(DateTime?), DateTime? availableTo = default(DateTime?), Dictionary<string, object> custom = default(Dictionary<string, object>), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), RoleEnum? role = RoleEnum.NONE, string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -84,6 +117,7 @@ namespace Agravity.Public.Model
             this.Custom = custom;
             this.Items = items;
             this.Translations = translations;
+            this.Role = role;
             this.Description = description;
             this.AddProperties = addProperties;
             this.Status = status;
@@ -290,6 +324,7 @@ namespace Agravity.Public.Model
             sb.Append("  Custom: ").Append(Custom).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  Translations: ").Append(Translations).Append("\n");
+            sb.Append("  Role: ").Append(Role).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  AddProperties: ").Append(AddProperties).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -438,6 +473,10 @@ namespace Agravity.Public.Model
                     this.Translations.SequenceEqual(input.Translations)
                 ) && 
                 (
+                    this.Role == input.Role ||
+                    this.Role.Equals(input.Role)
+                ) && 
+                (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
@@ -570,6 +609,7 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.Translations.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Role.GetHashCode();
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();

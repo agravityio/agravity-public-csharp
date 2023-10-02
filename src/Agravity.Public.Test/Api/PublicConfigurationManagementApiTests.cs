@@ -62,7 +62,8 @@ namespace Agravity.Public.Test.Api
         public void HttpConfigGetFrontendAllTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.HttpConfigGetFrontendAll();
+            //bool? customonly = null;
+            //var response = instance.HttpConfigGetFrontendAll(customonly);
             //Assert.IsType<List<FrontendAppConfig>>(response);
         }
     }

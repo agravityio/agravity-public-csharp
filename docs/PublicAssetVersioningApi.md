@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a name="httpassetcreateuploadversion"></a>
 # **HttpAssetCreateUploadVersion**
-> VersionedAsset HttpAssetCreateUploadVersion (string id, string name = null, string collectionId = null, System.IO.Stream file = null, string filename = null)
+> VersionedAsset HttpAssetCreateUploadVersion (string id, string name = null, string collectionId = null, System.IO.Stream file = null, string filename = null, string previewof = null)
 
 
 
@@ -47,10 +47,11 @@ namespace Example
             var collectionId = "collectionId_example";  // string |  (optional) 
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
             var filename = "filename_example";  // string |  (optional) 
+            var previewof = "previewof_example";  // string |  (optional) 
 
             try
             {
-                VersionedAsset result = apiInstance.HttpAssetCreateUploadVersion(id, name, collectionId, file, filename);
+                VersionedAsset result = apiInstance.HttpAssetCreateUploadVersion(id, name, collectionId, file, filename, previewof);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -70,7 +71,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<VersionedAsset> response = apiInstance.HttpAssetCreateUploadVersionWithHttpInfo(id, name, collectionId, file, filename);
+    ApiResponse<VersionedAsset> response = apiInstance.HttpAssetCreateUploadVersionWithHttpInfo(id, name, collectionId, file, filename, previewof);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -92,6 +93,7 @@ catch (ApiException e)
 | **collectionId** | **string** |  | [optional]  |
 | **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 | **filename** | **string** |  | [optional]  |
+| **previewof** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -111,7 +113,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Returns the created version of the asset. |  -  |
-| **400** | Asset is not active yet. Wait until process is finished. (Code: 2e1fbeb0-b405-4985-8bac-aa604d5cd125) &lt;br&gt;or Asset upload failed. Content length is insuffient (0 or too big) (Code: b9fd835c-5456-4101-a643-ed5c1d5e5335) &lt;br&gt;or Wrong content media type. Please upload file with multipart/form-data. (Code: 553ccca6-c06f-4a1d-9b1e-ff140fbcd389) &lt;br&gt;or Could not find file in multi-part data. (Code: 0a66cf65-8926-44f3-9e7e-89de614828ad) &lt;br&gt;or This file is not supported. (Code: 214ef18f-0dca-4128-8543-e20339114e11) &lt;br&gt;or This file has to be from same file type! (Code: 0bcf2586-ac2a-426f-b757-2352f50b53ef) &lt;br&gt;or AgravityProcessingException occured (see message). (Code: 37eb0897-6c1b-4147-9b6d-d0e756180623) |  -  |
+| **400** | Asset is not active yet. Wait until process is finished. (Code: 2e1fbeb0-b405-4985-8bac-aa604d5cd125) &lt;br&gt;or asset upload failed. Content length is insuffient (0 or too big) (Code: b9fd835c-5456-4101-a643-ed5c1d5e5335) &lt;br&gt;or wrong content media type. Please upload file with multipart/form-data. (Code: 553ccca6-c06f-4a1d-9b1e-ff140fbcd389) &lt;br&gt;or could not find file in multi-part data. (Code: 0a66cf65-8926-44f3-9e7e-89de614828ad) &lt;br&gt;or this file is not supported. (Code: 214ef18f-0dca-4128-8543-e20339114e11) &lt;br&gt;or this file has to be from same file type when asset is published! (Code: 0bcf2586-ac2a-426f-b757-2352f50b53ef) &lt;br&gt;or AgravityProcessingException occured (see message). (Code: 37eb0897-6c1b-4147-9b6d-d0e756180623) |  -  |
 | **404** | Asset could not be found in database. (Code: 9a84addc-14b7-4a29-9f33-6f8f35e16bf3) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
@@ -411,7 +413,7 @@ catch (ApiException e)
 | **200** | This function checks if asset exist on storage and returns the asset blob (incl. url). |  -  |
 | **400** | Given version of this asset is not a number (Code: 7a60606d-764f-4e12-9bc1-ba8512de158a) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
-| **404** | The requested item could not be found |  -  |
+| **404** | The requested item could not be found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

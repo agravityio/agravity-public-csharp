@@ -33,6 +33,38 @@ namespace Agravity.Public.Model
     public partial class CollectionType : IEquatable<CollectionType>, IValidatableObject
     {
         /// <summary>
+        /// Defines Role
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum RoleEnum
+        {
+            /// <summary>
+            /// Enum NONE for value: NONE
+            /// </summary>
+            [EnumMember(Value = "NONE")]
+            NONE = 1,
+
+            /// <summary>
+            /// Enum VIEWER for value: VIEWER
+            /// </summary>
+            [EnumMember(Value = "VIEWER")]
+            VIEWER = 2,
+
+            /// <summary>
+            /// Enum EDITOR for value: EDITOR
+            /// </summary>
+            [EnumMember(Value = "EDITOR")]
+            EDITOR = 3
+
+        }
+
+
+        /// <summary>
+        /// Gets or Sets Role
+        /// </summary>
+        [DataMember(Name = "role", EmitDefaultValue = false)]
+        public RoleEnum? Role { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="CollectionType" /> class.
         /// </summary>
         /// <param name="id">id.</param>
@@ -43,6 +75,7 @@ namespace Agravity.Public.Model
         /// <param name="order">order.</param>
         /// <param name="permissions">permissions.</param>
         /// <param name="permissionless">permissionless.</param>
+        /// <param name="role">role (default to RoleEnum.NONE).</param>
         /// <param name="description">description.</param>
         /// <param name="addProperties">addProperties.</param>
         /// <param name="status">status.</param>
@@ -52,7 +85,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public CollectionType(string id = default(string), string entityType = default(string), string name = default(string), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), int? order = default(int?), List<EntityId> permissions = default(List<EntityId>), bool? permissionless = default(bool?), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public CollectionType(string id = default(string), string entityType = default(string), string name = default(string), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), int? order = default(int?), List<PermissionEntity> permissions = default(List<PermissionEntity>), bool? permissionless = default(bool?), RoleEnum? role = RoleEnum.NONE, string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -62,6 +95,7 @@ namespace Agravity.Public.Model
             this.Order = order;
             this.Permissions = permissions;
             this.Permissionless = permissionless;
+            this.Role = role;
             this.Description = description;
             this.AddProperties = addProperties;
             this.Status = status;
@@ -113,7 +147,7 @@ namespace Agravity.Public.Model
         /// Gets or Sets Permissions
         /// </summary>
         [DataMember(Name = "permissions", EmitDefaultValue = false)]
-        public List<EntityId> Permissions { get; set; }
+        public List<PermissionEntity> Permissions { get; set; }
 
         /// <summary>
         /// Gets or Sets Permissionless
@@ -191,6 +225,7 @@ namespace Agravity.Public.Model
             sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  Permissions: ").Append(Permissions).Append("\n");
             sb.Append("  Permissionless: ").Append(Permissionless).Append("\n");
+            sb.Append("  Role: ").Append(Role).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  AddProperties: ").Append(AddProperties).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -277,6 +312,10 @@ namespace Agravity.Public.Model
                     this.Permissionless == input.Permissionless ||
                     (this.Permissionless != null &&
                     this.Permissionless.Equals(input.Permissionless))
+                ) && 
+                (
+                    this.Role == input.Role ||
+                    this.Role.Equals(input.Role)
                 ) && 
                 (
                     this.Description == input.Description ||
@@ -367,6 +406,7 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.Permissionless.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Role.GetHashCode();
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();

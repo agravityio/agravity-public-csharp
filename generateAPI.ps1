@@ -90,4 +90,7 @@ if ($publish -eq "y") {
     dotnet nuget push .\out\Agravity.Public."$apiVersion".nupkg -s https://api.nuget.org/v3/index.json
 
     code.cmd .\changelog.md
+
+    Write-Host "Press any key to finish."
+    Read-Host
 }

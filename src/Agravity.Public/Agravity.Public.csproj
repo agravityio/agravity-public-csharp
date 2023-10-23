@@ -15,7 +15,7 @@
     <Description>The Agravity Public API which is created via openapi-generator.</Description>
     <Copyright>Copyright </Copyright>
     <RootNamespace>Agravity.Public</RootNamespace>
-    <Version>6.0.1</Version>
+    <Version>6.0.2</Version>
     <PackageLicenseUrl>https://licenses.nuget.org/MIT</PackageLicenseUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/agravityio/agravity-public-csharp</PackageProjectUrl>

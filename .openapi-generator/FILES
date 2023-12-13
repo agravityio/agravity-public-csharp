@@ -60,8 +60,10 @@ docs/SearchFacetEntity.md
 docs/SearchResult.md
 docs/SearchableItem.md
 docs/SecureUploadEntity.md
+docs/SharedAllowedFormat.md
 docs/SharedAsset.md
 docs/SharedCollectionFull.md
+docs/SharedCollectionZipRequest.md
 docs/SignalRConnectionInfo.md
 docs/StaticDefinedList.md
 docs/VersionEntity.md
@@ -128,8 +130,10 @@ src/Agravity.Public.Test/Model/SearchFacetTests.cs
 src/Agravity.Public.Test/Model/SearchResultTests.cs
 src/Agravity.Public.Test/Model/SearchableItemTests.cs
 src/Agravity.Public.Test/Model/SecureUploadEntityTests.cs
+src/Agravity.Public.Test/Model/SharedAllowedFormatTests.cs
 src/Agravity.Public.Test/Model/SharedAssetTests.cs
 src/Agravity.Public.Test/Model/SharedCollectionFullTests.cs
+src/Agravity.Public.Test/Model/SharedCollectionZipRequestTests.cs
 src/Agravity.Public.Test/Model/SignalRConnectionInfoTests.cs
 src/Agravity.Public.Test/Model/StaticDefinedListTests.cs
 src/Agravity.Public.Test/Model/VersionEntityTests.cs
@@ -212,8 +216,10 @@ src/Agravity.Public/Model/SearchFacetEntity.cs
 src/Agravity.Public/Model/SearchResult.cs
 src/Agravity.Public/Model/SearchableItem.cs
 src/Agravity.Public/Model/SecureUploadEntity.cs
+src/Agravity.Public/Model/SharedAllowedFormat.cs
 src/Agravity.Public/Model/SharedAsset.cs
 src/Agravity.Public/Model/SharedCollectionFull.cs
+src/Agravity.Public/Model/SharedCollectionZipRequest.cs
 src/Agravity.Public/Model/SignalRConnectionInfo.cs
 src/Agravity.Public/Model/StaticDefinedList.cs
 src/Agravity.Public/Model/VersionEntity.cs

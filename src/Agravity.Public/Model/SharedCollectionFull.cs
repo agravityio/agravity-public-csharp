@@ -40,27 +40,45 @@ namespace Agravity.Public.Model
         /// <param name="size">size.</param>
         /// <param name="continuationToken">continuationToken.</param>
         /// <param name="id">id.</param>
+        /// <param name="entityType">entityType.</param>
         /// <param name="collectionId">collectionId.</param>
-        /// <param name="createdDate">createdDate.</param>
         /// <param name="url">url.</param>
         /// <param name="validUntil">validUntil.</param>
         /// <param name="validFor">validFor.</param>
         /// <param name="message">message.</param>
         /// <param name="global">global.</param>
-        public SharedCollectionFull(List<SharedAsset> page = default(List<SharedAsset>), int pageSize = default(int), int? size = default(int?), string continuationToken = default(string), string id = default(string), string collectionId = default(string), DateTime createdDate = default(DateTime), string url = default(string), DateTime validUntil = default(DateTime), string validFor = default(string), string message = default(string), bool global = default(bool))
+        /// <param name="allowedFormats">allowedFormats.</param>
+        /// <param name="password">password.</param>
+        /// <param name="status">status.</param>
+        /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdBy">createdBy.</param>
+        /// <param name="modifiedDate">modifiedDate.</param>
+        /// <param name="modifiedBy">modifiedBy.</param>
+        /// <param name="pk">pk.</param>
+        /// <param name="etag">etag.</param>
+        public SharedCollectionFull(List<SharedAsset> page = default(List<SharedAsset>), int pageSize = default(int), int? size = default(int?), string continuationToken = default(string), string id = default(string), string entityType = default(string), string collectionId = default(string), string url = default(string), DateTime validUntil = default(DateTime), string validFor = default(string), string message = default(string), bool global = default(bool), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), string password = default(string), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Page = page;
             this.PageSize = pageSize;
             this.Size = size;
             this.ContinuationToken = continuationToken;
             this.Id = id;
+            this.EntityType = entityType;
             this.CollectionId = collectionId;
-            this.CreatedDate = createdDate;
             this.Url = url;
             this.ValidUntil = validUntil;
             this.ValidFor = validFor;
             this.Message = message;
             this.Global = global;
+            this.AllowedFormats = allowedFormats;
+            this.Password = password;
+            this.Status = status;
+            this.CreatedDate = createdDate;
+            this.CreatedBy = createdBy;
+            this.ModifiedDate = modifiedDate;
+            this.ModifiedBy = modifiedBy;
+            this.Pk = pk;
+            this.Etag = etag;
         }
 
         /// <summary>
@@ -94,16 +112,16 @@ namespace Agravity.Public.Model
         public string Id { get; set; }
 
         /// <summary>
+        /// Gets or Sets EntityType
+        /// </summary>
+        [DataMember(Name = "entity_type", EmitDefaultValue = false)]
+        public string EntityType { get; set; }
+
+        /// <summary>
         /// Gets or Sets CollectionId
         /// </summary>
         [DataMember(Name = "collection_id", EmitDefaultValue = false)]
         public string CollectionId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CreatedDate
-        /// </summary>
-        [DataMember(Name = "created_date", EmitDefaultValue = false)]
-        public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
@@ -136,6 +154,60 @@ namespace Agravity.Public.Model
         public bool Global { get; set; }
 
         /// <summary>
+        /// Gets or Sets AllowedFormats
+        /// </summary>
+        [DataMember(Name = "allowed_formats", EmitDefaultValue = false)]
+        public List<SharedAllowedFormat> AllowedFormats { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Password
+        /// </summary>
+        [DataMember(Name = "password", EmitDefaultValue = false)]
+        public string Password { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Status
+        /// </summary>
+        [DataMember(Name = "status", EmitDefaultValue = false)]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedDate
+        /// </summary>
+        [DataMember(Name = "created_date", EmitDefaultValue = true)]
+        public DateTime? CreatedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedBy
+        /// </summary>
+        [DataMember(Name = "created_by", EmitDefaultValue = false)]
+        public string CreatedBy { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedDate
+        /// </summary>
+        [DataMember(Name = "modified_date", EmitDefaultValue = true)]
+        public DateTime? ModifiedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedBy
+        /// </summary>
+        [DataMember(Name = "modified_by", EmitDefaultValue = false)]
+        public string ModifiedBy { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pk
+        /// </summary>
+        [DataMember(Name = "pk", EmitDefaultValue = false)]
+        public string Pk { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Etag
+        /// </summary>
+        [DataMember(Name = "_etag", EmitDefaultValue = false)]
+        public string Etag { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -148,13 +220,22 @@ namespace Agravity.Public.Model
             sb.Append("  Size: ").Append(Size).Append("\n");
             sb.Append("  ContinuationToken: ").Append(ContinuationToken).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  EntityType: ").Append(EntityType).Append("\n");
             sb.Append("  CollectionId: ").Append(CollectionId).Append("\n");
-            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  ValidUntil: ").Append(ValidUntil).Append("\n");
             sb.Append("  ValidFor: ").Append(ValidFor).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  Global: ").Append(Global).Append("\n");
+            sb.Append("  AllowedFormats: ").Append(AllowedFormats).Append("\n");
+            sb.Append("  Password: ").Append(Password).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
+            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
+            sb.Append("  ModifiedBy: ").Append(ModifiedBy).Append("\n");
+            sb.Append("  Pk: ").Append(Pk).Append("\n");
+            sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -216,14 +297,14 @@ namespace Agravity.Public.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.EntityType == input.EntityType ||
+                    (this.EntityType != null &&
+                    this.EntityType.Equals(input.EntityType))
+                ) && 
+                (
                     this.CollectionId == input.CollectionId ||
                     (this.CollectionId != null &&
                     this.CollectionId.Equals(input.CollectionId))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
                 ) && 
                 (
                     this.Url == input.Url ||
@@ -248,6 +329,52 @@ namespace Agravity.Public.Model
                 (
                     this.Global == input.Global ||
                     this.Global.Equals(input.Global)
+                ) && 
+                (
+                    this.AllowedFormats == input.AllowedFormats ||
+                    this.AllowedFormats != null &&
+                    input.AllowedFormats != null &&
+                    this.AllowedFormats.SequenceEqual(input.AllowedFormats)
+                ) && 
+                (
+                    this.Password == input.Password ||
+                    (this.Password != null &&
+                    this.Password.Equals(input.Password))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
+                ) && 
+                (
+                    this.CreatedDate == input.CreatedDate ||
+                    (this.CreatedDate != null &&
+                    this.CreatedDate.Equals(input.CreatedDate))
+                ) && 
+                (
+                    this.CreatedBy == input.CreatedBy ||
+                    (this.CreatedBy != null &&
+                    this.CreatedBy.Equals(input.CreatedBy))
+                ) && 
+                (
+                    this.ModifiedDate == input.ModifiedDate ||
+                    (this.ModifiedDate != null &&
+                    this.ModifiedDate.Equals(input.ModifiedDate))
+                ) && 
+                (
+                    this.ModifiedBy == input.ModifiedBy ||
+                    (this.ModifiedBy != null &&
+                    this.ModifiedBy.Equals(input.ModifiedBy))
+                ) && 
+                (
+                    this.Pk == input.Pk ||
+                    (this.Pk != null &&
+                    this.Pk.Equals(input.Pk))
+                ) && 
+                (
+                    this.Etag == input.Etag ||
+                    (this.Etag != null &&
+                    this.Etag.Equals(input.Etag))
                 );
         }
 
@@ -277,13 +404,13 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
+                if (this.EntityType != null)
+                {
+                    hashCode = (hashCode * 59) + this.EntityType.GetHashCode();
+                }
                 if (this.CollectionId != null)
                 {
                     hashCode = (hashCode * 59) + this.CollectionId.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
                 }
                 if (this.Url != null)
                 {
@@ -302,6 +429,42 @@ namespace Agravity.Public.Model
                     hashCode = (hashCode * 59) + this.Message.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Global.GetHashCode();
+                if (this.AllowedFormats != null)
+                {
+                    hashCode = (hashCode * 59) + this.AllowedFormats.GetHashCode();
+                }
+                if (this.Password != null)
+                {
+                    hashCode = (hashCode * 59) + this.Password.GetHashCode();
+                }
+                if (this.Status != null)
+                {
+                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                }
+                if (this.CreatedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
+                }
+                if (this.CreatedBy != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
+                }
+                if (this.ModifiedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
+                }
+                if (this.ModifiedBy != null)
+                {
+                    hashCode = (hashCode * 59) + this.ModifiedBy.GetHashCode();
+                }
+                if (this.Pk != null)
+                {
+                    hashCode = (hashCode * 59) + this.Pk.GetHashCode();
+                }
+                if (this.Etag != null)
+                {
+                    hashCode = (hashCode * 59) + this.Etag.GetHashCode();
+                }
                 return hashCode;
             }
         }

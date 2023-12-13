@@ -115,9 +115,8 @@ namespace Agravity.Public.Test.Api
             //string id = null;
             //string fields = null;
             //bool? expose = null;
-            //bool? techdata = null;
             //bool? translations = null;
-            //var response = instance.HttpAssetsGetById(id, fields, expose, techdata, translations);
+            //var response = instance.HttpAssetsGetById(id, fields, expose, translations);
             //Assert.IsType<Asset>(response);
         }
 

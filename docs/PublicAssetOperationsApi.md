@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpGetAssetBlob**](PublicAssetOperationsApi.md#httpgetassetblob) | **GET** /assets/{id}/blobs |  |
 | [**HttpGetAssetCollectionsById**](PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections |  |
 | [**HttpGetAssetDownload**](PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download |  |
+| [**HttpGetSharedAssetBlob**](PublicAssetOperationsApi.md#httpgetsharedassetblob) | **GET** /assets/{id}/blob |  |
 | [**HttpImageDynamicEdit**](PublicAssetOperationsApi.md#httpimagedynamicedit) | **POST** /assets/{id}/imageedit |  |
 | [**HttpImageDynamicGetFromDownloadId**](PublicAssetOperationsApi.md#httpimagedynamicgetfromdownloadid) | **GET** /assets/{id}/imageedit/{download_format_id} |  |
 | [**HttpPutAssetAvailability**](PublicAssetOperationsApi.md#httpputassetavailability) | **PUT** /assets/{id}/availability |  |
@@ -532,6 +533,104 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | This function checks if asset exist on storage and returns the asset blob (incl. url to download). |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
+| **404** | The requested item could not be found. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="httpgetsharedassetblob"></a>
+# **HttpGetSharedAssetBlob**
+> AssetBlob HttpGetSharedAssetBlob (string shareId, string id, string format, string ayPassword = null)
+
+
+
+This endpoint checks, if an asset exists, is an image, has original blob, is status active, is part of the shared collection and returns the requested asset blob.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpGetSharedAssetBlobExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            var apiInstance = new PublicAssetOperationsApi(config);
+            var shareId = "shareId_example";  // string | This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.
+            var id = "id_example";  // string | The ID of the asset.
+            var format = "format_example";  // string | Which download format the blob is requested.
+            var ayPassword = "ayPassword_example";  // string | If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional) 
+
+            try
+            {
+                AssetBlob result = apiInstance.HttpGetSharedAssetBlob(shareId, id, format, ayPassword);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetSharedAssetBlob: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpGetSharedAssetBlobWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<AssetBlob> response = apiInstance.HttpGetSharedAssetBlobWithHttpInfo(shareId, id, format, ayPassword);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetSharedAssetBlobWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **shareId** | **string** | This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned. |  |
+| **id** | **string** | The ID of the asset. |  |
+| **format** | **string** | Which download format the blob is requested. |  |
+| **ayPassword** | **string** | If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. | [optional]  |
+
+### Return type
+
+[**AssetBlob**](AssetBlob.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the asset blob (incl. URL) for the requested asset according to the input parameter(s) |  -  |
+| **400** | Asset has to be image! Not allowed on type (Code: ec482f52-0ec8-4a8b-89fd-65b9d6b624cd) |  -  |
 | **404** | The requested item could not be found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 

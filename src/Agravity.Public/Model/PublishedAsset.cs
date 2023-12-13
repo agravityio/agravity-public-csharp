@@ -37,22 +37,26 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
+        /// <param name="target">target.</param>
         /// <param name="description">description.</param>
         /// <param name="usecases">usecases.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="url">url.</param>
         /// <param name="cdn">cdn.</param>
+        /// <param name="statusTableId">statusTableId.</param>
         /// <param name="format">format.</param>
         /// <param name="properties">properties.</param>
-        public PublishedAsset(string id = default(string), string name = default(string), string description = default(string), List<string> usecases = default(List<string>), DateTime createdDate = default(DateTime), string url = default(string), string cdn = default(string), string format = default(string), Dictionary<string, object> properties = default(Dictionary<string, object>))
+        public PublishedAsset(string id = default(string), string name = default(string), string target = default(string), string description = default(string), List<string> usecases = default(List<string>), DateTime createdDate = default(DateTime), string url = default(string), string cdn = default(string), string statusTableId = default(string), string format = default(string), Dictionary<string, object> properties = default(Dictionary<string, object>))
         {
             this.Id = id;
             this.Name = name;
+            this.Target = target;
             this.Description = description;
             this.Usecases = usecases;
             this.CreatedDate = createdDate;
             this.Url = url;
             this.Cdn = cdn;
+            this.StatusTableId = statusTableId;
             this.Format = format;
             this.Properties = properties;
         }
@@ -68,6 +72,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Target
+        /// </summary>
+        [DataMember(Name = "target", EmitDefaultValue = false)]
+        public string Target { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
@@ -100,6 +110,12 @@ namespace Agravity.Public.Model
         public string Cdn { get; set; }
 
         /// <summary>
+        /// Gets or Sets StatusTableId
+        /// </summary>
+        [DataMember(Name = "status_table_id", EmitDefaultValue = false)]
+        public string StatusTableId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Format
         /// </summary>
         [DataMember(Name = "format", EmitDefaultValue = false)]
@@ -121,11 +137,13 @@ namespace Agravity.Public.Model
             sb.Append("class PublishedAsset {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Target: ").Append(Target).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Usecases: ").Append(Usecases).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  Cdn: ").Append(Cdn).Append("\n");
+            sb.Append("  StatusTableId: ").Append(StatusTableId).Append("\n");
             sb.Append("  Format: ").Append(Format).Append("\n");
             sb.Append("  Properties: ").Append(Properties).Append("\n");
             sb.Append("}\n");
@@ -174,6 +192,11 @@ namespace Agravity.Public.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Target == input.Target ||
+                    (this.Target != null &&
+                    this.Target.Equals(input.Target))
+                ) && 
+                (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
@@ -198,6 +221,11 @@ namespace Agravity.Public.Model
                     this.Cdn == input.Cdn ||
                     (this.Cdn != null &&
                     this.Cdn.Equals(input.Cdn))
+                ) && 
+                (
+                    this.StatusTableId == input.StatusTableId ||
+                    (this.StatusTableId != null &&
+                    this.StatusTableId.Equals(input.StatusTableId))
                 ) && 
                 (
                     this.Format == input.Format ||
@@ -229,6 +257,10 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
+                if (this.Target != null)
+                {
+                    hashCode = (hashCode * 59) + this.Target.GetHashCode();
+                }
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
@@ -248,6 +280,10 @@ namespace Agravity.Public.Model
                 if (this.Cdn != null)
                 {
                     hashCode = (hashCode * 59) + this.Cdn.GetHashCode();
+                }
+                if (this.StatusTableId != null)
+                {
+                    hashCode = (hashCode * 59) + this.StatusTableId.GetHashCode();
                 }
                 if (this.Format != null)
                 {

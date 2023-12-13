@@ -98,20 +98,20 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Id'
         }
         /// <summary>
+        /// Test the property 'EntityType'
+        /// </summary>
+        [Fact]
+        public void EntityTypeTest()
+        {
+            // TODO unit test for the property 'EntityType'
+        }
+        /// <summary>
         /// Test the property 'CollectionId'
         /// </summary>
         [Fact]
         public void CollectionIdTest()
         {
             // TODO unit test for the property 'CollectionId'
-        }
-        /// <summary>
-        /// Test the property 'CreatedDate'
-        /// </summary>
-        [Fact]
-        public void CreatedDateTest()
-        {
-            // TODO unit test for the property 'CreatedDate'
         }
         /// <summary>
         /// Test the property 'Url'
@@ -152,6 +152,78 @@ namespace Agravity.Public.Test.Model
         public void GlobalTest()
         {
             // TODO unit test for the property 'Global'
+        }
+        /// <summary>
+        /// Test the property 'AllowedFormats'
+        /// </summary>
+        [Fact]
+        public void AllowedFormatsTest()
+        {
+            // TODO unit test for the property 'AllowedFormats'
+        }
+        /// <summary>
+        /// Test the property 'Password'
+        /// </summary>
+        [Fact]
+        public void PasswordTest()
+        {
+            // TODO unit test for the property 'Password'
+        }
+        /// <summary>
+        /// Test the property 'Status'
+        /// </summary>
+        [Fact]
+        public void StatusTest()
+        {
+            // TODO unit test for the property 'Status'
+        }
+        /// <summary>
+        /// Test the property 'CreatedDate'
+        /// </summary>
+        [Fact]
+        public void CreatedDateTest()
+        {
+            // TODO unit test for the property 'CreatedDate'
+        }
+        /// <summary>
+        /// Test the property 'CreatedBy'
+        /// </summary>
+        [Fact]
+        public void CreatedByTest()
+        {
+            // TODO unit test for the property 'CreatedBy'
+        }
+        /// <summary>
+        /// Test the property 'ModifiedDate'
+        /// </summary>
+        [Fact]
+        public void ModifiedDateTest()
+        {
+            // TODO unit test for the property 'ModifiedDate'
+        }
+        /// <summary>
+        /// Test the property 'ModifiedBy'
+        /// </summary>
+        [Fact]
+        public void ModifiedByTest()
+        {
+            // TODO unit test for the property 'ModifiedBy'
+        }
+        /// <summary>
+        /// Test the property 'Pk'
+        /// </summary>
+        [Fact]
+        public void PkTest()
+        {
+            // TODO unit test for the property 'Pk'
+        }
+        /// <summary>
+        /// Test the property 'Etag'
+        /// </summary>
+        [Fact]
+        public void EtagTest()
+        {
+            // TODO unit test for the property 'Etag'
         }
 
     }

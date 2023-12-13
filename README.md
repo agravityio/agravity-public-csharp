@@ -120,6 +120,7 @@ Class | Method | HTTP request | Description
 *PublicAssetOperationsApi* | [**HttpGetAssetBlob**](docs\PublicAssetOperationsApi.md#httpgetassetblob) | **GET** /assets/{id}/blobs | 
 *PublicAssetOperationsApi* | [**HttpGetAssetCollectionsById**](docs\PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections | 
 *PublicAssetOperationsApi* | [**HttpGetAssetDownload**](docs\PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download | 
+*PublicAssetOperationsApi* | [**HttpGetSharedAssetBlob**](docs\PublicAssetOperationsApi.md#httpgetsharedassetblob) | **GET** /assets/{id}/blob | 
 *PublicAssetOperationsApi* | [**HttpImageDynamicEdit**](docs\PublicAssetOperationsApi.md#httpimagedynamicedit) | **POST** /assets/{id}/imageedit | 
 *PublicAssetOperationsApi* | [**HttpImageDynamicGetFromDownloadId**](docs\PublicAssetOperationsApi.md#httpimagedynamicgetfromdownloadid) | **GET** /assets/{id}/imageedit/{download_format_id} | 
 *PublicAssetOperationsApi* | [**HttpPutAssetAvailability**](docs\PublicAssetOperationsApi.md#httpputassetavailability) | **PUT** /assets/{id}/availability | 
@@ -148,6 +149,7 @@ Class | Method | HTTP request | Description
 *PublicCollectionTypeManagementApi* | [**HttpGetCollectionTypeItems**](docs\PublicCollectionTypeManagementApi.md#httpgetcollectiontypeitems) | **GET** /collectiontypesitems | 
 *PublicConfigurationManagementApi* | [**HttpConfigGetFrontendAll**](docs\PublicConfigurationManagementApi.md#httpconfiggetfrontendall) | **GET** /config/frontend | 
 *PublicDownloadFormatManagementApi* | [**HttpDownloadFormatsGetAll**](docs\PublicDownloadFormatManagementApi.md#httpdownloadformatsgetall) | **GET** /downloadformats | 
+*PublicDownloadFormatManagementApi* | [**HttpDownloadFormatsGetAllFromShared**](docs\PublicDownloadFormatManagementApi.md#httpdownloadformatsgetallfromshared) | **GET** /downloadformats-shared | 
 *PublicGeneralManagementApi* | [**HttpAgravityVersionInfo**](docs\PublicGeneralManagementApi.md#httpagravityversioninfo) | **GET** /version | 
 *PublicGeneralManagementApi* | [**HttpTriggerDurableContinue**](docs\PublicGeneralManagementApi.md#httptriggerdurablecontinue) | **GET** /durable/{instanceId} | 
 *PublicGeneralManagementApi* | [**HttpTriggerDurableScchTrainingDone**](docs\PublicGeneralManagementApi.md#httptriggerdurablescchtrainingdone) | **GET** /durable/scch/{instanceId} | 
@@ -160,6 +162,8 @@ Class | Method | HTTP request | Description
 *PublicSearchManagementApi* | [**HttpGlobalSearch**](docs\PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search | 
 *PublicSharingManagementApi* | [**HttpQuickShareGetById**](docs\PublicSharingManagementApi.md#httpquicksharegetbyid) | **GET** /quickshares/{id} | 
 *PublicSharingManagementApi* | [**HttpSharedCollectionsGetById**](docs\PublicSharingManagementApi.md#httpsharedcollectionsgetbyid) | **GET** /shared/{id} | 
+*PublicSharingManagementApi* | [**HttpSharedCollectionsGetStatusZipById**](docs\PublicSharingManagementApi.md#httpsharedcollectionsgetstatuszipbyid) | **GET** /shared/{id}/zip/{zipId} | 
+*PublicSharingManagementApi* | [**HttpSharedCollectionsRequestZipById**](docs\PublicSharingManagementApi.md#httpsharedcollectionsrequestzipbyid) | **POST** /shared/{id}/zip | 
 *PublicSignalRConnectionManagementApi* | [**HttpSignalRNegotiate**](docs\PublicSignalRConnectionManagementApi.md#httpsignalrnegotiate) | **POST** /signalr/negotiate | 
 *PublicStaticDefinedListManagementApi* | [**HttpStaticDefinedListsGetAll**](docs\PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsgetall) | **GET** /staticdefinedlists | 
 *PublicStaticDefinedListManagementApi* | [**HttpStaticDefinedListsGetById**](docs\PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsgetbyid) | **GET** /staticdefinedlists/{id} | 
@@ -213,8 +217,10 @@ Class | Method | HTTP request | Description
  - [Model.SearchResult](docs\SearchResult.md)
  - [Model.SearchableItem](docs\SearchableItem.md)
  - [Model.SecureUploadEntity](docs\SecureUploadEntity.md)
+ - [Model.SharedAllowedFormat](docs\SharedAllowedFormat.md)
  - [Model.SharedAsset](docs\SharedAsset.md)
  - [Model.SharedCollectionFull](docs\SharedCollectionFull.md)
+ - [Model.SharedCollectionZipRequest](docs\SharedCollectionZipRequest.md)
  - [Model.SignalRConnectionInfo](docs\SignalRConnectionInfo.md)
  - [Model.StaticDefinedList](docs\StaticDefinedList.md)
  - [Model.VersionEntity](docs\VersionEntity.md)

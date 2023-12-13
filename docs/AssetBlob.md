@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ContentType** | **string** |  | [optional] 
 **Md5** | **string** |  | [optional] 
 **Techdata** | [**List&lt;Metadata&gt;**](Metadata.md) |  | [optional] 
-**AddData** | [**List&lt;Metadata&gt;**](Metadata.md) |  | [optional] 
+**AddData** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Width** | **int?** |  | [optional] 
 **Height** | **int?** |  | [optional] 
 **Maxwidthheight** | **int?** |  | [optional] 

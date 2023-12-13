@@ -78,11 +78,40 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
+            //string ayPassword = null;
             //string continuationToken = null;
             //int? limit = null;
             //string orderby = null;
-            //var response = instance.HttpSharedCollectionsGetById(id, continuationToken, limit, orderby);
+            //var response = instance.HttpSharedCollectionsGetById(id, ayPassword, continuationToken, limit, orderby);
             //Assert.IsType<SharedCollectionFull>(response);
+        }
+
+        /// <summary>
+        /// Test HttpSharedCollectionsGetStatusZipById
+        /// </summary>
+        [Fact]
+        public void HttpSharedCollectionsGetStatusZipByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //string zipId = null;
+            //string ayPassword = null;
+            //var response = instance.HttpSharedCollectionsGetStatusZipById(id, zipId, ayPassword);
+            //Assert.IsType<SharedCollectionZipRequest>(response);
+        }
+
+        /// <summary>
+        /// Test HttpSharedCollectionsRequestZipById
+        /// </summary>
+        [Fact]
+        public void HttpSharedCollectionsRequestZipByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //string ayPassword = null;
+            //SharedCollectionZipRequest sharedCollectionZipRequest = null;
+            //var response = instance.HttpSharedCollectionsRequestZipById(id, ayPassword, sharedCollectionZipRequest);
+            //Assert.IsType<SharedCollectionZipRequest>(response);
         }
     }
 }

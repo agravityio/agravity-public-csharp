@@ -135,6 +135,21 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpGetSharedAssetBlob
+        /// </summary>
+        [Fact]
+        public void HttpGetSharedAssetBlobTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string shareId = null;
+            //string id = null;
+            //string format = null;
+            //string ayPassword = null;
+            //var response = instance.HttpGetSharedAssetBlob(shareId, id, format, ayPassword);
+            //Assert.IsType<AssetBlob>(response);
+        }
+
+        /// <summary>
         /// Test HttpImageDynamicEdit
         /// </summary>
         [Fact]

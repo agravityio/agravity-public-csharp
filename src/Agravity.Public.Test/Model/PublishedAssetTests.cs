@@ -74,6 +74,14 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Name'
         }
         /// <summary>
+        /// Test the property 'Target'
+        /// </summary>
+        [Fact]
+        public void TargetTest()
+        {
+            // TODO unit test for the property 'Target'
+        }
+        /// <summary>
         /// Test the property 'Description'
         /// </summary>
         [Fact]
@@ -112,6 +120,14 @@ namespace Agravity.Public.Test.Model
         public void CdnTest()
         {
             // TODO unit test for the property 'Cdn'
+        }
+        /// <summary>
+        /// Test the property 'StatusTableId'
+        /// </summary>
+        [Fact]
+        public void StatusTableIdTest()
+        {
+            // TODO unit test for the property 'StatusTableId'
         }
         /// <summary>
         /// Test the property 'Format'

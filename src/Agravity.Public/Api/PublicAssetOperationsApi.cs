@@ -184,6 +184,35 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// This endpoint checks, if an asset exists, is an image, has original blob, is status active, is part of the shared collection and returns the requested asset blob.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">Which download format the blob is requested.</param>
+        /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AssetBlob</returns>
+        AssetBlob HttpGetSharedAssetBlob(string shareId, string id, string format, string ayPassword = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint checks, if an asset exists, is an image, has original blob, is status active, is part of the shared collection and returns the requested asset blob.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">Which download format the blob is requested.</param>
+        /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AssetBlob</returns>
+        ApiResponse<AssetBlob> HttpGetSharedAssetBlobWithHttpInfo(string shareId, string id, string format, string ayPassword = default(string), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// This endpoint lets you use the entire api of Imagemagick to edit the image.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
@@ -427,6 +456,37 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetBlob)</returns>
         System.Threading.Tasks.Task<ApiResponse<AssetBlob>> HttpGetAssetDownloadWithHttpInfoAsync(string id, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint checks, if an asset exists, is an image, has original blob, is status active, is part of the shared collection and returns the requested asset blob.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">Which download format the blob is requested.</param>
+        /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AssetBlob</returns>
+        System.Threading.Tasks.Task<AssetBlob> HttpGetSharedAssetBlobAsync(string shareId, string id, string format, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint checks, if an asset exists, is an image, has original blob, is status active, is part of the shared collection and returns the requested asset blob.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">Which download format the blob is requested.</param>
+        /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AssetBlob)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AssetBlob>> HttpGetSharedAssetBlobWithHttpInfoAsync(string shareId, string id, string format, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1627,6 +1687,198 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpGetAssetDownload", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint checks, if an asset exists, is an image, has original blob, is status active, is part of the shared collection and returns the requested asset blob.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">Which download format the blob is requested.</param>
+        /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AssetBlob</returns>
+        public AssetBlob HttpGetSharedAssetBlob(string shareId, string id, string format, string ayPassword = default(string), int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = HttpGetSharedAssetBlobWithHttpInfo(shareId, id, format, ayPassword);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint checks, if an asset exists, is an image, has original blob, is status active, is part of the shared collection and returns the requested asset blob.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">Which download format the blob is requested.</param>
+        /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AssetBlob</returns>
+        public Agravity.Public.Client.ApiResponse<AssetBlob> HttpGetSharedAssetBlobWithHttpInfo(string shareId, string id, string format, string ayPassword = default(string), int operationIndex = 0)
+        {
+            // verify the required parameter 'shareId' is set
+            if (shareId == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'shareId' when calling PublicAssetOperationsApi->HttpGetSharedAssetBlob");
+            }
+
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetOperationsApi->HttpGetSharedAssetBlob");
+            }
+
+            // verify the required parameter 'format' is set
+            if (format == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'format' when calling PublicAssetOperationsApi->HttpGetSharedAssetBlob");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "share-id", shareId));
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "format", format));
+            if (ayPassword != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("ay-password", Agravity.Public.Client.ClientUtils.ParameterToString(ayPassword)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpGetSharedAssetBlob";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<AssetBlob>("/assets/{id}/blob", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpGetSharedAssetBlob", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint checks, if an asset exists, is an image, has original blob, is status active, is part of the shared collection and returns the requested asset blob.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">Which download format the blob is requested.</param>
+        /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AssetBlob</returns>
+        public async System.Threading.Tasks.Task<AssetBlob> HttpGetSharedAssetBlobAsync(string shareId, string id, string format, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = await HttpGetSharedAssetBlobWithHttpInfoAsync(shareId, id, format, ayPassword, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint checks, if an asset exists, is an image, has original blob, is status active, is part of the shared collection and returns the requested asset blob.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">Which download format the blob is requested.</param>
+        /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AssetBlob)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetBlob>> HttpGetSharedAssetBlobWithHttpInfoAsync(string shareId, string id, string format, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'shareId' is set
+            if (shareId == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'shareId' when calling PublicAssetOperationsApi->HttpGetSharedAssetBlob");
+            }
+
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetOperationsApi->HttpGetSharedAssetBlob");
+            }
+
+            // verify the required parameter 'format' is set
+            if (format == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'format' when calling PublicAssetOperationsApi->HttpGetSharedAssetBlob");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "share-id", shareId));
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "format", format));
+            if (ayPassword != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("ay-password", Agravity.Public.Client.ClientUtils.ParameterToString(ayPassword)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpGetSharedAssetBlob";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AssetBlob>("/assets/{id}/blob", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpGetSharedAssetBlob", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

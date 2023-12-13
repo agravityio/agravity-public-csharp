@@ -1,23 +1,18 @@
-# Agravity.Public.Model.SharedCollectionFull
+# Agravity.Public.Model.SharedCollectionZipRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Page** | [**List&lt;SharedAsset&gt;**](SharedAsset.md) |  | [optional] 
-**PageSize** | **int** |  | [optional] 
-**Size** | **int?** |  | [optional] 
-**ContinuationToken** | **string** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **EntityType** | **string** |  | [optional] 
-**CollectionId** | **string** |  | [optional] 
 **Url** | **string** |  | [optional] 
+**InstanceId** | **string** |  | [optional] 
+**SharedcollId** | **string** |  | [optional] 
 **ValidUntil** | **DateTime** |  | [optional] 
-**ValidFor** | **string** |  | [optional] 
-**Message** | **string** |  | [optional] 
-**Global** | **bool** |  | [optional] 
-**AllowedFormats** | [**List&lt;SharedAllowedFormat&gt;**](SharedAllowedFormat.md) |  | [optional] 
 **Password** | **string** |  | [optional] 
+**AllowedFormats** | [**List&lt;SharedAllowedFormat&gt;**](SharedAllowedFormat.md) |  | [optional] 
+**Error** | [**AgravityErrorResponse**](AgravityErrorResponse.md) |  | [optional] 
 **Status** | **string** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 

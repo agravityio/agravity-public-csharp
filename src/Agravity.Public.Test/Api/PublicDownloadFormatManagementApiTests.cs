@@ -65,5 +65,18 @@ namespace Agravity.Public.Test.Api
             //var response = instance.HttpDownloadFormatsGetAll();
             //Assert.IsType<List<DownloadFormat>>(response);
         }
+
+        /// <summary>
+        /// Test HttpDownloadFormatsGetAllFromShared
+        /// </summary>
+        [Fact]
+        public void HttpDownloadFormatsGetAllFromSharedTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string shareId = null;
+            //string ayPassword = null;
+            //var response = instance.HttpDownloadFormatsGetAllFromShared(shareId, ayPassword);
+            //Assert.IsType<List<DownloadFormat>>(response);
+        }
     }
 }

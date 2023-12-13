@@ -10,6 +10,31 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="6.1.0"/> [6.1.0](https://www.nuget.org/packages/Agravity.Public/6.1.0) (2023-12-14)
+
+Extend Share to have passwords, allowed_formats and be a separate entity:
+
+- add GET `/assets/{id}/blob` - This endpoint checks, if an asset exists, is an image, has original blob, is status active, is part of the shared collection and returns the requested asset blob.
+- add GET `/downloadformats-shared` - This endpoint lists all download formats for a specific shared collections in database. Needs a valid shared collection ID to be authenticated.
+- add GET `/shared/{id}/zip/{zipId}` - This endpoint gets the progress/status of the ZIP creation of a shared collection.
+- add POST `/shared/{id}/zip` - Initiates the ZIP creation of a shared collection.
+- add param `ay-password` to get share
+- fix add_data in AssetBlob to be not an array of metadata
+- add model `SharedAllowedFormat`
+- add model `SharedCollectionZipRequest`
+- refactor collectionSharingService to collectionShareManagementService
+- Add ay-password header to shared collection (and zip request) endpoints
+- Add password to shared collection model
+
+Other changes:
+
+- GET `/assets/{id}/textcontent` - This endpoint returns all textual content of an asset (i.e. text of PDF)
+- Add `Removed` and `DirtyMarked` as history entry types. `DirtyMarked` is only used backend internally.
+- Added `error`(AgravityErrorResponse) to sharedCollectionZipRequest class if zip caused an error.
+- Removed unused `opened` field from sharedCollection model.
+
+---
+
 ## AgravityAPI <a name="6.0.4"/> [6.0.4](https://www.nuget.org/packages/Agravity.Public/6.0.4) (2023-11-06)
 
 - Just version upgrade to match backend
@@ -36,23 +61,22 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ## AgravityAPI <a name="6.0.0"/> [6.0.0](https://www.nuget.org/packages/Agravity.Public/6.0.0) (2023-10-02)
 
-#70 Alternative thumbnails for assets
+- #70 Alternative thumbnails for assets
 
-- Add new optional param previewofto /assetupload endpoint
-- Respect versionendpoint as well for preview
+  - Add new optional param previewofto /assetupload endpoint
+  - Respect versionendpoint as well for preview
 
-#784 Add Roles to Permission System
+- #784 Add Roles to Permission System
 
-- Add role property to Asset, Collection and CollectionType which can be NONE, VIEWER, EDITOR
-- Change permissions property from workspace and collection to to be an array of PermissionEntity (role and id)
+  - Add role property to Asset, Collection and CollectionType which can be NONE, VIEWER, EDITOR
+  - Change permissions property from workspace and collection to to be an array of PermissionEntity (role and id)
 
-#974 Add custom configs for frontends
+- #974 Add custom configs for frontends
 
-- Update endpoint GET `/config/frontend` - add param `customonly` - This returns only the custom created configurations.
+  - Update endpoint GET `/config/frontend` - add param `customonly` - This returns only the custom created configurations.
 
-#930 Allow versioning of assets (not dependent on the type), if not published
-
-- Add `mime_type` to version to be optionally checked in backend
+- #930 Allow versioning of assets (not dependent on the type), if not published
+  - Add `mime_type` to version to be optionally checked in backend
 
 ---
 

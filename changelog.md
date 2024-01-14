@@ -4,9 +4,15 @@ Any known issues detected on that version are listed in the [known issues](#know
 
 Preview features are treated as a separate branch and will not be included in the official release until the feature is ready. Each preview release lists all the additional features that are enabled.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project does not adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
+and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
+
+---
+
+## AgravityAPI <a name="6.1.3"/> [6.1.3](https://www.nuget.org/packages/Agravity.Public/6.1.3) (2024-01-14)
+
+- Just update year to 2024 in description
 
 ---
 

@@ -29,6 +29,10 @@ docs/GroupAllAppData.md
 docs/Metadata.md
 docs/OkResult.md
 docs/PermissionEntity.md
+docs/Portal.md
+docs/PortalConfiguration.md
+docs/PortalLanguages.md
+docs/PortalTheme.md
 docs/PublicAssetManagementApi.md
 docs/PublicAssetOperationsApi.md
 docs/PublicAssetPublishingApi.md
@@ -41,6 +45,7 @@ docs/PublicConfigurationManagementApi.md
 docs/PublicDownloadFormatManagementApi.md
 docs/PublicGeneralManagementApi.md
 docs/PublicHelperToolsApi.md
+docs/PublicPortalManagementApi.md
 docs/PublicPublishingApi.md
 docs/PublicSavedSearchApi.md
 docs/PublicSearchManagementApi.md
@@ -84,6 +89,7 @@ src/Agravity.Public.Test/Api/PublicConfigurationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicDownloadFormatManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicGeneralManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicHelperToolsApiTests.cs
+src/Agravity.Public.Test/Api/PublicPortalManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicPublishingApiTests.cs
 src/Agravity.Public.Test/Api/PublicSavedSearchApiTests.cs
 src/Agravity.Public.Test/Api/PublicSearchManagementApiTests.cs
@@ -120,6 +126,10 @@ src/Agravity.Public.Test/Model/GroupAllAppDataTests.cs
 src/Agravity.Public.Test/Model/MetadataTests.cs
 src/Agravity.Public.Test/Model/OkResultTests.cs
 src/Agravity.Public.Test/Model/PermissionEntityTests.cs
+src/Agravity.Public.Test/Model/PortalConfigurationTests.cs
+src/Agravity.Public.Test/Model/PortalLanguagesTests.cs
+src/Agravity.Public.Test/Model/PortalTests.cs
+src/Agravity.Public.Test/Model/PortalThemeTests.cs
 src/Agravity.Public.Test/Model/PublishEntityTests.cs
 src/Agravity.Public.Test/Model/PublishedAssetTests.cs
 src/Agravity.Public.Test/Model/QuickShareFullTests.cs
@@ -153,6 +163,7 @@ src/Agravity.Public/Api/PublicConfigurationManagementApi.cs
 src/Agravity.Public/Api/PublicDownloadFormatManagementApi.cs
 src/Agravity.Public/Api/PublicGeneralManagementApi.cs
 src/Agravity.Public/Api/PublicHelperToolsApi.cs
+src/Agravity.Public/Api/PublicPortalManagementApi.cs
 src/Agravity.Public/Api/PublicPublishingApi.cs
 src/Agravity.Public/Api/PublicSavedSearchApi.cs
 src/Agravity.Public/Api/PublicSearchManagementApi.cs
@@ -206,6 +217,10 @@ src/Agravity.Public/Model/GroupAllAppData.cs
 src/Agravity.Public/Model/Metadata.cs
 src/Agravity.Public/Model/OkResult.cs
 src/Agravity.Public/Model/PermissionEntity.cs
+src/Agravity.Public/Model/Portal.cs
+src/Agravity.Public/Model/PortalConfiguration.cs
+src/Agravity.Public/Model/PortalLanguages.cs
+src/Agravity.Public/Model/PortalTheme.cs
 src/Agravity.Public/Model/PublishEntity.cs
 src/Agravity.Public/Model/PublishedAsset.cs
 src/Agravity.Public/Model/QuickShareFull.cs

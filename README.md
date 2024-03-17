@@ -117,6 +117,7 @@ Class | Method | HTTP request | Description
 *PublicAssetManagementApi* | [**HttpPublicAssetsUpdateById**](docs\PublicAssetManagementApi.md#httppublicassetsupdatebyid) | **POST** /assets/{id} | 
 *PublicAssetOperationsApi* | [**HttpAssetImageEdit**](docs\PublicAssetOperationsApi.md#httpassetimageedit) | **GET** /assets/{id}/imageedit | 
 *PublicAssetOperationsApi* | [**HttpAssetResize**](docs\PublicAssetOperationsApi.md#httpassetresize) | **GET** /assets/{id}/resize | 
+*PublicAssetOperationsApi* | [**HttpAssetToCollection**](docs\PublicAssetOperationsApi.md#httpassettocollection) | **POST** /assets/{id}/tocollection | 
 *PublicAssetOperationsApi* | [**HttpGetAssetBlob**](docs\PublicAssetOperationsApi.md#httpgetassetblob) | **GET** /assets/{id}/blobs | 
 *PublicAssetOperationsApi* | [**HttpGetAssetCollectionsById**](docs\PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections | 
 *PublicAssetOperationsApi* | [**HttpGetAssetDownload**](docs\PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download | 
@@ -157,6 +158,8 @@ Class | Method | HTTP request | Description
 *PublicHelperToolsApi* | [**HttpGetAllowedFilterableItems**](docs\PublicHelperToolsApi.md#httpgetallowedfilterableitems) | **GET** /helper/filterableitems | 
 *PublicHelperToolsApi* | [**HttpGetAllowedSearchableItemNames**](docs\PublicHelperToolsApi.md#httpgetallowedsearchableitemnames) | **GET** /helper/searchableitemnames | 
 *PublicHelperToolsApi* | [**HttpGetAllowedSearchableItems**](docs\PublicHelperToolsApi.md#httpgetallowedsearchableitems) | **GET** /helper/searchableitems | 
+*PublicPortalManagementApi* | [**HttpPortalsConfigurationGetById**](docs\PublicPortalManagementApi.md#httpportalsconfigurationgetbyid) | **GET** /portals/{id}/config | 
+*PublicPortalManagementApi* | [**HttpPortalsGetById**](docs\PublicPortalManagementApi.md#httpportalsgetbyid) | **GET** /portals/{id} | 
 *PublicPublishingApi* | [**HttpPublishedAssetsGetAll**](docs\PublicPublishingApi.md#httppublishedassetsgetall) | **GET** /publish | 
 *PublicSavedSearchApi* | [**HttpSavedSearchesGetAll**](docs\PublicSavedSearchApi.md#httpsavedsearchesgetall) | **GET** /savedsearches | 
 *PublicSearchManagementApi* | [**HttpGlobalSearch**](docs\PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search | 
@@ -207,6 +210,10 @@ Class | Method | HTTP request | Description
  - [Model.Metadata](docs\Metadata.md)
  - [Model.OkResult](docs\OkResult.md)
  - [Model.PermissionEntity](docs\PermissionEntity.md)
+ - [Model.Portal](docs\Portal.md)
+ - [Model.PortalConfiguration](docs\PortalConfiguration.md)
+ - [Model.PortalLanguages](docs\PortalLanguages.md)
+ - [Model.PortalTheme](docs\PortalTheme.md)
  - [Model.PublishEntity](docs\PublishEntity.md)
  - [Model.PublishedAsset](docs\PublishedAsset.md)
  - [Model.QuickShareFull](docs\QuickShareFull.md)

@@ -72,8 +72,9 @@ namespace Agravity.Public.Test.Api
             //string filter = null;
             //string orderby = null;
             //string ids = null;
+            //string portalId = null;
             //bool? translations = null;
-            //var response = instance.HttpGlobalSearch(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, translations);
+            //var response = instance.HttpGlobalSearch(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations);
             //Assert.IsType<SearchResult>(response);
         }
     }

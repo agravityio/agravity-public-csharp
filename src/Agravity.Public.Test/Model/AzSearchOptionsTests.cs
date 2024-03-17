@@ -129,6 +129,14 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Ids'
         }
+        /// <summary>
+        /// Test the property 'PortalId'
+        /// </summary>
+        [Fact]
+        public void PortalIdTest()
+        {
+            // TODO unit test for the property 'PortalId'
+        }
 
     }
 

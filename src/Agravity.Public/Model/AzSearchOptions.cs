@@ -44,7 +44,8 @@ namespace Agravity.Public.Model
         /// <param name="orderby">orderby.</param>
         /// <param name="mode">mode.</param>
         /// <param name="ids">ids.</param>
-        public AzSearchOptions(string searchString = default(string), int? limit = default(int?), int skip = default(int), string collectiontypeid = default(string), string collectionid = default(string), string filter = default(string), string orderby = default(string), string mode = default(string), string ids = default(string))
+        /// <param name="portalId">portalId.</param>
+        public AzSearchOptions(string searchString = default(string), int? limit = default(int?), int skip = default(int), string collectiontypeid = default(string), string collectionid = default(string), string filter = default(string), string orderby = default(string), string mode = default(string), string ids = default(string), string portalId = default(string))
         {
             this.SearchString = searchString;
             this.Limit = limit;
@@ -55,6 +56,7 @@ namespace Agravity.Public.Model
             this.Orderby = orderby;
             this.Mode = mode;
             this.Ids = ids;
+            this.PortalId = portalId;
         }
 
         /// <summary>
@@ -112,6 +114,12 @@ namespace Agravity.Public.Model
         public string Ids { get; set; }
 
         /// <summary>
+        /// Gets or Sets PortalId
+        /// </summary>
+        [DataMember(Name = "portal_id", EmitDefaultValue = false)]
+        public string PortalId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -128,6 +136,7 @@ namespace Agravity.Public.Model
             sb.Append("  Orderby: ").Append(Orderby).Append("\n");
             sb.Append("  Mode: ").Append(Mode).Append("\n");
             sb.Append("  Ids: ").Append(Ids).Append("\n");
+            sb.Append("  PortalId: ").Append(PortalId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -206,6 +215,11 @@ namespace Agravity.Public.Model
                     this.Ids == input.Ids ||
                     (this.Ids != null &&
                     this.Ids.Equals(input.Ids))
+                ) && 
+                (
+                    this.PortalId == input.PortalId ||
+                    (this.PortalId != null &&
+                    this.PortalId.Equals(input.PortalId))
                 );
         }
 
@@ -250,6 +264,10 @@ namespace Agravity.Public.Model
                 if (this.Ids != null)
                 {
                     hashCode = (hashCode * 59) + this.Ids.GetHashCode();
+                }
+                if (this.PortalId != null)
+                {
+                    hashCode = (hashCode * 59) + this.PortalId.GetHashCode();
                 }
                 return hashCode;
             }

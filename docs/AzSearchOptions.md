@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Orderby** | **string** |  | [optional] 
 **Mode** | **string** |  | [optional] 
 **Ids** | **string** |  | [optional] 
+**PortalId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

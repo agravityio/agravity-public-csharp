@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **CollectionTypes** | [**List&lt;CollectionType&gt;**](CollectionType.md) |  | [optional] 
 **Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
-**Order** | **int?** |  | [optional] 
+**Order** | **int** |  | [optional] 
 **Permissions** | [**List&lt;PermissionEntity&gt;**](PermissionEntity.md) |  | [optional] 
 **Description** | **string** |  | [optional] 
 **AddProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 

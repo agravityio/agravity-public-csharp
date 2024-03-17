@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Multi** | **bool?** |  | [optional] 
 **Md5** | **string** |  | [optional] 
 **Group** | **string** |  | [optional] 
-**Order** | **int?** |  | [optional] 
+**Order** | **int** |  | [optional] 
 **Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
 **Status** | **string** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 

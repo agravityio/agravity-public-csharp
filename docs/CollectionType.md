@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **Items** | [**List&lt;CollTypeItem&gt;**](CollTypeItem.md) |  | [optional] 
 **Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
-**Order** | **int?** |  | [optional] 
+**Order** | **int** |  | [optional] 
 **Permissions** | [**List&lt;PermissionEntity&gt;**](PermissionEntity.md) |  | [optional] 
 **Permissionless** | **bool?** |  | [optional] 
 **Role** | **string** |  | [optional] [default to RoleEnum.NONE]

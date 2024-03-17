@@ -6,6 +6,7 @@ All URIs are relative to *http://localhost:7072/api*
 |--------|--------------|-------------|
 | [**HttpAssetImageEdit**](PublicAssetOperationsApi.md#httpassetimageedit) | **GET** /assets/{id}/imageedit |  |
 | [**HttpAssetResize**](PublicAssetOperationsApi.md#httpassetresize) | **GET** /assets/{id}/resize |  |
+| [**HttpAssetToCollection**](PublicAssetOperationsApi.md#httpassettocollection) | **POST** /assets/{id}/tocollection |  |
 | [**HttpGetAssetBlob**](PublicAssetOperationsApi.md#httpgetassetblob) | **GET** /assets/{id}/blobs |  |
 | [**HttpGetAssetCollectionsById**](PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections |  |
 | [**HttpGetAssetDownload**](PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download |  |
@@ -240,9 +241,105 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="httpassettocollection"></a>
+# **HttpAssetToCollection**
+> void HttpAssetToCollection (string id, MoveCollectionBody moveCollectionBody)
+
+
+
+This endpoint allows to move/assign from/to another collection with the given operation parameter.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpAssetToCollectionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicAssetOperationsApi(config);
+            var id = "id_example";  // string | The ID of the asset.
+            var moveCollectionBody = new MoveCollectionBody(); // MoveCollectionBody | Contains information about this operation.
+
+            try
+            {
+                apiInstance.HttpAssetToCollection(id, moveCollectionBody);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetToCollection: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpAssetToCollectionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    apiInstance.HttpAssetToCollectionWithHttpInfo(id, moveCollectionBody);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpAssetToCollectionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
+| **moveCollectionBody** | [**MoveCollectionBody**](MoveCollectionBody.md) | Contains information about this operation. |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **400** | Internal error. Request or Database client are null. (Code: 21814e91-379c-4c35-8ff9-974147ba6b76) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **204** | Moves/assigns a single asset from/to collection with the given operation parameter. |  -  |
+| **404** | The requested item could not be found. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="httpgetassetblob"></a>
 # **HttpGetAssetBlob**
-> AssetBlob HttpGetAssetBlob (string id, string c)
+> AssetBlob HttpGetAssetBlob (string id, string c, string portalId = null, string key = null)
 
 
 
@@ -271,11 +368,13 @@ namespace Example
 
             var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
-            var c = "c_example";  // string | \"t\" for thumbnail (default); \"o\" for optimized; \"i\" for internal.
+            var c = "c_example";  // string | \"t\" for thumbnail (default); \"op\" for optimized; \"os\" for original size; \"o\" for original.
+            var portalId = "portalId_example";  // string | If the request comes from portal this is the indicator. If used the \"key\" param becomes mandatory. (optional) 
+            var key = "key_example";  // string | The key is the MD5 hash of the original blob of the asset. (optional) 
 
             try
             {
-                AssetBlob result = apiInstance.HttpGetAssetBlob(id, c);
+                AssetBlob result = apiInstance.HttpGetAssetBlob(id, c, portalId, key);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -295,7 +394,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<AssetBlob> response = apiInstance.HttpGetAssetBlobWithHttpInfo(id, c);
+    ApiResponse<AssetBlob> response = apiInstance.HttpGetAssetBlobWithHttpInfo(id, c, portalId, key);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -313,7 +412,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the asset. |  |
-| **c** | **string** | \&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. |  |
+| **c** | **string** | \&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original. |  |
+| **portalId** | **string** | If the request comes from portal this is the indicator. If used the \&quot;key\&quot; param becomes mandatory. | [optional]  |
+| **key** | **string** | The key is the MD5 hash of the original blob of the asset. | [optional]  |
 
 ### Return type
 
@@ -441,7 +542,7 @@ catch (ApiException e)
 
 <a name="httpgetassetdownload"></a>
 # **HttpGetAssetDownload**
-> AssetBlob HttpGetAssetDownload (string id, string c = null)
+> AssetBlob HttpGetAssetDownload (string id, string c = null, string f = null, string portalId = null, string key = null)
 
 
 
@@ -470,11 +571,14 @@ namespace Example
 
             var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
-            var c = "c_example";  // string | \"t\" for thumbnail (default); \"o\" for optimized; \"i\" for internal. (optional) 
+            var c = "c_example";  // string | \"t\" for thumbnail (default); \"op\" for optimized; \"os\" for original size; \"o\" for original. (optional) 
+            var f = "f_example";  // string | (optional) provide the id of any valid download format. (optional) 
+            var portalId = "portalId_example";  // string | If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional) 
+            var key = "key_example";  // string | The key is the MD5 hash of the original blob of the asset. (optional) 
 
             try
             {
-                AssetBlob result = apiInstance.HttpGetAssetDownload(id, c);
+                AssetBlob result = apiInstance.HttpGetAssetDownload(id, c, f, portalId, key);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -494,7 +598,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<AssetBlob> response = apiInstance.HttpGetAssetDownloadWithHttpInfo(id, c);
+    ApiResponse<AssetBlob> response = apiInstance.HttpGetAssetDownloadWithHttpInfo(id, c, f, portalId, key);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -512,7 +616,10 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the asset. |  |
-| **c** | **string** | \&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. | [optional]  |
+| **c** | **string** | \&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original. | [optional]  |
+| **f** | **string** | (optional) provide the id of any valid download format. | [optional]  |
+| **portalId** | **string** | If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. | [optional]  |
+| **key** | **string** | The key is the MD5 hash of the original blob of the asset. | [optional]  |
 
 ### Return type
 

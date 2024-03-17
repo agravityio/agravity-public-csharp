@@ -95,6 +95,18 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpAssetToCollection
+        /// </summary>
+        [Fact]
+        public void HttpAssetToCollectionTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //MoveCollectionBody moveCollectionBody = null;
+            //instance.HttpAssetToCollection(id, moveCollectionBody);
+        }
+
+        /// <summary>
         /// Test HttpGetAssetBlob
         /// </summary>
         [Fact]

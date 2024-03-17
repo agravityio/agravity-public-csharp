@@ -208,6 +208,7 @@ Class | Method | HTTP request | Description
  - [Model.FrontendAppConfig](docs\FrontendAppConfig.md)
  - [Model.GroupAllAppData](docs\GroupAllAppData.md)
  - [Model.Metadata](docs\Metadata.md)
+ - [Model.MoveCollectionBody](docs\MoveCollectionBody.md)
  - [Model.OkResult](docs\OkResult.md)
  - [Model.PermissionEntity](docs\PermissionEntity.md)
  - [Model.Portal](docs\Portal.md)

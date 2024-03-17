@@ -27,6 +27,7 @@ docs/EntityIdName.md
 docs/FrontendAppConfig.md
 docs/GroupAllAppData.md
 docs/Metadata.md
+docs/MoveCollectionBody.md
 docs/OkResult.md
 docs/PermissionEntity.md
 docs/Portal.md
@@ -124,6 +125,7 @@ src/Agravity.Public.Test/Model/EntityIdTests.cs
 src/Agravity.Public.Test/Model/FrontendAppConfigTests.cs
 src/Agravity.Public.Test/Model/GroupAllAppDataTests.cs
 src/Agravity.Public.Test/Model/MetadataTests.cs
+src/Agravity.Public.Test/Model/MoveCollectionBodyTests.cs
 src/Agravity.Public.Test/Model/OkResultTests.cs
 src/Agravity.Public.Test/Model/PermissionEntityTests.cs
 src/Agravity.Public.Test/Model/PortalConfigurationTests.cs
@@ -215,6 +217,7 @@ src/Agravity.Public/Model/EntityIdName.cs
 src/Agravity.Public/Model/FrontendAppConfig.cs
 src/Agravity.Public/Model/GroupAllAppData.cs
 src/Agravity.Public/Model/Metadata.cs
+src/Agravity.Public/Model/MoveCollectionBody.cs
 src/Agravity.Public/Model/OkResult.cs
 src/Agravity.Public/Model/PermissionEntity.cs
 src/Agravity.Public/Model/Portal.cs

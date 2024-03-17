@@ -51,7 +51,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Workspace(string id = default(string), string entityType = default(string), string name = default(string), List<CollectionType> collectionTypes = default(List<CollectionType>), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), int? order = default(int?), List<PermissionEntity> permissions = default(List<PermissionEntity>), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public Workspace(string id = default(string), string entityType = default(string), string name = default(string), List<CollectionType> collectionTypes = default(List<CollectionType>), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), int order = default(int), List<PermissionEntity> permissions = default(List<PermissionEntity>), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -104,8 +104,8 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Order
         /// </summary>
-        [DataMember(Name = "order", EmitDefaultValue = true)]
-        public int? Order { get; set; }
+        [DataMember(Name = "order", EmitDefaultValue = false)]
+        public int Order { get; set; }
 
         /// <summary>
         /// Gets or Sets Permissions
@@ -255,8 +255,7 @@ namespace Agravity.Public.Model
                 ) && 
                 (
                     this.Order == input.Order ||
-                    (this.Order != null &&
-                    this.Order.Equals(input.Order))
+                    this.Order.Equals(input.Order)
                 ) && 
                 (
                     this.Permissions == input.Permissions ||
@@ -341,10 +340,7 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.Translations.GetHashCode();
                 }
-                if (this.Order != null)
-                {
-                    hashCode = (hashCode * 59) + this.Order.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Order.GetHashCode();
                 if (this.Permissions != null)
                 {
                     hashCode = (hashCode * 59) + this.Permissions.GetHashCode();

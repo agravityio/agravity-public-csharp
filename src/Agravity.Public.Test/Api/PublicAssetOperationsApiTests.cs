@@ -103,7 +103,9 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //string c = null;
-            //var response = instance.HttpGetAssetBlob(id, c);
+            //string portalId = null;
+            //string key = null;
+            //var response = instance.HttpGetAssetBlob(id, c, portalId, key);
             //Assert.IsType<AssetBlob>(response);
         }
 
@@ -130,7 +132,10 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //string c = null;
-            //var response = instance.HttpGetAssetDownload(id, c);
+            //string f = null;
+            //string portalId = null;
+            //string key = null;
+            //var response = instance.HttpGetAssetDownload(id, c, f, portalId, key);
             //Assert.IsType<AssetBlob>(response);
         }
 

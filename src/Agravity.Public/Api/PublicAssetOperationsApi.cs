@@ -163,10 +163,13 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. (optional)</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original. (optional)</param>
+        /// <param name="f">(optional) provide the id of any valid download format. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetBlob</returns>
-        AssetBlob HttpGetAssetDownload(string id, string c = default(string), int operationIndex = 0);
+        AssetBlob HttpGetAssetDownload(string id, string c = default(string), string f = default(string), string portalId = default(string), string key = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -176,10 +179,13 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. (optional)</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original. (optional)</param>
+        /// <param name="f">(optional) provide the id of any valid download format. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetBlob</returns>
-        ApiResponse<AssetBlob> HttpGetAssetDownloadWithHttpInfo(string id, string c = default(string), int operationIndex = 0);
+        ApiResponse<AssetBlob> HttpGetAssetDownloadWithHttpInfo(string id, string c = default(string), string f = default(string), string portalId = default(string), string key = default(string), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -381,11 +387,13 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal.</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original.</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. If used the \&quot;key\&quot; param becomes mandatory. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetBlob</returns>
-        System.Threading.Tasks.Task<AssetBlob> HttpGetAssetBlobAsync(string id, string c, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AssetBlob> HttpGetAssetBlobAsync(string id, string c, string portalId = default(string), string key = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -395,11 +403,13 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal.</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original.</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. If used the \&quot;key\&quot; param becomes mandatory. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetBlob)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AssetBlob>> HttpGetAssetBlobWithHttpInfoAsync(string id, string c, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AssetBlob>> HttpGetAssetBlobWithHttpInfoAsync(string id, string c, string portalId = default(string), string key = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -437,11 +447,14 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. (optional)</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original. (optional)</param>
+        /// <param name="f">(optional) provide the id of any valid download format. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetBlob</returns>
-        System.Threading.Tasks.Task<AssetBlob> HttpGetAssetDownloadAsync(string id, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AssetBlob> HttpGetAssetDownloadAsync(string id, string c = default(string), string f = default(string), string portalId = default(string), string key = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -451,11 +464,14 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. (optional)</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original. (optional)</param>
+        /// <param name="f">(optional) provide the id of any valid download format. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetBlob)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AssetBlob>> HttpGetAssetDownloadWithHttpInfoAsync(string id, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AssetBlob>> HttpGetAssetDownloadWithHttpInfoAsync(string id, string c = default(string), string f = default(string), string portalId = default(string), string key = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1185,12 +1201,14 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal.</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original.</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. If used the \&quot;key\&quot; param becomes mandatory. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetBlob</returns>
-        public AssetBlob HttpGetAssetBlob(string id, string c, int operationIndex = 0)
+        public AssetBlob HttpGetAssetBlob(string id, string c, string portalId = default(string), string key = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = HttpGetAssetBlobWithHttpInfo(id, c);
+            Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = HttpGetAssetBlobWithHttpInfo(id, c, portalId, key);
             return localVarResponse.Data;
         }
 
@@ -1199,10 +1217,12 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal.</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original.</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. If used the \&quot;key\&quot; param becomes mandatory. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetBlob</returns>
-        public Agravity.Public.Client.ApiResponse<AssetBlob> HttpGetAssetBlobWithHttpInfo(string id, string c, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<AssetBlob> HttpGetAssetBlobWithHttpInfo(string id, string c, string portalId = default(string), string key = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1240,6 +1260,14 @@ namespace Agravity.Public.Api
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "c", c));
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+            if (key != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "key", key));
+            }
 
             localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpGetAssetBlob";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1269,13 +1297,15 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal.</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original.</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. If used the \&quot;key\&quot; param becomes mandatory. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetBlob</returns>
-        public async System.Threading.Tasks.Task<AssetBlob> HttpGetAssetBlobAsync(string id, string c, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AssetBlob> HttpGetAssetBlobAsync(string id, string c, string portalId = default(string), string key = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = await HttpGetAssetBlobWithHttpInfoAsync(id, c, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = await HttpGetAssetBlobWithHttpInfoAsync(id, c, portalId, key, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1284,11 +1314,13 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal.</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original.</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. If used the \&quot;key\&quot; param becomes mandatory. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetBlob)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetBlob>> HttpGetAssetBlobWithHttpInfoAsync(string id, string c, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetBlob>> HttpGetAssetBlobWithHttpInfoAsync(string id, string c, string portalId = default(string), string key = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1327,6 +1359,14 @@ namespace Agravity.Public.Api
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "c", c));
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+            if (key != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "key", key));
+            }
 
             localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpGetAssetBlob";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1535,12 +1575,15 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. (optional)</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original. (optional)</param>
+        /// <param name="f">(optional) provide the id of any valid download format. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetBlob</returns>
-        public AssetBlob HttpGetAssetDownload(string id, string c = default(string), int operationIndex = 0)
+        public AssetBlob HttpGetAssetDownload(string id, string c = default(string), string f = default(string), string portalId = default(string), string key = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = HttpGetAssetDownloadWithHttpInfo(id, c);
+            Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = HttpGetAssetDownloadWithHttpInfo(id, c, f, portalId, key);
             return localVarResponse.Data;
         }
 
@@ -1549,10 +1592,13 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. (optional)</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original. (optional)</param>
+        /// <param name="f">(optional) provide the id of any valid download format. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetBlob</returns>
-        public Agravity.Public.Client.ApiResponse<AssetBlob> HttpGetAssetDownloadWithHttpInfo(string id, string c = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<AssetBlob> HttpGetAssetDownloadWithHttpInfo(string id, string c = default(string), string f = default(string), string portalId = default(string), string key = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1586,6 +1632,18 @@ namespace Agravity.Public.Api
             if (c != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "c", c));
+            }
+            if (f != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "f", f));
+            }
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+            if (key != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "key", key));
             }
 
             localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpGetAssetDownload";
@@ -1616,13 +1674,16 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. (optional)</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original. (optional)</param>
+        /// <param name="f">(optional) provide the id of any valid download format. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetBlob</returns>
-        public async System.Threading.Tasks.Task<AssetBlob> HttpGetAssetDownloadAsync(string id, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AssetBlob> HttpGetAssetDownloadAsync(string id, string c = default(string), string f = default(string), string portalId = default(string), string key = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = await HttpGetAssetDownloadWithHttpInfoAsync(id, c, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = await HttpGetAssetDownloadWithHttpInfoAsync(id, c, f, portalId, key, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1631,11 +1692,14 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
-        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;o\&quot; for optimized; \&quot;i\&quot; for internal. (optional)</param>
+        /// <param name="c">\&quot;t\&quot; for thumbnail (default); \&quot;op\&quot; for optimized; \&quot;os\&quot; for original size; \&quot;o\&quot; for original. (optional)</param>
+        /// <param name="f">(optional) provide the id of any valid download format. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="key">The key is the MD5 hash of the original blob of the asset. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetBlob)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetBlob>> HttpGetAssetDownloadWithHttpInfoAsync(string id, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetBlob>> HttpGetAssetDownloadWithHttpInfoAsync(string id, string c = default(string), string f = default(string), string portalId = default(string), string key = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1670,6 +1734,18 @@ namespace Agravity.Public.Api
             if (c != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "c", c));
+            }
+            if (f != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "f", f));
+            }
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+            if (key != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "key", key));
             }
 
             localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpGetAssetDownload";

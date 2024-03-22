@@ -42,6 +42,9 @@ Get-ChildItem -Recurse -File | ForEach-Object { (Get-Content $_.FullName) -repla
 #replace all "Dictionary&gt;" with "Dictionary&lt;string, object&gt;&gt;"
 Get-ChildItem -Recurse -File | ForEach-Object { (Get-Content $_.FullName) -replace "Dictionary&gt;", "Dictionary&lt;string, object&gt;&gt;" | Set-Content $_.FullName }
 
+#replace all "StaticDefinedStaticDefinedList" with "StaticDefinedList"
+Get-ChildItem -Recurse -File | ForEach-Object { (Get-Content $_.FullName) -replace "StaticDefinedStaticDefinedList", "StaticDefinedStaticDefinedList" | Set-Content $_.FullName }
+
 # go one directory up
 Set-Location ..
 

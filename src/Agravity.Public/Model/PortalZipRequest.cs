@@ -27,19 +27,19 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// SharedCollectionZipRequest
+    /// PortalZipRequest
     /// </summary>
-    [DataContract(Name = "sharedCollectionZipRequest")]
-    public partial class SharedCollectionZipRequest : IEquatable<SharedCollectionZipRequest>, IValidatableObject
+    [DataContract(Name = "portalZipRequest")]
+    public partial class PortalZipRequest : IEquatable<PortalZipRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SharedCollectionZipRequest" /> class.
+        /// Initializes a new instance of the <see cref="PortalZipRequest" /> class.
         /// </summary>
-        /// <param name="sharedcollId">sharedcollId.</param>
-        /// <param name="password">password.</param>
+        /// <param name="zipType">zipType.</param>
+        /// <param name="portalId">portalId.</param>
+        /// <param name="assetIds">assetIds.</param>
         /// <param name="id">id.</param>
         /// <param name="entityType">entityType.</param>
-        /// <param name="zipType">zipType.</param>
         /// <param name="url">url.</param>
         /// <param name="instanceId">instanceId.</param>
         /// <param name="validUntil">validUntil.</param>
@@ -52,13 +52,13 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public SharedCollectionZipRequest(string sharedcollId = default(string), string password = default(string), string id = default(string), string entityType = default(string), string zipType = default(string), string url = default(string), string instanceId = default(string), DateTime validUntil = default(DateTime), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), AgravityErrorResponse error = default(AgravityErrorResponse), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public PortalZipRequest(string zipType = default(string), string portalId = default(string), List<string> assetIds = default(List<string>), string id = default(string), string entityType = default(string), string url = default(string), string instanceId = default(string), DateTime validUntil = default(DateTime), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), AgravityErrorResponse error = default(AgravityErrorResponse), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
-            this.SharedcollId = sharedcollId;
-            this.Password = password;
+            this.ZipType = zipType;
+            this.PortalId = portalId;
+            this.AssetIds = assetIds;
             this.Id = id;
             this.EntityType = entityType;
-            this.ZipType = zipType;
             this.Url = url;
             this.InstanceId = instanceId;
             this.ValidUntil = validUntil;
@@ -74,16 +74,22 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Gets or Sets SharedcollId
+        /// Gets or Sets ZipType
         /// </summary>
-        [DataMember(Name = "sharedcoll_id", EmitDefaultValue = false)]
-        public string SharedcollId { get; set; }
+        [DataMember(Name = "zip_type", EmitDefaultValue = false)]
+        public string ZipType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Password
+        /// Gets or Sets PortalId
         /// </summary>
-        [DataMember(Name = "password", EmitDefaultValue = false)]
-        public string Password { get; set; }
+        [DataMember(Name = "portal_id", EmitDefaultValue = false)]
+        public string PortalId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AssetIds
+        /// </summary>
+        [DataMember(Name = "asset_ids", EmitDefaultValue = false)]
+        public List<string> AssetIds { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -96,12 +102,6 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "entity_type", EmitDefaultValue = false)]
         public string EntityType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ZipType
-        /// </summary>
-        [DataMember(Name = "zip_type", EmitDefaultValue = false)]
-        public string ZipType { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
@@ -182,12 +182,12 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class SharedCollectionZipRequest {\n");
-            sb.Append("  SharedcollId: ").Append(SharedcollId).Append("\n");
-            sb.Append("  Password: ").Append(Password).Append("\n");
+            sb.Append("class PortalZipRequest {\n");
+            sb.Append("  ZipType: ").Append(ZipType).Append("\n");
+            sb.Append("  PortalId: ").Append(PortalId).Append("\n");
+            sb.Append("  AssetIds: ").Append(AssetIds).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  EntityType: ").Append(EntityType).Append("\n");
-            sb.Append("  ZipType: ").Append(ZipType).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  InstanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  ValidUntil: ").Append(ValidUntil).Append("\n");
@@ -220,15 +220,15 @@ namespace Agravity.Public.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SharedCollectionZipRequest);
+            return this.Equals(input as PortalZipRequest);
         }
 
         /// <summary>
-        /// Returns true if SharedCollectionZipRequest instances are equal
+        /// Returns true if PortalZipRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of SharedCollectionZipRequest to be compared</param>
+        /// <param name="input">Instance of PortalZipRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SharedCollectionZipRequest input)
+        public bool Equals(PortalZipRequest input)
         {
             if (input == null)
             {
@@ -236,14 +236,20 @@ namespace Agravity.Public.Model
             }
             return 
                 (
-                    this.SharedcollId == input.SharedcollId ||
-                    (this.SharedcollId != null &&
-                    this.SharedcollId.Equals(input.SharedcollId))
+                    this.ZipType == input.ZipType ||
+                    (this.ZipType != null &&
+                    this.ZipType.Equals(input.ZipType))
                 ) && 
                 (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
+                    this.PortalId == input.PortalId ||
+                    (this.PortalId != null &&
+                    this.PortalId.Equals(input.PortalId))
+                ) && 
+                (
+                    this.AssetIds == input.AssetIds ||
+                    this.AssetIds != null &&
+                    input.AssetIds != null &&
+                    this.AssetIds.SequenceEqual(input.AssetIds)
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -254,11 +260,6 @@ namespace Agravity.Public.Model
                     this.EntityType == input.EntityType ||
                     (this.EntityType != null &&
                     this.EntityType.Equals(input.EntityType))
-                ) && 
-                (
-                    this.ZipType == input.ZipType ||
-                    (this.ZipType != null &&
-                    this.ZipType.Equals(input.ZipType))
                 ) && 
                 (
                     this.Url == input.Url ||
@@ -332,13 +333,17 @@ namespace Agravity.Public.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SharedcollId != null)
+                if (this.ZipType != null)
                 {
-                    hashCode = (hashCode * 59) + this.SharedcollId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ZipType.GetHashCode();
                 }
-                if (this.Password != null)
+                if (this.PortalId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Password.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PortalId.GetHashCode();
+                }
+                if (this.AssetIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.AssetIds.GetHashCode();
                 }
                 if (this.Id != null)
                 {
@@ -347,10 +352,6 @@ namespace Agravity.Public.Model
                 if (this.EntityType != null)
                 {
                     hashCode = (hashCode * 59) + this.EntityType.GetHashCode();
-                }
-                if (this.ZipType != null)
-                {
-                    hashCode = (hashCode * 59) + this.ZipType.GetHashCode();
                 }
                 if (this.Url != null)
                 {

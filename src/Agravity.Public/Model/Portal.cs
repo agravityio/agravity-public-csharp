@@ -40,7 +40,9 @@ namespace Agravity.Public.Model
         /// <param name="filter">filter.</param>
         /// <param name="languages">languages.</param>
         /// <param name="theme">theme.</param>
+        /// <param name="links">links.</param>
         /// <param name="metadata">metadata.</param>
+        /// <param name="facettes">facettes.</param>
         /// <param name="allowedFormats">allowedFormats.</param>
         /// <param name="limitIds">limitIds.</param>
         /// <param name="name">name.</param>
@@ -53,14 +55,16 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Portal(string id = default(string), string entityType = default(string), string filter = default(string), PortalLanguages languages = default(PortalLanguages), PortalTheme theme = default(PortalTheme), List<string> metadata = default(List<string>), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), List<string> limitIds = default(List<string>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public Portal(string id = default(string), string entityType = default(string), string filter = default(string), PortalLanguages languages = default(PortalLanguages), PortalTheme theme = default(PortalTheme), PortalLinks links = default(PortalLinks), List<string> metadata = default(List<string>), List<string> facettes = default(List<string>), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), List<string> limitIds = default(List<string>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
             this.Filter = filter;
             this.Languages = languages;
             this.Theme = theme;
+            this.Links = links;
             this.Metadata = metadata;
+            this.Facettes = facettes;
             this.AllowedFormats = allowedFormats;
             this.LimitIds = limitIds;
             this.Name = name;
@@ -106,10 +110,22 @@ namespace Agravity.Public.Model
         public PortalTheme Theme { get; set; }
 
         /// <summary>
+        /// Gets or Sets Links
+        /// </summary>
+        [DataMember(Name = "links", EmitDefaultValue = false)]
+        public PortalLinks Links { get; set; }
+
+        /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
         [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public List<string> Metadata { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Facettes
+        /// </summary>
+        [DataMember(Name = "facettes", EmitDefaultValue = false)]
+        public List<string> Facettes { get; set; }
 
         /// <summary>
         /// Gets or Sets AllowedFormats
@@ -196,7 +212,9 @@ namespace Agravity.Public.Model
             sb.Append("  Filter: ").Append(Filter).Append("\n");
             sb.Append("  Languages: ").Append(Languages).Append("\n");
             sb.Append("  Theme: ").Append(Theme).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  Facettes: ").Append(Facettes).Append("\n");
             sb.Append("  AllowedFormats: ").Append(AllowedFormats).Append("\n");
             sb.Append("  LimitIds: ").Append(LimitIds).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -270,10 +288,21 @@ namespace Agravity.Public.Model
                     this.Theme.Equals(input.Theme))
                 ) && 
                 (
+                    this.Links == input.Links ||
+                    (this.Links != null &&
+                    this.Links.Equals(input.Links))
+                ) && 
+                (
                     this.Metadata == input.Metadata ||
                     this.Metadata != null &&
                     input.Metadata != null &&
                     this.Metadata.SequenceEqual(input.Metadata)
+                ) && 
+                (
+                    this.Facettes == input.Facettes ||
+                    this.Facettes != null &&
+                    input.Facettes != null &&
+                    this.Facettes.SequenceEqual(input.Facettes)
                 ) && 
                 (
                     this.AllowedFormats == input.AllowedFormats ||
@@ -369,9 +398,17 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.Theme.GetHashCode();
                 }
+                if (this.Links != null)
+                {
+                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
+                }
                 if (this.Metadata != null)
                 {
                     hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
+                }
+                if (this.Facettes != null)
+                {
+                    hashCode = (hashCode * 59) + this.Facettes.GetHashCode();
                 }
                 if (this.AllowedFormats != null)
                 {

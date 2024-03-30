@@ -39,12 +39,16 @@ namespace Agravity.Public.Model
         /// <param name="logoUrl">logoUrl.</param>
         /// <param name="colors">colors.</param>
         /// <param name="topbarColor">topbarColor.</param>
-        public PortalTheme(string backgroundUrl = default(string), string logoUrl = default(string), Dictionary<string, object> colors = default(Dictionary<string, object>), string topbarColor = default(string))
+        /// <param name="iconEmpty">iconEmpty.</param>
+        /// <param name="iconActive">iconActive.</param>
+        public PortalTheme(string backgroundUrl = default(string), string logoUrl = default(string), Dictionary<string, object> colors = default(Dictionary<string, object>), string topbarColor = default(string), string iconEmpty = default(string), string iconActive = default(string))
         {
             this.BackgroundUrl = backgroundUrl;
             this.LogoUrl = logoUrl;
             this.Colors = colors;
             this.TopbarColor = topbarColor;
+            this.IconEmpty = iconEmpty;
+            this.IconActive = iconActive;
         }
 
         /// <summary>
@@ -72,6 +76,18 @@ namespace Agravity.Public.Model
         public string TopbarColor { get; set; }
 
         /// <summary>
+        /// Gets or Sets IconEmpty
+        /// </summary>
+        [DataMember(Name = "icon_empty", EmitDefaultValue = false)]
+        public string IconEmpty { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IconActive
+        /// </summary>
+        [DataMember(Name = "icon_active", EmitDefaultValue = false)]
+        public string IconActive { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -83,6 +99,8 @@ namespace Agravity.Public.Model
             sb.Append("  LogoUrl: ").Append(LogoUrl).Append("\n");
             sb.Append("  Colors: ").Append(Colors).Append("\n");
             sb.Append("  TopbarColor: ").Append(TopbarColor).Append("\n");
+            sb.Append("  IconEmpty: ").Append(IconEmpty).Append("\n");
+            sb.Append("  IconActive: ").Append(IconActive).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,6 +156,16 @@ namespace Agravity.Public.Model
                     this.TopbarColor == input.TopbarColor ||
                     (this.TopbarColor != null &&
                     this.TopbarColor.Equals(input.TopbarColor))
+                ) && 
+                (
+                    this.IconEmpty == input.IconEmpty ||
+                    (this.IconEmpty != null &&
+                    this.IconEmpty.Equals(input.IconEmpty))
+                ) && 
+                (
+                    this.IconActive == input.IconActive ||
+                    (this.IconActive != null &&
+                    this.IconActive.Equals(input.IconActive))
                 );
         }
 
@@ -165,6 +193,14 @@ namespace Agravity.Public.Model
                 if (this.TopbarColor != null)
                 {
                     hashCode = (hashCode * 59) + this.TopbarColor.GetHashCode();
+                }
+                if (this.IconEmpty != null)
+                {
+                    hashCode = (hashCode * 59) + this.IconEmpty.GetHashCode();
+                }
+                if (this.IconActive != null)
+                {
+                    hashCode = (hashCode * 59) + this.IconActive.GetHashCode();
                 }
                 return hashCode;
             }

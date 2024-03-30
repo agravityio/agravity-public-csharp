@@ -58,6 +58,22 @@ namespace Agravity.Public.Test.Model
 
 
         /// <summary>
+        /// Test the property 'SharedcollId'
+        /// </summary>
+        [Fact]
+        public void SharedcollIdTest()
+        {
+            // TODO unit test for the property 'SharedcollId'
+        }
+        /// <summary>
+        /// Test the property 'Password'
+        /// </summary>
+        [Fact]
+        public void PasswordTest()
+        {
+            // TODO unit test for the property 'Password'
+        }
+        /// <summary>
         /// Test the property 'Id'
         /// </summary>
         [Fact]
@@ -72,6 +88,14 @@ namespace Agravity.Public.Test.Model
         public void EntityTypeTest()
         {
             // TODO unit test for the property 'EntityType'
+        }
+        /// <summary>
+        /// Test the property 'ZipType'
+        /// </summary>
+        [Fact]
+        public void ZipTypeTest()
+        {
+            // TODO unit test for the property 'ZipType'
         }
         /// <summary>
         /// Test the property 'Url'
@@ -90,28 +114,12 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'InstanceId'
         }
         /// <summary>
-        /// Test the property 'SharedcollId'
-        /// </summary>
-        [Fact]
-        public void SharedcollIdTest()
-        {
-            // TODO unit test for the property 'SharedcollId'
-        }
-        /// <summary>
         /// Test the property 'ValidUntil'
         /// </summary>
         [Fact]
         public void ValidUntilTest()
         {
             // TODO unit test for the property 'ValidUntil'
-        }
-        /// <summary>
-        /// Test the property 'Password'
-        /// </summary>
-        [Fact]
-        public void PasswordTest()
-        {
-            // TODO unit test for the property 'Password'
         }
         /// <summary>
         /// Test the property 'AllowedFormats'

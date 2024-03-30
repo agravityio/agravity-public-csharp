@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **LogoUrl** | **string** |  | [optional] 
 **Colors** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **TopbarColor** | **string** |  | [optional] 
+**IconEmpty** | **string** |  | [optional] 
+**IconActive** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

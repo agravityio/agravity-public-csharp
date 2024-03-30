@@ -138,12 +138,28 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Theme'
         }
         /// <summary>
+        /// Test the property 'Links'
+        /// </summary>
+        [Fact]
+        public void LinksTest()
+        {
+            // TODO unit test for the property 'Links'
+        }
+        /// <summary>
         /// Test the property 'Metadata'
         /// </summary>
         [Fact]
         public void MetadataTest()
         {
             // TODO unit test for the property 'Metadata'
+        }
+        /// <summary>
+        /// Test the property 'Facettes'
+        /// </summary>
+        [Fact]
+        public void FacettesTest()
+        {
+            // TODO unit test for the property 'Facettes'
         }
         /// <summary>
         /// Test the property 'AllowedFormats'

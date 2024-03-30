@@ -31,6 +31,56 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// This endpoint gets the progress/status of the ZIP creation of a portal.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="zipId">The ID of the requested zip.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PortalZipRequest</returns>
+        PortalZipRequest HttpPortalGetStatusZipById(string id, string zipId, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint gets the progress/status of the ZIP creation of a portal.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="zipId">The ID of the requested zip.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PortalZipRequest</returns>
+        ApiResponse<PortalZipRequest> HttpPortalGetStatusZipByIdWithHttpInfo(string id, string zipId, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Initiates the ZIP creation of an asset basket from an portal.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="portalZipRequest">The allowed formats are the input which could be added.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PortalZipRequest</returns>
+        PortalZipRequest HttpPortalRequestZipById(string id, PortalZipRequest portalZipRequest, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Initiates the ZIP creation of an asset basket from an portal.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="portalZipRequest">The allowed formats are the input which could be added.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PortalZipRequest</returns>
+        ApiResponse<PortalZipRequest> HttpPortalRequestZipByIdWithHttpInfo(string id, PortalZipRequest portalZipRequest, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// This endpoint returns a full configuration of the portal. Incl. download formats, SDLs, UDLs, etc.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
@@ -82,6 +132,60 @@ namespace Agravity.Public.Api
     public interface IPublicPortalManagementApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint gets the progress/status of the ZIP creation of a portal.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="zipId">The ID of the requested zip.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PortalZipRequest</returns>
+        System.Threading.Tasks.Task<PortalZipRequest> HttpPortalGetStatusZipByIdAsync(string id, string zipId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint gets the progress/status of the ZIP creation of a portal.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="zipId">The ID of the requested zip.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PortalZipRequest)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PortalZipRequest>> HttpPortalGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Initiates the ZIP creation of an asset basket from an portal.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="portalZipRequest">The allowed formats are the input which could be added.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PortalZipRequest</returns>
+        System.Threading.Tasks.Task<PortalZipRequest> HttpPortalRequestZipByIdAsync(string id, PortalZipRequest portalZipRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Initiates the ZIP creation of an asset basket from an portal.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="portalZipRequest">The allowed formats are the input which could be added.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PortalZipRequest)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PortalZipRequest>> HttpPortalRequestZipByIdWithHttpInfoAsync(string id, PortalZipRequest portalZipRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -250,6 +354,352 @@ namespace Agravity.Public.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  This endpoint gets the progress/status of the ZIP creation of a portal.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="zipId">The ID of the requested zip.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PortalZipRequest</returns>
+        public PortalZipRequest HttpPortalGetStatusZipById(string id, string zipId, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<PortalZipRequest> localVarResponse = HttpPortalGetStatusZipByIdWithHttpInfo(id, zipId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint gets the progress/status of the ZIP creation of a portal.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="zipId">The ID of the requested zip.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PortalZipRequest</returns>
+        public Agravity.Public.Client.ApiResponse<PortalZipRequest> HttpPortalGetStatusZipByIdWithHttpInfo(string id, string zipId, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicPortalManagementApi->HttpPortalGetStatusZipById");
+            }
+
+            // verify the required parameter 'zipId' is set
+            if (zipId == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'zipId' when calling PublicPortalManagementApi->HttpPortalGetStatusZipById");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("zipId", Agravity.Public.Client.ClientUtils.ParameterToString(zipId)); // path parameter
+
+            localVarRequestOptions.Operation = "PublicPortalManagementApi.HttpPortalGetStatusZipById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<PortalZipRequest>("/portals/{id}/zip/{zipId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPortalGetStatusZipById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint gets the progress/status of the ZIP creation of a portal.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="zipId">The ID of the requested zip.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PortalZipRequest</returns>
+        public async System.Threading.Tasks.Task<PortalZipRequest> HttpPortalGetStatusZipByIdAsync(string id, string zipId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<PortalZipRequest> localVarResponse = await HttpPortalGetStatusZipByIdWithHttpInfoAsync(id, zipId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint gets the progress/status of the ZIP creation of a portal.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="zipId">The ID of the requested zip.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PortalZipRequest)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PortalZipRequest>> HttpPortalGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicPortalManagementApi->HttpPortalGetStatusZipById");
+            }
+
+            // verify the required parameter 'zipId' is set
+            if (zipId == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'zipId' when calling PublicPortalManagementApi->HttpPortalGetStatusZipById");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("zipId", Agravity.Public.Client.ClientUtils.ParameterToString(zipId)); // path parameter
+
+            localVarRequestOptions.Operation = "PublicPortalManagementApi.HttpPortalGetStatusZipById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<PortalZipRequest>("/portals/{id}/zip/{zipId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPortalGetStatusZipById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Initiates the ZIP creation of an asset basket from an portal.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="portalZipRequest">The allowed formats are the input which could be added.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PortalZipRequest</returns>
+        public PortalZipRequest HttpPortalRequestZipById(string id, PortalZipRequest portalZipRequest, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<PortalZipRequest> localVarResponse = HttpPortalRequestZipByIdWithHttpInfo(id, portalZipRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Initiates the ZIP creation of an asset basket from an portal.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="portalZipRequest">The allowed formats are the input which could be added.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PortalZipRequest</returns>
+        public Agravity.Public.Client.ApiResponse<PortalZipRequest> HttpPortalRequestZipByIdWithHttpInfo(string id, PortalZipRequest portalZipRequest, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicPortalManagementApi->HttpPortalRequestZipById");
+            }
+
+            // verify the required parameter 'portalZipRequest' is set
+            if (portalZipRequest == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'portalZipRequest' when calling PublicPortalManagementApi->HttpPortalRequestZipById");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = portalZipRequest;
+
+            localVarRequestOptions.Operation = "PublicPortalManagementApi.HttpPortalRequestZipById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<PortalZipRequest>("/portals/{id}/zip", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPortalRequestZipById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Initiates the ZIP creation of an asset basket from an portal.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="portalZipRequest">The allowed formats are the input which could be added.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PortalZipRequest</returns>
+        public async System.Threading.Tasks.Task<PortalZipRequest> HttpPortalRequestZipByIdAsync(string id, PortalZipRequest portalZipRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<PortalZipRequest> localVarResponse = await HttpPortalRequestZipByIdWithHttpInfoAsync(id, portalZipRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Initiates the ZIP creation of an asset basket from an portal.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="portalZipRequest">The allowed formats are the input which could be added.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PortalZipRequest)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PortalZipRequest>> HttpPortalRequestZipByIdWithHttpInfoAsync(string id, PortalZipRequest portalZipRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicPortalManagementApi->HttpPortalRequestZipById");
+            }
+
+            // verify the required parameter 'portalZipRequest' is set
+            if (portalZipRequest == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'portalZipRequest' when calling PublicPortalManagementApi->HttpPortalRequestZipById");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = portalZipRequest;
+
+            localVarRequestOptions.Operation = "PublicPortalManagementApi.HttpPortalRequestZipById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<PortalZipRequest>("/portals/{id}/zip", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPortalRequestZipById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

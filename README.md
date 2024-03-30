@@ -158,6 +158,8 @@ Class | Method | HTTP request | Description
 *PublicHelperToolsApi* | [**HttpGetAllowedFilterableItems**](docs\PublicHelperToolsApi.md#httpgetallowedfilterableitems) | **GET** /helper/filterableitems | 
 *PublicHelperToolsApi* | [**HttpGetAllowedSearchableItemNames**](docs\PublicHelperToolsApi.md#httpgetallowedsearchableitemnames) | **GET** /helper/searchableitemnames | 
 *PublicHelperToolsApi* | [**HttpGetAllowedSearchableItems**](docs\PublicHelperToolsApi.md#httpgetallowedsearchableitems) | **GET** /helper/searchableitems | 
+*PublicPortalManagementApi* | [**HttpPortalGetStatusZipById**](docs\PublicPortalManagementApi.md#httpportalgetstatuszipbyid) | **GET** /portals/{id}/zip/{zipId} | 
+*PublicPortalManagementApi* | [**HttpPortalRequestZipById**](docs\PublicPortalManagementApi.md#httpportalrequestzipbyid) | **POST** /portals/{id}/zip | 
 *PublicPortalManagementApi* | [**HttpPortalsConfigurationGetById**](docs\PublicPortalManagementApi.md#httpportalsconfigurationgetbyid) | **GET** /portals/{id}/config | 
 *PublicPortalManagementApi* | [**HttpPortalsGetById**](docs\PublicPortalManagementApi.md#httpportalsgetbyid) | **GET** /portals/{id} | 
 *PublicPublishingApi* | [**HttpPublishedAssetsGetAll**](docs\PublicPublishingApi.md#httppublishedassetsgetall) | **GET** /publish | 
@@ -214,7 +216,9 @@ Class | Method | HTTP request | Description
  - [Model.Portal](docs\Portal.md)
  - [Model.PortalConfiguration](docs\PortalConfiguration.md)
  - [Model.PortalLanguages](docs\PortalLanguages.md)
+ - [Model.PortalLinks](docs\PortalLinks.md)
  - [Model.PortalTheme](docs\PortalTheme.md)
+ - [Model.PortalZipRequest](docs\PortalZipRequest.md)
  - [Model.PublishEntity](docs\PublishEntity.md)
  - [Model.PublishedAsset](docs\PublishedAsset.md)
  - [Model.QuickShareFull](docs\QuickShareFull.md)

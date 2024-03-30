@@ -56,6 +56,32 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpPortalGetStatusZipById
+        /// </summary>
+        [Fact]
+        public void HttpPortalGetStatusZipByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //string zipId = null;
+            //var response = instance.HttpPortalGetStatusZipById(id, zipId);
+            //Assert.IsType<PortalZipRequest>(response);
+        }
+
+        /// <summary>
+        /// Test HttpPortalRequestZipById
+        /// </summary>
+        [Fact]
+        public void HttpPortalRequestZipByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //PortalZipRequest portalZipRequest = null;
+            //var response = instance.HttpPortalRequestZipById(id, portalZipRequest);
+            //Assert.IsType<PortalZipRequest>(response);
+        }
+
+        /// <summary>
         /// Test HttpPortalsConfigurationGetById
         /// </summary>
         [Fact]

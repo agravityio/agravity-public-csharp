@@ -1,22 +1,19 @@
-# Agravity.Public.Model.Portal
+# Agravity.Public.Model.PortalZipRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ZipType** | **string** |  | [optional] 
+**PortalId** | **string** |  | [optional] 
+**AssetIds** | **List&lt;string&gt;** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **EntityType** | **string** |  | [optional] 
-**Filter** | **string** |  | [optional] 
-**Languages** | [**PortalLanguages**](PortalLanguages.md) |  | [optional] 
-**Theme** | [**PortalTheme**](PortalTheme.md) |  | [optional] 
-**Links** | [**PortalLinks**](PortalLinks.md) |  | [optional] 
-**Metadata** | **List&lt;string&gt;** |  | [optional] 
-**Facettes** | **List&lt;string&gt;** |  | [optional] 
+**Url** | **string** |  | [optional] 
+**InstanceId** | **string** |  | [optional] 
+**ValidUntil** | **DateTime** |  | [optional] 
 **AllowedFormats** | [**List&lt;SharedAllowedFormat&gt;**](SharedAllowedFormat.md) |  | [optional] 
-**LimitIds** | **List&lt;string&gt;** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**Description** | **string** |  | [optional] 
-**AddProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
+**Error** | [**AgravityErrorResponse**](AgravityErrorResponse.md) |  | [optional] 
 **Status** | **string** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 

@@ -4,13 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**SharedcollId** | **string** |  | [optional] 
+**Password** | **string** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **EntityType** | **string** |  | [optional] 
+**ZipType** | **string** |  | [optional] 
 **Url** | **string** |  | [optional] 
 **InstanceId** | **string** |  | [optional] 
-**SharedcollId** | **string** |  | [optional] 
 **ValidUntil** | **DateTime** |  | [optional] 
-**Password** | **string** |  | [optional] 
 **AllowedFormats** | [**List&lt;SharedAllowedFormat&gt;**](SharedAllowedFormat.md) |  | [optional] 
 **Error** | [**AgravityErrorResponse**](AgravityErrorResponse.md) |  | [optional] 
 **Status** | **string** |  | [optional] 

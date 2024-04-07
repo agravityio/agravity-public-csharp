@@ -10,24 +10,36 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="7.0.1"/> [7.0.1](https://www.nuget.org/packages/Agravity.Public/7.0.1) (2024-04-07)
+
+Portal:
+
+- Add links to portal model for impressum, privacy and conditions;
+- Add optional icon_empty and icon_active to theme
+- Add portalZipRequest class and add zip_type to SharedCollectionZipRequest
+- Add endpoint POST /portals/{id}/zip - Which initiates the ZIP creation of a portal id. (public)
+- Add endpoint GET /portals/{id}/zip/{zipId} - This endpoint gets the progress/status of the ZIP creation of a portal. (public)
+
+---
+
 ## AgravityAPI <a name="7.0.0"/> [7.0.0](https://www.nuget.org/packages/Agravity.Public/7.0.0) (2024-03-23)
 
 General:
 
--   Order start with 999 as default
--   Add `/assets/{id}/tocollection` endpoint to allow assigning / moving / removing an asset to/from a collection (public)
+- Order start with 999 as default
+- Add `/assets/{id}/tocollection` endpoint to allow assigning / moving / removing an asset to/from a collection (public)
 
 Add AgravityAPI for Portal Management (private):
 
--   Add GET `/portals/{id}` endpoint (public) - This endpoint returns a portal with specific id.
--   Add GET `/portals/{id}/config` endpoint (public) - This endpoint returns a full configuration of the portal. Incl. download formats, SDLs, UDLs and coll type items
-    -   Add the way how to fetch UDLs, SDLs (limit by ID and with language)
+- Add GET `/portals/{id}` endpoint (public) - This endpoint returns a portal with specific id.
+- Add GET `/portals/{id}/config` endpoint (public) - This endpoint returns a full configuration of the portal. Incl. download formats, SDLs, UDLs and coll type items
+  - Add the way how to fetch UDLs, SDLs (limit by ID and with language)
 
 Enhance download endpoint(s):
 
--   Add `f`and `portal_id` parameter to `/assets/{id}/download` (public)
--   Add `key` (asset MD5) parameter to `/assets/{id}/download` when coming via portal identification (public only)
--   extend original blob metadata and add download format behaviour to download
+- Add `f`and `portal_id` parameter to `/assets/{id}/download` (public)
+- Add `key` (asset MD5) parameter to `/assets/{id}/download` when coming via portal identification (public only)
+- extend original blob metadata and add download format behaviour to download
 
 ---
 

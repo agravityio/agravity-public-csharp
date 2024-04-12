@@ -56,6 +56,25 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpGetSearchFacetteByName
+        /// </summary>
+        [Fact]
+        public void HttpGetSearchFacetteByNameTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string name = null;
+            //string s = null;
+            //string collectiontypeid = null;
+            //string collectionid = null;
+            //string mode = null;
+            //string filter = null;
+            //string ids = null;
+            //string portalId = null;
+            //var response = instance.HttpGetSearchFacetteByName(name, s, collectiontypeid, collectionid, mode, filter, ids, portalId);
+            //Assert.IsType<SearchFacet>(response);
+        }
+
+        /// <summary>
         /// Test HttpGlobalSearch
         /// </summary>
         [Fact]

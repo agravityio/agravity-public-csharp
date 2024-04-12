@@ -31,6 +31,43 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// This endpoint returns one facette based on the search parameters.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The name of the facette.</param>
+        /// <param name="s">The search string which should be found.</param>
+        /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
+        /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
+        /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SearchFacet</returns>
+        SearchFacet HttpGetSearchFacetteByName(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns one facette based on the search parameters.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The name of the facette.</param>
+        /// <param name="s">The search string which should be found.</param>
+        /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
+        /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
+        /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SearchFacet</returns>
+        ApiResponse<SearchFacet> HttpGetSearchFacetteByNameWithHttpInfo(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// This endpoint returns a configured max amount of results for search terms.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
@@ -81,6 +118,45 @@ namespace Agravity.Public.Api
     public interface IPublicSearchManagementApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns one facette based on the search parameters.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The name of the facette.</param>
+        /// <param name="s">The search string which should be found.</param>
+        /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
+        /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
+        /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SearchFacet</returns>
+        System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetteByNameAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns one facette based on the search parameters.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The name of the facette.</param>
+        /// <param name="s">The search string which should be found.</param>
+        /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
+        /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
+        /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SearchFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SearchFacet>> HttpGetSearchFacetteByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -246,6 +322,250 @@ namespace Agravity.Public.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  This endpoint returns one facette based on the search parameters.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The name of the facette.</param>
+        /// <param name="s">The search string which should be found.</param>
+        /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
+        /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
+        /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SearchFacet</returns>
+        public SearchFacet HttpGetSearchFacetteByName(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<SearchFacet> localVarResponse = HttpGetSearchFacetteByNameWithHttpInfo(name, s, collectiontypeid, collectionid, mode, filter, ids, portalId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint returns one facette based on the search parameters.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The name of the facette.</param>
+        /// <param name="s">The search string which should be found.</param>
+        /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
+        /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
+        /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SearchFacet</returns>
+        public Agravity.Public.Client.ApiResponse<SearchFacet> HttpGetSearchFacetteByNameWithHttpInfo(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0)
+        {
+            // verify the required parameter 'name' is set
+            if (name == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'name' when calling PublicSearchManagementApi->HttpGetSearchFacetteByName");
+            }
+
+            // verify the required parameter 's' is set
+            if (s == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 's' when calling PublicSearchManagementApi->HttpGetSearchFacetteByName");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("name", Agravity.Public.Client.ClientUtils.ParameterToString(name)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "s", s));
+            if (collectiontypeid != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "collectiontypeid", collectiontypeid));
+            }
+            if (collectionid != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "collectionid", collectionid));
+            }
+            if (mode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "mode", mode));
+            }
+            if (filter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+            }
+            if (ids != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "ids", ids));
+            }
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+
+            localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpGetSearchFacetteByName";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SearchFacet>("/search/facettes/{name}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpGetSearchFacetteByName", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint returns one facette based on the search parameters.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The name of the facette.</param>
+        /// <param name="s">The search string which should be found.</param>
+        /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
+        /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
+        /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SearchFacet</returns>
+        public async System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetteByNameAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<SearchFacet> localVarResponse = await HttpGetSearchFacetteByNameWithHttpInfoAsync(name, s, collectiontypeid, collectionid, mode, filter, ids, portalId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint returns one facette based on the search parameters.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The name of the facette.</param>
+        /// <param name="s">The search string which should be found.</param>
+        /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
+        /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
+        /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
+        /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SearchFacet)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchFacet>> HttpGetSearchFacetteByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'name' is set
+            if (name == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'name' when calling PublicSearchManagementApi->HttpGetSearchFacetteByName");
+            }
+
+            // verify the required parameter 's' is set
+            if (s == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 's' when calling PublicSearchManagementApi->HttpGetSearchFacetteByName");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("name", Agravity.Public.Client.ClientUtils.ParameterToString(name)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "s", s));
+            if (collectiontypeid != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "collectiontypeid", collectiontypeid));
+            }
+            if (collectionid != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "collectionid", collectionid));
+            }
+            if (mode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "mode", mode));
+            }
+            if (filter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+            }
+            if (ids != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "ids", ids));
+            }
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+
+            localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpGetSearchFacetteByName";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SearchFacet>("/search/facettes/{name}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpGetSearchFacetteByName", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

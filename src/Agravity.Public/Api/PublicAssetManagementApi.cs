@@ -89,18 +89,19 @@ namespace Agravity.Public.Api
         /// This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed) (optional)</param>
+        /// <param name="collectionid">The ID of the collection where these assets should come from. (Is not required when &#39;collectiontypeid&#39; is set.) (optional)</param>
+        /// <param name="collectiontypeid">The ID of the collection type where these assets should come from. (Is not required when &#39;collectionid&#39; is set.) CAUTION: The assets returned are not distinct &#x3D;&gt; Duplicates are possible if assets are in multiple collections in this collection type! (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). Blobs can be limited with &#39;.&#39; on their container. (i.e. fields&#x3D;blobs.thumbnails). Only if &#39;thumbnails&#39; is set, the placeholder of this asset type are returned if no thumbnail blob is found. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. (If not limited through &#39;fields&#39; parameter it will expose all URLs of all blobs.) (optional)</param>
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
-        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: modified_date (newest first). (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetPageResult</returns>
-        AssetPageResult HttpAssetsGet(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
+        AssetPageResult HttpAssetsGet(string collectionid = default(string), string collectiontypeid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -109,18 +110,19 @@ namespace Agravity.Public.Api
         /// This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed) (optional)</param>
+        /// <param name="collectionid">The ID of the collection where these assets should come from. (Is not required when &#39;collectiontypeid&#39; is set.) (optional)</param>
+        /// <param name="collectiontypeid">The ID of the collection type where these assets should come from. (Is not required when &#39;collectionid&#39; is set.) CAUTION: The assets returned are not distinct &#x3D;&gt; Duplicates are possible if assets are in multiple collections in this collection type! (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). Blobs can be limited with &#39;.&#39; on their container. (i.e. fields&#x3D;blobs.thumbnails). Only if &#39;thumbnails&#39; is set, the placeholder of this asset type are returned if no thumbnail blob is found. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. (If not limited through &#39;fields&#39; parameter it will expose all URLs of all blobs.) (optional)</param>
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
-        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: modified_date (newest first). (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetPageResult</returns>
-        ApiResponse<AssetPageResult> HttpAssetsGetWithHttpInfo(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
+        ApiResponse<AssetPageResult> HttpAssetsGetWithHttpInfo(string collectionid = default(string), string collectiontypeid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -255,19 +257,20 @@ namespace Agravity.Public.Api
         /// This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed) (optional)</param>
+        /// <param name="collectionid">The ID of the collection where these assets should come from. (Is not required when &#39;collectiontypeid&#39; is set.) (optional)</param>
+        /// <param name="collectiontypeid">The ID of the collection type where these assets should come from. (Is not required when &#39;collectionid&#39; is set.) CAUTION: The assets returned are not distinct &#x3D;&gt; Duplicates are possible if assets are in multiple collections in this collection type! (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). Blobs can be limited with &#39;.&#39; on their container. (i.e. fields&#x3D;blobs.thumbnails). Only if &#39;thumbnails&#39; is set, the placeholder of this asset type are returned if no thumbnail blob is found. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. (If not limited through &#39;fields&#39; parameter it will expose all URLs of all blobs.) (optional)</param>
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
-        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: modified_date (newest first). (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetPageResult</returns>
-        System.Threading.Tasks.Task<AssetPageResult> HttpAssetsGetAsync(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AssetPageResult> HttpAssetsGetAsync(string collectionid = default(string), string collectiontypeid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -276,19 +279,20 @@ namespace Agravity.Public.Api
         /// This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed) (optional)</param>
+        /// <param name="collectionid">The ID of the collection where these assets should come from. (Is not required when &#39;collectiontypeid&#39; is set.) (optional)</param>
+        /// <param name="collectiontypeid">The ID of the collection type where these assets should come from. (Is not required when &#39;collectionid&#39; is set.) CAUTION: The assets returned are not distinct &#x3D;&gt; Duplicates are possible if assets are in multiple collections in this collection type! (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). Blobs can be limited with &#39;.&#39; on their container. (i.e. fields&#x3D;blobs.thumbnails). Only if &#39;thumbnails&#39; is set, the placeholder of this asset type are returned if no thumbnail blob is found. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. (If not limited through &#39;fields&#39; parameter it will expose all URLs of all blobs.) (optional)</param>
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
-        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: modified_date (newest first). (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetPageResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AssetPageResult>> HttpAssetsGetWithHttpInfoAsync(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AssetPageResult>> HttpAssetsGetWithHttpInfoAsync(string collectionid = default(string), string collectiontypeid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -857,20 +861,21 @@ namespace Agravity.Public.Api
         ///  This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed) (optional)</param>
+        /// <param name="collectionid">The ID of the collection where these assets should come from. (Is not required when &#39;collectiontypeid&#39; is set.) (optional)</param>
+        /// <param name="collectiontypeid">The ID of the collection type where these assets should come from. (Is not required when &#39;collectionid&#39; is set.) CAUTION: The assets returned are not distinct &#x3D;&gt; Duplicates are possible if assets are in multiple collections in this collection type! (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). Blobs can be limited with &#39;.&#39; on their container. (i.e. fields&#x3D;blobs.thumbnails). Only if &#39;thumbnails&#39; is set, the placeholder of this asset type are returned if no thumbnail blob is found. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. (If not limited through &#39;fields&#39; parameter it will expose all URLs of all blobs.) (optional)</param>
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
-        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: modified_date (newest first). (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetPageResult</returns>
-        public AssetPageResult HttpAssetsGet(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
+        public AssetPageResult HttpAssetsGet(string collectionid = default(string), string collectiontypeid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<AssetPageResult> localVarResponse = HttpAssetsGetWithHttpInfo(collectionid, fields, expose, continuationToken, limit, orderby, filter, items, translations);
+            Agravity.Public.Client.ApiResponse<AssetPageResult> localVarResponse = HttpAssetsGetWithHttpInfo(collectionid, collectiontypeid, fields, expose, continuationToken, limit, orderby, filter, items, translations);
             return localVarResponse.Data;
         }
 
@@ -878,18 +883,19 @@ namespace Agravity.Public.Api
         ///  This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed) (optional)</param>
+        /// <param name="collectionid">The ID of the collection where these assets should come from. (Is not required when &#39;collectiontypeid&#39; is set.) (optional)</param>
+        /// <param name="collectiontypeid">The ID of the collection type where these assets should come from. (Is not required when &#39;collectionid&#39; is set.) CAUTION: The assets returned are not distinct &#x3D;&gt; Duplicates are possible if assets are in multiple collections in this collection type! (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). Blobs can be limited with &#39;.&#39; on their container. (i.e. fields&#x3D;blobs.thumbnails). Only if &#39;thumbnails&#39; is set, the placeholder of this asset type are returned if no thumbnail blob is found. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. (If not limited through &#39;fields&#39; parameter it will expose all URLs of all blobs.) (optional)</param>
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
-        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: modified_date (newest first). (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetPageResult</returns>
-        public Agravity.Public.Client.ApiResponse<AssetPageResult> HttpAssetsGetWithHttpInfo(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<AssetPageResult> HttpAssetsGetWithHttpInfo(string collectionid = default(string), string collectiontypeid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -916,6 +922,10 @@ namespace Agravity.Public.Api
             if (collectionid != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "collectionid", collectionid));
+            }
+            if (collectiontypeid != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "collectiontypeid", collectiontypeid));
             }
             if (fields != null)
             {
@@ -977,21 +987,22 @@ namespace Agravity.Public.Api
         ///  This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed) (optional)</param>
+        /// <param name="collectionid">The ID of the collection where these assets should come from. (Is not required when &#39;collectiontypeid&#39; is set.) (optional)</param>
+        /// <param name="collectiontypeid">The ID of the collection type where these assets should come from. (Is not required when &#39;collectionid&#39; is set.) CAUTION: The assets returned are not distinct &#x3D;&gt; Duplicates are possible if assets are in multiple collections in this collection type! (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). Blobs can be limited with &#39;.&#39; on their container. (i.e. fields&#x3D;blobs.thumbnails). Only if &#39;thumbnails&#39; is set, the placeholder of this asset type are returned if no thumbnail blob is found. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. (If not limited through &#39;fields&#39; parameter it will expose all URLs of all blobs.) (optional)</param>
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
-        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: modified_date (newest first). (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetPageResult</returns>
-        public async System.Threading.Tasks.Task<AssetPageResult> HttpAssetsGetAsync(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AssetPageResult> HttpAssetsGetAsync(string collectionid = default(string), string collectiontypeid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<AssetPageResult> localVarResponse = await HttpAssetsGetWithHttpInfoAsync(collectionid, fields, expose, continuationToken, limit, orderby, filter, items, translations, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<AssetPageResult> localVarResponse = await HttpAssetsGetWithHttpInfoAsync(collectionid, collectiontypeid, fields, expose, continuationToken, limit, orderby, filter, items, translations, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -999,19 +1010,20 @@ namespace Agravity.Public.Api
         ///  This endpoint lists all the assets, which are stored in the database and not deleted (status \&quot;A\&quot;)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="collectionid">The ID of the collection where these assets should come from. (\&quot;empty\&quot; is allowed) (optional)</param>
+        /// <param name="collectionid">The ID of the collection where these assets should come from. (Is not required when &#39;collectiontypeid&#39; is set.) (optional)</param>
+        /// <param name="collectiontypeid">The ID of the collection type where these assets should come from. (Is not required when &#39;collectionid&#39; is set.) CAUTION: The assets returned are not distinct &#x3D;&gt; Duplicates are possible if assets are in multiple collections in this collection type! (optional)</param>
         /// <param name="fields">This limits the fields which are returned, separated by comma (&#39;,&#39;). Blobs can be limited with &#39;.&#39; on their container. (i.e. fields&#x3D;blobs.thumbnails). Only if &#39;thumbnails&#39; is set, the placeholder of this asset type are returned if no thumbnail blob is found. (optional)</param>
         /// <param name="expose">This indicates if the given blobs should have URLs where these can be requested. (If not limited through &#39;fields&#39; parameter it will expose all URLs of all blobs.) (optional)</param>
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
-        /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="orderby">How the return assets are sorted. Default is property: modified_date (newest first). (optional)</param>
         /// <param name="filter">This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; (optional)</param>
         /// <param name="items">The items can be extended to fully filled items. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetPageResult)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetPageResult>> HttpAssetsGetWithHttpInfoAsync(string collectionid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetPageResult>> HttpAssetsGetWithHttpInfoAsync(string collectionid = default(string), string collectiontypeid = default(string), string fields = default(string), bool? expose = default(bool?), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string filter = default(string), bool? items = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -1039,6 +1051,10 @@ namespace Agravity.Public.Api
             if (collectionid != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "collectionid", collectionid));
+            }
+            if (collectiontypeid != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "collectiontypeid", collectiontypeid));
             }
             if (fields != null)
             {

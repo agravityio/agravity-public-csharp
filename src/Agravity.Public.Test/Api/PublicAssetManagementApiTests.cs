@@ -93,6 +93,7 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string collectionid = null;
+            //string collectiontypeid = null;
             //string fields = null;
             //bool? expose = null;
             //string continuationToken = null;
@@ -101,7 +102,7 @@ namespace Agravity.Public.Test.Api
             //string filter = null;
             //bool? items = null;
             //bool? translations = null;
-            //var response = instance.HttpAssetsGet(collectionid, fields, expose, continuationToken, limit, orderby, filter, items, translations);
+            //var response = instance.HttpAssetsGet(collectionid, collectiontypeid, fields, expose, continuationToken, limit, orderby, filter, items, translations);
             //Assert.IsType<AssetPageResult>(response);
         }
 

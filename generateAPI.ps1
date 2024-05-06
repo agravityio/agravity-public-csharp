@@ -27,7 +27,7 @@ Remove-Item -Path .\src -Recurse -Force -ErrorAction SilentlyContinue
 Write-Host "Calling public API"
 
 # generate API
-$params="packageName=Agravity.Public,library=httpclient,targetFramework=netstandard2.0,packageVersion="+$apiVersion
+$params="packageName=Agravity.Public,library=restsharp,targetFramework=net6.0;netstandard2.0,packageVersion="+$apiVersion
 # Write-Host("Executing: openapi-generator generate -i https://api.agravity.com/v2/swagger.json -g csharp-netcore -o src -p "+$params);
 npx @openapitools/openapi-generator-cli generate -i http://localhost:7072/api/openapi/v3.json -g csharp-netcore -o . --additional-properties=$params
 

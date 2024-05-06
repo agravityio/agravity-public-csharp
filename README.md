@@ -164,7 +164,7 @@ Class | Method | HTTP request | Description
 *PublicPortalManagementApi* | [**HttpPortalsGetById**](docs\PublicPortalManagementApi.md#httpportalsgetbyid) | **GET** /portals/{id} | 
 *PublicPublishingApi* | [**HttpPublishedAssetsGetAll**](docs\PublicPublishingApi.md#httppublishedassetsgetall) | **GET** /publish | 
 *PublicSavedSearchApi* | [**HttpSavedSearchesGetAll**](docs\PublicSavedSearchApi.md#httpsavedsearchesgetall) | **GET** /savedsearches | 
-*PublicSearchManagementApi* | [**HttpGetSearchFacetteByName**](docs\PublicSearchManagementApi.md#httpgetsearchfacettebyname) | **GET** /search/facettes/{name} | 
+*PublicSearchManagementApi* | [**HttpGetSearchFacetteByName**](docs\PublicSearchManagementApi.md#httpgetsearchfacettebyname) | **GET** /search/facette | 
 *PublicSearchManagementApi* | [**HttpGlobalSearch**](docs\PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search | 
 *PublicSharingManagementApi* | [**HttpQuickShareGetById**](docs\PublicSharingManagementApi.md#httpquicksharegetbyid) | **GET** /quickshares/{id} | 
 *PublicSharingManagementApi* | [**HttpSharedCollectionsGetById**](docs\PublicSharingManagementApi.md#httpsharedcollectionsgetbyid) | **GET** /shared/{id} | 

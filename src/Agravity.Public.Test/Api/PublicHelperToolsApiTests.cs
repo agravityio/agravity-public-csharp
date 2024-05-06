@@ -74,7 +74,8 @@ namespace Agravity.Public.Test.Api
         public void HttpGetAllowedFilterableItemsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.HttpGetAllowedFilterableItems();
+            //string portalId = null;
+            //var response = instance.HttpGetAllowedFilterableItems(portalId);
             //Assert.IsType<List<string>>(response);
         }
 
@@ -85,7 +86,8 @@ namespace Agravity.Public.Test.Api
         public void HttpGetAllowedSearchableItemNamesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.HttpGetAllowedSearchableItemNames();
+            //string portalId = null;
+            //var response = instance.HttpGetAllowedSearchableItemNames(portalId);
             //Assert.IsType<List<string>>(response);
         }
 
@@ -96,7 +98,8 @@ namespace Agravity.Public.Test.Api
         public void HttpGetAllowedSearchableItemsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.HttpGetAllowedSearchableItems();
+            //string portalId = null;
+            //var response = instance.HttpGetAllowedSearchableItems(portalId);
             //Assert.IsType<List<SearchableItem>>(response);
         }
     }

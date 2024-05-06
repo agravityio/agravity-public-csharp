@@ -394,7 +394,7 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("name", Agravity.Public.Client.ClientUtils.ParameterToString(name)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "name", name));
             localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "s", s));
             if (collectiontypeid != null)
             {
@@ -431,7 +431,7 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<SearchFacet>("/search/facettes/{name}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<SearchFacet>("/search/facette", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpGetSearchFacetteByName", localVarResponse);
@@ -517,7 +517,7 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("name", Agravity.Public.Client.ClientUtils.ParameterToString(name)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "name", name));
             localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "s", s));
             if (collectiontypeid != null)
             {
@@ -554,7 +554,7 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<SearchFacet>("/search/facettes/{name}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SearchFacet>("/search/facette", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

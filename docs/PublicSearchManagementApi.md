@@ -4,7 +4,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**HttpGetSearchFacetteByName**](PublicSearchManagementApi.md#httpgetsearchfacettebyname) | **GET** /search/facettes/{name} |  |
+| [**HttpGetSearchFacetteByName**](PublicSearchManagementApi.md#httpgetsearchfacettebyname) | **GET** /search/facette |  |
 | [**HttpGlobalSearch**](PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search |  |
 
 <a name="httpgetsearchfacettebyname"></a>

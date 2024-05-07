@@ -10,6 +10,15 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="7.1.0"/> [7.1.0](https://www.nuget.org/packages/Agravity.Public/7.1.0) (2024-05-08)
+
+Change to restsharp and add targetFramework net6.0
+
+- Add param `collectiontypeid` to GET `/assets` endpoint to query all assets from collection type
+- Add GET `search/facettes` (facette name is query parameter) with nearly same attributes than search - This endpoint returns one facette based on the search parameters.
+
+---
+
 ## AgravityAPI <a name="7.0.1"/> [7.0.1](https://www.nuget.org/packages/Agravity.Public/7.0.1) (2024-04-07)
 
 Portal:

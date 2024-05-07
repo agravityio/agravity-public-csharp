@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyName>Agravity.Public.Test</AssemblyName>
     <RootNamespace>Agravity.Public.Test</RootNamespace>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>net6.0;netcoreapp3.1</TargetFrameworks>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 

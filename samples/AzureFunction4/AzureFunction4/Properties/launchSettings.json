@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AzureFunction4": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7048"
+    }
+  }
+}

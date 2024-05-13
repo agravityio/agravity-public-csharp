@@ -1,7 +1,7 @@
 ﻿
 using AgravityPublicLib;
-using AgravityPublicUpload.Properties;
 using NetFrameworkFormUpload.model;
+using NetFrameworkFormUpload.Properties;
 using System;
 using System.IO;
 using System.Linq;

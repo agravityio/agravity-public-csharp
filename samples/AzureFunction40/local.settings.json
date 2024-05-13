@@ -1,9 +1,0 @@
-{
-    "IsEncrypted": false,
-  "Values": {
-    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "AgravityPublicUrl": "http://localhost:7072/api",
-    "AgravityApiKey": "YOUR_API_KEY"
-  }
-}

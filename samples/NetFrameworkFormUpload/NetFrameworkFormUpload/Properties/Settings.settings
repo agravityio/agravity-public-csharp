@@ -1,12 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AgravityPublicUpload.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NetFrameworkFormUpload.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="AgravityPublicUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://localhost:7072/api</Value>
+      <Value Profile="(Default)"> http://localhost:7072/api</Value>
     </Setting>
     <Setting Name="AgravityApiKey" Type="System.String" Scope="User">
-      <Value Profile="(Default)">YOUR_API_KEY</Value>
+      <Value Profile="(Default)">eyJyYW5kIjoicE1ldVFmdVExWm0yIiwidWlkIjoidTU4MDlhOTViLWQ4NjgtNDk5ZS05YTgyLTE4MDgzMGVkODIxZCIsInJvbGVzIjpbImFncmF2aXR5LmFkbWluIl19</Value>
     </Setting>
     <Setting Name="CollectionTypeId" Type="System.String" Scope="User">
       <Value Profile="(Default)">t000000000000</Value>

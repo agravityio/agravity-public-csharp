@@ -1038,7 +1038,7 @@ catch (ApiException e)
 | **200** | The values are return which are put on the asset. |  -  |
 | **400** | Could not parse the asset availability object. (Code: 85ba8328-9181-4d74-a326-4073b17346d8)&lt;br&gt;Object is not a valid asset availability object. (Code: 5515ebe5-2751-4760-a864-47812126b9a1)&lt;br&gt;Asset availability has a confusing state: {updated.Availability}. (Code: 5515ebe5-2751-4760-a864-47812126b9a1)&lt;br&gt;Ambiguous information: Asset available_from can not be greater or equal as available_to when asset should be available.(Code: 16338bcd-614c-4322-a164-e3112d622392 )&lt;br&gt;Ambiguous information: Asset available_from can not be less or equal as available_to when asset should be locked and is not in the future. (Code: 092ddb50-2af8-49a1-b005-68c9d5c600d1)&lt;br&gt;Error on upsert asset availability in database - max retry count is reached. (Code: 98a80b23-bf8d-4cc1-ad6c-08cd69214dcd) &lt;br&gt; |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
-| **500** | Internal server error. Please contact administrator.(Code: afe4e8f5-758f-4eac-9d7b-aa3124f9fe51) |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

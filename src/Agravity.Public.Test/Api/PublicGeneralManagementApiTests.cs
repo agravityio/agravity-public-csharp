@@ -67,6 +67,21 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpGetDeletedEntities
+        /// </summary>
+        [Fact]
+        public void HttpGetDeletedEntitiesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string entityType = null;
+            //string since = null;
+            //string until = null;
+            //string portalId = null;
+            //var response = instance.HttpGetDeletedEntities(entityType, since, until, portalId);
+            //Assert.IsType<List<DeletedEntities>>(response);
+        }
+
+        /// <summary>
         /// Test HttpTriggerDurableContinue
         /// </summary>
         [Fact]

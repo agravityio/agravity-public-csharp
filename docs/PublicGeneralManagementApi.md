@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost:7072/api*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**HttpAgravityVersionInfo**](PublicGeneralManagementApi.md#httpagravityversioninfo) | **GET** /version |  |
+| [**HttpGetDeletedEntities**](PublicGeneralManagementApi.md#httpgetdeletedentities) | **GET** /deleted |  |
 | [**HttpTriggerDurableContinue**](PublicGeneralManagementApi.md#httptriggerdurablecontinue) | **GET** /durable/{instanceId} |  |
 | [**HttpTriggerDurableScchTrainingDone**](PublicGeneralManagementApi.md#httptriggerdurablescchtrainingdone) | **GET** /durable/scch/{instanceId} |  |
 
@@ -91,6 +92,110 @@ No authorization required
 | **200** | All information about backend. |  -  |
 | **400** | Only if any of the input variable are null (Code: 9a6fb6f2-4b7b-4253-a4f3-5a46b7ba0ca8) |  -  |
 | **404** | Only if assembly could not found (?) |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="httpgetdeletedentities"></a>
+# **HttpGetDeletedEntities**
+> List&lt;DeletedEntities&gt; HttpGetDeletedEntities (string entityType = null, string since = null, string until = null, string portalId = null)
+
+
+
+This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpGetDeletedEntitiesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicGeneralManagementApi(config);
+            var entityType = "entityType_example";  // string | The date in the past since the entities are marked as deleted in the database. (optional) 
+            var since = "since_example";  // string | The date in the past since the entities are marked as deleted in the database. (optional) 
+            var until = "until_example";  // string | The date in the past until the entities are marked as deleted in the database. (optional) 
+            var portalId = "portalId_example";  // string | If the request comes from portal this is the indicator. (optional) 
+
+            try
+            {
+                List<DeletedEntities> result = apiInstance.HttpGetDeletedEntities(entityType, since, until, portalId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicGeneralManagementApi.HttpGetDeletedEntities: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpGetDeletedEntitiesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<DeletedEntities>> response = apiInstance.HttpGetDeletedEntitiesWithHttpInfo(entityType, since, until, portalId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicGeneralManagementApi.HttpGetDeletedEntitiesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **entityType** | **string** | The date in the past since the entities are marked as deleted in the database. | [optional]  |
+| **since** | **string** | The date in the past since the entities are marked as deleted in the database. | [optional]  |
+| **until** | **string** | The date in the past until the entities are marked as deleted in the database. | [optional]  |
+| **portalId** | **string** | If the request comes from portal this is the indicator. | [optional]  |
+
+### Return type
+
+[**List&lt;DeletedEntities&gt;**](DeletedEntities.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A list of entities which are deleted since the given date (last modified date &#x3D; deleted date). |  -  |
+| **400** | Since date could not be more in the future than until date. (Code: d362e2d4-b6b1-4547-a97c-058d2f46acfc)&lt;br&gt;Entity type &#39;{entityType}&#39; is not valid. (Code: 79abc89e-e072-4cf5-a63a-1573764975c6)&lt;br&gt;Entity type &#39;{entityType}&#39; is not allowed for this user. (Code: b00efbb5-faeb-4758-9ea3-44b5435a2311)&lt;br&gt;Error on getting deleted entities. (Code: 71fad553-4c82-423a-807e-ba272bfd3404)&lt;br&gt; |  -  |
+| **404** | When the portal_id could not be found. |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

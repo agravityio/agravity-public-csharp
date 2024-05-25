@@ -151,13 +151,16 @@ Class | Method | HTTP request | Description
 *PublicConfigurationManagementApi* | [**HttpConfigGetFrontendAll**](docs\PublicConfigurationManagementApi.md#httpconfiggetfrontendall) | **GET** /config/frontend | 
 *PublicDownloadFormatManagementApi* | [**HttpDownloadFormatsGetAll**](docs\PublicDownloadFormatManagementApi.md#httpdownloadformatsgetall) | **GET** /downloadformats | 
 *PublicDownloadFormatManagementApi* | [**HttpDownloadFormatsGetAllFromShared**](docs\PublicDownloadFormatManagementApi.md#httpdownloadformatsgetallfromshared) | **GET** /downloadformats-shared | 
+*PublicEndpointsApi* | [**HttpAssetGetViewForPortal**](docs\PublicEndpointsApi.md#httpassetgetviewforportal) | **GET** /public/view | 
 *PublicGeneralManagementApi* | [**HttpAgravityVersionInfo**](docs\PublicGeneralManagementApi.md#httpagravityversioninfo) | **GET** /version | 
+*PublicGeneralManagementApi* | [**HttpGetDeletedEntities**](docs\PublicGeneralManagementApi.md#httpgetdeletedentities) | **GET** /deleted | 
 *PublicGeneralManagementApi* | [**HttpTriggerDurableContinue**](docs\PublicGeneralManagementApi.md#httptriggerdurablecontinue) | **GET** /durable/{instanceId} | 
 *PublicGeneralManagementApi* | [**HttpTriggerDurableScchTrainingDone**](docs\PublicGeneralManagementApi.md#httptriggerdurablescchtrainingdone) | **GET** /durable/scch/{instanceId} | 
 *PublicHelperToolsApi* | [**HttpGetAllUserDefinedLists**](docs\PublicHelperToolsApi.md#httpgetalluserdefinedlists) | **GET** /helper/userdefinedlists | 
 *PublicHelperToolsApi* | [**HttpGetAllowedFilterableItems**](docs\PublicHelperToolsApi.md#httpgetallowedfilterableitems) | **GET** /helper/filterableitems | 
 *PublicHelperToolsApi* | [**HttpGetAllowedSearchableItemNames**](docs\PublicHelperToolsApi.md#httpgetallowedsearchableitemnames) | **GET** /helper/searchableitemnames | 
 *PublicHelperToolsApi* | [**HttpGetAllowedSearchableItems**](docs\PublicHelperToolsApi.md#httpgetallowedsearchableitems) | **GET** /helper/searchableitems | 
+*PublicPortalManagementApi* | [**HttpPortalGetAllAssetIdsById**](docs\PublicPortalManagementApi.md#httpportalgetallassetidsbyid) | **GET** /portals/{id}/assetids | 
 *PublicPortalManagementApi* | [**HttpPortalGetStatusZipById**](docs\PublicPortalManagementApi.md#httpportalgetstatuszipbyid) | **GET** /portals/{id}/zip/{zipId} | 
 *PublicPortalManagementApi* | [**HttpPortalRequestZipById**](docs\PublicPortalManagementApi.md#httpportalrequestzipbyid) | **POST** /portals/{id}/zip | 
 *PublicPortalManagementApi* | [**HttpPortalsConfigurationGetById**](docs\PublicPortalManagementApi.md#httpportalsconfigurationgetbyid) | **GET** /portals/{id}/config | 
@@ -203,6 +206,7 @@ Class | Method | HTTP request | Description
  - [Model.CollectionUDL](docs\CollectionUDL.md)
  - [Model.CreateSftpUserResult](docs\CreateSftpUserResult.md)
  - [Model.DataResult](docs\DataResult.md)
+ - [Model.DeletedEntities](docs\DeletedEntities.md)
  - [Model.DistZipResponse](docs\DistZipResponse.md)
  - [Model.DownloadFormat](docs\DownloadFormat.md)
  - [Model.DynamicImageOperation](docs\DynamicImageOperation.md)

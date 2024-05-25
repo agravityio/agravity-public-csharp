@@ -52,6 +52,35 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;DeletedEntities&gt;</returns>
+        List<DeletedEntities> HttpGetDeletedEntities(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;DeletedEntities&gt;</returns>
+        ApiResponse<List<DeletedEntities>> HttpGetDeletedEntitiesWithHttpInfo(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// Trigger the durable execution to continue
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
@@ -126,6 +155,37 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgravityVersion)</returns>
         System.Threading.Tasks.Task<ApiResponse<AgravityVersion>> HttpAgravityVersionInfoWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;DeletedEntities&gt;</returns>
+        System.Threading.Tasks.Task<List<DeletedEntities>> HttpGetDeletedEntitiesAsync(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;DeletedEntities&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<DeletedEntities>>> HttpGetDeletedEntitiesWithHttpInfoAsync(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -413,6 +473,190 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpAgravityVersionInfo", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;DeletedEntities&gt;</returns>
+        public List<DeletedEntities> HttpGetDeletedEntities(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<List<DeletedEntities>> localVarResponse = HttpGetDeletedEntitiesWithHttpInfo(entityType, since, until, portalId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;DeletedEntities&gt;</returns>
+        public Agravity.Public.Client.ApiResponse<List<DeletedEntities>> HttpGetDeletedEntitiesWithHttpInfo(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0)
+        {
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (entityType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "entity_type", entityType));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+
+            localVarRequestOptions.Operation = "PublicGeneralManagementApi.HttpGetDeletedEntities";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<DeletedEntities>>("/deleted", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpGetDeletedEntities", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;DeletedEntities&gt;</returns>
+        public async System.Threading.Tasks.Task<List<DeletedEntities>> HttpGetDeletedEntitiesAsync(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<List<DeletedEntities>> localVarResponse = await HttpGetDeletedEntitiesWithHttpInfoAsync(entityType, since, until, portalId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;DeletedEntities&gt;)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<DeletedEntities>>> HttpGetDeletedEntitiesWithHttpInfoAsync(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (entityType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "entity_type", entityType));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+
+            localVarRequestOptions.Operation = "PublicGeneralManagementApi.HttpGetDeletedEntities";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<DeletedEntities>>("/deleted", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpGetDeletedEntities", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

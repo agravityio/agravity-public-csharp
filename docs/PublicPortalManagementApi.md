@@ -4,10 +4,109 @@ All URIs are relative to *http://localhost:7072/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**HttpPortalGetAllAssetIdsById**](PublicPortalManagementApi.md#httpportalgetallassetidsbyid) | **GET** /portals/{id}/assetids |  |
 | [**HttpPortalGetStatusZipById**](PublicPortalManagementApi.md#httpportalgetstatuszipbyid) | **GET** /portals/{id}/zip/{zipId} |  |
 | [**HttpPortalRequestZipById**](PublicPortalManagementApi.md#httpportalrequestzipbyid) | **POST** /portals/{id}/zip |  |
 | [**HttpPortalsConfigurationGetById**](PublicPortalManagementApi.md#httpportalsconfigurationgetbyid) | **GET** /portals/{id}/config |  |
 | [**HttpPortalsGetById**](PublicPortalManagementApi.md#httpportalsgetbyid) | **GET** /portals/{id} |  |
+
+<a name="httpportalgetallassetidsbyid"></a>
+# **HttpPortalGetAllAssetIdsById**
+> List&lt;string&gt; HttpPortalGetAllAssetIdsById (string id)
+
+
+
+This endpoint gets all Asset IDs in portal scope.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpPortalGetAllAssetIdsByIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicPortalManagementApi(config);
+            var id = "id_example";  // string | The ID of the portal.
+
+            try
+            {
+                List<string> result = apiInstance.HttpPortalGetAllAssetIdsById(id);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicPortalManagementApi.HttpPortalGetAllAssetIdsById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpPortalGetAllAssetIdsByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<string>> response = apiInstance.HttpPortalGetAllAssetIdsByIdWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicPortalManagementApi.HttpPortalGetAllAssetIdsByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the portal. |  |
+
+### Return type
+
+**List<string>**
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns all Asset IDs in scope of the portal. |  -  |
+| **400** | Portal ID is mandatory and not valid. (Code: f2817cb8-8573-4205-b45d-1b9a7f3d8cbb) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **404** | The requested item could not be found. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="httpportalgetstatuszipbyid"></a>
 # **HttpPortalGetStatusZipById**

@@ -31,6 +31,29 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// This endpoint gets all Asset IDs in portal scope.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;string&gt;</returns>
+        List<string> HttpPortalGetAllAssetIdsById(string id, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint gets all Asset IDs in portal scope.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        ApiResponse<List<string>> HttpPortalGetAllAssetIdsByIdWithHttpInfo(string id, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// This endpoint gets the progress/status of the ZIP creation of a portal.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
@@ -132,6 +155,31 @@ namespace Agravity.Public.Api
     public interface IPublicPortalManagementApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint gets all Asset IDs in portal scope.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;string&gt;</returns>
+        System.Threading.Tasks.Task<List<string>> HttpPortalGetAllAssetIdsByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint gets all Asset IDs in portal scope.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> HttpPortalGetAllAssetIdsByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -354,6 +402,160 @@ namespace Agravity.Public.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  This endpoint gets all Asset IDs in portal scope.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;string&gt;</returns>
+        public List<string> HttpPortalGetAllAssetIdsById(string id, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<List<string>> localVarResponse = HttpPortalGetAllAssetIdsByIdWithHttpInfo(id);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint gets all Asset IDs in portal scope.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        public Agravity.Public.Client.ApiResponse<List<string>> HttpPortalGetAllAssetIdsByIdWithHttpInfo(string id, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicPortalManagementApi->HttpPortalGetAllAssetIdsById");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "PublicPortalManagementApi.HttpPortalGetAllAssetIdsById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<string>>("/portals/{id}/assetids", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPortalGetAllAssetIdsById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint gets all Asset IDs in portal scope.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;string&gt;</returns>
+        public async System.Threading.Tasks.Task<List<string>> HttpPortalGetAllAssetIdsByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<List<string>> localVarResponse = await HttpPortalGetAllAssetIdsByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint gets all Asset IDs in portal scope.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the portal.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<string>>> HttpPortalGetAllAssetIdsByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicPortalManagementApi->HttpPortalGetAllAssetIdsById");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "PublicPortalManagementApi.HttpPortalGetAllAssetIdsById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/portals/{id}/assetids", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPortalGetAllAssetIdsById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

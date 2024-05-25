@@ -56,6 +56,18 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpPortalGetAllAssetIdsById
+        /// </summary>
+        [Fact]
+        public void HttpPortalGetAllAssetIdsByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //var response = instance.HttpPortalGetAllAssetIdsById(id);
+            //Assert.IsType<List<string>>(response);
+        }
+
+        /// <summary>
         /// Test HttpPortalGetStatusZipById
         /// </summary>
         [Fact]

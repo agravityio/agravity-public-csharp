@@ -19,6 +19,7 @@ docs/CollectionType.md
 docs/CollectionUDL.md
 docs/CreateSftpUserResult.md
 docs/DataResult.md
+docs/DeletedEntities.md
 docs/DistZipResponse.md
 docs/DownloadFormat.md
 docs/DynamicImageOperation.md
@@ -46,6 +47,7 @@ docs/PublicCollectionSecureUploadApi.md
 docs/PublicCollectionTypeManagementApi.md
 docs/PublicConfigurationManagementApi.md
 docs/PublicDownloadFormatManagementApi.md
+docs/PublicEndpointsApi.md
 docs/PublicGeneralManagementApi.md
 docs/PublicHelperToolsApi.md
 docs/PublicPortalManagementApi.md
@@ -90,6 +92,7 @@ src/Agravity.Public.Test/Api/PublicCollectionSecureUploadApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionTypeManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicConfigurationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicDownloadFormatManagementApiTests.cs
+src/Agravity.Public.Test/Api/PublicEndpointsApiTests.cs
 src/Agravity.Public.Test/Api/PublicGeneralManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicHelperToolsApiTests.cs
 src/Agravity.Public.Test/Api/PublicPortalManagementApiTests.cs
@@ -119,6 +122,7 @@ src/Agravity.Public.Test/Model/CollectionTypeTests.cs
 src/Agravity.Public.Test/Model/CollectionUDLTests.cs
 src/Agravity.Public.Test/Model/CreateSftpUserResultTests.cs
 src/Agravity.Public.Test/Model/DataResultTests.cs
+src/Agravity.Public.Test/Model/DeletedEntitiesTests.cs
 src/Agravity.Public.Test/Model/DistZipResponseTests.cs
 src/Agravity.Public.Test/Model/DownloadFormatTests.cs
 src/Agravity.Public.Test/Model/DynamicImageOperationTests.cs
@@ -167,6 +171,7 @@ src/Agravity.Public/Api/PublicCollectionSecureUploadApi.cs
 src/Agravity.Public/Api/PublicCollectionTypeManagementApi.cs
 src/Agravity.Public/Api/PublicConfigurationManagementApi.cs
 src/Agravity.Public/Api/PublicDownloadFormatManagementApi.cs
+src/Agravity.Public/Api/PublicEndpointsApi.cs
 src/Agravity.Public/Api/PublicGeneralManagementApi.cs
 src/Agravity.Public/Api/PublicHelperToolsApi.cs
 src/Agravity.Public/Api/PublicPortalManagementApi.cs
@@ -213,6 +218,7 @@ src/Agravity.Public/Model/CollectionType.cs
 src/Agravity.Public/Model/CollectionUDL.cs
 src/Agravity.Public/Model/CreateSftpUserResult.cs
 src/Agravity.Public/Model/DataResult.cs
+src/Agravity.Public/Model/DeletedEntities.cs
 src/Agravity.Public/Model/DistZipResponse.cs
 src/Agravity.Public/Model/DownloadFormat.cs
 src/Agravity.Public/Model/DynamicImageOperation.cs

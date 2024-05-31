@@ -10,6 +10,17 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="7.2.0"/> [7.2.0](https://www.nuget.org/packages/Agravity.Public/7.2.0) (2024-05-31)
+
+- Add endpoint GET `{{url_public}}/api/assets/{assetId}/view?portal_id={portalId}&format={downloadFormatId}` - This endpoint returns the content of an asset which is available in a specific portal (portal_id is "key") and returns the blob directly.
+  - Add optional `download` boolean parameter to indicate that I want to download the file
+- Add property `zipname` to DownloadZipRequest - which is used for downloading zip;
+  Add new endpoint GET `/deleted` - This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
+  - allows to filter for `since`, `until`, `entity_type` and `portal_id`
+- Add new endpoint GET `/portals/{id}/assetids` - This endpoint gets all Asset IDs in portal scope.
+
+---
+
 ## AgravityAPI <a name="7.1.0"/> [7.1.0](https://www.nuget.org/packages/Agravity.Public/7.1.0) (2024-05-08)
 
 Change to restsharp and add targetFramework net6.0

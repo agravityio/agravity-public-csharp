@@ -10,6 +10,12 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="7.2.1"/> [7.2.1](https://www.nuget.org/packages/Agravity.Public/7.2.1) (2024-06-03)
+
+- Just version upgrade to match backend
+
+---
+
 ## AgravityAPI <a name="7.2.0"/> [7.2.0](https://www.nuget.org/packages/Agravity.Public/7.2.0) (2024-05-31)
 
 - Add endpoint GET `{{url_public}}/api/assets/{assetId}/view?portal_id={portalId}&format={downloadFormatId}` - This endpoint returns the content of an asset which is available in a specific portal (portal_id is "key") and returns the blob directly.

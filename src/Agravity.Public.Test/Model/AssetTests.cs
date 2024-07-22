@@ -98,14 +98,6 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Duplicates'
         }
         /// <summary>
-        /// Test the property 'TextContent'
-        /// </summary>
-        [Fact]
-        public void TextContentTest()
-        {
-            // TODO unit test for the property 'TextContent'
-        }
-        /// <summary>
         /// Test the property 'AiGroups'
         /// </summary>
         [Fact]

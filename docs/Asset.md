@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **AssetType** | **string** |  | [optional] 
 **Duplicates** | **List&lt;string&gt;** |  | [optional] 
-**TextContent** | **string** |  | [optional] 
 **AiGroups** | [**List&lt;ArtificialIntelligenceGroup&gt;**](ArtificialIntelligenceGroup.md) |  | [optional] 
 **Keywords** | **List&lt;string&gt;** |  | [optional] 
 **OrigBlob** | [**AssetBlob**](AssetBlob.md) |  | [optional] 

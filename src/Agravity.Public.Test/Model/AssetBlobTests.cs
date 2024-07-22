@@ -114,14 +114,6 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Md5'
         }
         /// <summary>
-        /// Test the property 'Techdata'
-        /// </summary>
-        [Fact]
-        public void TechdataTest()
-        {
-            // TODO unit test for the property 'Techdata'
-        }
-        /// <summary>
         /// Test the property 'AddData'
         /// </summary>
         [Fact]
@@ -346,6 +338,14 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Author'
         }
         /// <summary>
+        /// Test the property 'Title'
+        /// </summary>
+        [Fact]
+        public void TitleTest()
+        {
+            // TODO unit test for the property 'Title'
+        }
+        /// <summary>
         /// Test the property 'Language'
         /// </summary>
         [Fact]
@@ -368,14 +368,6 @@ namespace Agravity.Public.Test.Model
         public void PagesTest()
         {
             // TODO unit test for the property 'Pages'
-        }
-        /// <summary>
-        /// Test the property 'Title'
-        /// </summary>
-        [Fact]
-        public void TitleTest()
-        {
-            // TODO unit test for the property 'Title'
         }
         /// <summary>
         /// Test the property 'EncodingName'

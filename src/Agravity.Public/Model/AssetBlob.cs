@@ -130,7 +130,6 @@ namespace Agravity.Public.Model
         /// <param name="extension">extension.</param>
         /// <param name="contentType">contentType.</param>
         /// <param name="md5">md5.</param>
-        /// <param name="techdata">techdata.</param>
         /// <param name="addData">addData.</param>
         /// <param name="width">width.</param>
         /// <param name="height">height.</param>
@@ -159,17 +158,19 @@ namespace Agravity.Public.Model
         /// <param name="audiochanneloutput">audiochanneloutput.</param>
         /// <param name="audiobitrate">audiobitrate.</param>
         /// <param name="author">author.</param>
+        /// <param name="title">title.</param>
         /// <param name="language">language.</param>
         /// <param name="wordcount">wordcount.</param>
         /// <param name="pages">pages.</param>
-        /// <param name="title">title.</param>
         /// <param name="encodingName">encodingName.</param>
         /// <param name="encodingCode">encodingCode.</param>
         /// <param name="url">url.</param>
         /// <param name="sizeReadable">sizeReadable.</param>
         /// <param name="downloadable">downloadable.</param>
         /// <param name="expires">expires.</param>
-        public AssetBlob(BlobTypeEnum? blobType = BlobTypeEnum.UNKNOWN, string name = default(string), string container = default(string), long size = default(long), string extension = default(string), string contentType = default(string), string md5 = default(string), List<Metadata> techdata = default(List<Metadata>), Dictionary<string, object> addData = default(Dictionary<string, object>), int? width = default(int?), int? height = default(int?), int? maxwidthheight = default(int?), double? quality = default(double?), OrientationEnum? orientation = OrientationEnum.PORTRAIT, string colorspace = default(string), string profile = default(string), bool? transparency = default(bool?), string mode = default(string), string target = default(string), string filter = default(string), double? dpiX = default(double?), double? dpiY = default(double?), string perhash = default(string), string dominantcolor = default(string), int? depth = default(int?), bool? animated = default(bool?), int? duration = default(int?), string videocodec = default(string), int? videobitrate = default(int?), double? fps = default(double?), string colormode = default(string), string audiocodec = default(string), string audiosamplerate = default(string), string audiochanneloutput = default(string), int? audiobitrate = default(int?), string author = default(string), string language = default(string), int? wordcount = default(int?), int? pages = default(int?), string title = default(string), string encodingName = default(string), string encodingCode = default(string), string url = default(string), string sizeReadable = default(string), bool? downloadable = default(bool?), DateTime? expires = default(DateTime?))
+        /// <param name="uploadedDate">uploadedDate.</param>
+        /// <param name="uploadedBy">uploadedBy.</param>
+        public AssetBlob(BlobTypeEnum? blobType = BlobTypeEnum.UNKNOWN, string name = default(string), string container = default(string), long size = default(long), string extension = default(string), string contentType = default(string), string md5 = default(string), Dictionary<string, object> addData = default(Dictionary<string, object>), int? width = default(int?), int? height = default(int?), int? maxwidthheight = default(int?), double? quality = default(double?), OrientationEnum? orientation = OrientationEnum.PORTRAIT, string colorspace = default(string), string profile = default(string), bool? transparency = default(bool?), string mode = default(string), string target = default(string), string filter = default(string), double? dpiX = default(double?), double? dpiY = default(double?), string perhash = default(string), string dominantcolor = default(string), int? depth = default(int?), bool? animated = default(bool?), int? duration = default(int?), string videocodec = default(string), int? videobitrate = default(int?), double? fps = default(double?), string colormode = default(string), string audiocodec = default(string), string audiosamplerate = default(string), string audiochanneloutput = default(string), int? audiobitrate = default(int?), string author = default(string), string title = default(string), string language = default(string), int? wordcount = default(int?), int? pages = default(int?), string encodingName = default(string), string encodingCode = default(string), string url = default(string), string sizeReadable = default(string), bool? downloadable = default(bool?), DateTime? expires = default(DateTime?), DateTime? uploadedDate = default(DateTime?), string uploadedBy = default(string))
         {
             this.BlobType = blobType;
             this.Name = name;
@@ -178,7 +179,6 @@ namespace Agravity.Public.Model
             this.Extension = extension;
             this.ContentType = contentType;
             this.Md5 = md5;
-            this.Techdata = techdata;
             this.AddData = addData;
             this.Width = width;
             this.Height = height;
@@ -207,10 +207,10 @@ namespace Agravity.Public.Model
             this.Audiochanneloutput = audiochanneloutput;
             this.Audiobitrate = audiobitrate;
             this.Author = author;
+            this.Title = title;
             this.Language = language;
             this.Wordcount = wordcount;
             this.Pages = pages;
-            this.Title = title;
             this.EncodingName = encodingName;
             this.EncodingCode = encodingCode;
             this.Url = url;
@@ -254,12 +254,6 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "md5", EmitDefaultValue = false)]
         public string Md5 { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Techdata
-        /// </summary>
-        [DataMember(Name = "techdata", EmitDefaultValue = false)]
-        public List<Metadata> Techdata { get; set; }
 
         /// <summary>
         /// Gets or Sets AddData
@@ -424,6 +418,12 @@ namespace Agravity.Public.Model
         public string Author { get; set; }
 
         /// <summary>
+        /// Gets or Sets Title
+        /// </summary>
+        [DataMember(Name = "title", EmitDefaultValue = false)]
+        public string Title { get; set; }
+
+        /// <summary>
         /// Gets or Sets Language
         /// </summary>
         [DataMember(Name = "language", EmitDefaultValue = false)]
@@ -440,12 +440,6 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "pages", EmitDefaultValue = true)]
         public int? Pages { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Title
-        /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
-        public string Title { get; set; }
 
         /// <summary>
         /// Gets or Sets EncodingName
@@ -498,7 +492,6 @@ namespace Agravity.Public.Model
             sb.Append("  Extension: ").Append(Extension).Append("\n");
             sb.Append("  ContentType: ").Append(ContentType).Append("\n");
             sb.Append("  Md5: ").Append(Md5).Append("\n");
-            sb.Append("  Techdata: ").Append(Techdata).Append("\n");
             sb.Append("  AddData: ").Append(AddData).Append("\n");
             sb.Append("  Width: ").Append(Width).Append("\n");
             sb.Append("  Height: ").Append(Height).Append("\n");
@@ -527,10 +520,10 @@ namespace Agravity.Public.Model
             sb.Append("  Audiochanneloutput: ").Append(Audiochanneloutput).Append("\n");
             sb.Append("  Audiobitrate: ").Append(Audiobitrate).Append("\n");
             sb.Append("  Author: ").Append(Author).Append("\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  Wordcount: ").Append(Wordcount).Append("\n");
             sb.Append("  Pages: ").Append(Pages).Append("\n");
-            sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  EncodingName: ").Append(EncodingName).Append("\n");
             sb.Append("  EncodingCode: ").Append(EncodingCode).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
@@ -604,12 +597,6 @@ namespace Agravity.Public.Model
                     this.Md5 == input.Md5 ||
                     (this.Md5 != null &&
                     this.Md5.Equals(input.Md5))
-                ) && 
-                (
-                    this.Techdata == input.Techdata ||
-                    this.Techdata != null &&
-                    input.Techdata != null &&
-                    this.Techdata.SequenceEqual(input.Techdata)
                 ) && 
                 (
                     this.AddData == input.AddData ||
@@ -752,6 +739,11 @@ namespace Agravity.Public.Model
                     this.Author.Equals(input.Author))
                 ) && 
                 (
+                    this.Title == input.Title ||
+                    (this.Title != null &&
+                    this.Title.Equals(input.Title))
+                ) && 
+                (
                     this.Language == input.Language ||
                     (this.Language != null &&
                     this.Language.Equals(input.Language))
@@ -765,11 +757,6 @@ namespace Agravity.Public.Model
                     this.Pages == input.Pages ||
                     (this.Pages != null &&
                     this.Pages.Equals(input.Pages))
-                ) && 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
                 ) && 
                 (
                     this.EncodingName == input.EncodingName ||
@@ -833,10 +820,6 @@ namespace Agravity.Public.Model
                 if (this.Md5 != null)
                 {
                     hashCode = (hashCode * 59) + this.Md5.GetHashCode();
-                }
-                if (this.Techdata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Techdata.GetHashCode();
                 }
                 if (this.AddData != null)
                 {
@@ -947,6 +930,10 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.Author.GetHashCode();
                 }
+                if (this.Title != null)
+                {
+                    hashCode = (hashCode * 59) + this.Title.GetHashCode();
+                }
                 if (this.Language != null)
                 {
                     hashCode = (hashCode * 59) + this.Language.GetHashCode();
@@ -958,10 +945,6 @@ namespace Agravity.Public.Model
                 if (this.Pages != null)
                 {
                     hashCode = (hashCode * 59) + this.Pages.GetHashCode();
-                }
-                if (this.Title != null)
-                {
-                    hashCode = (hashCode * 59) + this.Title.GetHashCode();
                 }
                 if (this.EncodingName != null)
                 {

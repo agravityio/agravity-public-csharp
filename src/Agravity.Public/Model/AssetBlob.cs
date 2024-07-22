@@ -217,6 +217,8 @@ namespace Agravity.Public.Model
             this.SizeReadable = sizeReadable;
             this.Downloadable = downloadable;
             this.Expires = expires;
+            this.UploadedDate = uploadedDate;
+            this.UploadedBy = uploadedBy;
         }
 
         /// <summary>
@@ -478,6 +480,18 @@ namespace Agravity.Public.Model
         public DateTime? Expires { get; set; }
 
         /// <summary>
+        /// Gets or Sets UploadedDate
+        /// </summary>
+        [DataMember(Name = "uploaded_date", EmitDefaultValue = true)]
+        public DateTime? UploadedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UploadedBy
+        /// </summary>
+        [DataMember(Name = "uploaded_by", EmitDefaultValue = false)]
+        public string UploadedBy { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -530,6 +544,8 @@ namespace Agravity.Public.Model
             sb.Append("  SizeReadable: ").Append(SizeReadable).Append("\n");
             sb.Append("  Downloadable: ").Append(Downloadable).Append("\n");
             sb.Append("  Expires: ").Append(Expires).Append("\n");
+            sb.Append("  UploadedDate: ").Append(UploadedDate).Append("\n");
+            sb.Append("  UploadedBy: ").Append(UploadedBy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -787,6 +803,16 @@ namespace Agravity.Public.Model
                     this.Expires == input.Expires ||
                     (this.Expires != null &&
                     this.Expires.Equals(input.Expires))
+                ) && 
+                (
+                    this.UploadedDate == input.UploadedDate ||
+                    (this.UploadedDate != null &&
+                    this.UploadedDate.Equals(input.UploadedDate))
+                ) && 
+                (
+                    this.UploadedBy == input.UploadedBy ||
+                    (this.UploadedBy != null &&
+                    this.UploadedBy.Equals(input.UploadedBy))
                 );
         }
 
@@ -969,6 +995,14 @@ namespace Agravity.Public.Model
                 if (this.Expires != null)
                 {
                     hashCode = (hashCode * 59) + this.Expires.GetHashCode();
+                }
+                if (this.UploadedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.UploadedDate.GetHashCode();
+                }
+                if (this.UploadedBy != null)
+                {
+                    hashCode = (hashCode * 59) + this.UploadedBy.GetHashCode();
                 }
                 return hashCode;
             }

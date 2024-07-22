@@ -90,6 +90,14 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'CreatedBy'
         }
         /// <summary>
+        /// Test the property 'BlobUploaded'
+        /// </summary>
+        [Fact]
+        public void BlobUploadedTest()
+        {
+            // TODO unit test for the property 'BlobUploaded'
+        }
+        /// <summary>
         /// Test the property 'MimeType'
         /// </summary>
         [Fact]

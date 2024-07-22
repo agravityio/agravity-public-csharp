@@ -417,6 +417,22 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Expires'
         }
+        /// <summary>
+        /// Test the property 'UploadedDate'
+        /// </summary>
+        [Fact]
+        public void UploadedDateTest()
+        {
+            // TODO unit test for the property 'UploadedDate'
+        }
+        /// <summary>
+        /// Test the property 'UploadedBy'
+        /// </summary>
+        [Fact]
+        public void UploadedByTest()
+        {
+            // TODO unit test for the property 'UploadedBy'
+        }
 
     }
 

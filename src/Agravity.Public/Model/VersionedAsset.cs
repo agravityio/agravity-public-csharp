@@ -38,14 +38,18 @@ namespace Agravity.Public.Model
         /// <param name="versionNr">versionNr.</param>
         /// <param name="untilDate">untilDate.</param>
         /// <param name="versionInfo">versionInfo.</param>
+        /// <param name="createdDate">createdDate.</param>
         /// <param name="createdBy">createdBy.</param>
+        /// <param name="blobUploaded">blobUploaded.</param>
         /// <param name="mimeType">mimeType.</param>
-        public VersionedAsset(int versionNr = default(int), DateTime untilDate = default(DateTime), string versionInfo = default(string), string createdBy = default(string), string mimeType = default(string))
+        public VersionedAsset(int versionNr = default(int), DateTime untilDate = default(DateTime), string versionInfo = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? blobUploaded = default(DateTime?), string mimeType = default(string))
         {
             this.VersionNr = versionNr;
             this.UntilDate = untilDate;
             this.VersionInfo = versionInfo;
+            this.CreatedDate = createdDate;
             this.CreatedBy = createdBy;
+            this.BlobUploaded = blobUploaded;
             this.MimeType = mimeType;
         }
 
@@ -68,10 +72,22 @@ namespace Agravity.Public.Model
         public string VersionInfo { get; set; }
 
         /// <summary>
+        /// Gets or Sets CreatedDate
+        /// </summary>
+        [DataMember(Name = "created_date", EmitDefaultValue = true)]
+        public DateTime? CreatedDate { get; set; }
+
+        /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
         [DataMember(Name = "created_by", EmitDefaultValue = false)]
         public string CreatedBy { get; set; }
+
+        /// <summary>
+        /// Gets or Sets BlobUploaded
+        /// </summary>
+        [DataMember(Name = "blob_uploaded", EmitDefaultValue = true)]
+        public DateTime? BlobUploaded { get; set; }
 
         /// <summary>
         /// Gets or Sets MimeType
@@ -90,7 +106,9 @@ namespace Agravity.Public.Model
             sb.Append("  VersionNr: ").Append(VersionNr).Append("\n");
             sb.Append("  UntilDate: ").Append(UntilDate).Append("\n");
             sb.Append("  VersionInfo: ").Append(VersionInfo).Append("\n");
+            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
+            sb.Append("  BlobUploaded: ").Append(BlobUploaded).Append("\n");
             sb.Append("  MimeType: ").Append(MimeType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -142,9 +160,19 @@ namespace Agravity.Public.Model
                     this.VersionInfo.Equals(input.VersionInfo))
                 ) && 
                 (
+                    this.CreatedDate == input.CreatedDate ||
+                    (this.CreatedDate != null &&
+                    this.CreatedDate.Equals(input.CreatedDate))
+                ) && 
+                (
                     this.CreatedBy == input.CreatedBy ||
                     (this.CreatedBy != null &&
                     this.CreatedBy.Equals(input.CreatedBy))
+                ) && 
+                (
+                    this.BlobUploaded == input.BlobUploaded ||
+                    (this.BlobUploaded != null &&
+                    this.BlobUploaded.Equals(input.BlobUploaded))
                 ) && 
                 (
                     this.MimeType == input.MimeType ||
@@ -171,9 +199,17 @@ namespace Agravity.Public.Model
                 {
                     hashCode = (hashCode * 59) + this.VersionInfo.GetHashCode();
                 }
+                if (this.CreatedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
+                }
                 if (this.CreatedBy != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
+                }
+                if (this.BlobUploaded != null)
+                {
+                    hashCode = (hashCode * 59) + this.BlobUploaded.GetHashCode();
                 }
                 if (this.MimeType != null)
                 {

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Description** | **string** |  | [optional] 
 **Usecases** | **List&lt;string&gt;** |  | [optional] 
 **CreatedDate** | **DateTime** |  | [optional] 
+**CreatedBy** | **string** |  | [optional] 
 **Url** | **string** |  | [optional] 
 **Cdn** | **string** |  | [optional] 
 **StatusTableId** | **string** |  | [optional] 

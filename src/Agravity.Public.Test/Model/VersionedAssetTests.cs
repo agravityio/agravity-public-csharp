@@ -82,6 +82,14 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'VersionInfo'
         }
         /// <summary>
+        /// Test the property 'CreatedDate'
+        /// </summary>
+        [Fact]
+        public void CreatedDateTest()
+        {
+            // TODO unit test for the property 'CreatedDate'
+        }
+        /// <summary>
         /// Test the property 'CreatedBy'
         /// </summary>
         [Fact]

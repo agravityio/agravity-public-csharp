@@ -41,12 +41,13 @@ namespace Agravity.Public.Model
         /// <param name="description">description.</param>
         /// <param name="usecases">usecases.</param>
         /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdBy">createdBy.</param>
         /// <param name="url">url.</param>
         /// <param name="cdn">cdn.</param>
         /// <param name="statusTableId">statusTableId.</param>
         /// <param name="format">format.</param>
         /// <param name="properties">properties.</param>
-        public PublishedAsset(string id = default(string), string name = default(string), string target = default(string), string description = default(string), List<string> usecases = default(List<string>), DateTime createdDate = default(DateTime), string url = default(string), string cdn = default(string), string statusTableId = default(string), string format = default(string), Dictionary<string, object> properties = default(Dictionary<string, object>))
+        public PublishedAsset(string id = default(string), string name = default(string), string target = default(string), string description = default(string), List<string> usecases = default(List<string>), DateTime createdDate = default(DateTime), string createdBy = default(string), string url = default(string), string cdn = default(string), string statusTableId = default(string), string format = default(string), Dictionary<string, object> properties = default(Dictionary<string, object>))
         {
             this.Id = id;
             this.Name = name;
@@ -54,6 +55,7 @@ namespace Agravity.Public.Model
             this.Description = description;
             this.Usecases = usecases;
             this.CreatedDate = createdDate;
+            this.CreatedBy = createdBy;
             this.Url = url;
             this.Cdn = cdn;
             this.StatusTableId = statusTableId;
@@ -96,6 +98,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "created_date", EmitDefaultValue = false)]
         public DateTime CreatedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedBy
+        /// </summary>
+        [DataMember(Name = "created_by", EmitDefaultValue = false)]
+        public string CreatedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
@@ -141,6 +149,7 @@ namespace Agravity.Public.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Usecases: ").Append(Usecases).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  Cdn: ").Append(Cdn).Append("\n");
             sb.Append("  StatusTableId: ").Append(StatusTableId).Append("\n");
@@ -213,6 +222,11 @@ namespace Agravity.Public.Model
                     this.CreatedDate.Equals(input.CreatedDate))
                 ) && 
                 (
+                    this.CreatedBy == input.CreatedBy ||
+                    (this.CreatedBy != null &&
+                    this.CreatedBy.Equals(input.CreatedBy))
+                ) && 
+                (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
@@ -272,6 +286,10 @@ namespace Agravity.Public.Model
                 if (this.CreatedDate != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
+                }
+                if (this.CreatedBy != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
                 }
                 if (this.Url != null)
                 {

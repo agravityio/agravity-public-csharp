@@ -106,6 +106,14 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'CreatedDate'
         }
         /// <summary>
+        /// Test the property 'CreatedBy'
+        /// </summary>
+        [Fact]
+        public void CreatedByTest()
+        {
+            // TODO unit test for the property 'CreatedBy'
+        }
+        /// <summary>
         /// Test the property 'Url'
         /// </summary>
         [Fact]

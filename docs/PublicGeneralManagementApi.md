@@ -125,7 +125,7 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicGeneralManagementApi(config);
-            var entityType = "entityType_example";  // string | The date in the past since the entities are marked as deleted in the database. (optional) 
+            var entityType = "entityType_example";  // string | The type of the entity (e.g. 'asset', 'collection_type', 'collection_type' (optional) 
             var since = "since_example";  // string | The date in the past since the entities are marked as deleted in the database. (optional) 
             var until = "until_example";  // string | The date in the past until the entities are marked as deleted in the database. (optional) 
             var portalId = "portalId_example";  // string | If the request comes from portal this is the indicator. (optional) 
@@ -169,7 +169,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **entityType** | **string** | The date in the past since the entities are marked as deleted in the database. | [optional]  |
+| **entityType** | **string** | The type of the entity (e.g. &#39;asset&#39;, &#39;collection_type&#39;, &#39;collection_type&#39; | [optional]  |
 | **since** | **string** | The date in the past since the entities are marked as deleted in the database. | [optional]  |
 | **until** | **string** | The date in the past until the entities are marked as deleted in the database. | [optional]  |
 | **portalId** | **string** | If the request comes from portal this is the indicator. | [optional]  |

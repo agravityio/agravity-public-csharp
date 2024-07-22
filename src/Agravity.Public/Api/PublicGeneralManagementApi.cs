@@ -55,7 +55,7 @@ namespace Agravity.Public.Api
         /// This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="entityType">The type of the entity (e.g. &#39;asset&#39;, &#39;collection_type&#39;, &#39;collection_type&#39; (optional)</param>
         /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
         /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
         /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
@@ -70,7 +70,7 @@ namespace Agravity.Public.Api
         /// This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="entityType">The type of the entity (e.g. &#39;asset&#39;, &#39;collection_type&#39;, &#39;collection_type&#39; (optional)</param>
         /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
         /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
         /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
@@ -162,7 +162,7 @@ namespace Agravity.Public.Api
         /// This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="entityType">The type of the entity (e.g. &#39;asset&#39;, &#39;collection_type&#39;, &#39;collection_type&#39; (optional)</param>
         /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
         /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
         /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
@@ -178,7 +178,7 @@ namespace Agravity.Public.Api
         /// This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="entityType">The type of the entity (e.g. &#39;asset&#39;, &#39;collection_type&#39;, &#39;collection_type&#39; (optional)</param>
         /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
         /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
         /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
@@ -486,7 +486,7 @@ namespace Agravity.Public.Api
         ///  This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="entityType">The type of the entity (e.g. &#39;asset&#39;, &#39;collection_type&#39;, &#39;collection_type&#39; (optional)</param>
         /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
         /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
         /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
@@ -502,7 +502,7 @@ namespace Agravity.Public.Api
         ///  This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="entityType">The type of the entity (e.g. &#39;asset&#39;, &#39;collection_type&#39;, &#39;collection_type&#39; (optional)</param>
         /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
         /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
         /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
@@ -576,7 +576,7 @@ namespace Agravity.Public.Api
         ///  This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="entityType">The type of the entity (e.g. &#39;asset&#39;, &#39;collection_type&#39;, &#39;collection_type&#39; (optional)</param>
         /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
         /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
         /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
@@ -593,7 +593,7 @@ namespace Agravity.Public.Api
         ///  This endpoint checks all deleted entities in the database until a specific date and returns the elements which are deleted.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="entityType">The date in the past since the entities are marked as deleted in the database. (optional)</param>
+        /// <param name="entityType">The type of the entity (e.g. &#39;asset&#39;, &#39;collection_type&#39;, &#39;collection_type&#39; (optional)</param>
         /// <param name="since">The date in the past since the entities are marked as deleted in the database. (optional)</param>
         /// <param name="until">The date in the past until the entities are marked as deleted in the database. (optional)</param>
         /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>

@@ -106,7 +106,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Returns the created collection. |  -  |
-| **400** | A parameter is null. (Code: 7dac18af-04ef-4da6-8b6e-e13dd8b027ae)&lt;br&gt;Missing or invalid parameter \&quot;collectiontypeid\&quot;. (Code: 42a54d68-8a33-4a71-9545-7460f7a1339d)&lt;br&gt;The collection type \&quot;&lt;collectiontypeid&gt;\&quot; was not found.. (Code: 203b1950-d942-4692-8e55-0ec5c137167f)&lt;br&gt;Object is not a valid collection. (Code: 67dd9a9f-b899-4607-bce8-0b0c4b4eec66) |  -  |
+| **400** | A parameter is null. (Code: 7dac18af-04ef-4da6-8b6e-e13dd8b027ae)&lt;br&gt;Missing or invalid parameter \&quot;collectiontypeid\&quot;. (Code: 42a54d68-8a33-4a71-9545-7460f7a1339d)&lt;br&gt;The collection type \&quot;&lt;collectiontypeid&gt;\&quot; was not found.. (Code: 203b1950-d942-4692-8e55-0ec5c137167f)&lt;br&gt;Not valid collection id. (Code: 61a99ef3-c212-4171-8b37-290d8db4af3c)&lt;br&gt;Can not create collection with id {input.Id}. Collection already exists. Delete first. (Code: 321c4f48-7cc9-4ece-af88-89e95031dfde)&lt;br&gt;Object is not a valid collection. (Code: 67dd9a9f-b899-4607-bce8-0b0c4b4eec66) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
@@ -814,6 +814,7 @@ catch (ApiException e)
 | **400** | Object is not a valid collection json. Parse error. (Code: 6910ae7e-6aea-4f15-8773-1c168a66d61d)&lt;br&gt;Can not update. Item value of \&quot;{item.name}\&quot; is not of the correct type \&quot;{item.type}\&quot;. (Code: ec1aa2cd-65be-48b9-8972-002561bbe8ef)&lt;br&gt;Can not update. The item \&quot;{item.name}\&quot; is marked as mandatory but no value was given. (Code: 2955994d-010d-4b5c-88e0-af35da5f357f)&lt;br&gt;Validation error parent \&quot;{collection.parent}\&quot; not a collection GUID. (Code: d72d01f0-1809-41fe-85ea-0e423fc8e6f6)&lt;br&gt;Parent \&quot;{collection.parent}\&quot; is not allowed because it has different collection type. (Code: 7dadb5e1-6b2f-4649-bddc-e3bed033d79b)&lt;br&gt;Parent \&quot;{collection.parent}\&quot; for collection not found (Code: 7dadb5e1-6b2f-4649-bddc-e3bed033d79b)&lt;br&gt;Parent \&quot;{collection.parent}\&quot; must not be the same as the child. (Code: fb629d4f-4b1c-41e7-a589-f5da1e6fcaff)&lt;br&gt; |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **404** | If the asset with the ID was not found. |  -  |
+| **403** | Not enough privileges to access item. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -6,6 +6,7 @@ All URIs are relative to *http://localhost:7072/api*
 |--------|--------------|-------------|
 | [**HttpGetSearchFacetteByName**](PublicSearchManagementApi.md#httpgetsearchfacettebyname) | **GET** /search/facette |  |
 | [**HttpGlobalSearch**](PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search |  |
+| [**HttpSearchAdminGetStatus**](PublicSearchManagementApi.md#httpsearchadmingetstatus) | **GET** /searchadmin/status |  |
 
 <a name="httpgetsearchfacettebyname"></a>
 # **HttpGetSearchFacetteByName**
@@ -232,6 +233,102 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Returns the search result |  -  |
 | **400** | A required parameter is null. (Code: 870f62fe-827a-4ef3-98e7-7f309244ee00)&lt;br&gt;or provide at least parameter \&quot;s&#x3D;\&quot; with search string (url encoded) (Code: de39bfb1-42e3-4edf-9651-5c4952524e69)&lt;br&gt;or limit is not a valid number! Can use 0 for defined limit. (Code: 7115dc96-99e3-47a4-827a-8cc63cc1ab68 or skip is not a valid number! Can use 0 for defined skip. (Code: ad8237e0-236c-4404-8eaa-d81a9fa4e41c or parameter \&quot;collectiontypeid&#x3D;\&quot; is not valid (not in correct format or not found in system). (Code: 330e6abb-e77e-4193-9aa0-9dfce168c674)&lt;br&gt;or parameter \&quot;collectionid&#x3D;\&quot; is not valid (not in correct format or not found in system). (Code: c20f1dfb-0d19-419e-96eb-f5dee44576fe) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="httpsearchadmingetstatus"></a>
+# **HttpSearchAdminGetStatus**
+> SearchAdminStatus HttpSearchAdminGetStatus (string portalId = null)
+
+
+
+This endpoint gives the status about the index and indexer.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpSearchAdminGetStatusExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicSearchManagementApi(config);
+            var portalId = "portalId_example";  // string | If the search should be redirected to a specific portal. (optional) 
+
+            try
+            {
+                SearchAdminStatus result = apiInstance.HttpSearchAdminGetStatus(portalId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicSearchManagementApi.HttpSearchAdminGetStatus: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpSearchAdminGetStatusWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<SearchAdminStatus> response = apiInstance.HttpSearchAdminGetStatusWithHttpInfo(portalId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicSearchManagementApi.HttpSearchAdminGetStatusWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **portalId** | **string** | If the search should be redirected to a specific portal. | [optional]  |
+
+### Return type
+
+[**SearchAdminStatus**](SearchAdminStatus.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | This gives status about the search. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 

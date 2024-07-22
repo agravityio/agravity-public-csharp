@@ -169,6 +169,7 @@ Class | Method | HTTP request | Description
 *PublicSavedSearchApi* | [**HttpSavedSearchesGetAll**](docs\PublicSavedSearchApi.md#httpsavedsearchesgetall) | **GET** /savedsearches | 
 *PublicSearchManagementApi* | [**HttpGetSearchFacetteByName**](docs\PublicSearchManagementApi.md#httpgetsearchfacettebyname) | **GET** /search/facette | 
 *PublicSearchManagementApi* | [**HttpGlobalSearch**](docs\PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search | 
+*PublicSearchManagementApi* | [**HttpSearchAdminGetStatus**](docs\PublicSearchManagementApi.md#httpsearchadmingetstatus) | **GET** /searchadmin/status | 
 *PublicSharingManagementApi* | [**HttpQuickShareGetById**](docs\PublicSharingManagementApi.md#httpquicksharegetbyid) | **GET** /quickshares/{id} | 
 *PublicSharingManagementApi* | [**HttpSharedCollectionsGetById**](docs\PublicSharingManagementApi.md#httpsharedcollectionsgetbyid) | **GET** /shared/{id} | 
 *PublicSharingManagementApi* | [**HttpSharedCollectionsGetStatusZipById**](docs\PublicSharingManagementApi.md#httpsharedcollectionsgetstatuszipbyid) | **GET** /shared/{id}/zip/{zipId} | 
@@ -228,6 +229,13 @@ Class | Method | HTTP request | Description
  - [Model.QuickShareFull](docs\QuickShareFull.md)
  - [Model.SasToken](docs\SasToken.md)
  - [Model.SavedSearch](docs\SavedSearch.md)
+ - [Model.SearchAdminDataSourceStatus](docs\SearchAdminDataSourceStatus.md)
+ - [Model.SearchAdminIndexStatus](docs\SearchAdminIndexStatus.md)
+ - [Model.SearchAdminIndexerLastRun](docs\SearchAdminIndexerLastRun.md)
+ - [Model.SearchAdminIndexerStatus](docs\SearchAdminIndexerStatus.md)
+ - [Model.SearchAdminSkillStatus](docs\SearchAdminSkillStatus.md)
+ - [Model.SearchAdminStatistics](docs\SearchAdminStatistics.md)
+ - [Model.SearchAdminStatus](docs\SearchAdminStatus.md)
  - [Model.SearchFacet](docs\SearchFacet.md)
  - [Model.SearchFacetEntity](docs\SearchFacetEntity.md)
  - [Model.SearchResult](docs\SearchResult.md)

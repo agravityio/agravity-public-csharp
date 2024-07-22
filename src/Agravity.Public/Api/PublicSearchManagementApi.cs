@@ -109,6 +109,29 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchResult</returns>
         ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint gives the status about the index and indexer.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SearchAdminStatus</returns>
+        SearchAdminStatus HttpSearchAdminGetStatus(string portalId = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint gives the status about the index and indexer.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SearchAdminStatus</returns>
+        ApiResponse<SearchAdminStatus> HttpSearchAdminGetStatusWithHttpInfo(string portalId = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -204,6 +227,31 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint gives the status about the index and indexer.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SearchAdminStatus</returns>
+        System.Threading.Tasks.Task<SearchAdminStatus> HttpSearchAdminGetStatusAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint gives the status about the index and indexer.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SearchAdminStatus)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SearchAdminStatus>> HttpSearchAdminGetStatusWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -845,6 +893,154 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpGlobalSearch", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint gives the status about the index and indexer.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SearchAdminStatus</returns>
+        public SearchAdminStatus HttpSearchAdminGetStatus(string portalId = default(string), int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<SearchAdminStatus> localVarResponse = HttpSearchAdminGetStatusWithHttpInfo(portalId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint gives the status about the index and indexer.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SearchAdminStatus</returns>
+        public Agravity.Public.Client.ApiResponse<SearchAdminStatus> HttpSearchAdminGetStatusWithHttpInfo(string portalId = default(string), int operationIndex = 0)
+        {
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+
+            localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpSearchAdminGetStatus";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SearchAdminStatus>("/searchadmin/status", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpSearchAdminGetStatus", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint gives the status about the index and indexer.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SearchAdminStatus</returns>
+        public async System.Threading.Tasks.Task<SearchAdminStatus> HttpSearchAdminGetStatusAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<SearchAdminStatus> localVarResponse = await HttpSearchAdminGetStatusWithHttpInfoAsync(portalId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint gives the status about the index and indexer.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SearchAdminStatus)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchAdminStatus>> HttpSearchAdminGetStatusWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+
+            localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpSearchAdminGetStatus";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SearchAdminStatus>("/searchadmin/status", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpSearchAdminGetStatus", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

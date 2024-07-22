@@ -96,5 +96,17 @@ namespace Agravity.Public.Test.Api
             //var response = instance.HttpGlobalSearch(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations);
             //Assert.IsType<SearchResult>(response);
         }
+
+        /// <summary>
+        /// Test HttpSearchAdminGetStatus
+        /// </summary>
+        [Fact]
+        public void HttpSearchAdminGetStatusTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string portalId = null;
+            //var response = instance.HttpSearchAdminGetStatus(portalId);
+            //Assert.IsType<SearchAdminStatus>(response);
+        }
     }
 }

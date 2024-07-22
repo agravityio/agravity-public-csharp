@@ -10,6 +10,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpCollectionsGetDescendantsTreeOfId**](PublicCollectionManagementApi.md#httpcollectionsgetdescendantstreeofid) | **GET** /collections/{id}/descendants |  |
 | [**HttpCollectionsGetTreeAncestorsOfId**](PublicCollectionManagementApi.md#httpcollectionsgettreeancestorsofid) | **GET** /collections/{id}/ancestors |  |
 | [**HttpGetCollectionPreviewsById**](PublicCollectionManagementApi.md#httpgetcollectionpreviewsbyid) | **GET** /collections/{id}/previews |  |
+| [**HttpPublicCollectionsDeleteById**](PublicCollectionManagementApi.md#httppubliccollectionsdeletebyid) | **DELETE** /collections/{id} |  |
 | [**HttpPublicCollectionsUpdateById**](PublicCollectionManagementApi.md#httppubliccollectionsupdatebyid) | **POST** /collections/{id} |  |
 
 <a name="httpcollectionscreate"></a>
@@ -614,6 +615,103 @@ catch (ApiException e)
 | **200** | Returns a generated png image as byte array. |  -  |
 | **404** | If the collection with the ID was not found. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="httppubliccollectionsdeletebyid"></a>
+# **HttpPublicCollectionsDeleteById**
+> void HttpPublicCollectionsDeleteById (string id, bool? deleteassets = null)
+
+
+
+This endpoint deletes the collection with the given ID (and their siblings).
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpPublicCollectionsDeleteByIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicCollectionManagementApi(config);
+            var id = "id_example";  // string | The ID of the collection.
+            var deleteassets = true;  // bool? | If this is true the assigned assets are set to delete as well. (optional) 
+
+            try
+            {
+                apiInstance.HttpPublicCollectionsDeleteById(id, deleteassets);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicCollectionManagementApi.HttpPublicCollectionsDeleteById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpPublicCollectionsDeleteByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    apiInstance.HttpPublicCollectionsDeleteByIdWithHttpInfo(id, deleteassets);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicCollectionManagementApi.HttpPublicCollectionsDeleteByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the collection. |  |
+| **deleteassets** | **bool?** | If this is true the assigned assets are set to delete as well. | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **400** | Collection with ID {id} is null or not a well formated collection id! (Code: 6e59a8c1-564a-411b-ad3b-3b0b78d80644)Collection with ID {id} is set as default import collection. Change the DEFAULT_IMPORT_COLLECTION_ID to another collection or DV (Default Value). (Code: c0c98df2-6f3d-481b-ae1d-89f60a86be68)&lt;br&gt; |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **204** | The delete operation of the collection with the given ID was successful. |  -  |
+| **404** | If the collection with the ID was not found. |  -  |
+| **403** | Not enough privileges to access item. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -142,6 +142,7 @@ Class | Method | HTTP request | Description
 *PublicCollectionManagementApi* | [**HttpCollectionsGetDescendantsTreeOfId**](docs\PublicCollectionManagementApi.md#httpcollectionsgetdescendantstreeofid) | **GET** /collections/{id}/descendants | 
 *PublicCollectionManagementApi* | [**HttpCollectionsGetTreeAncestorsOfId**](docs\PublicCollectionManagementApi.md#httpcollectionsgettreeancestorsofid) | **GET** /collections/{id}/ancestors | 
 *PublicCollectionManagementApi* | [**HttpGetCollectionPreviewsById**](docs\PublicCollectionManagementApi.md#httpgetcollectionpreviewsbyid) | **GET** /collections/{id}/previews | 
+*PublicCollectionManagementApi* | [**HttpPublicCollectionsDeleteById**](docs\PublicCollectionManagementApi.md#httppubliccollectionsdeletebyid) | **DELETE** /collections/{id} | 
 *PublicCollectionManagementApi* | [**HttpPublicCollectionsUpdateById**](docs\PublicCollectionManagementApi.md#httppubliccollectionsupdatebyid) | **POST** /collections/{id} | 
 *PublicCollectionSecureUploadApi* | [**HttpSecureUploadEntityCheckById**](docs\PublicCollectionSecureUploadApi.md#httpsecureuploadentitycheckbyid) | **GET** /secureupload/{id} | 
 *PublicCollectionSecureUploadApi* | [**HttpSecureUploadFileById**](docs\PublicCollectionSecureUploadApi.md#httpsecureuploadfilebyid) | **POST** /secureupload/{id}/upload | 

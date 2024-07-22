@@ -139,6 +139,18 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpPublicCollectionsDeleteById
+        /// </summary>
+        [Fact]
+        public void HttpPublicCollectionsDeleteByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //bool? deleteassets = null;
+            //instance.HttpPublicCollectionsDeleteById(id, deleteassets);
+        }
+
+        /// <summary>
         /// Test HttpPublicCollectionsUpdateById
         /// </summary>
         [Fact]

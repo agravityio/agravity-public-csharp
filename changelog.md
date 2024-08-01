@@ -10,6 +10,20 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="7.3.0"/> [7.3.0](https://www.nuget.org/packages/Agravity.Public/7.3.0) (2024-08-02)
+
+- Add public API: GET `/searchadmin/status` - This endpoint gives the status about the index and indexer.
+- Add endpoint DELETE `/collection/{id}` to public - This endpoint deletes the collection with the given ID (and their siblings).
+- Update some of the descriptions.
+- 1167 Remove obsolete marked fields and queues
+  - removed metadata from asset Blob
+  - shared collections from users
+  - text_content from asset
+- 1100 Created/Change date saved on asset (create/update/modified)
+- 1176 Add 'created_by' to published asset
+
+---
+
 ## AgravityAPI <a name="7.2.2"/> [7.2.2](https://www.nuget.org/packages/Agravity.Public/7.2.2) (2024-06-10)
 
 - Just version upgrade to match backend

@@ -106,6 +106,14 @@ namespace Agravity.Public.Test.Model
             // TODO unit test for the property 'Origin'
         }
         /// <summary>
+        /// Test the property 'FallbackThumb'
+        /// </summary>
+        [Fact]
+        public void FallbackThumbTest()
+        {
+            // TODO unit test for the property 'FallbackThumb'
+        }
+        /// <summary>
         /// Test the property 'Translations'
         /// </summary>
         [Fact]

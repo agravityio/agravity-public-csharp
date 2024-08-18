@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Extension** | **string** |  | [optional] 
 **AssetType** | **string** |  | [optional] 
 **Origin** | **string** |  | [optional] 
+**FallbackThumb** | **bool?** |  | [optional] 
 **Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 

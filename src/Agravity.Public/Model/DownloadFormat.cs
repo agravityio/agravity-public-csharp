@@ -41,6 +41,7 @@ namespace Agravity.Public.Model
         /// <param name="extension">extension.</param>
         /// <param name="assetType">assetType.</param>
         /// <param name="origin">origin.</param>
+        /// <param name="fallbackThumb">fallbackThumb.</param>
         /// <param name="translations">translations.</param>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
@@ -52,7 +53,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public DownloadFormat(string id = default(string), string entityType = default(string), List<DynamicImageOperation> operations = default(List<DynamicImageOperation>), string extension = default(string), string assetType = default(string), string origin = default(string), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public DownloadFormat(string id = default(string), string entityType = default(string), List<DynamicImageOperation> operations = default(List<DynamicImageOperation>), string extension = default(string), string assetType = default(string), string origin = default(string), bool? fallbackThumb = default(bool?), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -60,6 +61,7 @@ namespace Agravity.Public.Model
             this.Extension = extension;
             this.AssetType = assetType;
             this.Origin = origin;
+            this.FallbackThumb = fallbackThumb;
             this.Translations = translations;
             this.Name = name;
             this.Description = description;
@@ -108,6 +110,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "origin", EmitDefaultValue = false)]
         public string Origin { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FallbackThumb
+        /// </summary>
+        [DataMember(Name = "fallback_thumb", EmitDefaultValue = true)]
+        public bool? FallbackThumb { get; set; }
 
         /// <summary>
         /// Gets or Sets Translations
@@ -189,6 +197,7 @@ namespace Agravity.Public.Model
             sb.Append("  Extension: ").Append(Extension).Append("\n");
             sb.Append("  AssetType: ").Append(AssetType).Append("\n");
             sb.Append("  Origin: ").Append(Origin).Append("\n");
+            sb.Append("  FallbackThumb: ").Append(FallbackThumb).Append("\n");
             sb.Append("  Translations: ").Append(Translations).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -265,6 +274,11 @@ namespace Agravity.Public.Model
                     this.Origin == input.Origin ||
                     (this.Origin != null &&
                     this.Origin.Equals(input.Origin))
+                ) && 
+                (
+                    this.FallbackThumb == input.FallbackThumb ||
+                    (this.FallbackThumb != null &&
+                    this.FallbackThumb.Equals(input.FallbackThumb))
                 ) && 
                 (
                     this.Translations == input.Translations ||
@@ -357,6 +371,10 @@ namespace Agravity.Public.Model
                 if (this.Origin != null)
                 {
                     hashCode = (hashCode * 59) + this.Origin.GetHashCode();
+                }
+                if (this.FallbackThumb != null)
+                {
+                    hashCode = (hashCode * 59) + this.FallbackThumb.GetHashCode();
                 }
                 if (this.Translations != null)
                 {

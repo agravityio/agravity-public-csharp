@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo> <!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo> <!-- setting GenerateAssemblyInfo to false
+    causes this bug https://github.com/dotnet/project-system/issues/3934 -->
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Agravity.Public</AssemblyName>
     <PackageId>Agravity.Public</PackageId>
@@ -11,20 +12,23 @@
     <AssemblyTitle>Agravity Public API library</AssemblyTitle>
     <NeutralLanguage>en-US</NeutralLanguage>
     <CurrentDate>$([System.DateTime]::Now.ToString(yyyyMMdd))</CurrentDate>
-    <PackageTags>microsoft;azure;cosmos;cosmosdb;documentdb;docdb;nosql;azureofficial;dotnetcore;netcore;netstandard</PackageTags>
+    <PackageTags>
+      microsoft;azure;cosmos;cosmosdb;documentdb;docdb;nosql;azureofficial;dotnetcore;netcore;netstandard</PackageTags>
     <Description>The Agravity Public API which is created via openapi-generator.</Description>
     <Copyright>Copyright </Copyright>
     <RootNamespace>Agravity.Public</RootNamespace>
-    <Version>7.3.0</Version>
-    <PackageLicenseUrl>https://licenses.nuget.org/MIT</PackageLicenseUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>7.3.1</Version>
     <PackageProjectUrl>https://github.com/agravityio/agravity-public-csharp</PackageProjectUrl>
-    <PackageIconUrl>https://static.agravity.io/a8ce20d3f-b867-464c-b34a-10bf6d72a931/pdyVkY09RQBsAnq46HtyLm5L6Euk20U4JGTz1FOidfyE3/agravitya.webp</PackageIconUrl>
+    <PackageIcon>
+      https://static.agravity.io/a8ce20d3f-b867-464c-b34a-10bf6d72a931/pdyVkY09RQBsAnq46HtyLm5L6Euk20U4JGTz1FOidfyE3/agravitya.webp</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Agravity.Public.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/agravityio/agravity-public-csharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>The change log for this SDK is made available at https://github.com/agravity-philipp/Agravity.PublicCsharp/blob/main/changelog.md at the time of release.</PackageReleaseNotes>
-    <PackageIconUrl>icon.png</PackageIconUrl>
+    <PackageReleaseNotes>The change log for this SDK is made available at
+      https://github.com/agravity-philipp/Agravity.PublicCsharp/blob/main/changelog.md at the time
+      of release.</PackageReleaseNotes>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>

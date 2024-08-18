@@ -74,6 +74,9 @@ $csproj = Get-Content .\src\Agravity.Public\Agravity.Public.csproj
 $csproj = $csproj -replace "<Version>.*</Version>", "<Version>$apiVersion</Version>"
 $csproj | Set-Content .\src\Agravity.Public\Agravity.Public.csproj
 
+# copy README.md from root to src
+Copy-Item .\README.md .\src\Agravity.Public\README.md
+
 # echo apiVersion
 Write-Host "Build and Publish with apiVersion: $apiVersion"
 

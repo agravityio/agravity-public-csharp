@@ -10,6 +10,13 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="7.3.1"/> [7.3.1](https://www.nuget.org/packages/Agravity.Public/7.3.1) (2024-08-18)
+
+- 1196 Download Format: Add optional parameter for fallback to thumbnails
+- Correct status of search status (from "201 Created" to "200 OK")
+
+---
+
 ## AgravityAPI <a name="7.3.0"/> [7.3.0](https://www.nuget.org/packages/Agravity.Public/7.3.0) (2024-08-02)
 
 - Add public API: GET `/searchadmin/status` - This endpoint gives the status about the index and indexer.

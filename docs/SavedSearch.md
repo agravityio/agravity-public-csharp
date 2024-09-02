@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | [optional] 
 **EntityType** | **string** |  | [optional] 
 **Searchstring** | **string** |  | [optional] 
-**External** | **bool** |  | [optional] 
+**External** | **bool?** |  | [optional] 
 **Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 

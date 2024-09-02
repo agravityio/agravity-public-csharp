@@ -8,9 +8,9 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpTranslationsByIdFilterByCustomField**](PublicTranslationManagementApi.md#httptranslationsbyidfilterbycustomfield) | **GET** /translations/{id}/custom/{customField} |  |
 | [**HttpTranslationsByIdFilterByProperty**](PublicTranslationManagementApi.md#httptranslationsbyidfilterbyproperty) | **GET** /translations/{id}/{property} |  |
 
-<a name="httptranslationsbyid"></a>
+<a id="httptranslationsbyid"></a>
 # **HttpTranslationsById**
-> Dictionary&lt;string, Dictionary&gt; HttpTranslationsById (string id, bool? items = null)
+> Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt; HttpTranslationsById (string id, bool? items = null)
 
 
 
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                Dictionary<string, Dictionary> result = apiInstance.HttpTranslationsById(id, items);
+                Dictionary<string, Dictionary<string, Object>> result = apiInstance.HttpTranslationsById(id, items);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -63,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Dictionary<string, Dictionary>> response = apiInstance.HttpTranslationsByIdWithHttpInfo(id, items);
+    ApiResponse<Dictionary<string, Dictionary<string, Object>>> response = apiInstance.HttpTranslationsByIdWithHttpInfo(id, items);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -85,7 +85,7 @@ catch (ApiException e)
 
 ### Return type
 
-**Dictionary<string, Dictionary>**
+**Dictionary<string, Dictionary<string, Object>>**
 
 ### Authorization
 
@@ -108,9 +108,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httptranslationsbyidfilterbycustomfield"></a>
+<a id="httptranslationsbyidfilterbycustomfield"></a>
 # **HttpTranslationsByIdFilterByCustomField**
-> Dictionary&lt;string, Dictionary&gt; HttpTranslationsByIdFilterByCustomField (string id, string customField)
+> Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt; HttpTranslationsByIdFilterByCustomField (string id, string customField)
 
 
 
@@ -143,7 +143,7 @@ namespace Example
 
             try
             {
-                Dictionary<string, Dictionary> result = apiInstance.HttpTranslationsByIdFilterByCustomField(id, customField);
+                Dictionary<string, Dictionary<string, Object>> result = apiInstance.HttpTranslationsByIdFilterByCustomField(id, customField);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -163,7 +163,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Dictionary<string, Dictionary>> response = apiInstance.HttpTranslationsByIdFilterByCustomFieldWithHttpInfo(id, customField);
+    ApiResponse<Dictionary<string, Dictionary<string, Object>>> response = apiInstance.HttpTranslationsByIdFilterByCustomFieldWithHttpInfo(id, customField);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -185,7 +185,7 @@ catch (ApiException e)
 
 ### Return type
 
-**Dictionary<string, Dictionary>**
+**Dictionary<string, Dictionary<string, Object>>**
 
 ### Authorization
 
@@ -208,9 +208,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httptranslationsbyidfilterbyproperty"></a>
+<a id="httptranslationsbyidfilterbyproperty"></a>
 # **HttpTranslationsByIdFilterByProperty**
-> Dictionary&lt;string, Dictionary&gt; HttpTranslationsByIdFilterByProperty (string id, string property, bool? items = null)
+> Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt; HttpTranslationsByIdFilterByProperty (string id, string property, bool? items = null)
 
 
 
@@ -244,7 +244,7 @@ namespace Example
 
             try
             {
-                Dictionary<string, Dictionary> result = apiInstance.HttpTranslationsByIdFilterByProperty(id, property, items);
+                Dictionary<string, Dictionary<string, Object>> result = apiInstance.HttpTranslationsByIdFilterByProperty(id, property, items);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -264,7 +264,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Dictionary<string, Dictionary>> response = apiInstance.HttpTranslationsByIdFilterByPropertyWithHttpInfo(id, property, items);
+    ApiResponse<Dictionary<string, Dictionary<string, Object>>> response = apiInstance.HttpTranslationsByIdFilterByPropertyWithHttpInfo(id, property, items);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -287,7 +287,7 @@ catch (ApiException e)
 
 ### Return type
 
-**Dictionary<string, Dictionary>**
+**Dictionary<string, Dictionary<string, Object>>**
 
 ### Authorization
 

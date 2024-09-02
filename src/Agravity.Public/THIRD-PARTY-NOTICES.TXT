@@ -1,4 +1,4 @@
-﻿License notice for JsonSubTypes (v1.9.0)
+﻿License notice for JsonSubTypes (v2.0.1)
 ------------------------------------
 
 https://github.com/manuc66/JsonSubTypes
@@ -20,10 +20,10 @@ https://dot.net/
 License available at https://github.com/dotnet/standard/blob/master/LICENSE.TXT
 
 
-License notice for Newtonsoft.Json (v13.0.1)
+License notice for Newtonsoft.Json (v13.0.3)
 ------------------------------------
 
-https://github.com/JamesNK/Newtonsoft.Json at ae9fe44e1323e91bcbd185ca1a14099fba7c021f
+https://github.com/JamesNK/Newtonsoft.Json at 0a2e291c0d9c0c7675d445703e51750363a549ef
 
 https://www.newtonsoft.com/json
 
@@ -34,24 +34,22 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for Polly (v7.2.3)
+License notice for Polly (v8.1.0)
 ------------------------------------
 
-https://github.com/App-vNext/Polly.git at c27faf89ef459fd9a8e0131ae1d4cd835ca4f31d
+https://github.com/App-vNext/Polly at 4d2dd5ac2a270708b63b42de7c4272efc012d55c
 
-https://github.com/App-vNext/Polly
-
-Copyright (c) 2022, App vNext
+Copyright (c) 2023, App vNext
 
 Licensed under BSD-3-Clause
 
 Available at https://licenses.nuget.org/BSD-3-Clause
 
 
-License notice for RestSharp (v108.0.2)
+License notice for RestSharp (v110.2.0)
 ------------------------------------
 
-https://github.com/restsharp/RestSharp.git at 1c62c3de08ef4e218ca66b0429134f6a12cc5ab6
+https://github.com/restsharp/RestSharp.git at 812c3443cfef57787325329f93ef65bf047877ed
 
 https://restsharp.dev/
 
@@ -74,12 +72,12 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for Microsoft.Bcl.AsyncInterfaces (v5.0.0)
+License notice for Microsoft.Bcl.AsyncInterfaces (v7.0.0)
 ------------------------------------
 
-git://github.com/dotnet/runtime at cf258a14b70ad9069470a108f13765e0e5988f51
+https://github.com/dotnet/runtime at d099f075e45d2aa6007a22b71b45a08758559f80
 
-https://github.com/dotnet/runtime
+https://dot.net/
 
 Copyright © Microsoft Corporation. All rights reserved.
 
@@ -98,6 +96,18 @@ Copyright © Microsoft Corporation.  All rights reserved.
 License available at http://go.microsoft.com/fwlink/?LinkId=329770
 
 
+License notice for Polly.Core (v8.1.0)
+------------------------------------
+
+https://github.com/App-vNext/Polly at 4d2dd5ac2a270708b63b42de7c4272efc012d55c
+
+Copyright (c) 2023, App vNext
+
+Licensed under BSD-3-Clause
+
+Available at https://licenses.nuget.org/BSD-3-Clause
+
+
 License notice for System.Buffers (v4.5.1)
 ------------------------------------
 
@@ -108,7 +118,7 @@ Copyright © Microsoft Corporation. All rights reserved.
 License available at https://github.com/dotnet/corefx/blob/master/LICENSE.TXT
 
 
-License notice for System.Memory (v4.5.4)
+License notice for System.Memory (v4.5.5)
 ------------------------------------
 
 https://dot.net/
@@ -128,12 +138,12 @@ Copyright © Microsoft Corporation.  All rights reserved.
 License available at https://github.com/dotnet/corefx/blob/master/LICENSE.TXT
 
 
-License notice for System.Runtime.CompilerServices.Unsafe (v5.0.0)
+License notice for System.Runtime.CompilerServices.Unsafe (v6.0.0)
 ------------------------------------
 
-git://github.com/dotnet/runtime at cf258a14b70ad9069470a108f13765e0e5988f51
+https://github.com/dotnet/runtime at 4822e3c3aa77eb82b2fb33c9321f923cf11ddde6
 
-https://github.com/dotnet/runtime
+https://dot.net/
 
 Copyright © Microsoft Corporation. All rights reserved.
 
@@ -142,12 +152,12 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for System.Text.Encodings.Web (v5.0.0)
+License notice for System.Text.Encodings.Web (v7.0.0)
 ------------------------------------
 
-git://github.com/dotnet/runtime at cf258a14b70ad9069470a108f13765e0e5988f51
+https://github.com/dotnet/runtime at d099f075e45d2aa6007a22b71b45a08758559f80
 
-https://github.com/dotnet/runtime
+https://dot.net/
 
 Copyright © Microsoft Corporation. All rights reserved.
 
@@ -156,12 +166,12 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for System.Text.Json (v5.0.0)
+License notice for System.Text.Json (v7.0.2)
 ------------------------------------
 
-git://github.com/dotnet/runtime at cf258a14b70ad9069470a108f13765e0e5988f51
+https://github.com/dotnet/runtime at 0a2bda10e81d901396c3cff95533529e3a93ad47
 
-https://github.com/dotnet/runtime
+https://dot.net/
 
 Copyright © Microsoft Corporation. All rights reserved.
 

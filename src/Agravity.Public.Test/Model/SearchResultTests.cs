@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<SearchResult>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'DataResult'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'DataResult'
         }
+
         /// <summary>
         /// Test the property 'Options'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Options'
         }
+
         /// <summary>
         /// Test the property 'Facets'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Facets'
         }
+
         /// <summary>
         /// Test the property 'Count'
         /// </summary>
@@ -89,7 +90,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Count'
         }
-
     }
-
 }

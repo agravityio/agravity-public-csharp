@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// AgravityVersion
     /// </summary>
     [DataContract(Name = "agravityVersion")]
-    public partial class AgravityVersion : IEquatable<AgravityVersion>, IValidatableObject
+    public partial class AgravityVersion : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AgravityVersion" /> class.
@@ -40,17 +40,17 @@ namespace Agravity.Public.Model
         /// <param name="customer">customer.</param>
         /// <param name="updated">updated.</param>
         /// <param name="clientId">clientId.</param>
-        /// <param name="version">version.</param>
+        /// <param name="varVersion">varVersion.</param>
         /// <param name="permissionEnabled">permissionEnabled.</param>
         /// <param name="region">region.</param>
-        public AgravityVersion(string name = default(string), string company = default(string), string customer = default(string), DateTime updated = default(DateTime), string clientId = default(string), string version = default(string), bool permissionEnabled = default(bool), string region = default(string))
+        public AgravityVersion(string name = default(string), string company = default(string), string customer = default(string), DateTime? updated = default(DateTime?), string clientId = default(string), string varVersion = default(string), bool? permissionEnabled = default(bool?), string region = default(string))
         {
             this.Name = name;
             this.Company = company;
             this.Customer = customer;
             this.Updated = updated;
             this.ClientId = clientId;
-            this._Version = version;
+            this.VarVersion = varVersion;
             this.PermissionEnabled = permissionEnabled;
             this.Region = region;
         }
@@ -58,49 +58,49 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Company
         /// </summary>
-        [DataMember(Name = "company", EmitDefaultValue = false)]
+        [DataMember(Name = "company", EmitDefaultValue = true)]
         public string Company { get; set; }
 
         /// <summary>
         /// Gets or Sets Customer
         /// </summary>
-        [DataMember(Name = "customer", EmitDefaultValue = false)]
+        [DataMember(Name = "customer", EmitDefaultValue = true)]
         public string Customer { get; set; }
 
         /// <summary>
         /// Gets or Sets Updated
         /// </summary>
-        [DataMember(Name = "updated", EmitDefaultValue = false)]
-        public DateTime Updated { get; set; }
+        [DataMember(Name = "updated", EmitDefaultValue = true)]
+        public DateTime? Updated { get; set; }
 
         /// <summary>
         /// Gets or Sets ClientId
         /// </summary>
-        [DataMember(Name = "client_id", EmitDefaultValue = false)]
+        [DataMember(Name = "client_id", EmitDefaultValue = true)]
         public string ClientId { get; set; }
 
         /// <summary>
-        /// Gets or Sets _Version
+        /// Gets or Sets VarVersion
         /// </summary>
-        [DataMember(Name = "version", EmitDefaultValue = false)]
-        public string _Version { get; set; }
+        [DataMember(Name = "version", EmitDefaultValue = true)]
+        public string VarVersion { get; set; }
 
         /// <summary>
         /// Gets or Sets PermissionEnabled
         /// </summary>
         [DataMember(Name = "permission_enabled", EmitDefaultValue = true)]
-        public bool PermissionEnabled { get; set; }
+        public bool? PermissionEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets Region
         /// </summary>
-        [DataMember(Name = "region", EmitDefaultValue = false)]
+        [DataMember(Name = "region", EmitDefaultValue = true)]
         public string Region { get; set; }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Agravity.Public.Model
             sb.Append("  Customer: ").Append(Customer).Append("\n");
             sb.Append("  Updated: ").Append(Updated).Append("\n");
             sb.Append("  ClientId: ").Append(ClientId).Append("\n");
-            sb.Append("  _Version: ").Append(_Version).Append("\n");
+            sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");
             sb.Append("  PermissionEnabled: ").Append(PermissionEnabled).Append("\n");
             sb.Append("  Region: ").Append(Region).Append("\n");
             sb.Append("}\n");
@@ -133,116 +133,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AgravityVersion);
-        }
-
-        /// <summary>
-        /// Returns true if AgravityVersion instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AgravityVersion to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AgravityVersion input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Company == input.Company ||
-                    (this.Company != null &&
-                    this.Company.Equals(input.Company))
-                ) && 
-                (
-                    this.Customer == input.Customer ||
-                    (this.Customer != null &&
-                    this.Customer.Equals(input.Customer))
-                ) && 
-                (
-                    this.Updated == input.Updated ||
-                    (this.Updated != null &&
-                    this.Updated.Equals(input.Updated))
-                ) && 
-                (
-                    this.ClientId == input.ClientId ||
-                    (this.ClientId != null &&
-                    this.ClientId.Equals(input.ClientId))
-                ) && 
-                (
-                    this._Version == input._Version ||
-                    (this._Version != null &&
-                    this._Version.Equals(input._Version))
-                ) && 
-                (
-                    this.PermissionEnabled == input.PermissionEnabled ||
-                    this.PermissionEnabled.Equals(input.PermissionEnabled)
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Company != null)
-                {
-                    hashCode = (hashCode * 59) + this.Company.GetHashCode();
-                }
-                if (this.Customer != null)
-                {
-                    hashCode = (hashCode * 59) + this.Customer.GetHashCode();
-                }
-                if (this.Updated != null)
-                {
-                    hashCode = (hashCode * 59) + this.Updated.GetHashCode();
-                }
-                if (this.ClientId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ClientId.GetHashCode();
-                }
-                if (this._Version != null)
-                {
-                    hashCode = (hashCode * 59) + this._Version.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.PermissionEnabled.GetHashCode();
-                if (this.Region != null)
-                {
-                    hashCode = (hashCode * 59) + this.Region.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

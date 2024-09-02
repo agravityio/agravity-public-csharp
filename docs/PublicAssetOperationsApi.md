@@ -15,7 +15,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpImageDynamicGetFromDownloadId**](PublicAssetOperationsApi.md#httpimagedynamicgetfromdownloadid) | **GET** /assets/{id}/imageedit/{download_format_id} |  |
 | [**HttpPutAssetAvailability**](PublicAssetOperationsApi.md#httpputassetavailability) | **PUT** /assets/{id}/availability |  |
 
-<a name="httpassetimageedit"></a>
+<a id="httpassetimageedit"></a>
 # **HttpAssetImageEdit**
 > System.IO.Stream HttpAssetImageEdit (string id, int? width = null, int? height = null, string mode = null, string target = null, string bgcolor = null, int? dpi = null, int? depth = null, int? quality = null, string colorspace = null, int? cropX = null, int? cropY = null, int? cropWidth = null, int? cropHeight = null, string filter = null, bool? original = null)
 
@@ -143,7 +143,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpassetresize"></a>
+<a id="httpassetresize"></a>
 # **HttpAssetResize**
 > System.IO.Stream HttpAssetResize (string id)
 
@@ -241,7 +241,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpassettocollection"></a>
+<a id="httpassettocollection"></a>
 # **HttpAssetToCollection**
 > void HttpAssetToCollection (string id, MoveCollectionBody moveCollectionBody)
 
@@ -337,7 +337,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpgetassetblob"></a>
+<a id="httpgetassetblob"></a>
 # **HttpGetAssetBlob**
 > AssetBlob HttpGetAssetBlob (string id, string c, string portalId = null, string key = null)
 
@@ -440,9 +440,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpgetassetcollectionsbyid"></a>
+<a id="httpgetassetcollectionsbyid"></a>
 # **HttpGetAssetCollectionsById**
-> List&lt;Collection&gt; HttpGetAssetCollectionsById (string id, string fields = null, bool? translations = null)
+> List&lt;Collection&gt; HttpGetAssetCollectionsById (string id, string fields = null, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -473,10 +473,11 @@ namespace Example
             var id = "id_example";  // string | The ID of the asset.
             var fields = "fields_example";  // string | This limits the fields which are returned, separated by comma (','). (optional) 
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                List<Collection> result = apiInstance.HttpGetAssetCollectionsById(id, fields, translations);
+                List<Collection> result = apiInstance.HttpGetAssetCollectionsById(id, fields, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -496,7 +497,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<Collection>> response = apiInstance.HttpGetAssetCollectionsByIdWithHttpInfo(id, fields, translations);
+    ApiResponse<List<Collection>> response = apiInstance.HttpGetAssetCollectionsByIdWithHttpInfo(id, fields, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -516,6 +517,7 @@ catch (ApiException e)
 | **id** | **string** | The ID of the asset. |  |
 | **fields** | **string** | This limits the fields which are returned, separated by comma (&#39;,&#39;). | [optional]  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 
@@ -540,7 +542,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpgetassetdownload"></a>
+<a id="httpgetassetdownload"></a>
 # **HttpGetAssetDownload**
 > AssetBlob HttpGetAssetDownload (string id, string c = null, string f = null, string portalId = null, string key = null)
 
@@ -645,7 +647,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpgetsharedassetblob"></a>
+<a id="httpgetsharedassetblob"></a>
 # **HttpGetSharedAssetBlob**
 > AssetBlob HttpGetSharedAssetBlob (string shareId, string id, string format, string ayPassword = null)
 
@@ -743,7 +745,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpimagedynamicedit"></a>
+<a id="httpimagedynamicedit"></a>
 # **HttpImageDynamicEdit**
 > System.IO.Stream HttpImageDynamicEdit (string id, List<DynamicImageOperation> dynamicImageOperation)
 
@@ -843,7 +845,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpimagedynamicgetfromdownloadid"></a>
+<a id="httpimagedynamicgetfromdownloadid"></a>
 # **HttpImageDynamicGetFromDownloadId**
 > System.IO.Stream HttpImageDynamicGetFromDownloadId (string id, string downloadFormatId)
 
@@ -943,7 +945,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpputassetavailability"></a>
+<a id="httpputassetavailability"></a>
 # **HttpPutAssetAvailability**
 > AssetAvailability HttpPutAssetAvailability (string id, AssetAvailability assetAvailability)
 

@@ -7,9 +7,9 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpDownloadFormatsGetAll**](PublicDownloadFormatManagementApi.md#httpdownloadformatsgetall) | **GET** /downloadformats |  |
 | [**HttpDownloadFormatsGetAllFromShared**](PublicDownloadFormatManagementApi.md#httpdownloadformatsgetallfromshared) | **GET** /downloadformats-shared |  |
 
-<a name="httpdownloadformatsgetall"></a>
+<a id="httpdownloadformatsgetall"></a>
 # **HttpDownloadFormatsGetAll**
-> List&lt;DownloadFormat&gt; HttpDownloadFormatsGetAll ()
+> List&lt;DownloadFormat&gt; HttpDownloadFormatsGetAll (string acceptLanguage = null)
 
 
 
@@ -37,10 +37,11 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicDownloadFormatManagementApi(config);
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                List<DownloadFormat> result = apiInstance.HttpDownloadFormatsGetAll();
+                List<DownloadFormat> result = apiInstance.HttpDownloadFormatsGetAll(acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -60,7 +61,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<DownloadFormat>> response = apiInstance.HttpDownloadFormatsGetAllWithHttpInfo();
+    ApiResponse<List<DownloadFormat>> response = apiInstance.HttpDownloadFormatsGetAllWithHttpInfo(acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -74,7 +75,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
+
 ### Return type
 
 [**List&lt;DownloadFormat&gt;**](DownloadFormat.md)
@@ -98,9 +103,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpdownloadformatsgetallfromshared"></a>
+<a id="httpdownloadformatsgetallfromshared"></a>
 # **HttpDownloadFormatsGetAllFromShared**
-> List&lt;DownloadFormat&gt; HttpDownloadFormatsGetAllFromShared (string shareId, string ayPassword = null)
+> List&lt;DownloadFormat&gt; HttpDownloadFormatsGetAllFromShared (string shareId, string ayPassword = null, string acceptLanguage = null)
 
 
 
@@ -125,10 +130,11 @@ namespace Example
             var apiInstance = new PublicDownloadFormatManagementApi(config);
             var shareId = "shareId_example";  // string | This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.
             var ayPassword = "ayPassword_example";  // string | If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                List<DownloadFormat> result = apiInstance.HttpDownloadFormatsGetAllFromShared(shareId, ayPassword);
+                List<DownloadFormat> result = apiInstance.HttpDownloadFormatsGetAllFromShared(shareId, ayPassword, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -148,7 +154,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<DownloadFormat>> response = apiInstance.HttpDownloadFormatsGetAllFromSharedWithHttpInfo(shareId, ayPassword);
+    ApiResponse<List<DownloadFormat>> response = apiInstance.HttpDownloadFormatsGetAllFromSharedWithHttpInfo(shareId, ayPassword, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -167,6 +173,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **shareId** | **string** | This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned. |  |
 | **ayPassword** | **string** | If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 

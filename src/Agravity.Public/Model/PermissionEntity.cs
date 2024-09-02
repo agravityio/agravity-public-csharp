@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// PermissionEntity
     /// </summary>
     [DataContract(Name = "permissionEntity")]
-    public partial class PermissionEntity : IEquatable<PermissionEntity>, IValidatableObject
+    public partial class PermissionEntity : IValidatableObject
     {
         /// <summary>
         /// Defines Role
@@ -55,7 +55,6 @@ namespace Agravity.Public.Model
             /// </summary>
             [EnumMember(Value = "EDITOR")]
             EDITOR = 3
-
         }
 
 
@@ -78,7 +77,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
@@ -105,62 +104,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PermissionEntity);
-        }
-
-        /// <summary>
-        /// Returns true if PermissionEntity instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PermissionEntity to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PermissionEntity input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Role == input.Role ||
-                    this.Role.Equals(input.Role)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Role.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

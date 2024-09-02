@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// AllWebAppData
     /// </summary>
     [DataContract(Name = "allWebAppData")]
-    public partial class AllWebAppData : IEquatable<AllWebAppData>, IValidatableObject
+    public partial class AllWebAppData : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AllWebAppData" /> class.
@@ -40,7 +40,7 @@ namespace Agravity.Public.Model
         /// <param name="assets">assets.</param>
         /// <param name="pubAssets">pubAssets.</param>
         /// <param name="createdDate">createdDate.</param>
-        public AllWebAppData(Collection rootCollection = default(Collection), List<Collection> subcollections = default(List<Collection>), List<Asset> assets = default(List<Asset>), List<PublishedAsset> pubAssets = default(List<PublishedAsset>), DateTime createdDate = default(DateTime))
+        public AllWebAppData(Collection rootCollection = default(Collection), List<Collection> subcollections = default(List<Collection>), List<Asset> assets = default(List<Asset>), List<PublishedAsset> pubAssets = default(List<PublishedAsset>), DateTime? createdDate = default(DateTime?))
         {
             this.RootCollection = rootCollection;
             this.Subcollections = subcollections;
@@ -58,26 +58,26 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Subcollections
         /// </summary>
-        [DataMember(Name = "subcollections", EmitDefaultValue = false)]
+        [DataMember(Name = "subcollections", EmitDefaultValue = true)]
         public List<Collection> Subcollections { get; set; }
 
         /// <summary>
         /// Gets or Sets Assets
         /// </summary>
-        [DataMember(Name = "assets", EmitDefaultValue = false)]
+        [DataMember(Name = "assets", EmitDefaultValue = true)]
         public List<Asset> Assets { get; set; }
 
         /// <summary>
         /// Gets or Sets PubAssets
         /// </summary>
-        [DataMember(Name = "pub_assets", EmitDefaultValue = false)]
+        [DataMember(Name = "pub_assets", EmitDefaultValue = true)]
         public List<PublishedAsset> PubAssets { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "created_date", EmitDefaultValue = false)]
-        public DateTime CreatedDate { get; set; }
+        [DataMember(Name = "created_date", EmitDefaultValue = true)]
+        public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -106,96 +106,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AllWebAppData);
-        }
-
-        /// <summary>
-        /// Returns true if AllWebAppData instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AllWebAppData to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AllWebAppData input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.RootCollection == input.RootCollection ||
-                    (this.RootCollection != null &&
-                    this.RootCollection.Equals(input.RootCollection))
-                ) && 
-                (
-                    this.Subcollections == input.Subcollections ||
-                    this.Subcollections != null &&
-                    input.Subcollections != null &&
-                    this.Subcollections.SequenceEqual(input.Subcollections)
-                ) && 
-                (
-                    this.Assets == input.Assets ||
-                    this.Assets != null &&
-                    input.Assets != null &&
-                    this.Assets.SequenceEqual(input.Assets)
-                ) && 
-                (
-                    this.PubAssets == input.PubAssets ||
-                    this.PubAssets != null &&
-                    input.PubAssets != null &&
-                    this.PubAssets.SequenceEqual(input.PubAssets)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.RootCollection != null)
-                {
-                    hashCode = (hashCode * 59) + this.RootCollection.GetHashCode();
-                }
-                if (this.Subcollections != null)
-                {
-                    hashCode = (hashCode * 59) + this.Subcollections.GetHashCode();
-                }
-                if (this.Assets != null)
-                {
-                    hashCode = (hashCode * 59) + this.Assets.GetHashCode();
-                }
-                if (this.PubAssets != null)
-                {
-                    hashCode = (hashCode * 59) + this.PubAssets.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

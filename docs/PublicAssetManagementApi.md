@@ -10,9 +10,9 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpAssetsGetById**](PublicAssetManagementApi.md#httpassetsgetbyid) | **GET** /assets/{id} |  |
 | [**HttpPublicAssetsUpdateById**](PublicAssetManagementApi.md#httppublicassetsupdatebyid) | **POST** /assets/{id} |  |
 
-<a name="httpassetuploadfile"></a>
+<a id="httpassetuploadfile"></a>
 # **HttpAssetUploadFile**
-> Asset HttpAssetUploadFile (string name = null, string collectionId = null, System.IO.Stream file = null, string filename = null, string previewof = null)
+> Asset HttpAssetUploadFile (string acceptLanguage = null, string name = null, string collectionId = null, System.IO.Stream file = null, string filename = null, string previewof = null)
 
 
 
@@ -38,6 +38,7 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetManagementApi(config);
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
             var name = "name_example";  // string |  (optional) 
             var collectionId = "collectionId_example";  // string |  (optional) 
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
@@ -46,7 +47,7 @@ namespace Example
 
             try
             {
-                Asset result = apiInstance.HttpAssetUploadFile(name, collectionId, file, filename, previewof);
+                Asset result = apiInstance.HttpAssetUploadFile(acceptLanguage, name, collectionId, file, filename, previewof);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -66,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Asset> response = apiInstance.HttpAssetUploadFileWithHttpInfo(name, collectionId, file, filename, previewof);
+    ApiResponse<Asset> response = apiInstance.HttpAssetUploadFileWithHttpInfo(acceptLanguage, name, collectionId, file, filename, previewof);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -83,6 +84,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 | **name** | **string** |  | [optional]  |
 | **collectionId** | **string** |  | [optional]  |
 | **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
@@ -113,9 +115,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpassetscreate"></a>
+<a id="httpassetscreate"></a>
 # **HttpAssetsCreate**
-> Asset HttpAssetsCreate (string collectionid, Asset asset, bool? translations = null)
+> Asset HttpAssetsCreate (string collectionid, Asset asset, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -146,10 +148,11 @@ namespace Example
             var collectionid = "collectionid_example";  // string | The ID of the collection where this assets should be assigned.
             var asset = new Asset(); // Asset | This endpoint creates an unique asset ID and adds the information to the database.
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpAssetsCreate(collectionid, asset, translations);
+                Asset result = apiInstance.HttpAssetsCreate(collectionid, asset, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -169,7 +172,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Asset> response = apiInstance.HttpAssetsCreateWithHttpInfo(collectionid, asset, translations);
+    ApiResponse<Asset> response = apiInstance.HttpAssetsCreateWithHttpInfo(collectionid, asset, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -189,6 +192,7 @@ catch (ApiException e)
 | **collectionid** | **string** | The ID of the collection where this assets should be assigned. |  |
 | **asset** | [**Asset**](Asset.md) | This endpoint creates an unique asset ID and adds the information to the database. |  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 
@@ -214,9 +218,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpassetsget"></a>
+<a id="httpassetsget"></a>
 # **HttpAssetsGet**
-> AssetPageResult HttpAssetsGet (string collectionid = null, string collectiontypeid = null, string fields = null, bool? expose = null, string continuationToken = null, int? limit = null, string orderby = null, string filter = null, bool? items = null, bool? translations = null)
+> AssetPageResult HttpAssetsGet (string collectionid = null, string collectiontypeid = null, string fields = null, bool? expose = null, string continuationToken = null, int? limit = null, string orderby = null, string filter = null, bool? items = null, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -254,10 +258,11 @@ namespace Example
             var filter = "filter_example";  // string | This will limit the output on specific parameters which are separated by ':', '!:', '>', '>=', '<', '<=' (optional) 
             var items = true;  // bool? | The items can be extended to fully filled items. (optional) 
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                AssetPageResult result = apiInstance.HttpAssetsGet(collectionid, collectiontypeid, fields, expose, continuationToken, limit, orderby, filter, items, translations);
+                AssetPageResult result = apiInstance.HttpAssetsGet(collectionid, collectiontypeid, fields, expose, continuationToken, limit, orderby, filter, items, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -277,7 +282,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<AssetPageResult> response = apiInstance.HttpAssetsGetWithHttpInfo(collectionid, collectiontypeid, fields, expose, continuationToken, limit, orderby, filter, items, translations);
+    ApiResponse<AssetPageResult> response = apiInstance.HttpAssetsGetWithHttpInfo(collectionid, collectiontypeid, fields, expose, continuationToken, limit, orderby, filter, items, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -304,6 +309,7 @@ catch (ApiException e)
 | **filter** | **string** | This will limit the output on specific parameters which are separated by &#39;:&#39;, &#39;!:&#39;, &#39;&gt;&#39;, &#39;&gt;&#x3D;&#39;, &#39;&lt;&#39;, &#39;&lt;&#x3D;&#39; | [optional]  |
 | **items** | **bool?** | The items can be extended to fully filled items. | [optional]  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 
@@ -329,9 +335,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpassetsgetbyid"></a>
+<a id="httpassetsgetbyid"></a>
 # **HttpAssetsGetById**
-> Asset HttpAssetsGetById (string id, string fields = null, bool? expose = null, bool? translations = null)
+> Asset HttpAssetsGetById (string id, string fields = null, bool? expose = null, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -363,10 +369,11 @@ namespace Example
             var fields = "fields_example";  // string | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. (optional) 
             var expose = true;  // bool? | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no 'thumbnail' is found. (optional) 
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpAssetsGetById(id, fields, expose, translations);
+                Asset result = apiInstance.HttpAssetsGetById(id, fields, expose, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -386,7 +393,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Asset> response = apiInstance.HttpAssetsGetByIdWithHttpInfo(id, fields, expose, translations);
+    ApiResponse<Asset> response = apiInstance.HttpAssetsGetByIdWithHttpInfo(id, fields, expose, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -407,6 +414,7 @@ catch (ApiException e)
 | **fields** | **string** | Which fields are need to be filled out with comma separated. If one is set all non mandatory fields are left out. No validation if field exist. | [optional]  |
 | **expose** | **bool?** | This indicates if the given blobs should have URLs where these can be requested. It will expose placeholder blobs if no &#39;thumbnail&#39; is found. | [optional]  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 
@@ -432,9 +440,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httppublicassetsupdatebyid"></a>
+<a id="httppublicassetsupdatebyid"></a>
 # **HttpPublicAssetsUpdateById**
-> Asset HttpPublicAssetsUpdateById (string id, Asset asset, bool? translations = null)
+> Asset HttpPublicAssetsUpdateById (string id, Asset asset, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -465,10 +473,11 @@ namespace Example
             var id = "id_example";  // string | The ID of the asset.
             var asset = new Asset(); // Asset | The body has to contain one of the mentioned elements and a valid json. Not fitting properties are ignored.
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpPublicAssetsUpdateById(id, asset, translations);
+                Asset result = apiInstance.HttpPublicAssetsUpdateById(id, asset, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -488,7 +497,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Asset> response = apiInstance.HttpPublicAssetsUpdateByIdWithHttpInfo(id, asset, translations);
+    ApiResponse<Asset> response = apiInstance.HttpPublicAssetsUpdateByIdWithHttpInfo(id, asset, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -508,6 +517,7 @@ catch (ApiException e)
 | **id** | **string** | The ID of the asset. |  |
 | **asset** | [**Asset**](Asset.md) | The body has to contain one of the mentioned elements and a valid json. Not fitting properties are ignored. |  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 

@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// SavedSearch
     /// </summary>
     [DataContract(Name = "savedSearch")]
-    public partial class SavedSearch : IEquatable<SavedSearch>, IValidatableObject
+    public partial class SavedSearch : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SavedSearch" /> class.
@@ -50,7 +50,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public SavedSearch(string id = default(string), string entityType = default(string), string searchstring = default(string), bool external = default(bool), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public SavedSearch(string id = default(string), string entityType = default(string), string searchstring = default(string), bool? external = default(bool?), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -72,55 +72,55 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityType
         /// </summary>
-        [DataMember(Name = "entity_type", EmitDefaultValue = false)]
+        [DataMember(Name = "entity_type", EmitDefaultValue = true)]
         public string EntityType { get; set; }
 
         /// <summary>
         /// Gets or Sets Searchstring
         /// </summary>
-        [DataMember(Name = "searchstring", EmitDefaultValue = false)]
+        [DataMember(Name = "searchstring", EmitDefaultValue = true)]
         public string Searchstring { get; set; }
 
         /// <summary>
         /// Gets or Sets External
         /// </summary>
         [DataMember(Name = "external", EmitDefaultValue = true)]
-        public bool External { get; set; }
+        public bool? External { get; set; }
 
         /// <summary>
         /// Gets or Sets Translations
         /// </summary>
-        [DataMember(Name = "translations", EmitDefaultValue = false)]
+        [DataMember(Name = "translations", EmitDefaultValue = true)]
         public Dictionary<string, Dictionary<string, object>> Translations { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets AddProperties
         /// </summary>
-        [DataMember(Name = "add_properties", EmitDefaultValue = false)]
+        [DataMember(Name = "add_properties", EmitDefaultValue = true)]
         public Dictionary<string, object> AddProperties { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name = "created_by", EmitDefaultValue = false)]
+        [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; set; }
 
         /// <summary>
@@ -144,19 +144,19 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets ModifiedBy
         /// </summary>
-        [DataMember(Name = "modified_by", EmitDefaultValue = false)]
+        [DataMember(Name = "modified_by", EmitDefaultValue = true)]
         public string ModifiedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets Pk
         /// </summary>
-        [DataMember(Name = "pk", EmitDefaultValue = false)]
+        [DataMember(Name = "pk", EmitDefaultValue = true)]
         public string Pk { get; set; }
 
         /// <summary>
         /// Gets or Sets Etag
         /// </summary>
-        [DataMember(Name = "_etag", EmitDefaultValue = false)]
+        [DataMember(Name = "_etag", EmitDefaultValue = true)]
         public string Etag { get; set; }
 
         /// <summary>
@@ -196,181 +196,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SavedSearch);
-        }
-
-        /// <summary>
-        /// Returns true if SavedSearch instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SavedSearch to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SavedSearch input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.EntityType == input.EntityType ||
-                    (this.EntityType != null &&
-                    this.EntityType.Equals(input.EntityType))
-                ) && 
-                (
-                    this.Searchstring == input.Searchstring ||
-                    (this.Searchstring != null &&
-                    this.Searchstring.Equals(input.Searchstring))
-                ) && 
-                (
-                    this.External == input.External ||
-                    this.External.Equals(input.External)
-                ) && 
-                (
-                    this.Translations == input.Translations ||
-                    this.Translations != null &&
-                    input.Translations != null &&
-                    this.Translations.SequenceEqual(input.Translations)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.AddProperties == input.AddProperties ||
-                    this.AddProperties != null &&
-                    input.AddProperties != null &&
-                    this.AddProperties.SequenceEqual(input.AddProperties)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.CreatedBy == input.CreatedBy ||
-                    (this.CreatedBy != null &&
-                    this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.ModifiedBy == input.ModifiedBy ||
-                    (this.ModifiedBy != null &&
-                    this.ModifiedBy.Equals(input.ModifiedBy))
-                ) && 
-                (
-                    this.Pk == input.Pk ||
-                    (this.Pk != null &&
-                    this.Pk.Equals(input.Pk))
-                ) && 
-                (
-                    this.Etag == input.Etag ||
-                    (this.Etag != null &&
-                    this.Etag.Equals(input.Etag))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.EntityType != null)
-                {
-                    hashCode = (hashCode * 59) + this.EntityType.GetHashCode();
-                }
-                if (this.Searchstring != null)
-                {
-                    hashCode = (hashCode * 59) + this.Searchstring.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.External.GetHashCode();
-                if (this.Translations != null)
-                {
-                    hashCode = (hashCode * 59) + this.Translations.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.AddProperties != null)
-                {
-                    hashCode = (hashCode * 59) + this.AddProperties.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.CreatedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.ModifiedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedBy.GetHashCode();
-                }
-                if (this.Pk != null)
-                {
-                    hashCode = (hashCode * 59) + this.Pk.GetHashCode();
-                }
-                if (this.Etag != null)
-                {
-                    hashCode = (hashCode * 59) + this.Etag.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

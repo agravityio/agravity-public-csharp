@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpSharedCollectionsGetStatusZipById**](PublicSharingManagementApi.md#httpsharedcollectionsgetstatuszipbyid) | **GET** /shared/{id}/zip/{zipId} |  |
 | [**HttpSharedCollectionsRequestZipById**](PublicSharingManagementApi.md#httpsharedcollectionsrequestzipbyid) | **POST** /shared/{id}/zip |  |
 
-<a name="httpquicksharegetbyid"></a>
+<a id="httpquicksharegetbyid"></a>
 # **HttpQuickShareGetById**
 > QuickShareFull HttpQuickShareGetById (string id, string continuationToken = null, int? limit = null, string orderby = null)
 
@@ -107,7 +107,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpsharedcollectionsgetbyid"></a>
+<a id="httpsharedcollectionsgetbyid"></a>
 # **HttpSharedCollectionsGetById**
 > SharedCollectionFull HttpSharedCollectionsGetById (string id, string ayPassword = null, string continuationToken = null, int? limit = null, string orderby = null)
 
@@ -208,7 +208,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpsharedcollectionsgetstatuszipbyid"></a>
+<a id="httpsharedcollectionsgetstatuszipbyid"></a>
 # **HttpSharedCollectionsGetStatusZipById**
 > SharedCollectionZipRequest HttpSharedCollectionsGetStatusZipById (string id, string zipId, string ayPassword = null)
 
@@ -305,7 +305,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpsharedcollectionsrequestzipbyid"></a>
+<a id="httpsharedcollectionsrequestzipbyid"></a>
 # **HttpSharedCollectionsRequestZipById**
 > SharedCollectionZipRequest HttpSharedCollectionsRequestZipById (string id, string ayPassword = null, SharedCollectionZipRequest sharedCollectionZipRequest = null)
 

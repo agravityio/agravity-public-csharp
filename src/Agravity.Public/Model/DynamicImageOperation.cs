@@ -30,29 +30,29 @@ namespace Agravity.Public.Model
     /// DynamicImageOperation
     /// </summary>
     [DataContract(Name = "dynamicImageOperation")]
-    public partial class DynamicImageOperation : IEquatable<DynamicImageOperation>, IValidatableObject
+    public partial class DynamicImageOperation : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DynamicImageOperation" /> class.
         /// </summary>
         /// <param name="operation">operation.</param>
-        /// <param name="_params">_params.</param>
-        public DynamicImageOperation(string operation = default(string), List<Object> _params = default(List<Object>))
+        /// <param name="varParams">varParams.</param>
+        public DynamicImageOperation(string operation = default(string), List<Object> varParams = default(List<Object>))
         {
             this.Operation = operation;
-            this.Params = _params;
+            this.Params = varParams;
         }
 
         /// <summary>
         /// Gets or Sets Operation
         /// </summary>
-        [DataMember(Name = "operation", EmitDefaultValue = false)]
+        [DataMember(Name = "operation", EmitDefaultValue = true)]
         public string Operation { get; set; }
 
         /// <summary>
         /// Gets or Sets Params
         /// </summary>
-        [DataMember(Name = "params", EmitDefaultValue = false)]
+        [DataMember(Name = "params", EmitDefaultValue = true)]
         public List<Object> Params { get; set; }
 
         /// <summary>
@@ -79,67 +79,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as DynamicImageOperation);
-        }
-
-        /// <summary>
-        /// Returns true if DynamicImageOperation instances are equal
-        /// </summary>
-        /// <param name="input">Instance of DynamicImageOperation to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(DynamicImageOperation input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Operation == input.Operation ||
-                    (this.Operation != null &&
-                    this.Operation.Equals(input.Operation))
-                ) && 
-                (
-                    this.Params == input.Params ||
-                    this.Params != null &&
-                    input.Params != null &&
-                    this.Params.SequenceEqual(input.Params)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Operation != null)
-                {
-                    hashCode = (hashCode * 59) + this.Operation.GetHashCode();
-                }
-                if (this.Params != null)
-                {
-                    hashCode = (hashCode * 59) + this.Params.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

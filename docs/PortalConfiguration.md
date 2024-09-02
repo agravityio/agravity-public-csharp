@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DownloadFormats** | [**List&lt;DownloadFormat&gt;**](DownloadFormat.md) |  | [optional] 
-**Sdls** | [**List&lt;StaticDefinedStaticDefinedList&gt;**](StaticDefinedList.md) |  | [optional] 
+**Sdls** | [**List&lt;StaticDefinedList&gt;**](StaticDefinedList.md) |  | [optional] 
 **Udls** | [**List&lt;CollectionUDL&gt;**](CollectionUDL.md) |  | [optional] 
 **Items** | [**List&lt;CollTypeItem&gt;**](CollTypeItem.md) |  | [optional] 
 **Configs** | [**List&lt;FrontendAppConfig&gt;**](FrontendAppConfig.md) |  | [optional] 

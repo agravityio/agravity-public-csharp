@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Page** | [**List&lt;SharedAsset&gt;**](SharedAsset.md) |  | [optional] 
-**PageSize** | **int** |  | [optional] 
+**PageSize** | **int?** |  | [optional] 
 **Size** | **int?** |  | [optional] 
 **ContinuationToken** | **string** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **EntityType** | **string** |  | [optional] 
 **Assets** | [**List&lt;AssetIdFormat&gt;**](AssetIdFormat.md) |  | [optional] 
 **Users** | [**List&lt;EntityId&gt;**](EntityId.md) |  | [optional] 
-**Expires** | **DateTime** |  | [optional] 
+**Expires** | **DateTime?** |  | [optional] 
 **Url** | **string** |  | [optional] 
 **ZipUrl** | **string** |  | [optional] 
 **Status** | **string** |  | [optional] 

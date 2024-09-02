@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<SearchAdminIndexerLastRun>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'Status'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Status'
         }
+
         /// <summary>
         /// Test the property 'Starttime'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Starttime'
         }
+
         /// <summary>
         /// Test the property 'Endtime'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Endtime'
         }
+
         /// <summary>
         /// Test the property 'Itemcount'
         /// </summary>
@@ -89,6 +90,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Itemcount'
         }
+
         /// <summary>
         /// Test the property 'Faileditemcount'
         /// </summary>
@@ -97,7 +99,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Faileditemcount'
         }
-
     }
-
 }

@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// PortalZipRequest
     /// </summary>
     [DataContract(Name = "portalZipRequest")]
-    public partial class PortalZipRequest : IEquatable<PortalZipRequest>, IValidatableObject
+    public partial class PortalZipRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PortalZipRequest" /> class.
@@ -52,7 +52,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public PortalZipRequest(string zipType = default(string), string portalId = default(string), List<string> assetIds = default(List<string>), string id = default(string), string entityType = default(string), string url = default(string), string instanceId = default(string), DateTime validUntil = default(DateTime), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), AgravityErrorResponse error = default(AgravityErrorResponse), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public PortalZipRequest(string zipType = default(string), string portalId = default(string), List<string> assetIds = default(List<string>), string id = default(string), string entityType = default(string), string url = default(string), string instanceId = default(string), DateTime? validUntil = default(DateTime?), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), AgravityErrorResponse error = default(AgravityErrorResponse), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.ZipType = zipType;
             this.PortalId = portalId;
@@ -76,55 +76,55 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets ZipType
         /// </summary>
-        [DataMember(Name = "zip_type", EmitDefaultValue = false)]
+        [DataMember(Name = "zip_type", EmitDefaultValue = true)]
         public string ZipType { get; set; }
 
         /// <summary>
         /// Gets or Sets PortalId
         /// </summary>
-        [DataMember(Name = "portal_id", EmitDefaultValue = false)]
+        [DataMember(Name = "portal_id", EmitDefaultValue = true)]
         public string PortalId { get; set; }
 
         /// <summary>
         /// Gets or Sets AssetIds
         /// </summary>
-        [DataMember(Name = "asset_ids", EmitDefaultValue = false)]
+        [DataMember(Name = "asset_ids", EmitDefaultValue = true)]
         public List<string> AssetIds { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityType
         /// </summary>
-        [DataMember(Name = "entity_type", EmitDefaultValue = false)]
+        [DataMember(Name = "entity_type", EmitDefaultValue = true)]
         public string EntityType { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = false)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets InstanceId
         /// </summary>
-        [DataMember(Name = "instance_id", EmitDefaultValue = false)]
+        [DataMember(Name = "instance_id", EmitDefaultValue = true)]
         public string InstanceId { get; set; }
 
         /// <summary>
         /// Gets or Sets ValidUntil
         /// </summary>
-        [DataMember(Name = "valid_until", EmitDefaultValue = false)]
-        public DateTime ValidUntil { get; set; }
+        [DataMember(Name = "valid_until", EmitDefaultValue = true)]
+        public DateTime? ValidUntil { get; set; }
 
         /// <summary>
         /// Gets or Sets AllowedFormats
         /// </summary>
-        [DataMember(Name = "allowed_formats", EmitDefaultValue = false)]
+        [DataMember(Name = "allowed_formats", EmitDefaultValue = true)]
         public List<SharedAllowedFormat> AllowedFormats { get; set; }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name = "created_by", EmitDefaultValue = false)]
+        [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; set; }
 
         /// <summary>
@@ -160,19 +160,19 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets ModifiedBy
         /// </summary>
-        [DataMember(Name = "modified_by", EmitDefaultValue = false)]
+        [DataMember(Name = "modified_by", EmitDefaultValue = true)]
         public string ModifiedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets Pk
         /// </summary>
-        [DataMember(Name = "pk", EmitDefaultValue = false)]
+        [DataMember(Name = "pk", EmitDefaultValue = true)]
         public string Pk { get; set; }
 
         /// <summary>
         /// Gets or Sets Etag
         /// </summary>
-        [DataMember(Name = "_etag", EmitDefaultValue = false)]
+        [DataMember(Name = "_etag", EmitDefaultValue = true)]
         public string Etag { get; set; }
 
         /// <summary>
@@ -214,203 +214,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PortalZipRequest);
-        }
-
-        /// <summary>
-        /// Returns true if PortalZipRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PortalZipRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PortalZipRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ZipType == input.ZipType ||
-                    (this.ZipType != null &&
-                    this.ZipType.Equals(input.ZipType))
-                ) && 
-                (
-                    this.PortalId == input.PortalId ||
-                    (this.PortalId != null &&
-                    this.PortalId.Equals(input.PortalId))
-                ) && 
-                (
-                    this.AssetIds == input.AssetIds ||
-                    this.AssetIds != null &&
-                    input.AssetIds != null &&
-                    this.AssetIds.SequenceEqual(input.AssetIds)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.EntityType == input.EntityType ||
-                    (this.EntityType != null &&
-                    this.EntityType.Equals(input.EntityType))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.ValidUntil == input.ValidUntil ||
-                    (this.ValidUntil != null &&
-                    this.ValidUntil.Equals(input.ValidUntil))
-                ) && 
-                (
-                    this.AllowedFormats == input.AllowedFormats ||
-                    this.AllowedFormats != null &&
-                    input.AllowedFormats != null &&
-                    this.AllowedFormats.SequenceEqual(input.AllowedFormats)
-                ) && 
-                (
-                    this.Error == input.Error ||
-                    (this.Error != null &&
-                    this.Error.Equals(input.Error))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.CreatedBy == input.CreatedBy ||
-                    (this.CreatedBy != null &&
-                    this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.ModifiedBy == input.ModifiedBy ||
-                    (this.ModifiedBy != null &&
-                    this.ModifiedBy.Equals(input.ModifiedBy))
-                ) && 
-                (
-                    this.Pk == input.Pk ||
-                    (this.Pk != null &&
-                    this.Pk.Equals(input.Pk))
-                ) && 
-                (
-                    this.Etag == input.Etag ||
-                    (this.Etag != null &&
-                    this.Etag.Equals(input.Etag))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ZipType != null)
-                {
-                    hashCode = (hashCode * 59) + this.ZipType.GetHashCode();
-                }
-                if (this.PortalId != null)
-                {
-                    hashCode = (hashCode * 59) + this.PortalId.GetHashCode();
-                }
-                if (this.AssetIds != null)
-                {
-                    hashCode = (hashCode * 59) + this.AssetIds.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.EntityType != null)
-                {
-                    hashCode = (hashCode * 59) + this.EntityType.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                if (this.InstanceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.InstanceId.GetHashCode();
-                }
-                if (this.ValidUntil != null)
-                {
-                    hashCode = (hashCode * 59) + this.ValidUntil.GetHashCode();
-                }
-                if (this.AllowedFormats != null)
-                {
-                    hashCode = (hashCode * 59) + this.AllowedFormats.GetHashCode();
-                }
-                if (this.Error != null)
-                {
-                    hashCode = (hashCode * 59) + this.Error.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.CreatedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.ModifiedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedBy.GetHashCode();
-                }
-                if (this.Pk != null)
-                {
-                    hashCode = (hashCode * 59) + this.Pk.GetHashCode();
-                }
-                if (this.Etag != null)
-                {
-                    hashCode = (hashCode * 59) + this.Etag.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

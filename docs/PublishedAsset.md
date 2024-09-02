@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Target** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **Usecases** | **List&lt;string&gt;** |  | [optional] 
-**CreatedDate** | **DateTime** |  | [optional] 
+**CreatedDate** | **DateTime?** |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 
 **Url** | **string** |  | [optional] 
 **Cdn** | **string** |  | [optional] 

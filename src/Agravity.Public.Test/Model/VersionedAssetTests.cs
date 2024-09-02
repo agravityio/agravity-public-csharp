@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<VersionedAsset>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'VersionNr'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'VersionNr'
         }
+
         /// <summary>
         /// Test the property 'UntilDate'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'UntilDate'
         }
+
         /// <summary>
         /// Test the property 'VersionInfo'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'VersionInfo'
         }
+
         /// <summary>
         /// Test the property 'CreatedDate'
         /// </summary>
@@ -89,6 +90,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'CreatedDate'
         }
+
         /// <summary>
         /// Test the property 'CreatedBy'
         /// </summary>
@@ -97,6 +99,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'CreatedBy'
         }
+
         /// <summary>
         /// Test the property 'BlobUploaded'
         /// </summary>
@@ -105,6 +108,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'BlobUploaded'
         }
+
         /// <summary>
         /// Test the property 'MimeType'
         /// </summary>
@@ -113,7 +117,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'MimeType'
         }
-
     }
-
 }

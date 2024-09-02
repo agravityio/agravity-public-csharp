@@ -6,7 +6,7 @@ All URIs are relative to *http://localhost:7072/api*
 |--------|--------------|-------------|
 | [**HttpAuthGetInboxContainerWriteSasToken**](PublicAuthenticationManagementApi.md#httpauthgetinboxcontainerwritesastoken) | **GET** /auth/inbox |  |
 
-<a name="httpauthgetinboxcontainerwritesastoken"></a>
+<a id="httpauthgetinboxcontainerwritesastoken"></a>
 # **HttpAuthGetInboxContainerWriteSasToken**
 > SasToken HttpAuthGetInboxContainerWriteSasToken ()
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **EntityType** | **string** |  | [optional] 
 **Url** | **string** |  | [optional] 
 **InstanceId** | **string** |  | [optional] 
-**ValidUntil** | **DateTime** |  | [optional] 
+**ValidUntil** | **DateTime?** |  | [optional] 
 **AllowedFormats** | [**List&lt;SharedAllowedFormat&gt;**](SharedAllowedFormat.md) |  | [optional] 
 **Error** | [**AgravityErrorResponse**](AgravityErrorResponse.md) |  | [optional] 
 **Status** | **string** |  | [optional] 

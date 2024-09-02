@@ -83,9 +83,10 @@ namespace Agravity.Public.Api
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchResult</returns>
-        SearchResult HttpGlobalSearch(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), int operationIndex = 0);
+        SearchResult HttpGlobalSearch(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -106,9 +107,10 @@ namespace Agravity.Public.Api
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchResult</returns>
-        ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), int operationIndex = 0);
+        ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -159,7 +161,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchFacet</returns>
-        System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetteByNameAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetteByNameAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -179,7 +181,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchFacet)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchFacet>> HttpGetSearchFacetteByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchFacet>> HttpGetSearchFacetteByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -199,10 +201,11 @@ namespace Agravity.Public.Api
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchResult</returns>
-        System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -223,10 +226,11 @@ namespace Agravity.Public.Api
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -238,7 +242,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchAdminStatus</returns>
-        System.Threading.Tasks.Task<SearchAdminStatus> HttpSearchAdminGetStatusAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchAdminStatus> HttpSearchAdminGetStatusAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -251,7 +255,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchAdminStatus)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchAdminStatus>> HttpSearchAdminGetStatusWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchAdminStatus>> HttpSearchAdminGetStatusWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -507,7 +511,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchFacet</returns>
-        public async System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetteByNameAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetteByNameAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<SearchFacet> localVarResponse = await HttpGetSearchFacetteByNameWithHttpInfoAsync(name, s, collectiontypeid, collectionid, mode, filter, ids, portalId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -528,7 +532,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchFacet)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchFacet>> HttpGetSearchFacetteByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchFacet>> HttpGetSearchFacetteByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -632,11 +636,12 @@ namespace Agravity.Public.Api
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchResult</returns>
-        public SearchResult HttpGlobalSearch(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), int operationIndex = 0)
+        public SearchResult HttpGlobalSearch(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = HttpGlobalSearchWithHttpInfo(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations);
+            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = HttpGlobalSearchWithHttpInfo(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -656,9 +661,10 @@ namespace Agravity.Public.Api
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchResult</returns>
-        public Agravity.Public.Client.ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 's' is set
             if (s == null)
@@ -732,6 +738,10 @@ namespace Agravity.Public.Api
             if (translations != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
 
             localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpGlobalSearch";
@@ -773,12 +783,13 @@ namespace Agravity.Public.Api
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchResult</returns>
-        public async System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = await HttpGlobalSearchWithHttpInfoAsync(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = await HttpGlobalSearchWithHttpInfoAsync(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -798,10 +809,11 @@ namespace Agravity.Public.Api
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchResult)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 's' is set
             if (s == null)
@@ -876,6 +888,10 @@ namespace Agravity.Public.Api
             if (translations != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
 
             localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpGlobalSearch";
@@ -982,7 +998,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchAdminStatus</returns>
-        public async System.Threading.Tasks.Task<SearchAdminStatus> HttpSearchAdminGetStatusAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchAdminStatus> HttpSearchAdminGetStatusAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<SearchAdminStatus> localVarResponse = await HttpSearchAdminGetStatusWithHttpInfoAsync(portalId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -996,7 +1012,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchAdminStatus)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchAdminStatus>> HttpSearchAdminGetStatusWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchAdminStatus>> HttpSearchAdminGetStatusWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();

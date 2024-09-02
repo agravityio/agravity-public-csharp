@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<AssetPageResult>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'Page'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Page'
         }
+
         /// <summary>
         /// Test the property 'PageSize'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'PageSize'
         }
+
         /// <summary>
         /// Test the property 'Size'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Size'
         }
+
         /// <summary>
         /// Test the property 'ContinuationToken'
         /// </summary>
@@ -89,6 +90,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'ContinuationToken'
         }
+
         /// <summary>
         /// Test the property 'Filter'
         /// </summary>
@@ -97,7 +99,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Filter'
         }
-
     }
-
 }

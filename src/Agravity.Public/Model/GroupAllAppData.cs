@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// GroupAllAppData
     /// </summary>
     [DataContract(Name = "groupAllAppData")]
-    public partial class GroupAllAppData : IEquatable<GroupAllAppData>, IValidatableObject
+    public partial class GroupAllAppData : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupAllAppData" /> class.
@@ -41,7 +41,7 @@ namespace Agravity.Public.Model
         /// <param name="createdDate">createdDate.</param>
         /// <param name="addInfo">addInfo.</param>
         /// <param name="dist">dist.</param>
-        public GroupAllAppData(CollectionType collectionType = default(CollectionType), List<Collection> collections = default(List<Collection>), List<Asset> assets = default(List<Asset>), DateTime createdDate = default(DateTime), List<Dictionary<string, object>> addInfo = default(List<Dictionary<string, object>>), DistZipResponse dist = default(DistZipResponse))
+        public GroupAllAppData(CollectionType collectionType = default(CollectionType), List<Collection> collections = default(List<Collection>), List<Asset> assets = default(List<Asset>), DateTime? createdDate = default(DateTime?), List<Dictionary<string, object>> addInfo = default(List<Dictionary<string, object>>), DistZipResponse dist = default(DistZipResponse))
         {
             this.CollectionType = collectionType;
             this.Collections = collections;
@@ -60,31 +60,31 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Collections
         /// </summary>
-        [DataMember(Name = "collections", EmitDefaultValue = false)]
+        [DataMember(Name = "collections", EmitDefaultValue = true)]
         public List<Collection> Collections { get; set; }
 
         /// <summary>
         /// Gets or Sets Assets
         /// </summary>
-        [DataMember(Name = "assets", EmitDefaultValue = false)]
+        [DataMember(Name = "assets", EmitDefaultValue = true)]
         public List<Asset> Assets { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "created_date", EmitDefaultValue = false)]
-        public DateTime CreatedDate { get; set; }
+        [DataMember(Name = "created_date", EmitDefaultValue = true)]
+        public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets AddInfo
         /// </summary>
-        [DataMember(Name = "add_info", EmitDefaultValue = false)]
+        [DataMember(Name = "add_info", EmitDefaultValue = true)]
         public List<Dictionary<string, object>> AddInfo { get; set; }
 
         /// <summary>
         /// Gets or Sets Dist
         /// </summary>
-        [DataMember(Name = "dist", EmitDefaultValue = false)]
+        [DataMember(Name = "dist", EmitDefaultValue = true)]
         public DistZipResponse Dist { get; set; }
 
         /// <summary>
@@ -115,105 +115,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as GroupAllAppData);
-        }
-
-        /// <summary>
-        /// Returns true if GroupAllAppData instances are equal
-        /// </summary>
-        /// <param name="input">Instance of GroupAllAppData to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(GroupAllAppData input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.CollectionType == input.CollectionType ||
-                    (this.CollectionType != null &&
-                    this.CollectionType.Equals(input.CollectionType))
-                ) && 
-                (
-                    this.Collections == input.Collections ||
-                    this.Collections != null &&
-                    input.Collections != null &&
-                    this.Collections.SequenceEqual(input.Collections)
-                ) && 
-                (
-                    this.Assets == input.Assets ||
-                    this.Assets != null &&
-                    input.Assets != null &&
-                    this.Assets.SequenceEqual(input.Assets)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.AddInfo == input.AddInfo ||
-                    this.AddInfo != null &&
-                    input.AddInfo != null &&
-                    this.AddInfo.SequenceEqual(input.AddInfo)
-                ) && 
-                (
-                    this.Dist == input.Dist ||
-                    (this.Dist != null &&
-                    this.Dist.Equals(input.Dist))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.CollectionType != null)
-                {
-                    hashCode = (hashCode * 59) + this.CollectionType.GetHashCode();
-                }
-                if (this.Collections != null)
-                {
-                    hashCode = (hashCode * 59) + this.Collections.GetHashCode();
-                }
-                if (this.Assets != null)
-                {
-                    hashCode = (hashCode * 59) + this.Assets.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.AddInfo != null)
-                {
-                    hashCode = (hashCode * 59) + this.AddInfo.GetHashCode();
-                }
-                if (this.Dist != null)
-                {
-                    hashCode = (hashCode * 59) + this.Dist.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

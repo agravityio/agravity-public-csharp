@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// BadRequestResult
     /// </summary>
     [DataContract(Name = "badRequestResult")]
-    public partial class BadRequestResult : IEquatable<BadRequestResult>, IValidatableObject
+    public partial class BadRequestResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BadRequestResult" /> class.
@@ -70,53 +70,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as BadRequestResult);
-        }
-
-        /// <summary>
-        /// Returns true if BadRequestResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of BadRequestResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(BadRequestResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.StatusCode == input.StatusCode ||
-                    this.StatusCode.Equals(input.StatusCode)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.StatusCode.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

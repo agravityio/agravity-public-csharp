@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SearchString** | **string** |  | [optional] 
 **Limit** | **int?** |  | [optional] 
-**Skip** | **int** |  | [optional] 
+**Skip** | **int?** |  | [optional] 
 **Collectiontypeid** | **string** |  | [optional] 
 **Collectionid** | **string** |  | [optional] 
 **Filter** | **string** |  | [optional] 

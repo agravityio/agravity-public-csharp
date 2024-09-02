@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// AzSearchOptions
     /// </summary>
     [DataContract(Name = "azSearchOptions")]
-    public partial class AzSearchOptions : IEquatable<AzSearchOptions>, IValidatableObject
+    public partial class AzSearchOptions : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AzSearchOptions" /> class.
@@ -45,7 +45,7 @@ namespace Agravity.Public.Model
         /// <param name="mode">mode.</param>
         /// <param name="ids">ids.</param>
         /// <param name="portalId">portalId.</param>
-        public AzSearchOptions(string searchString = default(string), int? limit = default(int?), int skip = default(int), string collectiontypeid = default(string), string collectionid = default(string), string filter = default(string), string orderby = default(string), string mode = default(string), string ids = default(string), string portalId = default(string))
+        public AzSearchOptions(string searchString = default(string), int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string filter = default(string), string orderby = default(string), string mode = default(string), string ids = default(string), string portalId = default(string))
         {
             this.SearchString = searchString;
             this.Limit = limit;
@@ -74,49 +74,49 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Skip
         /// </summary>
-        [DataMember(Name = "skip", EmitDefaultValue = false)]
-        public int Skip { get; set; }
+        [DataMember(Name = "skip", EmitDefaultValue = true)]
+        public int? Skip { get; set; }
 
         /// <summary>
         /// Gets or Sets Collectiontypeid
         /// </summary>
-        [DataMember(Name = "collectiontypeid", EmitDefaultValue = false)]
+        [DataMember(Name = "collectiontypeid", EmitDefaultValue = true)]
         public string Collectiontypeid { get; set; }
 
         /// <summary>
         /// Gets or Sets Collectionid
         /// </summary>
-        [DataMember(Name = "collectionid", EmitDefaultValue = false)]
+        [DataMember(Name = "collectionid", EmitDefaultValue = true)]
         public string Collectionid { get; set; }
 
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = false)]
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
         public string Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets Orderby
         /// </summary>
-        [DataMember(Name = "orderby", EmitDefaultValue = false)]
+        [DataMember(Name = "orderby", EmitDefaultValue = true)]
         public string Orderby { get; set; }
 
         /// <summary>
         /// Gets or Sets Mode
         /// </summary>
-        [DataMember(Name = "mode", EmitDefaultValue = false)]
+        [DataMember(Name = "mode", EmitDefaultValue = true)]
         public string Mode { get; set; }
 
         /// <summary>
         /// Gets or Sets Ids
         /// </summary>
-        [DataMember(Name = "ids", EmitDefaultValue = false)]
+        [DataMember(Name = "ids", EmitDefaultValue = true)]
         public string Ids { get; set; }
 
         /// <summary>
         /// Gets or Sets PortalId
         /// </summary>
-        [DataMember(Name = "portal_id", EmitDefaultValue = false)]
+        [DataMember(Name = "portal_id", EmitDefaultValue = true)]
         public string PortalId { get; set; }
 
         /// <summary>
@@ -151,134 +151,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AzSearchOptions);
-        }
-
-        /// <summary>
-        /// Returns true if AzSearchOptions instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AzSearchOptions to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AzSearchOptions input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.SearchString == input.SearchString ||
-                    (this.SearchString != null &&
-                    this.SearchString.Equals(input.SearchString))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Skip == input.Skip ||
-                    this.Skip.Equals(input.Skip)
-                ) && 
-                (
-                    this.Collectiontypeid == input.Collectiontypeid ||
-                    (this.Collectiontypeid != null &&
-                    this.Collectiontypeid.Equals(input.Collectiontypeid))
-                ) && 
-                (
-                    this.Collectionid == input.Collectionid ||
-                    (this.Collectionid != null &&
-                    this.Collectionid.Equals(input.Collectionid))
-                ) && 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.Orderby == input.Orderby ||
-                    (this.Orderby != null &&
-                    this.Orderby.Equals(input.Orderby))
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.Ids == input.Ids ||
-                    (this.Ids != null &&
-                    this.Ids.Equals(input.Ids))
-                ) && 
-                (
-                    this.PortalId == input.PortalId ||
-                    (this.PortalId != null &&
-                    this.PortalId.Equals(input.PortalId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.SearchString != null)
-                {
-                    hashCode = (hashCode * 59) + this.SearchString.GetHashCode();
-                }
-                if (this.Limit != null)
-                {
-                    hashCode = (hashCode * 59) + this.Limit.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Skip.GetHashCode();
-                if (this.Collectiontypeid != null)
-                {
-                    hashCode = (hashCode * 59) + this.Collectiontypeid.GetHashCode();
-                }
-                if (this.Collectionid != null)
-                {
-                    hashCode = (hashCode * 59) + this.Collectionid.GetHashCode();
-                }
-                if (this.Filter != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
-                }
-                if (this.Orderby != null)
-                {
-                    hashCode = (hashCode * 59) + this.Orderby.GetHashCode();
-                }
-                if (this.Mode != null)
-                {
-                    hashCode = (hashCode * 59) + this.Mode.GetHashCode();
-                }
-                if (this.Ids != null)
-                {
-                    hashCode = (hashCode * 59) + this.Ids.GetHashCode();
-                }
-                if (this.PortalId != null)
-                {
-                    hashCode = (hashCode * 59) + this.PortalId.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

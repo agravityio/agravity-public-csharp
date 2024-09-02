@@ -37,7 +37,7 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
+        /// <returns>Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
         Dictionary<string, Dictionary<string, object>> HttpTranslationsById(string id, bool? items = default(bool?), int operationIndex = 0);
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
+        /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
         ApiResponse<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdWithHttpInfo(string id, bool? items = default(bool?), int operationIndex = 0);
         /// <summary>
         /// 
@@ -62,7 +62,7 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of only translateable entities with custom fields (Asset, Collection).</param>
         /// <param name="customField">Limit the output to a specific custom field key.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
+        /// <returns>Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
         Dictionary<string, Dictionary<string, object>> HttpTranslationsByIdFilterByCustomField(string id, string customField, int operationIndex = 0);
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of only translateable entities with custom fields (Asset, Collection).</param>
         /// <param name="customField">Limit the output to a specific custom field key.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
+        /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
         ApiResponse<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfo(string id, string customField, int operationIndex = 0);
         /// <summary>
         /// 
@@ -88,7 +88,7 @@ namespace Agravity.Public.Api
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
+        /// <returns>Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
         Dictionary<string, Dictionary<string, object>> HttpTranslationsByIdFilterByProperty(string id, string property, bool? items = default(bool?), int operationIndex = 0);
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Agravity.Public.Api
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
+        /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
         ApiResponse<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByPropertyWithHttpInfo(string id, string property, bool? items = default(bool?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
@@ -124,8 +124,8 @@ namespace Agravity.Public.Api
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
-        System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdAsync(string id, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
+        System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdAsync(string id, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -138,8 +138,8 @@ namespace Agravity.Public.Api
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdWithHttpInfoAsync(string id, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdWithHttpInfoAsync(string id, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -151,8 +151,8 @@ namespace Agravity.Public.Api
         /// <param name="customField">Limit the output to a specific custom field key.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
-        System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByCustomFieldAsync(string id, string customField, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
+        System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByCustomFieldAsync(string id, string customField, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -165,8 +165,8 @@ namespace Agravity.Public.Api
         /// <param name="customField">Limit the output to a specific custom field key.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfoAsync(string id, string customField, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfoAsync(string id, string customField, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -179,8 +179,8 @@ namespace Agravity.Public.Api
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
-        System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByPropertyAsync(string id, string property, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
+        System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByPropertyAsync(string id, string property, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -194,8 +194,8 @@ namespace Agravity.Public.Api
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdFilterByPropertyWithHttpInfoAsync(string id, string property, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdFilterByPropertyWithHttpInfoAsync(string id, string property, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -323,7 +323,7 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
+        /// <returns>Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
         public Dictionary<string, Dictionary<string, object>> HttpTranslationsById(string id, bool? items = default(bool?), int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>> localVarResponse = HttpTranslationsByIdWithHttpInfo(id, items);
@@ -337,7 +337,7 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
+        /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
         public Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdWithHttpInfo(string id, bool? items = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
@@ -405,8 +405,8 @@ namespace Agravity.Public.Api
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
-        public async System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdAsync(string id, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
+        public async System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdAsync(string id, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>> localVarResponse = await HttpTranslationsByIdWithHttpInfoAsync(id, items, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -420,8 +420,8 @@ namespace Agravity.Public.Api
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdWithHttpInfoAsync(string id, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdWithHttpInfoAsync(string id, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -489,7 +489,7 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of only translateable entities with custom fields (Asset, Collection).</param>
         /// <param name="customField">Limit the output to a specific custom field key.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
+        /// <returns>Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
         public Dictionary<string, Dictionary<string, object>> HttpTranslationsByIdFilterByCustomField(string id, string customField, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>> localVarResponse = HttpTranslationsByIdFilterByCustomFieldWithHttpInfo(id, customField);
@@ -503,7 +503,7 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of only translateable entities with custom fields (Asset, Collection).</param>
         /// <param name="customField">Limit the output to a specific custom field key.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
+        /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
         public Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfo(string id, string customField, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
@@ -574,8 +574,8 @@ namespace Agravity.Public.Api
         /// <param name="customField">Limit the output to a specific custom field key.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
-        public async System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByCustomFieldAsync(string id, string customField, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
+        public async System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByCustomFieldAsync(string id, string customField, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>> localVarResponse = await HttpTranslationsByIdFilterByCustomFieldWithHttpInfoAsync(id, customField, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -589,8 +589,8 @@ namespace Agravity.Public.Api
         /// <param name="customField">Limit the output to a specific custom field key.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfoAsync(string id, string customField, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdFilterByCustomFieldWithHttpInfoAsync(string id, string customField, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -662,7 +662,7 @@ namespace Agravity.Public.Api
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
+        /// <returns>Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
         public Dictionary<string, Dictionary<string, object>> HttpTranslationsByIdFilterByProperty(string id, string property, bool? items = default(bool?), int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>> localVarResponse = HttpTranslationsByIdFilterByPropertyWithHttpInfo(id, property, items);
@@ -677,7 +677,7 @@ namespace Agravity.Public.Api
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
+        /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
         public Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByPropertyWithHttpInfo(string id, string property, bool? items = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
@@ -753,8 +753,8 @@ namespace Agravity.Public.Api
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;</returns>
-        public async System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByPropertyAsync(string id, string property, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
+        public async System.Threading.Tasks.Task<Dictionary<string, Dictionary<string, object>>> HttpTranslationsByIdFilterByPropertyAsync(string id, string property, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>> localVarResponse = await HttpTranslationsByIdFilterByPropertyWithHttpInfoAsync(id, property, items, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -769,8 +769,8 @@ namespace Agravity.Public.Api
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string, object&gt;&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdFilterByPropertyWithHttpInfoAsync(string id, string property, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Dictionary<string, Dictionary<string, object>>>> HttpTranslationsByIdFilterByPropertyWithHttpInfoAsync(string id, string property, bool? items = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

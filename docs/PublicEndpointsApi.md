@@ -6,7 +6,7 @@ All URIs are relative to *http://localhost:7072/api*
 |--------|--------------|-------------|
 | [**HttpAssetGetViewForPortal**](PublicEndpointsApi.md#httpassetgetviewforportal) | **GET** /public/view |  |
 
-<a name="httpassetgetviewforportal"></a>
+<a id="httpassetgetviewforportal"></a>
 # **HttpAssetGetViewForPortal**
 > System.IO.Stream HttpAssetGetViewForPortal (string assetId, string portalId, string format, string download = null)
 

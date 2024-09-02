@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<SecureUploadEntity>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'Id'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Id'
         }
+
         /// <summary>
         /// Test the property 'CollectionId'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'CollectionId'
         }
+
         /// <summary>
         /// Test the property 'CreatedDate'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'CreatedDate'
         }
+
         /// <summary>
         /// Test the property 'CreatedBy'
         /// </summary>
@@ -89,6 +90,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'CreatedBy'
         }
+
         /// <summary>
         /// Test the property 'Url'
         /// </summary>
@@ -97,6 +99,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Url'
         }
+
         /// <summary>
         /// Test the property 'ValidUntil'
         /// </summary>
@@ -105,6 +108,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'ValidUntil'
         }
+
         /// <summary>
         /// Test the property 'Password'
         /// </summary>
@@ -113,6 +117,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Password'
         }
+
         /// <summary>
         /// Test the property 'AssetTags'
         /// </summary>
@@ -121,6 +126,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'AssetTags'
         }
+
         /// <summary>
         /// Test the property 'Message'
         /// </summary>
@@ -129,6 +135,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Message'
         }
+
         /// <summary>
         /// Test the property 'SftpConnection'
         /// </summary>
@@ -137,7 +144,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'SftpConnection'
         }
-
     }
-
 }

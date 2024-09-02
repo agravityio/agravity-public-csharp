@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpUpdateVersionedAssetsById**](PublicAssetVersioningApi.md#httpupdateversionedassetsbyid) | **POST** /assets/{id}/versions/{vNr} |  |
 | [**HttpVersionedAssetsGet**](PublicAssetVersioningApi.md#httpversionedassetsget) | **GET** /assets/{id}/versions |  |
 
-<a name="httpassetcreateuploadversion"></a>
+<a id="httpassetcreateuploadversion"></a>
 # **HttpAssetCreateUploadVersion**
 > VersionedAsset HttpAssetCreateUploadVersion (string id, string name = null, string collectionId = null, System.IO.Stream file = null, string filename = null, string previewof = null)
 
@@ -120,7 +120,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpassetcreateversion"></a>
+<a id="httpassetcreateversion"></a>
 # **HttpAssetCreateVersion**
 > VersionedAsset HttpAssetCreateVersion (string id, VersionedAsset versionedAsset)
 
@@ -220,7 +220,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpdeleteversionedassetsbyid"></a>
+<a id="httpdeleteversionedassetsbyid"></a>
 # **HttpDeleteVersionedAssetsById**
 > void HttpDeleteVersionedAssetsById (string id, string vNr)
 
@@ -316,7 +316,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpgetversionedassetblobbyid"></a>
+<a id="httpgetversionedassetblobbyid"></a>
 # **HttpGetVersionedAssetBlobById**
 > AssetBlob HttpGetVersionedAssetBlobById (string id, int vNr, string c = null)
 
@@ -418,7 +418,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httprestoreversionedassetsbyid"></a>
+<a id="httprestoreversionedassetsbyid"></a>
 # **HttpRestoreVersionedAssetsById**
 > VersionedAsset HttpRestoreVersionedAssetsById (string id, string vNr, VersionedAsset versionedAsset)
 
@@ -520,9 +520,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpupdateversionedassetsbyid"></a>
+<a id="httpupdateversionedassetsbyid"></a>
 # **HttpUpdateVersionedAssetsById**
-> void HttpUpdateVersionedAssetsById (string id, string vNr)
+> VersionedAsset HttpUpdateVersionedAssetsById (string id, string vNr)
 
 
 
@@ -555,7 +555,8 @@ namespace Example
 
             try
             {
-                apiInstance.HttpUpdateVersionedAssetsById(id, vNr);
+                VersionedAsset result = apiInstance.HttpUpdateVersionedAssetsById(id, vNr);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -574,7 +575,10 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    apiInstance.HttpUpdateVersionedAssetsByIdWithHttpInfo(id, vNr);
+    ApiResponse<VersionedAsset> response = apiInstance.HttpUpdateVersionedAssetsByIdWithHttpInfo(id, vNr);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -593,7 +597,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**VersionedAsset**](VersionedAsset.md)
 
 ### Authorization
 
@@ -608,15 +612,16 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | The updated asset version |  -  |
 | **400** | Given version of this asset is not a number (Code: 10fb9f76-1ee5-4b58-a642-bf37efa6c230) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
-| **204** | No description |  -  |
+| **204** | If nothing was updated. |  -  |
 | **404** | If the asset or versioned asset with the IDs were not found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpversionedassetsget"></a>
+<a id="httpversionedassetsget"></a>
 # **HttpVersionedAssetsGet**
 > VersionEntity HttpVersionedAssetsGet (string id)
 

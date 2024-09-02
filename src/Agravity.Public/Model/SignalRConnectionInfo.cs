@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// SignalRConnectionInfo
     /// </summary>
     [DataContract(Name = "signalRConnectionInfo")]
-    public partial class SignalRConnectionInfo : IEquatable<SignalRConnectionInfo>, IValidatableObject
+    public partial class SignalRConnectionInfo : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SignalRConnectionInfo" /> class.
@@ -79,66 +79,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SignalRConnectionInfo);
-        }
-
-        /// <summary>
-        /// Returns true if SignalRConnectionInfo instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SignalRConnectionInfo to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SignalRConnectionInfo input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.AccessToken == input.AccessToken ||
-                    (this.AccessToken != null &&
-                    this.AccessToken.Equals(input.AccessToken))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                if (this.AccessToken != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccessToken.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

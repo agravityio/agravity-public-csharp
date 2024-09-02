@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// SearchAdminIndexStatus
     /// </summary>
     [DataContract(Name = "searchAdminIndexStatus")]
-    public partial class SearchAdminIndexStatus : IEquatable<SearchAdminIndexStatus>, IValidatableObject
+    public partial class SearchAdminIndexStatus : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchAdminIndexStatus" /> class.
@@ -48,19 +48,19 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Statistics
         /// </summary>
-        [DataMember(Name = "statistics", EmitDefaultValue = false)]
+        [DataMember(Name = "statistics", EmitDefaultValue = true)]
         public SearchAdminStatistics Statistics { get; set; }
 
         /// <summary>
@@ -88,75 +88,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SearchAdminIndexStatus);
-        }
-
-        /// <summary>
-        /// Returns true if SearchAdminIndexStatus instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SearchAdminIndexStatus to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SearchAdminIndexStatus input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Statistics == input.Statistics ||
-                    (this.Statistics != null &&
-                    this.Statistics.Equals(input.Statistics))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.Statistics != null)
-                {
-                    hashCode = (hashCode * 59) + this.Statistics.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

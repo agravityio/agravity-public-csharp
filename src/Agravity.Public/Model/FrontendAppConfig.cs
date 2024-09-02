@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// FrontendAppConfig
     /// </summary>
     [DataContract(Name = "frontendAppConfig")]
-    public partial class FrontendAppConfig : IEquatable<FrontendAppConfig>, IValidatableObject
+    public partial class FrontendAppConfig : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FrontendAppConfig" /> class.
@@ -106,93 +106,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as FrontendAppConfig);
-        }
-
-        /// <summary>
-        /// Returns true if FrontendAppConfig instances are equal
-        /// </summary>
-        /// <param name="input">Instance of FrontendAppConfig to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(FrontendAppConfig input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
-                    this.SinceApiVersion == input.SinceApiVersion ||
-                    (this.SinceApiVersion != null &&
-                    this.SinceApiVersion.Equals(input.SinceApiVersion))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Key != null)
-                {
-                    hashCode = (hashCode * 59) + this.Key.GetHashCode();
-                }
-                if (this.Value != null)
-                {
-                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.ContentType != null)
-                {
-                    hashCode = (hashCode * 59) + this.ContentType.GetHashCode();
-                }
-                if (this.SinceApiVersion != null)
-                {
-                    hashCode = (hashCode * 59) + this.SinceApiVersion.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

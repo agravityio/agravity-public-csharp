@@ -125,7 +125,7 @@ dotnet build .\src\Agravity.Public\Agravity.Public.csproj -c Release
 
 # build nuget package with version
 #create command 
-nuget pack -Build -OutputDirectory .\out .\src\Agravity.Public\Agravity.Public.csproj -Version $apiVersion
+dotnet pack .\src\Agravity.Public\Agravity.Public.csproj -c Release -o .\out /p:Version=$apiVersion
 
 # Set API Key (once)
 # nuget setApiKey xyz

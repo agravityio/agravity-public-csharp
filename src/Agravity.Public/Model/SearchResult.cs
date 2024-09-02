@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// SearchResult
     /// </summary>
     [DataContract(Name = "searchResult")]
-    public partial class SearchResult : IEquatable<SearchResult>, IValidatableObject
+    public partial class SearchResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchResult" /> class.
@@ -50,19 +50,19 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets DataResult
         /// </summary>
-        [DataMember(Name = "data_result", EmitDefaultValue = false)]
+        [DataMember(Name = "data_result", EmitDefaultValue = true)]
         public DataResult DataResult { get; set; }
 
         /// <summary>
         /// Gets or Sets Options
         /// </summary>
-        [DataMember(Name = "options", EmitDefaultValue = false)]
+        [DataMember(Name = "options", EmitDefaultValue = true)]
         public AzSearchOptions Options { get; set; }
 
         /// <summary>
         /// Gets or Sets Facets
         /// </summary>
-        [DataMember(Name = "facets", EmitDefaultValue = false)]
+        [DataMember(Name = "facets", EmitDefaultValue = true)]
         public List<SearchFacet> Facets { get; set; }
 
         /// <summary>
@@ -97,85 +97,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SearchResult);
-        }
-
-        /// <summary>
-        /// Returns true if SearchResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SearchResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SearchResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.DataResult == input.DataResult ||
-                    (this.DataResult != null &&
-                    this.DataResult.Equals(input.DataResult))
-                ) && 
-                (
-                    this.Options == input.Options ||
-                    (this.Options != null &&
-                    this.Options.Equals(input.Options))
-                ) && 
-                (
-                    this.Facets == input.Facets ||
-                    this.Facets != null &&
-                    input.Facets != null &&
-                    this.Facets.SequenceEqual(input.Facets)
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.DataResult != null)
-                {
-                    hashCode = (hashCode * 59) + this.DataResult.GetHashCode();
-                }
-                if (this.Options != null)
-                {
-                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
-                }
-                if (this.Facets != null)
-                {
-                    hashCode = (hashCode * 59) + this.Facets.GetHashCode();
-                }
-                if (this.Count != null)
-                {
-                    hashCode = (hashCode * 59) + this.Count.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

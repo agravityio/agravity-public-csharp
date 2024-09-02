@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// Asset
     /// </summary>
     [DataContract(Name = "asset")]
-    public partial class Asset : IEquatable<Asset>, IValidatableObject
+    public partial class Asset : IValidatableObject
     {
         /// <summary>
         /// Defines Role
@@ -55,7 +55,6 @@ namespace Agravity.Public.Model
             /// </summary>
             [EnumMember(Value = "EDITOR")]
             EDITOR = 3
-
         }
 
 
@@ -130,43 +129,43 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityType
         /// </summary>
-        [DataMember(Name = "entity_type", EmitDefaultValue = false)]
+        [DataMember(Name = "entity_type", EmitDefaultValue = true)]
         public string EntityType { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets AssetType
         /// </summary>
-        [DataMember(Name = "asset_type", EmitDefaultValue = false)]
+        [DataMember(Name = "asset_type", EmitDefaultValue = true)]
         public string AssetType { get; set; }
 
         /// <summary>
         /// Gets or Sets Duplicates
         /// </summary>
-        [DataMember(Name = "duplicates", EmitDefaultValue = false)]
+        [DataMember(Name = "duplicates", EmitDefaultValue = true)]
         public List<string> Duplicates { get; set; }
 
         /// <summary>
         /// Gets or Sets AiGroups
         /// </summary>
-        [DataMember(Name = "ai_groups", EmitDefaultValue = false)]
+        [DataMember(Name = "ai_groups", EmitDefaultValue = true)]
         public List<ArtificialIntelligenceGroup> AiGroups { get; set; }
 
         /// <summary>
         /// Gets or Sets Keywords
         /// </summary>
-        [DataMember(Name = "keywords", EmitDefaultValue = false)]
+        [DataMember(Name = "keywords", EmitDefaultValue = true)]
         public List<string> Keywords { get; set; }
 
         /// <summary>
@@ -178,31 +177,31 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Blobs
         /// </summary>
-        [DataMember(Name = "blobs", EmitDefaultValue = false)]
+        [DataMember(Name = "blobs", EmitDefaultValue = true)]
         public List<AssetBlob> Blobs { get; set; }
 
         /// <summary>
         /// Gets or Sets Collections
         /// </summary>
-        [DataMember(Name = "collections", EmitDefaultValue = false)]
+        [DataMember(Name = "collections", EmitDefaultValue = true)]
         public List<string> Collections { get; set; }
 
         /// <summary>
         /// Gets or Sets FailedReason
         /// </summary>
-        [DataMember(Name = "failed_reason", EmitDefaultValue = false)]
+        [DataMember(Name = "failed_reason", EmitDefaultValue = true)]
         public string FailedReason { get; set; }
 
         /// <summary>
         /// Gets or Sets RegionOfOrigin
         /// </summary>
-        [DataMember(Name = "region_of_origin", EmitDefaultValue = false)]
+        [DataMember(Name = "region_of_origin", EmitDefaultValue = true)]
         public string RegionOfOrigin { get; set; }
 
         /// <summary>
         /// Gets or Sets Availability
         /// </summary>
-        [DataMember(Name = "availability", EmitDefaultValue = false)]
+        [DataMember(Name = "availability", EmitDefaultValue = true)]
         public string Availability { get; set; }
 
         /// <summary>
@@ -220,37 +219,37 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Custom
         /// </summary>
-        [DataMember(Name = "custom", EmitDefaultValue = false)]
+        [DataMember(Name = "custom", EmitDefaultValue = true)]
         public Dictionary<string, object> Custom { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
-        [DataMember(Name = "items", EmitDefaultValue = false)]
+        [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<CollTypeItem> Items { get; set; }
 
         /// <summary>
         /// Gets or Sets Translations
         /// </summary>
-        [DataMember(Name = "translations", EmitDefaultValue = false)]
+        [DataMember(Name = "translations", EmitDefaultValue = true)]
         public Dictionary<string, Dictionary<string, object>> Translations { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets AddProperties
         /// </summary>
-        [DataMember(Name = "add_properties", EmitDefaultValue = false)]
+        [DataMember(Name = "add_properties", EmitDefaultValue = true)]
         public Dictionary<string, object> AddProperties { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
@@ -262,7 +261,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name = "created_by", EmitDefaultValue = false)]
+        [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; set; }
 
         /// <summary>
@@ -274,19 +273,19 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets ModifiedBy
         /// </summary>
-        [DataMember(Name = "modified_by", EmitDefaultValue = false)]
+        [DataMember(Name = "modified_by", EmitDefaultValue = true)]
         public string ModifiedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets Pk
         /// </summary>
-        [DataMember(Name = "pk", EmitDefaultValue = false)]
+        [DataMember(Name = "pk", EmitDefaultValue = true)]
         public string Pk { get; set; }
 
         /// <summary>
         /// Gets or Sets Etag
         /// </summary>
-        [DataMember(Name = "_etag", EmitDefaultValue = false)]
+        [DataMember(Name = "_etag", EmitDefaultValue = true)]
         public string Etag { get; set; }
 
         /// <summary>
@@ -339,305 +338,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Asset);
-        }
-
-        /// <summary>
-        /// Returns true if Asset instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Asset to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Asset input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.EntityType == input.EntityType ||
-                    (this.EntityType != null &&
-                    this.EntityType.Equals(input.EntityType))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.AssetType == input.AssetType ||
-                    (this.AssetType != null &&
-                    this.AssetType.Equals(input.AssetType))
-                ) && 
-                (
-                    this.Duplicates == input.Duplicates ||
-                    this.Duplicates != null &&
-                    input.Duplicates != null &&
-                    this.Duplicates.SequenceEqual(input.Duplicates)
-                ) && 
-                (
-                    this.AiGroups == input.AiGroups ||
-                    this.AiGroups != null &&
-                    input.AiGroups != null &&
-                    this.AiGroups.SequenceEqual(input.AiGroups)
-                ) && 
-                (
-                    this.Keywords == input.Keywords ||
-                    this.Keywords != null &&
-                    input.Keywords != null &&
-                    this.Keywords.SequenceEqual(input.Keywords)
-                ) && 
-                (
-                    this.OrigBlob == input.OrigBlob ||
-                    (this.OrigBlob != null &&
-                    this.OrigBlob.Equals(input.OrigBlob))
-                ) && 
-                (
-                    this.Blobs == input.Blobs ||
-                    this.Blobs != null &&
-                    input.Blobs != null &&
-                    this.Blobs.SequenceEqual(input.Blobs)
-                ) && 
-                (
-                    this.Collections == input.Collections ||
-                    this.Collections != null &&
-                    input.Collections != null &&
-                    this.Collections.SequenceEqual(input.Collections)
-                ) && 
-                (
-                    this.FailedReason == input.FailedReason ||
-                    (this.FailedReason != null &&
-                    this.FailedReason.Equals(input.FailedReason))
-                ) && 
-                (
-                    this.RegionOfOrigin == input.RegionOfOrigin ||
-                    (this.RegionOfOrigin != null &&
-                    this.RegionOfOrigin.Equals(input.RegionOfOrigin))
-                ) && 
-                (
-                    this.Availability == input.Availability ||
-                    (this.Availability != null &&
-                    this.Availability.Equals(input.Availability))
-                ) && 
-                (
-                    this.AvailableFrom == input.AvailableFrom ||
-                    (this.AvailableFrom != null &&
-                    this.AvailableFrom.Equals(input.AvailableFrom))
-                ) && 
-                (
-                    this.AvailableTo == input.AvailableTo ||
-                    (this.AvailableTo != null &&
-                    this.AvailableTo.Equals(input.AvailableTo))
-                ) && 
-                (
-                    this.Custom == input.Custom ||
-                    this.Custom != null &&
-                    input.Custom != null &&
-                    this.Custom.SequenceEqual(input.Custom)
-                ) && 
-                (
-                    this.Items == input.Items ||
-                    this.Items != null &&
-                    input.Items != null &&
-                    this.Items.SequenceEqual(input.Items)
-                ) && 
-                (
-                    this.Translations == input.Translations ||
-                    this.Translations != null &&
-                    input.Translations != null &&
-                    this.Translations.SequenceEqual(input.Translations)
-                ) && 
-                (
-                    this.Role == input.Role ||
-                    this.Role.Equals(input.Role)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.AddProperties == input.AddProperties ||
-                    this.AddProperties != null &&
-                    input.AddProperties != null &&
-                    this.AddProperties.SequenceEqual(input.AddProperties)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.CreatedBy == input.CreatedBy ||
-                    (this.CreatedBy != null &&
-                    this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.ModifiedBy == input.ModifiedBy ||
-                    (this.ModifiedBy != null &&
-                    this.ModifiedBy.Equals(input.ModifiedBy))
-                ) && 
-                (
-                    this.Pk == input.Pk ||
-                    (this.Pk != null &&
-                    this.Pk.Equals(input.Pk))
-                ) && 
-                (
-                    this.Etag == input.Etag ||
-                    (this.Etag != null &&
-                    this.Etag.Equals(input.Etag))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.EntityType != null)
-                {
-                    hashCode = (hashCode * 59) + this.EntityType.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.AssetType != null)
-                {
-                    hashCode = (hashCode * 59) + this.AssetType.GetHashCode();
-                }
-                if (this.Duplicates != null)
-                {
-                    hashCode = (hashCode * 59) + this.Duplicates.GetHashCode();
-                }
-                if (this.AiGroups != null)
-                {
-                    hashCode = (hashCode * 59) + this.AiGroups.GetHashCode();
-                }
-                if (this.Keywords != null)
-                {
-                    hashCode = (hashCode * 59) + this.Keywords.GetHashCode();
-                }
-                if (this.OrigBlob != null)
-                {
-                    hashCode = (hashCode * 59) + this.OrigBlob.GetHashCode();
-                }
-                if (this.Blobs != null)
-                {
-                    hashCode = (hashCode * 59) + this.Blobs.GetHashCode();
-                }
-                if (this.Collections != null)
-                {
-                    hashCode = (hashCode * 59) + this.Collections.GetHashCode();
-                }
-                if (this.FailedReason != null)
-                {
-                    hashCode = (hashCode * 59) + this.FailedReason.GetHashCode();
-                }
-                if (this.RegionOfOrigin != null)
-                {
-                    hashCode = (hashCode * 59) + this.RegionOfOrigin.GetHashCode();
-                }
-                if (this.Availability != null)
-                {
-                    hashCode = (hashCode * 59) + this.Availability.GetHashCode();
-                }
-                if (this.AvailableFrom != null)
-                {
-                    hashCode = (hashCode * 59) + this.AvailableFrom.GetHashCode();
-                }
-                if (this.AvailableTo != null)
-                {
-                    hashCode = (hashCode * 59) + this.AvailableTo.GetHashCode();
-                }
-                if (this.Custom != null)
-                {
-                    hashCode = (hashCode * 59) + this.Custom.GetHashCode();
-                }
-                if (this.Items != null)
-                {
-                    hashCode = (hashCode * 59) + this.Items.GetHashCode();
-                }
-                if (this.Translations != null)
-                {
-                    hashCode = (hashCode * 59) + this.Translations.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Role.GetHashCode();
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.AddProperties != null)
-                {
-                    hashCode = (hashCode * 59) + this.AddProperties.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.CreatedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.ModifiedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedBy.GetHashCode();
-                }
-                if (this.Pk != null)
-                {
-                    hashCode = (hashCode * 59) + this.Pk.GetHashCode();
-                }
-                if (this.Etag != null)
-                {
-                    hashCode = (hashCode * 59) + this.Etag.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

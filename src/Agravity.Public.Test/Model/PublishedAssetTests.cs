@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<PublishedAsset>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'Id'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Id'
         }
+
         /// <summary>
         /// Test the property 'Name'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Name'
         }
+
         /// <summary>
         /// Test the property 'Target'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Target'
         }
+
         /// <summary>
         /// Test the property 'Description'
         /// </summary>
@@ -89,6 +90,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Description'
         }
+
         /// <summary>
         /// Test the property 'Usecases'
         /// </summary>
@@ -97,6 +99,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Usecases'
         }
+
         /// <summary>
         /// Test the property 'CreatedDate'
         /// </summary>
@@ -105,6 +108,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'CreatedDate'
         }
+
         /// <summary>
         /// Test the property 'CreatedBy'
         /// </summary>
@@ -113,6 +117,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'CreatedBy'
         }
+
         /// <summary>
         /// Test the property 'Url'
         /// </summary>
@@ -121,6 +126,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Url'
         }
+
         /// <summary>
         /// Test the property 'Cdn'
         /// </summary>
@@ -129,6 +135,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Cdn'
         }
+
         /// <summary>
         /// Test the property 'StatusTableId'
         /// </summary>
@@ -137,6 +144,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'StatusTableId'
         }
+
         /// <summary>
         /// Test the property 'Format'
         /// </summary>
@@ -145,6 +153,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Format'
         }
+
         /// <summary>
         /// Test the property 'Properties'
         /// </summary>
@@ -153,7 +162,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Properties'
         }
-
     }
-
 }

@@ -64,7 +64,8 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string collectiontypeid = null;
             //Collection collection = null;
-            //var response = instance.HttpCollectionsCreate(collectiontypeid, collection);
+            //string acceptLanguage = null;
+            //var response = instance.HttpCollectionsCreate(collectiontypeid, collection, acceptLanguage);
             //Assert.IsType<Collection>(response);
         }
 
@@ -81,7 +82,8 @@ namespace Agravity.Public.Test.Api
             //string fields = null;
             //bool? items = null;
             //bool? translations = null;
-            //var response = instance.HttpCollectionsGet(collectiontypeid, level, parentid, fields, items, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpCollectionsGet(collectiontypeid, level, parentid, fields, items, translations, acceptLanguage);
             //Assert.IsType<List<Collection>>(response);
         }
 
@@ -96,7 +98,8 @@ namespace Agravity.Public.Test.Api
             //string fields = null;
             //bool? items = null;
             //bool? translations = null;
-            //var response = instance.HttpCollectionsGetById(id, fields, items, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpCollectionsGetById(id, fields, items, translations, acceptLanguage);
             //Assert.IsType<Collection>(response);
         }
 
@@ -109,7 +112,8 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //bool? translations = null;
-            //var response = instance.HttpCollectionsGetDescendantsTreeOfId(id, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpCollectionsGetDescendantsTreeOfId(id, translations, acceptLanguage);
             //Assert.IsType<List<Collection>>(response);
         }
 
@@ -122,7 +126,8 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //bool? translations = null;
-            //var response = instance.HttpCollectionsGetTreeAncestorsOfId(id, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpCollectionsGetTreeAncestorsOfId(id, translations, acceptLanguage);
             //Assert.IsType<List<Collection>>(response);
         }
 
@@ -159,8 +164,8 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //Collection collection = null;
-            //bool? translations = null;
-            //var response = instance.HttpPublicCollectionsUpdateById(id, collection, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpPublicCollectionsUpdateById(id, collection, acceptLanguage);
             //Assert.IsType<Collection>(response);
         }
     }

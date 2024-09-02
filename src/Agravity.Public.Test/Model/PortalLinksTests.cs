@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<PortalLinks>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'Conditions'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Conditions'
         }
+
         /// <summary>
         /// Test the property 'Privacy'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Privacy'
         }
+
         /// <summary>
         /// Test the property 'Impressum'
         /// </summary>
@@ -81,7 +81,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Impressum'
         }
-
     }
-
 }

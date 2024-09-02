@@ -164,7 +164,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuickShareFull</returns>
-        System.Threading.Tasks.Task<QuickShareFull> HttpQuickShareGetByIdAsync(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<QuickShareFull> HttpQuickShareGetByIdAsync(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -180,7 +180,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuickShareFull)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QuickShareFull>> HttpQuickShareGetByIdWithHttpInfoAsync(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<QuickShareFull>> HttpQuickShareGetByIdWithHttpInfoAsync(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -196,7 +196,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SharedCollectionFull</returns>
-        System.Threading.Tasks.Task<SharedCollectionFull> HttpSharedCollectionsGetByIdAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SharedCollectionFull> HttpSharedCollectionsGetByIdAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -213,7 +213,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SharedCollectionFull)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SharedCollectionFull>> HttpSharedCollectionsGetByIdWithHttpInfoAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SharedCollectionFull>> HttpSharedCollectionsGetByIdWithHttpInfoAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -227,7 +227,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SharedCollectionZipRequest</returns>
-        System.Threading.Tasks.Task<SharedCollectionZipRequest> HttpSharedCollectionsGetStatusZipByIdAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SharedCollectionZipRequest> HttpSharedCollectionsGetStatusZipByIdAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -242,7 +242,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SharedCollectionZipRequest)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SharedCollectionZipRequest>> HttpSharedCollectionsGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SharedCollectionZipRequest>> HttpSharedCollectionsGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -256,7 +256,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SharedCollectionZipRequest</returns>
-        System.Threading.Tasks.Task<SharedCollectionZipRequest> HttpSharedCollectionsRequestZipByIdAsync(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SharedCollectionZipRequest> HttpSharedCollectionsRequestZipByIdAsync(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -271,7 +271,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SharedCollectionZipRequest)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SharedCollectionZipRequest>> HttpSharedCollectionsRequestZipByIdWithHttpInfoAsync(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SharedCollectionZipRequest>> HttpSharedCollectionsRequestZipByIdWithHttpInfoAsync(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -491,7 +491,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuickShareFull</returns>
-        public async System.Threading.Tasks.Task<QuickShareFull> HttpQuickShareGetByIdAsync(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<QuickShareFull> HttpQuickShareGetByIdAsync(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<QuickShareFull> localVarResponse = await HttpQuickShareGetByIdWithHttpInfoAsync(id, continuationToken, limit, orderby, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -508,7 +508,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuickShareFull)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<QuickShareFull>> HttpQuickShareGetByIdWithHttpInfoAsync(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<QuickShareFull>> HttpQuickShareGetByIdWithHttpInfoAsync(string id, string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -678,7 +678,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SharedCollectionFull</returns>
-        public async System.Threading.Tasks.Task<SharedCollectionFull> HttpSharedCollectionsGetByIdAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SharedCollectionFull> HttpSharedCollectionsGetByIdAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<SharedCollectionFull> localVarResponse = await HttpSharedCollectionsGetByIdWithHttpInfoAsync(id, ayPassword, continuationToken, limit, orderby, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -696,7 +696,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SharedCollectionFull)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SharedCollectionFull>> HttpSharedCollectionsGetByIdWithHttpInfoAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SharedCollectionFull>> HttpSharedCollectionsGetByIdWithHttpInfoAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -859,7 +859,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SharedCollectionZipRequest</returns>
-        public async System.Threading.Tasks.Task<SharedCollectionZipRequest> HttpSharedCollectionsGetStatusZipByIdAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SharedCollectionZipRequest> HttpSharedCollectionsGetStatusZipByIdAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest> localVarResponse = await HttpSharedCollectionsGetStatusZipByIdWithHttpInfoAsync(id, zipId, ayPassword, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -875,7 +875,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SharedCollectionZipRequest)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest>> HttpSharedCollectionsGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest>> HttpSharedCollectionsGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1028,7 +1028,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SharedCollectionZipRequest</returns>
-        public async System.Threading.Tasks.Task<SharedCollectionZipRequest> HttpSharedCollectionsRequestZipByIdAsync(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SharedCollectionZipRequest> HttpSharedCollectionsRequestZipByIdAsync(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest> localVarResponse = await HttpSharedCollectionsRequestZipByIdWithHttpInfoAsync(id, ayPassword, sharedCollectionZipRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1044,7 +1044,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SharedCollectionZipRequest)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest>> HttpSharedCollectionsRequestZipByIdWithHttpInfoAsync(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest>> HttpSharedCollectionsRequestZipByIdWithHttpInfoAsync(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

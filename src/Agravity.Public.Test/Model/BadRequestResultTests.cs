@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<BadRequestResult>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'StatusCode'
         /// </summary>
@@ -65,7 +63,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'StatusCode'
         }
-
     }
-
 }

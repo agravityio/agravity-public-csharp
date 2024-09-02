@@ -7,9 +7,9 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpWorkspacesGet**](PublicWorkspaceManagementApi.md#httpworkspacesget) | **GET** /workspaces |  |
 | [**HttpWorkspacesGetById**](PublicWorkspaceManagementApi.md#httpworkspacesgetbyid) | **GET** /workspaces/{id} |  |
 
-<a name="httpworkspacesget"></a>
+<a id="httpworkspacesget"></a>
 # **HttpWorkspacesGet**
-> List&lt;Workspace&gt; HttpWorkspacesGet (bool? translations = null)
+> List&lt;Workspace&gt; HttpWorkspacesGet (bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -38,10 +38,11 @@ namespace Example
 
             var apiInstance = new PublicWorkspaceManagementApi(config);
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                List<Workspace> result = apiInstance.HttpWorkspacesGet(translations);
+                List<Workspace> result = apiInstance.HttpWorkspacesGet(translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -61,7 +62,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<Workspace>> response = apiInstance.HttpWorkspacesGetWithHttpInfo(translations);
+    ApiResponse<List<Workspace>> response = apiInstance.HttpWorkspacesGetWithHttpInfo(translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -79,6 +80,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 
@@ -104,9 +106,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpworkspacesgetbyid"></a>
+<a id="httpworkspacesgetbyid"></a>
 # **HttpWorkspacesGetById**
-> Workspace HttpWorkspacesGetById (string id, bool? translations = null)
+> Workspace HttpWorkspacesGetById (string id, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -136,10 +138,11 @@ namespace Example
             var apiInstance = new PublicWorkspaceManagementApi(config);
             var id = "id_example";  // string | The ID of the workspace.
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                Workspace result = apiInstance.HttpWorkspacesGetById(id, translations);
+                Workspace result = apiInstance.HttpWorkspacesGetById(id, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -159,7 +162,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Workspace> response = apiInstance.HttpWorkspacesGetByIdWithHttpInfo(id, translations);
+    ApiResponse<Workspace> response = apiInstance.HttpWorkspacesGetByIdWithHttpInfo(id, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -178,6 +181,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the workspace. |  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 

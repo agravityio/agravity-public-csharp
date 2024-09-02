@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// SharedAllowedFormat
     /// </summary>
     [DataContract(Name = "sharedAllowedFormat")]
-    public partial class SharedAllowedFormat : IEquatable<SharedAllowedFormat>, IValidatableObject
+    public partial class SharedAllowedFormat : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedAllowedFormat" /> class.
@@ -46,13 +46,13 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets AssetType
         /// </summary>
-        [DataMember(Name = "asset_type", EmitDefaultValue = false)]
+        [DataMember(Name = "asset_type", EmitDefaultValue = true)]
         public string AssetType { get; set; }
 
         /// <summary>
         /// Gets or Sets Format
         /// </summary>
-        [DataMember(Name = "format", EmitDefaultValue = false)]
+        [DataMember(Name = "format", EmitDefaultValue = true)]
         public string Format { get; set; }
 
         /// <summary>
@@ -79,66 +79,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SharedAllowedFormat);
-        }
-
-        /// <summary>
-        /// Returns true if SharedAllowedFormat instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SharedAllowedFormat to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SharedAllowedFormat input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.AssetType == input.AssetType ||
-                    (this.AssetType != null &&
-                    this.AssetType.Equals(input.AssetType))
-                ) && 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.AssetType != null)
-                {
-                    hashCode = (hashCode * 59) + this.AssetType.GetHashCode();
-                }
-                if (this.Format != null)
-                {
-                    hashCode = (hashCode * 59) + this.Format.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

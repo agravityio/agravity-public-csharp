@@ -131,7 +131,8 @@ namespace Agravity.Public.Test.Api
             //string id = null;
             //string fields = null;
             //bool? translations = null;
-            //var response = instance.HttpGetAssetCollectionsById(id, fields, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpGetAssetCollectionsById(id, fields, translations, acceptLanguage);
             //Assert.IsType<List<Collection>>(response);
         }
 

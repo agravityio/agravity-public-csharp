@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpPublishedAssetsGet**](PublicAssetPublishingApi.md#httppublishedassetsget) | **GET** /assets/{id}/publish |  |
 | [**HttpPublishedAssetsGetById**](PublicAssetPublishingApi.md#httppublishedassetsgetbyid) | **GET** /assets/{id}/publish/{pid} |  |
 
-<a name="httppublishedassetscreate"></a>
+<a id="httppublishedassetscreate"></a>
 # **HttpPublishedAssetsCreate**
 > PublishedAsset HttpPublishedAssetsCreate (string id, PublishedAsset publishedAsset)
 
@@ -107,7 +107,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httppublishedassetsget"></a>
+<a id="httppublishedassetsget"></a>
 # **HttpPublishedAssetsGet**
 > PublishEntity HttpPublishedAssetsGet (string id)
 
@@ -203,7 +203,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httppublishedassetsgetbyid"></a>
+<a id="httppublishedassetsgetbyid"></a>
 # **HttpPublishedAssetsGetById**
 > PublishedAsset HttpPublishedAssetsGetById (string id, string pid)
 

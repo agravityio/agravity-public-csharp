@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Page** | [**List&lt;Asset&gt;**](Asset.md) |  | [optional] 
-**PageSize** | **int** |  | [optional] 
+**PageSize** | **int?** |  | [optional] 
 **Size** | **int?** |  | [optional] 
 **ContinuationToken** | **string** |  | [optional] 
 **Filter** | [**List&lt;WhereParam&gt;**](WhereParam.md) |  | [optional] 

@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// SharedAsset
     /// </summary>
     [DataContract(Name = "sharedAsset")]
-    public partial class SharedAsset : IEquatable<SharedAsset>, IValidatableObject
+    public partial class SharedAsset : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedAsset" /> class.
@@ -58,19 +58,19 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets AssetType
         /// </summary>
-        [DataMember(Name = "asset_type", EmitDefaultValue = false)]
+        [DataMember(Name = "asset_type", EmitDefaultValue = true)]
         public string AssetType { get; set; }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Blobs
         /// </summary>
-        [DataMember(Name = "blobs", EmitDefaultValue = false)]
+        [DataMember(Name = "blobs", EmitDefaultValue = true)]
         public List<AssetBlob> Blobs { get; set; }
 
         /// <summary>
@@ -133,121 +133,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SharedAsset);
-        }
-
-        /// <summary>
-        /// Returns true if SharedAsset instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SharedAsset to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SharedAsset input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.AssetType == input.AssetType ||
-                    (this.AssetType != null &&
-                    this.AssetType.Equals(input.AssetType))
-                ) && 
-                (
-                    this.OrigBlob == input.OrigBlob ||
-                    (this.OrigBlob != null &&
-                    this.OrigBlob.Equals(input.OrigBlob))
-                ) && 
-                (
-                    this.Blobs == input.Blobs ||
-                    this.Blobs != null &&
-                    input.Blobs != null &&
-                    this.Blobs.SequenceEqual(input.Blobs)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.AssetType != null)
-                {
-                    hashCode = (hashCode * 59) + this.AssetType.GetHashCode();
-                }
-                if (this.OrigBlob != null)
-                {
-                    hashCode = (hashCode * 59) + this.OrigBlob.GetHashCode();
-                }
-                if (this.Blobs != null)
-                {
-                    hashCode = (hashCode * 59) + this.Blobs.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

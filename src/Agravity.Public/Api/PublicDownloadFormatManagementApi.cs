@@ -34,9 +34,10 @@ namespace Agravity.Public.Api
         /// This endpoint lists all download formats in database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DownloadFormat&gt;</returns>
-        List<DownloadFormat> HttpDownloadFormatsGetAll(int operationIndex = 0);
+        List<DownloadFormat> HttpDownloadFormatsGetAll(string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -45,9 +46,10 @@ namespace Agravity.Public.Api
         /// This endpoint lists all download formats in database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DownloadFormat&gt;</returns>
-        ApiResponse<List<DownloadFormat>> HttpDownloadFormatsGetAllWithHttpInfo(int operationIndex = 0);
+        ApiResponse<List<DownloadFormat>> HttpDownloadFormatsGetAllWithHttpInfo(string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -57,9 +59,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DownloadFormat&gt;</returns>
-        List<DownloadFormat> HttpDownloadFormatsGetAllFromShared(string shareId, string ayPassword = default(string), int operationIndex = 0);
+        List<DownloadFormat> HttpDownloadFormatsGetAllFromShared(string shareId, string ayPassword = default(string), string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -70,9 +73,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DownloadFormat&gt;</returns>
-        ApiResponse<List<DownloadFormat>> HttpDownloadFormatsGetAllFromSharedWithHttpInfo(string shareId, string ayPassword = default(string), int operationIndex = 0);
+        ApiResponse<List<DownloadFormat>> HttpDownloadFormatsGetAllFromSharedWithHttpInfo(string shareId, string ayPassword = default(string), string acceptLanguage = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -89,10 +93,11 @@ namespace Agravity.Public.Api
         /// This endpoint lists all download formats in database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DownloadFormat&gt;</returns>
-        System.Threading.Tasks.Task<List<DownloadFormat>> HttpDownloadFormatsGetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<DownloadFormat>> HttpDownloadFormatsGetAllAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -101,10 +106,11 @@ namespace Agravity.Public.Api
         /// This endpoint lists all download formats in database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DownloadFormat&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<DownloadFormat>>> HttpDownloadFormatsGetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<DownloadFormat>>> HttpDownloadFormatsGetAllWithHttpInfoAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -114,10 +120,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DownloadFormat&gt;</returns>
-        System.Threading.Tasks.Task<List<DownloadFormat>> HttpDownloadFormatsGetAllFromSharedAsync(string shareId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<DownloadFormat>> HttpDownloadFormatsGetAllFromSharedAsync(string shareId, string ayPassword = default(string), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -128,10 +135,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DownloadFormat&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<DownloadFormat>>> HttpDownloadFormatsGetAllFromSharedWithHttpInfoAsync(string shareId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<DownloadFormat>>> HttpDownloadFormatsGetAllFromSharedWithHttpInfoAsync(string shareId, string ayPassword = default(string), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -256,11 +264,12 @@ namespace Agravity.Public.Api
         ///  This endpoint lists all download formats in database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DownloadFormat&gt;</returns>
-        public List<DownloadFormat> HttpDownloadFormatsGetAll(int operationIndex = 0)
+        public List<DownloadFormat> HttpDownloadFormatsGetAll(string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<List<DownloadFormat>> localVarResponse = HttpDownloadFormatsGetAllWithHttpInfo();
+            Agravity.Public.Client.ApiResponse<List<DownloadFormat>> localVarResponse = HttpDownloadFormatsGetAllWithHttpInfo(acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -268,9 +277,10 @@ namespace Agravity.Public.Api
         ///  This endpoint lists all download formats in database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DownloadFormat&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<DownloadFormat>> HttpDownloadFormatsGetAllWithHttpInfo(int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<DownloadFormat>> HttpDownloadFormatsGetAllWithHttpInfo(string acceptLanguage = default(string), int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -294,6 +304,10 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "PublicDownloadFormatManagementApi.HttpDownloadFormatsGetAll";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -322,12 +336,13 @@ namespace Agravity.Public.Api
         ///  This endpoint lists all download formats in database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DownloadFormat&gt;</returns>
-        public async System.Threading.Tasks.Task<List<DownloadFormat>> HttpDownloadFormatsGetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<DownloadFormat>> HttpDownloadFormatsGetAllAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<List<DownloadFormat>> localVarResponse = await HttpDownloadFormatsGetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<List<DownloadFormat>> localVarResponse = await HttpDownloadFormatsGetAllWithHttpInfoAsync(acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -335,10 +350,11 @@ namespace Agravity.Public.Api
         ///  This endpoint lists all download formats in database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DownloadFormat&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<DownloadFormat>>> HttpDownloadFormatsGetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<DownloadFormat>>> HttpDownloadFormatsGetAllWithHttpInfoAsync(string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -363,6 +379,10 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "PublicDownloadFormatManagementApi.HttpDownloadFormatsGetAll";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -394,11 +414,12 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DownloadFormat&gt;</returns>
-        public List<DownloadFormat> HttpDownloadFormatsGetAllFromShared(string shareId, string ayPassword = default(string), int operationIndex = 0)
+        public List<DownloadFormat> HttpDownloadFormatsGetAllFromShared(string shareId, string ayPassword = default(string), string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<List<DownloadFormat>> localVarResponse = HttpDownloadFormatsGetAllFromSharedWithHttpInfo(shareId, ayPassword);
+            Agravity.Public.Client.ApiResponse<List<DownloadFormat>> localVarResponse = HttpDownloadFormatsGetAllFromSharedWithHttpInfo(shareId, ayPassword, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -408,9 +429,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DownloadFormat&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<DownloadFormat>> HttpDownloadFormatsGetAllFromSharedWithHttpInfo(string shareId, string ayPassword = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<DownloadFormat>> HttpDownloadFormatsGetAllFromSharedWithHttpInfo(string shareId, string ayPassword = default(string), string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'shareId' is set
             if (shareId == null)
@@ -444,6 +466,10 @@ namespace Agravity.Public.Api
             if (ayPassword != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("ay-password", Agravity.Public.Client.ClientUtils.ParameterToString(ayPassword)); // header parameter
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
 
             localVarRequestOptions.Operation = "PublicDownloadFormatManagementApi.HttpDownloadFormatsGetAllFromShared";
@@ -470,12 +496,13 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DownloadFormat&gt;</returns>
-        public async System.Threading.Tasks.Task<List<DownloadFormat>> HttpDownloadFormatsGetAllFromSharedAsync(string shareId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<DownloadFormat>> HttpDownloadFormatsGetAllFromSharedAsync(string shareId, string ayPassword = default(string), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<List<DownloadFormat>> localVarResponse = await HttpDownloadFormatsGetAllFromSharedWithHttpInfoAsync(shareId, ayPassword, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<List<DownloadFormat>> localVarResponse = await HttpDownloadFormatsGetAllFromSharedWithHttpInfoAsync(shareId, ayPassword, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -485,10 +512,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="shareId">This share ID is like an API key. Check on validy (format, expire, collection still availabe). Otherwise StatusCode 403 (Forbidden) is returned.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DownloadFormat&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<DownloadFormat>>> HttpDownloadFormatsGetAllFromSharedWithHttpInfoAsync(string shareId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<DownloadFormat>>> HttpDownloadFormatsGetAllFromSharedWithHttpInfoAsync(string shareId, string ayPassword = default(string), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'shareId' is set
             if (shareId == null)
@@ -523,6 +551,10 @@ namespace Agravity.Public.Api
             if (ayPassword != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("ay-password", Agravity.Public.Client.ClientUtils.ParameterToString(ayPassword)); // header parameter
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
 
             localVarRequestOptions.Operation = "PublicDownloadFormatManagementApi.HttpDownloadFormatsGetAllFromShared";

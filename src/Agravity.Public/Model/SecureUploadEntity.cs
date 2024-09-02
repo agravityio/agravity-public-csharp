@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// SecureUploadEntity
     /// </summary>
     [DataContract(Name = "secureUploadEntity")]
-    public partial class SecureUploadEntity : IEquatable<SecureUploadEntity>, IValidatableObject
+    public partial class SecureUploadEntity : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SecureUploadEntity" /> class.
@@ -45,7 +45,7 @@ namespace Agravity.Public.Model
         /// <param name="assetTags">assetTags.</param>
         /// <param name="message">message.</param>
         /// <param name="sftpConnection">sftpConnection.</param>
-        public SecureUploadEntity(string id = default(string), string collectionId = default(string), DateTime createdDate = default(DateTime), string createdBy = default(string), string url = default(string), DateTime validUntil = default(DateTime), string password = default(string), List<string> assetTags = default(List<string>), string message = default(string), CreateSftpUserResult sftpConnection = default(CreateSftpUserResult))
+        public SecureUploadEntity(string id = default(string), string collectionId = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), string url = default(string), DateTime? validUntil = default(DateTime?), string password = default(string), List<string> assetTags = default(List<string>), string message = default(string), CreateSftpUserResult sftpConnection = default(CreateSftpUserResult))
         {
             this.Id = id;
             this.CollectionId = collectionId;
@@ -62,61 +62,61 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets CollectionId
         /// </summary>
-        [DataMember(Name = "collection_id", EmitDefaultValue = false)]
+        [DataMember(Name = "collection_id", EmitDefaultValue = true)]
         public string CollectionId { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "created_date", EmitDefaultValue = false)]
-        public DateTime CreatedDate { get; set; }
+        [DataMember(Name = "created_date", EmitDefaultValue = true)]
+        public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name = "created_by", EmitDefaultValue = false)]
+        [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = false)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets ValidUntil
         /// </summary>
-        [DataMember(Name = "valid_until", EmitDefaultValue = false)]
-        public DateTime ValidUntil { get; set; }
+        [DataMember(Name = "valid_until", EmitDefaultValue = true)]
+        public DateTime? ValidUntil { get; set; }
 
         /// <summary>
         /// Gets or Sets Password
         /// </summary>
-        [DataMember(Name = "password", EmitDefaultValue = false)]
+        [DataMember(Name = "password", EmitDefaultValue = true)]
         public string Password { get; set; }
 
         /// <summary>
         /// Gets or Sets AssetTags
         /// </summary>
-        [DataMember(Name = "asset_tags", EmitDefaultValue = false)]
+        [DataMember(Name = "asset_tags", EmitDefaultValue = true)]
         public List<string> AssetTags { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
-        [DataMember(Name = "message", EmitDefaultValue = false)]
+        [DataMember(Name = "message", EmitDefaultValue = true)]
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets SftpConnection
         /// </summary>
-        [DataMember(Name = "sftp_connection", EmitDefaultValue = false)]
+        [DataMember(Name = "sftp_connection", EmitDefaultValue = true)]
         public CreateSftpUserResult SftpConnection { get; set; }
 
         /// <summary>
@@ -151,139 +151,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SecureUploadEntity);
-        }
-
-        /// <summary>
-        /// Returns true if SecureUploadEntity instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SecureUploadEntity to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SecureUploadEntity input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CollectionId == input.CollectionId ||
-                    (this.CollectionId != null &&
-                    this.CollectionId.Equals(input.CollectionId))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.CreatedBy == input.CreatedBy ||
-                    (this.CreatedBy != null &&
-                    this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.ValidUntil == input.ValidUntil ||
-                    (this.ValidUntil != null &&
-                    this.ValidUntil.Equals(input.ValidUntil))
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.AssetTags == input.AssetTags ||
-                    this.AssetTags != null &&
-                    input.AssetTags != null &&
-                    this.AssetTags.SequenceEqual(input.AssetTags)
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.SftpConnection == input.SftpConnection ||
-                    (this.SftpConnection != null &&
-                    this.SftpConnection.Equals(input.SftpConnection))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.CollectionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CollectionId.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.CreatedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                if (this.ValidUntil != null)
-                {
-                    hashCode = (hashCode * 59) + this.ValidUntil.GetHashCode();
-                }
-                if (this.Password != null)
-                {
-                    hashCode = (hashCode * 59) + this.Password.GetHashCode();
-                }
-                if (this.AssetTags != null)
-                {
-                    hashCode = (hashCode * 59) + this.AssetTags.GetHashCode();
-                }
-                if (this.Message != null)
-                {
-                    hashCode = (hashCode * 59) + this.Message.GetHashCode();
-                }
-                if (this.SftpConnection != null)
-                {
-                    hashCode = (hashCode * 59) + this.SftpConnection.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

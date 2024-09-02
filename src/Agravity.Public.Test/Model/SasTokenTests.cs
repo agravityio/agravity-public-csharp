@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<SasToken>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'Token'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Token'
         }
+
         /// <summary>
         /// Test the property 'Container'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Container'
         }
+
         /// <summary>
         /// Test the property 'Blob'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Blob'
         }
+
         /// <summary>
         /// Test the property 'Url'
         /// </summary>
@@ -89,6 +90,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Url'
         }
+
         /// <summary>
         /// Test the property 'Fulltoken'
         /// </summary>
@@ -97,6 +99,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Fulltoken'
         }
+
         /// <summary>
         /// Test the property 'Expires'
         /// </summary>
@@ -105,7 +108,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Expires'
         }
-
     }
-
 }

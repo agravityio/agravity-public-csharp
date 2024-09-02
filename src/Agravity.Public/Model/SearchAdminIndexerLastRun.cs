@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// SearchAdminIndexerLastRun
     /// </summary>
     [DataContract(Name = "searchAdminIndexerLastRun")]
-    public partial class SearchAdminIndexerLastRun : IEquatable<SearchAdminIndexerLastRun>, IValidatableObject
+    public partial class SearchAdminIndexerLastRun : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchAdminIndexerLastRun" /> class.
@@ -40,7 +40,7 @@ namespace Agravity.Public.Model
         /// <param name="endtime">endtime.</param>
         /// <param name="itemcount">itemcount.</param>
         /// <param name="faileditemcount">faileditemcount.</param>
-        public SearchAdminIndexerLastRun(string status = default(string), DateTime? starttime = default(DateTime?), DateTime? endtime = default(DateTime?), long itemcount = default(long), long faileditemcount = default(long))
+        public SearchAdminIndexerLastRun(string status = default(string), DateTime? starttime = default(DateTime?), DateTime? endtime = default(DateTime?), long? itemcount = default(long?), long? faileditemcount = default(long?))
         {
             this.Status = status;
             this.Starttime = starttime;
@@ -52,7 +52,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
@@ -70,14 +70,14 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Itemcount
         /// </summary>
-        [DataMember(Name = "itemcount", EmitDefaultValue = false)]
-        public long Itemcount { get; set; }
+        [DataMember(Name = "itemcount", EmitDefaultValue = true)]
+        public long? Itemcount { get; set; }
 
         /// <summary>
         /// Gets or Sets Faileditemcount
         /// </summary>
-        [DataMember(Name = "faileditemcount", EmitDefaultValue = false)]
-        public long Faileditemcount { get; set; }
+        [DataMember(Name = "faileditemcount", EmitDefaultValue = true)]
+        public long? Faileditemcount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -106,85 +106,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SearchAdminIndexerLastRun);
-        }
-
-        /// <summary>
-        /// Returns true if SearchAdminIndexerLastRun instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SearchAdminIndexerLastRun to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SearchAdminIndexerLastRun input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Starttime == input.Starttime ||
-                    (this.Starttime != null &&
-                    this.Starttime.Equals(input.Starttime))
-                ) && 
-                (
-                    this.Endtime == input.Endtime ||
-                    (this.Endtime != null &&
-                    this.Endtime.Equals(input.Endtime))
-                ) && 
-                (
-                    this.Itemcount == input.Itemcount ||
-                    this.Itemcount.Equals(input.Itemcount)
-                ) && 
-                (
-                    this.Faileditemcount == input.Faileditemcount ||
-                    this.Faileditemcount.Equals(input.Faileditemcount)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.Starttime != null)
-                {
-                    hashCode = (hashCode * 59) + this.Starttime.GetHashCode();
-                }
-                if (this.Endtime != null)
-                {
-                    hashCode = (hashCode * 59) + this.Endtime.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Itemcount.GetHashCode();
-                hashCode = (hashCode * 59) + this.Faileditemcount.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

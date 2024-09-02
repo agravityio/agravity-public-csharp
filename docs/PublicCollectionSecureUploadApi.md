@@ -7,7 +7,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpSecureUploadEntityCheckById**](PublicCollectionSecureUploadApi.md#httpsecureuploadentitycheckbyid) | **GET** /secureupload/{id} |  |
 | [**HttpSecureUploadFileById**](PublicCollectionSecureUploadApi.md#httpsecureuploadfilebyid) | **POST** /secureupload/{id}/upload |  |
 
-<a name="httpsecureuploadentitycheckbyid"></a>
+<a id="httpsecureuploadentitycheckbyid"></a>
 # **HttpSecureUploadEntityCheckById**
 > SecureUploadEntity HttpSecureUploadEntityCheckById (string id, string code)
 
@@ -107,7 +107,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpsecureuploadfilebyid"></a>
+<a id="httpsecureuploadfilebyid"></a>
 # **HttpSecureUploadFileById**
 > Asset HttpSecureUploadFileById (string id, string code, Object body)
 

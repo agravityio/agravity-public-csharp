@@ -62,12 +62,13 @@ namespace Agravity.Public.Test.Api
         public void HttpAssetUploadFileTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //string acceptLanguage = null;
             //string name = null;
             //string collectionId = null;
             //System.IO.Stream file = null;
             //string filename = null;
             //string previewof = null;
-            //var response = instance.HttpAssetUploadFile(name, collectionId, file, filename, previewof);
+            //var response = instance.HttpAssetUploadFile(acceptLanguage, name, collectionId, file, filename, previewof);
             //Assert.IsType<Asset>(response);
         }
 
@@ -81,7 +82,8 @@ namespace Agravity.Public.Test.Api
             //string collectionid = null;
             //Asset asset = null;
             //bool? translations = null;
-            //var response = instance.HttpAssetsCreate(collectionid, asset, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpAssetsCreate(collectionid, asset, translations, acceptLanguage);
             //Assert.IsType<Asset>(response);
         }
 
@@ -102,7 +104,8 @@ namespace Agravity.Public.Test.Api
             //string filter = null;
             //bool? items = null;
             //bool? translations = null;
-            //var response = instance.HttpAssetsGet(collectionid, collectiontypeid, fields, expose, continuationToken, limit, orderby, filter, items, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpAssetsGet(collectionid, collectiontypeid, fields, expose, continuationToken, limit, orderby, filter, items, translations, acceptLanguage);
             //Assert.IsType<AssetPageResult>(response);
         }
 
@@ -117,7 +120,8 @@ namespace Agravity.Public.Test.Api
             //string fields = null;
             //bool? expose = null;
             //bool? translations = null;
-            //var response = instance.HttpAssetsGetById(id, fields, expose, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpAssetsGetById(id, fields, expose, translations, acceptLanguage);
             //Assert.IsType<Asset>(response);
         }
 
@@ -131,7 +135,8 @@ namespace Agravity.Public.Test.Api
             //string id = null;
             //Asset asset = null;
             //bool? translations = null;
-            //var response = instance.HttpPublicAssetsUpdateById(id, asset, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpPublicAssetsUpdateById(id, asset, translations, acceptLanguage);
             //Assert.IsType<Asset>(response);
         }
     }

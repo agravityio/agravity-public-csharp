@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// DistZipResponse
     /// </summary>
     [DataContract(Name = "distZipResponse")]
-    public partial class DistZipResponse : IEquatable<DistZipResponse>, IValidatableObject
+    public partial class DistZipResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DistZipResponse" /> class.
@@ -38,7 +38,7 @@ namespace Agravity.Public.Model
         /// <param name="url">url.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="size">size.</param>
-        public DistZipResponse(string url = default(string), DateTime modifiedDate = default(DateTime), long size = default(long))
+        public DistZipResponse(string url = default(string), DateTime? modifiedDate = default(DateTime?), long? size = default(long?))
         {
             this.Url = url;
             this.ModifiedDate = modifiedDate;
@@ -48,20 +48,20 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = false)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedDate
         /// </summary>
-        [DataMember(Name = "modified_date", EmitDefaultValue = false)]
-        public DateTime ModifiedDate { get; set; }
+        [DataMember(Name = "modified_date", EmitDefaultValue = true)]
+        public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Size
         /// </summary>
-        [DataMember(Name = "size", EmitDefaultValue = false)]
-        public long Size { get; set; }
+        [DataMember(Name = "size", EmitDefaultValue = true)]
+        public long? Size { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -88,71 +88,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as DistZipResponse);
-        }
-
-        /// <summary>
-        /// Returns true if DistZipResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of DistZipResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(DistZipResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Size.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

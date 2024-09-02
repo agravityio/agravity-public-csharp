@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BlobType** | **string** |  | [optional] [default to BlobTypeEnum.UNKNOWN]
 **Name** | **string** |  | [optional] 
 **Container** | **string** |  | [optional] 
-**Size** | **long** |  | [optional] 
+**Size** | **long?** |  | [optional] 
 **Extension** | **string** |  | [optional] 
 **ContentType** | **string** |  | [optional] 
 **Md5** | **string** |  | [optional] 

@@ -6,7 +6,7 @@ All URIs are relative to *http://localhost:7072/api*
 |--------|--------------|-------------|
 | [**HttpPublishedAssetsGetAll**](PublicPublishingApi.md#httppublishedassetsgetall) | **GET** /publish |  |
 
-<a name="httppublishedassetsgetall"></a>
+<a id="httppublishedassetsgetall"></a>
 # **HttpPublishedAssetsGetAll**
 > PublishEntity HttpPublishedAssetsGetAll (string cid = null, bool? incldescendants = null)
 

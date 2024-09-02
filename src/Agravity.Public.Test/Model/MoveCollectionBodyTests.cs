@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<MoveCollectionBody>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'FromCollectionId'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'FromCollectionId'
         }
+
         /// <summary>
         /// Test the property 'ToCollectionId'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'ToCollectionId'
         }
+
         /// <summary>
         /// Test the property 'Operation'
         /// </summary>
@@ -81,7 +81,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Operation'
         }
-
     }
-
 }

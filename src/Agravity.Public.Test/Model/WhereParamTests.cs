@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<WhereParam>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'Operator'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Operator'
         }
+
         /// <summary>
         /// Test the property 'Field'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Field'
         }
+
         /// <summary>
         /// Test the property 'Value'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Value'
         }
+
         /// <summary>
         /// Test the property 'NotPrefix'
         /// </summary>
@@ -89,6 +90,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'NotPrefix'
         }
+
         /// <summary>
         /// Test the property 'ValueType'
         /// </summary>
@@ -97,7 +99,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'ValueType'
         }
-
     }
-
 }

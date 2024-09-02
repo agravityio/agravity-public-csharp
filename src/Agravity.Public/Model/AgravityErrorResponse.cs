@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// AgravityErrorResponse
     /// </summary>
     [DataContract(Name = "agravityErrorResponse")]
-    public partial class AgravityErrorResponse : IEquatable<AgravityErrorResponse>, IValidatableObject
+    public partial class AgravityErrorResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AgravityErrorResponse" /> class.
@@ -48,19 +48,19 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets ErrorId
         /// </summary>
-        [DataMember(Name = "error_id", EmitDefaultValue = false)]
+        [DataMember(Name = "error_id", EmitDefaultValue = true)]
         public string ErrorId { get; set; }
 
         /// <summary>
         /// Gets or Sets ErrorMessage
         /// </summary>
-        [DataMember(Name = "error_message", EmitDefaultValue = false)]
+        [DataMember(Name = "error_message", EmitDefaultValue = true)]
         public string ErrorMessage { get; set; }
 
         /// <summary>
         /// Gets or Sets Exception
         /// </summary>
-        [DataMember(Name = "exception", EmitDefaultValue = false)]
+        [DataMember(Name = "exception", EmitDefaultValue = true)]
         public string Exception { get; set; }
 
         /// <summary>
@@ -88,75 +88,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AgravityErrorResponse);
-        }
-
-        /// <summary>
-        /// Returns true if AgravityErrorResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AgravityErrorResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AgravityErrorResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.ErrorId == input.ErrorId ||
-                    (this.ErrorId != null &&
-                    this.ErrorId.Equals(input.ErrorId))
-                ) && 
-                (
-                    this.ErrorMessage == input.ErrorMessage ||
-                    (this.ErrorMessage != null &&
-                    this.ErrorMessage.Equals(input.ErrorMessage))
-                ) && 
-                (
-                    this.Exception == input.Exception ||
-                    (this.Exception != null &&
-                    this.Exception.Equals(input.Exception))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ErrorId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ErrorId.GetHashCode();
-                }
-                if (this.ErrorMessage != null)
-                {
-                    hashCode = (hashCode * 59) + this.ErrorMessage.GetHashCode();
-                }
-                if (this.Exception != null)
-                {
-                    hashCode = (hashCode * 59) + this.Exception.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

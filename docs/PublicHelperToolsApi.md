@@ -9,9 +9,9 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpGetAllowedSearchableItemNames**](PublicHelperToolsApi.md#httpgetallowedsearchableitemnames) | **GET** /helper/searchableitemnames |  |
 | [**HttpGetAllowedSearchableItems**](PublicHelperToolsApi.md#httpgetallowedsearchableitems) | **GET** /helper/searchableitems |  |
 
-<a name="httpgetalluserdefinedlists"></a>
+<a id="httpgetalluserdefinedlists"></a>
 # **HttpGetAllUserDefinedLists**
-> List&lt;CollectionUDL&gt; HttpGetAllUserDefinedLists (bool? translations = null)
+> List&lt;CollectionUDL&gt; HttpGetAllUserDefinedLists (bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -40,10 +40,11 @@ namespace Example
 
             var apiInstance = new PublicHelperToolsApi(config);
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                List<CollectionUDL> result = apiInstance.HttpGetAllUserDefinedLists(translations);
+                List<CollectionUDL> result = apiInstance.HttpGetAllUserDefinedLists(translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -63,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<CollectionUDL>> response = apiInstance.HttpGetAllUserDefinedListsWithHttpInfo(translations);
+    ApiResponse<List<CollectionUDL>> response = apiInstance.HttpGetAllUserDefinedListsWithHttpInfo(translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -81,6 +82,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 
@@ -105,7 +107,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpgetallowedfilterableitems"></a>
+<a id="httpgetallowedfilterableitems"></a>
 # **HttpGetAllowedFilterableItems**
 > List&lt;string&gt; HttpGetAllowedFilterableItems (string portalId = null)
 
@@ -201,7 +203,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpgetallowedsearchableitemnames"></a>
+<a id="httpgetallowedsearchableitemnames"></a>
 # **HttpGetAllowedSearchableItemNames**
 > List&lt;string&gt; HttpGetAllowedSearchableItemNames (string portalId = null)
 
@@ -297,7 +299,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpgetallowedsearchableitems"></a>
+<a id="httpgetallowedsearchableitems"></a>
 # **HttpGetAllowedSearchableItems**
 > List&lt;SearchableItem&gt; HttpGetAllowedSearchableItems (string portalId = null)
 

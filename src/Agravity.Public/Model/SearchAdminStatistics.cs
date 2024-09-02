@@ -30,14 +30,14 @@ namespace Agravity.Public.Model
     /// SearchAdminStatistics
     /// </summary>
     [DataContract(Name = "searchAdminStatistics")]
-    public partial class SearchAdminStatistics : IEquatable<SearchAdminStatistics>, IValidatableObject
+    public partial class SearchAdminStatistics : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchAdminStatistics" /> class.
         /// </summary>
         /// <param name="documentcount">documentcount.</param>
         /// <param name="storagesizebytes">storagesizebytes.</param>
-        public SearchAdminStatistics(long documentcount = default(long), long storagesizebytes = default(long))
+        public SearchAdminStatistics(long? documentcount = default(long?), long? storagesizebytes = default(long?))
         {
             this.Documentcount = documentcount;
             this.Storagesizebytes = storagesizebytes;
@@ -46,14 +46,14 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Documentcount
         /// </summary>
-        [DataMember(Name = "documentcount", EmitDefaultValue = false)]
-        public long Documentcount { get; set; }
+        [DataMember(Name = "documentcount", EmitDefaultValue = true)]
+        public long? Documentcount { get; set; }
 
         /// <summary>
         /// Gets or Sets Storagesizebytes
         /// </summary>
-        [DataMember(Name = "storagesizebytes", EmitDefaultValue = false)]
-        public long Storagesizebytes { get; set; }
+        [DataMember(Name = "storagesizebytes", EmitDefaultValue = true)]
+        public long? Storagesizebytes { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,58 +79,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SearchAdminStatistics);
-        }
-
-        /// <summary>
-        /// Returns true if SearchAdminStatistics instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SearchAdminStatistics to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SearchAdminStatistics input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Documentcount == input.Documentcount ||
-                    this.Documentcount.Equals(input.Documentcount)
-                ) && 
-                (
-                    this.Storagesizebytes == input.Storagesizebytes ||
-                    this.Storagesizebytes.Equals(input.Storagesizebytes)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Documentcount.GetHashCode();
-                hashCode = (hashCode * 59) + this.Storagesizebytes.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

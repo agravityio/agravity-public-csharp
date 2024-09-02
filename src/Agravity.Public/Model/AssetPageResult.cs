@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// AssetPageResult
     /// </summary>
     [DataContract(Name = "assetPageResult")]
-    public partial class AssetPageResult : IEquatable<AssetPageResult>, IValidatableObject
+    public partial class AssetPageResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AssetPageResult" /> class.
@@ -40,7 +40,7 @@ namespace Agravity.Public.Model
         /// <param name="size">size.</param>
         /// <param name="continuationToken">continuationToken.</param>
         /// <param name="filter">filter.</param>
-        public AssetPageResult(List<Asset> page = default(List<Asset>), int pageSize = default(int), int? size = default(int?), string continuationToken = default(string), List<WhereParam> filter = default(List<WhereParam>))
+        public AssetPageResult(List<Asset> page = default(List<Asset>), int? pageSize = default(int?), int? size = default(int?), string continuationToken = default(string), List<WhereParam> filter = default(List<WhereParam>))
         {
             this.Page = page;
             this.PageSize = pageSize;
@@ -52,14 +52,14 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Page
         /// </summary>
-        [DataMember(Name = "page", EmitDefaultValue = false)]
+        [DataMember(Name = "page", EmitDefaultValue = true)]
         public List<Asset> Page { get; set; }
 
         /// <summary>
         /// Gets or Sets PageSize
         /// </summary>
-        [DataMember(Name = "page_size", EmitDefaultValue = false)]
-        public int PageSize { get; set; }
+        [DataMember(Name = "page_size", EmitDefaultValue = true)]
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// Gets or Sets Size
@@ -70,13 +70,13 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets ContinuationToken
         /// </summary>
-        [DataMember(Name = "continuation_token", EmitDefaultValue = false)]
+        [DataMember(Name = "continuation_token", EmitDefaultValue = true)]
         public string ContinuationToken { get; set; }
 
         /// <summary>
         /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = false)]
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
         public List<WhereParam> Filter { get; set; }
 
         /// <summary>
@@ -106,91 +106,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AssetPageResult);
-        }
-
-        /// <summary>
-        /// Returns true if AssetPageResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AssetPageResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AssetPageResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Page == input.Page ||
-                    this.Page != null &&
-                    input.Page != null &&
-                    this.Page.SequenceEqual(input.Page)
-                ) && 
-                (
-                    this.PageSize == input.PageSize ||
-                    this.PageSize.Equals(input.PageSize)
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.ContinuationToken == input.ContinuationToken ||
-                    (this.ContinuationToken != null &&
-                    this.ContinuationToken.Equals(input.ContinuationToken))
-                ) && 
-                (
-                    this.Filter == input.Filter ||
-                    this.Filter != null &&
-                    input.Filter != null &&
-                    this.Filter.SequenceEqual(input.Filter)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Page != null)
-                {
-                    hashCode = (hashCode * 59) + this.Page.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.PageSize.GetHashCode();
-                if (this.Size != null)
-                {
-                    hashCode = (hashCode * 59) + this.Size.GetHashCode();
-                }
-                if (this.ContinuationToken != null)
-                {
-                    hashCode = (hashCode * 59) + this.ContinuationToken.GetHashCode();
-                }
-                if (this.Filter != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

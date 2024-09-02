@@ -73,7 +73,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PublishEntity</returns>
-        System.Threading.Tasks.Task<PublishEntity> HttpPublishedAssetsGetAllAsync(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PublishEntity> HttpPublishedAssetsGetAllAsync(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PublishEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PublishEntity>> HttpPublishedAssetsGetAllWithHttpInfoAsync(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PublishEntity>> HttpPublishedAssetsGetAllWithHttpInfoAsync(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -295,7 +295,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PublishEntity</returns>
-        public async System.Threading.Tasks.Task<PublishEntity> HttpPublishedAssetsGetAllAsync(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PublishEntity> HttpPublishedAssetsGetAllAsync(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<PublishEntity> localVarResponse = await HttpPublishedAssetsGetAllWithHttpInfoAsync(cid, incldescendants, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -310,7 +310,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PublishEntity)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PublishEntity>> HttpPublishedAssetsGetAllWithHttpInfoAsync(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PublishEntity>> HttpPublishedAssetsGetAllWithHttpInfoAsync(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();

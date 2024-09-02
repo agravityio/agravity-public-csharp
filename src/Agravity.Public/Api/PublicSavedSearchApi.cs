@@ -36,9 +36,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;SavedSearch&gt;</returns>
-        List<SavedSearch> HttpSavedSearchesGetAll(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
+        List<SavedSearch> HttpSavedSearchesGetAll(bool? external = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -49,9 +50,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;SavedSearch&gt;</returns>
-        ApiResponse<List<SavedSearch>> HttpSavedSearchesGetAllWithHttpInfo(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0);
+        ApiResponse<List<SavedSearch>> HttpSavedSearchesGetAllWithHttpInfo(bool? external = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -70,10 +72,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SavedSearch&gt;</returns>
-        System.Threading.Tasks.Task<List<SavedSearch>> HttpSavedSearchesGetAllAsync(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<SavedSearch>> HttpSavedSearchesGetAllAsync(bool? external = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -84,10 +87,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SavedSearch&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<SavedSearch>>> HttpSavedSearchesGetAllWithHttpInfoAsync(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<SavedSearch>>> HttpSavedSearchesGetAllWithHttpInfoAsync(bool? external = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -214,11 +218,12 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;SavedSearch&gt;</returns>
-        public List<SavedSearch> HttpSavedSearchesGetAll(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
+        public List<SavedSearch> HttpSavedSearchesGetAll(bool? external = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<List<SavedSearch>> localVarResponse = HttpSavedSearchesGetAllWithHttpInfo(external, translations);
+            Agravity.Public.Client.ApiResponse<List<SavedSearch>> localVarResponse = HttpSavedSearchesGetAllWithHttpInfo(external, translations, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -228,9 +233,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;SavedSearch&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<SavedSearch>> HttpSavedSearchesGetAllWithHttpInfo(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<SavedSearch>> HttpSavedSearchesGetAllWithHttpInfo(bool? external = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -261,6 +267,10 @@ namespace Agravity.Public.Api
             if (translations != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
 
             localVarRequestOptions.Operation = "PublicSavedSearchApi.HttpSavedSearchesGetAll";
@@ -292,12 +302,13 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SavedSearch&gt;</returns>
-        public async System.Threading.Tasks.Task<List<SavedSearch>> HttpSavedSearchesGetAllAsync(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<SavedSearch>> HttpSavedSearchesGetAllAsync(bool? external = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<List<SavedSearch>> localVarResponse = await HttpSavedSearchesGetAllWithHttpInfoAsync(external, translations, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<List<SavedSearch>> localVarResponse = await HttpSavedSearchesGetAllWithHttpInfoAsync(external, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -307,10 +318,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SavedSearch&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<SavedSearch>>> HttpSavedSearchesGetAllWithHttpInfoAsync(bool? external = default(bool?), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<SavedSearch>>> HttpSavedSearchesGetAllWithHttpInfoAsync(bool? external = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -342,6 +354,10 @@ namespace Agravity.Public.Api
             if (translations != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
 
             localVarRequestOptions.Operation = "PublicSavedSearchApi.HttpSavedSearchesGetAll";

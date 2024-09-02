@@ -63,7 +63,8 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //bool? translations = null;
-            //var response = instance.HttpStaticDefinedListsGetAll(translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpStaticDefinedListsGetAll(translations, acceptLanguage);
             //Assert.IsType<List<StaticDefinedList>>(response);
         }
 
@@ -76,7 +77,8 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //bool? translations = null;
-            //var response = instance.HttpStaticDefinedListsGetById(id, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpStaticDefinedListsGetById(id, translations, acceptLanguage);
             //Assert.IsType<StaticDefinedList>(response);
         }
 
@@ -91,7 +93,8 @@ namespace Agravity.Public.Test.Api
             //string updatemode = null;
             //StaticDefinedList staticDefinedList = null;
             //bool? translations = null;
-            //var response = instance.HttpStaticDefinedListsUpdateById(id, updatemode, staticDefinedList, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpStaticDefinedListsUpdateById(id, updatemode, staticDefinedList, translations, acceptLanguage);
             //Assert.IsType<StaticDefinedList>(response);
         }
     }

@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<AgravityVersion>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'Name'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Name'
         }
+
         /// <summary>
         /// Test the property 'Company'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Company'
         }
+
         /// <summary>
         /// Test the property 'Customer'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Customer'
         }
+
         /// <summary>
         /// Test the property 'Updated'
         /// </summary>
@@ -89,6 +90,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Updated'
         }
+
         /// <summary>
         /// Test the property 'ClientId'
         /// </summary>
@@ -97,14 +99,16 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'ClientId'
         }
+
         /// <summary>
-        /// Test the property '_Version'
+        /// Test the property 'VarVersion'
         /// </summary>
         [Fact]
-        public void _VersionTest()
+        public void VarVersionTest()
         {
-            // TODO unit test for the property '_Version'
+            // TODO unit test for the property 'VarVersion'
         }
+
         /// <summary>
         /// Test the property 'PermissionEnabled'
         /// </summary>
@@ -113,6 +117,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'PermissionEnabled'
         }
+
         /// <summary>
         /// Test the property 'Region'
         /// </summary>
@@ -121,7 +126,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Region'
         }
-
     }
-
 }

@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<AzSearchOptions>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'SearchString'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'SearchString'
         }
+
         /// <summary>
         /// Test the property 'Limit'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Limit'
         }
+
         /// <summary>
         /// Test the property 'Skip'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Skip'
         }
+
         /// <summary>
         /// Test the property 'Collectiontypeid'
         /// </summary>
@@ -89,6 +90,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Collectiontypeid'
         }
+
         /// <summary>
         /// Test the property 'Collectionid'
         /// </summary>
@@ -97,6 +99,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Collectionid'
         }
+
         /// <summary>
         /// Test the property 'Filter'
         /// </summary>
@@ -105,6 +108,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Filter'
         }
+
         /// <summary>
         /// Test the property 'Orderby'
         /// </summary>
@@ -113,6 +117,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Orderby'
         }
+
         /// <summary>
         /// Test the property 'Mode'
         /// </summary>
@@ -121,6 +126,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Mode'
         }
+
         /// <summary>
         /// Test the property 'Ids'
         /// </summary>
@@ -129,6 +135,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Ids'
         }
+
         /// <summary>
         /// Test the property 'PortalId'
         /// </summary>
@@ -137,7 +144,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'PortalId'
         }
-
     }
-
 }

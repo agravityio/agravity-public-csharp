@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// WhereParam
     /// </summary>
     [DataContract(Name = "whereParam")]
-    public partial class WhereParam : IEquatable<WhereParam>, IValidatableObject
+    public partial class WhereParam : IValidatableObject
     {
         /// <summary>
         /// Defines Operator
@@ -97,7 +97,6 @@ namespace Agravity.Public.Model
             /// </summary>
             [EnumMember(Value = "ArrayContainsPartial")]
             ArrayContainsPartial = 10
-
         }
 
 
@@ -129,7 +128,6 @@ namespace Agravity.Public.Model
             /// </summary>
             [EnumMember(Value = "Number")]
             Number = 3
-
         }
 
 
@@ -141,14 +139,14 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WhereParam" /> class.
         /// </summary>
-        /// <param name="_operator">_operator (default to OperatorEnum.Equals).</param>
+        /// <param name="varOperator">varOperator (default to OperatorEnum.Equals).</param>
         /// <param name="field">field.</param>
         /// <param name="value">value.</param>
         /// <param name="notPrefix">notPrefix.</param>
         /// <param name="valueType">valueType (default to ValueTypeEnum.String).</param>
-        public WhereParam(OperatorEnum? _operator = OperatorEnum.Equals, string field = default(string), Object value = default(Object), bool notPrefix = default(bool), ValueTypeEnum? valueType = ValueTypeEnum.String)
+        public WhereParam(OperatorEnum? varOperator = OperatorEnum.Equals, string field = default(string), Object value = default(Object), bool notPrefix = default(bool), ValueTypeEnum? valueType = ValueTypeEnum.String)
         {
-            this.Operator = _operator;
+            this.Operator = varOperator;
             this.Field = field;
             this.Value = value;
             this.NotPrefix = notPrefix;
@@ -200,81 +198,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as WhereParam);
-        }
-
-        /// <summary>
-        /// Returns true if WhereParam instances are equal
-        /// </summary>
-        /// <param name="input">Instance of WhereParam to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WhereParam input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Operator == input.Operator ||
-                    this.Operator.Equals(input.Operator)
-                ) && 
-                (
-                    this.Field == input.Field ||
-                    (this.Field != null &&
-                    this.Field.Equals(input.Field))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.NotPrefix == input.NotPrefix ||
-                    this.NotPrefix.Equals(input.NotPrefix)
-                ) && 
-                (
-                    this.ValueType == input.ValueType ||
-                    this.ValueType.Equals(input.ValueType)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Operator.GetHashCode();
-                if (this.Field != null)
-                {
-                    hashCode = (hashCode * 59) + this.Field.GetHashCode();
-                }
-                if (this.Value != null)
-                {
-                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.NotPrefix.GetHashCode();
-                hashCode = (hashCode * 59) + this.ValueType.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

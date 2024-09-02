@@ -8,9 +8,9 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpStaticDefinedListsGetById**](PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsgetbyid) | **GET** /staticdefinedlists/{id} |  |
 | [**HttpStaticDefinedListsUpdateById**](PublicStaticDefinedListManagementApi.md#httpstaticdefinedlistsupdatebyid) | **POST** /staticdefinedlists/{id} |  |
 
-<a name="httpstaticdefinedlistsgetall"></a>
+<a id="httpstaticdefinedlistsgetall"></a>
 # **HttpStaticDefinedListsGetAll**
-> List&lt;StaticDefinedList&gt; HttpStaticDefinedListsGetAll (bool? translations = null)
+> List&lt;StaticDefinedList&gt; HttpStaticDefinedListsGetAll (bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -39,10 +39,11 @@ namespace Example
 
             var apiInstance = new PublicStaticDefinedListManagementApi(config);
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                List<StaticDefinedList> result = apiInstance.HttpStaticDefinedListsGetAll(translations);
+                List<StaticDefinedList> result = apiInstance.HttpStaticDefinedListsGetAll(translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -62,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<StaticDefinedList>> response = apiInstance.HttpStaticDefinedListsGetAllWithHttpInfo(translations);
+    ApiResponse<List<StaticDefinedList>> response = apiInstance.HttpStaticDefinedListsGetAllWithHttpInfo(translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -80,6 +81,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 
@@ -104,9 +106,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpstaticdefinedlistsgetbyid"></a>
+<a id="httpstaticdefinedlistsgetbyid"></a>
 # **HttpStaticDefinedListsGetById**
-> StaticDefinedList HttpStaticDefinedListsGetById (string id, bool? translations = null)
+> StaticDefinedList HttpStaticDefinedListsGetById (string id, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -136,10 +138,11 @@ namespace Example
             var apiInstance = new PublicStaticDefinedListManagementApi(config);
             var id = "id_example";  // string | The ID of the static defined list.
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                StaticDefinedList result = apiInstance.HttpStaticDefinedListsGetById(id, translations);
+                StaticDefinedList result = apiInstance.HttpStaticDefinedListsGetById(id, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -159,7 +162,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<StaticDefinedList> response = apiInstance.HttpStaticDefinedListsGetByIdWithHttpInfo(id, translations);
+    ApiResponse<StaticDefinedList> response = apiInstance.HttpStaticDefinedListsGetByIdWithHttpInfo(id, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -178,6 +181,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the static defined list. |  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 
@@ -203,9 +207,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpstaticdefinedlistsupdatebyid"></a>
+<a id="httpstaticdefinedlistsupdatebyid"></a>
 # **HttpStaticDefinedListsUpdateById**
-> StaticDefinedList HttpStaticDefinedListsUpdateById (string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = null)
+> StaticDefinedList HttpStaticDefinedListsUpdateById (string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -237,10 +241,11 @@ namespace Example
             var updatemode = "updatemode_example";  // string | The mode how the list should be updated. Available values are: add, delete and replace.
             var staticDefinedList = new StaticDefinedList(); // StaticDefinedList | The values which should be updated.
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                StaticDefinedList result = apiInstance.HttpStaticDefinedListsUpdateById(id, updatemode, staticDefinedList, translations);
+                StaticDefinedList result = apiInstance.HttpStaticDefinedListsUpdateById(id, updatemode, staticDefinedList, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -260,7 +265,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<StaticDefinedList> response = apiInstance.HttpStaticDefinedListsUpdateByIdWithHttpInfo(id, updatemode, staticDefinedList, translations);
+    ApiResponse<StaticDefinedList> response = apiInstance.HttpStaticDefinedListsUpdateByIdWithHttpInfo(id, updatemode, staticDefinedList, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -281,6 +286,7 @@ catch (ApiException e)
 | **updatemode** | **string** | The mode how the list should be updated. Available values are: add, delete and replace. |  |
 | **staticDefinedList** | [**StaticDefinedList**](StaticDefinedList.md) | The values which should be updated. |  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 

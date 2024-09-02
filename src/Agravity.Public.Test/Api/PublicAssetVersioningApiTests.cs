@@ -134,7 +134,8 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //string vNr = null;
-            //instance.HttpUpdateVersionedAssetsById(id, vNr);
+            //var response = instance.HttpUpdateVersionedAssetsById(id, vNr);
+            //Assert.IsType<VersionedAsset>(response);
         }
 
         /// <summary>

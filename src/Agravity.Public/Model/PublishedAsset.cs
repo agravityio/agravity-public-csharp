@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// PublishedAsset
     /// </summary>
     [DataContract(Name = "publishedAsset")]
-    public partial class PublishedAsset : IEquatable<PublishedAsset>, IValidatableObject
+    public partial class PublishedAsset : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PublishedAsset" /> class.
@@ -47,7 +47,7 @@ namespace Agravity.Public.Model
         /// <param name="statusTableId">statusTableId.</param>
         /// <param name="format">format.</param>
         /// <param name="properties">properties.</param>
-        public PublishedAsset(string id = default(string), string name = default(string), string target = default(string), string description = default(string), List<string> usecases = default(List<string>), DateTime createdDate = default(DateTime), string createdBy = default(string), string url = default(string), string cdn = default(string), string statusTableId = default(string), string format = default(string), Dictionary<string, object> properties = default(Dictionary<string, object>))
+        public PublishedAsset(string id = default(string), string name = default(string), string target = default(string), string description = default(string), List<string> usecases = default(List<string>), DateTime? createdDate = default(DateTime?), string createdBy = default(string), string url = default(string), string cdn = default(string), string statusTableId = default(string), string format = default(string), Dictionary<string, object> properties = default(Dictionary<string, object>))
         {
             this.Id = id;
             this.Name = name;
@@ -66,73 +66,73 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Target
         /// </summary>
-        [DataMember(Name = "target", EmitDefaultValue = false)]
+        [DataMember(Name = "target", EmitDefaultValue = true)]
         public string Target { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Usecases
         /// </summary>
-        [DataMember(Name = "usecases", EmitDefaultValue = false)]
+        [DataMember(Name = "usecases", EmitDefaultValue = true)]
         public List<string> Usecases { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "created_date", EmitDefaultValue = false)]
-        public DateTime CreatedDate { get; set; }
+        [DataMember(Name = "created_date", EmitDefaultValue = true)]
+        public DateTime? CreatedDate { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name = "created_by", EmitDefaultValue = false)]
+        [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = false)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets Cdn
         /// </summary>
-        [DataMember(Name = "cdn", EmitDefaultValue = false)]
+        [DataMember(Name = "cdn", EmitDefaultValue = true)]
         public string Cdn { get; set; }
 
         /// <summary>
         /// Gets or Sets StatusTableId
         /// </summary>
-        [DataMember(Name = "status_table_id", EmitDefaultValue = false)]
+        [DataMember(Name = "status_table_id", EmitDefaultValue = true)]
         public string StatusTableId { get; set; }
 
         /// <summary>
         /// Gets or Sets Format
         /// </summary>
-        [DataMember(Name = "format", EmitDefaultValue = false)]
+        [DataMember(Name = "format", EmitDefaultValue = true)]
         public string Format { get; set; }
 
         /// <summary>
         /// Gets or Sets Properties
         /// </summary>
-        [DataMember(Name = "properties", EmitDefaultValue = false)]
+        [DataMember(Name = "properties", EmitDefaultValue = true)]
         public Dictionary<string, object> Properties { get; set; }
 
         /// <summary>
@@ -169,158 +169,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PublishedAsset);
-        }
-
-        /// <summary>
-        /// Returns true if PublishedAsset instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PublishedAsset to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PublishedAsset input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Target == input.Target ||
-                    (this.Target != null &&
-                    this.Target.Equals(input.Target))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Usecases == input.Usecases ||
-                    this.Usecases != null &&
-                    input.Usecases != null &&
-                    this.Usecases.SequenceEqual(input.Usecases)
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.CreatedBy == input.CreatedBy ||
-                    (this.CreatedBy != null &&
-                    this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Cdn == input.Cdn ||
-                    (this.Cdn != null &&
-                    this.Cdn.Equals(input.Cdn))
-                ) && 
-                (
-                    this.StatusTableId == input.StatusTableId ||
-                    (this.StatusTableId != null &&
-                    this.StatusTableId.Equals(input.StatusTableId))
-                ) && 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                ) && 
-                (
-                    this.Properties == input.Properties ||
-                    this.Properties != null &&
-                    input.Properties != null &&
-                    this.Properties.SequenceEqual(input.Properties)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Target != null)
-                {
-                    hashCode = (hashCode * 59) + this.Target.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Usecases != null)
-                {
-                    hashCode = (hashCode * 59) + this.Usecases.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.CreatedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                if (this.Cdn != null)
-                {
-                    hashCode = (hashCode * 59) + this.Cdn.GetHashCode();
-                }
-                if (this.StatusTableId != null)
-                {
-                    hashCode = (hashCode * 59) + this.StatusTableId.GetHashCode();
-                }
-                if (this.Format != null)
-                {
-                    hashCode = (hashCode * 59) + this.Format.GetHashCode();
-                }
-                if (this.Properties != null)
-                {
-                    hashCode = (hashCode * 59) + this.Properties.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

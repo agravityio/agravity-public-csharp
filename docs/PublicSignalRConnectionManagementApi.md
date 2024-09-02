@@ -6,7 +6,7 @@ All URIs are relative to *http://localhost:7072/api*
 |--------|--------------|-------------|
 | [**HttpSignalRNegotiate**](PublicSignalRConnectionManagementApi.md#httpsignalrnegotiate) | **POST** /signalr/negotiate |  |
 
-<a name="httpsignalrnegotiate"></a>
+<a id="httpsignalrnegotiate"></a>
 # **HttpSignalRNegotiate**
 > SignalRConnectionInfo HttpSignalRNegotiate ()
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | The signlar connection info for further processing. |  -  |
+| **200** | The signalr connection info for further processing. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

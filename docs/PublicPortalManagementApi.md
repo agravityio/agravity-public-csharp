@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpPortalsConfigurationGetById**](PublicPortalManagementApi.md#httpportalsconfigurationgetbyid) | **GET** /portals/{id}/config |  |
 | [**HttpPortalsGetById**](PublicPortalManagementApi.md#httpportalsgetbyid) | **GET** /portals/{id} |  |
 
-<a name="httpportalgetallassetidsbyid"></a>
+<a id="httpportalgetallassetidsbyid"></a>
 # **HttpPortalGetAllAssetIdsById**
 > List&lt;string&gt; HttpPortalGetAllAssetIdsById (string id)
 
@@ -108,7 +108,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpportalgetstatuszipbyid"></a>
+<a id="httpportalgetstatuszipbyid"></a>
 # **HttpPortalGetStatusZipById**
 > PortalZipRequest HttpPortalGetStatusZipById (string id, string zipId)
 
@@ -207,7 +207,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpportalrequestzipbyid"></a>
+<a id="httpportalrequestzipbyid"></a>
 # **HttpPortalRequestZipById**
 > PortalZipRequest HttpPortalRequestZipById (string id, PortalZipRequest portalZipRequest)
 
@@ -307,7 +307,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpportalsconfigurationgetbyid"></a>
+<a id="httpportalsconfigurationgetbyid"></a>
 # **HttpPortalsConfigurationGetById**
 > PortalConfiguration HttpPortalsConfigurationGetById (string id)
 
@@ -403,7 +403,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpportalsgetbyid"></a>
+<a id="httpportalsgetbyid"></a>
 # **HttpPortalsGetById**
 > Portal HttpPortalsGetById (string id)
 

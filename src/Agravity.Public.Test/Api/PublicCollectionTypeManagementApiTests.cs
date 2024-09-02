@@ -63,7 +63,8 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //bool? translations = null;
-            //var response = instance.HttpCollectionTypesGet(translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpCollectionTypesGet(translations, acceptLanguage);
             //Assert.IsType<List<CollectionType>>(response);
         }
 
@@ -76,7 +77,8 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //bool? translations = null;
-            //var response = instance.HttpCollectionTypesGetById(id, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpCollectionTypesGetById(id, translations, acceptLanguage);
             //Assert.IsType<CollectionType>(response);
         }
 
@@ -89,7 +91,8 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //bool? includeblueprint = null;
             //bool? translations = null;
-            //var response = instance.HttpGetCollectionTypeItems(includeblueprint, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpGetCollectionTypeItems(includeblueprint, translations, acceptLanguage);
             //Assert.IsType<List<CollTypeItem>>(response);
         }
     }

@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// ArtificialIntelligenceGroup
     /// </summary>
     [DataContract(Name = "artificialIntelligenceGroup")]
-    public partial class ArtificialIntelligenceGroup : IEquatable<ArtificialIntelligenceGroup>, IValidatableObject
+    public partial class ArtificialIntelligenceGroup : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArtificialIntelligenceGroup" /> class.
@@ -50,13 +50,13 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Origin
         /// </summary>
-        [DataMember(Name = "origin", EmitDefaultValue = false)]
+        [DataMember(Name = "origin", EmitDefaultValue = true)]
         public string Origin { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = false)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Values
         /// </summary>
-        [DataMember(Name = "values", EmitDefaultValue = false)]
+        [DataMember(Name = "values", EmitDefaultValue = true)]
         public List<Dictionary<string, object>> Values { get; set; }
 
         /// <summary>
@@ -97,85 +97,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ArtificialIntelligenceGroup);
-        }
-
-        /// <summary>
-        /// Returns true if ArtificialIntelligenceGroup instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ArtificialIntelligenceGroup to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ArtificialIntelligenceGroup input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Origin == input.Origin ||
-                    (this.Origin != null &&
-                    this.Origin.Equals(input.Origin))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.MinConfidence == input.MinConfidence ||
-                    (this.MinConfidence != null &&
-                    this.MinConfidence.Equals(input.MinConfidence))
-                ) && 
-                (
-                    this.Values == input.Values ||
-                    this.Values != null &&
-                    input.Values != null &&
-                    this.Values.SequenceEqual(input.Values)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Origin != null)
-                {
-                    hashCode = (hashCode * 59) + this.Origin.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                if (this.MinConfidence != null)
-                {
-                    hashCode = (hashCode * 59) + this.MinConfidence.GetHashCode();
-                }
-                if (this.Values != null)
-                {
-                    hashCode = (hashCode * 59) + this.Values.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

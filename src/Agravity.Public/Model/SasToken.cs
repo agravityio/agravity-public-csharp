@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// SasToken
     /// </summary>
     [DataContract(Name = "sasToken")]
-    public partial class SasToken : IEquatable<SasToken>, IValidatableObject
+    public partial class SasToken : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SasToken" /> class.
@@ -41,7 +41,7 @@ namespace Agravity.Public.Model
         /// <param name="url">url.</param>
         /// <param name="fulltoken">fulltoken.</param>
         /// <param name="expires">expires.</param>
-        public SasToken(string token = default(string), string container = default(string), string blob = default(string), string url = default(string), string fulltoken = default(string), DateTime expires = default(DateTime))
+        public SasToken(string token = default(string), string container = default(string), string blob = default(string), string url = default(string), string fulltoken = default(string), DateTime? expires = default(DateTime?))
         {
             this.Token = token;
             this.Container = container;
@@ -54,38 +54,38 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Token
         /// </summary>
-        [DataMember(Name = "token", EmitDefaultValue = false)]
+        [DataMember(Name = "token", EmitDefaultValue = true)]
         public string Token { get; set; }
 
         /// <summary>
         /// Gets or Sets Container
         /// </summary>
-        [DataMember(Name = "container", EmitDefaultValue = false)]
+        [DataMember(Name = "container", EmitDefaultValue = true)]
         public string Container { get; set; }
 
         /// <summary>
         /// Gets or Sets Blob
         /// </summary>
-        [DataMember(Name = "blob", EmitDefaultValue = false)]
+        [DataMember(Name = "blob", EmitDefaultValue = true)]
         public string Blob { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = false)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets Fulltoken
         /// </summary>
-        [DataMember(Name = "fulltoken", EmitDefaultValue = false)]
+        [DataMember(Name = "fulltoken", EmitDefaultValue = true)]
         public string Fulltoken { get; set; }
 
         /// <summary>
         /// Gets or Sets Expires
         /// </summary>
-        [DataMember(Name = "expires", EmitDefaultValue = false)]
-        public DateTime Expires { get; set; }
+        [DataMember(Name = "expires", EmitDefaultValue = true)]
+        public DateTime? Expires { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -115,102 +115,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SasToken);
-        }
-
-        /// <summary>
-        /// Returns true if SasToken instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SasToken to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SasToken input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Token == input.Token ||
-                    (this.Token != null &&
-                    this.Token.Equals(input.Token))
-                ) && 
-                (
-                    this.Container == input.Container ||
-                    (this.Container != null &&
-                    this.Container.Equals(input.Container))
-                ) && 
-                (
-                    this.Blob == input.Blob ||
-                    (this.Blob != null &&
-                    this.Blob.Equals(input.Blob))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Fulltoken == input.Fulltoken ||
-                    (this.Fulltoken != null &&
-                    this.Fulltoken.Equals(input.Fulltoken))
-                ) && 
-                (
-                    this.Expires == input.Expires ||
-                    (this.Expires != null &&
-                    this.Expires.Equals(input.Expires))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Token != null)
-                {
-                    hashCode = (hashCode * 59) + this.Token.GetHashCode();
-                }
-                if (this.Container != null)
-                {
-                    hashCode = (hashCode * 59) + this.Container.GetHashCode();
-                }
-                if (this.Blob != null)
-                {
-                    hashCode = (hashCode * 59) + this.Blob.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                if (this.Fulltoken != null)
-                {
-                    hashCode = (hashCode * 59) + this.Fulltoken.GetHashCode();
-                }
-                if (this.Expires != null)
-                {
-                    hashCode = (hashCode * 59) + this.Expires.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

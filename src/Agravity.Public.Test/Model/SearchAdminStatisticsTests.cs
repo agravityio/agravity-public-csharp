@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<SearchAdminStatistics>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'Documentcount'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Documentcount'
         }
+
         /// <summary>
         /// Test the property 'Storagesizebytes'
         /// </summary>
@@ -73,7 +72,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Storagesizebytes'
         }
-
     }
-
 }

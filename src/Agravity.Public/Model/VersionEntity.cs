@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// VersionEntity
     /// </summary>
     [DataContract(Name = "versionEntity")]
-    public partial class VersionEntity : IEquatable<VersionEntity>, IValidatableObject
+    public partial class VersionEntity : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="VersionEntity" /> class.
@@ -64,31 +64,31 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityType
         /// </summary>
-        [DataMember(Name = "entity_type", EmitDefaultValue = false)]
+        [DataMember(Name = "entity_type", EmitDefaultValue = true)]
         public string EntityType { get; set; }
 
         /// <summary>
         /// Gets or Sets Versions
         /// </summary>
-        [DataMember(Name = "versions", EmitDefaultValue = false)]
+        [DataMember(Name = "versions", EmitDefaultValue = true)]
         public List<VersionedAsset> Versions { get; set; }
 
         /// <summary>
         /// Gets or Sets RegionOfOrigin
         /// </summary>
-        [DataMember(Name = "region_of_origin", EmitDefaultValue = false)]
+        [DataMember(Name = "region_of_origin", EmitDefaultValue = true)]
         public string RegionOfOrigin { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name = "created_by", EmitDefaultValue = false)]
+        [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; set; }
 
         /// <summary>
@@ -112,19 +112,19 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets ModifiedBy
         /// </summary>
-        [DataMember(Name = "modified_by", EmitDefaultValue = false)]
+        [DataMember(Name = "modified_by", EmitDefaultValue = true)]
         public string ModifiedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets Pk
         /// </summary>
-        [DataMember(Name = "pk", EmitDefaultValue = false)]
+        [DataMember(Name = "pk", EmitDefaultValue = true)]
         public string Pk { get; set; }
 
         /// <summary>
         /// Gets or Sets Etag
         /// </summary>
-        [DataMember(Name = "_etag", EmitDefaultValue = false)]
+        [DataMember(Name = "_etag", EmitDefaultValue = true)]
         public string Etag { get; set; }
 
         /// <summary>
@@ -160,148 +160,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as VersionEntity);
-        }
-
-        /// <summary>
-        /// Returns true if VersionEntity instances are equal
-        /// </summary>
-        /// <param name="input">Instance of VersionEntity to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(VersionEntity input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.EntityType == input.EntityType ||
-                    (this.EntityType != null &&
-                    this.EntityType.Equals(input.EntityType))
-                ) && 
-                (
-                    this.Versions == input.Versions ||
-                    this.Versions != null &&
-                    input.Versions != null &&
-                    this.Versions.SequenceEqual(input.Versions)
-                ) && 
-                (
-                    this.RegionOfOrigin == input.RegionOfOrigin ||
-                    (this.RegionOfOrigin != null &&
-                    this.RegionOfOrigin.Equals(input.RegionOfOrigin))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.CreatedBy == input.CreatedBy ||
-                    (this.CreatedBy != null &&
-                    this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.ModifiedBy == input.ModifiedBy ||
-                    (this.ModifiedBy != null &&
-                    this.ModifiedBy.Equals(input.ModifiedBy))
-                ) && 
-                (
-                    this.Pk == input.Pk ||
-                    (this.Pk != null &&
-                    this.Pk.Equals(input.Pk))
-                ) && 
-                (
-                    this.Etag == input.Etag ||
-                    (this.Etag != null &&
-                    this.Etag.Equals(input.Etag))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.EntityType != null)
-                {
-                    hashCode = (hashCode * 59) + this.EntityType.GetHashCode();
-                }
-                if (this.Versions != null)
-                {
-                    hashCode = (hashCode * 59) + this.Versions.GetHashCode();
-                }
-                if (this.RegionOfOrigin != null)
-                {
-                    hashCode = (hashCode * 59) + this.RegionOfOrigin.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.CreatedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.ModifiedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedBy.GetHashCode();
-                }
-                if (this.Pk != null)
-                {
-                    hashCode = (hashCode * 59) + this.Pk.GetHashCode();
-                }
-                if (this.Etag != null)
-                {
-                    hashCode = (hashCode * 59) + this.Etag.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// SearchableItem
     /// </summary>
     [DataContract(Name = "searchableItem")]
-    public partial class SearchableItem : IEquatable<SearchableItem>, IValidatableObject
+    public partial class SearchableItem : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchableItem" /> class.
@@ -62,7 +62,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -110,13 +110,13 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Searchtype
         /// </summary>
-        [DataMember(Name = "searchtype", EmitDefaultValue = false)]
+        [DataMember(Name = "searchtype", EmitDefaultValue = true)]
         public string Searchtype { get; set; }
 
         /// <summary>
         /// Gets or Sets Fields
         /// </summary>
-        [DataMember(Name = "fields", EmitDefaultValue = false)]
+        [DataMember(Name = "fields", EmitDefaultValue = true)]
         public List<SearchableItem> Fields { get; set; }
 
         /// <summary>
@@ -151,139 +151,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SearchableItem);
-        }
-
-        /// <summary>
-        /// Returns true if SearchableItem instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SearchableItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SearchableItem input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsKey == input.IsKey ||
-                    (this.IsKey != null &&
-                    this.IsKey.Equals(input.IsKey))
-                ) && 
-                (
-                    this.Filterable == input.Filterable ||
-                    (this.Filterable != null &&
-                    this.Filterable.Equals(input.Filterable))
-                ) && 
-                (
-                    this.Hidden == input.Hidden ||
-                    (this.Hidden != null &&
-                    this.Hidden.Equals(input.Hidden))
-                ) && 
-                (
-                    this.Searchable == input.Searchable ||
-                    (this.Searchable != null &&
-                    this.Searchable.Equals(input.Searchable))
-                ) && 
-                (
-                    this.Facetable == input.Facetable ||
-                    (this.Facetable != null &&
-                    this.Facetable.Equals(input.Facetable))
-                ) && 
-                (
-                    this.Sortable == input.Sortable ||
-                    (this.Sortable != null &&
-                    this.Sortable.Equals(input.Sortable))
-                ) && 
-                (
-                    this.IsCollection == input.IsCollection ||
-                    (this.IsCollection != null &&
-                    this.IsCollection.Equals(input.IsCollection))
-                ) && 
-                (
-                    this.Searchtype == input.Searchtype ||
-                    (this.Searchtype != null &&
-                    this.Searchtype.Equals(input.Searchtype))
-                ) && 
-                (
-                    this.Fields == input.Fields ||
-                    this.Fields != null &&
-                    input.Fields != null &&
-                    this.Fields.SequenceEqual(input.Fields)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.IsKey != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsKey.GetHashCode();
-                }
-                if (this.Filterable != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filterable.GetHashCode();
-                }
-                if (this.Hidden != null)
-                {
-                    hashCode = (hashCode * 59) + this.Hidden.GetHashCode();
-                }
-                if (this.Searchable != null)
-                {
-                    hashCode = (hashCode * 59) + this.Searchable.GetHashCode();
-                }
-                if (this.Facetable != null)
-                {
-                    hashCode = (hashCode * 59) + this.Facetable.GetHashCode();
-                }
-                if (this.Sortable != null)
-                {
-                    hashCode = (hashCode * 59) + this.Sortable.GetHashCode();
-                }
-                if (this.IsCollection != null)
-                {
-                    hashCode = (hashCode * 59) + this.IsCollection.GetHashCode();
-                }
-                if (this.Searchtype != null)
-                {
-                    hashCode = (hashCode * 59) + this.Searchtype.GetHashCode();
-                }
-                if (this.Fields != null)
-                {
-                    hashCode = (hashCode * 59) + this.Fields.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

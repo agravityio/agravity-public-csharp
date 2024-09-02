@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<PortalTheme>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'BackgroundUrl'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'BackgroundUrl'
         }
+
         /// <summary>
         /// Test the property 'LogoUrl'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'LogoUrl'
         }
+
         /// <summary>
         /// Test the property 'Colors'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Colors'
         }
+
         /// <summary>
         /// Test the property 'TopbarColor'
         /// </summary>
@@ -89,6 +90,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'TopbarColor'
         }
+
         /// <summary>
         /// Test the property 'IconEmpty'
         /// </summary>
@@ -97,6 +99,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'IconEmpty'
         }
+
         /// <summary>
         /// Test the property 'IconActive'
         /// </summary>
@@ -105,7 +108,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'IconActive'
         }
-
     }
-
 }

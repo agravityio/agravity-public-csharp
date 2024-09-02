@@ -64,7 +64,8 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //bool? external = null;
             //bool? translations = null;
-            //var response = instance.HttpSavedSearchesGetAll(external, translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpSavedSearchesGetAll(external, translations, acceptLanguage);
             //Assert.IsType<List<SavedSearch>>(response);
         }
     }

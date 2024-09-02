@@ -6,7 +6,7 @@ All URIs are relative to *http://localhost:7072/api*
 |--------|--------------|-------------|
 | [**HttpConfigGetFrontendAll**](PublicConfigurationManagementApi.md#httpconfiggetfrontendall) | **GET** /config/frontend |  |
 
-<a name="httpconfiggetfrontendall"></a>
+<a id="httpconfiggetfrontendall"></a>
 # **HttpConfigGetFrontendAll**
 > List&lt;FrontendAppConfig&gt; HttpConfigGetFrontendAll (bool? customonly = null)
 

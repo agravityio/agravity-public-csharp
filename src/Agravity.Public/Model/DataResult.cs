@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// DataResult
     /// </summary>
     [DataContract(Name = "dataResult")]
-    public partial class DataResult : IEquatable<DataResult>, IValidatableObject
+    public partial class DataResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DataResult" /> class.
@@ -39,7 +39,7 @@ namespace Agravity.Public.Model
         /// <param name="sumAssetResults">sumAssetResults.</param>
         /// <param name="collection">collection.</param>
         /// <param name="sumCollectionResults">sumCollectionResults.</param>
-        public DataResult(List<Asset> asset = default(List<Asset>), int sumAssetResults = default(int), List<Collection> collection = default(List<Collection>), int sumCollectionResults = default(int))
+        public DataResult(List<Asset> asset = default(List<Asset>), int? sumAssetResults = default(int?), List<Collection> collection = default(List<Collection>), int? sumCollectionResults = default(int?))
         {
             this.Asset = asset;
             this.SumAssetResults = sumAssetResults;
@@ -50,26 +50,26 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Asset
         /// </summary>
-        [DataMember(Name = "asset", EmitDefaultValue = false)]
+        [DataMember(Name = "asset", EmitDefaultValue = true)]
         public List<Asset> Asset { get; set; }
 
         /// <summary>
         /// Gets or Sets SumAssetResults
         /// </summary>
-        [DataMember(Name = "sum_asset_results", EmitDefaultValue = false)]
-        public int SumAssetResults { get; set; }
+        [DataMember(Name = "sum_asset_results", EmitDefaultValue = true)]
+        public int? SumAssetResults { get; set; }
 
         /// <summary>
         /// Gets or Sets Collection
         /// </summary>
-        [DataMember(Name = "collection", EmitDefaultValue = false)]
+        [DataMember(Name = "collection", EmitDefaultValue = true)]
         public List<Collection> Collection { get; set; }
 
         /// <summary>
         /// Gets or Sets SumCollectionResults
         /// </summary>
-        [DataMember(Name = "sum_collection_results", EmitDefaultValue = false)]
-        public int SumCollectionResults { get; set; }
+        [DataMember(Name = "sum_collection_results", EmitDefaultValue = true)]
+        public int? SumCollectionResults { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -97,78 +97,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as DataResult);
-        }
-
-        /// <summary>
-        /// Returns true if DataResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of DataResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(DataResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Asset == input.Asset ||
-                    this.Asset != null &&
-                    input.Asset != null &&
-                    this.Asset.SequenceEqual(input.Asset)
-                ) && 
-                (
-                    this.SumAssetResults == input.SumAssetResults ||
-                    this.SumAssetResults.Equals(input.SumAssetResults)
-                ) && 
-                (
-                    this.Collection == input.Collection ||
-                    this.Collection != null &&
-                    input.Collection != null &&
-                    this.Collection.SequenceEqual(input.Collection)
-                ) && 
-                (
-                    this.SumCollectionResults == input.SumCollectionResults ||
-                    this.SumCollectionResults.Equals(input.SumCollectionResults)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Asset != null)
-                {
-                    hashCode = (hashCode * 59) + this.Asset.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.SumAssetResults.GetHashCode();
-                if (this.Collection != null)
-                {
-                    hashCode = (hashCode * 59) + this.Collection.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.SumCollectionResults.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

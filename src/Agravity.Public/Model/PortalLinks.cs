@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// PortalLinks
     /// </summary>
     [DataContract(Name = "portalLinks")]
-    public partial class PortalLinks : IEquatable<PortalLinks>, IValidatableObject
+    public partial class PortalLinks : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PortalLinks" /> class.
@@ -48,19 +48,19 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Conditions
         /// </summary>
-        [DataMember(Name = "conditions", EmitDefaultValue = false)]
+        [DataMember(Name = "conditions", EmitDefaultValue = true)]
         public string Conditions { get; set; }
 
         /// <summary>
         /// Gets or Sets Privacy
         /// </summary>
-        [DataMember(Name = "privacy", EmitDefaultValue = false)]
+        [DataMember(Name = "privacy", EmitDefaultValue = true)]
         public string Privacy { get; set; }
 
         /// <summary>
         /// Gets or Sets Impressum
         /// </summary>
-        [DataMember(Name = "impressum", EmitDefaultValue = false)]
+        [DataMember(Name = "impressum", EmitDefaultValue = true)]
         public string Impressum { get; set; }
 
         /// <summary>
@@ -88,75 +88,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PortalLinks);
-        }
-
-        /// <summary>
-        /// Returns true if PortalLinks instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PortalLinks to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PortalLinks input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Conditions == input.Conditions ||
-                    (this.Conditions != null &&
-                    this.Conditions.Equals(input.Conditions))
-                ) && 
-                (
-                    this.Privacy == input.Privacy ||
-                    (this.Privacy != null &&
-                    this.Privacy.Equals(input.Privacy))
-                ) && 
-                (
-                    this.Impressum == input.Impressum ||
-                    (this.Impressum != null &&
-                    this.Impressum.Equals(input.Impressum))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Conditions != null)
-                {
-                    hashCode = (hashCode * 59) + this.Conditions.GetHashCode();
-                }
-                if (this.Privacy != null)
-                {
-                    hashCode = (hashCode * 59) + this.Privacy.GetHashCode();
-                }
-                if (this.Impressum != null)
-                {
-                    hashCode = (hashCode * 59) + this.Impressum.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

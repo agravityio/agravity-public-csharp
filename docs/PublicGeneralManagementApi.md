@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpTriggerDurableContinue**](PublicGeneralManagementApi.md#httptriggerdurablecontinue) | **GET** /durable/{instanceId} |  |
 | [**HttpTriggerDurableScchTrainingDone**](PublicGeneralManagementApi.md#httptriggerdurablescchtrainingdone) | **GET** /durable/scch/{instanceId} |  |
 
-<a name="httpagravityversioninfo"></a>
+<a id="httpagravityversioninfo"></a>
 # **HttpAgravityVersionInfo**
 > AgravityVersion HttpAgravityVersionInfo ()
 
@@ -95,7 +95,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpgetdeletedentities"></a>
+<a id="httpgetdeletedentities"></a>
 # **HttpGetDeletedEntities**
 > List&lt;DeletedEntities&gt; HttpGetDeletedEntities (string entityType = null, string since = null, string until = null, string portalId = null)
 
@@ -193,13 +193,13 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | A list of entities which are deleted since the given date (last modified date &#x3D; deleted date). |  -  |
 | **400** | Since date could not be more in the future than until date. (Code: d362e2d4-b6b1-4547-a97c-058d2f46acfc)&lt;br&gt;Entity type &#39;{entityType}&#39; is not valid. (Code: 79abc89e-e072-4cf5-a63a-1573764975c6)&lt;br&gt;Entity type &#39;{entityType}&#39; is not allowed for this user. (Code: b00efbb5-faeb-4758-9ea3-44b5435a2311)&lt;br&gt;Error on getting deleted entities. (Code: 71fad553-4c82-423a-807e-ba272bfd3404)&lt;br&gt; |  -  |
-| **404** | When the portal_id could not be found. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
+| **404** | When the portal_id could not be found. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httptriggerdurablecontinue"></a>
+<a id="httptriggerdurablecontinue"></a>
 # **HttpTriggerDurableContinue**
 > OkResult HttpTriggerDurableContinue (string instanceId)
 
@@ -289,7 +289,7 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httptriggerdurablescchtrainingdone"></a>
+<a id="httptriggerdurablescchtrainingdone"></a>
 # **HttpTriggerDurableScchTrainingDone**
 > OkResult HttpTriggerDurableScchTrainingDone (string instanceId)
 

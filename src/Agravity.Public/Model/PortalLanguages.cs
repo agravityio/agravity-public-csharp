@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// PortalLanguages
     /// </summary>
     [DataContract(Name = "portalLanguages")]
-    public partial class PortalLanguages : IEquatable<PortalLanguages>, IValidatableObject
+    public partial class PortalLanguages : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PortalLanguages" /> class.
@@ -46,13 +46,13 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        [DataMember(Name = "metadata", EmitDefaultValue = true)]
         public string Metadata { get; set; }
 
         /// <summary>
         /// Gets or Sets Ui
         /// </summary>
-        [DataMember(Name = "ui", EmitDefaultValue = false)]
+        [DataMember(Name = "ui", EmitDefaultValue = true)]
         public string Ui { get; set; }
 
         /// <summary>
@@ -79,66 +79,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PortalLanguages);
-        }
-
-        /// <summary>
-        /// Returns true if PortalLanguages instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PortalLanguages to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PortalLanguages input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                ) && 
-                (
-                    this.Ui == input.Ui ||
-                    (this.Ui != null &&
-                    this.Ui.Equals(input.Ui))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Metadata != null)
-                {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
-                }
-                if (this.Ui != null)
-                {
-                    hashCode = (hashCode * 59) + this.Ui.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

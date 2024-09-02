@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<AssetBlob>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'BlobType'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'BlobType'
         }
+
         /// <summary>
         /// Test the property 'Name'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Name'
         }
+
         /// <summary>
         /// Test the property 'Container'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Container'
         }
+
         /// <summary>
         /// Test the property 'Size'
         /// </summary>
@@ -89,6 +90,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Size'
         }
+
         /// <summary>
         /// Test the property 'Extension'
         /// </summary>
@@ -97,6 +99,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Extension'
         }
+
         /// <summary>
         /// Test the property 'ContentType'
         /// </summary>
@@ -105,6 +108,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'ContentType'
         }
+
         /// <summary>
         /// Test the property 'Md5'
         /// </summary>
@@ -113,6 +117,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Md5'
         }
+
         /// <summary>
         /// Test the property 'AddData'
         /// </summary>
@@ -121,6 +126,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'AddData'
         }
+
         /// <summary>
         /// Test the property 'Width'
         /// </summary>
@@ -129,6 +135,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Width'
         }
+
         /// <summary>
         /// Test the property 'Height'
         /// </summary>
@@ -137,6 +144,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Height'
         }
+
         /// <summary>
         /// Test the property 'Maxwidthheight'
         /// </summary>
@@ -145,6 +153,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Maxwidthheight'
         }
+
         /// <summary>
         /// Test the property 'Quality'
         /// </summary>
@@ -153,6 +162,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Quality'
         }
+
         /// <summary>
         /// Test the property 'Orientation'
         /// </summary>
@@ -161,6 +171,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Orientation'
         }
+
         /// <summary>
         /// Test the property 'Colorspace'
         /// </summary>
@@ -169,6 +180,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Colorspace'
         }
+
         /// <summary>
         /// Test the property 'Profile'
         /// </summary>
@@ -177,6 +189,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Profile'
         }
+
         /// <summary>
         /// Test the property 'Transparency'
         /// </summary>
@@ -185,6 +198,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Transparency'
         }
+
         /// <summary>
         /// Test the property 'Mode'
         /// </summary>
@@ -193,6 +207,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Mode'
         }
+
         /// <summary>
         /// Test the property 'Target'
         /// </summary>
@@ -201,6 +216,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Target'
         }
+
         /// <summary>
         /// Test the property 'Filter'
         /// </summary>
@@ -209,6 +225,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Filter'
         }
+
         /// <summary>
         /// Test the property 'DpiX'
         /// </summary>
@@ -217,6 +234,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'DpiX'
         }
+
         /// <summary>
         /// Test the property 'DpiY'
         /// </summary>
@@ -225,6 +243,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'DpiY'
         }
+
         /// <summary>
         /// Test the property 'Perhash'
         /// </summary>
@@ -233,6 +252,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Perhash'
         }
+
         /// <summary>
         /// Test the property 'Dominantcolor'
         /// </summary>
@@ -241,6 +261,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Dominantcolor'
         }
+
         /// <summary>
         /// Test the property 'Depth'
         /// </summary>
@@ -249,6 +270,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Depth'
         }
+
         /// <summary>
         /// Test the property 'Animated'
         /// </summary>
@@ -257,6 +279,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Animated'
         }
+
         /// <summary>
         /// Test the property 'Duration'
         /// </summary>
@@ -265,6 +288,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Duration'
         }
+
         /// <summary>
         /// Test the property 'Videocodec'
         /// </summary>
@@ -273,6 +297,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Videocodec'
         }
+
         /// <summary>
         /// Test the property 'Videobitrate'
         /// </summary>
@@ -281,6 +306,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Videobitrate'
         }
+
         /// <summary>
         /// Test the property 'Fps'
         /// </summary>
@@ -289,6 +315,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Fps'
         }
+
         /// <summary>
         /// Test the property 'Colormode'
         /// </summary>
@@ -297,6 +324,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Colormode'
         }
+
         /// <summary>
         /// Test the property 'Audiocodec'
         /// </summary>
@@ -305,6 +333,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Audiocodec'
         }
+
         /// <summary>
         /// Test the property 'Audiosamplerate'
         /// </summary>
@@ -313,6 +342,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Audiosamplerate'
         }
+
         /// <summary>
         /// Test the property 'Audiochanneloutput'
         /// </summary>
@@ -321,6 +351,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Audiochanneloutput'
         }
+
         /// <summary>
         /// Test the property 'Audiobitrate'
         /// </summary>
@@ -329,6 +360,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Audiobitrate'
         }
+
         /// <summary>
         /// Test the property 'Author'
         /// </summary>
@@ -337,6 +369,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Author'
         }
+
         /// <summary>
         /// Test the property 'Title'
         /// </summary>
@@ -345,6 +378,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Title'
         }
+
         /// <summary>
         /// Test the property 'Language'
         /// </summary>
@@ -353,6 +387,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Language'
         }
+
         /// <summary>
         /// Test the property 'Wordcount'
         /// </summary>
@@ -361,6 +396,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Wordcount'
         }
+
         /// <summary>
         /// Test the property 'Pages'
         /// </summary>
@@ -369,6 +405,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Pages'
         }
+
         /// <summary>
         /// Test the property 'EncodingName'
         /// </summary>
@@ -377,6 +414,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'EncodingName'
         }
+
         /// <summary>
         /// Test the property 'EncodingCode'
         /// </summary>
@@ -385,6 +423,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'EncodingCode'
         }
+
         /// <summary>
         /// Test the property 'Url'
         /// </summary>
@@ -393,6 +432,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Url'
         }
+
         /// <summary>
         /// Test the property 'SizeReadable'
         /// </summary>
@@ -401,6 +441,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'SizeReadable'
         }
+
         /// <summary>
         /// Test the property 'Downloadable'
         /// </summary>
@@ -409,6 +450,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Downloadable'
         }
+
         /// <summary>
         /// Test the property 'Expires'
         /// </summary>
@@ -417,6 +459,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Expires'
         }
+
         /// <summary>
         /// Test the property 'UploadedDate'
         /// </summary>
@@ -425,6 +468,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'UploadedDate'
         }
+
         /// <summary>
         /// Test the property 'UploadedBy'
         /// </summary>
@@ -433,7 +477,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'UploadedBy'
         }
-
     }
-
 }

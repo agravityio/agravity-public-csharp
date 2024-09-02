@@ -174,8 +174,8 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="vNr">The version number of the asset.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void HttpUpdateVersionedAssetsById(string id, string vNr, int operationIndex = 0);
+        /// <returns>VersionedAsset</returns>
+        VersionedAsset HttpUpdateVersionedAssetsById(string id, string vNr, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -187,8 +187,8 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="vNr">The version number of the asset.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> HttpUpdateVersionedAssetsByIdWithHttpInfo(string id, string vNr, int operationIndex = 0);
+        /// <returns>ApiResponse of VersionedAsset</returns>
+        ApiResponse<VersionedAsset> HttpUpdateVersionedAssetsByIdWithHttpInfo(string id, string vNr, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -237,7 +237,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VersionedAsset</returns>
-        System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateUploadVersionAsync(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateUploadVersionAsync(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -255,7 +255,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VersionedAsset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VersionedAsset>> HttpAssetCreateUploadVersionWithHttpInfoAsync(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<VersionedAsset>> HttpAssetCreateUploadVersionWithHttpInfoAsync(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -268,7 +268,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VersionedAsset</returns>
-        System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateVersionAsync(string id, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateVersionAsync(string id, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -282,7 +282,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VersionedAsset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VersionedAsset>> HttpAssetCreateVersionWithHttpInfoAsync(string id, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<VersionedAsset>> HttpAssetCreateVersionWithHttpInfoAsync(string id, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -295,7 +295,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task HttpDeleteVersionedAssetsByIdAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task HttpDeleteVersionedAssetsByIdAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -309,7 +309,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> HttpDeleteVersionedAssetsByIdWithHttpInfoAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> HttpDeleteVersionedAssetsByIdWithHttpInfoAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -323,7 +323,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetBlob</returns>
-        System.Threading.Tasks.Task<AssetBlob> HttpGetVersionedAssetBlobByIdAsync(string id, int vNr, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AssetBlob> HttpGetVersionedAssetBlobByIdAsync(string id, int vNr, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -338,7 +338,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetBlob)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AssetBlob>> HttpGetVersionedAssetBlobByIdWithHttpInfoAsync(string id, int vNr, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AssetBlob>> HttpGetVersionedAssetBlobByIdWithHttpInfoAsync(string id, int vNr, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -352,7 +352,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VersionedAsset</returns>
-        System.Threading.Tasks.Task<VersionedAsset> HttpRestoreVersionedAssetsByIdAsync(string id, string vNr, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<VersionedAsset> HttpRestoreVersionedAssetsByIdAsync(string id, string vNr, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -367,7 +367,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VersionedAsset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VersionedAsset>> HttpRestoreVersionedAssetsByIdWithHttpInfoAsync(string id, string vNr, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<VersionedAsset>> HttpRestoreVersionedAssetsByIdWithHttpInfoAsync(string id, string vNr, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -379,8 +379,8 @@ namespace Agravity.Public.Api
         /// <param name="vNr">The version number of the asset.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task HttpUpdateVersionedAssetsByIdAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of VersionedAsset</returns>
+        System.Threading.Tasks.Task<VersionedAsset> HttpUpdateVersionedAssetsByIdAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -393,8 +393,8 @@ namespace Agravity.Public.Api
         /// <param name="vNr">The version number of the asset.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> HttpUpdateVersionedAssetsByIdWithHttpInfoAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (VersionedAsset)</returns>
+        System.Threading.Tasks.Task<ApiResponse<VersionedAsset>> HttpUpdateVersionedAssetsByIdWithHttpInfoAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -406,7 +406,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VersionEntity</returns>
-        System.Threading.Tasks.Task<VersionEntity> HttpVersionedAssetsGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<VersionEntity> HttpVersionedAssetsGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -419,7 +419,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VersionEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VersionEntity>> HttpVersionedAssetsGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<VersionEntity>> HttpVersionedAssetsGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -659,7 +659,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VersionedAsset</returns>
-        public async System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateUploadVersionAsync(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateUploadVersionAsync(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = await HttpAssetCreateUploadVersionWithHttpInfoAsync(id, name, collectionId, file, filename, previewof, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -678,7 +678,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VersionedAsset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionedAsset>> HttpAssetCreateUploadVersionWithHttpInfoAsync(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionedAsset>> HttpAssetCreateUploadVersionWithHttpInfoAsync(string id, string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -850,7 +850,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VersionedAsset</returns>
-        public async System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateVersionAsync(string id, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateVersionAsync(string id, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = await HttpAssetCreateVersionWithHttpInfoAsync(id, versionedAsset, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -865,7 +865,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VersionedAsset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionedAsset>> HttpAssetCreateVersionWithHttpInfoAsync(string id, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionedAsset>> HttpAssetCreateVersionWithHttpInfoAsync(string id, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1022,7 +1022,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task HttpDeleteVersionedAssetsByIdAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task HttpDeleteVersionedAssetsByIdAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await HttpDeleteVersionedAssetsByIdWithHttpInfoAsync(id, vNr, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1036,7 +1036,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Object>> HttpDeleteVersionedAssetsByIdWithHttpInfoAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Object>> HttpDeleteVersionedAssetsByIdWithHttpInfoAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1194,7 +1194,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetBlob</returns>
-        public async System.Threading.Tasks.Task<AssetBlob> HttpGetVersionedAssetBlobByIdAsync(string id, int vNr, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AssetBlob> HttpGetVersionedAssetBlobByIdAsync(string id, int vNr, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = await HttpGetVersionedAssetBlobByIdWithHttpInfoAsync(id, vNr, c, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1210,7 +1210,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetBlob)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetBlob>> HttpGetVersionedAssetBlobByIdWithHttpInfoAsync(string id, int vNr, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetBlob>> HttpGetVersionedAssetBlobByIdWithHttpInfoAsync(string id, int vNr, string c = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1376,7 +1376,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VersionedAsset</returns>
-        public async System.Threading.Tasks.Task<VersionedAsset> HttpRestoreVersionedAssetsByIdAsync(string id, string vNr, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<VersionedAsset> HttpRestoreVersionedAssetsByIdAsync(string id, string vNr, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = await HttpRestoreVersionedAssetsByIdWithHttpInfoAsync(id, vNr, versionedAsset, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1392,7 +1392,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VersionedAsset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionedAsset>> HttpRestoreVersionedAssetsByIdWithHttpInfoAsync(string id, string vNr, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionedAsset>> HttpRestoreVersionedAssetsByIdWithHttpInfoAsync(string id, string vNr, VersionedAsset versionedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1471,10 +1471,11 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="vNr">The version number of the asset.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void HttpUpdateVersionedAssetsById(string id, string vNr, int operationIndex = 0)
+        /// <returns>VersionedAsset</returns>
+        public VersionedAsset HttpUpdateVersionedAssetsById(string id, string vNr, int operationIndex = 0)
         {
-            HttpUpdateVersionedAssetsByIdWithHttpInfo(id, vNr);
+            Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = HttpUpdateVersionedAssetsByIdWithHttpInfo(id, vNr);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1484,8 +1485,8 @@ namespace Agravity.Public.Api
         /// <param name="id">The ID of the asset.</param>
         /// <param name="vNr">The version number of the asset.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Agravity.Public.Client.ApiResponse<Object> HttpUpdateVersionedAssetsByIdWithHttpInfo(string id, string vNr, int operationIndex = 0)
+        /// <returns>ApiResponse of VersionedAsset</returns>
+        public Agravity.Public.Client.ApiResponse<VersionedAsset> HttpUpdateVersionedAssetsByIdWithHttpInfo(string id, string vNr, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1534,7 +1535,7 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/assets/{id}/versions/{vNr}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<VersionedAsset>("/assets/{id}/versions/{vNr}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpUpdateVersionedAssetsById", localVarResponse);
@@ -1555,10 +1556,11 @@ namespace Agravity.Public.Api
         /// <param name="vNr">The version number of the asset.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task HttpUpdateVersionedAssetsByIdAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of VersionedAsset</returns>
+        public async System.Threading.Tasks.Task<VersionedAsset> HttpUpdateVersionedAssetsByIdAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await HttpUpdateVersionedAssetsByIdWithHttpInfoAsync(id, vNr, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = await HttpUpdateVersionedAssetsByIdWithHttpInfoAsync(id, vNr, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1569,8 +1571,8 @@ namespace Agravity.Public.Api
         /// <param name="vNr">The version number of the asset.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Object>> HttpUpdateVersionedAssetsByIdWithHttpInfoAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (VersionedAsset)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionedAsset>> HttpUpdateVersionedAssetsByIdWithHttpInfoAsync(string id, string vNr, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1620,7 +1622,7 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/assets/{id}/versions/{vNr}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<VersionedAsset>("/assets/{id}/versions/{vNr}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1717,7 +1719,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VersionEntity</returns>
-        public async System.Threading.Tasks.Task<VersionEntity> HttpVersionedAssetsGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<VersionEntity> HttpVersionedAssetsGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<VersionEntity> localVarResponse = await HttpVersionedAssetsGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1731,7 +1733,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VersionEntity)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionEntity>> HttpVersionedAssetsGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionEntity>> HttpVersionedAssetsGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

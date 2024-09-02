@@ -7,7 +7,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpGetDataCollectionType**](PublicWebAppDataApi.md#httpgetdatacollectiontype) | **GET** /data/collectiontype/{id} |  |
 | [**HttpGetWebAppData**](PublicWebAppDataApi.md#httpgetwebappdata) | **GET** /webappdata/{id} |  |
 
-<a name="httpgetdatacollectiontype"></a>
+<a id="httpgetdatacollectiontype"></a>
 # **HttpGetDataCollectionType**
 > GroupAllAppData HttpGetDataCollectionType (string id)
 
@@ -105,7 +105,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpgetwebappdata"></a>
+<a id="httpgetwebappdata"></a>
 # **HttpGetWebAppData**
 > AllWebAppData HttpGetWebAppData (string id)
 

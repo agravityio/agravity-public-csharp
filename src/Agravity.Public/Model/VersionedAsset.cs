@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// VersionedAsset
     /// </summary>
     [DataContract(Name = "versionedAsset")]
-    public partial class VersionedAsset : IEquatable<VersionedAsset>, IValidatableObject
+    public partial class VersionedAsset : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="VersionedAsset" /> class.
@@ -42,7 +42,7 @@ namespace Agravity.Public.Model
         /// <param name="createdBy">createdBy.</param>
         /// <param name="blobUploaded">blobUploaded.</param>
         /// <param name="mimeType">mimeType.</param>
-        public VersionedAsset(int versionNr = default(int), DateTime untilDate = default(DateTime), string versionInfo = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? blobUploaded = default(DateTime?), string mimeType = default(string))
+        public VersionedAsset(int? versionNr = default(int?), DateTime? untilDate = default(DateTime?), string versionInfo = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? blobUploaded = default(DateTime?), string mimeType = default(string))
         {
             this.VersionNr = versionNr;
             this.UntilDate = untilDate;
@@ -56,19 +56,19 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets VersionNr
         /// </summary>
-        [DataMember(Name = "version_nr", EmitDefaultValue = false)]
-        public int VersionNr { get; set; }
+        [DataMember(Name = "version_nr", EmitDefaultValue = true)]
+        public int? VersionNr { get; set; }
 
         /// <summary>
         /// Gets or Sets UntilDate
         /// </summary>
-        [DataMember(Name = "until_date", EmitDefaultValue = false)]
-        public DateTime UntilDate { get; set; }
+        [DataMember(Name = "until_date", EmitDefaultValue = true)]
+        public DateTime? UntilDate { get; set; }
 
         /// <summary>
         /// Gets or Sets VersionInfo
         /// </summary>
-        [DataMember(Name = "version_info", EmitDefaultValue = false)]
+        [DataMember(Name = "version_info", EmitDefaultValue = true)]
         public string VersionInfo { get; set; }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name = "created_by", EmitDefaultValue = false)]
+        [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; set; }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets MimeType
         /// </summary>
-        [DataMember(Name = "mime_type", EmitDefaultValue = false)]
+        [DataMember(Name = "mime_type", EmitDefaultValue = true)]
         public string MimeType { get; set; }
 
         /// <summary>
@@ -124,107 +124,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as VersionedAsset);
-        }
-
-        /// <summary>
-        /// Returns true if VersionedAsset instances are equal
-        /// </summary>
-        /// <param name="input">Instance of VersionedAsset to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(VersionedAsset input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.VersionNr == input.VersionNr ||
-                    this.VersionNr.Equals(input.VersionNr)
-                ) && 
-                (
-                    this.UntilDate == input.UntilDate ||
-                    (this.UntilDate != null &&
-                    this.UntilDate.Equals(input.UntilDate))
-                ) && 
-                (
-                    this.VersionInfo == input.VersionInfo ||
-                    (this.VersionInfo != null &&
-                    this.VersionInfo.Equals(input.VersionInfo))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.CreatedBy == input.CreatedBy ||
-                    (this.CreatedBy != null &&
-                    this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
-                (
-                    this.BlobUploaded == input.BlobUploaded ||
-                    (this.BlobUploaded != null &&
-                    this.BlobUploaded.Equals(input.BlobUploaded))
-                ) && 
-                (
-                    this.MimeType == input.MimeType ||
-                    (this.MimeType != null &&
-                    this.MimeType.Equals(input.MimeType))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.VersionNr.GetHashCode();
-                if (this.UntilDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.UntilDate.GetHashCode();
-                }
-                if (this.VersionInfo != null)
-                {
-                    hashCode = (hashCode * 59) + this.VersionInfo.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.CreatedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
-                }
-                if (this.BlobUploaded != null)
-                {
-                    hashCode = (hashCode * 59) + this.BlobUploaded.GetHashCode();
-                }
-                if (this.MimeType != null)
-                {
-                    hashCode = (hashCode * 59) + this.MimeType.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

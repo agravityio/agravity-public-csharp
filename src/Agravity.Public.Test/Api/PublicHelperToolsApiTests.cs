@@ -63,7 +63,8 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //bool? translations = null;
-            //var response = instance.HttpGetAllUserDefinedLists(translations);
+            //string acceptLanguage = null;
+            //var response = instance.HttpGetAllUserDefinedLists(translations, acceptLanguage);
             //Assert.IsType<List<CollectionUDL>>(response);
         }
 

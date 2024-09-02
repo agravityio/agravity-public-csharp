@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// SharedCollectionFull
     /// </summary>
     [DataContract(Name = "sharedCollectionFull")]
-    public partial class SharedCollectionFull : IEquatable<SharedCollectionFull>, IValidatableObject
+    public partial class SharedCollectionFull : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedCollectionFull" /> class.
@@ -56,7 +56,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public SharedCollectionFull(List<SharedAsset> page = default(List<SharedAsset>), int pageSize = default(int), int? size = default(int?), string continuationToken = default(string), string id = default(string), string entityType = default(string), string collectionId = default(string), string url = default(string), DateTime validUntil = default(DateTime), string validFor = default(string), string message = default(string), bool global = default(bool), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), string password = default(string), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public SharedCollectionFull(List<SharedAsset> page = default(List<SharedAsset>), int? pageSize = default(int?), int? size = default(int?), string continuationToken = default(string), string id = default(string), string entityType = default(string), string collectionId = default(string), string url = default(string), DateTime? validUntil = default(DateTime?), string validFor = default(string), string message = default(string), bool? global = default(bool?), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), string password = default(string), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Page = page;
             this.PageSize = pageSize;
@@ -84,14 +84,14 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Page
         /// </summary>
-        [DataMember(Name = "page", EmitDefaultValue = false)]
+        [DataMember(Name = "page", EmitDefaultValue = true)]
         public List<SharedAsset> Page { get; set; }
 
         /// <summary>
         /// Gets or Sets PageSize
         /// </summary>
-        [DataMember(Name = "page_size", EmitDefaultValue = false)]
-        public int PageSize { get; set; }
+        [DataMember(Name = "page_size", EmitDefaultValue = true)]
+        public int? PageSize { get; set; }
 
         /// <summary>
         /// Gets or Sets Size
@@ -102,73 +102,73 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets ContinuationToken
         /// </summary>
-        [DataMember(Name = "continuation_token", EmitDefaultValue = false)]
+        [DataMember(Name = "continuation_token", EmitDefaultValue = true)]
         public string ContinuationToken { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityType
         /// </summary>
-        [DataMember(Name = "entity_type", EmitDefaultValue = false)]
+        [DataMember(Name = "entity_type", EmitDefaultValue = true)]
         public string EntityType { get; set; }
 
         /// <summary>
         /// Gets or Sets CollectionId
         /// </summary>
-        [DataMember(Name = "collection_id", EmitDefaultValue = false)]
+        [DataMember(Name = "collection_id", EmitDefaultValue = true)]
         public string CollectionId { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "url", EmitDefaultValue = false)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets ValidUntil
         /// </summary>
-        [DataMember(Name = "valid_until", EmitDefaultValue = false)]
-        public DateTime ValidUntil { get; set; }
+        [DataMember(Name = "valid_until", EmitDefaultValue = true)]
+        public DateTime? ValidUntil { get; set; }
 
         /// <summary>
         /// Gets or Sets ValidFor
         /// </summary>
-        [DataMember(Name = "valid_for", EmitDefaultValue = false)]
+        [DataMember(Name = "valid_for", EmitDefaultValue = true)]
         public string ValidFor { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
-        [DataMember(Name = "message", EmitDefaultValue = false)]
+        [DataMember(Name = "message", EmitDefaultValue = true)]
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Global
         /// </summary>
         [DataMember(Name = "global", EmitDefaultValue = true)]
-        public bool Global { get; set; }
+        public bool? Global { get; set; }
 
         /// <summary>
         /// Gets or Sets AllowedFormats
         /// </summary>
-        [DataMember(Name = "allowed_formats", EmitDefaultValue = false)]
+        [DataMember(Name = "allowed_formats", EmitDefaultValue = true)]
         public List<SharedAllowedFormat> AllowedFormats { get; set; }
 
         /// <summary>
         /// Gets or Sets Password
         /// </summary>
-        [DataMember(Name = "password", EmitDefaultValue = false)]
+        [DataMember(Name = "password", EmitDefaultValue = true)]
         public string Password { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name = "created_by", EmitDefaultValue = false)]
+        [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; set; }
 
         /// <summary>
@@ -192,19 +192,19 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets ModifiedBy
         /// </summary>
-        [DataMember(Name = "modified_by", EmitDefaultValue = false)]
+        [DataMember(Name = "modified_by", EmitDefaultValue = true)]
         public string ModifiedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets Pk
         /// </summary>
-        [DataMember(Name = "pk", EmitDefaultValue = false)]
+        [DataMember(Name = "pk", EmitDefaultValue = true)]
         public string Pk { get; set; }
 
         /// <summary>
         /// Gets or Sets Etag
         /// </summary>
-        [DataMember(Name = "_etag", EmitDefaultValue = false)]
+        [DataMember(Name = "_etag", EmitDefaultValue = true)]
         public string Etag { get; set; }
 
         /// <summary>
@@ -250,231 +250,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SharedCollectionFull);
-        }
-
-        /// <summary>
-        /// Returns true if SharedCollectionFull instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SharedCollectionFull to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SharedCollectionFull input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Page == input.Page ||
-                    this.Page != null &&
-                    input.Page != null &&
-                    this.Page.SequenceEqual(input.Page)
-                ) && 
-                (
-                    this.PageSize == input.PageSize ||
-                    this.PageSize.Equals(input.PageSize)
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.ContinuationToken == input.ContinuationToken ||
-                    (this.ContinuationToken != null &&
-                    this.ContinuationToken.Equals(input.ContinuationToken))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.EntityType == input.EntityType ||
-                    (this.EntityType != null &&
-                    this.EntityType.Equals(input.EntityType))
-                ) && 
-                (
-                    this.CollectionId == input.CollectionId ||
-                    (this.CollectionId != null &&
-                    this.CollectionId.Equals(input.CollectionId))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.ValidUntil == input.ValidUntil ||
-                    (this.ValidUntil != null &&
-                    this.ValidUntil.Equals(input.ValidUntil))
-                ) && 
-                (
-                    this.ValidFor == input.ValidFor ||
-                    (this.ValidFor != null &&
-                    this.ValidFor.Equals(input.ValidFor))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Global == input.Global ||
-                    this.Global.Equals(input.Global)
-                ) && 
-                (
-                    this.AllowedFormats == input.AllowedFormats ||
-                    this.AllowedFormats != null &&
-                    input.AllowedFormats != null &&
-                    this.AllowedFormats.SequenceEqual(input.AllowedFormats)
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.CreatedBy == input.CreatedBy ||
-                    (this.CreatedBy != null &&
-                    this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.ModifiedBy == input.ModifiedBy ||
-                    (this.ModifiedBy != null &&
-                    this.ModifiedBy.Equals(input.ModifiedBy))
-                ) && 
-                (
-                    this.Pk == input.Pk ||
-                    (this.Pk != null &&
-                    this.Pk.Equals(input.Pk))
-                ) && 
-                (
-                    this.Etag == input.Etag ||
-                    (this.Etag != null &&
-                    this.Etag.Equals(input.Etag))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Page != null)
-                {
-                    hashCode = (hashCode * 59) + this.Page.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.PageSize.GetHashCode();
-                if (this.Size != null)
-                {
-                    hashCode = (hashCode * 59) + this.Size.GetHashCode();
-                }
-                if (this.ContinuationToken != null)
-                {
-                    hashCode = (hashCode * 59) + this.ContinuationToken.GetHashCode();
-                }
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.EntityType != null)
-                {
-                    hashCode = (hashCode * 59) + this.EntityType.GetHashCode();
-                }
-                if (this.CollectionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CollectionId.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                if (this.ValidUntil != null)
-                {
-                    hashCode = (hashCode * 59) + this.ValidUntil.GetHashCode();
-                }
-                if (this.ValidFor != null)
-                {
-                    hashCode = (hashCode * 59) + this.ValidFor.GetHashCode();
-                }
-                if (this.Message != null)
-                {
-                    hashCode = (hashCode * 59) + this.Message.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Global.GetHashCode();
-                if (this.AllowedFormats != null)
-                {
-                    hashCode = (hashCode * 59) + this.AllowedFormats.GetHashCode();
-                }
-                if (this.Password != null)
-                {
-                    hashCode = (hashCode * 59) + this.Password.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.CreatedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
-                }
-                if (this.CreatedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
-                }
-                if (this.ModifiedDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedDate.GetHashCode();
-                }
-                if (this.ModifiedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.ModifiedBy.GetHashCode();
-                }
-                if (this.Pk != null)
-                {
-                    hashCode = (hashCode * 59) + this.Pk.GetHashCode();
-                }
-                if (this.Etag != null)
-                {
-                    hashCode = (hashCode * 59) + this.Etag.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

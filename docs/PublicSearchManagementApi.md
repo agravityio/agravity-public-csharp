@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpGlobalSearch**](PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search |  |
 | [**HttpSearchAdminGetStatus**](PublicSearchManagementApi.md#httpsearchadmingetstatus) | **GET** /searchadmin/status |  |
 
-<a name="httpgetsearchfacettebyname"></a>
+<a id="httpgetsearchfacettebyname"></a>
 # **HttpGetSearchFacetteByName**
 > SearchFacet HttpGetSearchFacetteByName (string name, string s, string collectiontypeid = null, string collectionid = null, string mode = null, string filter = null, string ids = null, string portalId = null)
 
@@ -119,9 +119,9 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpglobalsearch"></a>
+<a id="httpglobalsearch"></a>
 # **HttpGlobalSearch**
-> SearchResult HttpGlobalSearch (string s, int? limit = null, int? skip = null, string collectiontypeid = null, string collectionid = null, string mode = null, bool? expose = null, string filter = null, string orderby = null, string ids = null, string portalId = null, bool? translations = null)
+> SearchResult HttpGlobalSearch (string s, int? limit = null, int? skip = null, string collectiontypeid = null, string collectionid = null, string mode = null, bool? expose = null, string filter = null, string orderby = null, string ids = null, string portalId = null, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -161,10 +161,11 @@ namespace Example
             var ids = "ids_example";  // string | Comma separated values list with all ids which should be returned. (optional) 
             var portalId = "portalId_example";  // string | If the search should be redirected to a specific portal. (optional) 
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                SearchResult result = apiInstance.HttpGlobalSearch(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations);
+                SearchResult result = apiInstance.HttpGlobalSearch(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -184,7 +185,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<SearchResult> response = apiInstance.HttpGlobalSearchWithHttpInfo(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations);
+    ApiResponse<SearchResult> response = apiInstance.HttpGlobalSearchWithHttpInfo(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -213,6 +214,7 @@ catch (ApiException e)
 | **ids** | **string** | Comma separated values list with all ids which should be returned. | [optional]  |
 | **portalId** | **string** | If the search should be redirected to a specific portal. | [optional]  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 
@@ -238,7 +240,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="httpsearchadmingetstatus"></a>
+<a id="httpsearchadmingetstatus"></a>
 # **HttpSearchAdminGetStatus**
 > SearchAdminStatus HttpSearchAdminGetStatus (string portalId = null)
 

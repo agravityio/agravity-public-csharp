@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Agravity.Public.Api;
 using Agravity.Public.Model;
 using Agravity.Public.Client;
 using System.Reflection;
@@ -56,7 +55,6 @@ namespace Agravity.Public.Test.Model
             //Assert.IsType<SearchableItem>(instance);
         }
 
-
         /// <summary>
         /// Test the property 'Name'
         /// </summary>
@@ -65,6 +63,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Name'
         }
+
         /// <summary>
         /// Test the property 'IsKey'
         /// </summary>
@@ -73,6 +72,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'IsKey'
         }
+
         /// <summary>
         /// Test the property 'Filterable'
         /// </summary>
@@ -81,6 +81,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Filterable'
         }
+
         /// <summary>
         /// Test the property 'Hidden'
         /// </summary>
@@ -89,6 +90,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Hidden'
         }
+
         /// <summary>
         /// Test the property 'Searchable'
         /// </summary>
@@ -97,6 +99,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Searchable'
         }
+
         /// <summary>
         /// Test the property 'Facetable'
         /// </summary>
@@ -105,6 +108,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Facetable'
         }
+
         /// <summary>
         /// Test the property 'Sortable'
         /// </summary>
@@ -113,6 +117,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Sortable'
         }
+
         /// <summary>
         /// Test the property 'IsCollection'
         /// </summary>
@@ -121,6 +126,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'IsCollection'
         }
+
         /// <summary>
         /// Test the property 'Searchtype'
         /// </summary>
@@ -129,6 +135,7 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Searchtype'
         }
+
         /// <summary>
         /// Test the property 'Fields'
         /// </summary>
@@ -137,7 +144,5 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Fields'
         }
-
     }
-
 }

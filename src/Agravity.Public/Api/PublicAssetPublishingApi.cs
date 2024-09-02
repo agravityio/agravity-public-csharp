@@ -121,7 +121,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PublishedAsset</returns>
-        System.Threading.Tasks.Task<PublishedAsset> HttpPublishedAssetsCreateAsync(string id, PublishedAsset publishedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PublishedAsset> HttpPublishedAssetsCreateAsync(string id, PublishedAsset publishedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -135,7 +135,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PublishedAsset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PublishedAsset>> HttpPublishedAssetsCreateWithHttpInfoAsync(string id, PublishedAsset publishedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PublishedAsset>> HttpPublishedAssetsCreateWithHttpInfoAsync(string id, PublishedAsset publishedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -147,7 +147,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PublishEntity</returns>
-        System.Threading.Tasks.Task<PublishEntity> HttpPublishedAssetsGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PublishEntity> HttpPublishedAssetsGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -160,7 +160,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PublishEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PublishEntity>> HttpPublishedAssetsGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PublishEntity>> HttpPublishedAssetsGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -173,7 +173,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PublishedAsset</returns>
-        System.Threading.Tasks.Task<PublishedAsset> HttpPublishedAssetsGetByIdAsync(string id, string pid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PublishedAsset> HttpPublishedAssetsGetByIdAsync(string id, string pid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -187,7 +187,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PublishedAsset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PublishedAsset>> HttpPublishedAssetsGetByIdWithHttpInfoAsync(string id, string pid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PublishedAsset>> HttpPublishedAssetsGetByIdWithHttpInfoAsync(string id, string pid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -402,7 +402,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PublishedAsset</returns>
-        public async System.Threading.Tasks.Task<PublishedAsset> HttpPublishedAssetsCreateAsync(string id, PublishedAsset publishedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PublishedAsset> HttpPublishedAssetsCreateAsync(string id, PublishedAsset publishedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<PublishedAsset> localVarResponse = await HttpPublishedAssetsCreateWithHttpInfoAsync(id, publishedAsset, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -417,7 +417,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PublishedAsset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PublishedAsset>> HttpPublishedAssetsCreateWithHttpInfoAsync(string id, PublishedAsset publishedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PublishedAsset>> HttpPublishedAssetsCreateWithHttpInfoAsync(string id, PublishedAsset publishedAsset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -565,7 +565,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PublishEntity</returns>
-        public async System.Threading.Tasks.Task<PublishEntity> HttpPublishedAssetsGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PublishEntity> HttpPublishedAssetsGetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<PublishEntity> localVarResponse = await HttpPublishedAssetsGetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -579,7 +579,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PublishEntity)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PublishEntity>> HttpPublishedAssetsGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PublishEntity>> HttpPublishedAssetsGetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -729,7 +729,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PublishedAsset</returns>
-        public async System.Threading.Tasks.Task<PublishedAsset> HttpPublishedAssetsGetByIdAsync(string id, string pid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PublishedAsset> HttpPublishedAssetsGetByIdAsync(string id, string pid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<PublishedAsset> localVarResponse = await HttpPublishedAssetsGetByIdWithHttpInfoAsync(id, pid, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -744,7 +744,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PublishedAsset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PublishedAsset>> HttpPublishedAssetsGetByIdWithHttpInfoAsync(string id, string pid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PublishedAsset>> HttpPublishedAssetsGetByIdWithHttpInfoAsync(string id, string pid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

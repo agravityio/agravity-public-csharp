@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// SearchAdminIndexerStatus
     /// </summary>
     [DataContract(Name = "searchAdminIndexerStatus")]
-    public partial class SearchAdminIndexerStatus : IEquatable<SearchAdminIndexerStatus>, IValidatableObject
+    public partial class SearchAdminIndexerStatus : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchAdminIndexerStatus" /> class.
@@ -50,25 +50,25 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Error
         /// </summary>
-        [DataMember(Name = "error", EmitDefaultValue = false)]
+        [DataMember(Name = "error", EmitDefaultValue = true)]
         public string Error { get; set; }
 
         /// <summary>
         /// Gets or Sets Lastrun
         /// </summary>
-        [DataMember(Name = "lastrun", EmitDefaultValue = false)]
+        [DataMember(Name = "lastrun", EmitDefaultValue = true)]
         public SearchAdminIndexerLastRun Lastrun { get; set; }
 
         /// <summary>
@@ -97,84 +97,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SearchAdminIndexerStatus);
-        }
-
-        /// <summary>
-        /// Returns true if SearchAdminIndexerStatus instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SearchAdminIndexerStatus to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SearchAdminIndexerStatus input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Error == input.Error ||
-                    (this.Error != null &&
-                    this.Error.Equals(input.Error))
-                ) && 
-                (
-                    this.Lastrun == input.Lastrun ||
-                    (this.Lastrun != null &&
-                    this.Lastrun.Equals(input.Lastrun))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
-                if (this.Error != null)
-                {
-                    hashCode = (hashCode * 59) + this.Error.GetHashCode();
-                }
-                if (this.Lastrun != null)
-                {
-                    hashCode = (hashCode * 59) + this.Lastrun.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

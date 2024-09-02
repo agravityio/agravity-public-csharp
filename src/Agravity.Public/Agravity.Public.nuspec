@@ -36,7 +36,7 @@
     <files>
 
         <!-- A readme.txt will be displayed when the package is installed -->
-        <file src="..\..\README.md" target="" />
+        <file src="README.md" target="" />
         <file src="..\..\docs\**\*.*" target="docs" />
 
     </files>

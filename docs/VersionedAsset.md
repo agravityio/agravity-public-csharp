@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VersionNr** | **int** |  | [optional] 
-**UntilDate** | **DateTime** |  | [optional] 
+**VersionNr** | **int?** |  | [optional] 
+**UntilDate** | **DateTime?** |  | [optional] 
 **VersionInfo** | **string** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 

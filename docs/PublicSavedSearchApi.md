@@ -6,9 +6,9 @@ All URIs are relative to *http://localhost:7072/api*
 |--------|--------------|-------------|
 | [**HttpSavedSearchesGetAll**](PublicSavedSearchApi.md#httpsavedsearchesgetall) | **GET** /savedsearches |  |
 
-<a name="httpsavedsearchesgetall"></a>
+<a id="httpsavedsearchesgetall"></a>
 # **HttpSavedSearchesGetAll**
-> List&lt;SavedSearch&gt; HttpSavedSearchesGetAll (bool? external = null, bool? translations = null)
+> List&lt;SavedSearch&gt; HttpSavedSearchesGetAll (bool? external = null, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -38,10 +38,11 @@ namespace Example
             var apiInstance = new PublicSavedSearchApi(config);
             var external = true;  // bool? | This parameter filters out all saved searches on basis this boolean. (optional) 
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                List<SavedSearch> result = apiInstance.HttpSavedSearchesGetAll(external, translations);
+                List<SavedSearch> result = apiInstance.HttpSavedSearchesGetAll(external, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -61,7 +62,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<SavedSearch>> response = apiInstance.HttpSavedSearchesGetAllWithHttpInfo(external, translations);
+    ApiResponse<List<SavedSearch>> response = apiInstance.HttpSavedSearchesGetAllWithHttpInfo(external, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -80,6 +81,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **external** | **bool?** | This parameter filters out all saved searches on basis this boolean. | [optional]  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 

@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// PortalTheme
     /// </summary>
     [DataContract(Name = "portalTheme")]
-    public partial class PortalTheme : IEquatable<PortalTheme>, IValidatableObject
+    public partial class PortalTheme : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PortalTheme" /> class.
@@ -54,37 +54,37 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets BackgroundUrl
         /// </summary>
-        [DataMember(Name = "background_url", EmitDefaultValue = false)]
+        [DataMember(Name = "background_url", EmitDefaultValue = true)]
         public string BackgroundUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets LogoUrl
         /// </summary>
-        [DataMember(Name = "logo_url", EmitDefaultValue = false)]
+        [DataMember(Name = "logo_url", EmitDefaultValue = true)]
         public string LogoUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Colors
         /// </summary>
-        [DataMember(Name = "colors", EmitDefaultValue = false)]
+        [DataMember(Name = "colors", EmitDefaultValue = true)]
         public Dictionary<string, object> Colors { get; set; }
 
         /// <summary>
         /// Gets or Sets TopbarColor
         /// </summary>
-        [DataMember(Name = "topbar_color", EmitDefaultValue = false)]
+        [DataMember(Name = "topbar_color", EmitDefaultValue = true)]
         public string TopbarColor { get; set; }
 
         /// <summary>
         /// Gets or Sets IconEmpty
         /// </summary>
-        [DataMember(Name = "icon_empty", EmitDefaultValue = false)]
+        [DataMember(Name = "icon_empty", EmitDefaultValue = true)]
         public string IconEmpty { get; set; }
 
         /// <summary>
         /// Gets or Sets IconActive
         /// </summary>
-        [DataMember(Name = "icon_active", EmitDefaultValue = false)]
+        [DataMember(Name = "icon_active", EmitDefaultValue = true)]
         public string IconActive { get; set; }
 
         /// <summary>
@@ -115,103 +115,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PortalTheme);
-        }
-
-        /// <summary>
-        /// Returns true if PortalTheme instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PortalTheme to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PortalTheme input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.BackgroundUrl == input.BackgroundUrl ||
-                    (this.BackgroundUrl != null &&
-                    this.BackgroundUrl.Equals(input.BackgroundUrl))
-                ) && 
-                (
-                    this.LogoUrl == input.LogoUrl ||
-                    (this.LogoUrl != null &&
-                    this.LogoUrl.Equals(input.LogoUrl))
-                ) && 
-                (
-                    this.Colors == input.Colors ||
-                    this.Colors != null &&
-                    input.Colors != null &&
-                    this.Colors.SequenceEqual(input.Colors)
-                ) && 
-                (
-                    this.TopbarColor == input.TopbarColor ||
-                    (this.TopbarColor != null &&
-                    this.TopbarColor.Equals(input.TopbarColor))
-                ) && 
-                (
-                    this.IconEmpty == input.IconEmpty ||
-                    (this.IconEmpty != null &&
-                    this.IconEmpty.Equals(input.IconEmpty))
-                ) && 
-                (
-                    this.IconActive == input.IconActive ||
-                    (this.IconActive != null &&
-                    this.IconActive.Equals(input.IconActive))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.BackgroundUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.BackgroundUrl.GetHashCode();
-                }
-                if (this.LogoUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.LogoUrl.GetHashCode();
-                }
-                if (this.Colors != null)
-                {
-                    hashCode = (hashCode * 59) + this.Colors.GetHashCode();
-                }
-                if (this.TopbarColor != null)
-                {
-                    hashCode = (hashCode * 59) + this.TopbarColor.GetHashCode();
-                }
-                if (this.IconEmpty != null)
-                {
-                    hashCode = (hashCode * 59) + this.IconEmpty.GetHashCode();
-                }
-                if (this.IconActive != null)
-                {
-                    hashCode = (hashCode * 59) + this.IconActive.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -30,7 +30,7 @@ namespace Agravity.Public.Model
     /// AssetAvailability
     /// </summary>
     [DataContract(Name = "assetAvailability")]
-    public partial class AssetAvailability : IEquatable<AssetAvailability>, IValidatableObject
+    public partial class AssetAvailability : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AssetAvailability" /> class.
@@ -48,7 +48,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Availability
         /// </summary>
-        [DataMember(Name = "availability", EmitDefaultValue = false)]
+        [DataMember(Name = "availability", EmitDefaultValue = true)]
         public string Availability { get; set; }
 
         /// <summary>
@@ -88,75 +88,11 @@ namespace Agravity.Public.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as AssetAvailability);
-        }
-
-        /// <summary>
-        /// Returns true if AssetAvailability instances are equal
-        /// </summary>
-        /// <param name="input">Instance of AssetAvailability to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AssetAvailability input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Availability == input.Availability ||
-                    (this.Availability != null &&
-                    this.Availability.Equals(input.Availability))
-                ) && 
-                (
-                    this.AvailableFrom == input.AvailableFrom ||
-                    (this.AvailableFrom != null &&
-                    this.AvailableFrom.Equals(input.AvailableFrom))
-                ) && 
-                (
-                    this.AvailableTo == input.AvailableTo ||
-                    (this.AvailableTo != null &&
-                    this.AvailableTo.Equals(input.AvailableTo))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Availability != null)
-                {
-                    hashCode = (hashCode * 59) + this.Availability.GetHashCode();
-                }
-                if (this.AvailableFrom != null)
-                {
-                    hashCode = (hashCode * 59) + this.AvailableFrom.GetHashCode();
-                }
-                if (this.AvailableTo != null)
-                {
-                    hashCode = (hashCode * 59) + this.AvailableTo.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

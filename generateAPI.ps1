@@ -60,7 +60,7 @@ if (!(Test-Path "openapi.json") -or (Get-Content "openapi.json" -Raw) -eq "") {
 #npm install @openapitools/openapi-generator-cli -g
 
 # generate API
-$params="packageName=Agravity.Public,library=restsharp,targetFramework=net8.0;netstandard2.0,packageVersion="+$apiVersion
+$params="packageName=Agravity.Public,library=restsharp,targetFramework=net8.0;net6.0;netstandard2.0,packageVersion="+$apiVersion
 # Write-Host("Executing: openapi-generator generate -i https://api.agravity.com/v2/swagger.json -g csharp-netcore -o src -p "+$params);
 #npx @openapitools/openapi-generator-cli generate -i openapi.json -g csharp-netcore -o . --additional-properties=$params
 java -jar $env:OPENAPI_GENERATOR generate -i openapi.json -g csharp -o . --additional-properties=$params

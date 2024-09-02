@@ -114,6 +114,9 @@ $csproj | Set-Content .\src\Agravity.Public\Agravity.Public.csproj
 # copy README.md from root to src
 Copy-Item .\README.md .\src\Agravity.Public\README.md
 
+# wait 2 seconds
+Start-Sleep -s 2
+
 # echo apiVersion
 Write-Host "Build and Publish with apiVersion: $apiVersion"
 

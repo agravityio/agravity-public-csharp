@@ -1,6 +1,7 @@
 .gitignore
 Agravity.Public.sln
 README.md
+api/openapi.yaml
 appveyor.yml
 docs/AgravityErrorResponse.md
 docs/AgravityVersion.md

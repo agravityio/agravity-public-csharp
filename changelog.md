@@ -10,6 +10,13 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="8.0.0-preview.1"/> [8.0.0-preview.1](https://www.nuget.org/packages/Agravity.Public/8.0.0-preview.1) (2024-09-03)
+
+- Target now net8.0
+- Add Accepted-Languages as HTTP header parameter
+
+---
+
 ## AgravityAPI <a name="7.3.1"/> [7.3.1](https://www.nuget.org/packages/Agravity.Public/7.3.1) (2024-08-18)
 
 - 1196 Download Format: Add optional parameter for fallback to thumbnails

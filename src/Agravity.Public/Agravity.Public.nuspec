@@ -16,6 +16,7 @@
         <owners>$author$</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <developmentDependency>false</developmentDependency>
+        <readme>README.md</readme>
 
         <!-- The description can be used in package manager UI. Note that the
              nuget.org gallery uses information you add in the portal. -->
@@ -34,10 +35,8 @@
         </dependencies>
     </metadata>
     <files>
-
         <!-- A readme.txt will be displayed when the package is installed -->
         <file src="README.md" target="" />
         <file src="..\..\docs\**\*.*" target="docs" />
-
     </files>
 </package>

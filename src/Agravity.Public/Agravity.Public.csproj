@@ -53,7 +53,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="README.md" />
     <None Remove="System.Web" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web" />

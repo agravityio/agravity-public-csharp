@@ -130,10 +130,6 @@ dotnet build .\src\Agravity.Public\Agravity.Public.csproj -c Release
 #create command 
 dotnet pack .\src\Agravity.Public\Agravity.Public.csproj -c Release -o .\out /p:Version=$apiVersion
 
-# wait 2 seconds and try again (sometimes it fails - README.md not found)
-Start-Sleep -s 2
-
-dotnet pack .\src\Agravity.Public\Agravity.Public.csproj -c Release -o .\out /p:Version=$apiVersion
 # Set API Key (once)
 # nuget setApiKey xyz
 

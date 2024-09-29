@@ -4,6 +4,7 @@ README.md
 api/openapi.yaml
 appveyor.yml
 docs/AgravityErrorResponse.md
+docs/AgravityInfoResponse.md
 docs/AgravityVersion.md
 docs/AllWebAppData.md
 docs/ArtificialIntelligenceGroup.md
@@ -13,7 +14,6 @@ docs/AssetBlob.md
 docs/AssetIdFormat.md
 docs/AssetPageResult.md
 docs/AzSearchOptions.md
-docs/BadRequestResult.md
 docs/CollTypeItem.md
 docs/Collection.md
 docs/CollectionType.md
@@ -29,11 +29,9 @@ docs/EntityIdName.md
 docs/FrontendAppConfig.md
 docs/GroupAllAppData.md
 docs/MoveCollectionBody.md
-docs/OkResult.md
 docs/PermissionEntity.md
 docs/Portal.md
 docs/PortalConfiguration.md
-docs/PortalLanguages.md
 docs/PortalLinks.md
 docs/PortalTheme.md
 docs/PortalZipRequest.md
@@ -113,6 +111,7 @@ src/Agravity.Public.Test/Api/PublicTranslationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicWebAppDataApiTests.cs
 src/Agravity.Public.Test/Api/PublicWorkspaceManagementApiTests.cs
 src/Agravity.Public.Test/Model/AgravityErrorResponseTests.cs
+src/Agravity.Public.Test/Model/AgravityInfoResponseTests.cs
 src/Agravity.Public.Test/Model/AgravityVersionTests.cs
 src/Agravity.Public.Test/Model/AllWebAppDataTests.cs
 src/Agravity.Public.Test/Model/ArtificialIntelligenceGroupTests.cs
@@ -122,7 +121,6 @@ src/Agravity.Public.Test/Model/AssetIdFormatTests.cs
 src/Agravity.Public.Test/Model/AssetPageResultTests.cs
 src/Agravity.Public.Test/Model/AssetTests.cs
 src/Agravity.Public.Test/Model/AzSearchOptionsTests.cs
-src/Agravity.Public.Test/Model/BadRequestResultTests.cs
 src/Agravity.Public.Test/Model/CollTypeItemTests.cs
 src/Agravity.Public.Test/Model/CollectionTests.cs
 src/Agravity.Public.Test/Model/CollectionTypeTests.cs
@@ -138,10 +136,8 @@ src/Agravity.Public.Test/Model/EntityIdTests.cs
 src/Agravity.Public.Test/Model/FrontendAppConfigTests.cs
 src/Agravity.Public.Test/Model/GroupAllAppDataTests.cs
 src/Agravity.Public.Test/Model/MoveCollectionBodyTests.cs
-src/Agravity.Public.Test/Model/OkResultTests.cs
 src/Agravity.Public.Test/Model/PermissionEntityTests.cs
 src/Agravity.Public.Test/Model/PortalConfigurationTests.cs
-src/Agravity.Public.Test/Model/PortalLanguagesTests.cs
 src/Agravity.Public.Test/Model/PortalLinksTests.cs
 src/Agravity.Public.Test/Model/PortalTests.cs
 src/Agravity.Public.Test/Model/PortalThemeTests.cs
@@ -215,6 +211,7 @@ src/Agravity.Public/Client/RequestOptions.cs
 src/Agravity.Public/Client/RetryConfiguration.cs
 src/Agravity.Public/Model/AbstractOpenAPISchema.cs
 src/Agravity.Public/Model/AgravityErrorResponse.cs
+src/Agravity.Public/Model/AgravityInfoResponse.cs
 src/Agravity.Public/Model/AgravityVersion.cs
 src/Agravity.Public/Model/AllWebAppData.cs
 src/Agravity.Public/Model/ArtificialIntelligenceGroup.cs
@@ -224,7 +221,6 @@ src/Agravity.Public/Model/AssetBlob.cs
 src/Agravity.Public/Model/AssetIdFormat.cs
 src/Agravity.Public/Model/AssetPageResult.cs
 src/Agravity.Public/Model/AzSearchOptions.cs
-src/Agravity.Public/Model/BadRequestResult.cs
 src/Agravity.Public/Model/CollTypeItem.cs
 src/Agravity.Public/Model/Collection.cs
 src/Agravity.Public/Model/CollectionType.cs
@@ -240,11 +236,9 @@ src/Agravity.Public/Model/EntityIdName.cs
 src/Agravity.Public/Model/FrontendAppConfig.cs
 src/Agravity.Public/Model/GroupAllAppData.cs
 src/Agravity.Public/Model/MoveCollectionBody.cs
-src/Agravity.Public/Model/OkResult.cs
 src/Agravity.Public/Model/PermissionEntity.cs
 src/Agravity.Public/Model/Portal.cs
 src/Agravity.Public/Model/PortalConfiguration.cs
-src/Agravity.Public/Model/PortalLanguages.cs
 src/Agravity.Public/Model/PortalLinks.cs
 src/Agravity.Public/Model/PortalTheme.cs
 src/Agravity.Public/Model/PortalZipRequest.cs

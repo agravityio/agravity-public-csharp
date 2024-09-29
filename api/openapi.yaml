@@ -2787,13 +2787,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/okResult'
+                $ref: '#/components/schemas/agravityInfoResponse'
           description: Operation successfull
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/badRequestResult'
+                $ref: '#/components/schemas/agravityErrorResponse'
           description: Only if instaceId is null
       tags:
       - Public General Management
@@ -2815,13 +2815,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/okResult'
+                $ref: '#/components/schemas/agravityInfoResponse'
           description: Operation successfull
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/badRequestResult'
+                $ref: '#/components/schemas/agravityErrorResponse'
           description: Only if instaceId is null
       tags:
       - Public General Management
@@ -3622,6 +3622,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/signalRConnectionInfo'
           description: The signalr connection info for further processing.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agravityErrorResponse'
+          description: "Could not negotiate with SignalR. (Code: 50e617b3-93e8-4b15-8072-0b3c12c26ec7)"
         "401":
           description: Unauthorized. API Key not provided.
       security:
@@ -4152,6 +4158,22 @@ components:
         exception:
           nullable: true
           type: string
+      type: object
+    agravityInfoResponse:
+      example:
+        info_object: "{}"
+        info_id: info_id
+        info_message: info_message
+      properties:
+        info_id:
+          nullable: true
+          type: string
+        info_message:
+          nullable: true
+          type: string
+        info_object:
+          nullable: true
+          type: object
       type: object
     agravityVersion:
       example:
@@ -6145,14 +6167,6 @@ components:
           nullable: true
           type: string
       type: object
-    badRequestResult:
-      example:
-        statusCode: 6
-      properties:
-        statusCode:
-          format: int32
-          type: integer
-      type: object
     collection:
       example:
         parent: parent
@@ -7287,8 +7301,14 @@ components:
           - "{}"
           - "{}"
           operation: operation
+        target_filename: target_filename
         translations:
           key: null
+        permissions:
+        - role: NONE
+          id: id
+        - role: NONE
+          id: id
         asset_type: asset_type
         name: name
         modified_by: modified_by
@@ -7323,11 +7343,19 @@ components:
         fallback_thumb:
           nullable: true
           type: boolean
+        target_filename:
+          nullable: true
+          type: string
         translations:
           additionalProperties:
             $ref: '#/components/schemas/dictionary_object'
           nullable: true
           type: object
+        permissions:
+          items:
+            $ref: '#/components/schemas/permissionEntity'
+          nullable: true
+          type: array
         name:
           nullable: true
           type: string
@@ -8165,14 +8193,6 @@ components:
           nullable: true
           type: string
       type: object
-    okResult:
-      example:
-        statusCode: 0
-      properties:
-        statusCode:
-          format: int32
-          type: integer
-      type: object
     permissionEntity:
       example:
         role: NONE
@@ -8197,9 +8217,7 @@ components:
         facettes:
         - facettes
         - facettes
-        languages:
-          metadata: metadata
-          ui: ui
+        languages: languages
         limit_ids:
         - limit_ids
         - limit_ids
@@ -8245,7 +8263,8 @@ components:
           nullable: true
           type: string
         languages:
-          $ref: '#/components/schemas/portalLanguages'
+          nullable: true
+          type: string
         theme:
           $ref: '#/components/schemas/portalTheme'
         links:
@@ -8371,9 +8390,7 @@ components:
         facettes:
         - facettes
         - facettes
-        languages:
-          metadata: metadata
-          ui: ui
+        languages: languages
         modified_date: 2000-01-23T04:56:07.000+00:00
         sdls:
         - values:
@@ -8439,8 +8456,14 @@ components:
             - "{}"
             - "{}"
             operation: operation
+          target_filename: target_filename
           translations:
             key: null
+          permissions:
+          - role: NONE
+            id: id
+          - role: NONE
+            id: id
           asset_type: asset_type
           name: name
           modified_by: modified_by
@@ -8467,8 +8490,14 @@ components:
             - "{}"
             - "{}"
             operation: operation
+          target_filename: target_filename
           translations:
             key: null
+          permissions:
+          - role: NONE
+            id: id
+          - role: NONE
+            id: id
           asset_type: asset_type
           name: name
           modified_by: modified_by
@@ -8565,7 +8594,8 @@ components:
           nullable: true
           type: string
         languages:
-          $ref: '#/components/schemas/portalLanguages'
+          nullable: true
+          type: string
         theme:
           $ref: '#/components/schemas/portalTheme'
         links:
@@ -8622,19 +8652,6 @@ components:
           nullable: true
           type: string
         _etag:
-          nullable: true
-          type: string
-      type: object
-    portalLanguages:
-      example:
-        metadata: metadata
-        ui: ui
-      nullable: true
-      properties:
-        metadata:
-          nullable: true
-          type: string
-        ui:
           nullable: true
           type: string
       type: object

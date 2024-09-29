@@ -27,33 +27,41 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// PortalLanguages
+    /// AgravityInfoResponse
     /// </summary>
-    [DataContract(Name = "portalLanguages")]
-    public partial class PortalLanguages : IValidatableObject
+    [DataContract(Name = "agravityInfoResponse")]
+    public partial class AgravityInfoResponse : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PortalLanguages" /> class.
+        /// Initializes a new instance of the <see cref="AgravityInfoResponse" /> class.
         /// </summary>
-        /// <param name="metadata">metadata.</param>
-        /// <param name="ui">ui.</param>
-        public PortalLanguages(string metadata = default(string), string ui = default(string))
+        /// <param name="infoId">infoId.</param>
+        /// <param name="infoMessage">infoMessage.</param>
+        /// <param name="infoObject">infoObject.</param>
+        public AgravityInfoResponse(string infoId = default(string), string infoMessage = default(string), Object infoObject = default(Object))
         {
-            this.Metadata = metadata;
-            this.Ui = ui;
+            this.InfoId = infoId;
+            this.InfoMessage = infoMessage;
+            this.InfoObject = infoObject;
         }
 
         /// <summary>
-        /// Gets or Sets Metadata
+        /// Gets or Sets InfoId
         /// </summary>
-        [DataMember(Name = "metadata", EmitDefaultValue = true)]
-        public string Metadata { get; set; }
+        [DataMember(Name = "info_id", EmitDefaultValue = true)]
+        public string InfoId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Ui
+        /// Gets or Sets InfoMessage
         /// </summary>
-        [DataMember(Name = "ui", EmitDefaultValue = true)]
-        public string Ui { get; set; }
+        [DataMember(Name = "info_message", EmitDefaultValue = true)]
+        public string InfoMessage { get; set; }
+
+        /// <summary>
+        /// Gets or Sets InfoObject
+        /// </summary>
+        [DataMember(Name = "info_object", EmitDefaultValue = true)]
+        public Object InfoObject { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +70,10 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PortalLanguages {\n");
-            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
-            sb.Append("  Ui: ").Append(Ui).Append("\n");
+            sb.Append("class AgravityInfoResponse {\n");
+            sb.Append("  InfoId: ").Append(InfoId).Append("\n");
+            sb.Append("  InfoMessage: ").Append(InfoMessage).Append("\n");
+            sb.Append("  InfoObject: ").Append(InfoObject).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

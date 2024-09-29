@@ -90,7 +90,7 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string instanceId = null;
             //var response = instance.HttpTriggerDurableContinue(instanceId);
-            //Assert.IsType<OkResult>(response);
+            //Assert.IsType<AgravityInfoResponse>(response);
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string instanceId = null;
             //var response = instance.HttpTriggerDurableScchTrainingDone(instanceId);
-            //Assert.IsType<OkResult>(response);
+            //Assert.IsType<AgravityInfoResponse>(response);
         }
     }
 }

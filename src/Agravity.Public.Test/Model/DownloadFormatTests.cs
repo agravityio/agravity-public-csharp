@@ -119,12 +119,30 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'TargetFilename'
+        /// </summary>
+        [Fact]
+        public void TargetFilenameTest()
+        {
+            // TODO unit test for the property 'TargetFilename'
+        }
+
+        /// <summary>
         /// Test the property 'Translations'
         /// </summary>
         [Fact]
         public void TranslationsTest()
         {
             // TODO unit test for the property 'Translations'
+        }
+
+        /// <summary>
+        /// Test the property 'Permissions'
+        /// </summary>
+        [Fact]
+        public void PermissionsTest()
+        {
+            // TODO unit test for the property 'Permissions'
         }
 
         /// <summary>

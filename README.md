@@ -194,6 +194,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Model.AgravityErrorResponse](docs/AgravityErrorResponse.md)
+ - [Model.AgravityInfoResponse](docs/AgravityInfoResponse.md)
  - [Model.AgravityVersion](docs/AgravityVersion.md)
  - [Model.AllWebAppData](docs/AllWebAppData.md)
  - [Model.ArtificialIntelligenceGroup](docs/ArtificialIntelligenceGroup.md)
@@ -203,7 +204,6 @@ Class | Method | HTTP request | Description
  - [Model.AssetIdFormat](docs/AssetIdFormat.md)
  - [Model.AssetPageResult](docs/AssetPageResult.md)
  - [Model.AzSearchOptions](docs/AzSearchOptions.md)
- - [Model.BadRequestResult](docs/BadRequestResult.md)
  - [Model.CollTypeItem](docs/CollTypeItem.md)
  - [Model.Collection](docs/Collection.md)
  - [Model.CollectionType](docs/CollectionType.md)
@@ -219,11 +219,9 @@ Class | Method | HTTP request | Description
  - [Model.FrontendAppConfig](docs/FrontendAppConfig.md)
  - [Model.GroupAllAppData](docs/GroupAllAppData.md)
  - [Model.MoveCollectionBody](docs/MoveCollectionBody.md)
- - [Model.OkResult](docs/OkResult.md)
  - [Model.PermissionEntity](docs/PermissionEntity.md)
  - [Model.Portal](docs/Portal.md)
  - [Model.PortalConfiguration](docs/PortalConfiguration.md)
- - [Model.PortalLanguages](docs/PortalLanguages.md)
  - [Model.PortalLinks](docs/PortalLinks.md)
  - [Model.PortalTheme](docs/PortalTheme.md)
  - [Model.PortalZipRequest](docs/PortalZipRequest.md)

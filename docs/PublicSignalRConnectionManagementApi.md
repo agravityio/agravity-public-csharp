@@ -92,6 +92,7 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | The signalr connection info for further processing. |  -  |
+| **400** | Could not negotiate with SignalR. (Code: 50e617b3-93e8-4b15-8072-0b3c12c26ec7) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

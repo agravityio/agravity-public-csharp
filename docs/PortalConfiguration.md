@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | [optional] 
 **EntityType** | **string** |  | [optional] 
 **Filter** | **string** |  | [optional] 
-**Languages** | [**PortalLanguages**](PortalLanguages.md) |  | [optional] 
+**Languages** | **string** |  | [optional] 
 **Theme** | [**PortalTheme**](PortalTheme.md) |  | [optional] 
 **Links** | [**PortalLinks**](PortalLinks.md) |  | [optional] 
 **Metadata** | **List&lt;string&gt;** |  | [optional] 

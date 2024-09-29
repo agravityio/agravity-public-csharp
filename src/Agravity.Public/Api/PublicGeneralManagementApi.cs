@@ -86,8 +86,8 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>OkResult</returns>
-        OkResult HttpTriggerDurableContinue(string instanceId, int operationIndex = 0);
+        /// <returns>AgravityInfoResponse</returns>
+        AgravityInfoResponse HttpTriggerDurableContinue(string instanceId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -98,8 +98,8 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of OkResult</returns>
-        ApiResponse<OkResult> HttpTriggerDurableContinueWithHttpInfo(string instanceId, int operationIndex = 0);
+        /// <returns>ApiResponse of AgravityInfoResponse</returns>
+        ApiResponse<AgravityInfoResponse> HttpTriggerDurableContinueWithHttpInfo(string instanceId, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -109,8 +109,8 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>OkResult</returns>
-        OkResult HttpTriggerDurableScchTrainingDone(string instanceId, int operationIndex = 0);
+        /// <returns>AgravityInfoResponse</returns>
+        AgravityInfoResponse HttpTriggerDurableScchTrainingDone(string instanceId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -121,8 +121,8 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of OkResult</returns>
-        ApiResponse<OkResult> HttpTriggerDurableScchTrainingDoneWithHttpInfo(string instanceId, int operationIndex = 0);
+        /// <returns>ApiResponse of AgravityInfoResponse</returns>
+        ApiResponse<AgravityInfoResponse> HttpTriggerDurableScchTrainingDoneWithHttpInfo(string instanceId, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -196,8 +196,8 @@ namespace Agravity.Public.Api
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of OkResult</returns>
-        System.Threading.Tasks.Task<OkResult> HttpTriggerDurableContinueAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of AgravityInfoResponse</returns>
+        System.Threading.Tasks.Task<AgravityInfoResponse> HttpTriggerDurableContinueAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -209,8 +209,8 @@ namespace Agravity.Public.Api
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (OkResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OkResult>> HttpTriggerDurableContinueWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AgravityInfoResponse>> HttpTriggerDurableContinueWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -221,8 +221,8 @@ namespace Agravity.Public.Api
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of OkResult</returns>
-        System.Threading.Tasks.Task<OkResult> HttpTriggerDurableScchTrainingDoneAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of AgravityInfoResponse</returns>
+        System.Threading.Tasks.Task<AgravityInfoResponse> HttpTriggerDurableScchTrainingDoneAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -234,8 +234,8 @@ namespace Agravity.Public.Api
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (OkResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OkResult>> HttpTriggerDurableScchTrainingDoneWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AgravityInfoResponse>> HttpTriggerDurableScchTrainingDoneWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -672,10 +672,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>OkResult</returns>
-        public OkResult HttpTriggerDurableContinue(string instanceId, int operationIndex = 0)
+        /// <returns>AgravityInfoResponse</returns>
+        public AgravityInfoResponse HttpTriggerDurableContinue(string instanceId, int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<OkResult> localVarResponse = HttpTriggerDurableContinueWithHttpInfo(instanceId);
+            Agravity.Public.Client.ApiResponse<AgravityInfoResponse> localVarResponse = HttpTriggerDurableContinueWithHttpInfo(instanceId);
             return localVarResponse.Data;
         }
 
@@ -685,8 +685,8 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of OkResult</returns>
-        public Agravity.Public.Client.ApiResponse<OkResult> HttpTriggerDurableContinueWithHttpInfo(string instanceId, int operationIndex = 0)
+        /// <returns>ApiResponse of AgravityInfoResponse</returns>
+        public Agravity.Public.Client.ApiResponse<AgravityInfoResponse> HttpTriggerDurableContinueWithHttpInfo(string instanceId, int operationIndex = 0)
         {
             // verify the required parameter 'instanceId' is set
             if (instanceId == null)
@@ -723,7 +723,7 @@ namespace Agravity.Public.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<OkResult>("/durable/{instanceId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<AgravityInfoResponse>("/durable/{instanceId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpTriggerDurableContinue", localVarResponse);
@@ -743,10 +743,10 @@ namespace Agravity.Public.Api
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of OkResult</returns>
-        public async System.Threading.Tasks.Task<OkResult> HttpTriggerDurableContinueAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of AgravityInfoResponse</returns>
+        public async System.Threading.Tasks.Task<AgravityInfoResponse> HttpTriggerDurableContinueAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<OkResult> localVarResponse = await HttpTriggerDurableContinueWithHttpInfoAsync(instanceId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<AgravityInfoResponse> localVarResponse = await HttpTriggerDurableContinueWithHttpInfoAsync(instanceId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -757,8 +757,8 @@ namespace Agravity.Public.Api
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (OkResult)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<OkResult>> HttpTriggerDurableContinueWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AgravityInfoResponse>> HttpTriggerDurableContinueWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'instanceId' is set
             if (instanceId == null)
@@ -796,7 +796,7 @@ namespace Agravity.Public.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<OkResult>("/durable/{instanceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AgravityInfoResponse>("/durable/{instanceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -816,10 +816,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>OkResult</returns>
-        public OkResult HttpTriggerDurableScchTrainingDone(string instanceId, int operationIndex = 0)
+        /// <returns>AgravityInfoResponse</returns>
+        public AgravityInfoResponse HttpTriggerDurableScchTrainingDone(string instanceId, int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<OkResult> localVarResponse = HttpTriggerDurableScchTrainingDoneWithHttpInfo(instanceId);
+            Agravity.Public.Client.ApiResponse<AgravityInfoResponse> localVarResponse = HttpTriggerDurableScchTrainingDoneWithHttpInfo(instanceId);
             return localVarResponse.Data;
         }
 
@@ -829,8 +829,8 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of OkResult</returns>
-        public Agravity.Public.Client.ApiResponse<OkResult> HttpTriggerDurableScchTrainingDoneWithHttpInfo(string instanceId, int operationIndex = 0)
+        /// <returns>ApiResponse of AgravityInfoResponse</returns>
+        public Agravity.Public.Client.ApiResponse<AgravityInfoResponse> HttpTriggerDurableScchTrainingDoneWithHttpInfo(string instanceId, int operationIndex = 0)
         {
             // verify the required parameter 'instanceId' is set
             if (instanceId == null)
@@ -867,7 +867,7 @@ namespace Agravity.Public.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<OkResult>("/durable/scch/{instanceId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<AgravityInfoResponse>("/durable/scch/{instanceId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpTriggerDurableScchTrainingDone", localVarResponse);
@@ -887,10 +887,10 @@ namespace Agravity.Public.Api
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of OkResult</returns>
-        public async System.Threading.Tasks.Task<OkResult> HttpTriggerDurableScchTrainingDoneAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of AgravityInfoResponse</returns>
+        public async System.Threading.Tasks.Task<AgravityInfoResponse> HttpTriggerDurableScchTrainingDoneAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<OkResult> localVarResponse = await HttpTriggerDurableScchTrainingDoneWithHttpInfoAsync(instanceId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<AgravityInfoResponse> localVarResponse = await HttpTriggerDurableScchTrainingDoneWithHttpInfoAsync(instanceId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -901,8 +901,8 @@ namespace Agravity.Public.Api
         /// <param name="instanceId">The instance ID of the durable function.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (OkResult)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<OkResult>> HttpTriggerDurableScchTrainingDoneWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AgravityInfoResponse>> HttpTriggerDurableScchTrainingDoneWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'instanceId' is set
             if (instanceId == null)
@@ -940,7 +940,7 @@ namespace Agravity.Public.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<OkResult>("/durable/scch/{instanceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AgravityInfoResponse>("/durable/scch/{instanceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

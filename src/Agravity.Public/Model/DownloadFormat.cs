@@ -42,7 +42,9 @@ namespace Agravity.Public.Model
         /// <param name="assetType">assetType.</param>
         /// <param name="origin">origin.</param>
         /// <param name="fallbackThumb">fallbackThumb.</param>
+        /// <param name="targetFilename">targetFilename.</param>
         /// <param name="translations">translations.</param>
+        /// <param name="permissions">permissions.</param>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
         /// <param name="addProperties">addProperties.</param>
@@ -53,7 +55,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public DownloadFormat(string id = default(string), string entityType = default(string), List<DynamicImageOperation> operations = default(List<DynamicImageOperation>), string extension = default(string), string assetType = default(string), string origin = default(string), bool? fallbackThumb = default(bool?), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public DownloadFormat(string id = default(string), string entityType = default(string), List<DynamicImageOperation> operations = default(List<DynamicImageOperation>), string extension = default(string), string assetType = default(string), string origin = default(string), bool? fallbackThumb = default(bool?), string targetFilename = default(string), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), List<PermissionEntity> permissions = default(List<PermissionEntity>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -62,7 +64,9 @@ namespace Agravity.Public.Model
             this.AssetType = assetType;
             this.Origin = origin;
             this.FallbackThumb = fallbackThumb;
+            this.TargetFilename = targetFilename;
             this.Translations = translations;
+            this.Permissions = permissions;
             this.Name = name;
             this.Description = description;
             this.AddProperties = addProperties;
@@ -118,10 +122,22 @@ namespace Agravity.Public.Model
         public bool? FallbackThumb { get; set; }
 
         /// <summary>
+        /// Gets or Sets TargetFilename
+        /// </summary>
+        [DataMember(Name = "target_filename", EmitDefaultValue = true)]
+        public string TargetFilename { get; set; }
+
+        /// <summary>
         /// Gets or Sets Translations
         /// </summary>
         [DataMember(Name = "translations", EmitDefaultValue = true)]
         public Dictionary<string, Dictionary<string, object>> Translations { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Permissions
+        /// </summary>
+        [DataMember(Name = "permissions", EmitDefaultValue = true)]
+        public List<PermissionEntity> Permissions { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -198,7 +214,9 @@ namespace Agravity.Public.Model
             sb.Append("  AssetType: ").Append(AssetType).Append("\n");
             sb.Append("  Origin: ").Append(Origin).Append("\n");
             sb.Append("  FallbackThumb: ").Append(FallbackThumb).Append("\n");
+            sb.Append("  TargetFilename: ").Append(TargetFilename).Append("\n");
             sb.Append("  Translations: ").Append(Translations).Append("\n");
+            sb.Append("  Permissions: ").Append(Permissions).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  AddProperties: ").Append(AddProperties).Append("\n");

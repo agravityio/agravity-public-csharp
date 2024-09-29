@@ -201,7 +201,7 @@ catch (ApiException e)
 
 <a id="httptriggerdurablecontinue"></a>
 # **HttpTriggerDurableContinue**
-> OkResult HttpTriggerDurableContinue (string instanceId)
+> AgravityInfoResponse HttpTriggerDurableContinue (string instanceId)
 
 
 
@@ -228,7 +228,7 @@ namespace Example
 
             try
             {
-                OkResult result = apiInstance.HttpTriggerDurableContinue(instanceId);
+                AgravityInfoResponse result = apiInstance.HttpTriggerDurableContinue(instanceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -248,7 +248,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<OkResult> response = apiInstance.HttpTriggerDurableContinueWithHttpInfo(instanceId);
+    ApiResponse<AgravityInfoResponse> response = apiInstance.HttpTriggerDurableContinueWithHttpInfo(instanceId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -269,7 +269,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**OkResult**](OkResult.md)
+[**AgravityInfoResponse**](AgravityInfoResponse.md)
 
 ### Authorization
 
@@ -291,7 +291,7 @@ No authorization required
 
 <a id="httptriggerdurablescchtrainingdone"></a>
 # **HttpTriggerDurableScchTrainingDone**
-> OkResult HttpTriggerDurableScchTrainingDone (string instanceId)
+> AgravityInfoResponse HttpTriggerDurableScchTrainingDone (string instanceId)
 
 
 
@@ -318,7 +318,7 @@ namespace Example
 
             try
             {
-                OkResult result = apiInstance.HttpTriggerDurableScchTrainingDone(instanceId);
+                AgravityInfoResponse result = apiInstance.HttpTriggerDurableScchTrainingDone(instanceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -338,7 +338,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<OkResult> response = apiInstance.HttpTriggerDurableScchTrainingDoneWithHttpInfo(instanceId);
+    ApiResponse<AgravityInfoResponse> response = apiInstance.HttpTriggerDurableScchTrainingDoneWithHttpInfo(instanceId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -359,7 +359,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**OkResult**](OkResult.md)
+[**AgravityInfoResponse**](AgravityInfoResponse.md)
 
 ### Authorization
 

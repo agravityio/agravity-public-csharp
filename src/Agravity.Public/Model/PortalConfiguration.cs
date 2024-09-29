@@ -60,7 +60,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public PortalConfiguration(List<DownloadFormat> downloadFormats = default(List<DownloadFormat>), List<StaticDefinedList> sdls = default(List<StaticDefinedList>), List<CollectionUDL> udls = default(List<CollectionUDL>), List<CollTypeItem> items = default(List<CollTypeItem>), List<FrontendAppConfig> configs = default(List<FrontendAppConfig>), string id = default(string), string entityType = default(string), string filter = default(string), PortalLanguages languages = default(PortalLanguages), PortalTheme theme = default(PortalTheme), PortalLinks links = default(PortalLinks), List<string> metadata = default(List<string>), List<string> facettes = default(List<string>), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), List<string> limitIds = default(List<string>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public PortalConfiguration(List<DownloadFormat> downloadFormats = default(List<DownloadFormat>), List<StaticDefinedList> sdls = default(List<StaticDefinedList>), List<CollectionUDL> udls = default(List<CollectionUDL>), List<CollTypeItem> items = default(List<CollTypeItem>), List<FrontendAppConfig> configs = default(List<FrontendAppConfig>), string id = default(string), string entityType = default(string), string filter = default(string), string languages = default(string), PortalTheme theme = default(PortalTheme), PortalLinks links = default(PortalLinks), List<string> metadata = default(List<string>), List<string> facettes = default(List<string>), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), List<string> limitIds = default(List<string>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.DownloadFormats = downloadFormats;
             this.Sdls = sdls;
@@ -141,7 +141,7 @@ namespace Agravity.Public.Model
         /// Gets or Sets Languages
         /// </summary>
         [DataMember(Name = "languages", EmitDefaultValue = true)]
-        public PortalLanguages Languages { get; set; }
+        public string Languages { get; set; }
 
         /// <summary>
         /// Gets or Sets Theme

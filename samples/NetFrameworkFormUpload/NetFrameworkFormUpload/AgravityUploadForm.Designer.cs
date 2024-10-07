@@ -54,6 +54,7 @@
             this.lAssetStatus = new System.Windows.Forms.Label();
             this.btCheckAsset = new System.Windows.Forms.Button();
             this.cbOverwrite = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btUploadAsset
@@ -255,12 +256,12 @@
             // lAssetStatus
             // 
             this.lAssetStatus.AutoSize = true;
-            this.lAssetStatus.Location = new System.Drawing.Point(862, 54);
+            this.lAssetStatus.Location = new System.Drawing.Point(877, 54);
             this.lAssetStatus.Name = "lAssetStatus";
-            this.lAssetStatus.Size = new System.Drawing.Size(84, 13);
+            this.lAssetStatus.Size = new System.Drawing.Size(53, 13);
             this.lAssetStatus.TabIndex = 25;
-            this.lAssetStatus.Text = "Status unknown";
-            this.lAssetStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lAssetStatus.Text = "Unknown";
+            this.lAssetStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btCheckAsset
             // 
@@ -284,11 +285,22 @@
             this.cbOverwrite.UseVisualStyleBackColor = true;
             this.cbOverwrite.CheckedChanged += new System.EventHandler(this.cbOverwrite_CheckedChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(831, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Status:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // AgravityUploadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbOverwrite);
             this.Controls.Add(this.btCheckAsset);
             this.Controls.Add(this.lAssetStatus);
@@ -349,6 +361,7 @@
         private System.Windows.Forms.Label lAssetStatus;
         private System.Windows.Forms.Button btCheckAsset;
         private System.Windows.Forms.CheckBox cbOverwrite;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -278,7 +278,7 @@ namespace NetFrameworkFormUpload
                 return;
             }
             loadAssetReadiness = true;
-            lAssetStatus.Text = "Checking status...";
+            lAssetStatus.Text = "Checking...";
 
             AddOutput($"Checking asset with id {tbAssetId.Text}...");
 
@@ -303,12 +303,12 @@ namespace NetFrameworkFormUpload
                         case "I":
                         case "P":
                             {
-                                lAssetStatus.Text = "Processing...";
+                                lAssetStatus.Text = "Processing";
                                 break;
                             }
                         case "A":
                             {
-                                lAssetStatus.Text = "Ready!";
+                                lAssetStatus.Text = "Ready";
                                 createVersionAssetReady = true;
                                 break;
                             }

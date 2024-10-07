@@ -66,12 +66,13 @@ namespace AgravityPublicLib
             var apiInstance = new PublicAssetManagementApi(config);
 
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes(filePath));  // System.IO.Stream |  (optional) 
+            var fileInfo = new FileInfo(filePath);
 
             Asset result = null;
             try
             {
-                result = apiInstance.HttpAssetUploadFile(assetName, collectionId, file);
-                Debug.WriteLine(result.Name);
+                result = apiInstance.HttpAssetUploadFile(null, assetName, collectionId, file, fileInfo.Name);
+                Debug.WriteLine(result?.Name);
             }
             catch (ApiException e)
             {

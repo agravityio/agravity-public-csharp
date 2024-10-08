@@ -10,6 +10,13 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="8.1.0"/> [8.1.0](https://www.nuget.org/packages/Agravity.Public/8.1.0) (2024-10-08)
+
+- Add property `asset_icon_rules` to the Portal (and PortalConfiguration) - to allow to store rules to show icons in the portal
+- Add `accepted-language` header parameter to the HttpSharedCollections endpoints.
+
+---
+
 ## AgravityAPI <a name="8.0.0"/> [8.0.0](https://www.nuget.org/packages/Agravity.Public/8.0.0) (2024-09-30)
 
 - Target now net8.0

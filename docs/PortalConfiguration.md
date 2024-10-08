@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Links** | [**PortalLinks**](PortalLinks.md) |  | [optional] 
 **Metadata** | **List&lt;string&gt;** |  | [optional] 
 **Facettes** | **List&lt;string&gt;** |  | [optional] 
+**AssetIconRules** | [**List&lt;AssetIconRule&gt;**](AssetIconRule.md) |  | [optional] 
 **AllowedFormats** | [**List&lt;SharedAllowedFormat&gt;**](SharedAllowedFormat.md) |  | [optional] 
 **LimitIds** | **List&lt;string&gt;** |  | [optional] 
 **Name** | **string** |  | [optional] 

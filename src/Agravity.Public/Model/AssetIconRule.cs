@@ -27,25 +27,23 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// Portal
+    /// AssetIconRule
     /// </summary>
-    [DataContract(Name = "portal")]
-    public partial class Portal : IValidatableObject
+    [DataContract(Name = "assetIconRule")]
+    public partial class AssetIconRule : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Portal" /> class.
+        /// Initializes a new instance of the <see cref="AssetIconRule" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="entityType">entityType.</param>
-        /// <param name="filter">filter.</param>
-        /// <param name="languages">languages.</param>
-        /// <param name="theme">theme.</param>
-        /// <param name="links">links.</param>
-        /// <param name="metadata">metadata.</param>
-        /// <param name="facettes">facettes.</param>
-        /// <param name="assetIconRules">assetIconRules.</param>
-        /// <param name="allowedFormats">allowedFormats.</param>
-        /// <param name="limitIds">limitIds.</param>
+        /// <param name="type">type.</param>
+        /// <param name="path">path.</param>
+        /// <param name="color">color.</param>
+        /// <param name="value">value.</param>
+        /// <param name="icon">icon.</param>
+        /// <param name="varOperator">varOperator.</param>
+        /// <param name="translations">translations.</param>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
         /// <param name="addProperties">addProperties.</param>
@@ -56,19 +54,17 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Portal(string id = default(string), string entityType = default(string), string filter = default(string), string languages = default(string), PortalTheme theme = default(PortalTheme), PortalLinks links = default(PortalLinks), List<string> metadata = default(List<string>), List<string> facettes = default(List<string>), List<AssetIconRule> assetIconRules = default(List<AssetIconRule>), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), List<string> limitIds = default(List<string>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public AssetIconRule(string id = default(string), string entityType = default(string), string type = default(string), string path = default(string), string color = default(string), string value = default(string), string icon = default(string), string varOperator = default(string), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
-            this.Filter = filter;
-            this.Languages = languages;
-            this.Theme = theme;
-            this.Links = links;
-            this.Metadata = metadata;
-            this.Facettes = facettes;
-            this.AssetIconRules = assetIconRules;
-            this.AllowedFormats = allowedFormats;
-            this.LimitIds = limitIds;
+            this.Type = type;
+            this.Path = path;
+            this.Color = color;
+            this.Value = value;
+            this.Icon = icon;
+            this.Operator = varOperator;
+            this.Translations = translations;
             this.Name = name;
             this.Description = description;
             this.AddProperties = addProperties;
@@ -94,58 +90,46 @@ namespace Agravity.Public.Model
         public string EntityType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Filter
+        /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = true)]
-        public string Filter { get; set; }
+        [DataMember(Name = "type", EmitDefaultValue = true)]
+        public string Type { get; set; }
 
         /// <summary>
-        /// Gets or Sets Languages
+        /// Gets or Sets Path
         /// </summary>
-        [DataMember(Name = "languages", EmitDefaultValue = true)]
-        public string Languages { get; set; }
+        [DataMember(Name = "path", EmitDefaultValue = true)]
+        public string Path { get; set; }
 
         /// <summary>
-        /// Gets or Sets Theme
+        /// Gets or Sets Color
         /// </summary>
-        [DataMember(Name = "theme", EmitDefaultValue = true)]
-        public PortalTheme Theme { get; set; }
+        [DataMember(Name = "color", EmitDefaultValue = true)]
+        public string Color { get; set; }
 
         /// <summary>
-        /// Gets or Sets Links
+        /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name = "links", EmitDefaultValue = true)]
-        public PortalLinks Links { get; set; }
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public string Value { get; set; }
 
         /// <summary>
-        /// Gets or Sets Metadata
+        /// Gets or Sets Icon
         /// </summary>
-        [DataMember(Name = "metadata", EmitDefaultValue = true)]
-        public List<string> Metadata { get; set; }
+        [DataMember(Name = "icon", EmitDefaultValue = true)]
+        public string Icon { get; set; }
 
         /// <summary>
-        /// Gets or Sets Facettes
+        /// Gets or Sets Operator
         /// </summary>
-        [DataMember(Name = "facettes", EmitDefaultValue = true)]
-        public List<string> Facettes { get; set; }
+        [DataMember(Name = "operator", EmitDefaultValue = true)]
+        public string Operator { get; set; }
 
         /// <summary>
-        /// Gets or Sets AssetIconRules
+        /// Gets or Sets Translations
         /// </summary>
-        [DataMember(Name = "asset_icon_rules", EmitDefaultValue = true)]
-        public List<AssetIconRule> AssetIconRules { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AllowedFormats
-        /// </summary>
-        [DataMember(Name = "allowed_formats", EmitDefaultValue = true)]
-        public List<SharedAllowedFormat> AllowedFormats { get; set; }
-
-        /// <summary>
-        /// Gets or Sets LimitIds
-        /// </summary>
-        [DataMember(Name = "limit_ids", EmitDefaultValue = true)]
-        public List<string> LimitIds { get; set; }
+        [DataMember(Name = "translations", EmitDefaultValue = true)]
+        public Dictionary<string, Dictionary<string, object>> Translations { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -214,18 +198,16 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Portal {\n");
+            sb.Append("class AssetIconRule {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  EntityType: ").Append(EntityType).Append("\n");
-            sb.Append("  Filter: ").Append(Filter).Append("\n");
-            sb.Append("  Languages: ").Append(Languages).Append("\n");
-            sb.Append("  Theme: ").Append(Theme).Append("\n");
-            sb.Append("  Links: ").Append(Links).Append("\n");
-            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
-            sb.Append("  Facettes: ").Append(Facettes).Append("\n");
-            sb.Append("  AssetIconRules: ").Append(AssetIconRules).Append("\n");
-            sb.Append("  AllowedFormats: ").Append(AllowedFormats).Append("\n");
-            sb.Append("  LimitIds: ").Append(LimitIds).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Path: ").Append(Path).Append("\n");
+            sb.Append("  Color: ").Append(Color).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  Icon: ").Append(Icon).Append("\n");
+            sb.Append("  Operator: ").Append(Operator).Append("\n");
+            sb.Append("  Translations: ").Append(Translations).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  AddProperties: ").Append(AddProperties).Append("\n");

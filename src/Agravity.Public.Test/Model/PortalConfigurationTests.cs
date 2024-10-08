@@ -173,6 +173,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'AssetIconRules'
+        /// </summary>
+        [Fact]
+        public void AssetIconRulesTest()
+        {
+            // TODO unit test for the property 'AssetIconRules'
+        }
+
+        /// <summary>
         /// Test the property 'AllowedFormats'
         /// </summary>
         [Fact]

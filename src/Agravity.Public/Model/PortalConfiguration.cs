@@ -48,6 +48,7 @@ namespace Agravity.Public.Model
         /// <param name="links">links.</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="facettes">facettes.</param>
+        /// <param name="assetIconRules">assetIconRules.</param>
         /// <param name="allowedFormats">allowedFormats.</param>
         /// <param name="limitIds">limitIds.</param>
         /// <param name="name">name.</param>
@@ -60,7 +61,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public PortalConfiguration(List<DownloadFormat> downloadFormats = default(List<DownloadFormat>), List<StaticDefinedList> sdls = default(List<StaticDefinedList>), List<CollectionUDL> udls = default(List<CollectionUDL>), List<CollTypeItem> items = default(List<CollTypeItem>), List<FrontendAppConfig> configs = default(List<FrontendAppConfig>), string id = default(string), string entityType = default(string), string filter = default(string), string languages = default(string), PortalTheme theme = default(PortalTheme), PortalLinks links = default(PortalLinks), List<string> metadata = default(List<string>), List<string> facettes = default(List<string>), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), List<string> limitIds = default(List<string>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public PortalConfiguration(List<DownloadFormat> downloadFormats = default(List<DownloadFormat>), List<StaticDefinedList> sdls = default(List<StaticDefinedList>), List<CollectionUDL> udls = default(List<CollectionUDL>), List<CollTypeItem> items = default(List<CollTypeItem>), List<FrontendAppConfig> configs = default(List<FrontendAppConfig>), string id = default(string), string entityType = default(string), string filter = default(string), string languages = default(string), PortalTheme theme = default(PortalTheme), PortalLinks links = default(PortalLinks), List<string> metadata = default(List<string>), List<string> facettes = default(List<string>), List<AssetIconRule> assetIconRules = default(List<AssetIconRule>), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), List<string> limitIds = default(List<string>), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.DownloadFormats = downloadFormats;
             this.Sdls = sdls;
@@ -75,6 +76,7 @@ namespace Agravity.Public.Model
             this.Links = links;
             this.Metadata = metadata;
             this.Facettes = facettes;
+            this.AssetIconRules = assetIconRules;
             this.AllowedFormats = allowedFormats;
             this.LimitIds = limitIds;
             this.Name = name;
@@ -166,6 +168,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "facettes", EmitDefaultValue = true)]
         public List<string> Facettes { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AssetIconRules
+        /// </summary>
+        [DataMember(Name = "asset_icon_rules", EmitDefaultValue = true)]
+        public List<AssetIconRule> AssetIconRules { get; set; }
 
         /// <summary>
         /// Gets or Sets AllowedFormats
@@ -260,6 +268,7 @@ namespace Agravity.Public.Model
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Facettes: ").Append(Facettes).Append("\n");
+            sb.Append("  AssetIconRules: ").Append(AssetIconRules).Append("\n");
             sb.Append("  AllowedFormats: ").Append(AllowedFormats).Append("\n");
             sb.Append("  LimitIds: ").Append(LimitIds).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");

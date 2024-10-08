@@ -5573,6 +5573,94 @@ components:
           nullable: true
           type: string
       type: object
+    assetIconRule:
+      example:
+        color: color
+        icon: icon
+        description: description
+        type: type
+        modified_date: 2000-01-23T04:56:07.000+00:00
+        created_by: created_by
+        operator: operator
+        path: path
+        entity_type: entity_type
+        translations:
+          key: null
+        name: name
+        modified_by: modified_by
+        add_properties:
+          key: "{}"
+        id: id
+        created_date: 2000-01-23T04:56:07.000+00:00
+        pk: pk
+        value: value
+        _etag: _etag
+        status: status
+      properties:
+        id:
+          nullable: true
+          type: string
+        entity_type:
+          nullable: true
+          type: string
+        type:
+          nullable: true
+          type: string
+        path:
+          nullable: true
+          type: string
+        color:
+          nullable: true
+          type: string
+        value:
+          nullable: true
+          type: string
+        icon:
+          nullable: true
+          type: string
+        operator:
+          nullable: true
+          type: string
+        translations:
+          additionalProperties:
+            $ref: '#/components/schemas/dictionary_object'
+          nullable: true
+          type: object
+        name:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+        add_properties:
+          additionalProperties:
+            type: object
+          nullable: true
+          type: object
+        status:
+          nullable: true
+          type: string
+        created_date:
+          format: date-time
+          nullable: true
+          type: string
+        created_by:
+          nullable: true
+          type: string
+        modified_date:
+          format: date-time
+          nullable: true
+          type: string
+        modified_by:
+          nullable: true
+          type: string
+        pk:
+          nullable: true
+          type: string
+        _etag:
+          nullable: true
+          type: string
+      type: object
     assetIdFormat:
       example:
         name: name
@@ -8218,6 +8306,49 @@ components:
         - facettes
         - facettes
         languages: languages
+        asset_icon_rules:
+        - color: color
+          icon: icon
+          description: description
+          type: type
+          modified_date: 2000-01-23T04:56:07.000+00:00
+          created_by: created_by
+          operator: operator
+          path: path
+          entity_type: entity_type
+          translations:
+            key: null
+          name: name
+          modified_by: modified_by
+          add_properties:
+            key: "{}"
+          id: id
+          created_date: 2000-01-23T04:56:07.000+00:00
+          pk: pk
+          value: value
+          _etag: _etag
+          status: status
+        - color: color
+          icon: icon
+          description: description
+          type: type
+          modified_date: 2000-01-23T04:56:07.000+00:00
+          created_by: created_by
+          operator: operator
+          path: path
+          entity_type: entity_type
+          translations:
+            key: null
+          name: name
+          modified_by: modified_by
+          add_properties:
+            key: "{}"
+          id: id
+          created_date: 2000-01-23T04:56:07.000+00:00
+          pk: pk
+          value: value
+          _etag: _etag
+          status: status
         limit_ids:
         - limit_ids
         - limit_ids
@@ -8277,6 +8408,11 @@ components:
         facettes:
           items:
             type: string
+          nullable: true
+          type: array
+        asset_icon_rules:
+          items:
+            $ref: '#/components/schemas/assetIconRule'
           nullable: true
           type: array
         allowed_formats:
@@ -8391,6 +8527,49 @@ components:
         - facettes
         - facettes
         languages: languages
+        asset_icon_rules:
+        - color: color
+          icon: icon
+          description: description
+          type: type
+          modified_date: 2000-01-23T04:56:07.000+00:00
+          created_by: created_by
+          operator: operator
+          path: path
+          entity_type: entity_type
+          translations:
+            key: null
+          name: name
+          modified_by: modified_by
+          add_properties:
+            key: "{}"
+          id: id
+          created_date: 2000-01-23T04:56:07.000+00:00
+          pk: pk
+          value: value
+          _etag: _etag
+          status: status
+        - color: color
+          icon: icon
+          description: description
+          type: type
+          modified_date: 2000-01-23T04:56:07.000+00:00
+          created_by: created_by
+          operator: operator
+          path: path
+          entity_type: entity_type
+          translations:
+            key: null
+          name: name
+          modified_by: modified_by
+          add_properties:
+            key: "{}"
+          id: id
+          created_date: 2000-01-23T04:56:07.000+00:00
+          pk: pk
+          value: value
+          _etag: _etag
+          status: status
         modified_date: 2000-01-23T04:56:07.000+00:00
         sdls:
         - values:
@@ -8608,6 +8787,11 @@ components:
         facettes:
           items:
             type: string
+          nullable: true
+          type: array
+        asset_icon_rules:
+          items:
+            $ref: '#/components/schemas/assetIconRule'
           nullable: true
           type: array
         allowed_formats:

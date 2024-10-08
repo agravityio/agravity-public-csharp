@@ -82,7 +82,8 @@ namespace Agravity.Public.Test.Api
             //string continuationToken = null;
             //int? limit = null;
             //string orderby = null;
-            //var response = instance.HttpSharedCollectionsGetById(id, ayPassword, continuationToken, limit, orderby);
+            //string acceptLanguage = null;
+            //var response = instance.HttpSharedCollectionsGetById(id, ayPassword, continuationToken, limit, orderby, acceptLanguage);
             //Assert.IsType<SharedCollectionFull>(response);
         }
 

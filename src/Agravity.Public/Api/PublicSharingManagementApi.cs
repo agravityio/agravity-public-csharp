@@ -68,9 +68,10 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SharedCollectionFull</returns>
-        SharedCollectionFull HttpSharedCollectionsGetById(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0);
+        SharedCollectionFull HttpSharedCollectionsGetById(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -84,9 +85,10 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SharedCollectionFull</returns>
-        ApiResponse<SharedCollectionFull> HttpSharedCollectionsGetByIdWithHttpInfo(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0);
+        ApiResponse<SharedCollectionFull> HttpSharedCollectionsGetByIdWithHttpInfo(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -193,10 +195,11 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SharedCollectionFull</returns>
-        System.Threading.Tasks.Task<SharedCollectionFull> HttpSharedCollectionsGetByIdAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SharedCollectionFull> HttpSharedCollectionsGetByIdAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -210,10 +213,11 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SharedCollectionFull)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SharedCollectionFull>> HttpSharedCollectionsGetByIdWithHttpInfoAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SharedCollectionFull>> HttpSharedCollectionsGetByIdWithHttpInfoAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -581,11 +585,12 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SharedCollectionFull</returns>
-        public SharedCollectionFull HttpSharedCollectionsGetById(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0)
+        public SharedCollectionFull HttpSharedCollectionsGetById(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<SharedCollectionFull> localVarResponse = HttpSharedCollectionsGetByIdWithHttpInfo(id, ayPassword, continuationToken, limit, orderby);
+            Agravity.Public.Client.ApiResponse<SharedCollectionFull> localVarResponse = HttpSharedCollectionsGetByIdWithHttpInfo(id, ayPassword, continuationToken, limit, orderby, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -598,9 +603,10 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SharedCollectionFull</returns>
-        public Agravity.Public.Client.ApiResponse<SharedCollectionFull> HttpSharedCollectionsGetByIdWithHttpInfo(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<SharedCollectionFull> HttpSharedCollectionsGetByIdWithHttpInfo(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -646,6 +652,10 @@ namespace Agravity.Public.Api
             if (ayPassword != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("ay-password", Agravity.Public.Client.ClientUtils.ParameterToString(ayPassword)); // header parameter
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
 
             localVarRequestOptions.Operation = "PublicSharingManagementApi.HttpSharedCollectionsGetById";
@@ -675,12 +685,13 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SharedCollectionFull</returns>
-        public async System.Threading.Tasks.Task<SharedCollectionFull> HttpSharedCollectionsGetByIdAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SharedCollectionFull> HttpSharedCollectionsGetByIdAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<SharedCollectionFull> localVarResponse = await HttpSharedCollectionsGetByIdWithHttpInfoAsync(id, ayPassword, continuationToken, limit, orderby, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<SharedCollectionFull> localVarResponse = await HttpSharedCollectionsGetByIdWithHttpInfoAsync(id, ayPassword, continuationToken, limit, orderby, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -693,10 +704,11 @@ namespace Agravity.Public.Api
         /// <param name="continuationToken">Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional)</param>
         /// <param name="limit">This number limits the page result of assets. (optional)</param>
         /// <param name="orderby">How the return assets are sorted. Default is property: created_date (newest first). (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SharedCollectionFull)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SharedCollectionFull>> HttpSharedCollectionsGetByIdWithHttpInfoAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SharedCollectionFull>> HttpSharedCollectionsGetByIdWithHttpInfoAsync(string id, string ayPassword = default(string), string continuationToken = default(string), int? limit = default(int?), string orderby = default(string), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -743,6 +755,10 @@ namespace Agravity.Public.Api
             if (ayPassword != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("ay-password", Agravity.Public.Client.ClientUtils.ParameterToString(ayPassword)); // header parameter
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
 
             localVarRequestOptions.Operation = "PublicSharingManagementApi.HttpSharedCollectionsGetById";

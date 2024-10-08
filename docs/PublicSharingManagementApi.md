@@ -109,7 +109,7 @@ No authorization required
 
 <a id="httpsharedcollectionsgetbyid"></a>
 # **HttpSharedCollectionsGetById**
-> SharedCollectionFull HttpSharedCollectionsGetById (string id, string ayPassword = null, string continuationToken = null, int? limit = null, string orderby = null)
+> SharedCollectionFull HttpSharedCollectionsGetById (string id, string ayPassword = null, string continuationToken = null, int? limit = null, string orderby = null, string acceptLanguage = null)
 
 
 
@@ -137,10 +137,11 @@ namespace Example
             var continuationToken = "continuationToken_example";  // string | Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) (optional) 
             var limit = 56;  // int? | This number limits the page result of assets. (optional) 
             var orderby = "orderby_example";  // string | How the return assets are sorted. Default is property: created_date (newest first). (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                SharedCollectionFull result = apiInstance.HttpSharedCollectionsGetById(id, ayPassword, continuationToken, limit, orderby);
+                SharedCollectionFull result = apiInstance.HttpSharedCollectionsGetById(id, ayPassword, continuationToken, limit, orderby, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -160,7 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<SharedCollectionFull> response = apiInstance.HttpSharedCollectionsGetByIdWithHttpInfo(id, ayPassword, continuationToken, limit, orderby);
+    ApiResponse<SharedCollectionFull> response = apiInstance.HttpSharedCollectionsGetByIdWithHttpInfo(id, ayPassword, continuationToken, limit, orderby, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -182,6 +183,7 @@ catch (ApiException e)
 | **continuationToken** | **string** | Each result returns the continous token if more results are available than requested. With this token, the next page could be fetched. (URL encoded!) | [optional]  |
 | **limit** | **int?** | This number limits the page result of assets. | [optional]  |
 | **orderby** | **string** | How the return assets are sorted. Default is property: created_date (newest first). | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 

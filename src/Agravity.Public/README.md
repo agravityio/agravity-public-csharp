@@ -83,14 +83,14 @@ namespace Example
             var apiInstance = new PublicAssetManagementApi(config);
             var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
             var name = "name_example";  // string |  (optional) 
-            var collectionId = "collectionId_example";  // string |  (optional) 
+            var collectionid = "collectionid_example";  // string |  (optional) 
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
             var filename = "filename_example";  // string |  (optional) 
             var previewof = "previewof_example";  // string |  (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpAssetUploadFile(acceptLanguage, name, collectionId, file, filename, previewof);
+                Asset result = apiInstance.HttpAssetUploadFile(acceptLanguage, name, collectionid, file, filename, previewof);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)

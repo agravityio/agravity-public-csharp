@@ -33,13 +33,13 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="name"> (optional)</param>
-        /// <param name="collectionId"> (optional)</param>
+        /// <param name="collectionid"> (optional)</param>
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Asset</returns>
-        Asset HttpAssetUploadFile(string acceptLanguage = default(string), string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0);
+        Asset HttpAssetUploadFile(string acceptLanguage = default(string), string name = default(string), string collectionid = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -50,13 +50,13 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="name"> (optional)</param>
-        /// <param name="collectionId"> (optional)</param>
+        /// <param name="collectionid"> (optional)</param>
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
-        ApiResponse<Asset> HttpAssetUploadFileWithHttpInfo(string acceptLanguage = default(string), string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0);
+        ApiResponse<Asset> HttpAssetUploadFileWithHttpInfo(string acceptLanguage = default(string), string name = default(string), string collectionid = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -207,14 +207,14 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="name"> (optional)</param>
-        /// <param name="collectionId"> (optional)</param>
+        /// <param name="collectionid"> (optional)</param>
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        System.Threading.Tasks.Task<Asset> HttpAssetUploadFileAsync(string acceptLanguage = default(string), string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Asset> HttpAssetUploadFileAsync(string acceptLanguage = default(string), string name = default(string), string collectionid = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -225,14 +225,14 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="name"> (optional)</param>
-        /// <param name="collectionId"> (optional)</param>
+        /// <param name="collectionid"> (optional)</param>
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetUploadFileWithHttpInfoAsync(string acceptLanguage = default(string), string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetUploadFileWithHttpInfoAsync(string acceptLanguage = default(string), string name = default(string), string collectionid = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -499,15 +499,15 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="name"> (optional)</param>
-        /// <param name="collectionId"> (optional)</param>
+        /// <param name="collectionid"> (optional)</param>
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Asset</returns>
-        public Asset HttpAssetUploadFile(string acceptLanguage = default(string), string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0)
+        public Asset HttpAssetUploadFile(string acceptLanguage = default(string), string name = default(string), string collectionid = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = HttpAssetUploadFileWithHttpInfo(acceptLanguage, name, collectionId, file, filename, previewof);
+            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = HttpAssetUploadFileWithHttpInfo(acceptLanguage, name, collectionid, file, filename, previewof);
             return localVarResponse.Data;
         }
 
@@ -517,13 +517,13 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="name"> (optional)</param>
-        /// <param name="collectionId"> (optional)</param>
+        /// <param name="collectionid"> (optional)</param>
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
-        public Agravity.Public.Client.ApiResponse<Asset> HttpAssetUploadFileWithHttpInfo(string acceptLanguage = default(string), string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<Asset> HttpAssetUploadFileWithHttpInfo(string acceptLanguage = default(string), string name = default(string), string collectionid = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -556,9 +556,9 @@ namespace Agravity.Public.Api
             {
                 localVarRequestOptions.FormParameters.Add("name", Agravity.Public.Client.ClientUtils.ParameterToString(name)); // form parameter
             }
-            if (collectionId != null)
+            if (collectionid != null)
             {
-                localVarRequestOptions.FormParameters.Add("collectionId", Agravity.Public.Client.ClientUtils.ParameterToString(collectionId)); // form parameter
+                localVarRequestOptions.FormParameters.Add("collectionid", Agravity.Public.Client.ClientUtils.ParameterToString(collectionid)); // form parameter
             }
             if (file != null)
             {
@@ -602,16 +602,16 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="name"> (optional)</param>
-        /// <param name="collectionId"> (optional)</param>
+        /// <param name="collectionid"> (optional)</param>
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        public async System.Threading.Tasks.Task<Asset> HttpAssetUploadFileAsync(string acceptLanguage = default(string), string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Asset> HttpAssetUploadFileAsync(string acceptLanguage = default(string), string name = default(string), string collectionid = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = await HttpAssetUploadFileWithHttpInfoAsync(acceptLanguage, name, collectionId, file, filename, previewof, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = await HttpAssetUploadFileWithHttpInfoAsync(acceptLanguage, name, collectionid, file, filename, previewof, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -621,14 +621,14 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="name"> (optional)</param>
-        /// <param name="collectionId"> (optional)</param>
+        /// <param name="collectionid"> (optional)</param>
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Asset>> HttpAssetUploadFileWithHttpInfoAsync(string acceptLanguage = default(string), string name = default(string), string collectionId = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Asset>> HttpAssetUploadFileWithHttpInfoAsync(string acceptLanguage = default(string), string name = default(string), string collectionid = default(string), System.IO.Stream file = default(System.IO.Stream), string filename = default(string), string previewof = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -662,9 +662,9 @@ namespace Agravity.Public.Api
             {
                 localVarRequestOptions.FormParameters.Add("name", Agravity.Public.Client.ClientUtils.ParameterToString(name)); // form parameter
             }
-            if (collectionId != null)
+            if (collectionid != null)
             {
-                localVarRequestOptions.FormParameters.Add("collectionId", Agravity.Public.Client.ClientUtils.ParameterToString(collectionId)); // form parameter
+                localVarRequestOptions.FormParameters.Add("collectionid", Agravity.Public.Client.ClientUtils.ParameterToString(collectionid)); // form parameter
             }
             if (file != null)
             {

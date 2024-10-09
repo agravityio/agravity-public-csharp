@@ -64,11 +64,11 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //string name = null;
-            //string collectionId = null;
+            //string collectionid = null;
             //System.IO.Stream file = null;
             //string filename = null;
             //string previewof = null;
-            //var response = instance.HttpAssetCreateUploadVersion(id, name, collectionId, file, filename, previewof);
+            //var response = instance.HttpAssetCreateUploadVersion(id, name, collectionid, file, filename, previewof);
             //Assert.IsType<VersionedAsset>(response);
         }
 

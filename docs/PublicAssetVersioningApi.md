@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a id="httpassetcreateuploadversion"></a>
 # **HttpAssetCreateUploadVersion**
-> VersionedAsset HttpAssetCreateUploadVersion (string id, string name = null, string collectionId = null, System.IO.Stream file = null, string filename = null, string previewof = null)
+> VersionedAsset HttpAssetCreateUploadVersion (string id, string name = null, string collectionid = null, System.IO.Stream file = null, string filename = null, string previewof = null)
 
 
 
@@ -44,14 +44,14 @@ namespace Example
             var apiInstance = new PublicAssetVersioningApi(config);
             var id = "id_example";  // string | The ID of the asset.
             var name = "name_example";  // string |  (optional) 
-            var collectionId = "collectionId_example";  // string |  (optional) 
+            var collectionid = "collectionid_example";  // string |  (optional) 
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
             var filename = "filename_example";  // string |  (optional) 
             var previewof = "previewof_example";  // string |  (optional) 
 
             try
             {
-                VersionedAsset result = apiInstance.HttpAssetCreateUploadVersion(id, name, collectionId, file, filename, previewof);
+                VersionedAsset result = apiInstance.HttpAssetCreateUploadVersion(id, name, collectionid, file, filename, previewof);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -71,7 +71,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<VersionedAsset> response = apiInstance.HttpAssetCreateUploadVersionWithHttpInfo(id, name, collectionId, file, filename, previewof);
+    ApiResponse<VersionedAsset> response = apiInstance.HttpAssetCreateUploadVersionWithHttpInfo(id, name, collectionid, file, filename, previewof);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -90,7 +90,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the asset. |  |
 | **name** | **string** |  | [optional]  |
-| **collectionId** | **string** |  | [optional]  |
+| **collectionid** | **string** |  | [optional]  |
 | **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 | **filename** | **string** |  | [optional]  |
 | **previewof** | **string** |  | [optional]  |

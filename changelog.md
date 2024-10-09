@@ -10,6 +10,13 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
 
 ---
 
+## AgravityAPI <a name="8.1.1"/> [8.1.1](https://www.nuget.org/packages/Agravity.Public/8.1.1) (2024-10-08)
+
+- Change `collectionid` to be lowercase (now it is working with SDK again)
+- Change the `share_id` to be separated by underscore
+
+---
+
 ## AgravityAPI <a name="8.1.0"/> [8.1.0](https://www.nuget.org/packages/Agravity.Public/8.1.0) (2024-10-08)
 
 - Add property `asset_icon_rules` to the Portal (and PortalConfiguration) - to allow to store rules to show icons in the portal

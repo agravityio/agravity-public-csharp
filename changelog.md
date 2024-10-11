@@ -8,9 +8,13 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="8.1.2"/> [8.1.2](https://www.nuget.org/packages/Agravity.Public/8.1.2) (2024-10-11)
+
+- Just version upgrade to match backend
+
 ---
 
-## AgravityAPI <a name="8.1.1"/> [8.1.1](https://www.nuget.org/packages/Agravity.Public/8.1.1) (2024-10-08)
+## AgravityAPI <a name="8.1.1"/> [8.1.1](https://www.nuget.org/packages/Agravity.Public/8.1.1) (2024-10-10)
 
 - Change `collectionid` to be lowercase (now it is working with SDK again)
 - Change the `share_id` to be separated by underscore

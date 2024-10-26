@@ -1710,10 +1710,56 @@ paths:
       - function_key: []
       tags:
       - Public Asset Versioning
-  /auth/inbox:
+  /auth/containerwrite/{containerName}:
     get:
       description: This endpoint creates and returns a SAS-Token with write access
-        for the inbox container
+        for the requested container
+      operationId: HttpAuthGetContainerWriteSasToken
+      parameters:
+      - description: The name of the blob container
+        explode: false
+        in: path
+        name: containerName
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The API key to access this endpoint. (Alternative using header
+          x-function-keys with same value)
+        explode: true
+        in: query
+        name: code
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sasToken'
+          description: Returns SAS-Token for write access for the requested container.
+        "401":
+          description: Unauthorized. API Key not provided.
+        "400":
+          description: "A parameter is null. (Code: 0554451e-dcc9-4bef-a221-029bc3d77120)<br>Could\
+            \ not generate token for {containerName}. (Code: 3f19d7be-9d70-4268-93e6-de387daadd54)<br>No\
+            \ allowed to access containing {containerName}! (Code: fe2097fd-0370-4e30-8260-4a1d7f0e83e0)"
+        "404":
+          description: The requested item could not be found.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Authentication Management
+  /auth/inbox:
+    get:
+      deprecated: true
+      description: This endpoint creates and returns a SAS-Token with write access
+        for the inbox container. Do not use this any longer. Use HttpAuthGetContainerWriteSasToken
+        with inbox as container name.
       operationId: HttpAuthGetInboxContainerWriteSasToken
       responses:
         "200":

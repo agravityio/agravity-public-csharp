@@ -31,22 +31,49 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint creates and returns a SAS-Token with write access for the inbox container
+        /// This endpoint creates and returns a SAS-Token with write access for the requested container
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerName">The name of the blob container</param>
+        /// <param name="code">The API key to access this endpoint. (Alternative using header x-function-keys with same value)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SasToken</returns>
+        SasToken HttpAuthGetContainerWriteSasToken(string containerName, string code, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint creates and returns a SAS-Token with write access for the requested container
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerName">The name of the blob container</param>
+        /// <param name="code">The API key to access this endpoint. (Alternative using header x-function-keys with same value)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SasToken</returns>
+        ApiResponse<SasToken> HttpAuthGetContainerWriteSasTokenWithHttpInfo(string containerName, string code, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint creates and returns a SAS-Token with write access for the inbox container. Do not use this any longer. Use HttpAuthGetContainerWriteSasToken with inbox as container name.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SasToken</returns>
+        [Obsolete]
         SasToken HttpAuthGetInboxContainerWriteSasToken(int operationIndex = 0);
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint creates and returns a SAS-Token with write access for the inbox container
+        /// This endpoint creates and returns a SAS-Token with write access for the inbox container. Do not use this any longer. Use HttpAuthGetContainerWriteSasToken with inbox as container name.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SasToken</returns>
+        [Obsolete]
         ApiResponse<SasToken> HttpAuthGetInboxContainerWriteSasTokenWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
@@ -61,24 +88,53 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint creates and returns a SAS-Token with write access for the inbox container
+        /// This endpoint creates and returns a SAS-Token with write access for the requested container
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerName">The name of the blob container</param>
+        /// <param name="code">The API key to access this endpoint. (Alternative using header x-function-keys with same value)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SasToken</returns>
+        System.Threading.Tasks.Task<SasToken> HttpAuthGetContainerWriteSasTokenAsync(string containerName, string code, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint creates and returns a SAS-Token with write access for the requested container
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerName">The name of the blob container</param>
+        /// <param name="code">The API key to access this endpoint. (Alternative using header x-function-keys with same value)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SasToken)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SasToken>> HttpAuthGetContainerWriteSasTokenWithHttpInfoAsync(string containerName, string code, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint creates and returns a SAS-Token with write access for the inbox container. Do not use this any longer. Use HttpAuthGetContainerWriteSasToken with inbox as container name.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SasToken</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<SasToken> HttpAuthGetInboxContainerWriteSasTokenAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint creates and returns a SAS-Token with write access for the inbox container
+        /// This endpoint creates and returns a SAS-Token with write access for the inbox container. Do not use this any longer. Use HttpAuthGetContainerWriteSasToken with inbox as container name.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SasToken)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<SasToken>> HttpAuthGetInboxContainerWriteSasTokenWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
@@ -201,11 +257,184 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint creates and returns a SAS-Token with write access for the inbox container
+        ///  This endpoint creates and returns a SAS-Token with write access for the requested container
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerName">The name of the blob container</param>
+        /// <param name="code">The API key to access this endpoint. (Alternative using header x-function-keys with same value)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SasToken</returns>
+        public SasToken HttpAuthGetContainerWriteSasToken(string containerName, string code, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<SasToken> localVarResponse = HttpAuthGetContainerWriteSasTokenWithHttpInfo(containerName, code);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint creates and returns a SAS-Token with write access for the requested container
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerName">The name of the blob container</param>
+        /// <param name="code">The API key to access this endpoint. (Alternative using header x-function-keys with same value)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SasToken</returns>
+        public Agravity.Public.Client.ApiResponse<SasToken> HttpAuthGetContainerWriteSasTokenWithHttpInfo(string containerName, string code, int operationIndex = 0)
+        {
+            // verify the required parameter 'containerName' is set
+            if (containerName == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'containerName' when calling PublicAuthenticationManagementApi->HttpAuthGetContainerWriteSasToken");
+            }
+
+            // verify the required parameter 'code' is set
+            if (code == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'code' when calling PublicAuthenticationManagementApi->HttpAuthGetContainerWriteSasToken");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("containerName", Agravity.Public.Client.ClientUtils.ParameterToString(containerName)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "code", code));
+
+            localVarRequestOptions.Operation = "PublicAuthenticationManagementApi.HttpAuthGetContainerWriteSasToken";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SasToken>("/auth/containerwrite/{containerName}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAuthGetContainerWriteSasToken", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint creates and returns a SAS-Token with write access for the requested container
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerName">The name of the blob container</param>
+        /// <param name="code">The API key to access this endpoint. (Alternative using header x-function-keys with same value)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SasToken</returns>
+        public async System.Threading.Tasks.Task<SasToken> HttpAuthGetContainerWriteSasTokenAsync(string containerName, string code, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<SasToken> localVarResponse = await HttpAuthGetContainerWriteSasTokenWithHttpInfoAsync(containerName, code, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint creates and returns a SAS-Token with write access for the requested container
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerName">The name of the blob container</param>
+        /// <param name="code">The API key to access this endpoint. (Alternative using header x-function-keys with same value)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SasToken)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SasToken>> HttpAuthGetContainerWriteSasTokenWithHttpInfoAsync(string containerName, string code, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'containerName' is set
+            if (containerName == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'containerName' when calling PublicAuthenticationManagementApi->HttpAuthGetContainerWriteSasToken");
+            }
+
+            // verify the required parameter 'code' is set
+            if (code == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'code' when calling PublicAuthenticationManagementApi->HttpAuthGetContainerWriteSasToken");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("containerName", Agravity.Public.Client.ClientUtils.ParameterToString(containerName)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "code", code));
+
+            localVarRequestOptions.Operation = "PublicAuthenticationManagementApi.HttpAuthGetContainerWriteSasToken";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SasToken>("/auth/containerwrite/{containerName}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAuthGetContainerWriteSasToken", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint creates and returns a SAS-Token with write access for the inbox container. Do not use this any longer. Use HttpAuthGetContainerWriteSasToken with inbox as container name.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SasToken</returns>
+        [Obsolete]
         public SasToken HttpAuthGetInboxContainerWriteSasToken(int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<SasToken> localVarResponse = HttpAuthGetInboxContainerWriteSasTokenWithHttpInfo();
@@ -213,11 +442,12 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint creates and returns a SAS-Token with write access for the inbox container
+        ///  This endpoint creates and returns a SAS-Token with write access for the inbox container. Do not use this any longer. Use HttpAuthGetContainerWriteSasToken with inbox as container name.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SasToken</returns>
+        [Obsolete]
         public Agravity.Public.Client.ApiResponse<SasToken> HttpAuthGetInboxContainerWriteSasTokenWithHttpInfo(int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -267,12 +497,13 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint creates and returns a SAS-Token with write access for the inbox container
+        ///  This endpoint creates and returns a SAS-Token with write access for the inbox container. Do not use this any longer. Use HttpAuthGetContainerWriteSasToken with inbox as container name.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SasToken</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<SasToken> HttpAuthGetInboxContainerWriteSasTokenAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Agravity.Public.Client.ApiResponse<SasToken> localVarResponse = await HttpAuthGetInboxContainerWriteSasTokenWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
@@ -280,12 +511,13 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint creates and returns a SAS-Token with write access for the inbox container
+        ///  This endpoint creates and returns a SAS-Token with write access for the inbox container. Do not use this any longer. Use HttpAuthGetContainerWriteSasToken with inbox as container name.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SasToken)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SasToken>> HttpAuthGetInboxContainerWriteSasTokenWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 

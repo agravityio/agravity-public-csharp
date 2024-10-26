@@ -137,6 +137,7 @@ Class | Method | HTTP request | Description
 *PublicAssetVersioningApi* | [**HttpRestoreVersionedAssetsById**](docs/PublicAssetVersioningApi.md#httprestoreversionedassetsbyid) | **POST** /assets/{id}/versions/{vNr}/restore | 
 *PublicAssetVersioningApi* | [**HttpUpdateVersionedAssetsById**](docs/PublicAssetVersioningApi.md#httpupdateversionedassetsbyid) | **POST** /assets/{id}/versions/{vNr} | 
 *PublicAssetVersioningApi* | [**HttpVersionedAssetsGet**](docs/PublicAssetVersioningApi.md#httpversionedassetsget) | **GET** /assets/{id}/versions | 
+*PublicAuthenticationManagementApi* | [**HttpAuthGetContainerWriteSasToken**](docs/PublicAuthenticationManagementApi.md#httpauthgetcontainerwritesastoken) | **GET** /auth/containerwrite/{containerName} | 
 *PublicAuthenticationManagementApi* | [**HttpAuthGetInboxContainerWriteSasToken**](docs/PublicAuthenticationManagementApi.md#httpauthgetinboxcontainerwritesastoken) | **GET** /auth/inbox | 
 *PublicCollectionManagementApi* | [**HttpCollectionsCreate**](docs/PublicCollectionManagementApi.md#httpcollectionscreate) | **POST** /collections | 
 *PublicCollectionManagementApi* | [**HttpCollectionsGet**](docs/PublicCollectionManagementApi.md#httpcollectionsget) | **GET** /collections | 

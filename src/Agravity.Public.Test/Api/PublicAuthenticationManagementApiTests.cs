@@ -56,6 +56,19 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpAuthGetContainerWriteSasToken
+        /// </summary>
+        [Fact]
+        public void HttpAuthGetContainerWriteSasTokenTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string containerName = null;
+            //string code = null;
+            //var response = instance.HttpAuthGetContainerWriteSasToken(containerName, code);
+            //Assert.IsType<SasToken>(response);
+        }
+
+        /// <summary>
         /// Test HttpAuthGetInboxContainerWriteSasToken
         /// </summary>
         [Fact]

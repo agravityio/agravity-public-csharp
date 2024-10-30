@@ -121,6 +121,27 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;SearchableItem&gt;</returns>
         ApiResponse<List<SearchableItem>> HttpGetAllowedSearchableItemsWithHttpInfo(string portalId = default(string), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This updates the cached user defined lists and store it in the system.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CollectionUDLListEntity</returns>
+        CollectionUDLListEntity HttpPatchUpdateCachedUserDefinedLists(int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This updates the cached user defined lists and store it in the system.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CollectionUDLListEntity</returns>
+        ApiResponse<CollectionUDLListEntity> HttpPatchUpdateCachedUserDefinedListsWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -232,6 +253,29 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SearchableItem&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<SearchableItem>>> HttpGetAllowedSearchableItemsWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This updates the cached user defined lists and store it in the system.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CollectionUDLListEntity</returns>
+        System.Threading.Tasks.Task<CollectionUDLListEntity> HttpPatchUpdateCachedUserDefinedListsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This updates the cached user defined lists and store it in the system.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CollectionUDLListEntity)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CollectionUDLListEntity>> HttpPatchUpdateCachedUserDefinedListsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -947,6 +991,142 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpGetAllowedSearchableItems", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This updates the cached user defined lists and store it in the system.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CollectionUDLListEntity</returns>
+        public CollectionUDLListEntity HttpPatchUpdateCachedUserDefinedLists(int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<CollectionUDLListEntity> localVarResponse = HttpPatchUpdateCachedUserDefinedListsWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This updates the cached user defined lists and store it in the system.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CollectionUDLListEntity</returns>
+        public Agravity.Public.Client.ApiResponse<CollectionUDLListEntity> HttpPatchUpdateCachedUserDefinedListsWithHttpInfo(int operationIndex = 0)
+        {
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "PublicHelperToolsApi.HttpPatchUpdateCachedUserDefinedLists";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<CollectionUDLListEntity>("/helper/userdefinedlists", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPatchUpdateCachedUserDefinedLists", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This updates the cached user defined lists and store it in the system.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CollectionUDLListEntity</returns>
+        public async System.Threading.Tasks.Task<CollectionUDLListEntity> HttpPatchUpdateCachedUserDefinedListsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<CollectionUDLListEntity> localVarResponse = await HttpPatchUpdateCachedUserDefinedListsWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This updates the cached user defined lists and store it in the system.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CollectionUDLListEntity)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CollectionUDLListEntity>> HttpPatchUpdateCachedUserDefinedListsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "PublicHelperToolsApi.HttpPatchUpdateCachedUserDefinedLists";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<CollectionUDLListEntity>("/helper/userdefinedlists", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPatchUpdateCachedUserDefinedLists", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

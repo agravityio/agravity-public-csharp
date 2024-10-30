@@ -164,6 +164,7 @@ Class | Method | HTTP request | Description
 *PublicHelperToolsApi* | [**HttpGetAllowedFilterableItems**](docs/PublicHelperToolsApi.md#httpgetallowedfilterableitems) | **GET** /helper/filterableitems | 
 *PublicHelperToolsApi* | [**HttpGetAllowedSearchableItemNames**](docs/PublicHelperToolsApi.md#httpgetallowedsearchableitemnames) | **GET** /helper/searchableitemnames | 
 *PublicHelperToolsApi* | [**HttpGetAllowedSearchableItems**](docs/PublicHelperToolsApi.md#httpgetallowedsearchableitems) | **GET** /helper/searchableitems | 
+*PublicHelperToolsApi* | [**HttpPatchUpdateCachedUserDefinedLists**](docs/PublicHelperToolsApi.md#httppatchupdatecacheduserdefinedlists) | **PATCH** /helper/userdefinedlists | 
 *PublicPortalManagementApi* | [**HttpPortalGetAllAssetIdsById**](docs/PublicPortalManagementApi.md#httpportalgetallassetidsbyid) | **GET** /portals/{id}/assetids | 
 *PublicPortalManagementApi* | [**HttpPortalGetStatusZipById**](docs/PublicPortalManagementApi.md#httpportalgetstatuszipbyid) | **GET** /portals/{id}/zip/{zipId} | 
 *PublicPortalManagementApi* | [**HttpPortalRequestZipById**](docs/PublicPortalManagementApi.md#httpportalrequestzipbyid) | **POST** /portals/{id}/zip | 
@@ -210,6 +211,8 @@ Class | Method | HTTP request | Description
  - [Model.Collection](docs/Collection.md)
  - [Model.CollectionType](docs/CollectionType.md)
  - [Model.CollectionUDL](docs/CollectionUDL.md)
+ - [Model.CollectionUDLListEntity](docs/CollectionUDLListEntity.md)
+ - [Model.CollectionUDLReference](docs/CollectionUDLReference.md)
  - [Model.CreateSftpUserResult](docs/CreateSftpUserResult.md)
  - [Model.DataResult](docs/DataResult.md)
  - [Model.DeletedEntities](docs/DeletedEntities.md)

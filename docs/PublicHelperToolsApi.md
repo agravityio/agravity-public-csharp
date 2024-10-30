@@ -8,6 +8,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpGetAllowedFilterableItems**](PublicHelperToolsApi.md#httpgetallowedfilterableitems) | **GET** /helper/filterableitems |  |
 | [**HttpGetAllowedSearchableItemNames**](PublicHelperToolsApi.md#httpgetallowedsearchableitemnames) | **GET** /helper/searchableitemnames |  |
 | [**HttpGetAllowedSearchableItems**](PublicHelperToolsApi.md#httpgetallowedsearchableitems) | **GET** /helper/searchableitems |  |
+| [**HttpPatchUpdateCachedUserDefinedLists**](PublicHelperToolsApi.md#httppatchupdatecacheduserdefinedlists) | **PATCH** /helper/userdefinedlists |  |
 
 <a id="httpgetalluserdefinedlists"></a>
 # **HttpGetAllUserDefinedLists**
@@ -392,6 +393,97 @@ catch (ApiException e)
 | **200** | A list of all searchable items. |  -  |
 | **400** | Argument is null. (Code: 5e87014c-7ac4-4487-b91d-ce03438d5d45)&lt;br&gt;Argument exception: {message} (Code: 1f7fb1e7-dbf4-41a8-b89c-9829067a1ca6)&lt;br&gt;Request failed:  {message} (Code: b66c90a6-482e-40ee-b77d-06e001803ae0)&lt;br&gt;General error:  {message} ({typeOfException}) (Code: 4ff25dc7-47dd-4bec-bcce-6ecdb11b01c8) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="httppatchupdatecacheduserdefinedlists"></a>
+# **HttpPatchUpdateCachedUserDefinedLists**
+> CollectionUDLListEntity HttpPatchUpdateCachedUserDefinedLists ()
+
+
+
+This updates the cached user defined lists and store it in the system.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpPatchUpdateCachedUserDefinedListsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicHelperToolsApi(config);
+
+            try
+            {
+                CollectionUDLListEntity result = apiInstance.HttpPatchUpdateCachedUserDefinedLists();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicHelperToolsApi.HttpPatchUpdateCachedUserDefinedLists: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpPatchUpdateCachedUserDefinedListsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<CollectionUDLListEntity> response = apiInstance.HttpPatchUpdateCachedUserDefinedListsWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicHelperToolsApi.HttpPatchUpdateCachedUserDefinedListsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**CollectionUDLListEntity**](CollectionUDLListEntity.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A full list of all UDLs and the collection types they are in and their permissions. |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **403** | Not enough privileges to access item. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -103,5 +103,16 @@ namespace Agravity.Public.Test.Api
             //var response = instance.HttpGetAllowedSearchableItems(portalId);
             //Assert.IsType<List<SearchableItem>>(response);
         }
+
+        /// <summary>
+        /// Test HttpPatchUpdateCachedUserDefinedLists
+        /// </summary>
+        [Fact]
+        public void HttpPatchUpdateCachedUserDefinedListsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.HttpPatchUpdateCachedUserDefinedLists();
+            //Assert.IsType<CollectionUDLListEntity>(response);
+        }
     }
 }

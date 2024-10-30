@@ -19,6 +19,8 @@ docs/CollTypeItem.md
 docs/Collection.md
 docs/CollectionType.md
 docs/CollectionUDL.md
+docs/CollectionUDLListEntity.md
+docs/CollectionUDLReference.md
 docs/CreateSftpUserResult.md
 docs/DataResult.md
 docs/DeletedEntities.md
@@ -126,6 +128,8 @@ src/Agravity.Public.Test/Model/AzSearchOptionsTests.cs
 src/Agravity.Public.Test/Model/CollTypeItemTests.cs
 src/Agravity.Public.Test/Model/CollectionTests.cs
 src/Agravity.Public.Test/Model/CollectionTypeTests.cs
+src/Agravity.Public.Test/Model/CollectionUDLListEntityTests.cs
+src/Agravity.Public.Test/Model/CollectionUDLReferenceTests.cs
 src/Agravity.Public.Test/Model/CollectionUDLTests.cs
 src/Agravity.Public.Test/Model/CreateSftpUserResultTests.cs
 src/Agravity.Public.Test/Model/DataResultTests.cs
@@ -228,6 +232,8 @@ src/Agravity.Public/Model/CollTypeItem.cs
 src/Agravity.Public/Model/Collection.cs
 src/Agravity.Public/Model/CollectionType.cs
 src/Agravity.Public/Model/CollectionUDL.cs
+src/Agravity.Public/Model/CollectionUDLListEntity.cs
+src/Agravity.Public/Model/CollectionUDLReference.cs
 src/Agravity.Public/Model/CreateSftpUserResult.cs
 src/Agravity.Public/Model/DataResult.cs
 src/Agravity.Public/Model/DeletedEntities.cs

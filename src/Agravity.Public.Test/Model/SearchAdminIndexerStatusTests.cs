@@ -90,5 +90,14 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Lastrun'
         }
+
+        /// <summary>
+        /// Test the property 'History'
+        /// </summary>
+        [Fact]
+        public void HistoryTest()
+        {
+            // TODO unit test for the property 'History'
+        }
     }
 }

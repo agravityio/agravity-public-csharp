@@ -9915,6 +9915,17 @@ components:
           starttime: 2000-01-23T04:56:07.000+00:00
           status: status
         name: name
+        history:
+        - endtime: 2000-01-23T04:56:07.000+00:00
+          faileditemcount: 5
+          itemcount: 1
+          starttime: 2000-01-23T04:56:07.000+00:00
+          status: status
+        - endtime: 2000-01-23T04:56:07.000+00:00
+          faileditemcount: 5
+          itemcount: 1
+          starttime: 2000-01-23T04:56:07.000+00:00
+          status: status
         error: error
         status: status
       nullable: true
@@ -9930,6 +9941,11 @@ components:
           type: string
         lastrun:
           $ref: '#/components/schemas/searchAdminIndexerLastRun'
+        history:
+          items:
+            $ref: '#/components/schemas/searchAdminIndexerLastRun'
+          nullable: true
+          type: array
       type: object
     searchAdminIndexStatus:
       example:
@@ -9999,6 +10015,17 @@ components:
             starttime: 2000-01-23T04:56:07.000+00:00
             status: status
           name: name
+          history:
+          - endtime: 2000-01-23T04:56:07.000+00:00
+            faileditemcount: 5
+            itemcount: 1
+            starttime: 2000-01-23T04:56:07.000+00:00
+            status: status
+          - endtime: 2000-01-23T04:56:07.000+00:00
+            faileditemcount: 5
+            itemcount: 1
+            starttime: 2000-01-23T04:56:07.000+00:00
+            status: status
           error: error
           status: status
         skillsets:

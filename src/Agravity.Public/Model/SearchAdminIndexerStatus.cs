@@ -39,12 +39,14 @@ namespace Agravity.Public.Model
         /// <param name="status">status.</param>
         /// <param name="error">error.</param>
         /// <param name="lastrun">lastrun.</param>
-        public SearchAdminIndexerStatus(string name = default(string), string status = default(string), string error = default(string), SearchAdminIndexerLastRun lastrun = default(SearchAdminIndexerLastRun))
+        /// <param name="history">history.</param>
+        public SearchAdminIndexerStatus(string name = default(string), string status = default(string), string error = default(string), SearchAdminIndexerLastRun lastrun = default(SearchAdminIndexerLastRun), List<SearchAdminIndexerLastRun> history = default(List<SearchAdminIndexerLastRun>))
         {
             this.Name = name;
             this.Status = status;
             this.Error = error;
             this.Lastrun = lastrun;
+            this.History = history;
         }
 
         /// <summary>
@@ -68,8 +70,14 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Lastrun
         /// </summary>
-        [DataMember(Name = "lastrun", EmitDefaultValue = true)]
+        [DataMember(Name = "lastrun", EmitDefaultValue = false)]
         public SearchAdminIndexerLastRun Lastrun { get; set; }
+
+        /// <summary>
+        /// Gets or Sets History
+        /// </summary>
+        [DataMember(Name = "history", EmitDefaultValue = true)]
+        public List<SearchAdminIndexerLastRun> History { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -83,6 +91,7 @@ namespace Agravity.Public.Model
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Error: ").Append(Error).Append("\n");
             sb.Append("  Lastrun: ").Append(Lastrun).Append("\n");
+            sb.Append("  History: ").Append(History).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

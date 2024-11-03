@@ -144,5 +144,14 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'PortalId'
         }
+
+        /// <summary>
+        /// Test the property 'Scopefilter'
+        /// </summary>
+        [Fact]
+        public void ScopefilterTest()
+        {
+            // TODO unit test for the property 'Scopefilter'
+        }
     }
 }

@@ -6295,6 +6295,7 @@ components:
         ids: ids
         skip: 5
         portal_id: portal_id
+        scopefilter: scopefilter
         collectionid: collectionid
       nullable: true
       properties:
@@ -6327,6 +6328,9 @@ components:
           nullable: true
           type: string
         portal_id:
+          nullable: true
+          type: string
+        scopefilter:
           nullable: true
           type: string
       type: object
@@ -9884,7 +9888,6 @@ components:
         itemcount: 1
         starttime: 2000-01-23T04:56:07.000+00:00
         status: status
-      nullable: true
       properties:
         status:
           nullable: true
@@ -10099,6 +10102,7 @@ components:
           ids: ids
           skip: 5
           portal_id: portal_id
+          scopefilter: scopefilter
           collectionid: collectionid
         count: 2
         data_result:

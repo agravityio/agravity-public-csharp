@@ -3208,6 +3208,15 @@ paths:
         schema:
           type: string
         style: form
+      - description: Colon separated key value filter for additional scopes. It applies
+          the same conventions as for filter parameter.
+        explode: true
+        in: query
+        name: scopefilter
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Sortable fields can be used. For descendant sorting use leading
           "!". (Only if Azure Search is enabled)
         explode: true
@@ -3330,6 +3339,15 @@ paths:
         explode: true
         in: query
         name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Colon separated key value filter for additional scopes. It applies
+          the same conventions as for filter parameter.
+        explode: true
+        in: query
+        name: scopefilter
         required: false
         schema:
           type: string
@@ -8584,6 +8602,27 @@ components:
         id: id
         created_date: 2000-01-23T04:56:07.000+00:00
         pk: pk
+        fields:
+        - in_facets: true
+          in_details: true
+          name: name
+          user_context:
+            mapping:
+              key: mapping
+            mandatory: true
+            key: key
+          labels:
+            key: labels
+        - in_facets: true
+          in_details: true
+          name: name
+          user_context:
+            mapping:
+              key: mapping
+            mandatory: true
+            key: key
+          labels:
+            key: labels
         _etag: _etag
         status: status
       properties:
@@ -8611,6 +8650,11 @@ components:
         facettes:
           items:
             type: string
+          nullable: true
+          type: array
+        fields:
+          items:
+            $ref: '#/components/schemas/portalFields'
           nullable: true
           type: array
         asset_icon_rules:
@@ -8892,6 +8936,27 @@ components:
           status: status
         created_date: 2000-01-23T04:56:07.000+00:00
         pk: pk
+        fields:
+        - in_facets: true
+          in_details: true
+          name: name
+          user_context:
+            mapping:
+              key: mapping
+            mandatory: true
+            key: key
+          labels:
+            key: labels
+        - in_facets: true
+          in_details: true
+          name: name
+          user_context:
+            mapping:
+              key: mapping
+            mandatory: true
+            key: key
+          labels:
+            key: labels
         items:
         - item_type: item_type
           format: format
@@ -8992,6 +9057,11 @@ components:
             type: string
           nullable: true
           type: array
+        fields:
+          items:
+            $ref: '#/components/schemas/portalFields'
+          nullable: true
+          type: array
         asset_icon_rules:
           items:
             $ref: '#/components/schemas/assetIconRule'
@@ -9042,6 +9112,36 @@ components:
           nullable: true
           type: string
       type: object
+    portalFields:
+      example:
+        in_facets: true
+        in_details: true
+        name: name
+        user_context:
+          mapping:
+            key: mapping
+          mandatory: true
+          key: key
+        labels:
+          key: labels
+      properties:
+        name:
+          nullable: true
+          type: string
+        in_details:
+          nullable: true
+          type: boolean
+        in_facets:
+          nullable: true
+          type: boolean
+        labels:
+          additionalProperties:
+            type: string
+          nullable: true
+          type: object
+        user_context:
+          $ref: '#/components/schemas/portalUserContext'
+      type: object
     portalLinks:
       example:
         privacy: privacy
@@ -9090,6 +9190,26 @@ components:
         icon_active:
           nullable: true
           type: string
+      type: object
+    portalUserContext:
+      example:
+        mapping:
+          key: mapping
+        mandatory: true
+        key: key
+      nullable: true
+      properties:
+        key:
+          nullable: true
+          type: string
+        mandatory:
+          nullable: true
+          type: boolean
+        mapping:
+          additionalProperties:
+            type: string
+          nullable: true
+          type: object
       type: object
     portalZipRequest:
       example:

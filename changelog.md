@@ -8,6 +8,14 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="8.2.0-usercontext"/> [8.2.0-usercontext](https://www.nuget.org/packages/Agravity.Public/8.2.0-usercontext) (2024-11-04)
+
+- Add List of PortalFields to add user context and change the way metadata, facets and user context is stored on Portals
+- Add Scopefilter to search query to just add another filter which can come from another source (like user-context)
+- Add `history` property to SearchAdmingIndexerStatus which contains the history of the last runs of indexer
+
+---
+
 ## AgravityAPI <a name="8.1.2"/> [8.1.2](https://www.nuget.org/packages/Agravity.Public/8.1.2) (2024-10-11)
 
 - Just version upgrade to match backend

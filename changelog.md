@@ -8,6 +8,12 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="8.2.0"/> [8.2.0](https://www.nuget.org/packages/Agravity.Public/8.2.0) (2024-11-13)
+
+- Add `history` property to SearchAdmingIndexerStatus which contains the history of the last runs of indexer
+- Add endpoint to patch the UDL cache on demand (with admin API key)
+- Add GET `/auth/containerwrite/{container}` - This endpoint creates and returns a SAS-Token with write
+
 ## AgravityAPI <a name="8.1.2"/> [8.1.2](https://www.nuget.org/packages/Agravity.Public/8.1.2) (2024-10-11)
 
 - Just version upgrade to match backend

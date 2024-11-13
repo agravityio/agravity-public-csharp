@@ -40,12 +40,11 @@ namespace Agravity.Public.Api
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchFacet</returns>
-        SearchFacet HttpGetSearchFacetteByName(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string scopefilter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0);
+        SearchFacet HttpGetSearchFacetteByName(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -60,12 +59,11 @@ namespace Agravity.Public.Api
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchFacet</returns>
-        ApiResponse<SearchFacet> HttpGetSearchFacetteByNameWithHttpInfo(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string scopefilter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0);
+        ApiResponse<SearchFacet> HttpGetSearchFacetteByNameWithHttpInfo(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -81,7 +79,6 @@ namespace Agravity.Public.Api
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
@@ -89,7 +86,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchResult</returns>
-        SearchResult HttpGlobalSearch(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string scopefilter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        SearchResult HttpGlobalSearch(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -106,7 +103,6 @@ namespace Agravity.Public.Api
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
@@ -114,7 +110,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchResult</returns>
-        ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string scopefilter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -160,13 +156,12 @@ namespace Agravity.Public.Api
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchFacet</returns>
-        System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetteByNameAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string scopefilter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetteByNameAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -181,13 +176,12 @@ namespace Agravity.Public.Api
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchFacet)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchFacet>> HttpGetSearchFacetteByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string scopefilter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchFacet>> HttpGetSearchFacetteByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -203,7 +197,6 @@ namespace Agravity.Public.Api
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
@@ -212,7 +205,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchResult</returns>
-        System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string scopefilter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -229,7 +222,6 @@ namespace Agravity.Public.Api
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
@@ -238,7 +230,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string scopefilter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -394,14 +386,13 @@ namespace Agravity.Public.Api
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchFacet</returns>
-        public SearchFacet HttpGetSearchFacetteByName(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string scopefilter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0)
+        public SearchFacet HttpGetSearchFacetteByName(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<SearchFacet> localVarResponse = HttpGetSearchFacetteByNameWithHttpInfo(name, s, collectiontypeid, collectionid, mode, filter, scopefilter, ids, portalId);
+            Agravity.Public.Client.ApiResponse<SearchFacet> localVarResponse = HttpGetSearchFacetteByNameWithHttpInfo(name, s, collectiontypeid, collectionid, mode, filter, ids, portalId);
             return localVarResponse.Data;
         }
 
@@ -415,12 +406,11 @@ namespace Agravity.Public.Api
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchFacet</returns>
-        public Agravity.Public.Client.ApiResponse<SearchFacet> HttpGetSearchFacetteByNameWithHttpInfo(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string scopefilter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<SearchFacet> HttpGetSearchFacetteByNameWithHttpInfo(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -473,10 +463,6 @@ namespace Agravity.Public.Api
             if (filter != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
-            }
-            if (scopefilter != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "scopefilter", scopefilter));
             }
             if (ids != null)
             {
@@ -520,15 +506,14 @@ namespace Agravity.Public.Api
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchFacet</returns>
-        public async System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetteByNameAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string scopefilter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetteByNameAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<SearchFacet> localVarResponse = await HttpGetSearchFacetteByNameWithHttpInfoAsync(name, s, collectiontypeid, collectionid, mode, filter, scopefilter, ids, portalId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<SearchFacet> localVarResponse = await HttpGetSearchFacetteByNameWithHttpInfoAsync(name, s, collectiontypeid, collectionid, mode, filter, ids, portalId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -542,13 +527,12 @@ namespace Agravity.Public.Api
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="filter">Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchFacet)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchFacet>> HttpGetSearchFacetteByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string scopefilter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchFacet>> HttpGetSearchFacetteByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), string filter = default(string), string ids = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -602,10 +586,6 @@ namespace Agravity.Public.Api
             if (filter != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
-            }
-            if (scopefilter != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "scopefilter", scopefilter));
             }
             if (ids != null)
             {
@@ -652,7 +632,6 @@ namespace Agravity.Public.Api
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
@@ -660,9 +639,9 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchResult</returns>
-        public SearchResult HttpGlobalSearch(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string scopefilter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public SearchResult HttpGlobalSearch(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = HttpGlobalSearchWithHttpInfo(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, scopefilter, orderby, ids, portalId, translations, acceptLanguage);
+            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = HttpGlobalSearchWithHttpInfo(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -678,7 +657,6 @@ namespace Agravity.Public.Api
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
@@ -686,7 +664,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchResult</returns>
-        public Agravity.Public.Client.ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string scopefilter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 's' is set
             if (s == null)
@@ -744,10 +722,6 @@ namespace Agravity.Public.Api
             if (filter != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
-            }
-            if (scopefilter != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "scopefilter", scopefilter));
             }
             if (orderby != null)
             {
@@ -805,7 +779,6 @@ namespace Agravity.Public.Api
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
@@ -814,9 +787,9 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchResult</returns>
-        public async System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string scopefilter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = await HttpGlobalSearchWithHttpInfoAsync(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, scopefilter, orderby, ids, portalId, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = await HttpGlobalSearchWithHttpInfoAsync(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -832,7 +805,6 @@ namespace Agravity.Public.Api
         /// <param name="mode">Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
         /// <param name="filter">Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional)</param>
-        /// <param name="scopefilter">Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional)</param>
         /// <param name="orderby">Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) (optional)</param>
         /// <param name="ids">Comma separated values list with all ids which should be returned. (optional)</param>
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
@@ -841,7 +813,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchResult)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string scopefilter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string mode = default(string), bool? expose = default(bool?), string filter = default(string), string orderby = default(string), string ids = default(string), string portalId = default(string), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 's' is set
             if (s == null)
@@ -900,10 +872,6 @@ namespace Agravity.Public.Api
             if (filter != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
-            }
-            if (scopefilter != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "scopefilter", scopefilter));
             }
             if (orderby != null)
             {

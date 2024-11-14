@@ -8,6 +8,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpPortalGetStatusZipById**](PublicPortalManagementApi.md#httpportalgetstatuszipbyid) | **GET** /portals/{id}/zip/{zipId} |  |
 | [**HttpPortalRequestZipById**](PublicPortalManagementApi.md#httpportalrequestzipbyid) | **POST** /portals/{id}/zip |  |
 | [**HttpPortalsConfigurationGetById**](PublicPortalManagementApi.md#httpportalsconfigurationgetbyid) | **GET** /portals/{id}/config |  |
+| [**HttpPortalsEnhanceToken**](PublicPortalManagementApi.md#httpportalsenhancetoken) | **POST** /portalsenhancetoken |  |
 | [**HttpPortalsGetById**](PublicPortalManagementApi.md#httpportalsgetbyid) | **GET** /portals/{id} |  |
 
 <a id="httpportalgetallassetidsbyid"></a>
@@ -383,6 +384,97 @@ catch (ApiException e)
 ### Return type
 
 [**PortalConfiguration**](PortalConfiguration.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns a full configuration of a portal. |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="httpportalsenhancetoken"></a>
+# **HttpPortalsEnhanceToken**
+> CustomClaimsProviderResponseContent HttpPortalsEnhanceToken ()
+
+
+
+This endpoint returns the portal user context.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpPortalsEnhanceTokenExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicPortalManagementApi(config);
+
+            try
+            {
+                CustomClaimsProviderResponseContent result = apiInstance.HttpPortalsEnhanceToken();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicPortalManagementApi.HttpPortalsEnhanceToken: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpPortalsEnhanceTokenWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<CustomClaimsProviderResponseContent> response = apiInstance.HttpPortalsEnhanceTokenWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicPortalManagementApi.HttpPortalsEnhanceTokenWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**CustomClaimsProviderResponseContent**](CustomClaimsProviderResponseContent.md)
 
 ### Authorization
 

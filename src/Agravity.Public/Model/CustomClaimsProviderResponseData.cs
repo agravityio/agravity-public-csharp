@@ -27,57 +27,41 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// PortalFields
+    /// CustomClaimsProviderResponseData
     /// </summary>
-    [DataContract(Name = "portalFields")]
-    public partial class PortalFields : IValidatableObject
+    [DataContract(Name = "customClaimsProviderResponseData")]
+    public partial class CustomClaimsProviderResponseData : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PortalFields" /> class.
+        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseData" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="inDetails">inDetails.</param>
-        /// <param name="inFacets">inFacets.</param>
-        /// <param name="labels">labels.</param>
-        /// <param name="userContext">userContext.</param>
-        public PortalFields(string name = default(string), bool? inDetails = default(bool?), bool? inFacets = default(bool?), Dictionary<string, string> labels = default(Dictionary<string, string>), PortalUserContext userContext = default(PortalUserContext))
+        /// <param name="odataType">odataType.</param>
+        /// <param name="actions">actions.</param>
+        /// <param name="authenticationContext">authenticationContext.</param>
+        public CustomClaimsProviderResponseData(string odataType = default(string), List<CustomClaimsProviderResponseAction> actions = default(List<CustomClaimsProviderResponseAction>), CustomClaimsProviderResponseAuthenticationContext authenticationContext = default(CustomClaimsProviderResponseAuthenticationContext))
         {
-            this.Name = name;
-            this.InDetails = inDetails;
-            this.InFacets = inFacets;
-            this.Labels = labels;
-            this.UserContext = userContext;
+            this.OdataType = odataType;
+            this.Actions = actions;
+            this.AuthenticationContext = authenticationContext;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets OdataType
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "@odata.type", EmitDefaultValue = true)]
+        public string OdataType { get; set; }
 
         /// <summary>
-        /// Gets or Sets InDetails
+        /// Gets or Sets Actions
         /// </summary>
-        [DataMember(Name = "in_details", EmitDefaultValue = true)]
-        public bool? InDetails { get; set; }
+        [DataMember(Name = "actions", EmitDefaultValue = false)]
+        public List<CustomClaimsProviderResponseAction> Actions { get; set; }
 
         /// <summary>
-        /// Gets or Sets InFacets
+        /// Gets or Sets AuthenticationContext
         /// </summary>
-        [DataMember(Name = "in_facets", EmitDefaultValue = true)]
-        public bool? InFacets { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Labels
-        /// </summary>
-        [DataMember(Name = "labels", EmitDefaultValue = true)]
-        public Dictionary<string, string> Labels { get; set; }
-
-        /// <summary>
-        /// Gets or Sets UserContext
-        /// </summary>
-        [DataMember(Name = "user_context", EmitDefaultValue = true)]
-        public PortalUserContext UserContext { get; set; }
+        [DataMember(Name = "authenticationContext", EmitDefaultValue = false)]
+        public CustomClaimsProviderResponseAuthenticationContext AuthenticationContext { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -86,12 +70,10 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PortalFields {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  InDetails: ").Append(InDetails).Append("\n");
-            sb.Append("  InFacets: ").Append(InFacets).Append("\n");
-            sb.Append("  Labels: ").Append(Labels).Append("\n");
-            sb.Append("  UserContext: ").Append(UserContext).Append("\n");
+            sb.Append("class CustomClaimsProviderResponseData {\n");
+            sb.Append("  OdataType: ").Append(OdataType).Append("\n");
+            sb.Append("  Actions: ").Append(Actions).Append("\n");
+            sb.Append("  AuthenticationContext: ").Append(AuthenticationContext).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

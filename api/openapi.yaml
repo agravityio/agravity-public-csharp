@@ -78,6 +78,25 @@ paths:
       - function_key: []
       tags:
       - Public Portal Management
+  /portalsenhancetoken:
+    post:
+      description: This endpoint returns the portal user context.
+      operationId: HttpPortalsEnhanceToken
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customClaimsProviderResponseContent'
+          description: Returns a full configuration of a portal.
+        "401":
+          description: Unauthorized. API Key not provided.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Portal Management
   /portals/{id}/zip:
     post:
       description: Initiates the ZIP creation of an asset basket from an portal.
@@ -3208,6 +3227,15 @@ paths:
         schema:
           type: string
         style: form
+      - description: Colon separated key value filter for additional scopes. It applies
+          the same conventions as for filter parameter.
+        explode: true
+        in: query
+        name: scopefilter
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Sortable fields can be used. For descendant sorting use leading
           "!". (Only if Azure Search is enabled)
         explode: true
@@ -3330,6 +3358,15 @@ paths:
         explode: true
         in: query
         name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Colon separated key value filter for additional scopes. It applies
+          the same conventions as for filter parameter.
+        explode: true
+        in: query
+        name: scopefilter
         required: false
         schema:
           type: string
@@ -6889,6 +6926,173 @@ components:
           nullable: true
           type: string
       type: object
+    customClaimsProviderResponseAction:
+      example:
+        '@odata.type': '@odata.type'
+        claims:
+          userContext:
+          - userContext
+          - userContext
+      properties:
+        '@odata.type':
+          nullable: true
+          type: string
+        claims:
+          $ref: '#/components/schemas/customClaimsProviderResponseClaims'
+      type: object
+    customClaimsProviderResponseAuthenticationContext:
+      example:
+        user:
+          preferredLanguage: preferredLanguage
+          mail: mail
+          displayName: displayName
+          companyName: companyName
+          givenName: givenName
+          createdDateTime: 2000-01-23T04:56:07.000+00:00
+          onPremisesSecurityIdentifier: onPremisesSecurityIdentifier
+          onPremisesUserPrincipalName: onPremisesUserPrincipalName
+          surname: surname
+          onPremisesSamAccountName: onPremisesSamAccountName
+          id: id
+          userType: userType
+          userPrincipalName: userPrincipalName
+      properties:
+        user:
+          $ref: '#/components/schemas/customClaimsProviderResponseUser'
+      type: object
+    customClaimsProviderResponseClaims:
+      example:
+        userContext:
+        - userContext
+        - userContext
+      properties:
+        userContext:
+          items:
+            type: string
+          type: array
+      type: object
+    customClaimsProviderResponseContent:
+      example:
+        data:
+          authenticationContext:
+            user:
+              preferredLanguage: preferredLanguage
+              mail: mail
+              displayName: displayName
+              companyName: companyName
+              givenName: givenName
+              createdDateTime: 2000-01-23T04:56:07.000+00:00
+              onPremisesSecurityIdentifier: onPremisesSecurityIdentifier
+              onPremisesUserPrincipalName: onPremisesUserPrincipalName
+              surname: surname
+              onPremisesSamAccountName: onPremisesSamAccountName
+              id: id
+              userType: userType
+              userPrincipalName: userPrincipalName
+          '@odata.type': '@odata.type'
+          actions:
+          - '@odata.type': '@odata.type'
+            claims:
+              userContext:
+              - userContext
+              - userContext
+          - '@odata.type': '@odata.type'
+            claims:
+              userContext:
+              - userContext
+              - userContext
+        source: source
+      properties:
+        data:
+          $ref: '#/components/schemas/customClaimsProviderResponseData'
+        source:
+          type: string
+      type: object
+    customClaimsProviderResponseData:
+      example:
+        authenticationContext:
+          user:
+            preferredLanguage: preferredLanguage
+            mail: mail
+            displayName: displayName
+            companyName: companyName
+            givenName: givenName
+            createdDateTime: 2000-01-23T04:56:07.000+00:00
+            onPremisesSecurityIdentifier: onPremisesSecurityIdentifier
+            onPremisesUserPrincipalName: onPremisesUserPrincipalName
+            surname: surname
+            onPremisesSamAccountName: onPremisesSamAccountName
+            id: id
+            userType: userType
+            userPrincipalName: userPrincipalName
+        '@odata.type': '@odata.type'
+        actions:
+        - '@odata.type': '@odata.type'
+          claims:
+            userContext:
+            - userContext
+            - userContext
+        - '@odata.type': '@odata.type'
+          claims:
+            userContext:
+            - userContext
+            - userContext
+      nullable: true
+      properties:
+        '@odata.type':
+          nullable: true
+          type: string
+        actions:
+          items:
+            $ref: '#/components/schemas/customClaimsProviderResponseAction'
+          type: array
+        authenticationContext:
+          $ref: '#/components/schemas/customClaimsProviderResponseAuthenticationContext'
+      type: object
+    customClaimsProviderResponseUser:
+      example:
+        preferredLanguage: preferredLanguage
+        mail: mail
+        displayName: displayName
+        companyName: companyName
+        givenName: givenName
+        createdDateTime: 2000-01-23T04:56:07.000+00:00
+        onPremisesSecurityIdentifier: onPremisesSecurityIdentifier
+        onPremisesUserPrincipalName: onPremisesUserPrincipalName
+        surname: surname
+        onPremisesSamAccountName: onPremisesSamAccountName
+        id: id
+        userType: userType
+        userPrincipalName: userPrincipalName
+      properties:
+        companyName:
+          type: string
+        createdDateTime:
+          format: date-time
+          type: string
+        displayName:
+          type: string
+        givenName:
+          type: string
+        id:
+          type: string
+        mail:
+          type: string
+        onPremisesSamAccountName:
+          type: string
+        onPremisesSecurityIdentifier:
+          type: string
+        onPremisesUserPrincipalName:
+          type: string
+        preferredLanguage:
+          type: string
+        surname:
+          type: string
+        userPrincipalName:
+          type: string
+        userType:
+          type: string
+      type: object
     dataResult:
       example:
         sum_collection_results: 6
@@ -8584,7 +8788,34 @@ components:
         id: id
         created_date: 2000-01-23T04:56:07.000+00:00
         pk: pk
+        fields:
+        - in_facets: true
+          in_details: true
+          name: name
+          user_context:
+            mapping:
+              key: mapping
+            mandatory: true
+            key: key
+          labels:
+            key: labels
+        - in_facets: true
+          in_details: true
+          name: name
+          user_context:
+            mapping:
+              key: mapping
+            mandatory: true
+            key: key
+          labels:
+            key: labels
         _etag: _etag
+        authentication:
+          tenant_id: tenant_id
+          password: password
+          method: NONE
+          issuer: issuer
+          client_id: client_id
         status: status
       properties:
         id:
@@ -8613,6 +8844,11 @@ components:
             type: string
           nullable: true
           type: array
+        fields:
+          items:
+            $ref: '#/components/schemas/portalFields'
+          nullable: true
+          type: array
         asset_icon_rules:
           items:
             $ref: '#/components/schemas/assetIconRule'
@@ -8628,6 +8864,8 @@ components:
             type: string
           nullable: true
           type: array
+        authentication:
+          $ref: '#/components/schemas/portalAuthentication'
         name:
           nullable: true
           type: string
@@ -8660,6 +8898,36 @@ components:
           nullable: true
           type: string
         _etag:
+          nullable: true
+          type: string
+      type: object
+    portalAuthentication:
+      example:
+        tenant_id: tenant_id
+        password: password
+        method: NONE
+        issuer: issuer
+        client_id: client_id
+      nullable: true
+      properties:
+        method:
+          default: NONE
+          enum:
+          - NONE
+          - PASSWORD
+          - EEID
+          - AUTH0
+          type: string
+        issuer:
+          nullable: true
+          type: string
+        client_id:
+          nullable: true
+          type: string
+        tenant_id:
+          nullable: true
+          type: string
+        password:
           nullable: true
           type: string
       type: object
@@ -8699,6 +8967,12 @@ components:
           impressum: impressum
         id: id
         _etag: _etag
+        authentication:
+          tenant_id: tenant_id
+          password: password
+          method: NONE
+          issuer: issuer
+          client_id: client_id
         udls:
         - children:
           - translations:
@@ -8892,6 +9166,27 @@ components:
           status: status
         created_date: 2000-01-23T04:56:07.000+00:00
         pk: pk
+        fields:
+        - in_facets: true
+          in_details: true
+          name: name
+          user_context:
+            mapping:
+              key: mapping
+            mandatory: true
+            key: key
+          labels:
+            key: labels
+        - in_facets: true
+          in_details: true
+          name: name
+          user_context:
+            mapping:
+              key: mapping
+            mandatory: true
+            key: key
+          labels:
+            key: labels
         items:
         - item_type: item_type
           format: format
@@ -8992,6 +9287,11 @@ components:
             type: string
           nullable: true
           type: array
+        fields:
+          items:
+            $ref: '#/components/schemas/portalFields'
+          nullable: true
+          type: array
         asset_icon_rules:
           items:
             $ref: '#/components/schemas/assetIconRule'
@@ -9007,6 +9307,8 @@ components:
             type: string
           nullable: true
           type: array
+        authentication:
+          $ref: '#/components/schemas/portalAuthentication'
         name:
           nullable: true
           type: string
@@ -9041,6 +9343,36 @@ components:
         _etag:
           nullable: true
           type: string
+      type: object
+    portalFields:
+      example:
+        in_facets: true
+        in_details: true
+        name: name
+        user_context:
+          mapping:
+            key: mapping
+          mandatory: true
+          key: key
+        labels:
+          key: labels
+      properties:
+        name:
+          nullable: true
+          type: string
+        in_details:
+          nullable: true
+          type: boolean
+        in_facets:
+          nullable: true
+          type: boolean
+        labels:
+          additionalProperties:
+            type: string
+          nullable: true
+          type: object
+        user_context:
+          $ref: '#/components/schemas/portalUserContext'
       type: object
     portalLinks:
       example:
@@ -9090,6 +9422,26 @@ components:
         icon_active:
           nullable: true
           type: string
+      type: object
+    portalUserContext:
+      example:
+        mapping:
+          key: mapping
+        mandatory: true
+        key: key
+      nullable: true
+      properties:
+        key:
+          nullable: true
+          type: string
+        mandatory:
+          nullable: true
+          type: boolean
+        mapping:
+          additionalProperties:
+            type: string
+          nullable: true
+          type: object
       type: object
     portalZipRequest:
       example:

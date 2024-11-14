@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **AssetIconRules** | [**List&lt;AssetIconRule&gt;**](AssetIconRule.md) |  | [optional] 
 **AllowedFormats** | [**List&lt;SharedAllowedFormat&gt;**](SharedAllowedFormat.md) |  | [optional] 
 **LimitIds** | **List&lt;string&gt;** |  | [optional] 
+**Authentication** | [**PortalAuthentication**](PortalAuthentication.md) |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **AddProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 

@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a id="httpgetsearchfacettebyname"></a>
 # **HttpGetSearchFacetteByName**
-> SearchFacet HttpGetSearchFacetteByName (string name, string s, string collectiontypeid = null, string collectionid = null, string mode = null, string filter = null, string ids = null, string portalId = null)
+> SearchFacet HttpGetSearchFacetteByName (string name, string s, string collectiontypeid = null, string collectionid = null, string mode = null, string filter = null, string scopefilter = null, string ids = null, string portalId = null)
 
 
 
@@ -44,12 +44,13 @@ namespace Example
             var collectionid = "collectionid_example";  // string | Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional) 
             var mode = "mode_example";  // string | Two modes supported: \"any\" or \"all\" search terms should be applied. (Only if Azure Search is enabled) (optional) 
             var filter = "filter_example";  // string | Key value filter for filterable strings and string collections separated by special ',,,'. For date or numbers \"<\", \"=\" and \">\" are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional) 
+            var scopefilter = "scopefilter_example";  // string | Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional) 
             var ids = "ids_example";  // string | Comma separated values list with all ids which should be returned. (optional) 
             var portalId = "portalId_example";  // string | If the search should be redirected to a specific portal. (optional) 
 
             try
             {
-                SearchFacet result = apiInstance.HttpGetSearchFacetteByName(name, s, collectiontypeid, collectionid, mode, filter, ids, portalId);
+                SearchFacet result = apiInstance.HttpGetSearchFacetteByName(name, s, collectiontypeid, collectionid, mode, filter, scopefilter, ids, portalId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -69,7 +70,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<SearchFacet> response = apiInstance.HttpGetSearchFacetteByNameWithHttpInfo(name, s, collectiontypeid, collectionid, mode, filter, ids, portalId);
+    ApiResponse<SearchFacet> response = apiInstance.HttpGetSearchFacetteByNameWithHttpInfo(name, s, collectiontypeid, collectionid, mode, filter, scopefilter, ids, portalId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -92,6 +93,7 @@ catch (ApiException e)
 | **collectionid** | **string** | Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. | [optional]  |
 | **mode** | **string** | Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) | [optional]  |
 | **filter** | **string** | Key value filter for filterable strings and string collections separated by special &#39;,,,&#39;. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) | [optional]  |
+| **scopefilter** | **string** | Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. | [optional]  |
 | **ids** | **string** | Comma separated values list with all ids which should be returned. | [optional]  |
 | **portalId** | **string** | If the search should be redirected to a specific portal. | [optional]  |
 
@@ -121,7 +123,7 @@ catch (ApiException e)
 
 <a id="httpglobalsearch"></a>
 # **HttpGlobalSearch**
-> SearchResult HttpGlobalSearch (string s, int? limit = null, int? skip = null, string collectiontypeid = null, string collectionid = null, string mode = null, bool? expose = null, string filter = null, string orderby = null, string ids = null, string portalId = null, bool? translations = null, string acceptLanguage = null)
+> SearchResult HttpGlobalSearch (string s, int? limit = null, int? skip = null, string collectiontypeid = null, string collectionid = null, string mode = null, bool? expose = null, string filter = null, string scopefilter = null, string orderby = null, string ids = null, string portalId = null, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -157,6 +159,7 @@ namespace Example
             var mode = "mode_example";  // string | Two modes supported: \"any\" or \"all\" search terms should be applied. (Only if Azure Search is enabled) (optional) 
             var expose = true;  // bool? | This will expose the thumbnail asset blob incl. URL with SAS Token. (optional) 
             var filter = "filter_example";  // string | Colon separated key value filter for filterable strings and string collections. For date or numbers \"<\", \"=\" and \">\" are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) (optional) 
+            var scopefilter = "scopefilter_example";  // string | Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. (optional) 
             var orderby = "orderby_example";  // string | Sortable fields can be used. For descendant sorting use leading \"!\". (Only if Azure Search is enabled) (optional) 
             var ids = "ids_example";  // string | Comma separated values list with all ids which should be returned. (optional) 
             var portalId = "portalId_example";  // string | If the search should be redirected to a specific portal. (optional) 
@@ -165,7 +168,7 @@ namespace Example
 
             try
             {
-                SearchResult result = apiInstance.HttpGlobalSearch(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations, acceptLanguage);
+                SearchResult result = apiInstance.HttpGlobalSearch(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, scopefilter, orderby, ids, portalId, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -185,7 +188,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<SearchResult> response = apiInstance.HttpGlobalSearchWithHttpInfo(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, orderby, ids, portalId, translations, acceptLanguage);
+    ApiResponse<SearchResult> response = apiInstance.HttpGlobalSearchWithHttpInfo(s, limit, skip, collectiontypeid, collectionid, mode, expose, filter, scopefilter, orderby, ids, portalId, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -210,6 +213,7 @@ catch (ApiException e)
 | **mode** | **string** | Two modes supported: \&quot;any\&quot; or \&quot;all\&quot; search terms should be applied. (Only if Azure Search is enabled) | [optional]  |
 | **expose** | **bool?** | This will expose the thumbnail asset blob incl. URL with SAS Token. | [optional]  |
 | **filter** | **string** | Colon separated key value filter for filterable strings and string collections. For date or numbers \&quot;&lt;\&quot;, \&quot;&#x3D;\&quot; and \&quot;&gt;\&quot; are possible. Mode influences AND (all) and OR (any) of all filters. Multiple filters are separated by semicolons. (Only if Azure Search is enabled) | [optional]  |
+| **scopefilter** | **string** | Colon separated key value filter for additional scopes. It applies the same conventions as for filter parameter. | [optional]  |
 | **orderby** | **string** | Sortable fields can be used. For descendant sorting use leading \&quot;!\&quot;. (Only if Azure Search is enabled) | [optional]  |
 | **ids** | **string** | Comma separated values list with all ids which should be returned. | [optional]  |
 | **portalId** | **string** | If the search should be redirected to a specific portal. | [optional]  |

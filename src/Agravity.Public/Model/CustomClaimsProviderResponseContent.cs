@@ -27,57 +27,33 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// PortalFields
+    /// CustomClaimsProviderResponseContent
     /// </summary>
-    [DataContract(Name = "portalFields")]
-    public partial class PortalFields : IValidatableObject
+    [DataContract(Name = "customClaimsProviderResponseContent")]
+    public partial class CustomClaimsProviderResponseContent : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PortalFields" /> class.
+        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseContent" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="inDetails">inDetails.</param>
-        /// <param name="inFacets">inFacets.</param>
-        /// <param name="labels">labels.</param>
-        /// <param name="userContext">userContext.</param>
-        public PortalFields(string name = default(string), bool? inDetails = default(bool?), bool? inFacets = default(bool?), Dictionary<string, string> labels = default(Dictionary<string, string>), PortalUserContext userContext = default(PortalUserContext))
+        /// <param name="data">data.</param>
+        /// <param name="source">source.</param>
+        public CustomClaimsProviderResponseContent(CustomClaimsProviderResponseData data = default(CustomClaimsProviderResponseData), string source = default(string))
         {
-            this.Name = name;
-            this.InDetails = inDetails;
-            this.InFacets = inFacets;
-            this.Labels = labels;
-            this.UserContext = userContext;
+            this.Data = data;
+            this.Source = source;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets Data
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "data", EmitDefaultValue = true)]
+        public CustomClaimsProviderResponseData Data { get; set; }
 
         /// <summary>
-        /// Gets or Sets InDetails
+        /// Gets or Sets Source
         /// </summary>
-        [DataMember(Name = "in_details", EmitDefaultValue = true)]
-        public bool? InDetails { get; set; }
-
-        /// <summary>
-        /// Gets or Sets InFacets
-        /// </summary>
-        [DataMember(Name = "in_facets", EmitDefaultValue = true)]
-        public bool? InFacets { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Labels
-        /// </summary>
-        [DataMember(Name = "labels", EmitDefaultValue = true)]
-        public Dictionary<string, string> Labels { get; set; }
-
-        /// <summary>
-        /// Gets or Sets UserContext
-        /// </summary>
-        [DataMember(Name = "user_context", EmitDefaultValue = true)]
-        public PortalUserContext UserContext { get; set; }
+        [DataMember(Name = "source", EmitDefaultValue = false)]
+        public string Source { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -86,12 +62,9 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PortalFields {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  InDetails: ").Append(InDetails).Append("\n");
-            sb.Append("  InFacets: ").Append(InFacets).Append("\n");
-            sb.Append("  Labels: ").Append(Labels).Append("\n");
-            sb.Append("  UserContext: ").Append(UserContext).Append("\n");
+            sb.Append("class CustomClaimsProviderResponseContent {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Source: ").Append(Source).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

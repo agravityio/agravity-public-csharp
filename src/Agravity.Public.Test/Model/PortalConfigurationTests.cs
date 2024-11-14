@@ -173,6 +173,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Fields'
+        /// </summary>
+        [Fact]
+        public void FieldsTest()
+        {
+            // TODO unit test for the property 'Fields'
+        }
+
+        /// <summary>
         /// Test the property 'AssetIconRules'
         /// </summary>
         [Fact]
@@ -197,6 +206,15 @@ namespace Agravity.Public.Test.Model
         public void LimitIdsTest()
         {
             // TODO unit test for the property 'LimitIds'
+        }
+
+        /// <summary>
+        /// Test the property 'Authentication'
+        /// </summary>
+        [Fact]
+        public void AuthenticationTest()
+        {
+            // TODO unit test for the property 'Authentication'
         }
 
         /// <summary>

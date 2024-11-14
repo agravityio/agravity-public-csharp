@@ -27,57 +27,88 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// PortalFields
+    /// PortalAuthentication
     /// </summary>
-    [DataContract(Name = "portalFields")]
-    public partial class PortalFields : IValidatableObject
+    [DataContract(Name = "portalAuthentication")]
+    public partial class PortalAuthentication : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PortalFields" /> class.
+        /// Defines Method
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="inDetails">inDetails.</param>
-        /// <param name="inFacets">inFacets.</param>
-        /// <param name="labels">labels.</param>
-        /// <param name="userContext">userContext.</param>
-        public PortalFields(string name = default(string), bool? inDetails = default(bool?), bool? inFacets = default(bool?), Dictionary<string, string> labels = default(Dictionary<string, string>), PortalUserContext userContext = default(PortalUserContext))
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum MethodEnum
         {
-            this.Name = name;
-            this.InDetails = inDetails;
-            this.InFacets = inFacets;
-            this.Labels = labels;
-            this.UserContext = userContext;
+            /// <summary>
+            /// Enum NONE for value: NONE
+            /// </summary>
+            [EnumMember(Value = "NONE")]
+            NONE = 1,
+
+            /// <summary>
+            /// Enum PASSWORD for value: PASSWORD
+            /// </summary>
+            [EnumMember(Value = "PASSWORD")]
+            PASSWORD = 2,
+
+            /// <summary>
+            /// Enum EEID for value: EEID
+            /// </summary>
+            [EnumMember(Value = "EEID")]
+            EEID = 3,
+
+            /// <summary>
+            /// Enum AUTH0 for value: AUTH0
+            /// </summary>
+            [EnumMember(Value = "AUTH0")]
+            AUTH0 = 4
+        }
+
+
+        /// <summary>
+        /// Gets or Sets Method
+        /// </summary>
+        [DataMember(Name = "method", EmitDefaultValue = false)]
+        public MethodEnum? Method { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PortalAuthentication" /> class.
+        /// </summary>
+        /// <param name="method">method (default to MethodEnum.NONE).</param>
+        /// <param name="issuer">issuer.</param>
+        /// <param name="clientId">clientId.</param>
+        /// <param name="tenantId">tenantId.</param>
+        /// <param name="password">password.</param>
+        public PortalAuthentication(MethodEnum? method = MethodEnum.NONE, string issuer = default(string), string clientId = default(string), string tenantId = default(string), string password = default(string))
+        {
+            this.Method = method;
+            this.Issuer = issuer;
+            this.ClientId = clientId;
+            this.TenantId = tenantId;
+            this.Password = password;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets Issuer
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "issuer", EmitDefaultValue = true)]
+        public string Issuer { get; set; }
 
         /// <summary>
-        /// Gets or Sets InDetails
+        /// Gets or Sets ClientId
         /// </summary>
-        [DataMember(Name = "in_details", EmitDefaultValue = true)]
-        public bool? InDetails { get; set; }
+        [DataMember(Name = "client_id", EmitDefaultValue = true)]
+        public string ClientId { get; set; }
 
         /// <summary>
-        /// Gets or Sets InFacets
+        /// Gets or Sets TenantId
         /// </summary>
-        [DataMember(Name = "in_facets", EmitDefaultValue = true)]
-        public bool? InFacets { get; set; }
+        [DataMember(Name = "tenant_id", EmitDefaultValue = true)]
+        public string TenantId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Labels
+        /// Gets or Sets Password
         /// </summary>
-        [DataMember(Name = "labels", EmitDefaultValue = true)]
-        public Dictionary<string, string> Labels { get; set; }
-
-        /// <summary>
-        /// Gets or Sets UserContext
-        /// </summary>
-        [DataMember(Name = "user_context", EmitDefaultValue = true)]
-        public PortalUserContext UserContext { get; set; }
+        [DataMember(Name = "password", EmitDefaultValue = true)]
+        public string Password { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -86,12 +117,12 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PortalFields {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  InDetails: ").Append(InDetails).Append("\n");
-            sb.Append("  InFacets: ").Append(InFacets).Append("\n");
-            sb.Append("  Labels: ").Append(Labels).Append("\n");
-            sb.Append("  UserContext: ").Append(UserContext).Append("\n");
+            sb.Append("class PortalAuthentication {\n");
+            sb.Append("  Method: ").Append(Method).Append("\n");
+            sb.Append("  Issuer: ").Append(Issuer).Append("\n");
+            sb.Append("  ClientId: ").Append(ClientId).Append("\n");
+            sb.Append("  TenantId: ").Append(TenantId).Append("\n");
+            sb.Append("  Password: ").Append(Password).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

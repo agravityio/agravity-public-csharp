@@ -22,6 +22,12 @@ docs/CollectionUDL.md
 docs/CollectionUDLListEntity.md
 docs/CollectionUDLReference.md
 docs/CreateSftpUserResult.md
+docs/CustomClaimsProviderResponseAction.md
+docs/CustomClaimsProviderResponseAuthenticationContext.md
+docs/CustomClaimsProviderResponseClaims.md
+docs/CustomClaimsProviderResponseContent.md
+docs/CustomClaimsProviderResponseData.md
+docs/CustomClaimsProviderResponseUser.md
 docs/DataResult.md
 docs/DeletedEntities.md
 docs/DistZipResponse.md
@@ -34,6 +40,7 @@ docs/GroupAllAppData.md
 docs/MoveCollectionBody.md
 docs/PermissionEntity.md
 docs/Portal.md
+docs/PortalAuthentication.md
 docs/PortalConfiguration.md
 docs/PortalFields.md
 docs/PortalLinks.md
@@ -134,6 +141,12 @@ src/Agravity.Public.Test/Model/CollectionUDLListEntityTests.cs
 src/Agravity.Public.Test/Model/CollectionUDLReferenceTests.cs
 src/Agravity.Public.Test/Model/CollectionUDLTests.cs
 src/Agravity.Public.Test/Model/CreateSftpUserResultTests.cs
+src/Agravity.Public.Test/Model/CustomClaimsProviderResponseActionTests.cs
+src/Agravity.Public.Test/Model/CustomClaimsProviderResponseAuthenticationContextTests.cs
+src/Agravity.Public.Test/Model/CustomClaimsProviderResponseClaimsTests.cs
+src/Agravity.Public.Test/Model/CustomClaimsProviderResponseContentTests.cs
+src/Agravity.Public.Test/Model/CustomClaimsProviderResponseDataTests.cs
+src/Agravity.Public.Test/Model/CustomClaimsProviderResponseUserTests.cs
 src/Agravity.Public.Test/Model/DataResultTests.cs
 src/Agravity.Public.Test/Model/DeletedEntitiesTests.cs
 src/Agravity.Public.Test/Model/DistZipResponseTests.cs
@@ -145,6 +158,7 @@ src/Agravity.Public.Test/Model/FrontendAppConfigTests.cs
 src/Agravity.Public.Test/Model/GroupAllAppDataTests.cs
 src/Agravity.Public.Test/Model/MoveCollectionBodyTests.cs
 src/Agravity.Public.Test/Model/PermissionEntityTests.cs
+src/Agravity.Public.Test/Model/PortalAuthenticationTests.cs
 src/Agravity.Public.Test/Model/PortalConfigurationTests.cs
 src/Agravity.Public.Test/Model/PortalFieldsTests.cs
 src/Agravity.Public.Test/Model/PortalLinksTests.cs
@@ -239,6 +253,12 @@ src/Agravity.Public/Model/CollectionUDL.cs
 src/Agravity.Public/Model/CollectionUDLListEntity.cs
 src/Agravity.Public/Model/CollectionUDLReference.cs
 src/Agravity.Public/Model/CreateSftpUserResult.cs
+src/Agravity.Public/Model/CustomClaimsProviderResponseAction.cs
+src/Agravity.Public/Model/CustomClaimsProviderResponseAuthenticationContext.cs
+src/Agravity.Public/Model/CustomClaimsProviderResponseClaims.cs
+src/Agravity.Public/Model/CustomClaimsProviderResponseContent.cs
+src/Agravity.Public/Model/CustomClaimsProviderResponseData.cs
+src/Agravity.Public/Model/CustomClaimsProviderResponseUser.cs
 src/Agravity.Public/Model/DataResult.cs
 src/Agravity.Public/Model/DeletedEntities.cs
 src/Agravity.Public/Model/DistZipResponse.cs
@@ -251,6 +271,7 @@ src/Agravity.Public/Model/GroupAllAppData.cs
 src/Agravity.Public/Model/MoveCollectionBody.cs
 src/Agravity.Public/Model/PermissionEntity.cs
 src/Agravity.Public/Model/Portal.cs
+src/Agravity.Public/Model/PortalAuthentication.cs
 src/Agravity.Public/Model/PortalConfiguration.cs
 src/Agravity.Public/Model/PortalFields.cs
 src/Agravity.Public/Model/PortalLinks.cs

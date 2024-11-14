@@ -35,8 +35,10 @@ docs/MoveCollectionBody.md
 docs/PermissionEntity.md
 docs/Portal.md
 docs/PortalConfiguration.md
+docs/PortalFields.md
 docs/PortalLinks.md
 docs/PortalTheme.md
+docs/PortalUserContext.md
 docs/PortalZipRequest.md
 docs/PublicAssetManagementApi.md
 docs/PublicAssetOperationsApi.md
@@ -144,9 +146,11 @@ src/Agravity.Public.Test/Model/GroupAllAppDataTests.cs
 src/Agravity.Public.Test/Model/MoveCollectionBodyTests.cs
 src/Agravity.Public.Test/Model/PermissionEntityTests.cs
 src/Agravity.Public.Test/Model/PortalConfigurationTests.cs
+src/Agravity.Public.Test/Model/PortalFieldsTests.cs
 src/Agravity.Public.Test/Model/PortalLinksTests.cs
 src/Agravity.Public.Test/Model/PortalTests.cs
 src/Agravity.Public.Test/Model/PortalThemeTests.cs
+src/Agravity.Public.Test/Model/PortalUserContextTests.cs
 src/Agravity.Public.Test/Model/PortalZipRequestTests.cs
 src/Agravity.Public.Test/Model/PublishEntityTests.cs
 src/Agravity.Public.Test/Model/PublishedAssetTests.cs
@@ -248,8 +252,10 @@ src/Agravity.Public/Model/MoveCollectionBody.cs
 src/Agravity.Public/Model/PermissionEntity.cs
 src/Agravity.Public/Model/Portal.cs
 src/Agravity.Public/Model/PortalConfiguration.cs
+src/Agravity.Public/Model/PortalFields.cs
 src/Agravity.Public/Model/PortalLinks.cs
 src/Agravity.Public/Model/PortalTheme.cs
+src/Agravity.Public/Model/PortalUserContext.cs
 src/Agravity.Public/Model/PortalZipRequest.cs
 src/Agravity.Public/Model/PublishEntity.cs
 src/Agravity.Public/Model/PublishedAsset.cs

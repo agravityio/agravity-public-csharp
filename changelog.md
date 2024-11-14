@@ -8,6 +8,15 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+
+## AgravityAPI <a name="8.3.0-usercontext"/> [8.3.0-usercontext](https://www.nuget.org/packages/Agravity.Public/8.3.0-usercontext) (2024-11-14)
+
+- #965 Enable the enhancement of tokens and creation of portal users
+- Add properties `fields`and `authentication` to Portal (and PortalConfiguration)
+- Add endpoint POST `/portalsenhancetoken` - for Entra External ID authentication token extension (add user context to token)
+- Add models of Entra External ID Claims
+
+
 ## AgravityAPI <a name="8.2.0"/> [8.2.0](https://www.nuget.org/packages/Agravity.Public/8.2.0) (2024-11-13)
 
 - Add `history` property to SearchAdmingIndexerStatus which contains the history of the last runs of indexer

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ZipType** | **string** |  | [optional] 
 **PortalId** | **string** |  | [optional] 
+**Language** | **string** |  | [optional] 
 **AssetIds** | **List&lt;string&gt;** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **EntityType** | **string** |  | [optional] 

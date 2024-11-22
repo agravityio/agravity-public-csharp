@@ -9096,6 +9096,7 @@ components:
         asset_ids:
         - asset_ids
         - asset_ids
+        language: language
         error:
           error_message: error_message
           exception: exception
@@ -9124,6 +9125,9 @@ components:
           nullable: true
           type: string
         portal_id:
+          nullable: true
+          type: string
+        language:
           nullable: true
           type: string
         asset_ids:
@@ -11410,6 +11414,7 @@ components:
     sharedCollectionZipRequest:
       example:
         sharedcoll_id: sharedcoll_id
+        language: language
         error:
           error_message: error_message
           exception: exception
@@ -11438,6 +11443,9 @@ components:
           nullable: true
           type: string
         password:
+          nullable: true
+          type: string
+        language:
           nullable: true
           type: string
         id:

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SharedcollId** | **string** |  | [optional] 
 **Password** | **string** |  | [optional] 
+**Language** | **string** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **EntityType** | **string** |  | [optional] 
 **ZipType** | **string** |  | [optional] 

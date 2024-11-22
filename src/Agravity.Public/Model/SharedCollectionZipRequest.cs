@@ -37,6 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="sharedcollId">sharedcollId.</param>
         /// <param name="password">password.</param>
+        /// <param name="language">language.</param>
         /// <param name="id">id.</param>
         /// <param name="entityType">entityType.</param>
         /// <param name="zipType">zipType.</param>
@@ -52,10 +53,11 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public SharedCollectionZipRequest(string sharedcollId = default(string), string password = default(string), string id = default(string), string entityType = default(string), string zipType = default(string), string url = default(string), string instanceId = default(string), DateTime? validUntil = default(DateTime?), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), AgravityErrorResponse error = default(AgravityErrorResponse), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public SharedCollectionZipRequest(string sharedcollId = default(string), string password = default(string), string language = default(string), string id = default(string), string entityType = default(string), string zipType = default(string), string url = default(string), string instanceId = default(string), DateTime? validUntil = default(DateTime?), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), AgravityErrorResponse error = default(AgravityErrorResponse), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.SharedcollId = sharedcollId;
             this.Password = password;
+            this.Language = language;
             this.Id = id;
             this.EntityType = entityType;
             this.ZipType = zipType;
@@ -84,6 +86,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "password", EmitDefaultValue = true)]
         public string Password { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Language
+        /// </summary>
+        [DataMember(Name = "language", EmitDefaultValue = true)]
+        public string Language { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -185,6 +193,7 @@ namespace Agravity.Public.Model
             sb.Append("class SharedCollectionZipRequest {\n");
             sb.Append("  SharedcollId: ").Append(SharedcollId).Append("\n");
             sb.Append("  Password: ").Append(Password).Append("\n");
+            sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  EntityType: ").Append(EntityType).Append("\n");
             sb.Append("  ZipType: ").Append(ZipType).Append("\n");

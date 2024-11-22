@@ -37,6 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="zipType">zipType.</param>
         /// <param name="portalId">portalId.</param>
+        /// <param name="language">language.</param>
         /// <param name="assetIds">assetIds.</param>
         /// <param name="id">id.</param>
         /// <param name="entityType">entityType.</param>
@@ -52,10 +53,11 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public PortalZipRequest(string zipType = default(string), string portalId = default(string), List<string> assetIds = default(List<string>), string id = default(string), string entityType = default(string), string url = default(string), string instanceId = default(string), DateTime? validUntil = default(DateTime?), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), AgravityErrorResponse error = default(AgravityErrorResponse), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public PortalZipRequest(string zipType = default(string), string portalId = default(string), string language = default(string), List<string> assetIds = default(List<string>), string id = default(string), string entityType = default(string), string url = default(string), string instanceId = default(string), DateTime? validUntil = default(DateTime?), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), AgravityErrorResponse error = default(AgravityErrorResponse), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.ZipType = zipType;
             this.PortalId = portalId;
+            this.Language = language;
             this.AssetIds = assetIds;
             this.Id = id;
             this.EntityType = entityType;
@@ -84,6 +86,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "portal_id", EmitDefaultValue = true)]
         public string PortalId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Language
+        /// </summary>
+        [DataMember(Name = "language", EmitDefaultValue = true)]
+        public string Language { get; set; }
 
         /// <summary>
         /// Gets or Sets AssetIds
@@ -185,6 +193,7 @@ namespace Agravity.Public.Model
             sb.Append("class PortalZipRequest {\n");
             sb.Append("  ZipType: ").Append(ZipType).Append("\n");
             sb.Append("  PortalId: ").Append(PortalId).Append("\n");
+            sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  AssetIds: ").Append(AssetIds).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  EntityType: ").Append(EntityType).Append("\n");

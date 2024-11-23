@@ -169,6 +169,7 @@ Class | Method | HTTP request | Description
 *PublicPortalManagementApi* | [**HttpPortalGetStatusZipById**](docs/PublicPortalManagementApi.md#httpportalgetstatuszipbyid) | **GET** /portals/{id}/zip/{zipId} | 
 *PublicPortalManagementApi* | [**HttpPortalRequestZipById**](docs/PublicPortalManagementApi.md#httpportalrequestzipbyid) | **POST** /portals/{id}/zip | 
 *PublicPortalManagementApi* | [**HttpPortalsConfigurationGetById**](docs/PublicPortalManagementApi.md#httpportalsconfigurationgetbyid) | **GET** /portals/{id}/config | 
+*PublicPortalManagementApi* | [**HttpPortalsEnhanceToken**](docs/PublicPortalManagementApi.md#httpportalsenhancetoken) | **POST** /portalsenhancetoken | 
 *PublicPortalManagementApi* | [**HttpPortalsGetById**](docs/PublicPortalManagementApi.md#httpportalsgetbyid) | **GET** /portals/{id} | 
 *PublicPublishingApi* | [**HttpPublishedAssetsGetAll**](docs/PublicPublishingApi.md#httppublishedassetsgetall) | **GET** /publish | 
 *PublicSavedSearchApi* | [**HttpSavedSearchesGetAll**](docs/PublicSavedSearchApi.md#httpsavedsearchesgetall) | **GET** /savedsearches | 
@@ -214,6 +215,12 @@ Class | Method | HTTP request | Description
  - [Model.CollectionUDLListEntity](docs/CollectionUDLListEntity.md)
  - [Model.CollectionUDLReference](docs/CollectionUDLReference.md)
  - [Model.CreateSftpUserResult](docs/CreateSftpUserResult.md)
+ - [Model.CustomClaimsProviderResponseAction](docs/CustomClaimsProviderResponseAction.md)
+ - [Model.CustomClaimsProviderResponseAuthenticationContext](docs/CustomClaimsProviderResponseAuthenticationContext.md)
+ - [Model.CustomClaimsProviderResponseClaims](docs/CustomClaimsProviderResponseClaims.md)
+ - [Model.CustomClaimsProviderResponseContent](docs/CustomClaimsProviderResponseContent.md)
+ - [Model.CustomClaimsProviderResponseData](docs/CustomClaimsProviderResponseData.md)
+ - [Model.CustomClaimsProviderResponseUser](docs/CustomClaimsProviderResponseUser.md)
  - [Model.DataResult](docs/DataResult.md)
  - [Model.DeletedEntities](docs/DeletedEntities.md)
  - [Model.DistZipResponse](docs/DistZipResponse.md)
@@ -226,9 +233,12 @@ Class | Method | HTTP request | Description
  - [Model.MoveCollectionBody](docs/MoveCollectionBody.md)
  - [Model.PermissionEntity](docs/PermissionEntity.md)
  - [Model.Portal](docs/Portal.md)
+ - [Model.PortalAuthentication](docs/PortalAuthentication.md)
  - [Model.PortalConfiguration](docs/PortalConfiguration.md)
+ - [Model.PortalFields](docs/PortalFields.md)
  - [Model.PortalLinks](docs/PortalLinks.md)
  - [Model.PortalTheme](docs/PortalTheme.md)
+ - [Model.PortalUserContext](docs/PortalUserContext.md)
  - [Model.PortalZipRequest](docs/PortalZipRequest.md)
  - [Model.PublishEntity](docs/PublishEntity.md)
  - [Model.PublishedAsset](docs/PublishedAsset.md)

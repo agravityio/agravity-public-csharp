@@ -106,6 +106,17 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpPortalsEnhanceToken
+        /// </summary>
+        [Fact]
+        public void HttpPortalsEnhanceTokenTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.HttpPortalsEnhanceToken();
+            //Assert.IsType<CustomClaimsProviderResponseContent>(response);
+        }
+
+        /// <summary>
         /// Test HttpPortalsGetById
         /// </summary>
         [Fact]

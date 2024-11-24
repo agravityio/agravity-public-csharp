@@ -42,17 +42,16 @@ namespace Agravity.Public.Model
         /// <param name="configs">configs.</param>
         /// <param name="id">id.</param>
         /// <param name="entityType">entityType.</param>
-        /// <param name="filter">filter.</param>
-        /// <param name="languages">languages.</param>
-        /// <param name="theme">theme.</param>
-        /// <param name="links">links.</param>
-        /// <param name="metadata">metadata.</param>
-        /// <param name="facettes">facettes.</param>
-        /// <param name="fields">fields.</param>
-        /// <param name="assetIconRules">assetIconRules.</param>
-        /// <param name="allowedFormats">allowedFormats.</param>
-        /// <param name="limitIds">limitIds.</param>
         /// <param name="authentication">authentication.</param>
+        /// <param name="languages">languages.</param>
+        /// <param name="fields">fields.</param>
+        /// <param name="filter">filter.</param>
+        /// <param name="limitIds">limitIds.</param>
+        /// <param name="allowedFormats">allowedFormats.</param>
+        /// <param name="assetIconRules">assetIconRules.</param>
+        /// <param name="allowedOrigins">allowedOrigins.</param>
+        /// <param name="links">links.</param>
+        /// <param name="theme">theme.</param>
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
         /// <param name="addProperties">addProperties.</param>
@@ -63,7 +62,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public PortalConfiguration(List<DownloadFormat> downloadFormats = default(List<DownloadFormat>), List<StaticDefinedList> sdls = default(List<StaticDefinedList>), List<CollectionUDL> udls = default(List<CollectionUDL>), List<CollTypeItem> items = default(List<CollTypeItem>), List<FrontendAppConfig> configs = default(List<FrontendAppConfig>), string id = default(string), string entityType = default(string), string filter = default(string), string languages = default(string), PortalTheme theme = default(PortalTheme), PortalLinks links = default(PortalLinks), List<string> metadata = default(List<string>), List<string> facettes = default(List<string>), List<PortalFields> fields = default(List<PortalFields>), List<AssetIconRule> assetIconRules = default(List<AssetIconRule>), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), List<string> limitIds = default(List<string>), PortalAuthentication authentication = default(PortalAuthentication), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public PortalConfiguration(List<DownloadFormat> downloadFormats = default(List<DownloadFormat>), List<StaticDefinedList> sdls = default(List<StaticDefinedList>), List<CollectionUDL> udls = default(List<CollectionUDL>), List<CollTypeItem> items = default(List<CollTypeItem>), List<FrontendAppConfig> configs = default(List<FrontendAppConfig>), string id = default(string), string entityType = default(string), PortalAuthentication authentication = default(PortalAuthentication), string languages = default(string), List<PortalFields> fields = default(List<PortalFields>), string filter = default(string), List<string> limitIds = default(List<string>), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), List<AssetIconRule> assetIconRules = default(List<AssetIconRule>), List<string> allowedOrigins = default(List<string>), PortalLinks links = default(PortalLinks), PortalTheme theme = default(PortalTheme), string name = default(string), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.DownloadFormats = downloadFormats;
             this.Sdls = sdls;
@@ -72,17 +71,16 @@ namespace Agravity.Public.Model
             this.Configs = configs;
             this.Id = id;
             this.EntityType = entityType;
-            this.Filter = filter;
-            this.Languages = languages;
-            this.Theme = theme;
-            this.Links = links;
-            this.Metadata = metadata;
-            this.Facettes = facettes;
-            this.Fields = fields;
-            this.AssetIconRules = assetIconRules;
-            this.AllowedFormats = allowedFormats;
-            this.LimitIds = limitIds;
             this.Authentication = authentication;
+            this.Languages = languages;
+            this.Fields = fields;
+            this.Filter = filter;
+            this.LimitIds = limitIds;
+            this.AllowedFormats = allowedFormats;
+            this.AssetIconRules = assetIconRules;
+            this.AllowedOrigins = allowedOrigins;
+            this.Links = links;
+            this.Theme = theme;
             this.Name = name;
             this.Description = description;
             this.AddProperties = addProperties;
@@ -138,10 +136,10 @@ namespace Agravity.Public.Model
         public string EntityType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Filter
+        /// Gets or Sets Authentication
         /// </summary>
-        [DataMember(Name = "filter", EmitDefaultValue = true)]
-        public string Filter { get; set; }
+        [DataMember(Name = "authentication", EmitDefaultValue = true)]
+        public PortalAuthentication Authentication { get; set; }
 
         /// <summary>
         /// Gets or Sets Languages
@@ -150,46 +148,16 @@ namespace Agravity.Public.Model
         public string Languages { get; set; }
 
         /// <summary>
-        /// Gets or Sets Theme
-        /// </summary>
-        [DataMember(Name = "theme", EmitDefaultValue = true)]
-        public PortalTheme Theme { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Links
-        /// </summary>
-        [DataMember(Name = "links", EmitDefaultValue = true)]
-        public PortalLinks Links { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Metadata
-        /// </summary>
-        [DataMember(Name = "metadata", EmitDefaultValue = true)]
-        public List<string> Metadata { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Facettes
-        /// </summary>
-        [DataMember(Name = "facettes", EmitDefaultValue = true)]
-        public List<string> Facettes { get; set; }
-
-        /// <summary>
         /// Gets or Sets Fields
         /// </summary>
         [DataMember(Name = "fields", EmitDefaultValue = true)]
         public List<PortalFields> Fields { get; set; }
 
         /// <summary>
-        /// Gets or Sets AssetIconRules
+        /// Gets or Sets Filter
         /// </summary>
-        [DataMember(Name = "asset_icon_rules", EmitDefaultValue = true)]
-        public List<AssetIconRule> AssetIconRules { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AllowedFormats
-        /// </summary>
-        [DataMember(Name = "allowed_formats", EmitDefaultValue = true)]
-        public List<SharedAllowedFormat> AllowedFormats { get; set; }
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
+        public string Filter { get; set; }
 
         /// <summary>
         /// Gets or Sets LimitIds
@@ -198,10 +166,34 @@ namespace Agravity.Public.Model
         public List<string> LimitIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets Authentication
+        /// Gets or Sets AllowedFormats
         /// </summary>
-        [DataMember(Name = "authentication", EmitDefaultValue = true)]
-        public PortalAuthentication Authentication { get; set; }
+        [DataMember(Name = "allowed_formats", EmitDefaultValue = true)]
+        public List<SharedAllowedFormat> AllowedFormats { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AssetIconRules
+        /// </summary>
+        [DataMember(Name = "asset_icon_rules", EmitDefaultValue = true)]
+        public List<AssetIconRule> AssetIconRules { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AllowedOrigins
+        /// </summary>
+        [DataMember(Name = "allowed_origins", EmitDefaultValue = true)]
+        public List<string> AllowedOrigins { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Links
+        /// </summary>
+        [DataMember(Name = "links", EmitDefaultValue = true)]
+        public PortalLinks Links { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Theme
+        /// </summary>
+        [DataMember(Name = "theme", EmitDefaultValue = true)]
+        public PortalTheme Theme { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -278,17 +270,16 @@ namespace Agravity.Public.Model
             sb.Append("  Configs: ").Append(Configs).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  EntityType: ").Append(EntityType).Append("\n");
-            sb.Append("  Filter: ").Append(Filter).Append("\n");
-            sb.Append("  Languages: ").Append(Languages).Append("\n");
-            sb.Append("  Theme: ").Append(Theme).Append("\n");
-            sb.Append("  Links: ").Append(Links).Append("\n");
-            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
-            sb.Append("  Facettes: ").Append(Facettes).Append("\n");
-            sb.Append("  Fields: ").Append(Fields).Append("\n");
-            sb.Append("  AssetIconRules: ").Append(AssetIconRules).Append("\n");
-            sb.Append("  AllowedFormats: ").Append(AllowedFormats).Append("\n");
-            sb.Append("  LimitIds: ").Append(LimitIds).Append("\n");
             sb.Append("  Authentication: ").Append(Authentication).Append("\n");
+            sb.Append("  Languages: ").Append(Languages).Append("\n");
+            sb.Append("  Fields: ").Append(Fields).Append("\n");
+            sb.Append("  Filter: ").Append(Filter).Append("\n");
+            sb.Append("  LimitIds: ").Append(LimitIds).Append("\n");
+            sb.Append("  AllowedFormats: ").Append(AllowedFormats).Append("\n");
+            sb.Append("  AssetIconRules: ").Append(AssetIconRules).Append("\n");
+            sb.Append("  AllowedOrigins: ").Append(AllowedOrigins).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  Theme: ").Append(Theme).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  AddProperties: ").Append(AddProperties).Append("\n");

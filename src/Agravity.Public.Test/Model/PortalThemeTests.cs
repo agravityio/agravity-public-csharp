@@ -56,15 +56,6 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'BackgroundUrl'
-        /// </summary>
-        [Fact]
-        public void BackgroundUrlTest()
-        {
-            // TODO unit test for the property 'BackgroundUrl'
-        }
-
-        /// <summary>
         /// Test the property 'LogoUrl'
         /// </summary>
         [Fact]
@@ -74,21 +65,30 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'Colors'
-        /// </summary>
-        [Fact]
-        public void ColorsTest()
-        {
-            // TODO unit test for the property 'Colors'
-        }
-
-        /// <summary>
         /// Test the property 'TopbarColor'
         /// </summary>
         [Fact]
         public void TopbarColorTest()
         {
             // TODO unit test for the property 'TopbarColor'
+        }
+
+        /// <summary>
+        /// Test the property 'BackgroundUrl'
+        /// </summary>
+        [Fact]
+        public void BackgroundUrlTest()
+        {
+            // TODO unit test for the property 'BackgroundUrl'
+        }
+
+        /// <summary>
+        /// Test the property 'FavIcon'
+        /// </summary>
+        [Fact]
+        public void FavIconTest()
+        {
+            // TODO unit test for the property 'FavIcon'
         }
 
         /// <summary>
@@ -107,6 +107,15 @@ namespace Agravity.Public.Test.Model
         public void IconActiveTest()
         {
             // TODO unit test for the property 'IconActive'
+        }
+
+        /// <summary>
+        /// Test the property 'Colors'
+        /// </summary>
+        [Fact]
+        public void ColorsTest()
+        {
+            // TODO unit test for the property 'Colors'
         }
     }
 }

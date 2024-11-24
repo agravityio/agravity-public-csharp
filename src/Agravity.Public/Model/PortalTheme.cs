@@ -35,27 +35,23 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PortalTheme" /> class.
         /// </summary>
-        /// <param name="backgroundUrl">backgroundUrl.</param>
         /// <param name="logoUrl">logoUrl.</param>
-        /// <param name="colors">colors.</param>
         /// <param name="topbarColor">topbarColor.</param>
+        /// <param name="backgroundUrl">backgroundUrl.</param>
+        /// <param name="favIcon">favIcon.</param>
         /// <param name="iconEmpty">iconEmpty.</param>
         /// <param name="iconActive">iconActive.</param>
-        public PortalTheme(string backgroundUrl = default(string), string logoUrl = default(string), Dictionary<string, object> colors = default(Dictionary<string, object>), string topbarColor = default(string), string iconEmpty = default(string), string iconActive = default(string))
+        /// <param name="colors">colors.</param>
+        public PortalTheme(string logoUrl = default(string), string topbarColor = default(string), string backgroundUrl = default(string), string favIcon = default(string), string iconEmpty = default(string), string iconActive = default(string), Dictionary<string, object> colors = default(Dictionary<string, object>))
         {
-            this.BackgroundUrl = backgroundUrl;
             this.LogoUrl = logoUrl;
-            this.Colors = colors;
             this.TopbarColor = topbarColor;
+            this.BackgroundUrl = backgroundUrl;
+            this.FavIcon = favIcon;
             this.IconEmpty = iconEmpty;
             this.IconActive = iconActive;
+            this.Colors = colors;
         }
-
-        /// <summary>
-        /// Gets or Sets BackgroundUrl
-        /// </summary>
-        [DataMember(Name = "background_url", EmitDefaultValue = true)]
-        public string BackgroundUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets LogoUrl
@@ -64,16 +60,22 @@ namespace Agravity.Public.Model
         public string LogoUrl { get; set; }
 
         /// <summary>
-        /// Gets or Sets Colors
-        /// </summary>
-        [DataMember(Name = "colors", EmitDefaultValue = true)]
-        public Dictionary<string, object> Colors { get; set; }
-
-        /// <summary>
         /// Gets or Sets TopbarColor
         /// </summary>
         [DataMember(Name = "topbar_color", EmitDefaultValue = true)]
         public string TopbarColor { get; set; }
+
+        /// <summary>
+        /// Gets or Sets BackgroundUrl
+        /// </summary>
+        [DataMember(Name = "background_url", EmitDefaultValue = true)]
+        public string BackgroundUrl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FavIcon
+        /// </summary>
+        [DataMember(Name = "fav_icon", EmitDefaultValue = true)]
+        public string FavIcon { get; set; }
 
         /// <summary>
         /// Gets or Sets IconEmpty
@@ -88,6 +90,12 @@ namespace Agravity.Public.Model
         public string IconActive { get; set; }
 
         /// <summary>
+        /// Gets or Sets Colors
+        /// </summary>
+        [DataMember(Name = "colors", EmitDefaultValue = true)]
+        public Dictionary<string, object> Colors { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -95,12 +103,13 @@ namespace Agravity.Public.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PortalTheme {\n");
-            sb.Append("  BackgroundUrl: ").Append(BackgroundUrl).Append("\n");
             sb.Append("  LogoUrl: ").Append(LogoUrl).Append("\n");
-            sb.Append("  Colors: ").Append(Colors).Append("\n");
             sb.Append("  TopbarColor: ").Append(TopbarColor).Append("\n");
+            sb.Append("  BackgroundUrl: ").Append(BackgroundUrl).Append("\n");
+            sb.Append("  FavIcon: ").Append(FavIcon).Append("\n");
             sb.Append("  IconEmpty: ").Append(IconEmpty).Append("\n");
             sb.Append("  IconActive: ").Append(IconActive).Append("\n");
+            sb.Append("  Colors: ").Append(Colors).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

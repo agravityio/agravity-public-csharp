@@ -74,12 +74,12 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'Filter'
+        /// Test the property 'Authentication'
         /// </summary>
         [Fact]
-        public void FilterTest()
+        public void AuthenticationTest()
         {
-            // TODO unit test for the property 'Filter'
+            // TODO unit test for the property 'Authentication'
         }
 
         /// <summary>
@@ -92,42 +92,6 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'Theme'
-        /// </summary>
-        [Fact]
-        public void ThemeTest()
-        {
-            // TODO unit test for the property 'Theme'
-        }
-
-        /// <summary>
-        /// Test the property 'Links'
-        /// </summary>
-        [Fact]
-        public void LinksTest()
-        {
-            // TODO unit test for the property 'Links'
-        }
-
-        /// <summary>
-        /// Test the property 'Metadata'
-        /// </summary>
-        [Fact]
-        public void MetadataTest()
-        {
-            // TODO unit test for the property 'Metadata'
-        }
-
-        /// <summary>
-        /// Test the property 'Facettes'
-        /// </summary>
-        [Fact]
-        public void FacettesTest()
-        {
-            // TODO unit test for the property 'Facettes'
-        }
-
-        /// <summary>
         /// Test the property 'Fields'
         /// </summary>
         [Fact]
@@ -137,21 +101,12 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'AssetIconRules'
+        /// Test the property 'Filter'
         /// </summary>
         [Fact]
-        public void AssetIconRulesTest()
+        public void FilterTest()
         {
-            // TODO unit test for the property 'AssetIconRules'
-        }
-
-        /// <summary>
-        /// Test the property 'AllowedFormats'
-        /// </summary>
-        [Fact]
-        public void AllowedFormatsTest()
-        {
-            // TODO unit test for the property 'AllowedFormats'
+            // TODO unit test for the property 'Filter'
         }
 
         /// <summary>
@@ -164,12 +119,48 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'Authentication'
+        /// Test the property 'AllowedFormats'
         /// </summary>
         [Fact]
-        public void AuthenticationTest()
+        public void AllowedFormatsTest()
         {
-            // TODO unit test for the property 'Authentication'
+            // TODO unit test for the property 'AllowedFormats'
+        }
+
+        /// <summary>
+        /// Test the property 'AssetIconRules'
+        /// </summary>
+        [Fact]
+        public void AssetIconRulesTest()
+        {
+            // TODO unit test for the property 'AssetIconRules'
+        }
+
+        /// <summary>
+        /// Test the property 'AllowedOrigins'
+        /// </summary>
+        [Fact]
+        public void AllowedOriginsTest()
+        {
+            // TODO unit test for the property 'AllowedOrigins'
+        }
+
+        /// <summary>
+        /// Test the property 'Links'
+        /// </summary>
+        [Fact]
+        public void LinksTest()
+        {
+            // TODO unit test for the property 'Links'
+        }
+
+        /// <summary>
+        /// Test the property 'Theme'
+        /// </summary>
+        [Fact]
+        public void ThemeTest()
+        {
+            // TODO unit test for the property 'Theme'
         }
 
         /// <summary>

@@ -8706,12 +8706,6 @@ components:
       type: object
     portal:
       example:
-        metadata:
-        - metadata
-        - metadata
-        facettes:
-        - facettes
-        - facettes
         languages: languages
         asset_icon_rules:
         - color: color
@@ -8773,18 +8767,19 @@ components:
         modified_by: modified_by
         add_properties:
           key: "{}"
-        theme:
-          icon_empty: icon_empty
-          background_url: background_url
-          logo_url: logo_url
-          topbar_color: topbar_color
-          icon_active: icon_active
-          colors:
-            key: "{}"
         links:
           privacy: privacy
           conditions: conditions
           impressum: impressum
+        theme:
+          fav_icon: fav_icon
+          icon_empty: icon_empty
+          logo_url: logo_url
+          background_url: background_url
+          topbar_color: topbar_color
+          icon_active: icon_active
+          colors:
+            key: "{}"
         id: id
         created_date: 2000-01-23T04:56:07.000+00:00
         pk: pk
@@ -8816,6 +8811,9 @@ components:
           method: NONE
           issuer: issuer
           client_id: client_id
+        allowed_origins:
+        - allowed_origins
+        - allowed_origins
         status: status
       properties:
         id:
@@ -8824,34 +8822,22 @@ components:
         entity_type:
           nullable: true
           type: string
-        filter:
-          nullable: true
-          type: string
+        authentication:
+          $ref: '#/components/schemas/portalAuthentication'
         languages:
           nullable: true
           type: string
-        theme:
-          $ref: '#/components/schemas/portalTheme'
-        links:
-          $ref: '#/components/schemas/portalLinks'
-        metadata:
-          items:
-            type: string
-          nullable: true
-          type: array
-        facettes:
-          items:
-            type: string
-          nullable: true
-          type: array
         fields:
           items:
             $ref: '#/components/schemas/portalFields'
           nullable: true
           type: array
-        asset_icon_rules:
+        filter:
+          nullable: true
+          type: string
+        limit_ids:
           items:
-            $ref: '#/components/schemas/assetIconRule'
+            type: string
           nullable: true
           type: array
         allowed_formats:
@@ -8859,13 +8845,20 @@ components:
             $ref: '#/components/schemas/sharedAllowedFormat'
           nullable: true
           type: array
-        limit_ids:
+        asset_icon_rules:
+          items:
+            $ref: '#/components/schemas/assetIconRule'
+          nullable: true
+          type: array
+        allowed_origins:
           items:
             type: string
           nullable: true
           type: array
-        authentication:
-          $ref: '#/components/schemas/portalAuthentication'
+        links:
+          $ref: '#/components/schemas/portalLinks'
+        theme:
+          $ref: '#/components/schemas/portalTheme'
         name:
           nullable: true
           type: string
@@ -8944,27 +8937,25 @@ components:
           value: value
           contentType: contentType
           key: key
-        metadata:
-        - metadata
-        - metadata
         limit_ids:
         - limit_ids
         - limit_ids
         description: description
         add_properties:
           key: "{}"
-        theme:
-          icon_empty: icon_empty
-          background_url: background_url
-          logo_url: logo_url
-          topbar_color: topbar_color
-          icon_active: icon_active
-          colors:
-            key: "{}"
         links:
           privacy: privacy
           conditions: conditions
           impressum: impressum
+        theme:
+          fav_icon: fav_icon
+          icon_empty: icon_empty
+          logo_url: logo_url
+          background_url: background_url
+          topbar_color: topbar_color
+          icon_active: icon_active
+          colors:
+            key: "{}"
         id: id
         _etag: _etag
         authentication:
@@ -8973,6 +8964,9 @@ components:
           method: NONE
           issuer: issuer
           client_id: client_id
+        allowed_origins:
+        - allowed_origins
+        - allowed_origins
         udls:
         - children:
           - translations:
@@ -9000,9 +8994,6 @@ components:
             key: null
           name: name
           id: id
-        facettes:
-        - facettes
-        - facettes
         languages: languages
         asset_icon_rules:
         - color: color
@@ -9267,34 +9258,22 @@ components:
         entity_type:
           nullable: true
           type: string
-        filter:
-          nullable: true
-          type: string
+        authentication:
+          $ref: '#/components/schemas/portalAuthentication'
         languages:
           nullable: true
           type: string
-        theme:
-          $ref: '#/components/schemas/portalTheme'
-        links:
-          $ref: '#/components/schemas/portalLinks'
-        metadata:
-          items:
-            type: string
-          nullable: true
-          type: array
-        facettes:
-          items:
-            type: string
-          nullable: true
-          type: array
         fields:
           items:
             $ref: '#/components/schemas/portalFields'
           nullable: true
           type: array
-        asset_icon_rules:
+        filter:
+          nullable: true
+          type: string
+        limit_ids:
           items:
-            $ref: '#/components/schemas/assetIconRule'
+            type: string
           nullable: true
           type: array
         allowed_formats:
@@ -9302,13 +9281,20 @@ components:
             $ref: '#/components/schemas/sharedAllowedFormat'
           nullable: true
           type: array
-        limit_ids:
+        asset_icon_rules:
+          items:
+            $ref: '#/components/schemas/assetIconRule'
+          nullable: true
+          type: array
+        allowed_origins:
           items:
             type: string
           nullable: true
           type: array
-        authentication:
-          $ref: '#/components/schemas/portalAuthentication'
+        links:
+          $ref: '#/components/schemas/portalLinks'
+        theme:
+          $ref: '#/components/schemas/portalTheme'
         name:
           nullable: true
           type: string
@@ -9393,27 +9379,26 @@ components:
       type: object
     portalTheme:
       example:
+        fav_icon: fav_icon
         icon_empty: icon_empty
-        background_url: background_url
         logo_url: logo_url
+        background_url: background_url
         topbar_color: topbar_color
         icon_active: icon_active
         colors:
           key: "{}"
       nullable: true
       properties:
-        background_url:
-          nullable: true
-          type: string
         logo_url:
           nullable: true
           type: string
-        colors:
-          additionalProperties:
-            type: object
-          nullable: true
-          type: object
         topbar_color:
+          nullable: true
+          type: string
+        background_url:
+          nullable: true
+          type: string
+        fav_icon:
           nullable: true
           type: string
         icon_empty:
@@ -9422,6 +9407,11 @@ components:
         icon_active:
           nullable: true
           type: string
+        colors:
+          additionalProperties:
+            type: object
+          nullable: true
+          type: object
       type: object
     portalUserContext:
       example:

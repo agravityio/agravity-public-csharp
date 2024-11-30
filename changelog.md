@@ -8,6 +8,19 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="8.3.0-usercontext.2"/> [8.3.0-usercontext.2](https://www.nuget.org/packages/Agravity.Public/8.3.0-usercontext.2) (2024-12-01)
+
+- Allow ServicePrincipal to request token (app client / secret)
+  - Add Role to ProviderResponseClaims
+- Scopefilter
+- Fields and authentication on portal
+- add endpoint POST  `portalsenhancetoken`-   endpoint enhance the Auth0 token of entra external ID with the portal user context.
+- adjust the version number to have latest release (8.2.1)
+- Adjust Portal Model
+  - add property theme.fav_icon, allowed_origins,
+  - remove properties `metadata` and `facettes` (replaced by `fields`)
+  - restructure/reorder properties in Portal (and PortalConfiguration)
+
 ## AgravityAPI <a name="8.2.1"/> [8.2.1](https://www.nuget.org/packages/Agravity.Public/8.2.1) (2024-11-22)
 
 - Add `language` to asset download object (to respect the requested language)

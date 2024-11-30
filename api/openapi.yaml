@@ -6930,6 +6930,7 @@ components:
       example:
         '@odata.type': '@odata.type'
         claims:
+          role: role
           userContext:
           - userContext
           - userContext
@@ -6942,6 +6943,17 @@ components:
       type: object
     customClaimsProviderResponseAuthenticationContext:
       example:
+        protocol: protocol
+        clientServicePrincipal:
+          appDisplayName: appDisplayName
+          displayName: displayName
+          appId: appId
+          id: id
+        client:
+          market: market
+          ip: ip
+          locale: locale
+        correlationId: correlationId
         user:
           preferredLanguage: preferredLanguage
           mail: mail
@@ -6956,12 +6968,28 @@ components:
           id: id
           userType: userType
           userPrincipalName: userPrincipalName
+        resourceServicePrincipal:
+          appDisplayName: appDisplayName
+          displayName: displayName
+          appId: appId
+          id: id
       properties:
         user:
           $ref: '#/components/schemas/customClaimsProviderResponseUser'
+        correlationId:
+          type: string
+        client:
+          $ref: '#/components/schemas/customClaimsProviderResponseClient'
+        protocol:
+          type: string
+        clientServicePrincipal:
+          $ref: '#/components/schemas/customClaimsProviderResponseServicePrincipal'
+        resourceServicePrincipal:
+          $ref: '#/components/schemas/customClaimsProviderResponseServicePrincipal'
       type: object
     customClaimsProviderResponseClaims:
       example:
+        role: role
         userContext:
         - userContext
         - userContext
@@ -6970,11 +6998,37 @@ components:
           items:
             type: string
           type: array
+        role:
+          type: string
+      type: object
+    customClaimsProviderResponseClient:
+      example:
+        market: market
+        ip: ip
+        locale: locale
+      properties:
+        ip:
+          type: string
+        locale:
+          type: string
+        market:
+          type: string
       type: object
     customClaimsProviderResponseContent:
       example:
         data:
           authenticationContext:
+            protocol: protocol
+            clientServicePrincipal:
+              appDisplayName: appDisplayName
+              displayName: displayName
+              appId: appId
+              id: id
+            client:
+              market: market
+              ip: ip
+              locale: locale
+            correlationId: correlationId
             user:
               preferredLanguage: preferredLanguage
               mail: mail
@@ -6989,15 +7043,22 @@ components:
               id: id
               userType: userType
               userPrincipalName: userPrincipalName
+            resourceServicePrincipal:
+              appDisplayName: appDisplayName
+              displayName: displayName
+              appId: appId
+              id: id
           '@odata.type': '@odata.type'
           actions:
           - '@odata.type': '@odata.type'
             claims:
+              role: role
               userContext:
               - userContext
               - userContext
           - '@odata.type': '@odata.type'
             claims:
+              role: role
               userContext:
               - userContext
               - userContext
@@ -7011,6 +7072,17 @@ components:
     customClaimsProviderResponseData:
       example:
         authenticationContext:
+          protocol: protocol
+          clientServicePrincipal:
+            appDisplayName: appDisplayName
+            displayName: displayName
+            appId: appId
+            id: id
+          client:
+            market: market
+            ip: ip
+            locale: locale
+          correlationId: correlationId
           user:
             preferredLanguage: preferredLanguage
             mail: mail
@@ -7025,15 +7097,22 @@ components:
             id: id
             userType: userType
             userPrincipalName: userPrincipalName
+          resourceServicePrincipal:
+            appDisplayName: appDisplayName
+            displayName: displayName
+            appId: appId
+            id: id
         '@odata.type': '@odata.type'
         actions:
         - '@odata.type': '@odata.type'
           claims:
+            role: role
             userContext:
             - userContext
             - userContext
         - '@odata.type': '@odata.type'
           claims:
+            role: role
             userContext:
             - userContext
             - userContext
@@ -7048,6 +7127,22 @@ components:
           type: array
         authenticationContext:
           $ref: '#/components/schemas/customClaimsProviderResponseAuthenticationContext'
+      type: object
+    customClaimsProviderResponseServicePrincipal:
+      example:
+        appDisplayName: appDisplayName
+        displayName: displayName
+        appId: appId
+        id: id
+      properties:
+        id:
+          type: string
+        appId:
+          type: string
+        appDisplayName:
+          type: string
+        displayName:
+          type: string
       type: object
     customClaimsProviderResponseUser:
       example:
@@ -8676,6 +8771,10 @@ components:
       additionalProperties:
         type: object
       type: object
+    list_string:
+      items:
+        type: string
+      type: array
     moveCollectionBody:
       properties:
         from_collection_id:

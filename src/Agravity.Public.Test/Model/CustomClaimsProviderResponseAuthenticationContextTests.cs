@@ -63,5 +63,50 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'User'
         }
+
+        /// <summary>
+        /// Test the property 'CorrelationId'
+        /// </summary>
+        [Fact]
+        public void CorrelationIdTest()
+        {
+            // TODO unit test for the property 'CorrelationId'
+        }
+
+        /// <summary>
+        /// Test the property 'VarClient'
+        /// </summary>
+        [Fact]
+        public void VarClientTest()
+        {
+            // TODO unit test for the property 'VarClient'
+        }
+
+        /// <summary>
+        /// Test the property 'Protocol'
+        /// </summary>
+        [Fact]
+        public void ProtocolTest()
+        {
+            // TODO unit test for the property 'Protocol'
+        }
+
+        /// <summary>
+        /// Test the property 'ClientServicePrincipal'
+        /// </summary>
+        [Fact]
+        public void ClientServicePrincipalTest()
+        {
+            // TODO unit test for the property 'ClientServicePrincipal'
+        }
+
+        /// <summary>
+        /// Test the property 'ResourceServicePrincipal'
+        /// </summary>
+        [Fact]
+        public void ResourceServicePrincipalTest()
+        {
+            // TODO unit test for the property 'ResourceServicePrincipal'
+        }
     }
 }

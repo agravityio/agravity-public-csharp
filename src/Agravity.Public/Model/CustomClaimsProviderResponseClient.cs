@@ -27,33 +27,41 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// CustomClaimsProviderResponseClaims
+    /// CustomClaimsProviderResponseClient
     /// </summary>
-    [DataContract(Name = "customClaimsProviderResponseClaims")]
-    public partial class CustomClaimsProviderResponseClaims : IValidatableObject
+    [DataContract(Name = "customClaimsProviderResponseClient")]
+    public partial class CustomClaimsProviderResponseClient : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseClaims" /> class.
+        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseClient" /> class.
         /// </summary>
-        /// <param name="userContext">userContext.</param>
-        /// <param name="role">role.</param>
-        public CustomClaimsProviderResponseClaims(List<string> userContext = default(List<string>), string role = default(string))
+        /// <param name="ip">ip.</param>
+        /// <param name="locale">locale.</param>
+        /// <param name="market">market.</param>
+        public CustomClaimsProviderResponseClient(string ip = default(string), string locale = default(string), string market = default(string))
         {
-            this.UserContext = userContext;
-            this.Role = role;
+            this.Ip = ip;
+            this.Locale = locale;
+            this.Market = market;
         }
 
         /// <summary>
-        /// Gets or Sets UserContext
+        /// Gets or Sets Ip
         /// </summary>
-        [DataMember(Name = "userContext", EmitDefaultValue = false)]
-        public List<string> UserContext { get; set; }
+        [DataMember(Name = "ip", EmitDefaultValue = false)]
+        public string Ip { get; set; }
 
         /// <summary>
-        /// Gets or Sets Role
+        /// Gets or Sets Locale
         /// </summary>
-        [DataMember(Name = "role", EmitDefaultValue = false)]
-        public string Role { get; set; }
+        [DataMember(Name = "locale", EmitDefaultValue = false)]
+        public string Locale { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Market
+        /// </summary>
+        [DataMember(Name = "market", EmitDefaultValue = false)]
+        public string Market { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +70,10 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomClaimsProviderResponseClaims {\n");
-            sb.Append("  UserContext: ").Append(UserContext).Append("\n");
-            sb.Append("  Role: ").Append(Role).Append("\n");
+            sb.Append("class CustomClaimsProviderResponseClient {\n");
+            sb.Append("  Ip: ").Append(Ip).Append("\n");
+            sb.Append("  Locale: ").Append(Locale).Append("\n");
+            sb.Append("  Market: ").Append(Market).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

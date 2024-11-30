@@ -27,33 +27,49 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// CustomClaimsProviderResponseClaims
+    /// CustomClaimsProviderResponseServicePrincipal
     /// </summary>
-    [DataContract(Name = "customClaimsProviderResponseClaims")]
-    public partial class CustomClaimsProviderResponseClaims : IValidatableObject
+    [DataContract(Name = "customClaimsProviderResponseServicePrincipal")]
+    public partial class CustomClaimsProviderResponseServicePrincipal : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseClaims" /> class.
+        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseServicePrincipal" /> class.
         /// </summary>
-        /// <param name="userContext">userContext.</param>
-        /// <param name="role">role.</param>
-        public CustomClaimsProviderResponseClaims(List<string> userContext = default(List<string>), string role = default(string))
+        /// <param name="id">id.</param>
+        /// <param name="appId">appId.</param>
+        /// <param name="appDisplayName">appDisplayName.</param>
+        /// <param name="displayName">displayName.</param>
+        public CustomClaimsProviderResponseServicePrincipal(string id = default(string), string appId = default(string), string appDisplayName = default(string), string displayName = default(string))
         {
-            this.UserContext = userContext;
-            this.Role = role;
+            this.Id = id;
+            this.AppId = appId;
+            this.AppDisplayName = appDisplayName;
+            this.DisplayName = displayName;
         }
 
         /// <summary>
-        /// Gets or Sets UserContext
+        /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "userContext", EmitDefaultValue = false)]
-        public List<string> UserContext { get; set; }
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Role
+        /// Gets or Sets AppId
         /// </summary>
-        [DataMember(Name = "role", EmitDefaultValue = false)]
-        public string Role { get; set; }
+        [DataMember(Name = "appId", EmitDefaultValue = false)]
+        public string AppId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AppDisplayName
+        /// </summary>
+        [DataMember(Name = "appDisplayName", EmitDefaultValue = false)]
+        public string AppDisplayName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DisplayName
+        /// </summary>
+        [DataMember(Name = "displayName", EmitDefaultValue = false)]
+        public string DisplayName { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +78,11 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomClaimsProviderResponseClaims {\n");
-            sb.Append("  UserContext: ").Append(UserContext).Append("\n");
-            sb.Append("  Role: ").Append(Role).Append("\n");
+            sb.Append("class CustomClaimsProviderResponseServicePrincipal {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  AppId: ").Append(AppId).Append("\n");
+            sb.Append("  AppDisplayName: ").Append(AppDisplayName).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

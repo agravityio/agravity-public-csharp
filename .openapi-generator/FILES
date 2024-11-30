@@ -25,8 +25,10 @@ docs/CreateSftpUserResult.md
 docs/CustomClaimsProviderResponseAction.md
 docs/CustomClaimsProviderResponseAuthenticationContext.md
 docs/CustomClaimsProviderResponseClaims.md
+docs/CustomClaimsProviderResponseClient.md
 docs/CustomClaimsProviderResponseContent.md
 docs/CustomClaimsProviderResponseData.md
+docs/CustomClaimsProviderResponseServicePrincipal.md
 docs/CustomClaimsProviderResponseUser.md
 docs/DataResult.md
 docs/DeletedEntities.md
@@ -144,8 +146,10 @@ src/Agravity.Public.Test/Model/CreateSftpUserResultTests.cs
 src/Agravity.Public.Test/Model/CustomClaimsProviderResponseActionTests.cs
 src/Agravity.Public.Test/Model/CustomClaimsProviderResponseAuthenticationContextTests.cs
 src/Agravity.Public.Test/Model/CustomClaimsProviderResponseClaimsTests.cs
+src/Agravity.Public.Test/Model/CustomClaimsProviderResponseClientTests.cs
 src/Agravity.Public.Test/Model/CustomClaimsProviderResponseContentTests.cs
 src/Agravity.Public.Test/Model/CustomClaimsProviderResponseDataTests.cs
+src/Agravity.Public.Test/Model/CustomClaimsProviderResponseServicePrincipalTests.cs
 src/Agravity.Public.Test/Model/CustomClaimsProviderResponseUserTests.cs
 src/Agravity.Public.Test/Model/DataResultTests.cs
 src/Agravity.Public.Test/Model/DeletedEntitiesTests.cs
@@ -256,8 +260,10 @@ src/Agravity.Public/Model/CreateSftpUserResult.cs
 src/Agravity.Public/Model/CustomClaimsProviderResponseAction.cs
 src/Agravity.Public/Model/CustomClaimsProviderResponseAuthenticationContext.cs
 src/Agravity.Public/Model/CustomClaimsProviderResponseClaims.cs
+src/Agravity.Public/Model/CustomClaimsProviderResponseClient.cs
 src/Agravity.Public/Model/CustomClaimsProviderResponseContent.cs
 src/Agravity.Public/Model/CustomClaimsProviderResponseData.cs
+src/Agravity.Public/Model/CustomClaimsProviderResponseServicePrincipal.cs
 src/Agravity.Public/Model/CustomClaimsProviderResponseUser.cs
 src/Agravity.Public/Model/DataResult.cs
 src/Agravity.Public/Model/DeletedEntities.cs

@@ -36,9 +36,19 @@ namespace Agravity.Public.Model
         /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseAuthenticationContext" /> class.
         /// </summary>
         /// <param name="user">user.</param>
-        public CustomClaimsProviderResponseAuthenticationContext(CustomClaimsProviderResponseUser user = default(CustomClaimsProviderResponseUser))
+        /// <param name="correlationId">correlationId.</param>
+        /// <param name="varClient">varClient.</param>
+        /// <param name="protocol">protocol.</param>
+        /// <param name="clientServicePrincipal">clientServicePrincipal.</param>
+        /// <param name="resourceServicePrincipal">resourceServicePrincipal.</param>
+        public CustomClaimsProviderResponseAuthenticationContext(CustomClaimsProviderResponseUser user = default(CustomClaimsProviderResponseUser), string correlationId = default(string), CustomClaimsProviderResponseClient varClient = default(CustomClaimsProviderResponseClient), string protocol = default(string), CustomClaimsProviderResponseServicePrincipal clientServicePrincipal = default(CustomClaimsProviderResponseServicePrincipal), CustomClaimsProviderResponseServicePrincipal resourceServicePrincipal = default(CustomClaimsProviderResponseServicePrincipal))
         {
             this.User = user;
+            this.CorrelationId = correlationId;
+            this.VarClient = varClient;
+            this.Protocol = protocol;
+            this.ClientServicePrincipal = clientServicePrincipal;
+            this.ResourceServicePrincipal = resourceServicePrincipal;
         }
 
         /// <summary>
@@ -46,6 +56,36 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "user", EmitDefaultValue = false)]
         public CustomClaimsProviderResponseUser User { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CorrelationId
+        /// </summary>
+        [DataMember(Name = "correlationId", EmitDefaultValue = false)]
+        public string CorrelationId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VarClient
+        /// </summary>
+        [DataMember(Name = "client", EmitDefaultValue = false)]
+        public CustomClaimsProviderResponseClient VarClient { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Protocol
+        /// </summary>
+        [DataMember(Name = "protocol", EmitDefaultValue = false)]
+        public string Protocol { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ClientServicePrincipal
+        /// </summary>
+        [DataMember(Name = "clientServicePrincipal", EmitDefaultValue = false)]
+        public CustomClaimsProviderResponseServicePrincipal ClientServicePrincipal { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ResourceServicePrincipal
+        /// </summary>
+        [DataMember(Name = "resourceServicePrincipal", EmitDefaultValue = false)]
+        public CustomClaimsProviderResponseServicePrincipal ResourceServicePrincipal { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -56,6 +96,11 @@ namespace Agravity.Public.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class CustomClaimsProviderResponseAuthenticationContext {\n");
             sb.Append("  User: ").Append(User).Append("\n");
+            sb.Append("  CorrelationId: ").Append(CorrelationId).Append("\n");
+            sb.Append("  VarClient: ").Append(VarClient).Append("\n");
+            sb.Append("  Protocol: ").Append(Protocol).Append("\n");
+            sb.Append("  ClientServicePrincipal: ").Append(ClientServicePrincipal).Append("\n");
+            sb.Append("  ResourceServicePrincipal: ").Append(ResourceServicePrincipal).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

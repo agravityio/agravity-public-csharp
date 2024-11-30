@@ -8771,10 +8771,6 @@ components:
       additionalProperties:
         type: object
       type: object
-    list_string:
-      items:
-        type: string
-      type: array
     moveCollectionBody:
       properties:
         from_collection_id:

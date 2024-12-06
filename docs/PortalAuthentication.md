@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Method** | **string** |  | [optional] [default to MethodEnum.NONE]
+**Method** | **string** |  | [optional] [default to MethodEnum.UNDEFINED]
 **Issuer** | **string** |  | [optional] 
 **ClientId** | **string** |  | [optional] 
 **TenantId** | **string** |  | [optional] 

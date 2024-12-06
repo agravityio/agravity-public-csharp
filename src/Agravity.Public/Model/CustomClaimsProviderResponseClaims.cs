@@ -46,13 +46,13 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets UserContext
         /// </summary>
-        [DataMember(Name = "userContext", EmitDefaultValue = false)]
+        [DataMember(Name = "userContext", EmitDefaultValue = true)]
         public List<string> UserContext { get; set; }
 
         /// <summary>
         /// Gets or Sets Role
         /// </summary>
-        [DataMember(Name = "role", EmitDefaultValue = false)]
+        [DataMember(Name = "role", EmitDefaultValue = true)]
         public string Role { get; set; }
 
         /// <summary>

@@ -52,7 +52,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Claims
         /// </summary>
-        [DataMember(Name = "claims", EmitDefaultValue = false)]
+        [DataMember(Name = "claims", EmitDefaultValue = true)]
         public CustomClaimsProviderResponseClaims Claims { get; set; }
 
         /// <summary>

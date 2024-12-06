@@ -54,13 +54,13 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Actions
         /// </summary>
-        [DataMember(Name = "actions", EmitDefaultValue = false)]
+        [DataMember(Name = "actions", EmitDefaultValue = true)]
         public List<CustomClaimsProviderResponseAction> Actions { get; set; }
 
         /// <summary>
         /// Gets or Sets AuthenticationContext
         /// </summary>
-        [DataMember(Name = "authenticationContext", EmitDefaultValue = false)]
+        [DataMember(Name = "authenticationContext", EmitDefaultValue = true)]
         public CustomClaimsProviderResponseAuthenticationContext AuthenticationContext { get; set; }
 
         /// <summary>

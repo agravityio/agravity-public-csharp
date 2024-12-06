@@ -6973,6 +6973,7 @@ components:
           displayName: displayName
           appId: appId
           id: id
+      nullable: true
       properties:
         user:
           $ref: '#/components/schemas/customClaimsProviderResponseUser'
@@ -6993,12 +6994,15 @@ components:
         userContext:
         - userContext
         - userContext
+      nullable: true
       properties:
         userContext:
           items:
             type: string
+          nullable: true
           type: array
         role:
+          nullable: true
           type: string
       type: object
     customClaimsProviderResponseClient:
@@ -7124,6 +7128,7 @@ components:
         actions:
           items:
             $ref: '#/components/schemas/customClaimsProviderResponseAction'
+          nullable: true
           type: array
         authenticationContext:
           $ref: '#/components/schemas/customClaimsProviderResponseAuthenticationContext'
@@ -8903,7 +8908,7 @@ components:
         authentication:
           tenant_id: tenant_id
           password: password
-          method: NONE
+          method: UNDEFINED
           issuer: issuer
           client_id: client_id
         allowed_origins:
@@ -8993,14 +8998,15 @@ components:
       example:
         tenant_id: tenant_id
         password: password
-        method: NONE
+        method: UNDEFINED
         issuer: issuer
         client_id: client_id
       nullable: true
       properties:
         method:
-          default: NONE
+          default: UNDEFINED
           enum:
+          - UNDEFINED
           - NONE
           - PASSWORD
           - EEID
@@ -9056,7 +9062,7 @@ components:
         authentication:
           tenant_id: tenant_id
           password: password
-          method: NONE
+          method: UNDEFINED
           issuer: issuer
           client_id: client_id
         allowed_origins:

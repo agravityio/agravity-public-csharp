@@ -39,28 +39,34 @@ namespace Agravity.Public.Model
         public enum MethodEnum
         {
             /// <summary>
+            /// Enum UNDEFINED for value: UNDEFINED
+            /// </summary>
+            [EnumMember(Value = "UNDEFINED")]
+            UNDEFINED = 1,
+
+            /// <summary>
             /// Enum NONE for value: NONE
             /// </summary>
             [EnumMember(Value = "NONE")]
-            NONE = 1,
+            NONE = 2,
 
             /// <summary>
             /// Enum PASSWORD for value: PASSWORD
             /// </summary>
             [EnumMember(Value = "PASSWORD")]
-            PASSWORD = 2,
+            PASSWORD = 3,
 
             /// <summary>
             /// Enum EEID for value: EEID
             /// </summary>
             [EnumMember(Value = "EEID")]
-            EEID = 3,
+            EEID = 4,
 
             /// <summary>
             /// Enum AUTH0 for value: AUTH0
             /// </summary>
             [EnumMember(Value = "AUTH0")]
-            AUTH0 = 4
+            AUTH0 = 5
         }
 
 
@@ -72,12 +78,12 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PortalAuthentication" /> class.
         /// </summary>
-        /// <param name="method">method (default to MethodEnum.NONE).</param>
+        /// <param name="method">method (default to MethodEnum.UNDEFINED).</param>
         /// <param name="issuer">issuer.</param>
         /// <param name="clientId">clientId.</param>
         /// <param name="tenantId">tenantId.</param>
         /// <param name="password">password.</param>
-        public PortalAuthentication(MethodEnum? method = MethodEnum.NONE, string issuer = default(string), string clientId = default(string), string tenantId = default(string), string password = default(string))
+        public PortalAuthentication(MethodEnum? method = MethodEnum.UNDEFINED, string issuer = default(string), string clientId = default(string), string tenantId = default(string), string password = default(string))
         {
             this.Method = method;
             this.Issuer = issuer;

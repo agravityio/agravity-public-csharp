@@ -8,18 +8,29 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
-## AgravityAPI <a name="8.3.0-usercontext.2"/> [8.3.0-usercontext.2](https://www.nuget.org/packages/Agravity.Public/8.3.0-usercontext.2) (2024-12-01)
+## AgravityAPI <a name="8.3.0"/> [8.3.0](https://www.nuget.org/packages/Agravity.Public/8.3.0) (2024-12-11)
 
-- Allow ServicePrincipal to request token (app client / secret)
-  - Add Role to ProviderResponseClaims
-- Scopefilter
-- Fields and authentication on portal
-- add endpoint POST  `portalsenhancetoken`-   endpoint enhance the Auth0 token of entra external ID with the portal user context.
-- adjust the version number to have latest release (8.2.1)
+- Create portals users management to own service
+  - POST `/portalsusers` - This endpoint upserts a portals user.
+  - GET `/portalsusers` - This endpoint lists all portals user.
+  - DELETE `/portalsusers/{id}` - This endpoint deletes a portals user.
+- Adjustments for portals
+    - Change properties `in_details` to `detail_order`
+    - Change properties `in_facets` to `facet_order`
+    - Add `options` to user context for limiting the options
+    - Add `translations` and `acceptLanguage` to parameters on portal configurations
+- Do adjustments for User Context in Portal:
+  - Add properties `fields`and `authentication` to Portal (and PortalConfiguration)
+  - Add endpoint POST `/portalsenhancetoken` - for Entra External ID authentication token extension (add user context to token)
+  - Add models of Entra External ID Claims
+  - 1253 FC Portal: Add user context and apply filter in local API
+    - Add List of PortalFields to add user context and change the way metadata, facets and user context is stored on Portals
+  - Add Scopefilter to search query to just add another filter which can come from another source (like user-context)
 - Adjust Portal Model
-  - add property theme.fav_icon, allowed_origins,
-  - remove properties `metadata` and `facettes` (replaced by `fields`)
-  - restructure/reorder properties in Portal (and PortalConfiguration)
+    - add property theme.fav_icon, allowed_origins,
+    - remove properties `metadata` and `facettes` (replaced by `fields`)
+    - restructure/reorder properties in Portal (and PortalConfiguration)
+- Add Role to ProviderResponseClaims
 
 ## AgravityAPI <a name="8.2.1"/> [8.2.1](https://www.nuget.org/packages/Agravity.Public/8.2.1) (2024-11-22)
 

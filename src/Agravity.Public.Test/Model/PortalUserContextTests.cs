@@ -81,5 +81,14 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'Mapping'
         }
+
+        /// <summary>
+        /// Test the property 'Options'
+        /// </summary>
+        [Fact]
+        public void OptionsTest()
+        {
+            // TODO unit test for the property 'Options'
+        }
     }
 }

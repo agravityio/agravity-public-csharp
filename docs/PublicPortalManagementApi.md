@@ -310,7 +310,7 @@ catch (ApiException e)
 
 <a id="httpportalsconfigurationgetbyid"></a>
 # **HttpPortalsConfigurationGetById**
-> PortalConfiguration HttpPortalsConfigurationGetById (string id)
+> PortalConfiguration HttpPortalsConfigurationGetById (string id, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -339,10 +339,12 @@ namespace Example
 
             var apiInstance = new PublicPortalManagementApi(config);
             var id = "id_example";  // string | The ID of the portal.
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                PortalConfiguration result = apiInstance.HttpPortalsConfigurationGetById(id);
+                PortalConfiguration result = apiInstance.HttpPortalsConfigurationGetById(id, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -362,7 +364,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<PortalConfiguration> response = apiInstance.HttpPortalsConfigurationGetByIdWithHttpInfo(id);
+    ApiResponse<PortalConfiguration> response = apiInstance.HttpPortalsConfigurationGetByIdWithHttpInfo(id, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -380,6 +382,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the portal. |  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
 ### Return type
 

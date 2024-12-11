@@ -65,21 +65,21 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'InDetails'
+        /// Test the property 'DetailOrder'
         /// </summary>
         [Fact]
-        public void InDetailsTest()
+        public void DetailOrderTest()
         {
-            // TODO unit test for the property 'InDetails'
+            // TODO unit test for the property 'DetailOrder'
         }
 
         /// <summary>
-        /// Test the property 'InFacets'
+        /// Test the property 'FacetOrder'
         /// </summary>
         [Fact]
-        public void InFacetsTest()
+        public void FacetOrderTest()
         {
-            // TODO unit test for the property 'InFacets'
+            // TODO unit test for the property 'FacetOrder'
         }
 
         /// <summary>

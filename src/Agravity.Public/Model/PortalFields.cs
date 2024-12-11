@@ -36,15 +36,15 @@ namespace Agravity.Public.Model
         /// Initializes a new instance of the <see cref="PortalFields" /> class.
         /// </summary>
         /// <param name="name">name.</param>
-        /// <param name="inDetails">inDetails.</param>
-        /// <param name="inFacets">inFacets.</param>
+        /// <param name="detailOrder">detailOrder.</param>
+        /// <param name="facetOrder">facetOrder.</param>
         /// <param name="labels">labels.</param>
         /// <param name="userContext">userContext.</param>
-        public PortalFields(string name = default(string), bool? inDetails = default(bool?), bool? inFacets = default(bool?), Dictionary<string, string> labels = default(Dictionary<string, string>), PortalUserContext userContext = default(PortalUserContext))
+        public PortalFields(string name = default(string), int? detailOrder = default(int?), int? facetOrder = default(int?), Dictionary<string, string> labels = default(Dictionary<string, string>), PortalUserContext userContext = default(PortalUserContext))
         {
             this.Name = name;
-            this.InDetails = inDetails;
-            this.InFacets = inFacets;
+            this.DetailOrder = detailOrder;
+            this.FacetOrder = facetOrder;
             this.Labels = labels;
             this.UserContext = userContext;
         }
@@ -56,16 +56,16 @@ namespace Agravity.Public.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets InDetails
+        /// Gets or Sets DetailOrder
         /// </summary>
-        [DataMember(Name = "in_details", EmitDefaultValue = true)]
-        public bool? InDetails { get; set; }
+        [DataMember(Name = "detail_order", EmitDefaultValue = true)]
+        public int? DetailOrder { get; set; }
 
         /// <summary>
-        /// Gets or Sets InFacets
+        /// Gets or Sets FacetOrder
         /// </summary>
-        [DataMember(Name = "in_facets", EmitDefaultValue = true)]
-        public bool? InFacets { get; set; }
+        [DataMember(Name = "facet_order", EmitDefaultValue = true)]
+        public int? FacetOrder { get; set; }
 
         /// <summary>
         /// Gets or Sets Labels
@@ -88,8 +88,8 @@ namespace Agravity.Public.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class PortalFields {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  InDetails: ").Append(InDetails).Append("\n");
-            sb.Append("  InFacets: ").Append(InFacets).Append("\n");
+            sb.Append("  DetailOrder: ").Append(DetailOrder).Append("\n");
+            sb.Append("  FacetOrder: ").Append(FacetOrder).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");
             sb.Append("  UserContext: ").Append(UserContext).Append("\n");
             sb.Append("}\n");

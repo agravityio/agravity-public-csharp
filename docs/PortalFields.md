@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | [optional] 
-**InDetails** | **bool?** |  | [optional] 
-**InFacets** | **bool?** |  | [optional] 
+**DetailOrder** | **int?** |  | [optional] 
+**FacetOrder** | **int?** |  | [optional] 
 **Labels** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **UserContext** | [**PortalUserContext**](PortalUserContext.md) |  | [optional] 
 

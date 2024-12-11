@@ -108,9 +108,11 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the portal.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PortalConfiguration</returns>
-        PortalConfiguration HttpPortalsConfigurationGetById(string id, int operationIndex = 0);
+        PortalConfiguration HttpPortalsConfigurationGetById(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -120,9 +122,11 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the portal.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PortalConfiguration</returns>
-        ApiResponse<PortalConfiguration> HttpPortalsConfigurationGetByIdWithHttpInfo(string id, int operationIndex = 0);
+        ApiResponse<PortalConfiguration> HttpPortalsConfigurationGetByIdWithHttpInfo(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -263,10 +267,12 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the portal.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PortalConfiguration</returns>
-        System.Threading.Tasks.Task<PortalConfiguration> HttpPortalsConfigurationGetByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PortalConfiguration> HttpPortalsConfigurationGetByIdAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -276,10 +282,12 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the portal.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PortalConfiguration)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PortalConfiguration>> HttpPortalsConfigurationGetByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PortalConfiguration>> HttpPortalsConfigurationGetByIdWithHttpInfoAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -953,11 +961,13 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the portal.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PortalConfiguration</returns>
-        public PortalConfiguration HttpPortalsConfigurationGetById(string id, int operationIndex = 0)
+        public PortalConfiguration HttpPortalsConfigurationGetById(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<PortalConfiguration> localVarResponse = HttpPortalsConfigurationGetByIdWithHttpInfo(id);
+            Agravity.Public.Client.ApiResponse<PortalConfiguration> localVarResponse = HttpPortalsConfigurationGetByIdWithHttpInfo(id, translations, acceptLanguage);
             return localVarResponse.Data;
         }
 
@@ -966,9 +976,11 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the portal.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PortalConfiguration</returns>
-        public Agravity.Public.Client.ApiResponse<PortalConfiguration> HttpPortalsConfigurationGetByIdWithHttpInfo(string id, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<PortalConfiguration> HttpPortalsConfigurationGetByIdWithHttpInfo(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -999,6 +1011,14 @@ namespace Agravity.Public.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "PublicPortalManagementApi.HttpPortalsConfigurationGetById";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1028,12 +1048,14 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the portal.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PortalConfiguration</returns>
-        public async System.Threading.Tasks.Task<PortalConfiguration> HttpPortalsConfigurationGetByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PortalConfiguration> HttpPortalsConfigurationGetByIdAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<PortalConfiguration> localVarResponse = await HttpPortalsConfigurationGetByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<PortalConfiguration> localVarResponse = await HttpPortalsConfigurationGetByIdWithHttpInfoAsync(id, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1042,10 +1064,12 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the portal.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PortalConfiguration)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PortalConfiguration>> HttpPortalsConfigurationGetByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PortalConfiguration>> HttpPortalsConfigurationGetByIdWithHttpInfoAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1077,6 +1101,14 @@ namespace Agravity.Public.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "PublicPortalManagementApi.HttpPortalsConfigurationGetById";
             localVarRequestOptions.OperationIndex = operationIndex;

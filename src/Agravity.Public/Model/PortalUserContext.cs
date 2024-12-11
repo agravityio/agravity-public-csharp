@@ -38,11 +38,13 @@ namespace Agravity.Public.Model
         /// <param name="key">key.</param>
         /// <param name="mandatory">mandatory.</param>
         /// <param name="mapping">mapping.</param>
-        public PortalUserContext(string key = default(string), bool? mandatory = default(bool?), Dictionary<string, string> mapping = default(Dictionary<string, string>))
+        /// <param name="options">options.</param>
+        public PortalUserContext(string key = default(string), bool? mandatory = default(bool?), Dictionary<string, string> mapping = default(Dictionary<string, string>), List<string> options = default(List<string>))
         {
             this.Key = key;
             this.Mandatory = mandatory;
             this.Mapping = mapping;
+            this.Options = options;
         }
 
         /// <summary>
@@ -64,6 +66,12 @@ namespace Agravity.Public.Model
         public Dictionary<string, string> Mapping { get; set; }
 
         /// <summary>
+        /// Gets or Sets Options
+        /// </summary>
+        [DataMember(Name = "options", EmitDefaultValue = true)]
+        public List<string> Options { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -74,6 +82,7 @@ namespace Agravity.Public.Model
             sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("  Mandatory: ").Append(Mandatory).Append("\n");
             sb.Append("  Mapping: ").Append(Mapping).Append("\n");
+            sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

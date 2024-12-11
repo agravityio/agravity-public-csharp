@@ -101,7 +101,9 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
-            //var response = instance.HttpPortalsConfigurationGetById(id);
+            //bool? translations = null;
+            //string acceptLanguage = null;
+            //var response = instance.HttpPortalsConfigurationGetById(id, translations, acceptLanguage);
             //Assert.IsType<PortalConfiguration>(response);
         }
 

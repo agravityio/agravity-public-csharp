@@ -63,6 +63,24 @@ paths:
         schema:
           type: string
         style: simple
+      - description: When default language should be returned and the translation
+          dictionary is delivered. (Ignores the "Accept-Language" header)
+        explode: true
+        in: query
+        name: translations
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: The requested language of the response. If not matching it falls
+          back to default language.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -8884,24 +8902,30 @@ components:
         created_date: 2000-01-23T04:56:07.000+00:00
         pk: pk
         fields:
-        - in_facets: true
-          in_details: true
+        - facet_order: 6
           name: name
           user_context:
             mapping:
               key: mapping
+            options:
+            - options
+            - options
             mandatory: true
             key: key
+          detail_order: 0
           labels:
             key: labels
-        - in_facets: true
-          in_details: true
+        - facet_order: 6
           name: name
           user_context:
             mapping:
               key: mapping
+            options:
+            - options
+            - options
             mandatory: true
             key: key
+          detail_order: 0
           labels:
             key: labels
         _etag: _etag
@@ -9259,24 +9283,30 @@ components:
         created_date: 2000-01-23T04:56:07.000+00:00
         pk: pk
         fields:
-        - in_facets: true
-          in_details: true
+        - facet_order: 6
           name: name
           user_context:
             mapping:
               key: mapping
+            options:
+            - options
+            - options
             mandatory: true
             key: key
+          detail_order: 0
           labels:
             key: labels
-        - in_facets: true
-          in_details: true
+        - facet_order: 6
           name: name
           user_context:
             mapping:
               key: mapping
+            options:
+            - options
+            - options
             mandatory: true
             key: key
+          detail_order: 0
           labels:
             key: labels
         items:
@@ -9433,26 +9463,31 @@ components:
       type: object
     portalFields:
       example:
-        in_facets: true
-        in_details: true
+        facet_order: 6
         name: name
         user_context:
           mapping:
             key: mapping
+          options:
+          - options
+          - options
           mandatory: true
           key: key
+        detail_order: 0
         labels:
           key: labels
       properties:
         name:
           nullable: true
           type: string
-        in_details:
+        detail_order:
+          format: int32
           nullable: true
-          type: boolean
-        in_facets:
+          type: integer
+        facet_order:
+          format: int32
           nullable: true
-          type: boolean
+          type: integer
         labels:
           additionalProperties:
             type: string
@@ -9518,6 +9553,9 @@ components:
       example:
         mapping:
           key: mapping
+        options:
+        - options
+        - options
         mandatory: true
         key: key
       nullable: true
@@ -9533,6 +9571,11 @@ components:
             type: string
           nullable: true
           type: object
+        options:
+          items:
+            type: string
+          nullable: true
+          type: array
       type: object
     portalZipRequest:
       example:

@@ -131,23 +131,23 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns the portal user context.
+        /// This endpoint saves the portal user and returns CustomClaimsProviderResponseContentTokenIssuanceStart which is used to enhance the token with user context,...
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CustomClaimsProviderResponseContent</returns>
-        CustomClaimsProviderResponseContent HttpPortalsEnhanceToken(int operationIndex = 0);
+        /// <returns>CustomClaimsProviderResponseContentTokenIssuanceStart</returns>
+        CustomClaimsProviderResponseContentTokenIssuanceStart HttpPortalsEnhanceToken(int operationIndex = 0);
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns the portal user context.
+        /// This endpoint saves the portal user and returns CustomClaimsProviderResponseContentTokenIssuanceStart which is used to enhance the token with user context,...
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CustomClaimsProviderResponseContent</returns>
-        ApiResponse<CustomClaimsProviderResponseContent> HttpPortalsEnhanceTokenWithHttpInfo(int operationIndex = 0);
+        /// <returns>ApiResponse of CustomClaimsProviderResponseContentTokenIssuanceStart</returns>
+        ApiResponse<CustomClaimsProviderResponseContentTokenIssuanceStart> HttpPortalsEnhanceTokenWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -171,6 +171,27 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Portal</returns>
         ApiResponse<Portal> HttpPortalsGetByIdWithHttpInfo(string id, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint saves the portal user attributes
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CustomClaimsProviderResponseContentAttributeCollectionSubmit</returns>
+        CustomClaimsProviderResponseContentAttributeCollectionSubmit HttpPortalsSavePortalUserAttributes(int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint saves the portal user attributes
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CustomClaimsProviderResponseContentAttributeCollectionSubmit</returns>
+        ApiResponse<CustomClaimsProviderResponseContentAttributeCollectionSubmit> HttpPortalsSavePortalUserAttributesWithHttpInfo(int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -292,25 +313,25 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns the portal user context.
+        /// This endpoint saves the portal user and returns CustomClaimsProviderResponseContentTokenIssuanceStart which is used to enhance the token with user context,...
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CustomClaimsProviderResponseContent</returns>
-        System.Threading.Tasks.Task<CustomClaimsProviderResponseContent> HttpPortalsEnhanceTokenAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of CustomClaimsProviderResponseContentTokenIssuanceStart</returns>
+        System.Threading.Tasks.Task<CustomClaimsProviderResponseContentTokenIssuanceStart> HttpPortalsEnhanceTokenAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns the portal user context.
+        /// This endpoint saves the portal user and returns CustomClaimsProviderResponseContentTokenIssuanceStart which is used to enhance the token with user context,...
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CustomClaimsProviderResponseContent)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomClaimsProviderResponseContent>> HttpPortalsEnhanceTokenWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (CustomClaimsProviderResponseContentTokenIssuanceStart)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CustomClaimsProviderResponseContentTokenIssuanceStart>> HttpPortalsEnhanceTokenWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -336,6 +357,29 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Portal)</returns>
         System.Threading.Tasks.Task<ApiResponse<Portal>> HttpPortalsGetByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint saves the portal user attributes
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CustomClaimsProviderResponseContentAttributeCollectionSubmit</returns>
+        System.Threading.Tasks.Task<CustomClaimsProviderResponseContentAttributeCollectionSubmit> HttpPortalsSavePortalUserAttributesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint saves the portal user attributes
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CustomClaimsProviderResponseContentAttributeCollectionSubmit)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CustomClaimsProviderResponseContentAttributeCollectionSubmit>> HttpPortalsSavePortalUserAttributesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1135,24 +1179,24 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint returns the portal user context.
+        ///  This endpoint saves the portal user and returns CustomClaimsProviderResponseContentTokenIssuanceStart which is used to enhance the token with user context,...
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CustomClaimsProviderResponseContent</returns>
-        public CustomClaimsProviderResponseContent HttpPortalsEnhanceToken(int operationIndex = 0)
+        /// <returns>CustomClaimsProviderResponseContentTokenIssuanceStart</returns>
+        public CustomClaimsProviderResponseContentTokenIssuanceStart HttpPortalsEnhanceToken(int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContent> localVarResponse = HttpPortalsEnhanceTokenWithHttpInfo();
+            Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentTokenIssuanceStart> localVarResponse = HttpPortalsEnhanceTokenWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  This endpoint returns the portal user context.
+        ///  This endpoint saves the portal user and returns CustomClaimsProviderResponseContentTokenIssuanceStart which is used to enhance the token with user context,...
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CustomClaimsProviderResponseContent</returns>
-        public Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContent> HttpPortalsEnhanceTokenWithHttpInfo(int operationIndex = 0)
+        /// <returns>ApiResponse of CustomClaimsProviderResponseContentTokenIssuanceStart</returns>
+        public Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentTokenIssuanceStart> HttpPortalsEnhanceTokenWithHttpInfo(int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -1187,7 +1231,7 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<CustomClaimsProviderResponseContent>("/portalsenhancetoken", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CustomClaimsProviderResponseContentTokenIssuanceStart>("/portalsenhancetoken", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpPortalsEnhanceToken", localVarResponse);
@@ -1201,26 +1245,26 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint returns the portal user context.
+        ///  This endpoint saves the portal user and returns CustomClaimsProviderResponseContentTokenIssuanceStart which is used to enhance the token with user context,...
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CustomClaimsProviderResponseContent</returns>
-        public async System.Threading.Tasks.Task<CustomClaimsProviderResponseContent> HttpPortalsEnhanceTokenAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of CustomClaimsProviderResponseContentTokenIssuanceStart</returns>
+        public async System.Threading.Tasks.Task<CustomClaimsProviderResponseContentTokenIssuanceStart> HttpPortalsEnhanceTokenAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContent> localVarResponse = await HttpPortalsEnhanceTokenWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentTokenIssuanceStart> localVarResponse = await HttpPortalsEnhanceTokenWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  This endpoint returns the portal user context.
+        ///  This endpoint saves the portal user and returns CustomClaimsProviderResponseContentTokenIssuanceStart which is used to enhance the token with user context,...
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CustomClaimsProviderResponseContent)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContent>> HttpPortalsEnhanceTokenWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (CustomClaimsProviderResponseContentTokenIssuanceStart)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentTokenIssuanceStart>> HttpPortalsEnhanceTokenWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -1256,7 +1300,7 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<CustomClaimsProviderResponseContent>("/portalsenhancetoken", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CustomClaimsProviderResponseContentTokenIssuanceStart>("/portalsenhancetoken", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1415,6 +1459,142 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpPortalsGetById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint saves the portal user attributes
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CustomClaimsProviderResponseContentAttributeCollectionSubmit</returns>
+        public CustomClaimsProviderResponseContentAttributeCollectionSubmit HttpPortalsSavePortalUserAttributes(int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentAttributeCollectionSubmit> localVarResponse = HttpPortalsSavePortalUserAttributesWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint saves the portal user attributes
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CustomClaimsProviderResponseContentAttributeCollectionSubmit</returns>
+        public Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentAttributeCollectionSubmit> HttpPortalsSavePortalUserAttributesWithHttpInfo(int operationIndex = 0)
+        {
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "PublicPortalManagementApi.HttpPortalsSavePortalUserAttributes";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CustomClaimsProviderResponseContentAttributeCollectionSubmit>("/portalssaveuserattributes", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPortalsSavePortalUserAttributes", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint saves the portal user attributes
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CustomClaimsProviderResponseContentAttributeCollectionSubmit</returns>
+        public async System.Threading.Tasks.Task<CustomClaimsProviderResponseContentAttributeCollectionSubmit> HttpPortalsSavePortalUserAttributesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentAttributeCollectionSubmit> localVarResponse = await HttpPortalsSavePortalUserAttributesWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint saves the portal user attributes
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CustomClaimsProviderResponseContentAttributeCollectionSubmit)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentAttributeCollectionSubmit>> HttpPortalsSavePortalUserAttributesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "PublicPortalManagementApi.HttpPortalsSavePortalUserAttributes";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CustomClaimsProviderResponseContentAttributeCollectionSubmit>("/portalssaveuserattributes", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPortalsSavePortalUserAttributes", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

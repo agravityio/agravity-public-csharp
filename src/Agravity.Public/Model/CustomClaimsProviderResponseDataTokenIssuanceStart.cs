@@ -27,21 +27,27 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// CustomClaimsProviderResponseAction
+    /// CustomClaimsProviderResponseDataTokenIssuanceStart
     /// </summary>
-    [DataContract(Name = "customClaimsProviderResponseAction")]
-    public partial class CustomClaimsProviderResponseAction : IValidatableObject
+    [DataContract(Name = "customClaimsProviderResponseDataTokenIssuanceStart")]
+    public partial class CustomClaimsProviderResponseDataTokenIssuanceStart : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseAction" /> class.
+        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseDataTokenIssuanceStart" /> class.
         /// </summary>
+        /// <param name="actions">actions.</param>
         /// <param name="odataType">odataType.</param>
-        /// <param name="claims">claims.</param>
-        public CustomClaimsProviderResponseAction(string odataType = default(string), CustomClaimsProviderResponseClaims claims = default(CustomClaimsProviderResponseClaims))
+        public CustomClaimsProviderResponseDataTokenIssuanceStart(List<CustomClaimsProviderResponseActionTokenIssuanceStart> actions = default(List<CustomClaimsProviderResponseActionTokenIssuanceStart>), string odataType = default(string))
         {
+            this.Actions = actions;
             this.OdataType = odataType;
-            this.Claims = claims;
         }
+
+        /// <summary>
+        /// Gets or Sets Actions
+        /// </summary>
+        [DataMember(Name = "actions", EmitDefaultValue = true)]
+        public List<CustomClaimsProviderResponseActionTokenIssuanceStart> Actions { get; set; }
 
         /// <summary>
         /// Gets or Sets OdataType
@@ -50,21 +56,15 @@ namespace Agravity.Public.Model
         public string OdataType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Claims
-        /// </summary>
-        [DataMember(Name = "claims", EmitDefaultValue = true)]
-        public CustomClaimsProviderResponseClaims Claims { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomClaimsProviderResponseAction {\n");
+            sb.Append("class CustomClaimsProviderResponseDataTokenIssuanceStart {\n");
+            sb.Append("  Actions: ").Append(Actions).Append("\n");
             sb.Append("  OdataType: ").Append(OdataType).Append("\n");
-            sb.Append("  Claims: ").Append(Claims).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

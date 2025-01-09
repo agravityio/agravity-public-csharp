@@ -98,15 +98,35 @@ paths:
       - Public Portal Management
   /portalsenhancetoken:
     post:
-      description: This endpoint returns the portal user context.
+      description: "This endpoint saves the portal user and returns CustomClaimsProviderResponseContentTokenIssuanceStart\
+        \ which is used to enhance the token with user context,..."
       operationId: HttpPortalsEnhanceToken
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/customClaimsProviderResponseContent'
-          description: Returns a full configuration of a portal.
+                $ref: '#/components/schemas/customClaimsProviderResponseContentTokenIssuanceStart'
+          description: Returns CustomClaimsProviderResponseContentTokenIssuanceStart.
+        "401":
+          description: Unauthorized. API Key not provided.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Portal Management
+  /portalssaveuserattributes:
+    post:
+      description: This endpoint saves the portal user attributes
+      operationId: HttpPortalsSavePortalUserAttributes
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customClaimsProviderResponseContentAttributeCollectionSubmit'
+          description: Returns CustomClaimsProviderResponseContentAttributeCollectionSubmit
         "401":
           description: Unauthorized. API Key not provided.
         "500":
@@ -6956,7 +6976,15 @@ components:
           nullable: true
           type: string
       type: object
-    customClaimsProviderResponseAction:
+    customClaimsProviderResponseActionAttributeCollectionSubmit:
+      example:
+        '@odata.type': '@odata.type'
+      properties:
+        '@odata.type':
+          nullable: true
+          type: string
+      type: object
+    customClaimsProviderResponseActionTokenIssuanceStart:
       example:
         '@odata.type': '@odata.type'
         claims:
@@ -6965,58 +6993,11 @@ components:
           - userContext
           - userContext
       properties:
+        claims:
+          $ref: '#/components/schemas/customClaimsProviderResponseClaims'
         '@odata.type':
           nullable: true
           type: string
-        claims:
-          $ref: '#/components/schemas/customClaimsProviderResponseClaims'
-      type: object
-    customClaimsProviderResponseAuthenticationContext:
-      example:
-        protocol: protocol
-        clientServicePrincipal:
-          appDisplayName: appDisplayName
-          displayName: displayName
-          appId: appId
-          id: id
-        client:
-          market: market
-          ip: ip
-          locale: locale
-        correlationId: correlationId
-        user:
-          preferredLanguage: preferredLanguage
-          mail: mail
-          displayName: displayName
-          companyName: companyName
-          givenName: givenName
-          createdDateTime: 2000-01-23T04:56:07.000+00:00
-          onPremisesSecurityIdentifier: onPremisesSecurityIdentifier
-          onPremisesUserPrincipalName: onPremisesUserPrincipalName
-          surname: surname
-          onPremisesSamAccountName: onPremisesSamAccountName
-          id: id
-          userType: userType
-          userPrincipalName: userPrincipalName
-        resourceServicePrincipal:
-          appDisplayName: appDisplayName
-          displayName: displayName
-          appId: appId
-          id: id
-      nullable: true
-      properties:
-        user:
-          $ref: '#/components/schemas/customClaimsProviderResponseUser'
-        correlationId:
-          type: string
-        client:
-          $ref: '#/components/schemas/customClaimsProviderResponseClient'
-        protocol:
-          type: string
-        clientServicePrincipal:
-          $ref: '#/components/schemas/customClaimsProviderResponseServicePrincipal'
-        resourceServicePrincipal:
-          $ref: '#/components/schemas/customClaimsProviderResponseServicePrincipal'
       type: object
     customClaimsProviderResponseClaims:
       example:
@@ -7035,53 +7016,20 @@ components:
           nullable: true
           type: string
       type: object
-    customClaimsProviderResponseClient:
-      example:
-        market: market
-        ip: ip
-        locale: locale
-      properties:
-        ip:
-          type: string
-        locale:
-          type: string
-        market:
-          type: string
-      type: object
-    customClaimsProviderResponseContent:
+    customClaimsProviderResponseContentAttributeCollectionSubmit:
       example:
         data:
-          authenticationContext:
-            protocol: protocol
-            clientServicePrincipal:
-              appDisplayName: appDisplayName
-              displayName: displayName
-              appId: appId
-              id: id
-            client:
-              market: market
-              ip: ip
-              locale: locale
-            correlationId: correlationId
-            user:
-              preferredLanguage: preferredLanguage
-              mail: mail
-              displayName: displayName
-              companyName: companyName
-              givenName: givenName
-              createdDateTime: 2000-01-23T04:56:07.000+00:00
-              onPremisesSecurityIdentifier: onPremisesSecurityIdentifier
-              onPremisesUserPrincipalName: onPremisesUserPrincipalName
-              surname: surname
-              onPremisesSamAccountName: onPremisesSamAccountName
-              id: id
-              userType: userType
-              userPrincipalName: userPrincipalName
-            resourceServicePrincipal:
-              appDisplayName: appDisplayName
-              displayName: displayName
-              appId: appId
-              id: id
+          '@odata.type': '@odata.type'
+          actions:
+          - '@odata.type': '@odata.type'
+          - '@odata.type': '@odata.type'
+      properties:
+        data:
+          $ref: '#/components/schemas/customClaimsProviderResponseDataAttributeCollectionSubmit'
+      type: object
+    customClaimsProviderResponseContentTokenIssuanceStart:
+      example:
+        data:
           '@odata.type': '@odata.type'
           actions:
           - '@odata.type': '@odata.type'
@@ -7096,46 +7044,29 @@ components:
               userContext:
               - userContext
               - userContext
-        source: source
       properties:
         data:
-          $ref: '#/components/schemas/customClaimsProviderResponseData'
-        source:
+          $ref: '#/components/schemas/customClaimsProviderResponseDataTokenIssuanceStart'
+      type: object
+    customClaimsProviderResponseDataAttributeCollectionSubmit:
+      example:
+        '@odata.type': '@odata.type'
+        actions:
+        - '@odata.type': '@odata.type'
+        - '@odata.type': '@odata.type'
+      nullable: true
+      properties:
+        actions:
+          items:
+            $ref: '#/components/schemas/customClaimsProviderResponseActionAttributeCollectionSubmit'
+          nullable: true
+          type: array
+        '@odata.type':
+          nullable: true
           type: string
       type: object
-    customClaimsProviderResponseData:
+    customClaimsProviderResponseDataTokenIssuanceStart:
       example:
-        authenticationContext:
-          protocol: protocol
-          clientServicePrincipal:
-            appDisplayName: appDisplayName
-            displayName: displayName
-            appId: appId
-            id: id
-          client:
-            market: market
-            ip: ip
-            locale: locale
-          correlationId: correlationId
-          user:
-            preferredLanguage: preferredLanguage
-            mail: mail
-            displayName: displayName
-            companyName: companyName
-            givenName: givenName
-            createdDateTime: 2000-01-23T04:56:07.000+00:00
-            onPremisesSecurityIdentifier: onPremisesSecurityIdentifier
-            onPremisesUserPrincipalName: onPremisesUserPrincipalName
-            surname: surname
-            onPremisesSamAccountName: onPremisesSamAccountName
-            id: id
-            userType: userType
-            userPrincipalName: userPrincipalName
-          resourceServicePrincipal:
-            appDisplayName: appDisplayName
-            displayName: displayName
-            appId: appId
-            id: id
         '@odata.type': '@odata.type'
         actions:
         - '@odata.type': '@odata.type'
@@ -7152,75 +7083,13 @@ components:
             - userContext
       nullable: true
       properties:
-        '@odata.type':
-          nullable: true
-          type: string
         actions:
           items:
-            $ref: '#/components/schemas/customClaimsProviderResponseAction'
+            $ref: '#/components/schemas/customClaimsProviderResponseActionTokenIssuanceStart'
           nullable: true
           type: array
-        authenticationContext:
-          $ref: '#/components/schemas/customClaimsProviderResponseAuthenticationContext'
-      type: object
-    customClaimsProviderResponseServicePrincipal:
-      example:
-        appDisplayName: appDisplayName
-        displayName: displayName
-        appId: appId
-        id: id
-      properties:
-        id:
-          type: string
-        appId:
-          type: string
-        appDisplayName:
-          type: string
-        displayName:
-          type: string
-      type: object
-    customClaimsProviderResponseUser:
-      example:
-        preferredLanguage: preferredLanguage
-        mail: mail
-        displayName: displayName
-        companyName: companyName
-        givenName: givenName
-        createdDateTime: 2000-01-23T04:56:07.000+00:00
-        onPremisesSecurityIdentifier: onPremisesSecurityIdentifier
-        onPremisesUserPrincipalName: onPremisesUserPrincipalName
-        surname: surname
-        onPremisesSamAccountName: onPremisesSamAccountName
-        id: id
-        userType: userType
-        userPrincipalName: userPrincipalName
-      properties:
-        companyName:
-          type: string
-        createdDateTime:
-          format: date-time
-          type: string
-        displayName:
-          type: string
-        givenName:
-          type: string
-        id:
-          type: string
-        mail:
-          type: string
-        onPremisesSamAccountName:
-          type: string
-        onPremisesSecurityIdentifier:
-          type: string
-        onPremisesUserPrincipalName:
-          type: string
-        preferredLanguage:
-          type: string
-        surname:
-          type: string
-        userPrincipalName:
-          type: string
-        userType:
+        '@odata.type':
+          nullable: true
           type: string
       type: object
     dataResult:

@@ -115,7 +115,7 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.HttpPortalsEnhanceToken();
-            //Assert.IsType<CustomClaimsProviderResponseContent>(response);
+            //Assert.IsType<CustomClaimsProviderResponseContentTokenIssuanceStart>(response);
         }
 
         /// <summary>
@@ -128,6 +128,17 @@ namespace Agravity.Public.Test.Api
             //string id = null;
             //var response = instance.HttpPortalsGetById(id);
             //Assert.IsType<Portal>(response);
+        }
+
+        /// <summary>
+        /// Test HttpPortalsSavePortalUserAttributes
+        /// </summary>
+        [Fact]
+        public void HttpPortalsSavePortalUserAttributesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.HttpPortalsSavePortalUserAttributes();
+            //Assert.IsType<CustomClaimsProviderResponseContentAttributeCollectionSubmit>(response);
         }
     }
 }

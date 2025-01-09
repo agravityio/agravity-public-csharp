@@ -171,6 +171,7 @@ Class | Method | HTTP request | Description
 *PublicPortalManagementApi* | [**HttpPortalsConfigurationGetById**](docs/PublicPortalManagementApi.md#httpportalsconfigurationgetbyid) | **GET** /portals/{id}/config | 
 *PublicPortalManagementApi* | [**HttpPortalsEnhanceToken**](docs/PublicPortalManagementApi.md#httpportalsenhancetoken) | **POST** /portalsenhancetoken | 
 *PublicPortalManagementApi* | [**HttpPortalsGetById**](docs/PublicPortalManagementApi.md#httpportalsgetbyid) | **GET** /portals/{id} | 
+*PublicPortalManagementApi* | [**HttpPortalsSavePortalUserAttributes**](docs/PublicPortalManagementApi.md#httpportalssaveportaluserattributes) | **POST** /portalssaveuserattributes | 
 *PublicPublishingApi* | [**HttpPublishedAssetsGetAll**](docs/PublicPublishingApi.md#httppublishedassetsgetall) | **GET** /publish | 
 *PublicSavedSearchApi* | [**HttpSavedSearchesGetAll**](docs/PublicSavedSearchApi.md#httpsavedsearchesgetall) | **GET** /savedsearches | 
 *PublicSearchManagementApi* | [**HttpGetSearchFacetteByName**](docs/PublicSearchManagementApi.md#httpgetsearchfacettebyname) | **GET** /search/facette | 
@@ -215,14 +216,13 @@ Class | Method | HTTP request | Description
  - [Model.CollectionUDLListEntity](docs/CollectionUDLListEntity.md)
  - [Model.CollectionUDLReference](docs/CollectionUDLReference.md)
  - [Model.CreateSftpUserResult](docs/CreateSftpUserResult.md)
- - [Model.CustomClaimsProviderResponseAction](docs/CustomClaimsProviderResponseAction.md)
- - [Model.CustomClaimsProviderResponseAuthenticationContext](docs/CustomClaimsProviderResponseAuthenticationContext.md)
+ - [Model.CustomClaimsProviderResponseActionAttributeCollectionSubmit](docs/CustomClaimsProviderResponseActionAttributeCollectionSubmit.md)
+ - [Model.CustomClaimsProviderResponseActionTokenIssuanceStart](docs/CustomClaimsProviderResponseActionTokenIssuanceStart.md)
  - [Model.CustomClaimsProviderResponseClaims](docs/CustomClaimsProviderResponseClaims.md)
- - [Model.CustomClaimsProviderResponseClient](docs/CustomClaimsProviderResponseClient.md)
- - [Model.CustomClaimsProviderResponseContent](docs/CustomClaimsProviderResponseContent.md)
- - [Model.CustomClaimsProviderResponseData](docs/CustomClaimsProviderResponseData.md)
- - [Model.CustomClaimsProviderResponseServicePrincipal](docs/CustomClaimsProviderResponseServicePrincipal.md)
- - [Model.CustomClaimsProviderResponseUser](docs/CustomClaimsProviderResponseUser.md)
+ - [Model.CustomClaimsProviderResponseContentAttributeCollectionSubmit](docs/CustomClaimsProviderResponseContentAttributeCollectionSubmit.md)
+ - [Model.CustomClaimsProviderResponseContentTokenIssuanceStart](docs/CustomClaimsProviderResponseContentTokenIssuanceStart.md)
+ - [Model.CustomClaimsProviderResponseDataAttributeCollectionSubmit](docs/CustomClaimsProviderResponseDataAttributeCollectionSubmit.md)
+ - [Model.CustomClaimsProviderResponseDataTokenIssuanceStart](docs/CustomClaimsProviderResponseDataTokenIssuanceStart.md)
  - [Model.DataResult](docs/DataResult.md)
  - [Model.DeletedEntities](docs/DeletedEntities.md)
  - [Model.DistZipResponse](docs/DistZipResponse.md)

@@ -27,49 +27,33 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// CustomClaimsProviderResponseServicePrincipal
+    /// CustomClaimsProviderResponseActionTokenIssuanceStart
     /// </summary>
-    [DataContract(Name = "customClaimsProviderResponseServicePrincipal")]
-    public partial class CustomClaimsProviderResponseServicePrincipal : IValidatableObject
+    [DataContract(Name = "customClaimsProviderResponseActionTokenIssuanceStart")]
+    public partial class CustomClaimsProviderResponseActionTokenIssuanceStart : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseServicePrincipal" /> class.
+        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseActionTokenIssuanceStart" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="appId">appId.</param>
-        /// <param name="appDisplayName">appDisplayName.</param>
-        /// <param name="displayName">displayName.</param>
-        public CustomClaimsProviderResponseServicePrincipal(string id = default(string), string appId = default(string), string appDisplayName = default(string), string displayName = default(string))
+        /// <param name="claims">claims.</param>
+        /// <param name="odataType">odataType.</param>
+        public CustomClaimsProviderResponseActionTokenIssuanceStart(CustomClaimsProviderResponseClaims claims = default(CustomClaimsProviderResponseClaims), string odataType = default(string))
         {
-            this.Id = id;
-            this.AppId = appId;
-            this.AppDisplayName = appDisplayName;
-            this.DisplayName = displayName;
+            this.Claims = claims;
+            this.OdataType = odataType;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets Claims
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; set; }
+        [DataMember(Name = "claims", EmitDefaultValue = true)]
+        public CustomClaimsProviderResponseClaims Claims { get; set; }
 
         /// <summary>
-        /// Gets or Sets AppId
+        /// Gets or Sets OdataType
         /// </summary>
-        [DataMember(Name = "appId", EmitDefaultValue = false)]
-        public string AppId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AppDisplayName
-        /// </summary>
-        [DataMember(Name = "appDisplayName", EmitDefaultValue = false)]
-        public string AppDisplayName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DisplayName
-        /// </summary>
-        [DataMember(Name = "displayName", EmitDefaultValue = false)]
-        public string DisplayName { get; set; }
+        [DataMember(Name = "@odata.type", EmitDefaultValue = true)]
+        public string OdataType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -78,11 +62,9 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomClaimsProviderResponseServicePrincipal {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  AppId: ").Append(AppId).Append("\n");
-            sb.Append("  AppDisplayName: ").Append(AppDisplayName).Append("\n");
-            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
+            sb.Append("class CustomClaimsProviderResponseActionTokenIssuanceStart {\n");
+            sb.Append("  Claims: ").Append(Claims).Append("\n");
+            sb.Append("  OdataType: ").Append(OdataType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

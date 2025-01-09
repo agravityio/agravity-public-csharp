@@ -27,22 +27,18 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// CustomClaimsProviderResponseData
+    /// CustomClaimsProviderResponseActionAttributeCollectionSubmit
     /// </summary>
-    [DataContract(Name = "customClaimsProviderResponseData")]
-    public partial class CustomClaimsProviderResponseData : IValidatableObject
+    [DataContract(Name = "customClaimsProviderResponseActionAttributeCollectionSubmit")]
+    public partial class CustomClaimsProviderResponseActionAttributeCollectionSubmit : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseData" /> class.
+        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseActionAttributeCollectionSubmit" /> class.
         /// </summary>
         /// <param name="odataType">odataType.</param>
-        /// <param name="actions">actions.</param>
-        /// <param name="authenticationContext">authenticationContext.</param>
-        public CustomClaimsProviderResponseData(string odataType = default(string), List<CustomClaimsProviderResponseAction> actions = default(List<CustomClaimsProviderResponseAction>), CustomClaimsProviderResponseAuthenticationContext authenticationContext = default(CustomClaimsProviderResponseAuthenticationContext))
+        public CustomClaimsProviderResponseActionAttributeCollectionSubmit(string odataType = default(string))
         {
             this.OdataType = odataType;
-            this.Actions = actions;
-            this.AuthenticationContext = authenticationContext;
         }
 
         /// <summary>
@@ -52,28 +48,14 @@ namespace Agravity.Public.Model
         public string OdataType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Actions
-        /// </summary>
-        [DataMember(Name = "actions", EmitDefaultValue = true)]
-        public List<CustomClaimsProviderResponseAction> Actions { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AuthenticationContext
-        /// </summary>
-        [DataMember(Name = "authenticationContext", EmitDefaultValue = true)]
-        public CustomClaimsProviderResponseAuthenticationContext AuthenticationContext { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomClaimsProviderResponseData {\n");
+            sb.Append("class CustomClaimsProviderResponseActionAttributeCollectionSubmit {\n");
             sb.Append("  OdataType: ").Append(OdataType).Append("\n");
-            sb.Append("  Actions: ").Append(Actions).Append("\n");
-            sb.Append("  AuthenticationContext: ").Append(AuthenticationContext).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

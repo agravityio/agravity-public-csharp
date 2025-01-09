@@ -10,6 +10,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpPortalsConfigurationGetById**](PublicPortalManagementApi.md#httpportalsconfigurationgetbyid) | **GET** /portals/{id}/config |  |
 | [**HttpPortalsEnhanceToken**](PublicPortalManagementApi.md#httpportalsenhancetoken) | **POST** /portalsenhancetoken |  |
 | [**HttpPortalsGetById**](PublicPortalManagementApi.md#httpportalsgetbyid) | **GET** /portals/{id} |  |
+| [**HttpPortalsSavePortalUserAttributes**](PublicPortalManagementApi.md#httpportalssaveportaluserattributes) | **POST** /portalssaveuserattributes |  |
 
 <a id="httpportalgetallassetidsbyid"></a>
 # **HttpPortalGetAllAssetIdsById**
@@ -410,11 +411,11 @@ catch (ApiException e)
 
 <a id="httpportalsenhancetoken"></a>
 # **HttpPortalsEnhanceToken**
-> CustomClaimsProviderResponseContent HttpPortalsEnhanceToken ()
+> CustomClaimsProviderResponseContentTokenIssuanceStart HttpPortalsEnhanceToken ()
 
 
 
-This endpoint returns the portal user context.
+This endpoint saves the portal user and returns CustomClaimsProviderResponseContentTokenIssuanceStart which is used to enhance the token with user context,...
 
 ### Example
 ```csharp
@@ -441,7 +442,7 @@ namespace Example
 
             try
             {
-                CustomClaimsProviderResponseContent result = apiInstance.HttpPortalsEnhanceToken();
+                CustomClaimsProviderResponseContentTokenIssuanceStart result = apiInstance.HttpPortalsEnhanceToken();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -461,7 +462,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<CustomClaimsProviderResponseContent> response = apiInstance.HttpPortalsEnhanceTokenWithHttpInfo();
+    ApiResponse<CustomClaimsProviderResponseContentTokenIssuanceStart> response = apiInstance.HttpPortalsEnhanceTokenWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -478,7 +479,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-[**CustomClaimsProviderResponseContent**](CustomClaimsProviderResponseContent.md)
+[**CustomClaimsProviderResponseContentTokenIssuanceStart**](CustomClaimsProviderResponseContentTokenIssuanceStart.md)
 
 ### Authorization
 
@@ -493,7 +494,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns a full configuration of a portal. |  -  |
+| **200** | Returns CustomClaimsProviderResponseContentTokenIssuanceStart. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
@@ -590,6 +591,97 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns on portal from database. |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="httpportalssaveportaluserattributes"></a>
+# **HttpPortalsSavePortalUserAttributes**
+> CustomClaimsProviderResponseContentAttributeCollectionSubmit HttpPortalsSavePortalUserAttributes ()
+
+
+
+This endpoint saves the portal user attributes
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpPortalsSavePortalUserAttributesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicPortalManagementApi(config);
+
+            try
+            {
+                CustomClaimsProviderResponseContentAttributeCollectionSubmit result = apiInstance.HttpPortalsSavePortalUserAttributes();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicPortalManagementApi.HttpPortalsSavePortalUserAttributes: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpPortalsSavePortalUserAttributesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<CustomClaimsProviderResponseContentAttributeCollectionSubmit> response = apiInstance.HttpPortalsSavePortalUserAttributesWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicPortalManagementApi.HttpPortalsSavePortalUserAttributesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**CustomClaimsProviderResponseContentAttributeCollectionSubmit**](CustomClaimsProviderResponseContentAttributeCollectionSubmit.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns CustomClaimsProviderResponseContentAttributeCollectionSubmit |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 

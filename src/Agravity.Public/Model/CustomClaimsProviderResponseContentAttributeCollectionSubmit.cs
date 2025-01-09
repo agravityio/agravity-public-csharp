@@ -27,33 +27,25 @@ using OpenAPIDateConverter = Agravity.Public.Client.OpenAPIDateConverter;
 namespace Agravity.Public.Model
 {
     /// <summary>
-    /// CustomClaimsProviderResponseContent
+    /// CustomClaimsProviderResponseContentAttributeCollectionSubmit
     /// </summary>
-    [DataContract(Name = "customClaimsProviderResponseContent")]
-    public partial class CustomClaimsProviderResponseContent : IValidatableObject
+    [DataContract(Name = "customClaimsProviderResponseContentAttributeCollectionSubmit")]
+    public partial class CustomClaimsProviderResponseContentAttributeCollectionSubmit : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseContent" /> class.
+        /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseContentAttributeCollectionSubmit" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        /// <param name="source">source.</param>
-        public CustomClaimsProviderResponseContent(CustomClaimsProviderResponseData data = default(CustomClaimsProviderResponseData), string source = default(string))
+        public CustomClaimsProviderResponseContentAttributeCollectionSubmit(CustomClaimsProviderResponseDataAttributeCollectionSubmit data = default(CustomClaimsProviderResponseDataAttributeCollectionSubmit))
         {
             this.Data = data;
-            this.Source = source;
         }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = true)]
-        public CustomClaimsProviderResponseData Data { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Source
-        /// </summary>
-        [DataMember(Name = "source", EmitDefaultValue = false)]
-        public string Source { get; set; }
+        public CustomClaimsProviderResponseDataAttributeCollectionSubmit Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +54,8 @@ namespace Agravity.Public.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CustomClaimsProviderResponseContent {\n");
+            sb.Append("class CustomClaimsProviderResponseContentAttributeCollectionSubmit {\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
-            sb.Append("  Source: ").Append(Source).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

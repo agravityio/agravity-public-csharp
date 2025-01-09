@@ -8,6 +8,12 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="8.3.2-puenhance.1"/> [8.3.2-puenhance.1](https://www.nuget.org/packages/Agravity.Public/8.3.2-puenhance.1) (2025-01-09)
+
+- Add new `/portalssaveuserattributes` endpoint to save the portal user attributes
+- Change from CustomClaimsProviderResponseContent to CustomClaimsProviderResponseContentTokenIssuanceStart
+- Add more description to public configuration (404 and 401)
+
 ## AgravityAPI <a name="8.3.1"/> [8.3.1](https://www.nuget.org/packages/Agravity.Public/8.1.2) (2024-12-12)
 
 - Just version upgrade to match backend

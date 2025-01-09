@@ -2612,6 +2612,18 @@ paths:
                   $ref: '#/components/schemas/frontendAppConfig'
                 type: array
           description: Returns the frontend configations values in store
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agravityErrorResponse'
+          description: "No config table could be found. (Code: 33d6286a-b7a4-428e-9f0b-cf7488d174ac)"
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agravityErrorResponse'
+          description: "The config table could be be accessed. (Code: b9f176b8-cf22-4815-a90c-5a40611d2cfa)"
         "500":
           description: Internal server error. Please contact administrator.
       tags:

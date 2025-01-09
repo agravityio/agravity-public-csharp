@@ -92,6 +92,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns the frontend configations values in store |  -  |
+| **404** | No config table could be found. (Code: 33d6286a-b7a4-428e-9f0b-cf7488d174ac) |  -  |
+| **401** | The config table could be be accessed. (Code: b9f176b8-cf22-4815-a90c-5a40611d2cfa) |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

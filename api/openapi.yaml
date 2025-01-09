@@ -15,7 +15,7 @@ info:
     \ on assets like: blobs, rotate, resize, similar, collections, customfields, download</li>\t\
     <li>List / get single published asset</li>\t<li>Search for assets or collections</li>\t\
     <li>Get version of deployment</li></ul><br/><b>API key is needed to access these\
-    \ endpoints.</b><br/><br/>Copyright © Agravity GmbH 2024. All Rights Reserved"
+    \ endpoints.</b><br/><br/>Copyright © Agravity GmbH 2025. All Rights Reserved"
   title: Agravity OpenAPI Documentation - Public Functions
   version: 8.3.1
 servers:

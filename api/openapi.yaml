@@ -4340,6 +4340,7 @@ components:
     agravityVersion:
       example:
         permission_enabled: true
+        contact: contact
         name: name
         company: company
         region: region
@@ -4355,6 +4356,9 @@ components:
           nullable: true
           type: string
         customer:
+          nullable: true
+          type: string
+        contact:
           nullable: true
           type: string
         updated:

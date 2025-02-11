@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **Company** | **string** |  | [optional] 
 **Customer** | **string** |  | [optional] 
+**Contact** | **string** |  | [optional] 
 **Updated** | **DateTime?** |  | [optional] 
 **ClientId** | **string** |  | [optional] 
 **VarVersion** | **string** |  | [optional] 

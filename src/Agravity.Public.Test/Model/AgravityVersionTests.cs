@@ -83,6 +83,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Contact'
+        /// </summary>
+        [Fact]
+        public void ContactTest()
+        {
+            // TODO unit test for the property 'Contact'
+        }
+
+        /// <summary>
         /// Test the property 'Updated'
         /// </summary>
         [Fact]

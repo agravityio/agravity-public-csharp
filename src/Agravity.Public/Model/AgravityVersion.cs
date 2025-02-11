@@ -38,16 +38,18 @@ namespace Agravity.Public.Model
         /// <param name="name">name.</param>
         /// <param name="company">company.</param>
         /// <param name="customer">customer.</param>
+        /// <param name="contact">contact.</param>
         /// <param name="updated">updated.</param>
         /// <param name="clientId">clientId.</param>
         /// <param name="varVersion">varVersion.</param>
         /// <param name="permissionEnabled">permissionEnabled.</param>
         /// <param name="region">region.</param>
-        public AgravityVersion(string name = default(string), string company = default(string), string customer = default(string), DateTime? updated = default(DateTime?), string clientId = default(string), string varVersion = default(string), bool? permissionEnabled = default(bool?), string region = default(string))
+        public AgravityVersion(string name = default(string), string company = default(string), string customer = default(string), string contact = default(string), DateTime? updated = default(DateTime?), string clientId = default(string), string varVersion = default(string), bool? permissionEnabled = default(bool?), string region = default(string))
         {
             this.Name = name;
             this.Company = company;
             this.Customer = customer;
+            this.Contact = contact;
             this.Updated = updated;
             this.ClientId = clientId;
             this.VarVersion = varVersion;
@@ -72,6 +74,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "customer", EmitDefaultValue = true)]
         public string Customer { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Contact
+        /// </summary>
+        [DataMember(Name = "contact", EmitDefaultValue = true)]
+        public string Contact { get; set; }
 
         /// <summary>
         /// Gets or Sets Updated
@@ -114,6 +122,7 @@ namespace Agravity.Public.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Company: ").Append(Company).Append("\n");
             sb.Append("  Customer: ").Append(Customer).Append("\n");
+            sb.Append("  Contact: ").Append(Contact).Append("\n");
             sb.Append("  Updated: ").Append(Updated).Append("\n");
             sb.Append("  ClientId: ").Append(ClientId).Append("\n");
             sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");

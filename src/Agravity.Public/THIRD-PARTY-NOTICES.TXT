@@ -34,12 +34,12 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for Polly (v8.5.0)
+License notice for Polly (v8.5.2)
 ------------------------------------
 
-https://github.com/App-vNext/Polly at 520ee38ce6d199c3dfc75c87188a0857880edc94
+https://github.com/App-vNext/Polly at a953ba8119074d7f63cc69643d4ef1d1de52ee3f
 
-Copyright (c) 2024, App vNext
+Copyright (c) 2025, App vNext
 
 Licensed under BSD-3-Clause
 
@@ -72,10 +72,10 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for System.Text.Json (v9.0.0)
+License notice for System.Text.Json (v9.0.2)
 ------------------------------------
 
-https://github.com/dotnet/runtime at 9d5a6a9aa463d6d10b0b0ba6d5982cc82f363dc3
+https://github.com/dotnet/runtime at 80aa709f5d919c6814726788dc6dabe23e79e672
 
 https://dot.net/
 
@@ -86,10 +86,10 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for Microsoft.Bcl.AsyncInterfaces (v9.0.0)
+License notice for Microsoft.Bcl.AsyncInterfaces (v9.0.2)
 ------------------------------------
 
-https://github.com/dotnet/runtime at 9d5a6a9aa463d6d10b0b0ba6d5982cc82f363dc3
+https://github.com/dotnet/runtime at 80aa709f5d919c6814726788dc6dabe23e79e672
 
 https://dot.net/
 
@@ -124,12 +124,12 @@ Copyright © Microsoft Corporation.  All rights reserved.
 License available at http://go.microsoft.com/fwlink/?LinkId=329770
 
 
-License notice for Polly.Core (v8.5.0)
+License notice for Polly.Core (v8.5.2)
 ------------------------------------
 
-https://github.com/App-vNext/Polly at 520ee38ce6d199c3dfc75c87188a0857880edc94
+https://github.com/App-vNext/Polly at a953ba8119074d7f63cc69643d4ef1d1de52ee3f
 
-Copyright (c) 2024, App vNext
+Copyright (c) 2025, App vNext
 
 Licensed under BSD-3-Clause
 
@@ -146,10 +146,10 @@ Copyright © Microsoft Corporation. All rights reserved.
 License available at https://github.com/dotnet/corefx/blob/master/LICENSE.TXT
 
 
-License notice for System.IO.Pipelines (v9.0.0)
+License notice for System.IO.Pipelines (v9.0.2)
 ------------------------------------
 
-https://github.com/dotnet/runtime at 9d5a6a9aa463d6d10b0b0ba6d5982cc82f363dc3
+https://github.com/dotnet/runtime at 80aa709f5d919c6814726788dc6dabe23e79e672
 
 https://dot.net/
 
@@ -194,10 +194,10 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for System.Text.Encodings.Web (v9.0.0)
+License notice for System.Text.Encodings.Web (v9.0.2)
 ------------------------------------
 
-https://github.com/dotnet/runtime at 9d5a6a9aa463d6d10b0b0ba6d5982cc82f363dc3
+https://github.com/dotnet/runtime at 80aa709f5d919c6814726788dc6dabe23e79e672
 
 https://dot.net/
 

@@ -8,6 +8,15 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="9.0.0"/> [9.0.0](https://www.nuget.org/packages/Agravity.Public/9.0.0) (2025-02-28)
+
+- #1343 Add contact person to environment (AppConfig)
+
+- #1346 Allow multiple download formats in ZIP download
+  ZIP Upgrades (unify / simplify process and reduce endpoints)
+  - Removed `downloads` array from AgravityUser object;
+  - Change models: DownloadObject to DownloadZipRequest
+
 ## AgravityAPI <a name="8.4.2"/> [8.4.2](https://www.nuget.org/packages/Agravity.Public/8.4.2) (2025-02-02)
 
 - Just version upgrade to match backend

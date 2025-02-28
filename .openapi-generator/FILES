@@ -33,6 +33,8 @@ docs/DataResult.md
 docs/DeletedEntities.md
 docs/DistZipResponse.md
 docs/DownloadFormat.md
+docs/DownloadZipRequest.md
+docs/DownloadZipStatus.md
 docs/DynamicImageOperation.md
 docs/EntityId.md
 docs/EntityIdName.md
@@ -47,7 +49,6 @@ docs/PortalFields.md
 docs/PortalLinks.md
 docs/PortalTheme.md
 docs/PortalUserContext.md
-docs/PortalZipRequest.md
 docs/PublicAssetManagementApi.md
 docs/PublicAssetOperationsApi.md
 docs/PublicAssetPublishingApi.md
@@ -91,7 +92,6 @@ docs/SecureUploadEntity.md
 docs/SharedAllowedFormat.md
 docs/SharedAsset.md
 docs/SharedCollectionFull.md
-docs/SharedCollectionZipRequest.md
 docs/SignalRConnectionInfo.md
 docs/StaticDefinedList.md
 docs/VersionEntity.md
@@ -153,6 +153,8 @@ src/Agravity.Public.Test/Model/DataResultTests.cs
 src/Agravity.Public.Test/Model/DeletedEntitiesTests.cs
 src/Agravity.Public.Test/Model/DistZipResponseTests.cs
 src/Agravity.Public.Test/Model/DownloadFormatTests.cs
+src/Agravity.Public.Test/Model/DownloadZipRequestTests.cs
+src/Agravity.Public.Test/Model/DownloadZipStatusTests.cs
 src/Agravity.Public.Test/Model/DynamicImageOperationTests.cs
 src/Agravity.Public.Test/Model/EntityIdNameTests.cs
 src/Agravity.Public.Test/Model/EntityIdTests.cs
@@ -167,7 +169,6 @@ src/Agravity.Public.Test/Model/PortalLinksTests.cs
 src/Agravity.Public.Test/Model/PortalTests.cs
 src/Agravity.Public.Test/Model/PortalThemeTests.cs
 src/Agravity.Public.Test/Model/PortalUserContextTests.cs
-src/Agravity.Public.Test/Model/PortalZipRequestTests.cs
 src/Agravity.Public.Test/Model/PublishEntityTests.cs
 src/Agravity.Public.Test/Model/PublishedAssetTests.cs
 src/Agravity.Public.Test/Model/QuickShareFullTests.cs
@@ -188,7 +189,6 @@ src/Agravity.Public.Test/Model/SecureUploadEntityTests.cs
 src/Agravity.Public.Test/Model/SharedAllowedFormatTests.cs
 src/Agravity.Public.Test/Model/SharedAssetTests.cs
 src/Agravity.Public.Test/Model/SharedCollectionFullTests.cs
-src/Agravity.Public.Test/Model/SharedCollectionZipRequestTests.cs
 src/Agravity.Public.Test/Model/SignalRConnectionInfoTests.cs
 src/Agravity.Public.Test/Model/StaticDefinedListTests.cs
 src/Agravity.Public.Test/Model/VersionEntityTests.cs
@@ -266,6 +266,8 @@ src/Agravity.Public/Model/DataResult.cs
 src/Agravity.Public/Model/DeletedEntities.cs
 src/Agravity.Public/Model/DistZipResponse.cs
 src/Agravity.Public/Model/DownloadFormat.cs
+src/Agravity.Public/Model/DownloadZipRequest.cs
+src/Agravity.Public/Model/DownloadZipStatus.cs
 src/Agravity.Public/Model/DynamicImageOperation.cs
 src/Agravity.Public/Model/EntityId.cs
 src/Agravity.Public/Model/EntityIdName.cs
@@ -280,7 +282,6 @@ src/Agravity.Public/Model/PortalFields.cs
 src/Agravity.Public/Model/PortalLinks.cs
 src/Agravity.Public/Model/PortalTheme.cs
 src/Agravity.Public/Model/PortalUserContext.cs
-src/Agravity.Public/Model/PortalZipRequest.cs
 src/Agravity.Public/Model/PublishEntity.cs
 src/Agravity.Public/Model/PublishedAsset.cs
 src/Agravity.Public/Model/QuickShareFull.cs
@@ -301,7 +302,6 @@ src/Agravity.Public/Model/SecureUploadEntity.cs
 src/Agravity.Public/Model/SharedAllowedFormat.cs
 src/Agravity.Public/Model/SharedAsset.cs
 src/Agravity.Public/Model/SharedCollectionFull.cs
-src/Agravity.Public/Model/SharedCollectionZipRequest.cs
 src/Agravity.Public/Model/SignalRConnectionInfo.cs
 src/Agravity.Public/Model/StaticDefinedList.cs
 src/Agravity.Public/Model/VersionEntity.cs

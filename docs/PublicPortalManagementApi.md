@@ -112,7 +112,7 @@ catch (ApiException e)
 
 <a id="httpportalgetstatuszipbyid"></a>
 # **HttpPortalGetStatusZipById**
-> PortalZipRequest HttpPortalGetStatusZipById (string id, string zipId)
+> DownloadZipStatus HttpPortalGetStatusZipById (string id, string zipId)
 
 
 
@@ -145,7 +145,7 @@ namespace Example
 
             try
             {
-                PortalZipRequest result = apiInstance.HttpPortalGetStatusZipById(id, zipId);
+                DownloadZipStatus result = apiInstance.HttpPortalGetStatusZipById(id, zipId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -165,7 +165,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<PortalZipRequest> response = apiInstance.HttpPortalGetStatusZipByIdWithHttpInfo(id, zipId);
+    ApiResponse<DownloadZipStatus> response = apiInstance.HttpPortalGetStatusZipByIdWithHttpInfo(id, zipId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -187,7 +187,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**PortalZipRequest**](PortalZipRequest.md)
+[**DownloadZipStatus**](DownloadZipStatus.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ catch (ApiException e)
 
 <a id="httpportalrequestzipbyid"></a>
 # **HttpPortalRequestZipById**
-> PortalZipRequest HttpPortalRequestZipById (string id, PortalZipRequest portalZipRequest)
+> DownloadZipRequest HttpPortalRequestZipById (string id, DownloadZipRequest downloadZipRequest)
 
 
 
@@ -240,11 +240,11 @@ namespace Example
 
             var apiInstance = new PublicPortalManagementApi(config);
             var id = "id_example";  // string | The ID of the portal.
-            var portalZipRequest = new PortalZipRequest(); // PortalZipRequest | The allowed formats are the input which could be added.
+            var downloadZipRequest = new DownloadZipRequest(); // DownloadZipRequest | The allowed formats are the input which could be added.
 
             try
             {
-                PortalZipRequest result = apiInstance.HttpPortalRequestZipById(id, portalZipRequest);
+                DownloadZipRequest result = apiInstance.HttpPortalRequestZipById(id, downloadZipRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -264,7 +264,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<PortalZipRequest> response = apiInstance.HttpPortalRequestZipByIdWithHttpInfo(id, portalZipRequest);
+    ApiResponse<DownloadZipRequest> response = apiInstance.HttpPortalRequestZipByIdWithHttpInfo(id, downloadZipRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -282,11 +282,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the portal. |  |
-| **portalZipRequest** | [**PortalZipRequest**](PortalZipRequest.md) | The allowed formats are the input which could be added. |  |
+| **downloadZipRequest** | [**DownloadZipRequest**](DownloadZipRequest.md) | The allowed formats are the input which could be added. |  |
 
 ### Return type
 
-[**PortalZipRequest**](PortalZipRequest.md)
+[**DownloadZipRequest**](DownloadZipRequest.md)
 
 ### Authorization
 
@@ -302,7 +302,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Returns the portal with the given ID. |  -  |
-| **400** | Not valid portal id! (Code: 00b410fe-97d1-4952-ba0b-327d22514934)&lt;br&gt;Object is not a valid PortalZipRequest. (Code: a51d1697-f56e-4fa3-bde8-3ab44e6cbb0a)&lt;br&gt;No allowed formats are given! (Code: 684df4b1-e0c5-4b07-8c81-cb9835e0bd00)&lt;br&gt;No asset ids are given! (Code: e8361816-fcc9-48b9-99d4-2133dfed7721)&lt;br&gt;Not all asset ids are valid! (Code: 0619480f-fa10-4c45-a60d-cb269d8be7b4)&lt;br&gt;Portal not found in database! (Code: 50a49113-cbcf-470c-ab8c-098dcd23cd0f)&lt;br&gt;Not all allowed formats are in the portal allowed formats! (Code: c679981e-fbaa-4941-90aa-3b99b1d5a748)&lt;br&gt;Not all asset ids are valid for this portal! (Code: 01e22b3a-13f9-4d5a-a777-2c69ce7b5b05)&lt;br&gt;No matching allowed formats for requested assets. (Code: bd27176f-9a4d-44ac-9055-9359b405558e)&lt;br&gt;Not all asset types have an allowed format in this request! (Code: 2289c7b1-0351-4815-b280-ce4628bdb3dd)&lt;br&gt;Error on upsert zipRequest in database - max retry count is reached. (Code:7a627b8f-11f8-4bbb-bcbd-9f6f5726557a) |  -  |
+| **400** | Not valid portal id! (Code: 00b410fe-97d1-4952-ba0b-327d22514934)&lt;br&gt;Object is not a valid DownloadZipRequest. (Code: a51d1697-f56e-4fa3-bde8-3ab44e6cbb0a)&lt;br&gt;No allowed formats are given! (Code: 684df4b1-e0c5-4b07-8c81-cb9835e0bd00)&lt;br&gt;No asset ids are given! (Code: e8361816-fcc9-48b9-99d4-2133dfed7721)&lt;br&gt;Not all asset ids are valid! (Code: 0619480f-fa10-4c45-a60d-cb269d8be7b4)&lt;br&gt;Portal not found in database! (Code: 50a49113-cbcf-470c-ab8c-098dcd23cd0f)&lt;br&gt;Not all allowed formats are in the portal allowed formats! (Code: c679981e-fbaa-4941-90aa-3b99b1d5a748)&lt;br&gt;Not all asset ids are valid for this portal! (Code: 01e22b3a-13f9-4d5a-a777-2c69ce7b5b05)&lt;br&gt;No matching allowed formats for requested assets. (Code: bd27176f-9a4d-44ac-9055-9359b405558e)&lt;br&gt;Not all asset types have an allowed format in this request! (Code: 2289c7b1-0351-4815-b280-ce4628bdb3dd)&lt;br&gt;Error on upsert zipRequest in database - max retry count is reached. (Code:7a627b8f-11f8-4bbb-bcbd-9f6f5726557a) |  -  |
 | **404** | Portal not found. (Code: 87d09a21-14d6-4da4-ab69-01e6c87f108c)&lt;br&gt; |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |

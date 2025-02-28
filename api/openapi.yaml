@@ -152,7 +152,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/portalZipRequest'
+              $ref: '#/components/schemas/downloadZipRequest'
         description: The allowed formats are the input which could be added.
         required: true
       responses:
@@ -160,7 +160,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/portalZipRequest'
+                $ref: '#/components/schemas/downloadZipRequest'
           description: Returns the portal with the given ID.
         "400":
           content:
@@ -168,7 +168,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/agravityErrorResponse'
           description: "Not valid portal id! (Code: 00b410fe-97d1-4952-ba0b-327d22514934)<br>Object\
-            \ is not a valid PortalZipRequest. (Code: a51d1697-f56e-4fa3-bde8-3ab44e6cbb0a)<br>No\
+            \ is not a valid DownloadZipRequest. (Code: a51d1697-f56e-4fa3-bde8-3ab44e6cbb0a)<br>No\
             \ allowed formats are given! (Code: 684df4b1-e0c5-4b07-8c81-cb9835e0bd00)<br>No\
             \ asset ids are given! (Code: e8361816-fcc9-48b9-99d4-2133dfed7721)<br>Not\
             \ all asset ids are valid! (Code: 0619480f-fa10-4c45-a60d-cb269d8be7b4)<br>Portal\
@@ -219,7 +219,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/portalZipRequest'
+                $ref: '#/components/schemas/downloadZipStatus'
           description: Returns the zip request for a portal with the given ID.
         "400":
           content:
@@ -3154,6 +3154,7 @@ paths:
       operationId: HttpSavedSearchesGetAll
       parameters:
       - description: This parameter filters out all saved searches on basis this boolean.
+          Only admins can request the external saved searches.
         explode: true
         in: query
         name: external
@@ -3613,15 +3614,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharedCollectionZipRequest'
-        description: The allowed formats are the input which could be optionally added.
+              $ref: '#/components/schemas/downloadZipRequest'
+        description: The request of which assets or download formats should be used..
       responses:
         "201":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/sharedCollectionZipRequest'
-          description: Returns the shared collection with the given ID.
+                $ref: '#/components/schemas/downloadZipRequest'
+          description: Returns the requested download ZIP with created zip entity
+            ID.
         "400":
           content:
             application/json:
@@ -3651,7 +3653,7 @@ paths:
         shared collection.
       operationId: HttpSharedCollectionsGetStatusZipById
       parameters:
-      - description: The ID of the zip request collection.
+      - description: The ID of the zip request.
         explode: false
         in: path
         name: id
@@ -3681,9 +3683,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/sharedCollectionZipRequest'
-          description: Returns the zip request for a shared collection with the given
-            ID.
+                $ref: '#/components/schemas/downloadZipStatus'
+          description: Returns the status of the current zip request.
         "400":
           content:
             application/json:
@@ -7889,6 +7890,118 @@ components:
           nullable: true
           type: string
       type: object
+    downloadZipRequest:
+      example:
+        email_to:
+        - email_to
+        - email_to
+        allowed_formats:
+        - asset_type: asset_type
+          format: format
+        - asset_type: asset_type
+          format: format
+        asset_ids:
+        - asset_ids
+        - asset_ids
+        valid_until: 2000-01-23T04:56:07.000+00:00
+        zip_type: DOWNLOAD
+        id: id
+        message: message
+        zipname: zipname
+      properties:
+        id:
+          nullable: true
+          type: string
+        zip_type:
+          default: DOWNLOAD
+          enum:
+          - DOWNLOAD
+          - SHARED
+          - QUICKSHARE
+          - PORTAL
+          type: string
+        asset_ids:
+          items:
+            type: string
+          nullable: true
+          type: array
+        allowed_formats:
+          items:
+            $ref: '#/components/schemas/sharedAllowedFormat'
+          nullable: true
+          type: array
+        zipname:
+          nullable: true
+          type: string
+        email_to:
+          items:
+            type: string
+          nullable: true
+          type: array
+        message:
+          nullable: true
+          type: string
+        valid_until:
+          format: date-time
+          nullable: true
+          type: string
+      type: object
+    downloadZipStatus:
+      example:
+        size: size
+        zip_type: DOWNLOAD
+        part: 6.027456183070403
+        count: 1
+        id: id
+        message: message
+        user: user
+        percent: 0.8008281904610115
+        zipname: zipname
+        url: url
+        status: status
+      properties:
+        id:
+          nullable: true
+          type: string
+        user:
+          nullable: true
+          type: string
+        percent:
+          format: double
+          nullable: true
+          type: number
+        part:
+          format: double
+          nullable: true
+          type: number
+        count:
+          format: int32
+          nullable: true
+          type: integer
+        message:
+          nullable: true
+          type: string
+        status:
+          nullable: true
+          type: string
+        zip_type:
+          default: DOWNLOAD
+          enum:
+          - DOWNLOAD
+          - SHARED
+          - QUICKSHARE
+          - PORTAL
+          type: string
+        zipname:
+          nullable: true
+          type: string
+        size:
+          nullable: true
+          type: string
+        url:
+          nullable: true
+          type: string
+      type: object
     dynamicImageOperation:
       example:
         params:
@@ -9461,97 +9574,6 @@ components:
             type: string
           nullable: true
           type: array
-      type: object
-    portalZipRequest:
-      example:
-        asset_ids:
-        - asset_ids
-        - asset_ids
-        language: language
-        error:
-          error_message: error_message
-          exception: exception
-          error_id: error_id
-        modified_date: 2000-01-23T04:56:07.000+00:00
-        created_by: created_by
-        url: url
-        allowed_formats:
-        - asset_type: asset_type
-          format: format
-        - asset_type: asset_type
-          format: format
-        entity_type: entity_type
-        instance_id: instance_id
-        valid_until: 2000-01-23T04:56:07.000+00:00
-        zip_type: zip_type
-        modified_by: modified_by
-        portal_id: portal_id
-        id: id
-        created_date: 2000-01-23T04:56:07.000+00:00
-        pk: pk
-        _etag: _etag
-        status: status
-      properties:
-        zip_type:
-          nullable: true
-          type: string
-        portal_id:
-          nullable: true
-          type: string
-        language:
-          nullable: true
-          type: string
-        asset_ids:
-          items:
-            type: string
-          nullable: true
-          type: array
-        id:
-          nullable: true
-          type: string
-        entity_type:
-          nullable: true
-          type: string
-        url:
-          nullable: true
-          type: string
-        instance_id:
-          nullable: true
-          type: string
-        valid_until:
-          format: date-time
-          nullable: true
-          type: string
-        allowed_formats:
-          items:
-            $ref: '#/components/schemas/sharedAllowedFormat'
-          nullable: true
-          type: array
-        error:
-          $ref: '#/components/schemas/agravityErrorResponse'
-        status:
-          nullable: true
-          type: string
-        created_date:
-          format: date-time
-          nullable: true
-          type: string
-        created_by:
-          nullable: true
-          type: string
-        modified_date:
-          format: date-time
-          nullable: true
-          type: string
-        modified_by:
-          nullable: true
-          type: string
-        pk:
-          nullable: true
-          type: string
-        _etag:
-          nullable: true
-          type: string
       type: object
     publishedAsset:
       example:
@@ -11782,93 +11804,6 @@ components:
           nullable: true
           type: string
       type: object
-    sharedCollectionZipRequest:
-      example:
-        sharedcoll_id: sharedcoll_id
-        language: language
-        error:
-          error_message: error_message
-          exception: exception
-          error_id: error_id
-        modified_date: 2000-01-23T04:56:07.000+00:00
-        created_by: created_by
-        url: url
-        allowed_formats:
-        - asset_type: asset_type
-          format: format
-        - asset_type: asset_type
-          format: format
-        password: password
-        entity_type: entity_type
-        instance_id: instance_id
-        valid_until: 2000-01-23T04:56:07.000+00:00
-        zip_type: zip_type
-        modified_by: modified_by
-        id: id
-        created_date: 2000-01-23T04:56:07.000+00:00
-        pk: pk
-        _etag: _etag
-        status: status
-      properties:
-        sharedcoll_id:
-          nullable: true
-          type: string
-        password:
-          nullable: true
-          type: string
-        language:
-          nullable: true
-          type: string
-        id:
-          nullable: true
-          type: string
-        entity_type:
-          nullable: true
-          type: string
-        zip_type:
-          nullable: true
-          type: string
-        url:
-          nullable: true
-          type: string
-        instance_id:
-          nullable: true
-          type: string
-        valid_until:
-          format: date-time
-          nullable: true
-          type: string
-        allowed_formats:
-          items:
-            $ref: '#/components/schemas/sharedAllowedFormat'
-          nullable: true
-          type: array
-        error:
-          $ref: '#/components/schemas/agravityErrorResponse'
-        status:
-          nullable: true
-          type: string
-        created_date:
-          format: date-time
-          nullable: true
-          type: string
-        created_by:
-          nullable: true
-          type: string
-        modified_date:
-          format: date-time
-          nullable: true
-          type: string
-        modified_by:
-          nullable: true
-          type: string
-        pk:
-          nullable: true
-          type: string
-        _etag:
-          nullable: true
-          type: string
-      type: object
     signalRConnectionInfo:
       example:
         accessToken: accessToken
@@ -11954,6 +11889,55 @@ components:
     versionedAsset:
       example:
         version_nr: 0
+        blob_data:
+          container: container
+          wordcount: 1
+          extension: extension
+          downloadable: true
+          expires: 2000-01-23T04:56:07.000+00:00
+          maxwidthheight: 5
+          add_data:
+            key: "{}"
+          language: language
+          size_readable: size_readable
+          title: title
+          audiocodec: audiocodec
+          mode: mode
+          duration: 3
+          uploaded_by: uploaded_by
+          pages: 1
+          content_type: content_type
+          uploaded_date: 2000-01-23T04:56:07.000+00:00
+          encoding_code: encoding_code
+          colormode: colormode
+          height: 1
+          perhash: perhash
+          orientation: PORTRAIT
+          dpi_y: 7.061401241503109
+          dpi_x: 2.3021358869347655
+          audiochanneloutput: audiochanneloutput
+          author: author
+          profile: profile
+          fps: 4.145608029883936
+          audiosamplerate: audiosamplerate
+          blob_type: UNKNOWN
+          url: url
+          quality: 5.637376656633329
+          target: target
+          filter: filter
+          encoding_name: encoding_name
+          depth: 9
+          size: 0
+          colorspace: colorspace
+          dominantcolor: dominantcolor
+          audiobitrate: 7
+          transparency: true
+          name: name
+          width: 6
+          animated: true
+          videobitrate: 2
+          videocodec: videocodec
+          md5: md5
         mime_type: mime_type
         version_info: version_info
         until_date: 2000-01-23T04:56:07.000+00:00
@@ -11979,6 +11963,8 @@ components:
         created_by:
           nullable: true
           type: string
+        blob_data:
+          $ref: '#/components/schemas/assetBlob'
         blob_uploaded:
           format: date-time
           nullable: true
@@ -11993,6 +11979,55 @@ components:
         entity_type: entity_type
         versions:
         - version_nr: 0
+          blob_data:
+            container: container
+            wordcount: 1
+            extension: extension
+            downloadable: true
+            expires: 2000-01-23T04:56:07.000+00:00
+            maxwidthheight: 5
+            add_data:
+              key: "{}"
+            language: language
+            size_readable: size_readable
+            title: title
+            audiocodec: audiocodec
+            mode: mode
+            duration: 3
+            uploaded_by: uploaded_by
+            pages: 1
+            content_type: content_type
+            uploaded_date: 2000-01-23T04:56:07.000+00:00
+            encoding_code: encoding_code
+            colormode: colormode
+            height: 1
+            perhash: perhash
+            orientation: PORTRAIT
+            dpi_y: 7.061401241503109
+            dpi_x: 2.3021358869347655
+            audiochanneloutput: audiochanneloutput
+            author: author
+            profile: profile
+            fps: 4.145608029883936
+            audiosamplerate: audiosamplerate
+            blob_type: UNKNOWN
+            url: url
+            quality: 5.637376656633329
+            target: target
+            filter: filter
+            encoding_name: encoding_name
+            depth: 9
+            size: 0
+            colorspace: colorspace
+            dominantcolor: dominantcolor
+            audiobitrate: 7
+            transparency: true
+            name: name
+            width: 6
+            animated: true
+            videobitrate: 2
+            videocodec: videocodec
+            md5: md5
           mime_type: mime_type
           version_info: version_info
           until_date: 2000-01-23T04:56:07.000+00:00
@@ -12000,6 +12035,55 @@ components:
           blob_uploaded: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
         - version_nr: 0
+          blob_data:
+            container: container
+            wordcount: 1
+            extension: extension
+            downloadable: true
+            expires: 2000-01-23T04:56:07.000+00:00
+            maxwidthheight: 5
+            add_data:
+              key: "{}"
+            language: language
+            size_readable: size_readable
+            title: title
+            audiocodec: audiocodec
+            mode: mode
+            duration: 3
+            uploaded_by: uploaded_by
+            pages: 1
+            content_type: content_type
+            uploaded_date: 2000-01-23T04:56:07.000+00:00
+            encoding_code: encoding_code
+            colormode: colormode
+            height: 1
+            perhash: perhash
+            orientation: PORTRAIT
+            dpi_y: 7.061401241503109
+            dpi_x: 2.3021358869347655
+            audiochanneloutput: audiochanneloutput
+            author: author
+            profile: profile
+            fps: 4.145608029883936
+            audiosamplerate: audiosamplerate
+            blob_type: UNKNOWN
+            url: url
+            quality: 5.637376656633329
+            target: target
+            filter: filter
+            encoding_name: encoding_name
+            depth: 9
+            size: 0
+            colorspace: colorspace
+            dominantcolor: dominantcolor
+            audiobitrate: 7
+            transparency: true
+            name: name
+            width: 6
+            animated: true
+            videobitrate: 2
+            videocodec: videocodec
+            md5: md5
           mime_type: mime_type
           version_info: version_info
           until_date: 2000-01-23T04:56:07.000+00:00

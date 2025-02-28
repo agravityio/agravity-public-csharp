@@ -212,7 +212,7 @@ No authorization required
 
 <a id="httpsharedcollectionsgetstatuszipbyid"></a>
 # **HttpSharedCollectionsGetStatusZipById**
-> SharedCollectionZipRequest HttpSharedCollectionsGetStatusZipById (string id, string zipId, string ayPassword = null)
+> DownloadZipStatus HttpSharedCollectionsGetStatusZipById (string id, string zipId, string ayPassword = null)
 
 
 
@@ -235,13 +235,13 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:7072/api";
             var apiInstance = new PublicSharingManagementApi(config);
-            var id = "id_example";  // string | The ID of the zip request collection.
+            var id = "id_example";  // string | The ID of the zip request.
             var zipId = "zipId_example";  // string | The ID of the requested zip.
             var ayPassword = "ayPassword_example";  // string | If shared collection has a password, this header is mandatory. Otherwise StatusCode 401 (Unauthorized) is returned. (optional) 
 
             try
             {
-                SharedCollectionZipRequest result = apiInstance.HttpSharedCollectionsGetStatusZipById(id, zipId, ayPassword);
+                DownloadZipStatus result = apiInstance.HttpSharedCollectionsGetStatusZipById(id, zipId, ayPassword);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -261,7 +261,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<SharedCollectionZipRequest> response = apiInstance.HttpSharedCollectionsGetStatusZipByIdWithHttpInfo(id, zipId, ayPassword);
+    ApiResponse<DownloadZipStatus> response = apiInstance.HttpSharedCollectionsGetStatusZipByIdWithHttpInfo(id, zipId, ayPassword);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -278,13 +278,13 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | The ID of the zip request collection. |  |
+| **id** | **string** | The ID of the zip request. |  |
 | **zipId** | **string** | The ID of the requested zip. |  |
 | **ayPassword** | **string** | If shared collection has a password, this header is mandatory. Otherwise StatusCode 401 (Unauthorized) is returned. | [optional]  |
 
 ### Return type
 
-[**SharedCollectionZipRequest**](SharedCollectionZipRequest.md)
+[**DownloadZipStatus**](DownloadZipStatus.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns the zip request for a shared collection with the given ID. |  -  |
+| **200** | Returns the status of the current zip request. |  -  |
 | **400** | Not valid shared id! (Code: e1eb7b29-e501-4727-bec3-26f5099b7418) |  -  |
 | **404** | Collection on which this share is based, doesn&#39;t exist. (Code: 79dde226-ae08-4f4b-b334-de0cad89c994)&lt;br&gt;or Shared collection date expired! (Code: 6758d66e-0ce6-4770-a497-01a578eac12c)&lt;br&gt;or Shared collection not found. (Code: 87d09a21-14d6-4da4-ab69-01e6c87f108c)&lt;br&gt;or User null or shared collection of user not found. (Code: 5a1ea520-377d-43f1-b2c3-506443056561)&lt;br&gt; |  -  |
 | **401** | This share requires a password (Header: &#39;ay-password&#39;) to be accessed. |  -  |
@@ -309,7 +309,7 @@ No authorization required
 
 <a id="httpsharedcollectionsrequestzipbyid"></a>
 # **HttpSharedCollectionsRequestZipById**
-> SharedCollectionZipRequest HttpSharedCollectionsRequestZipById (string id, string ayPassword = null, SharedCollectionZipRequest sharedCollectionZipRequest = null)
+> DownloadZipRequest HttpSharedCollectionsRequestZipById (string id, string ayPassword = null, DownloadZipRequest downloadZipRequest = null)
 
 
 
@@ -334,11 +334,11 @@ namespace Example
             var apiInstance = new PublicSharingManagementApi(config);
             var id = "id_example";  // string | The ID of the shared collection.
             var ayPassword = "ayPassword_example";  // string | If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional) 
-            var sharedCollectionZipRequest = new SharedCollectionZipRequest(); // SharedCollectionZipRequest | The allowed formats are the input which could be optionally added. (optional) 
+            var downloadZipRequest = new DownloadZipRequest(); // DownloadZipRequest | The request of which assets or download formats should be used.. (optional) 
 
             try
             {
-                SharedCollectionZipRequest result = apiInstance.HttpSharedCollectionsRequestZipById(id, ayPassword, sharedCollectionZipRequest);
+                DownloadZipRequest result = apiInstance.HttpSharedCollectionsRequestZipById(id, ayPassword, downloadZipRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -358,7 +358,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<SharedCollectionZipRequest> response = apiInstance.HttpSharedCollectionsRequestZipByIdWithHttpInfo(id, ayPassword, sharedCollectionZipRequest);
+    ApiResponse<DownloadZipRequest> response = apiInstance.HttpSharedCollectionsRequestZipByIdWithHttpInfo(id, ayPassword, downloadZipRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -377,11 +377,11 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the shared collection. |  |
 | **ayPassword** | **string** | If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. | [optional]  |
-| **sharedCollectionZipRequest** | [**SharedCollectionZipRequest**](SharedCollectionZipRequest.md) | The allowed formats are the input which could be optionally added. | [optional]  |
+| **downloadZipRequest** | [**DownloadZipRequest**](DownloadZipRequest.md) | The request of which assets or download formats should be used.. | [optional]  |
 
 ### Return type
 
-[**SharedCollectionZipRequest**](SharedCollectionZipRequest.md)
+[**DownloadZipRequest**](DownloadZipRequest.md)
 
 ### Authorization
 
@@ -396,7 +396,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Returns the shared collection with the given ID. |  -  |
+| **201** | Returns the requested download ZIP with created zip entity ID. |  -  |
 | **400** | Not valid shared id! (Code: e1eb7b29-e501-4727-bec3-26f5099b7418) |  -  |
 | **404** | Collection on which this share is based, doesn&#39;t exist. (Code: 79dde226-ae08-4f4b-b334-de0cad89c994)&lt;br&gt;or Shared collection date expired! (Code: 6758d66e-0ce6-4770-a497-01a578eac12c)&lt;br&gt;or Shared collection not found. (Code: 87d09a21-14d6-4da4-ab69-01e6c87f108c)&lt;br&gt;or User null or shared collection of user not found. (Code: 5a1ea520-377d-43f1-b2c3-506443056561)&lt;br&gt; |  -  |
 | **401** | This share requires a password (Header: &#39;ay-password&#39;) to be accessed. |  -  |

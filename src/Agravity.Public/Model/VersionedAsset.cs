@@ -40,15 +40,17 @@ namespace Agravity.Public.Model
         /// <param name="versionInfo">versionInfo.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="createdBy">createdBy.</param>
+        /// <param name="blobData">blobData.</param>
         /// <param name="blobUploaded">blobUploaded.</param>
         /// <param name="mimeType">mimeType.</param>
-        public VersionedAsset(int? versionNr = default(int?), DateTime? untilDate = default(DateTime?), string versionInfo = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? blobUploaded = default(DateTime?), string mimeType = default(string))
+        public VersionedAsset(int? versionNr = default(int?), DateTime? untilDate = default(DateTime?), string versionInfo = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), AssetBlob blobData = default(AssetBlob), DateTime? blobUploaded = default(DateTime?), string mimeType = default(string))
         {
             this.VersionNr = versionNr;
             this.UntilDate = untilDate;
             this.VersionInfo = versionInfo;
             this.CreatedDate = createdDate;
             this.CreatedBy = createdBy;
+            this.BlobData = blobData;
             this.BlobUploaded = blobUploaded;
             this.MimeType = mimeType;
         }
@@ -84,6 +86,12 @@ namespace Agravity.Public.Model
         public string CreatedBy { get; set; }
 
         /// <summary>
+        /// Gets or Sets BlobData
+        /// </summary>
+        [DataMember(Name = "blob_data", EmitDefaultValue = false)]
+        public AssetBlob BlobData { get; set; }
+
+        /// <summary>
         /// Gets or Sets BlobUploaded
         /// </summary>
         [DataMember(Name = "blob_uploaded", EmitDefaultValue = true)]
@@ -108,6 +116,7 @@ namespace Agravity.Public.Model
             sb.Append("  VersionInfo: ").Append(VersionInfo).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
+            sb.Append("  BlobData: ").Append(BlobData).Append("\n");
             sb.Append("  BlobUploaded: ").Append(BlobUploaded).Append("\n");
             sb.Append("  MimeType: ").Append(MimeType).Append("\n");
             sb.Append("}\n");

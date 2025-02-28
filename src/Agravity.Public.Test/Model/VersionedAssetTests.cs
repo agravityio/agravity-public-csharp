@@ -101,6 +101,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'BlobData'
+        /// </summary>
+        [Fact]
+        public void BlobDataTest()
+        {
+            // TODO unit test for the property 'BlobData'
+        }
+
+        /// <summary>
         /// Test the property 'BlobUploaded'
         /// </summary>
         [Fact]

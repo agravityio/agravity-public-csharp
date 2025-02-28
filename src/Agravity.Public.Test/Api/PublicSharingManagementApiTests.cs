@@ -98,7 +98,7 @@ namespace Agravity.Public.Test.Api
             //string zipId = null;
             //string ayPassword = null;
             //var response = instance.HttpSharedCollectionsGetStatusZipById(id, zipId, ayPassword);
-            //Assert.IsType<SharedCollectionZipRequest>(response);
+            //Assert.IsType<DownloadZipStatus>(response);
         }
 
         /// <summary>
@@ -110,9 +110,9 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //string ayPassword = null;
-            //SharedCollectionZipRequest sharedCollectionZipRequest = null;
-            //var response = instance.HttpSharedCollectionsRequestZipById(id, ayPassword, sharedCollectionZipRequest);
-            //Assert.IsType<SharedCollectionZipRequest>(response);
+            //DownloadZipRequest downloadZipRequest = null;
+            //var response = instance.HttpSharedCollectionsRequestZipById(id, ayPassword, downloadZipRequest);
+            //Assert.IsType<DownloadZipRequest>(response);
         }
     }
 }

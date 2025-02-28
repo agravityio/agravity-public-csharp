@@ -96,12 +96,12 @@ namespace Agravity.Public.Api
         /// This endpoint gets the progress/status of the ZIP creation of a shared collection.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="id">The ID of the zip request.</param>
         /// <param name="zipId">The ID of the requested zip.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 401 (Unauthorized) is returned. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>SharedCollectionZipRequest</returns>
-        SharedCollectionZipRequest HttpSharedCollectionsGetStatusZipById(string id, string zipId, string ayPassword = default(string), int operationIndex = 0);
+        /// <returns>DownloadZipStatus</returns>
+        DownloadZipStatus HttpSharedCollectionsGetStatusZipById(string id, string zipId, string ayPassword = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -110,12 +110,12 @@ namespace Agravity.Public.Api
         /// This endpoint gets the progress/status of the ZIP creation of a shared collection.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="id">The ID of the zip request.</param>
         /// <param name="zipId">The ID of the requested zip.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 401 (Unauthorized) is returned. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of SharedCollectionZipRequest</returns>
-        ApiResponse<SharedCollectionZipRequest> HttpSharedCollectionsGetStatusZipByIdWithHttpInfo(string id, string zipId, string ayPassword = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of DownloadZipStatus</returns>
+        ApiResponse<DownloadZipStatus> HttpSharedCollectionsGetStatusZipByIdWithHttpInfo(string id, string zipId, string ayPassword = default(string), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -125,10 +125,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the shared collection.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
-        /// <param name="sharedCollectionZipRequest">The allowed formats are the input which could be optionally added. (optional)</param>
+        /// <param name="downloadZipRequest">The request of which assets or download formats should be used.. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>SharedCollectionZipRequest</returns>
-        SharedCollectionZipRequest HttpSharedCollectionsRequestZipById(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0);
+        /// <returns>DownloadZipRequest</returns>
+        DownloadZipRequest HttpSharedCollectionsRequestZipById(string id, string ayPassword = default(string), DownloadZipRequest downloadZipRequest = default(DownloadZipRequest), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -139,10 +139,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the shared collection.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
-        /// <param name="sharedCollectionZipRequest">The allowed formats are the input which could be optionally added. (optional)</param>
+        /// <param name="downloadZipRequest">The request of which assets or download formats should be used.. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of SharedCollectionZipRequest</returns>
-        ApiResponse<SharedCollectionZipRequest> HttpSharedCollectionsRequestZipByIdWithHttpInfo(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0);
+        /// <returns>ApiResponse of DownloadZipRequest</returns>
+        ApiResponse<DownloadZipRequest> HttpSharedCollectionsRequestZipByIdWithHttpInfo(string id, string ayPassword = default(string), DownloadZipRequest downloadZipRequest = default(DownloadZipRequest), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -225,13 +225,13 @@ namespace Agravity.Public.Api
         /// This endpoint gets the progress/status of the ZIP creation of a shared collection.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="id">The ID of the zip request.</param>
         /// <param name="zipId">The ID of the requested zip.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 401 (Unauthorized) is returned. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of SharedCollectionZipRequest</returns>
-        System.Threading.Tasks.Task<SharedCollectionZipRequest> HttpSharedCollectionsGetStatusZipByIdAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of DownloadZipStatus</returns>
+        System.Threading.Tasks.Task<DownloadZipStatus> HttpSharedCollectionsGetStatusZipByIdAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -240,13 +240,13 @@ namespace Agravity.Public.Api
         /// This endpoint gets the progress/status of the ZIP creation of a shared collection.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="id">The ID of the zip request.</param>
         /// <param name="zipId">The ID of the requested zip.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 401 (Unauthorized) is returned. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (SharedCollectionZipRequest)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SharedCollectionZipRequest>> HttpSharedCollectionsGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DownloadZipStatus)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DownloadZipStatus>> HttpSharedCollectionsGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -256,11 +256,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the shared collection.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
-        /// <param name="sharedCollectionZipRequest">The allowed formats are the input which could be optionally added. (optional)</param>
+        /// <param name="downloadZipRequest">The request of which assets or download formats should be used.. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of SharedCollectionZipRequest</returns>
-        System.Threading.Tasks.Task<SharedCollectionZipRequest> HttpSharedCollectionsRequestZipByIdAsync(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of DownloadZipRequest</returns>
+        System.Threading.Tasks.Task<DownloadZipRequest> HttpSharedCollectionsRequestZipByIdAsync(string id, string ayPassword = default(string), DownloadZipRequest downloadZipRequest = default(DownloadZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -271,11 +271,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the shared collection.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
-        /// <param name="sharedCollectionZipRequest">The allowed formats are the input which could be optionally added. (optional)</param>
+        /// <param name="downloadZipRequest">The request of which assets or download formats should be used.. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (SharedCollectionZipRequest)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SharedCollectionZipRequest>> HttpSharedCollectionsRequestZipByIdWithHttpInfoAsync(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DownloadZipRequest)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DownloadZipRequest>> HttpSharedCollectionsRequestZipByIdWithHttpInfoAsync(string id, string ayPassword = default(string), DownloadZipRequest downloadZipRequest = default(DownloadZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -784,14 +784,14 @@ namespace Agravity.Public.Api
         ///  This endpoint gets the progress/status of the ZIP creation of a shared collection.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="id">The ID of the zip request.</param>
         /// <param name="zipId">The ID of the requested zip.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 401 (Unauthorized) is returned. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>SharedCollectionZipRequest</returns>
-        public SharedCollectionZipRequest HttpSharedCollectionsGetStatusZipById(string id, string zipId, string ayPassword = default(string), int operationIndex = 0)
+        /// <returns>DownloadZipStatus</returns>
+        public DownloadZipStatus HttpSharedCollectionsGetStatusZipById(string id, string zipId, string ayPassword = default(string), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest> localVarResponse = HttpSharedCollectionsGetStatusZipByIdWithHttpInfo(id, zipId, ayPassword);
+            Agravity.Public.Client.ApiResponse<DownloadZipStatus> localVarResponse = HttpSharedCollectionsGetStatusZipByIdWithHttpInfo(id, zipId, ayPassword);
             return localVarResponse.Data;
         }
 
@@ -799,12 +799,12 @@ namespace Agravity.Public.Api
         ///  This endpoint gets the progress/status of the ZIP creation of a shared collection.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="id">The ID of the zip request.</param>
         /// <param name="zipId">The ID of the requested zip.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 401 (Unauthorized) is returned. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of SharedCollectionZipRequest</returns>
-        public Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest> HttpSharedCollectionsGetStatusZipByIdWithHttpInfo(string id, string zipId, string ayPassword = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of DownloadZipStatus</returns>
+        public Agravity.Public.Client.ApiResponse<DownloadZipStatus> HttpSharedCollectionsGetStatusZipByIdWithHttpInfo(string id, string zipId, string ayPassword = default(string), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -852,7 +852,7 @@ namespace Agravity.Public.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<SharedCollectionZipRequest>("/shared/{id}/zip/{zipId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DownloadZipStatus>("/shared/{id}/zip/{zipId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpSharedCollectionsGetStatusZipById", localVarResponse);
@@ -869,15 +869,15 @@ namespace Agravity.Public.Api
         ///  This endpoint gets the progress/status of the ZIP creation of a shared collection.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="id">The ID of the zip request.</param>
         /// <param name="zipId">The ID of the requested zip.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 401 (Unauthorized) is returned. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of SharedCollectionZipRequest</returns>
-        public async System.Threading.Tasks.Task<SharedCollectionZipRequest> HttpSharedCollectionsGetStatusZipByIdAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of DownloadZipStatus</returns>
+        public async System.Threading.Tasks.Task<DownloadZipStatus> HttpSharedCollectionsGetStatusZipByIdAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest> localVarResponse = await HttpSharedCollectionsGetStatusZipByIdWithHttpInfoAsync(id, zipId, ayPassword, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<DownloadZipStatus> localVarResponse = await HttpSharedCollectionsGetStatusZipByIdWithHttpInfoAsync(id, zipId, ayPassword, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -885,13 +885,13 @@ namespace Agravity.Public.Api
         ///  This endpoint gets the progress/status of the ZIP creation of a shared collection.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the zip request collection.</param>
+        /// <param name="id">The ID of the zip request.</param>
         /// <param name="zipId">The ID of the requested zip.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 401 (Unauthorized) is returned. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (SharedCollectionZipRequest)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest>> HttpSharedCollectionsGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DownloadZipStatus)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<DownloadZipStatus>> HttpSharedCollectionsGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, string ayPassword = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -940,7 +940,7 @@ namespace Agravity.Public.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<SharedCollectionZipRequest>("/shared/{id}/zip/{zipId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DownloadZipStatus>("/shared/{id}/zip/{zipId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -960,12 +960,12 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the shared collection.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
-        /// <param name="sharedCollectionZipRequest">The allowed formats are the input which could be optionally added. (optional)</param>
+        /// <param name="downloadZipRequest">The request of which assets or download formats should be used.. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>SharedCollectionZipRequest</returns>
-        public SharedCollectionZipRequest HttpSharedCollectionsRequestZipById(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0)
+        /// <returns>DownloadZipRequest</returns>
+        public DownloadZipRequest HttpSharedCollectionsRequestZipById(string id, string ayPassword = default(string), DownloadZipRequest downloadZipRequest = default(DownloadZipRequest), int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest> localVarResponse = HttpSharedCollectionsRequestZipByIdWithHttpInfo(id, ayPassword, sharedCollectionZipRequest);
+            Agravity.Public.Client.ApiResponse<DownloadZipRequest> localVarResponse = HttpSharedCollectionsRequestZipByIdWithHttpInfo(id, ayPassword, downloadZipRequest);
             return localVarResponse.Data;
         }
 
@@ -975,10 +975,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the shared collection.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
-        /// <param name="sharedCollectionZipRequest">The allowed formats are the input which could be optionally added. (optional)</param>
+        /// <param name="downloadZipRequest">The request of which assets or download formats should be used.. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of SharedCollectionZipRequest</returns>
-        public Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest> HttpSharedCollectionsRequestZipByIdWithHttpInfo(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0)
+        /// <returns>ApiResponse of DownloadZipRequest</returns>
+        public Agravity.Public.Client.ApiResponse<DownloadZipRequest> HttpSharedCollectionsRequestZipByIdWithHttpInfo(string id, string ayPassword = default(string), DownloadZipRequest downloadZipRequest = default(DownloadZipRequest), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1014,14 +1014,14 @@ namespace Agravity.Public.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("ay-password", Agravity.Public.Client.ClientUtils.ParameterToString(ayPassword)); // header parameter
             }
-            localVarRequestOptions.Data = sharedCollectionZipRequest;
+            localVarRequestOptions.Data = downloadZipRequest;
 
             localVarRequestOptions.Operation = "PublicSharingManagementApi.HttpSharedCollectionsRequestZipById";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<SharedCollectionZipRequest>("/shared/{id}/zip", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<DownloadZipRequest>("/shared/{id}/zip", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpSharedCollectionsRequestZipById", localVarResponse);
@@ -1040,13 +1040,13 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the shared collection.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
-        /// <param name="sharedCollectionZipRequest">The allowed formats are the input which could be optionally added. (optional)</param>
+        /// <param name="downloadZipRequest">The request of which assets or download formats should be used.. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of SharedCollectionZipRequest</returns>
-        public async System.Threading.Tasks.Task<SharedCollectionZipRequest> HttpSharedCollectionsRequestZipByIdAsync(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of DownloadZipRequest</returns>
+        public async System.Threading.Tasks.Task<DownloadZipRequest> HttpSharedCollectionsRequestZipByIdAsync(string id, string ayPassword = default(string), DownloadZipRequest downloadZipRequest = default(DownloadZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest> localVarResponse = await HttpSharedCollectionsRequestZipByIdWithHttpInfoAsync(id, ayPassword, sharedCollectionZipRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<DownloadZipRequest> localVarResponse = await HttpSharedCollectionsRequestZipByIdWithHttpInfoAsync(id, ayPassword, downloadZipRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1056,11 +1056,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the shared collection.</param>
         /// <param name="ayPassword">If shared collection has a password, this header is mandatory. Otherwise StatusCode 403 (Forbidden) is returned. (optional)</param>
-        /// <param name="sharedCollectionZipRequest">The allowed formats are the input which could be optionally added. (optional)</param>
+        /// <param name="downloadZipRequest">The request of which assets or download formats should be used.. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (SharedCollectionZipRequest)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SharedCollectionZipRequest>> HttpSharedCollectionsRequestZipByIdWithHttpInfoAsync(string id, string ayPassword = default(string), SharedCollectionZipRequest sharedCollectionZipRequest = default(SharedCollectionZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DownloadZipRequest)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<DownloadZipRequest>> HttpSharedCollectionsRequestZipByIdWithHttpInfoAsync(string id, string ayPassword = default(string), DownloadZipRequest downloadZipRequest = default(DownloadZipRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1097,14 +1097,14 @@ namespace Agravity.Public.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("ay-password", Agravity.Public.Client.ClientUtils.ParameterToString(ayPassword)); // header parameter
             }
-            localVarRequestOptions.Data = sharedCollectionZipRequest;
+            localVarRequestOptions.Data = downloadZipRequest;
 
             localVarRequestOptions.Operation = "PublicSharingManagementApi.HttpSharedCollectionsRequestZipById";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<SharedCollectionZipRequest>("/shared/{id}/zip", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DownloadZipRequest>("/shared/{id}/zip", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

@@ -77,7 +77,7 @@ namespace Agravity.Public.Test.Api
             //string id = null;
             //string zipId = null;
             //var response = instance.HttpPortalGetStatusZipById(id, zipId);
-            //Assert.IsType<PortalZipRequest>(response);
+            //Assert.IsType<DownloadZipStatus>(response);
         }
 
         /// <summary>
@@ -88,9 +88,9 @@ namespace Agravity.Public.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
-            //PortalZipRequest portalZipRequest = null;
-            //var response = instance.HttpPortalRequestZipById(id, portalZipRequest);
-            //Assert.IsType<PortalZipRequest>(response);
+            //DownloadZipRequest downloadZipRequest = null;
+            //var response = instance.HttpPortalRequestZipById(id, downloadZipRequest);
+            //Assert.IsType<DownloadZipRequest>(response);
         }
 
         /// <summary>

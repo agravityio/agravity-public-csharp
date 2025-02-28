@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **VersionInfo** | **string** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 
+**BlobData** | [**AssetBlob**](AssetBlob.md) |  | [optional] 
 **BlobUploaded** | **DateTime?** |  | [optional] 
 **MimeType** | **string** |  | [optional] 
 

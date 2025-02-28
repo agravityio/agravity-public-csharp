@@ -34,7 +34,7 @@ namespace Agravity.Public.Api
         /// This endpoint lists all saved searches in database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
+        /// <param name="external">This parameter filters out all saved searches on basis this boolean. Only admins can request the external saved searches. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -48,7 +48,7 @@ namespace Agravity.Public.Api
         /// This endpoint lists all saved searches in database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
+        /// <param name="external">This parameter filters out all saved searches on basis this boolean. Only admins can request the external saved searches. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -70,7 +70,7 @@ namespace Agravity.Public.Api
         /// This endpoint lists all saved searches in database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
+        /// <param name="external">This parameter filters out all saved searches on basis this boolean. Only admins can request the external saved searches. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -85,7 +85,7 @@ namespace Agravity.Public.Api
         /// This endpoint lists all saved searches in database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
+        /// <param name="external">This parameter filters out all saved searches on basis this boolean. Only admins can request the external saved searches. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -216,7 +216,7 @@ namespace Agravity.Public.Api
         ///  This endpoint lists all saved searches in database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
+        /// <param name="external">This parameter filters out all saved searches on basis this boolean. Only admins can request the external saved searches. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -231,7 +231,7 @@ namespace Agravity.Public.Api
         ///  This endpoint lists all saved searches in database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
+        /// <param name="external">This parameter filters out all saved searches on basis this boolean. Only admins can request the external saved searches. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -300,7 +300,7 @@ namespace Agravity.Public.Api
         ///  This endpoint lists all saved searches in database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
+        /// <param name="external">This parameter filters out all saved searches on basis this boolean. Only admins can request the external saved searches. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -316,7 +316,7 @@ namespace Agravity.Public.Api
         ///  This endpoint lists all saved searches in database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="external">This parameter filters out all saved searches on basis this boolean. (optional)</param>
+        /// <param name="external">This parameter filters out all saved searches on basis this boolean. Only admins can request the external saved searches. (optional)</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>

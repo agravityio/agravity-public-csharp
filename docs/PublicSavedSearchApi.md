@@ -36,7 +36,7 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicSavedSearchApi(config);
-            var external = true;  // bool? | This parameter filters out all saved searches on basis this boolean. (optional) 
+            var external = true;  // bool? | This parameter filters out all saved searches on basis this boolean. Only admins can request the external saved searches. (optional) 
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
             var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
@@ -79,7 +79,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **external** | **bool?** | This parameter filters out all saved searches on basis this boolean. | [optional]  |
+| **external** | **bool?** | This parameter filters out all saved searches on basis this boolean. Only admins can request the external saved searches. | [optional]  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 | **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 

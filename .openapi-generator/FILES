@@ -38,6 +38,8 @@ docs/DownloadZipStatus.md
 docs/DynamicImageOperation.md
 docs/EntityId.md
 docs/EntityIdName.md
+docs/EntityListResult.md
+docs/EntityNamesRequest.md
 docs/FrontendAppConfig.md
 docs/GroupAllAppData.md
 docs/MoveCollectionBody.md
@@ -158,6 +160,8 @@ src/Agravity.Public.Test/Model/DownloadZipStatusTests.cs
 src/Agravity.Public.Test/Model/DynamicImageOperationTests.cs
 src/Agravity.Public.Test/Model/EntityIdNameTests.cs
 src/Agravity.Public.Test/Model/EntityIdTests.cs
+src/Agravity.Public.Test/Model/EntityListResultTests.cs
+src/Agravity.Public.Test/Model/EntityNamesRequestTests.cs
 src/Agravity.Public.Test/Model/FrontendAppConfigTests.cs
 src/Agravity.Public.Test/Model/GroupAllAppDataTests.cs
 src/Agravity.Public.Test/Model/MoveCollectionBodyTests.cs
@@ -271,6 +275,8 @@ src/Agravity.Public/Model/DownloadZipStatus.cs
 src/Agravity.Public/Model/DynamicImageOperation.cs
 src/Agravity.Public/Model/EntityId.cs
 src/Agravity.Public/Model/EntityIdName.cs
+src/Agravity.Public/Model/EntityListResult.cs
+src/Agravity.Public/Model/EntityNamesRequest.cs
 src/Agravity.Public/Model/FrontendAppConfig.cs
 src/Agravity.Public/Model/GroupAllAppData.cs
 src/Agravity.Public/Model/MoveCollectionBody.cs

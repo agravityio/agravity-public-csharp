@@ -2322,6 +2322,38 @@ paths:
       - function_key: []
       tags:
       - Public Collection Management
+  /collectionsbynames:
+    post:
+      description: This endpoint fetches all collections based on names which comes
+        from an array inside the POST request body and return another list of EntityIdName
+        objects and an array of strings with the names which could not be found.
+      operationId: HttpPublicPostCollectionsGetByNames
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/entityNamesRequest'
+        description: An object with the array of strings with names of the collections
+          to fetch.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/entityListResult'
+          description: Returns an array of EntityIdName objects with the found collections
+            and an array of strings with the names which could not be found.
+        "401":
+          description: Unauthorized. API Key not provided.
+        "400":
+          description: The request body is not a valid array of strings.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Collection Management
   /secureupload/{id}:
     get:
       description: Searchs for one single secure upload entity of an user and returns
@@ -6715,12 +6747,15 @@ components:
       type: object
     collectionUDL:
       example:
+        entity_type: entity_type
         children:
-        - translations:
+        - entity_type: entity_type
+          translations:
             key: null
           name: name
           id: id
-        - translations:
+        - entity_type: entity_type
+          translations:
             key: null
           name: name
           id: id
@@ -6735,6 +6770,9 @@ components:
           nullable: true
           type: array
         name:
+          nullable: true
+          type: string
+        entity_type:
           nullable: true
           type: string
         translations:
@@ -6769,12 +6807,15 @@ components:
           - coll_types
           - coll_types
         udl_entries:
-        - children:
-          - translations:
+        - entity_type: entity_type
+          children:
+          - entity_type: entity_type
+            translations:
               key: null
             name: name
             id: id
-          - translations:
+          - entity_type: entity_type
+            translations:
               key: null
             name: name
             id: id
@@ -6782,12 +6823,15 @@ components:
             key: null
           name: name
           id: id
-        - children:
-          - translations:
+        - entity_type: entity_type
+          children:
+          - entity_type: entity_type
+            translations:
               key: null
             name: name
             id: id
-          - translations:
+          - entity_type: entity_type
+            translations:
               key: null
             name: name
             id: id
@@ -8028,6 +8072,7 @@ components:
       type: object
     entityIdName:
       example:
+        entity_type: entity_type
         translations:
           key: null
         name: name
@@ -8036,12 +8081,54 @@ components:
         name:
           nullable: true
           type: string
+        entity_type:
+          nullable: true
+          type: string
         translations:
           additionalProperties:
             $ref: '#/components/schemas/dictionary_object'
           nullable: true
           type: object
         id:
+          nullable: true
+          type: string
+      type: object
+    entityListResult:
+      example:
+        entities:
+        - entity_type: entity_type
+          translations:
+            key: null
+          name: name
+          id: id
+        - entity_type: entity_type
+          translations:
+            key: null
+          name: name
+          id: id
+        notfounds:
+        - notfounds
+        - notfounds
+      properties:
+        entities:
+          items:
+            $ref: '#/components/schemas/entityIdName'
+          nullable: true
+          type: array
+        notfounds:
+          items:
+            type: string
+          nullable: true
+          type: array
+      type: object
+    entityNamesRequest:
+      properties:
+        names:
+          items:
+            type: string
+          nullable: true
+          type: array
+        filter:
           nullable: true
           type: string
       type: object
@@ -9091,12 +9178,15 @@ components:
         - allowed_origins
         - allowed_origins
         udls:
-        - children:
-          - translations:
+        - entity_type: entity_type
+          children:
+          - entity_type: entity_type
+            translations:
               key: null
             name: name
             id: id
-          - translations:
+          - entity_type: entity_type
+            translations:
               key: null
             name: name
             id: id
@@ -9104,12 +9194,15 @@ components:
             key: null
           name: name
           id: id
-        - children:
-          - translations:
+        - entity_type: entity_type
+          children:
+          - entity_type: entity_type
+            translations:
               key: null
             name: name
             id: id
-          - translations:
+          - entity_type: entity_type
+            translations:
               key: null
             name: name
             id: id

@@ -147,6 +147,7 @@ Class | Method | HTTP request | Description
 *PublicCollectionManagementApi* | [**HttpGetCollectionPreviewsById**](docs/PublicCollectionManagementApi.md#httpgetcollectionpreviewsbyid) | **GET** /collections/{id}/previews | 
 *PublicCollectionManagementApi* | [**HttpPublicCollectionsDeleteById**](docs/PublicCollectionManagementApi.md#httppubliccollectionsdeletebyid) | **DELETE** /collections/{id} | 
 *PublicCollectionManagementApi* | [**HttpPublicCollectionsUpdateById**](docs/PublicCollectionManagementApi.md#httppubliccollectionsupdatebyid) | **POST** /collections/{id} | 
+*PublicCollectionManagementApi* | [**HttpPublicPostCollectionsGetByNames**](docs/PublicCollectionManagementApi.md#httppublicpostcollectionsgetbynames) | **POST** /collectionsbynames | 
 *PublicCollectionSecureUploadApi* | [**HttpSecureUploadEntityCheckById**](docs/PublicCollectionSecureUploadApi.md#httpsecureuploadentitycheckbyid) | **GET** /secureupload/{id} | 
 *PublicCollectionSecureUploadApi* | [**HttpSecureUploadFileById**](docs/PublicCollectionSecureUploadApi.md#httpsecureuploadfilebyid) | **POST** /secureupload/{id}/upload | 
 *PublicCollectionTypeManagementApi* | [**HttpCollectionTypesGet**](docs/PublicCollectionTypeManagementApi.md#httpcollectiontypesget) | **GET** /collectiontypes | 
@@ -232,6 +233,8 @@ Class | Method | HTTP request | Description
  - [Model.DynamicImageOperation](docs/DynamicImageOperation.md)
  - [Model.EntityId](docs/EntityId.md)
  - [Model.EntityIdName](docs/EntityIdName.md)
+ - [Model.EntityListResult](docs/EntityListResult.md)
+ - [Model.EntityNamesRequest](docs/EntityNamesRequest.md)
  - [Model.FrontendAppConfig](docs/FrontendAppConfig.md)
  - [Model.GroupAllAppData](docs/GroupAllAppData.md)
  - [Model.MoveCollectionBody](docs/MoveCollectionBody.md)

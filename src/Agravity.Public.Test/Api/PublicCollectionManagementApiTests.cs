@@ -168,5 +168,17 @@ namespace Agravity.Public.Test.Api
             //var response = instance.HttpPublicCollectionsUpdateById(id, collection, acceptLanguage);
             //Assert.IsType<Collection>(response);
         }
+
+        /// <summary>
+        /// Test HttpPublicPostCollectionsGetByNames
+        /// </summary>
+        [Fact]
+        public void HttpPublicPostCollectionsGetByNamesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //EntityNamesRequest entityNamesRequest = null;
+            //var response = instance.HttpPublicPostCollectionsGetByNames(entityNamesRequest);
+            //Assert.IsType<EntityListResult>(response);
+        }
     }
 }

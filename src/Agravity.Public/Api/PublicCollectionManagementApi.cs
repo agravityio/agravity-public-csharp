@@ -249,6 +249,29 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Collection</returns>
         ApiResponse<Collection> HttpPublicCollectionsUpdateByIdWithHttpInfo(string id, Collection collection, string acceptLanguage = default(string), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint fetches all collections based on names which comes from an array inside the POST request body and return another list of EntityIdName objects and an array of strings with the names which could not be found.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityNamesRequest">An object with the array of strings with names of the collections to fetch.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>EntityListResult</returns>
+        EntityListResult HttpPublicPostCollectionsGetByNames(EntityNamesRequest entityNamesRequest, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint fetches all collections based on names which comes from an array inside the POST request body and return another list of EntityIdName objects and an array of strings with the names which could not be found.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityNamesRequest">An object with the array of strings with names of the collections to fetch.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of EntityListResult</returns>
+        ApiResponse<EntityListResult> HttpPublicPostCollectionsGetByNamesWithHttpInfo(EntityNamesRequest entityNamesRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -496,6 +519,31 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Collection)</returns>
         System.Threading.Tasks.Task<ApiResponse<Collection>> HttpPublicCollectionsUpdateByIdWithHttpInfoAsync(string id, Collection collection, string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint fetches all collections based on names which comes from an array inside the POST request body and return another list of EntityIdName objects and an array of strings with the names which could not be found.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityNamesRequest">An object with the array of strings with names of the collections to fetch.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of EntityListResult</returns>
+        System.Threading.Tasks.Task<EntityListResult> HttpPublicPostCollectionsGetByNamesAsync(EntityNamesRequest entityNamesRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint fetches all collections based on names which comes from an array inside the POST request body and return another list of EntityIdName objects and an array of strings with the names which could not be found.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityNamesRequest">An object with the array of strings with names of the collections to fetch.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (EntityListResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EntityListResult>> HttpPublicPostCollectionsGetByNamesWithHttpInfoAsync(EntityNamesRequest entityNamesRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -2083,6 +2131,162 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpPublicCollectionsUpdateById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint fetches all collections based on names which comes from an array inside the POST request body and return another list of EntityIdName objects and an array of strings with the names which could not be found.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityNamesRequest">An object with the array of strings with names of the collections to fetch.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>EntityListResult</returns>
+        public EntityListResult HttpPublicPostCollectionsGetByNames(EntityNamesRequest entityNamesRequest, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<EntityListResult> localVarResponse = HttpPublicPostCollectionsGetByNamesWithHttpInfo(entityNamesRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint fetches all collections based on names which comes from an array inside the POST request body and return another list of EntityIdName objects and an array of strings with the names which could not be found.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityNamesRequest">An object with the array of strings with names of the collections to fetch.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of EntityListResult</returns>
+        public Agravity.Public.Client.ApiResponse<EntityListResult> HttpPublicPostCollectionsGetByNamesWithHttpInfo(EntityNamesRequest entityNamesRequest, int operationIndex = 0)
+        {
+            // verify the required parameter 'entityNamesRequest' is set
+            if (entityNamesRequest == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'entityNamesRequest' when calling PublicCollectionManagementApi->HttpPublicPostCollectionsGetByNames");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = entityNamesRequest;
+
+            localVarRequestOptions.Operation = "PublicCollectionManagementApi.HttpPublicPostCollectionsGetByNames";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<EntityListResult>("/collectionsbynames", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPublicPostCollectionsGetByNames", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint fetches all collections based on names which comes from an array inside the POST request body and return another list of EntityIdName objects and an array of strings with the names which could not be found.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityNamesRequest">An object with the array of strings with names of the collections to fetch.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of EntityListResult</returns>
+        public async System.Threading.Tasks.Task<EntityListResult> HttpPublicPostCollectionsGetByNamesAsync(EntityNamesRequest entityNamesRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Agravity.Public.Client.ApiResponse<EntityListResult> localVarResponse = await HttpPublicPostCollectionsGetByNamesWithHttpInfoAsync(entityNamesRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint fetches all collections based on names which comes from an array inside the POST request body and return another list of EntityIdName objects and an array of strings with the names which could not be found.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="entityNamesRequest">An object with the array of strings with names of the collections to fetch.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (EntityListResult)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<EntityListResult>> HttpPublicPostCollectionsGetByNamesWithHttpInfoAsync(EntityNamesRequest entityNamesRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'entityNamesRequest' is set
+            if (entityNamesRequest == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'entityNamesRequest' when calling PublicCollectionManagementApi->HttpPublicPostCollectionsGetByNames");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = entityNamesRequest;
+
+            localVarRequestOptions.Operation = "PublicCollectionManagementApi.HttpPublicPostCollectionsGetByNames";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<EntityListResult>("/collectionsbynames", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpPublicPostCollectionsGetByNames", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

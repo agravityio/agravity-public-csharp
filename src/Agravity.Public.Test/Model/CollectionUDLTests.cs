@@ -74,6 +74,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'EntityType'
+        /// </summary>
+        [Fact]
+        public void EntityTypeTest()
+        {
+            // TODO unit test for the property 'EntityType'
+        }
+
+        /// <summary>
         /// Test the property 'Translations'
         /// </summary>
         [Fact]

@@ -8,6 +8,12 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="9.0.1"/> [9.0.1](https://www.nuget.org/packages/Agravity.Public/9.0.1) (2025-03-09)
+
+- #1361 Add endpoints to fetch collection names at once (private & public)
+  - Add POST `/collectionsbynames` - This endpoint fetches all collections based on names which comes from an array inside the POST request body and return another list of EntityIdName objects and an array of strings with the names which could not be found.
+  - Add `entity_type` property to EntityIdName (and therefore to ColllectionUDL as well)
+
 ## AgravityAPI <a name="9.0.0"/> [9.0.0](https://www.nuget.org/packages/Agravity.Public/9.0.0) (2025-02-28)
 
 - #1343 Add contact person to environment (AppConfig)

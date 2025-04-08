@@ -4728,19 +4728,6 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
-          ai_groups:
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
           items:
           - item_type: item_type
             format: format
@@ -4967,19 +4954,6 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
-          ai_groups:
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
           items:
           - item_type: item_type
             format: format
@@ -5152,31 +5126,6 @@ components:
           format: date-time
           nullable: true
           type: string
-      type: object
-    artificialIntelligenceGroup:
-      example:
-        origin: origin
-        values:
-        - null
-        - null
-        min_confidence: 0.8008281904610115
-        url: url
-      properties:
-        origin:
-          nullable: true
-          type: string
-        url:
-          nullable: true
-          type: string
-        min_confidence:
-          format: double
-          nullable: true
-          type: number
-        values:
-          items:
-            $ref: '#/components/schemas/keyValuePair_object'
-          nullable: true
-          type: array
       type: object
     asset:
       example:
@@ -5357,19 +5306,6 @@ components:
         modified_by: modified_by
         created_date: 2000-01-23T04:56:07.000+00:00
         pk: pk
-        ai_groups:
-        - origin: origin
-          values:
-          - null
-          - null
-          min_confidence: 0.8008281904610115
-          url: url
-        - origin: origin
-          values:
-          - null
-          - null
-          min_confidence: 0.8008281904610115
-          url: url
         items:
         - item_type: item_type
           format: format
@@ -5435,11 +5371,6 @@ components:
         duplicates:
           items:
             type: string
-          nullable: true
-          type: array
-        ai_groups:
-          items:
-            $ref: '#/components/schemas/artificialIntelligenceGroup'
           nullable: true
           type: array
         keywords:
@@ -6083,19 +6014,6 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
-          ai_groups:
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
           items:
           - item_type: item_type
             format: format
@@ -6322,19 +6240,6 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
-          ai_groups:
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
           items:
           - item_type: item_type
             format: format
@@ -7460,19 +7365,6 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
-          ai_groups:
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
           items:
           - item_type: item_type
             format: format
@@ -7699,19 +7591,6 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
-          ai_groups:
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
           items:
           - item_type: item_type
             format: format
@@ -8333,19 +8212,6 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
-          ai_groups:
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
           items:
           - item_type: item_type
             format: format
@@ -8572,19 +8438,6 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
-          ai_groups:
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
-          - origin: origin
-            values:
-            - null
-            - null
-            min_confidence: 0.8008281904610115
-            url: url
           items:
           - item_type: item_type
             format: format
@@ -10913,19 +10766,6 @@ components:
             modified_by: modified_by
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
-            ai_groups:
-            - origin: origin
-              values:
-              - null
-              - null
-              min_confidence: 0.8008281904610115
-              url: url
-            - origin: origin
-              values:
-              - null
-              - null
-              min_confidence: 0.8008281904610115
-              url: url
             items:
             - item_type: item_type
               format: format
@@ -11152,19 +10992,6 @@ components:
             modified_by: modified_by
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
-            ai_groups:
-            - origin: origin
-              values:
-              - null
-              - null
-              min_confidence: 0.8008281904610115
-              url: url
-            - origin: origin
-              values:
-              - null
-              - null
-              min_confidence: 0.8008281904610115
-              url: url
             items:
             - item_type: item_type
               format: format

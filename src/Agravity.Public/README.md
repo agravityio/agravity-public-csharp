@@ -202,7 +202,6 @@ Class | Method | HTTP request | Description
  - [Model.AgravityInfoResponse](docs/AgravityInfoResponse.md)
  - [Model.AgravityVersion](docs/AgravityVersion.md)
  - [Model.AllWebAppData](docs/AllWebAppData.md)
- - [Model.ArtificialIntelligenceGroup](docs/ArtificialIntelligenceGroup.md)
  - [Model.Asset](docs/Asset.md)
  - [Model.AssetAvailability](docs/AssetAvailability.md)
  - [Model.AssetBlob](docs/AssetBlob.md)

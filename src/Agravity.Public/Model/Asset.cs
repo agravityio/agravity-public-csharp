@@ -71,7 +71,6 @@ namespace Agravity.Public.Model
         /// <param name="name">name.</param>
         /// <param name="assetType">assetType.</param>
         /// <param name="duplicates">duplicates.</param>
-        /// <param name="aiGroups">aiGroups.</param>
         /// <param name="keywords">keywords.</param>
         /// <param name="origBlob">origBlob.</param>
         /// <param name="blobs">blobs.</param>
@@ -94,14 +93,13 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Asset(string id = default(string), string entityType = default(string), string name = default(string), string assetType = default(string), List<string> duplicates = default(List<string>), List<ArtificialIntelligenceGroup> aiGroups = default(List<ArtificialIntelligenceGroup>), List<string> keywords = default(List<string>), AssetBlob origBlob = default(AssetBlob), List<AssetBlob> blobs = default(List<AssetBlob>), List<string> collections = default(List<string>), string failedReason = default(string), string regionOfOrigin = default(string), string availability = default(string), DateTime? availableFrom = default(DateTime?), DateTime? availableTo = default(DateTime?), Dictionary<string, object> custom = default(Dictionary<string, object>), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), RoleEnum? role = RoleEnum.NONE, string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public Asset(string id = default(string), string entityType = default(string), string name = default(string), string assetType = default(string), List<string> duplicates = default(List<string>), List<string> keywords = default(List<string>), AssetBlob origBlob = default(AssetBlob), List<AssetBlob> blobs = default(List<AssetBlob>), List<string> collections = default(List<string>), string failedReason = default(string), string regionOfOrigin = default(string), string availability = default(string), DateTime? availableFrom = default(DateTime?), DateTime? availableTo = default(DateTime?), Dictionary<string, object> custom = default(Dictionary<string, object>), List<CollTypeItem> items = default(List<CollTypeItem>), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), RoleEnum? role = RoleEnum.NONE, string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
             this.EntityType = entityType;
             this.Name = name;
             this.AssetType = assetType;
             this.Duplicates = duplicates;
-            this.AiGroups = aiGroups;
             this.Keywords = keywords;
             this.OrigBlob = origBlob;
             this.Blobs = blobs;
@@ -155,12 +153,6 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "duplicates", EmitDefaultValue = true)]
         public List<string> Duplicates { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AiGroups
-        /// </summary>
-        [DataMember(Name = "ai_groups", EmitDefaultValue = true)]
-        public List<ArtificialIntelligenceGroup> AiGroups { get; set; }
 
         /// <summary>
         /// Gets or Sets Keywords
@@ -301,7 +293,6 @@ namespace Agravity.Public.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  AssetType: ").Append(AssetType).Append("\n");
             sb.Append("  Duplicates: ").Append(Duplicates).Append("\n");
-            sb.Append("  AiGroups: ").Append(AiGroups).Append("\n");
             sb.Append("  Keywords: ").Append(Keywords).Append("\n");
             sb.Append("  OrigBlob: ").Append(OrigBlob).Append("\n");
             sb.Append("  Blobs: ").Append(Blobs).Append("\n");

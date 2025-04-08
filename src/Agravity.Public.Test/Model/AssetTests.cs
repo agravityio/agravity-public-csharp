@@ -101,15 +101,6 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'AiGroups'
-        /// </summary>
-        [Fact]
-        public void AiGroupsTest()
-        {
-            // TODO unit test for the property 'AiGroups'
-        }
-
-        /// <summary>
         /// Test the property 'Keywords'
         /// </summary>
         [Fact]

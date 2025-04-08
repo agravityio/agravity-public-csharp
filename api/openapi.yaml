@@ -17,7 +17,7 @@ info:
     <li>Get version of deployment</li></ul><br/><b>API key is needed to access these\
     \ endpoints.</b><br/><br/>Copyright © Agravity GmbH 2025. All Rights Reserved"
   title: Agravity OpenAPI Documentation - Public Functions
-  version: 9.0.2
+  version: 9.0.3
 servers:
 - url: http://localhost:7072/api
 paths:

@@ -3310,6 +3310,16 @@ paths:
         schema:
           type: string
         style: form
+      - description: "Search Broadness: Can be 0, 1 or 2. (0 is the most exact search,\
+          \ 2 is the broadest search) (1, 2 is with AI)"
+        explode: true
+        in: query
+        name: broadness
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
       - description: Colon separated key value filter for additional scopes. It applies
           the same conventions as for filter parameter.
         explode: true
@@ -5835,7 +5845,7 @@ components:
           value: "{}"
           operator: Equals
         continuation_token: continuation_token
-        size: 1
+        size: 6
         page:
         - region_of_origin: region_of_origin
           role: NONE
@@ -6289,7 +6299,7 @@ components:
             status: status
           failed_reason: failed_reason
           status: status
-        page_size: 6
+        page_size: 0
       properties:
         page:
           items:
@@ -6326,6 +6336,7 @@ components:
         portal_id: portal_id
         scopefilter: scopefilter
         collectionid: collectionid
+        broadness: 5
       nullable: true
       properties:
         searchString:
@@ -6353,6 +6364,10 @@ components:
         mode:
           nullable: true
           type: string
+        broadness:
+          format: int32
+          nullable: true
+          type: integer
         ids:
           nullable: true
           type: string
@@ -10399,10 +10414,10 @@ components:
     searchFacet:
       example:
         entities:
-        - count: 5
+        - count: 2
           name: name
           value: value
-        - count: 5
+        - count: 2
           name: name
           value: value
         name: name
@@ -10418,7 +10433,7 @@ components:
       type: object
     searchFacetEntity:
       example:
-        count: 5
+        count: 2
         name: name
         value: value
       properties:
@@ -10447,7 +10462,8 @@ components:
           portal_id: portal_id
           scopefilter: scopefilter
           collectionid: collectionid
-        count: 2
+          broadness: 5
+        count: 7
         data_result:
           sum_collection_results: 6
           sum_asset_results: 0
@@ -11043,18 +11059,18 @@ components:
             status: status
         facets:
         - entities:
-          - count: 5
+          - count: 2
             name: name
             value: value
-          - count: 5
+          - count: 2
             name: name
             value: value
           name: name
         - entities:
-          - count: 5
+          - count: 2
             name: name
             value: value
-          - count: 5
+          - count: 2
             name: name
             value: value
           name: name

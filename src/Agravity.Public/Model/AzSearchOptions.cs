@@ -43,10 +43,11 @@ namespace Agravity.Public.Model
         /// <param name="filter">filter.</param>
         /// <param name="orderby">orderby.</param>
         /// <param name="mode">mode.</param>
+        /// <param name="broadness">broadness.</param>
         /// <param name="ids">ids.</param>
         /// <param name="portalId">portalId.</param>
         /// <param name="scopefilter">scopefilter.</param>
-        public AzSearchOptions(string searchString = default(string), int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string filter = default(string), string orderby = default(string), string mode = default(string), string ids = default(string), string portalId = default(string), string scopefilter = default(string))
+        public AzSearchOptions(string searchString = default(string), int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string filter = default(string), string orderby = default(string), string mode = default(string), int? broadness = default(int?), string ids = default(string), string portalId = default(string), string scopefilter = default(string))
         {
             this.SearchString = searchString;
             this.Limit = limit;
@@ -56,6 +57,7 @@ namespace Agravity.Public.Model
             this.Filter = filter;
             this.Orderby = orderby;
             this.Mode = mode;
+            this.Broadness = broadness;
             this.Ids = ids;
             this.PortalId = portalId;
             this.Scopefilter = scopefilter;
@@ -110,6 +112,12 @@ namespace Agravity.Public.Model
         public string Mode { get; set; }
 
         /// <summary>
+        /// Gets or Sets Broadness
+        /// </summary>
+        [DataMember(Name = "broadness", EmitDefaultValue = true)]
+        public int? Broadness { get; set; }
+
+        /// <summary>
         /// Gets or Sets Ids
         /// </summary>
         [DataMember(Name = "ids", EmitDefaultValue = true)]
@@ -143,6 +151,7 @@ namespace Agravity.Public.Model
             sb.Append("  Filter: ").Append(Filter).Append("\n");
             sb.Append("  Orderby: ").Append(Orderby).Append("\n");
             sb.Append("  Mode: ").Append(Mode).Append("\n");
+            sb.Append("  Broadness: ").Append(Broadness).Append("\n");
             sb.Append("  Ids: ").Append(Ids).Append("\n");
             sb.Append("  PortalId: ").Append(PortalId).Append("\n");
             sb.Append("  Scopefilter: ").Append(Scopefilter).Append("\n");

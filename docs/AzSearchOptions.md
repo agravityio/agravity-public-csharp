@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Filter** | **string** |  | [optional] 
 **Orderby** | **string** |  | [optional] 
 **Mode** | **string** |  | [optional] 
+**Broadness** | **int?** |  | [optional] 
 **Ids** | **string** |  | [optional] 
 **PortalId** | **string** |  | [optional] 
 **Scopefilter** | **string** |  | [optional] 

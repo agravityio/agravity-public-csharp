@@ -128,6 +128,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Broadness'
+        /// </summary>
+        [Fact]
+        public void BroadnessTest()
+        {
+            // TODO unit test for the property 'Broadness'
+        }
+
+        /// <summary>
         /// Test the property 'Ids'
         /// </summary>
         [Fact]

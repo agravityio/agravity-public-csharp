@@ -41,6 +41,7 @@ namespace Agravity.Public.Model
         /// <param name="continuationToken">continuationToken.</param>
         /// <param name="id">id.</param>
         /// <param name="entityType">entityType.</param>
+        /// <param name="name">name.</param>
         /// <param name="assets">assets.</param>
         /// <param name="users">users.</param>
         /// <param name="expires">expires.</param>
@@ -53,7 +54,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public QuickShareFull(List<SharedAsset> page = default(List<SharedAsset>), int? pageSize = default(int?), int? size = default(int?), string continuationToken = default(string), string id = default(string), string entityType = default(string), List<AssetIdFormat> assets = default(List<AssetIdFormat>), List<EntityId> users = default(List<EntityId>), DateTime? expires = default(DateTime?), string url = default(string), string zipUrl = default(string), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public QuickShareFull(List<SharedAsset> page = default(List<SharedAsset>), int? pageSize = default(int?), int? size = default(int?), string continuationToken = default(string), string id = default(string), string entityType = default(string), string name = default(string), List<AssetIdFormat> assets = default(List<AssetIdFormat>), List<EntityId> users = default(List<EntityId>), DateTime? expires = default(DateTime?), string url = default(string), string zipUrl = default(string), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Page = page;
             this.PageSize = pageSize;
@@ -61,6 +62,7 @@ namespace Agravity.Public.Model
             this.ContinuationToken = continuationToken;
             this.Id = id;
             this.EntityType = entityType;
+            this.Name = name;
             this.Assets = assets;
             this.Users = users;
             this.Expires = expires;
@@ -110,6 +112,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "entity_type", EmitDefaultValue = true)]
         public string EntityType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Name
+        /// </summary>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Assets
@@ -197,6 +205,7 @@ namespace Agravity.Public.Model
             sb.Append("  ContinuationToken: ").Append(ContinuationToken).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  EntityType: ").Append(EntityType).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Assets: ").Append(Assets).Append("\n");
             sb.Append("  Users: ").Append(Users).Append("\n");
             sb.Append("  Expires: ").Append(Expires).Append("\n");

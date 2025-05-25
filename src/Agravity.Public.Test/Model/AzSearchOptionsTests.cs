@@ -137,6 +137,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'RelId'
+        /// </summary>
+        [Fact]
+        public void RelIdTest()
+        {
+            // TODO unit test for the property 'RelId'
+        }
+
+        /// <summary>
         /// Test the property 'Ids'
         /// </summary>
         [Fact]

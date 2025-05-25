@@ -928,6 +928,277 @@ paths:
       - function_key: []
       tags:
       - Public Asset Operations
+  /assetrelations:
+    get:
+      description: This endpoint lists all asset relations in database.
+      operationId: HttpAssetRelationGetAll
+      parameters:
+      - description: "The ID of the asset relation type, where these asset relations\
+          \ should come from."
+        explode: true
+        in: query
+        name: assetrelationtypeid
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The requested language of the response. If not matching it falls
+          back to default language.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: When default language should be returned and the translation
+          dictionary is delivered. (Ignores the "Accept-Language" header)
+        explode: true
+        in: query
+        name: translations
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/assetRelation'
+                type: array
+          description: Returns all asset relations in database.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agravityErrorResponse'
+          description: "Invalid parameter \"assetrelationtypeid\". (Code: 16e4697f-5ba6-4dea-a51a-c2e08eff5faa)<br>Asset\
+            \ relation type not found. (Code: 33766cf4-d135-452b-9767-eb2171c5f258)"
+        "401":
+          description: Unauthorized. API Key not provided.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Relation Management
+    post:
+      description: This endpoint creates one asset relation entry in the database.
+      operationId: HttpAssetRelationCreate
+      parameters:
+      - description: When default language should be returned and the translation
+          dictionary is delivered. (Ignores the "Accept-Language" header)
+        explode: true
+        in: query
+        name: translations
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: The requested language of the response. If not matching it falls
+          back to default language.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: "The ID of the asset relation type, where these asset relations\
+          \ should come from."
+        explode: true
+        in: query
+        name: assetrelationtypeid
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/assetRelation'
+          description: Returns the created asset relation.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agravityErrorResponse'
+          description: "Object is not a valid asset_relation. (Code: db336702-2654-4c87-8a17-38994ef5f812)<br>No\
+            \ input object given. (Code: 24897b5c-4322-4303-af28-578f374a17a0)<br>Missing\
+            \ or invalid parameter \"assetrelationtypeid\" (Code: a0a5b486-972b-44c2-9378-96fc437c91ad)<br>Asset\
+            \ relation type not found. (Code: 33766cf4-d135-452b-9767-eb2171c5f258)<br>Asset\
+            \ relation must have at least two different assets. (Code: 5519ac52-aac3-49e4-9cde-925b1ac4e691)<br>Asset\
+            \ with ID {assetId} not found. (Code: 4fc224fb-6e5f-4ca0-b93d-f693a223a740)<br>The\
+            \ user does not have editor permission on all assets in the relation.\
+            \ (Code: 5179e72a-a72e-4731-a476-2de784703315)<br>For hierarchical relations,\
+            \ exactly one asset must be marked as parent. (Code: 1a9d8c7b-6e5f-3a2d-1b8c-7e6f5d4a3b2c)<br>Error\
+            \ on create asset relation in database - max retry count is reached. (Code:\
+            \ 7af65a99-32d8-4e98-b96b-00cd8649fc53)<br>The user does not have editor\
+            \ permission on the relation type. (Code: 63cad31c-ed36-4e1e-add4-349782019b68)<br>The\
+            \ asset relation contains assets that are already part of another relation\
+            \ of the same type. (Code: d3a34fc8-e658-487f-b224-5da2d0843ee1)"
+        "401":
+          description: Unauthorized. API Key not provided.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Relation Management
+  /assetrelations/{id}:
+    delete:
+      description: This endpoint deletes a single asset relation.
+      operationId: HttpAssetRelationDeleteById
+      parameters:
+      - description: The ID of the asset relation.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agravityErrorResponse'
+          description: "Error on deleting asset relation ({id}) database - max retry\
+            \ count is reached. (Code: 9d8c7b6a-5e4f-3a2d-1b8c-7e6f5d4a3b2c)<br>Asset\
+            \ relation type not found. (Code: 33766cf4-d135-452b-9767-eb2171c5f258)<br>The\
+            \ user does not have editor permission on the relation type. (Code: 3da4bd72-e810-46e5-a4ee-8fa2bd2dce32)"
+        "401":
+          description: Unauthorized. API Key not provided.
+        "204":
+          description: The delete operation of the asset relation with the given ID
+            was successful.
+        "404":
+          description: The requested item could not be found.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Relation Management
+    get:
+      description: This endpoint gets a single asset relation.
+      operationId: HttpAssetRelationGetById
+      parameters:
+      - description: The ID of the asset relation.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: When default language should be returned and the translation
+          dictionary is delivered. (Ignores the "Accept-Language" header)
+        explode: true
+        in: query
+        name: translations
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/assetRelation'
+          description: Returns the requested asset relation.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agravityErrorResponse'
+          description: "Asset relation type not found. (Code: 33766cf4-d135-452b-9767-eb2171c5f258)<br>The\
+            \ user does not have editor permission on the relation type. (Code: 63cad31c-ed36-4e1e-add4-349782019b68)"
+        "401":
+          description: Unauthorized. API Key not provided.
+        "404":
+          description: The requested item could not be found.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Relation Management
+    post:
+      description: This endpoint updates an asset relation entry in the database.
+      operationId: HttpAssetRelationUpdateById
+      parameters:
+      - description: The ID of the asset relation.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: When default language should be returned and the translation
+          dictionary is delivered. (Ignores the "Accept-Language" header)
+        explode: true
+        in: query
+        name: translations
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: The requested language of the response. If not matching it falls
+          back to default language.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/assetRelation'
+        description: This endpoint updates an asset relation with ID in the database.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/assetRelation'
+          description: Returns the updated asset relation.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agravityErrorResponse'
+          description: "Object is not a valid asset_relation. (Code: 6c5b4a9d-8e7f-3a2d-1b8c-7e6f5d4a3b2c)<br>No\
+            \ input object given. (Code: 5b4a9d8c-7e6f-3a2d-1b8c-7e6f5d4a3b2c)<br>Asset\
+            \ relation must have at least two different assets. (Code: 4a9d8c7b-6e5f-3a2d-1b8c-7e6f5d4a3b2c)<br>Asset\
+            \ with ID {assetId} not found. (Code: 3a9d8c7b-6e5f-3a2d-1b8c-7e6f5d4a3b2c)<br>The\
+            \ user does not have editor permission on all assets in the relation.\
+            \ (Code: 2a9d8c7b-6e5f-3a2d-1b8c-7e6f5d4a3b2c)<br>For hierarchical relations,\
+            \ exactly one asset must be marked as parent. (Code: 1a9d8c7b-6e5f-3a2d-1b8c-7e6f5d4a3b2c)<br>The\
+            \ user does not have editor permission on the relation type. (Code: 63cad31c-ed36-4e1e-add4-349782019b68)<br>The\
+            \ asset relation contains assets that are already part of another relation\
+            \ of the same type. (Code: b08c7606-ff7d-4b81-90ad-5d94f32cb7be)"
+        "401":
+          description: Unauthorized. API Key not provided.
+        "404":
+          description: The requested item could not be found.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Relation Management
   /assets:
     get:
       description: "This endpoint lists all the assets, which are stored in the database\
@@ -3320,6 +3591,15 @@ paths:
           format: int32
           type: integer
         style: form
+      - description: The ID of the relation which this search is limited to. (Only
+          the assets in this relation are returend)
+        explode: true
+        in: query
+        name: rel_id
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Colon separated key value filter for additional scopes. It applies
           the same conventions as for filter parameter.
         explode: true
@@ -4382,15 +4662,17 @@ components:
       type: object
     agravityVersion:
       example:
-        permission_enabled: true
+        tenant_id: tenant_id
         contact: contact
         name: name
+        vector_search_enabled: true
         company: company
         region: region
         updated: 2000-01-23T04:56:07.000+00:00
         version: version
         client_id: client_id
         customer: customer
+        base: base
       properties:
         name:
           nullable: true
@@ -4411,10 +4693,16 @@ components:
         client_id:
           nullable: true
           type: string
+        tenant_id:
+          nullable: true
+          type: string
+        base:
+          nullable: true
+          type: string
         version:
           nullable: true
           type: string
-        permission_enabled:
+        vector_search_enabled:
           nullable: true
           type: boolean
         region:
@@ -6323,16 +6611,69 @@ components:
           nullable: true
           type: array
       type: object
+    assetRelation:
+      example:
+        entity_type: entity_type
+        assets:
+        - parent: true
+          id: id
+        - parent: true
+          id: id
+        modified_by: modified_by
+        id: id
+        created_date: 2000-01-23T04:56:07.000+00:00
+        pk: pk
+        modified_date: 2000-01-23T04:56:07.000+00:00
+        created_by: created_by
+        _etag: _etag
+        status: status
+      properties:
+        id:
+          nullable: true
+          type: string
+        entity_type:
+          nullable: true
+          type: string
+        assets:
+          items:
+            $ref: '#/components/schemas/relatedAsset'
+          nullable: true
+          type: array
+        status:
+          nullable: true
+          type: string
+        created_date:
+          format: date-time
+          nullable: true
+          type: string
+        created_by:
+          nullable: true
+          type: string
+        modified_date:
+          format: date-time
+          nullable: true
+          type: string
+        modified_by:
+          nullable: true
+          type: string
+        pk:
+          nullable: true
+          type: string
+        _etag:
+          nullable: true
+          type: string
+      type: object
     azSearchOptions:
       example:
+        orderby: orderby
+        skip: 5
+        rel_id: rel_id
         collectiontypeid: collectiontypeid
         filter: filter
         mode: mode
         searchString: searchString
         limit: 1
-        orderby: orderby
         ids: ids
-        skip: 5
         portal_id: portal_id
         scopefilter: scopefilter
         collectionid: collectionid
@@ -6368,6 +6709,9 @@ components:
           format: int32
           nullable: true
           type: integer
+        rel_id:
+          nullable: true
+          type: string
         ids:
           nullable: true
           type: string
@@ -9698,6 +10042,7 @@ components:
           format: format
           id: id
         size: 6
+        name: name
         modified_by: modified_by
         page:
         - blobs:
@@ -10033,6 +10378,9 @@ components:
         entity_type:
           nullable: true
           type: string
+        name:
+          nullable: true
+          type: string
         assets:
           items:
             $ref: '#/components/schemas/assetIdFormat'
@@ -10076,6 +10424,18 @@ components:
         _etag:
           nullable: true
           type: string
+      type: object
+    relatedAsset:
+      example:
+        parent: true
+        id: id
+      properties:
+        id:
+          nullable: true
+          type: string
+        parent:
+          nullable: true
+          type: boolean
       type: object
     sasToken:
       example:
@@ -10451,14 +10811,15 @@ components:
     searchResult:
       example:
         options:
+          orderby: orderby
+          skip: 5
+          rel_id: rel_id
           collectiontypeid: collectiontypeid
           filter: filter
           mode: mode
           searchString: searchString
           limit: 1
-          orderby: orderby
           ids: ids
-          skip: 5
           portal_id: portal_id
           scopefilter: scopefilter
           collectionid: collectionid

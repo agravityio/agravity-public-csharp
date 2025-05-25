@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Orderby** | **string** |  | [optional] 
 **Mode** | **string** |  | [optional] 
 **Broadness** | **int?** |  | [optional] 
+**RelId** | **string** |  | [optional] 
 **Ids** | **string** |  | [optional] 
 **PortalId** | **string** |  | [optional] 
 **Scopefilter** | **string** |  | [optional] 

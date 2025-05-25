@@ -110,6 +110,24 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'TenantId'
+        /// </summary>
+        [Fact]
+        public void TenantIdTest()
+        {
+            // TODO unit test for the property 'TenantId'
+        }
+
+        /// <summary>
+        /// Test the property 'Base'
+        /// </summary>
+        [Fact]
+        public void BaseTest()
+        {
+            // TODO unit test for the property 'Base'
+        }
+
+        /// <summary>
         /// Test the property 'VarVersion'
         /// </summary>
         [Fact]
@@ -119,12 +137,12 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'PermissionEnabled'
+        /// Test the property 'VectorSearchEnabled'
         /// </summary>
         [Fact]
-        public void PermissionEnabledTest()
+        public void VectorSearchEnabledTest()
         {
-            // TODO unit test for the property 'PermissionEnabled'
+            // TODO unit test for the property 'VectorSearchEnabled'
         }
 
         /// <summary>

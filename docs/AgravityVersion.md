@@ -10,8 +10,10 @@ Name | Type | Description | Notes
 **Contact** | **string** |  | [optional] 
 **Updated** | **DateTime?** |  | [optional] 
 **ClientId** | **string** |  | [optional] 
+**TenantId** | **string** |  | [optional] 
+**Base** | **string** |  | [optional] 
 **VarVersion** | **string** |  | [optional] 
-**PermissionEnabled** | **bool?** |  | [optional] 
+**VectorSearchEnabled** | **bool?** |  | [optional] 
 **Region** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -41,10 +41,12 @@ namespace Agravity.Public.Model
         /// <param name="contact">contact.</param>
         /// <param name="updated">updated.</param>
         /// <param name="clientId">clientId.</param>
+        /// <param name="tenantId">tenantId.</param>
+        /// <param name="varBase">varBase.</param>
         /// <param name="varVersion">varVersion.</param>
-        /// <param name="permissionEnabled">permissionEnabled.</param>
+        /// <param name="vectorSearchEnabled">vectorSearchEnabled.</param>
         /// <param name="region">region.</param>
-        public AgravityVersion(string name = default(string), string company = default(string), string customer = default(string), string contact = default(string), DateTime? updated = default(DateTime?), string clientId = default(string), string varVersion = default(string), bool? permissionEnabled = default(bool?), string region = default(string))
+        public AgravityVersion(string name = default(string), string company = default(string), string customer = default(string), string contact = default(string), DateTime? updated = default(DateTime?), string clientId = default(string), string tenantId = default(string), string varBase = default(string), string varVersion = default(string), bool? vectorSearchEnabled = default(bool?), string region = default(string))
         {
             this.Name = name;
             this.Company = company;
@@ -52,8 +54,10 @@ namespace Agravity.Public.Model
             this.Contact = contact;
             this.Updated = updated;
             this.ClientId = clientId;
+            this.TenantId = tenantId;
+            this.Base = varBase;
             this.VarVersion = varVersion;
-            this.PermissionEnabled = permissionEnabled;
+            this.VectorSearchEnabled = vectorSearchEnabled;
             this.Region = region;
         }
 
@@ -94,16 +98,28 @@ namespace Agravity.Public.Model
         public string ClientId { get; set; }
 
         /// <summary>
+        /// Gets or Sets TenantId
+        /// </summary>
+        [DataMember(Name = "tenant_id", EmitDefaultValue = true)]
+        public string TenantId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Base
+        /// </summary>
+        [DataMember(Name = "base", EmitDefaultValue = true)]
+        public string Base { get; set; }
+
+        /// <summary>
         /// Gets or Sets VarVersion
         /// </summary>
         [DataMember(Name = "version", EmitDefaultValue = true)]
         public string VarVersion { get; set; }
 
         /// <summary>
-        /// Gets or Sets PermissionEnabled
+        /// Gets or Sets VectorSearchEnabled
         /// </summary>
-        [DataMember(Name = "permission_enabled", EmitDefaultValue = true)]
-        public bool? PermissionEnabled { get; set; }
+        [DataMember(Name = "vector_search_enabled", EmitDefaultValue = true)]
+        public bool? VectorSearchEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets Region
@@ -125,8 +141,10 @@ namespace Agravity.Public.Model
             sb.Append("  Contact: ").Append(Contact).Append("\n");
             sb.Append("  Updated: ").Append(Updated).Append("\n");
             sb.Append("  ClientId: ").Append(ClientId).Append("\n");
+            sb.Append("  TenantId: ").Append(TenantId).Append("\n");
+            sb.Append("  Base: ").Append(Base).Append("\n");
             sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");
-            sb.Append("  PermissionEnabled: ").Append(PermissionEnabled).Append("\n");
+            sb.Append("  VectorSearchEnabled: ").Append(VectorSearchEnabled).Append("\n");
             sb.Append("  Region: ").Append(Region).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -130,6 +130,11 @@ Class | Method | HTTP request | Description
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsCreate**](docs/PublicAssetPublishingApi.md#httppublishedassetscreate) | **POST** /assets/{id}/publish | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsGet**](docs/PublicAssetPublishingApi.md#httppublishedassetsget) | **GET** /assets/{id}/publish | 
 *PublicAssetPublishingApi* | [**HttpPublishedAssetsGetById**](docs/PublicAssetPublishingApi.md#httppublishedassetsgetbyid) | **GET** /assets/{id}/publish/{pid} | 
+*PublicAssetRelationManagementApi* | [**HttpAssetRelationCreate**](docs/PublicAssetRelationManagementApi.md#httpassetrelationcreate) | **POST** /assetrelations | 
+*PublicAssetRelationManagementApi* | [**HttpAssetRelationDeleteById**](docs/PublicAssetRelationManagementApi.md#httpassetrelationdeletebyid) | **DELETE** /assetrelations/{id} | 
+*PublicAssetRelationManagementApi* | [**HttpAssetRelationGetAll**](docs/PublicAssetRelationManagementApi.md#httpassetrelationgetall) | **GET** /assetrelations | 
+*PublicAssetRelationManagementApi* | [**HttpAssetRelationGetById**](docs/PublicAssetRelationManagementApi.md#httpassetrelationgetbyid) | **GET** /assetrelations/{id} | 
+*PublicAssetRelationManagementApi* | [**HttpAssetRelationUpdateById**](docs/PublicAssetRelationManagementApi.md#httpassetrelationupdatebyid) | **POST** /assetrelations/{id} | 
 *PublicAssetVersioningApi* | [**HttpAssetCreateUploadVersion**](docs/PublicAssetVersioningApi.md#httpassetcreateuploadversion) | **POST** /assets/{id}/versionsupload | 
 *PublicAssetVersioningApi* | [**HttpAssetCreateVersion**](docs/PublicAssetVersioningApi.md#httpassetcreateversion) | **POST** /assets/{id}/versions | 
 *PublicAssetVersioningApi* | [**HttpDeleteVersionedAssetsById**](docs/PublicAssetVersioningApi.md#httpdeleteversionedassetsbyid) | **DELETE** /assets/{id}/versions/{vNr} | 
@@ -208,6 +213,7 @@ Class | Method | HTTP request | Description
  - [Model.AssetIconRule](docs/AssetIconRule.md)
  - [Model.AssetIdFormat](docs/AssetIdFormat.md)
  - [Model.AssetPageResult](docs/AssetPageResult.md)
+ - [Model.AssetRelation](docs/AssetRelation.md)
  - [Model.AzSearchOptions](docs/AzSearchOptions.md)
  - [Model.CollTypeItem](docs/CollTypeItem.md)
  - [Model.Collection](docs/Collection.md)
@@ -248,6 +254,7 @@ Class | Method | HTTP request | Description
  - [Model.PublishEntity](docs/PublishEntity.md)
  - [Model.PublishedAsset](docs/PublishedAsset.md)
  - [Model.QuickShareFull](docs/QuickShareFull.md)
+ - [Model.RelatedAsset](docs/RelatedAsset.md)
  - [Model.SasToken](docs/SasToken.md)
  - [Model.SavedSearch](docs/SavedSearch.md)
  - [Model.SearchAdminDataSourceStatus](docs/SearchAdminDataSourceStatus.md)

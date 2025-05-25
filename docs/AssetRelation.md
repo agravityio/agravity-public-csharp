@@ -1,21 +1,12 @@
-# Agravity.Public.Model.QuickShareFull
+# Agravity.Public.Model.AssetRelation
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Page** | [**List&lt;SharedAsset&gt;**](SharedAsset.md) |  | [optional] 
-**PageSize** | **int?** |  | [optional] 
-**Size** | **int?** |  | [optional] 
-**ContinuationToken** | **string** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **EntityType** | **string** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**Assets** | [**List&lt;AssetIdFormat&gt;**](AssetIdFormat.md) |  | [optional] 
-**Users** | [**List&lt;EntityId&gt;**](EntityId.md) |  | [optional] 
-**Expires** | **DateTime?** |  | [optional] 
-**Url** | **string** |  | [optional] 
-**ZipUrl** | **string** |  | [optional] 
+**Assets** | [**List&lt;RelatedAsset&gt;**](RelatedAsset.md) |  | [optional] 
 **Status** | **string** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 

@@ -13,6 +13,7 @@ docs/AssetBlob.md
 docs/AssetIconRule.md
 docs/AssetIdFormat.md
 docs/AssetPageResult.md
+docs/AssetRelation.md
 docs/AzSearchOptions.md
 docs/CollTypeItem.md
 docs/Collection.md
@@ -53,6 +54,7 @@ docs/PortalUserContext.md
 docs/PublicAssetManagementApi.md
 docs/PublicAssetOperationsApi.md
 docs/PublicAssetPublishingApi.md
+docs/PublicAssetRelationManagementApi.md
 docs/PublicAssetVersioningApi.md
 docs/PublicAuthenticationManagementApi.md
 docs/PublicCollectionManagementApi.md
@@ -76,6 +78,7 @@ docs/PublicWorkspaceManagementApi.md
 docs/PublishEntity.md
 docs/PublishedAsset.md
 docs/QuickShareFull.md
+docs/RelatedAsset.md
 docs/SasToken.md
 docs/SavedSearch.md
 docs/SearchAdminDataSourceStatus.md
@@ -104,6 +107,7 @@ src/Agravity.Public.Test/Agravity.Public.Test.csproj
 src/Agravity.Public.Test/Api/PublicAssetManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicAssetOperationsApiTests.cs
 src/Agravity.Public.Test/Api/PublicAssetPublishingApiTests.cs
+src/Agravity.Public.Test/Api/PublicAssetRelationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicAssetVersioningApiTests.cs
 src/Agravity.Public.Test/Api/PublicAuthenticationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionManagementApiTests.cs
@@ -133,6 +137,7 @@ src/Agravity.Public.Test/Model/AssetBlobTests.cs
 src/Agravity.Public.Test/Model/AssetIconRuleTests.cs
 src/Agravity.Public.Test/Model/AssetIdFormatTests.cs
 src/Agravity.Public.Test/Model/AssetPageResultTests.cs
+src/Agravity.Public.Test/Model/AssetRelationTests.cs
 src/Agravity.Public.Test/Model/AssetTests.cs
 src/Agravity.Public.Test/Model/AzSearchOptionsTests.cs
 src/Agravity.Public.Test/Model/CollTypeItemTests.cs
@@ -174,6 +179,7 @@ src/Agravity.Public.Test/Model/PortalUserContextTests.cs
 src/Agravity.Public.Test/Model/PublishEntityTests.cs
 src/Agravity.Public.Test/Model/PublishedAssetTests.cs
 src/Agravity.Public.Test/Model/QuickShareFullTests.cs
+src/Agravity.Public.Test/Model/RelatedAssetTests.cs
 src/Agravity.Public.Test/Model/SasTokenTests.cs
 src/Agravity.Public.Test/Model/SavedSearchTests.cs
 src/Agravity.Public.Test/Model/SearchAdminDataSourceStatusTests.cs
@@ -201,6 +207,7 @@ src/Agravity.Public/Agravity.Public.csproj
 src/Agravity.Public/Api/PublicAssetManagementApi.cs
 src/Agravity.Public/Api/PublicAssetOperationsApi.cs
 src/Agravity.Public/Api/PublicAssetPublishingApi.cs
+src/Agravity.Public/Api/PublicAssetRelationManagementApi.cs
 src/Agravity.Public/Api/PublicAssetVersioningApi.cs
 src/Agravity.Public/Api/PublicAuthenticationManagementApi.cs
 src/Agravity.Public/Api/PublicCollectionManagementApi.cs
@@ -248,6 +255,7 @@ src/Agravity.Public/Model/AssetBlob.cs
 src/Agravity.Public/Model/AssetIconRule.cs
 src/Agravity.Public/Model/AssetIdFormat.cs
 src/Agravity.Public/Model/AssetPageResult.cs
+src/Agravity.Public/Model/AssetRelation.cs
 src/Agravity.Public/Model/AzSearchOptions.cs
 src/Agravity.Public/Model/CollTypeItem.cs
 src/Agravity.Public/Model/Collection.cs
@@ -288,6 +296,7 @@ src/Agravity.Public/Model/PortalUserContext.cs
 src/Agravity.Public/Model/PublishEntity.cs
 src/Agravity.Public/Model/PublishedAsset.cs
 src/Agravity.Public/Model/QuickShareFull.cs
+src/Agravity.Public/Model/RelatedAsset.cs
 src/Agravity.Public/Model/SasToken.cs
 src/Agravity.Public/Model/SavedSearch.cs
 src/Agravity.Public/Model/SearchAdminDataSourceStatus.cs

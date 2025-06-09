@@ -8,6 +8,19 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="9.1.0"/> [9.1.0](https://www.nuget.org/packages/Agravity.Public/9.1.0) (2025-05-25)
+
+- #1395 Quick Share - Allow to name the quickshare
+  - Add property `name` to quickshare
+- #1377 Asset Relations
+  - Add public endpoints for managing asset relations
+  - Add `rel_id` (relation id) as search parameter (to filter out all ids in search of this relation)
+- #1309 Implement AI Vector Search
+  - Add optional `broadness` parameter to search query (default 0)
+- #1304 Create OpenAI (ChatGPT) image tagging queue
+  - Rework AI Grouping and put it to separate entity
+- Add vector_search_enabled, base name and tenant_id properties to agravity version
+
 ## AgravityAPI <a name="9.0.3"/> [9.0.3](https://www.nuget.org/packages/Agravity.Public/9.0.3) (2025-04-08)
 
 - Just version upgrade to match backend

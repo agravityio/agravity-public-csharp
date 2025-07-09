@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **AssetTags** | **List&lt;string&gt;** |  | [optional] 
 **Message** | **string** |  | [optional] 
 **SftpConnection** | [**CreateSftpUserResult**](CreateSftpUserResult.md) |  | [optional] 
+**CheckNameForVersion** | **bool?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

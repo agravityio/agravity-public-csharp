@@ -144,5 +144,14 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'SftpConnection'
         }
+
+        /// <summary>
+        /// Test the property 'CheckNameForVersion'
+        /// </summary>
+        [Fact]
+        public void CheckNameForVersionTest()
+        {
+            // TODO unit test for the property 'CheckNameForVersion'
+        }
     }
 }

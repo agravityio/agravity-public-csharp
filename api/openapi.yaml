@@ -11463,6 +11463,7 @@ components:
         - asset_tags
         id: id
         created_date: 2000-01-23T04:56:07.000+00:00
+        check_name_for_version: true
         message: message
         created_by: created_by
         url: url
@@ -11500,6 +11501,9 @@ components:
           type: string
         sftp_connection:
           $ref: '#/components/schemas/createSftpUserResult'
+        check_name_for_version:
+          nullable: true
+          type: boolean
       type: object
     sharedAllowedFormat:
       example:

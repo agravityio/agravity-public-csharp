@@ -45,7 +45,8 @@ namespace Agravity.Public.Model
         /// <param name="assetTags">assetTags.</param>
         /// <param name="message">message.</param>
         /// <param name="sftpConnection">sftpConnection.</param>
-        public SecureUploadEntity(string id = default(string), string collectionId = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), string url = default(string), DateTime? validUntil = default(DateTime?), string password = default(string), List<string> assetTags = default(List<string>), string message = default(string), CreateSftpUserResult sftpConnection = default(CreateSftpUserResult))
+        /// <param name="checkNameForVersion">checkNameForVersion.</param>
+        public SecureUploadEntity(string id = default(string), string collectionId = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), string url = default(string), DateTime? validUntil = default(DateTime?), string password = default(string), List<string> assetTags = default(List<string>), string message = default(string), CreateSftpUserResult sftpConnection = default(CreateSftpUserResult), bool? checkNameForVersion = default(bool?))
         {
             this.Id = id;
             this.CollectionId = collectionId;
@@ -57,6 +58,7 @@ namespace Agravity.Public.Model
             this.AssetTags = assetTags;
             this.Message = message;
             this.SftpConnection = sftpConnection;
+            this.CheckNameForVersion = checkNameForVersion;
         }
 
         /// <summary>
@@ -120,6 +122,12 @@ namespace Agravity.Public.Model
         public CreateSftpUserResult SftpConnection { get; set; }
 
         /// <summary>
+        /// Gets or Sets CheckNameForVersion
+        /// </summary>
+        [DataMember(Name = "check_name_for_version", EmitDefaultValue = true)]
+        public bool? CheckNameForVersion { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -137,6 +145,7 @@ namespace Agravity.Public.Model
             sb.Append("  AssetTags: ").Append(AssetTags).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  SftpConnection: ").Append(SftpConnection).Append("\n");
+            sb.Append("  CheckNameForVersion: ").Append(CheckNameForVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

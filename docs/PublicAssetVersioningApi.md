@@ -714,7 +714,6 @@ catch (ApiException e)
 | **200** | Returns the VersionEntity where all versioned assets are included. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **404** | If the version of the asset is not found. |  -  |
-| **423** | The asset&#39;s availability is locked. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

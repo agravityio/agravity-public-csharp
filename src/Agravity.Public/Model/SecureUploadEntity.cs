@@ -36,9 +36,8 @@ namespace Agravity.Public.Model
         /// Initializes a new instance of the <see cref="SecureUploadEntity" /> class.
         /// </summary>
         /// <param name="id">id.</param>
+        /// <param name="entityType">entityType.</param>
         /// <param name="collectionId">collectionId.</param>
-        /// <param name="createdDate">createdDate.</param>
-        /// <param name="createdBy">createdBy.</param>
         /// <param name="url">url.</param>
         /// <param name="validUntil">validUntil.</param>
         /// <param name="password">password.</param>
@@ -46,12 +45,18 @@ namespace Agravity.Public.Model
         /// <param name="message">message.</param>
         /// <param name="sftpConnection">sftpConnection.</param>
         /// <param name="checkNameForVersion">checkNameForVersion.</param>
-        public SecureUploadEntity(string id = default(string), string collectionId = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), string url = default(string), DateTime? validUntil = default(DateTime?), string password = default(string), List<string> assetTags = default(List<string>), string message = default(string), CreateSftpUserResult sftpConnection = default(CreateSftpUserResult), bool? checkNameForVersion = default(bool?))
+        /// <param name="status">status.</param>
+        /// <param name="createdDate">createdDate.</param>
+        /// <param name="createdBy">createdBy.</param>
+        /// <param name="modifiedDate">modifiedDate.</param>
+        /// <param name="modifiedBy">modifiedBy.</param>
+        /// <param name="pk">pk.</param>
+        /// <param name="etag">etag.</param>
+        public SecureUploadEntity(string id = default(string), string entityType = default(string), string collectionId = default(string), string url = default(string), DateTime? validUntil = default(DateTime?), string password = default(string), List<string> assetTags = default(List<string>), string message = default(string), CreateSftpUserResult sftpConnection = default(CreateSftpUserResult), bool? checkNameForVersion = default(bool?), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
         {
             this.Id = id;
+            this.EntityType = entityType;
             this.CollectionId = collectionId;
-            this.CreatedDate = createdDate;
-            this.CreatedBy = createdBy;
             this.Url = url;
             this.ValidUntil = validUntil;
             this.Password = password;
@@ -59,6 +64,13 @@ namespace Agravity.Public.Model
             this.Message = message;
             this.SftpConnection = sftpConnection;
             this.CheckNameForVersion = checkNameForVersion;
+            this.Status = status;
+            this.CreatedDate = createdDate;
+            this.CreatedBy = createdBy;
+            this.ModifiedDate = modifiedDate;
+            this.ModifiedBy = modifiedBy;
+            this.Pk = pk;
+            this.Etag = etag;
         }
 
         /// <summary>
@@ -68,22 +80,16 @@ namespace Agravity.Public.Model
         public string Id { get; set; }
 
         /// <summary>
+        /// Gets or Sets EntityType
+        /// </summary>
+        [DataMember(Name = "entity_type", EmitDefaultValue = true)]
+        public string EntityType { get; set; }
+
+        /// <summary>
         /// Gets or Sets CollectionId
         /// </summary>
         [DataMember(Name = "collection_id", EmitDefaultValue = true)]
         public string CollectionId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CreatedDate
-        /// </summary>
-        [DataMember(Name = "created_date", EmitDefaultValue = true)]
-        public DateTime? CreatedDate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CreatedBy
-        /// </summary>
-        [DataMember(Name = "created_by", EmitDefaultValue = true)]
-        public string CreatedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets Url
@@ -128,6 +134,48 @@ namespace Agravity.Public.Model
         public bool? CheckNameForVersion { get; set; }
 
         /// <summary>
+        /// Gets or Sets Status
+        /// </summary>
+        [DataMember(Name = "status", EmitDefaultValue = true)]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedDate
+        /// </summary>
+        [DataMember(Name = "created_date", EmitDefaultValue = true)]
+        public DateTime? CreatedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedBy
+        /// </summary>
+        [DataMember(Name = "created_by", EmitDefaultValue = true)]
+        public string CreatedBy { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedDate
+        /// </summary>
+        [DataMember(Name = "modified_date", EmitDefaultValue = true)]
+        public DateTime? ModifiedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedBy
+        /// </summary>
+        [DataMember(Name = "modified_by", EmitDefaultValue = true)]
+        public string ModifiedBy { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pk
+        /// </summary>
+        [DataMember(Name = "pk", EmitDefaultValue = true)]
+        public string Pk { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Etag
+        /// </summary>
+        [DataMember(Name = "_etag", EmitDefaultValue = true)]
+        public string Etag { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -136,9 +184,8 @@ namespace Agravity.Public.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class SecureUploadEntity {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  EntityType: ").Append(EntityType).Append("\n");
             sb.Append("  CollectionId: ").Append(CollectionId).Append("\n");
-            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
-            sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  ValidUntil: ").Append(ValidUntil).Append("\n");
             sb.Append("  Password: ").Append(Password).Append("\n");
@@ -146,6 +193,13 @@ namespace Agravity.Public.Model
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  SftpConnection: ").Append(SftpConnection).Append("\n");
             sb.Append("  CheckNameForVersion: ").Append(CheckNameForVersion).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
+            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
+            sb.Append("  ModifiedBy: ").Append(ModifiedBy).Append("\n");
+            sb.Append("  Pk: ").Append(Pk).Append("\n");
+            sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

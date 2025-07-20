@@ -1727,8 +1727,6 @@ paths:
           description: Unauthorized. API Key not provided.
         "404":
           description: If the version of the asset is not found.
-        "423":
-          description: The asset's availability is locked.
         "500":
           description: Internal server error. Please contact administrator.
       security:
@@ -11452,33 +11450,35 @@ components:
       type: object
     secureUploadEntity:
       example:
-        collection_id: collection_id
-        password: password
-        valid_until: 2000-01-23T04:56:07.000+00:00
         sftp_connection:
           password: password
           url: url
+        check_name_for_version: true
+        message: message
+        modified_date: 2000-01-23T04:56:07.000+00:00
+        created_by: created_by
+        url: url
+        collection_id: collection_id
+        password: password
+        entity_type: entity_type
+        valid_until: 2000-01-23T04:56:07.000+00:00
+        modified_by: modified_by
         asset_tags:
         - asset_tags
         - asset_tags
         id: id
         created_date: 2000-01-23T04:56:07.000+00:00
-        check_name_for_version: true
-        message: message
-        created_by: created_by
-        url: url
+        pk: pk
+        _etag: _etag
+        status: status
       properties:
         id:
           nullable: true
           type: string
+        entity_type:
+          nullable: true
+          type: string
         collection_id:
-          nullable: true
-          type: string
-        created_date:
-          format: date-time
-          nullable: true
-          type: string
-        created_by:
           nullable: true
           type: string
         url:
@@ -11504,6 +11504,29 @@ components:
         check_name_for_version:
           nullable: true
           type: boolean
+        status:
+          nullable: true
+          type: string
+        created_date:
+          format: date-time
+          nullable: true
+          type: string
+        created_by:
+          nullable: true
+          type: string
+        modified_date:
+          format: date-time
+          nullable: true
+          type: string
+        modified_by:
+          nullable: true
+          type: string
+        pk:
+          nullable: true
+          type: string
+        _etag:
+          nullable: true
+          type: string
       type: object
     sharedAllowedFormat:
       example:

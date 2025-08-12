@@ -1,8 +1,9 @@
 # check if $env:API_KEY is set, if not: exit
 if ($null -eq $env:AGRAVITY_OPEN_API_KEY) {
-    Write-Host "Please set API_KEY environment variable"
+    Write-Host "Please set AGRAVITY_OPEN_API_KEY environment variable"
     # wait for user input
     Write-Host "Press any key to continue ..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
     exit
 }
 
@@ -11,6 +12,7 @@ if ($null -eq $env:OPENAPI_GENERATOR) {
     Write-Host "Please set OPENAPI_GENERATOR path to the openapi-generator-cli.jar"
     # wait for user input
     Write-Host "Press any key to continue ..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
     exit
 }
 
@@ -21,6 +23,7 @@ if ($null -eq $version) {
     Write-Host "Please start backend before generating API"
     # wait for user input
     Write-Host "Press any key to continue ..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
     exit
 }
 
@@ -31,6 +34,7 @@ if ($null -eq $apiVersion) {
     Write-Host "Please provide apiVersion as parameter"
     # wait for user input
     Write-Host "Press any key to continue ..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
     exit
 }
 # echo apiVersion
@@ -53,6 +57,7 @@ Invoke-WebRequest -Uri "http://localhost:7072/api/openapi/v3.json" -Headers @{"x
 # check if openapi.json exists and is not empty; if not: exit
 if (!(Test-Path "openapi.json") -or (Get-Content "openapi.json" -Raw) -eq "") {
     Write-Host "openapi.json is empty or does not exist"
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
     exit
 }
 
@@ -146,5 +151,5 @@ if ($publish -eq "y") {
     code.cmd .\changelog.md
 
     Write-Host "Press any key to finish."
-    Read-Host
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 }

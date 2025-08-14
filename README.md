@@ -80,7 +80,7 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.ApiKeyPrefix.Add("x-functions-key", "Bearer");
 
-            var apiInstance = new PublicAssetManagementApi(config);
+            var apiInstance = new PublicAIOperationsApi(config);
             var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
             var name = "name_example";  // string |  (optional) 
             var collectionid = "collectionid_example";  // string |  (optional) 
@@ -90,12 +90,12 @@ namespace Example
 
             try
             {
-                Asset result = apiInstance.HttpAssetUploadFile(acceptLanguage, name, collectionid, file, filename, previewof);
+                SearchResult result = apiInstance.HttpReverseAssetSearch(acceptLanguage, name, collectionid, file, filename, previewof);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetUploadFile: " + e.Message );
+                Debug.Print("Exception when calling PublicAIOperationsApi.HttpReverseAssetSearch: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -112,6 +112,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*PublicAIOperationsApi* | [**HttpReverseAssetSearch**](docs/PublicAIOperationsApi.md#httpreverseassetsearch) | **POST** /ai/reverseassetsearch | 
 *PublicAssetManagementApi* | [**HttpAssetUploadFile**](docs/PublicAssetManagementApi.md#httpassetuploadfile) | **POST** /assetsupload | 
 *PublicAssetManagementApi* | [**HttpAssetsCreate**](docs/PublicAssetManagementApi.md#httpassetscreate) | **POST** /assets | 
 *PublicAssetManagementApi* | [**HttpAssetsGet**](docs/PublicAssetManagementApi.md#httpassetsget) | **GET** /assets | 

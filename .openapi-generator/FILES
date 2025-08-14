@@ -51,6 +51,7 @@ docs/PortalFields.md
 docs/PortalLinks.md
 docs/PortalTheme.md
 docs/PortalUserContext.md
+docs/PublicAIOperationsApi.md
 docs/PublicAssetManagementApi.md
 docs/PublicAssetOperationsApi.md
 docs/PublicAssetPublishingApi.md
@@ -104,6 +105,7 @@ docs/WhereParam.md
 docs/Workspace.md
 git_push.sh
 src/Agravity.Public.Test/Agravity.Public.Test.csproj
+src/Agravity.Public.Test/Api/PublicAIOperationsApiTests.cs
 src/Agravity.Public.Test/Api/PublicAssetManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicAssetOperationsApiTests.cs
 src/Agravity.Public.Test/Api/PublicAssetPublishingApiTests.cs
@@ -204,6 +206,7 @@ src/Agravity.Public.Test/Model/VersionedAssetTests.cs
 src/Agravity.Public.Test/Model/WhereParamTests.cs
 src/Agravity.Public.Test/Model/WorkspaceTests.cs
 src/Agravity.Public/Agravity.Public.csproj
+src/Agravity.Public/Api/PublicAIOperationsApi.cs
 src/Agravity.Public/Api/PublicAssetManagementApi.cs
 src/Agravity.Public/Api/PublicAssetOperationsApi.cs
 src/Agravity.Public/Api/PublicAssetPublishingApi.cs

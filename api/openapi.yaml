@@ -274,6 +274,56 @@ paths:
       - function_key: []
       tags:
       - Public Portal Management
+  /ai/reverseassetsearch:
+    post:
+      description: This endpoint allows to use one asset which is used for searching
+        similar assets.
+      operationId: HttpReverseAssetSearch
+      parameters:
+      - description: The requested language of the response. If not matching it falls
+          back to default language.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/assetMultiPartForm'
+        description: This endpoint allows to use one asset.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/searchResult'
+          description: Returns a list of similar Assets.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agravityErrorResponse'
+          description: "Reverse Asset search failed. Query Asset Content length is\
+            \ insuffient (0 or too big). (Code: 76695187-7ace-4a2e-9fd2-7f0170a998d9)<br>Wrong\
+            \ content media type for Query Asset.Please upload file with multipart/form-data.\
+            \ (Code: 5ab68591-c21e-4cd7-8d00-01c13bfbb384)<br>Could not find file\
+            \ in multi-part data. (Code: cbdb4838-fab5-48b3-a8de-ac591316c904)<br>File\
+            \ type is not supported for reverse Asset search. (Code: 1dba4d87-6162-40b9-9076-2d56af6bcdbe)<br>"
+        "401":
+          description: Unauthorized. API Key not provided.
+        "403":
+          description: Not enough privileges to access item.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public AI Operations
   /assets/{id}/blobs:
     get:
       description: "This endpoint checks, if an asset exists and returns the url for\
@@ -4712,7 +4762,7 @@ components:
         subcollections:
         - parent: parent
           role: NONE
-          level: 0
+          level: 6
           custom:
             key: "{}"
           description: description
@@ -4780,7 +4830,7 @@ components:
           status: status
         - parent: parent
           role: NONE
-          level: 0
+          level: 6
           custom:
             key: "{}"
           description: description
@@ -5302,7 +5352,7 @@ components:
         root_collection:
           parent: parent
           role: NONE
-          level: 0
+          level: 6
           custom:
             key: "{}"
           description: description
@@ -6664,7 +6714,7 @@ components:
     azSearchOptions:
       example:
         orderby: orderby
-        skip: 5
+        skip: 4
         rel_id: rel_id
         collectiontypeid: collectiontypeid
         filter: filter
@@ -6724,7 +6774,7 @@ components:
       example:
         parent: parent
         role: NONE
-        level: 0
+        level: 6
         custom:
           key: "{}"
         description: description
@@ -7405,12 +7455,12 @@ components:
       type: object
     dataResult:
       example:
-        sum_collection_results: 6
-        sum_asset_results: 0
+        sum_collection_results: 7
+        sum_asset_results: 1
         collection:
         - parent: parent
           role: NONE
-          level: 0
+          level: 6
           custom:
             key: "{}"
           description: description
@@ -7478,7 +7528,7 @@ components:
           status: status
         - parent: parent
           role: NONE
-          level: 0
+          level: 6
           custom:
             key: "{}"
           description: description
@@ -8847,7 +8897,7 @@ components:
         collections:
         - parent: parent
           role: NONE
-          level: 0
+          level: 6
           custom:
             key: "{}"
           description: description
@@ -8915,7 +8965,7 @@ components:
           status: status
         - parent: parent
           role: NONE
-          level: 0
+          level: 6
           custom:
             key: "{}"
           description: description
@@ -10772,10 +10822,10 @@ components:
     searchFacet:
       example:
         entities:
-        - count: 2
+        - count: 9
           name: name
           value: value
-        - count: 2
+        - count: 9
           name: name
           value: value
         name: name
@@ -10791,7 +10841,7 @@ components:
       type: object
     searchFacetEntity:
       example:
-        count: 2
+        count: 9
         name: name
         value: value
       properties:
@@ -10810,7 +10860,7 @@ components:
       example:
         options:
           orderby: orderby
-          skip: 5
+          skip: 4
           rel_id: rel_id
           collectiontypeid: collectiontypeid
           filter: filter
@@ -10822,14 +10872,14 @@ components:
           scopefilter: scopefilter
           collectionid: collectionid
           broadness: 5
-        count: 7
+        count: 9
         data_result:
-          sum_collection_results: 6
-          sum_asset_results: 0
+          sum_collection_results: 7
+          sum_asset_results: 1
           collection:
           - parent: parent
             role: NONE
-            level: 0
+            level: 6
             custom:
               key: "{}"
             description: description
@@ -10897,7 +10947,7 @@ components:
             status: status
           - parent: parent
             role: NONE
-            level: 0
+            level: 6
             custom:
               key: "{}"
             description: description
@@ -11418,18 +11468,18 @@ components:
             status: status
         facets:
         - entities:
-          - count: 2
+          - count: 9
             name: name
             value: value
-          - count: 2
+          - count: 9
             name: name
             value: value
           name: name
         - entities:
-          - count: 2
+          - count: 9
             name: name
             value: value
-          - count: 2
+          - count: 9
             name: name
             value: value
           name: name

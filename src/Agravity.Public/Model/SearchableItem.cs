@@ -45,7 +45,7 @@ namespace Agravity.Public.Model
         /// <param name="isCollection">isCollection.</param>
         /// <param name="searchtype">searchtype.</param>
         /// <param name="fields">fields.</param>
-        public SearchableItem(string name = default(string), bool? isKey = default(bool?), bool? filterable = default(bool?), bool? hidden = default(bool?), bool? searchable = default(bool?), bool? facetable = default(bool?), bool? sortable = default(bool?), bool? isCollection = default(bool?), string searchtype = default(string), List<SearchableItem> fields = default(List<SearchableItem>))
+        public SearchableItem(string name = default, bool? isKey = default, bool? filterable = default, bool? hidden = default, bool? searchable = default, bool? facetable = default, bool? sortable = default, bool? isCollection = default, string searchtype = default, List<SearchableItem> fields = default)
         {
             this.Name = name;
             this.IsKey = isKey;

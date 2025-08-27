@@ -52,7 +52,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public SecureUploadEntity(string id = default(string), string entityType = default(string), string collectionId = default(string), string url = default(string), DateTime? validUntil = default(DateTime?), string password = default(string), List<string> assetTags = default(List<string>), string message = default(string), CreateSftpUserResult sftpConnection = default(CreateSftpUserResult), bool? checkNameForVersion = default(bool?), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public SecureUploadEntity(string id = default, string entityType = default, string collectionId = default, string url = default, DateTime? validUntil = default, string password = default, List<string> assetTags = default, string message = default, CreateSftpUserResult sftpConnection = default, bool? checkNameForVersion = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
         {
             this.Id = id;
             this.EntityType = entityType;

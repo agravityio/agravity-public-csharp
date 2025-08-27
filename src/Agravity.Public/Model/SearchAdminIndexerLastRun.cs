@@ -40,7 +40,7 @@ namespace Agravity.Public.Model
         /// <param name="endtime">endtime.</param>
         /// <param name="itemcount">itemcount.</param>
         /// <param name="faileditemcount">faileditemcount.</param>
-        public SearchAdminIndexerLastRun(string status = default(string), DateTime? starttime = default(DateTime?), DateTime? endtime = default(DateTime?), long? itemcount = default(long?), long? faileditemcount = default(long?))
+        public SearchAdminIndexerLastRun(string status = default, DateTime? starttime = default, DateTime? endtime = default, long? itemcount = default, long? faileditemcount = default)
         {
             this.Status = status;
             this.Starttime = starttime;

@@ -36,7 +36,7 @@ namespace Agravity.Public.Model
         /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseActionAttributeCollectionSubmit" /> class.
         /// </summary>
         /// <param name="odataType">odataType.</param>
-        public CustomClaimsProviderResponseActionAttributeCollectionSubmit(string odataType = default(string))
+        public CustomClaimsProviderResponseActionAttributeCollectionSubmit(string odataType = default)
         {
             this.OdataType = odataType;
         }

@@ -36,7 +36,7 @@ namespace Agravity.Public.Model
         /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseContentTokenIssuanceStart" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        public CustomClaimsProviderResponseContentTokenIssuanceStart(CustomClaimsProviderResponseDataTokenIssuanceStart data = default(CustomClaimsProviderResponseDataTokenIssuanceStart))
+        public CustomClaimsProviderResponseContentTokenIssuanceStart(CustomClaimsProviderResponseDataTokenIssuanceStart data = default)
         {
             this.Data = data;
         }

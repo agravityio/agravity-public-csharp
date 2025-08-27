@@ -38,7 +38,7 @@ namespace Agravity.Public.Model
         /// <param name="parent">parent.</param>
         /// <param name="collTypes">collTypes.</param>
         /// <param name="permissions">permissions.</param>
-        public CollectionUDLReference(string parent = default(string), List<string> collTypes = default(List<string>), List<PermissionEntity> permissions = default(List<PermissionEntity>))
+        public CollectionUDLReference(string parent = default, List<string> collTypes = default, List<PermissionEntity> permissions = default)
         {
             this.Parent = parent;
             this.CollTypes = collTypes;

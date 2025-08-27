@@ -37,7 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="assetType">assetType.</param>
         /// <param name="format">format.</param>
-        public SharedAllowedFormat(string assetType = default(string), string format = default(string))
+        public SharedAllowedFormat(string assetType = default, string format = default)
         {
             this.AssetType = assetType;
             this.Format = format;

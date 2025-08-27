@@ -40,7 +40,7 @@ namespace Agravity.Public.Api
         /// <param name="download">True if a direct download with file name should be started. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
-        System.IO.Stream HttpAssetGetViewForPortal(string assetId, string portalId, string format, string download = default(string), int operationIndex = 0);
+        System.IO.Stream HttpAssetGetViewForPortal(string assetId, string portalId, string format, string download = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -55,7 +55,7 @@ namespace Agravity.Public.Api
         /// <param name="download">True if a direct download with file name should be started. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> HttpAssetGetViewForPortalWithHttpInfo(string assetId, string portalId, string format, string download = default(string), int operationIndex = 0);
+        ApiResponse<System.IO.Stream> HttpAssetGetViewForPortalWithHttpInfo(string assetId, string portalId, string format, string download = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -79,7 +79,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> HttpAssetGetViewForPortalAsync(string assetId, string portalId, string format, string download = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.IO.Stream> HttpAssetGetViewForPortalAsync(string assetId, string portalId, string format, string download = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -95,7 +95,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> HttpAssetGetViewForPortalWithHttpInfoAsync(string assetId, string portalId, string format, string download = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> HttpAssetGetViewForPortalWithHttpInfoAsync(string assetId, string portalId, string format, string download = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -226,7 +226,7 @@ namespace Agravity.Public.Api
         /// <param name="download">True if a direct download with file name should be started. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream HttpAssetGetViewForPortal(string assetId, string portalId, string format, string download = default(string), int operationIndex = 0)
+        public System.IO.Stream HttpAssetGetViewForPortal(string assetId, string portalId, string format, string download = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = HttpAssetGetViewForPortalWithHttpInfo(assetId, portalId, format, download);
             return localVarResponse.Data;
@@ -242,7 +242,7 @@ namespace Agravity.Public.Api
         /// <param name="download">True if a direct download with file name should be started. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Agravity.Public.Client.ApiResponse<System.IO.Stream> HttpAssetGetViewForPortalWithHttpInfo(string assetId, string portalId, string format, string download = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<System.IO.Stream> HttpAssetGetViewForPortalWithHttpInfo(string assetId, string portalId, string format, string download = default, int operationIndex = 0)
         {
             // verify the required parameter 'assetId' is set
             if (assetId == null)
@@ -274,6 +274,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -322,7 +323,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> HttpAssetGetViewForPortalAsync(string assetId, string portalId, string format, string download = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<System.IO.Stream> HttpAssetGetViewForPortalAsync(string assetId, string portalId, string format, string download = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = await HttpAssetGetViewForPortalWithHttpInfoAsync(assetId, portalId, format, download, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -339,7 +340,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<System.IO.Stream>> HttpAssetGetViewForPortalWithHttpInfoAsync(string assetId, string portalId, string format, string download = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<System.IO.Stream>> HttpAssetGetViewForPortalWithHttpInfoAsync(string assetId, string portalId, string format, string download = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'assetId' is set
             if (assetId == null)

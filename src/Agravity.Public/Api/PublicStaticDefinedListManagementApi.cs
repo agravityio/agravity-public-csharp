@@ -38,7 +38,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;StaticDefinedList&gt;</returns>
-        List<StaticDefinedList> HttpStaticDefinedListsGetAll(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        List<StaticDefinedList> HttpStaticDefinedListsGetAll(bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;StaticDefinedList&gt;</returns>
-        ApiResponse<List<StaticDefinedList>> HttpStaticDefinedListsGetAllWithHttpInfo(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<List<StaticDefinedList>> HttpStaticDefinedListsGetAllWithHttpInfo(bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -64,7 +64,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>StaticDefinedList</returns>
-        StaticDefinedList HttpStaticDefinedListsGetById(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        StaticDefinedList HttpStaticDefinedListsGetById(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -78,7 +78,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of StaticDefinedList</returns>
-        ApiResponse<StaticDefinedList> HttpStaticDefinedListsGetByIdWithHttpInfo(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<StaticDefinedList> HttpStaticDefinedListsGetByIdWithHttpInfo(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -93,7 +93,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>StaticDefinedList</returns>
-        StaticDefinedList HttpStaticDefinedListsUpdateById(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        StaticDefinedList HttpStaticDefinedListsUpdateById(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -109,7 +109,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of StaticDefinedList</returns>
-        ApiResponse<StaticDefinedList> HttpStaticDefinedListsUpdateByIdWithHttpInfo(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<StaticDefinedList> HttpStaticDefinedListsUpdateByIdWithHttpInfo(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -131,7 +131,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;StaticDefinedList&gt;</returns>
-        System.Threading.Tasks.Task<List<StaticDefinedList>> HttpStaticDefinedListsGetAllAsync(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<StaticDefinedList>> HttpStaticDefinedListsGetAllAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -145,7 +145,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;StaticDefinedList&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<StaticDefinedList>>> HttpStaticDefinedListsGetAllWithHttpInfoAsync(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<StaticDefinedList>>> HttpStaticDefinedListsGetAllWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -159,7 +159,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StaticDefinedList</returns>
-        System.Threading.Tasks.Task<StaticDefinedList> HttpStaticDefinedListsGetByIdAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<StaticDefinedList> HttpStaticDefinedListsGetByIdAsync(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -174,7 +174,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StaticDefinedList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StaticDefinedList>> HttpStaticDefinedListsGetByIdWithHttpInfoAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<StaticDefinedList>> HttpStaticDefinedListsGetByIdWithHttpInfoAsync(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -190,7 +190,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StaticDefinedList</returns>
-        System.Threading.Tasks.Task<StaticDefinedList> HttpStaticDefinedListsUpdateByIdAsync(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<StaticDefinedList> HttpStaticDefinedListsUpdateByIdAsync(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -207,7 +207,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StaticDefinedList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StaticDefinedList>> HttpStaticDefinedListsUpdateByIdWithHttpInfoAsync(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<StaticDefinedList>> HttpStaticDefinedListsUpdateByIdWithHttpInfoAsync(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -336,7 +336,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;StaticDefinedList&gt;</returns>
-        public List<StaticDefinedList> HttpStaticDefinedListsGetAll(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public List<StaticDefinedList> HttpStaticDefinedListsGetAll(bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<List<StaticDefinedList>> localVarResponse = HttpStaticDefinedListsGetAllWithHttpInfo(translations, acceptLanguage);
             return localVarResponse.Data;
@@ -350,7 +350,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;StaticDefinedList&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<StaticDefinedList>> HttpStaticDefinedListsGetAllWithHttpInfo(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<StaticDefinedList>> HttpStaticDefinedListsGetAllWithHttpInfo(bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -363,6 +363,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -415,7 +416,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;StaticDefinedList&gt;</returns>
-        public async System.Threading.Tasks.Task<List<StaticDefinedList>> HttpStaticDefinedListsGetAllAsync(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<StaticDefinedList>> HttpStaticDefinedListsGetAllAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<List<StaticDefinedList>> localVarResponse = await HttpStaticDefinedListsGetAllWithHttpInfoAsync(translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -430,7 +431,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;StaticDefinedList&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<StaticDefinedList>>> HttpStaticDefinedListsGetAllWithHttpInfoAsync(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<StaticDefinedList>>> HttpStaticDefinedListsGetAllWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -497,7 +498,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>StaticDefinedList</returns>
-        public StaticDefinedList HttpStaticDefinedListsGetById(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public StaticDefinedList HttpStaticDefinedListsGetById(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<StaticDefinedList> localVarResponse = HttpStaticDefinedListsGetByIdWithHttpInfo(id, translations, acceptLanguage);
             return localVarResponse.Data;
@@ -512,7 +513,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of StaticDefinedList</returns>
-        public Agravity.Public.Client.ApiResponse<StaticDefinedList> HttpStaticDefinedListsGetByIdWithHttpInfo(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<StaticDefinedList> HttpStaticDefinedListsGetByIdWithHttpInfo(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -531,6 +532,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -585,7 +587,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StaticDefinedList</returns>
-        public async System.Threading.Tasks.Task<StaticDefinedList> HttpStaticDefinedListsGetByIdAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<StaticDefinedList> HttpStaticDefinedListsGetByIdAsync(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<StaticDefinedList> localVarResponse = await HttpStaticDefinedListsGetByIdWithHttpInfoAsync(id, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -601,7 +603,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StaticDefinedList)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<StaticDefinedList>> HttpStaticDefinedListsGetByIdWithHttpInfoAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<StaticDefinedList>> HttpStaticDefinedListsGetByIdWithHttpInfoAsync(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -677,7 +679,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>StaticDefinedList</returns>
-        public StaticDefinedList HttpStaticDefinedListsUpdateById(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public StaticDefinedList HttpStaticDefinedListsUpdateById(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<StaticDefinedList> localVarResponse = HttpStaticDefinedListsUpdateByIdWithHttpInfo(id, updatemode, staticDefinedList, translations, acceptLanguage);
             return localVarResponse.Data;
@@ -694,7 +696,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of StaticDefinedList</returns>
-        public Agravity.Public.Client.ApiResponse<StaticDefinedList> HttpStaticDefinedListsUpdateByIdWithHttpInfo(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<StaticDefinedList> HttpStaticDefinedListsUpdateByIdWithHttpInfo(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -726,6 +728,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -784,7 +787,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StaticDefinedList</returns>
-        public async System.Threading.Tasks.Task<StaticDefinedList> HttpStaticDefinedListsUpdateByIdAsync(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<StaticDefinedList> HttpStaticDefinedListsUpdateByIdAsync(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<StaticDefinedList> localVarResponse = await HttpStaticDefinedListsUpdateByIdWithHttpInfoAsync(id, updatemode, staticDefinedList, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -802,7 +805,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StaticDefinedList)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<StaticDefinedList>> HttpStaticDefinedListsUpdateByIdWithHttpInfoAsync(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<StaticDefinedList>> HttpStaticDefinedListsUpdateByIdWithHttpInfoAsync(string id, string updatemode, StaticDefinedList staticDefinedList, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)

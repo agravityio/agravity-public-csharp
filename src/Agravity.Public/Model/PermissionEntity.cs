@@ -68,7 +68,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="role">role (default to RoleEnum.NONE).</param>
-        public PermissionEntity(string id = default(string), RoleEnum? role = RoleEnum.NONE)
+        public PermissionEntity(string id = default, RoleEnum? role = RoleEnum.NONE)
         {
             this.Id = id;
             this.Role = role;

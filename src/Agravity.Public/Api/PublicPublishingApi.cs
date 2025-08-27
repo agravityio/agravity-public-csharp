@@ -38,7 +38,7 @@ namespace Agravity.Public.Api
         /// <param name="incldescendants">Include collections further down in hierarchy (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PublishEntity</returns>
-        PublishEntity HttpPublishedAssetsGetAll(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0);
+        PublishEntity HttpPublishedAssetsGetAll(string cid = default, bool? incldescendants = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace Agravity.Public.Api
         /// <param name="incldescendants">Include collections further down in hierarchy (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PublishEntity</returns>
-        ApiResponse<PublishEntity> HttpPublishedAssetsGetAllWithHttpInfo(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0);
+        ApiResponse<PublishEntity> HttpPublishedAssetsGetAllWithHttpInfo(string cid = default, bool? incldescendants = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -73,7 +73,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PublishEntity</returns>
-        System.Threading.Tasks.Task<PublishEntity> HttpPublishedAssetsGetAllAsync(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PublishEntity> HttpPublishedAssetsGetAllAsync(string cid = default, bool? incldescendants = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PublishEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PublishEntity>> HttpPublishedAssetsGetAllWithHttpInfoAsync(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PublishEntity>> HttpPublishedAssetsGetAllWithHttpInfoAsync(string cid = default, bool? incldescendants = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -216,7 +216,7 @@ namespace Agravity.Public.Api
         /// <param name="incldescendants">Include collections further down in hierarchy (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PublishEntity</returns>
-        public PublishEntity HttpPublishedAssetsGetAll(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0)
+        public PublishEntity HttpPublishedAssetsGetAll(string cid = default, bool? incldescendants = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<PublishEntity> localVarResponse = HttpPublishedAssetsGetAllWithHttpInfo(cid, incldescendants);
             return localVarResponse.Data;
@@ -230,7 +230,7 @@ namespace Agravity.Public.Api
         /// <param name="incldescendants">Include collections further down in hierarchy (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PublishEntity</returns>
-        public Agravity.Public.Client.ApiResponse<PublishEntity> HttpPublishedAssetsGetAllWithHttpInfo(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<PublishEntity> HttpPublishedAssetsGetAllWithHttpInfo(string cid = default, bool? incldescendants = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -243,6 +243,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -295,7 +296,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PublishEntity</returns>
-        public async System.Threading.Tasks.Task<PublishEntity> HttpPublishedAssetsGetAllAsync(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PublishEntity> HttpPublishedAssetsGetAllAsync(string cid = default, bool? incldescendants = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<PublishEntity> localVarResponse = await HttpPublishedAssetsGetAllWithHttpInfoAsync(cid, incldescendants, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -310,7 +311,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PublishEntity)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PublishEntity>> HttpPublishedAssetsGetAllWithHttpInfoAsync(string cid = default(string), bool? incldescendants = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PublishEntity>> HttpPublishedAssetsGetAllWithHttpInfoAsync(string cid = default, bool? incldescendants = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();

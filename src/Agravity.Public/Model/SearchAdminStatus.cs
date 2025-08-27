@@ -39,7 +39,7 @@ namespace Agravity.Public.Model
         /// <param name="indexer">indexer.</param>
         /// <param name="datasource">datasource.</param>
         /// <param name="skillsets">skillsets.</param>
-        public SearchAdminStatus(SearchAdminIndexStatus index = default(SearchAdminIndexStatus), SearchAdminIndexerStatus indexer = default(SearchAdminIndexerStatus), SearchAdminDataSourceStatus datasource = default(SearchAdminDataSourceStatus), List<SearchAdminSkillStatus> skillsets = default(List<SearchAdminSkillStatus>))
+        public SearchAdminStatus(SearchAdminIndexStatus index = default, SearchAdminIndexerStatus indexer = default, SearchAdminDataSourceStatus datasource = default, List<SearchAdminSkillStatus> skillsets = default)
         {
             this.Index = index;
             this.Indexer = indexer;

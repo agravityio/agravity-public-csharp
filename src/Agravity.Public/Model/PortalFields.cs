@@ -40,7 +40,7 @@ namespace Agravity.Public.Model
         /// <param name="facetOrder">facetOrder.</param>
         /// <param name="labels">labels.</param>
         /// <param name="userContext">userContext.</param>
-        public PortalFields(string name = default(string), int? detailOrder = default(int?), int? facetOrder = default(int?), Dictionary<string, string> labels = default(Dictionary<string, string>), PortalUserContext userContext = default(PortalUserContext))
+        public PortalFields(string name = default, int? detailOrder = default, int? facetOrder = default, Dictionary<string, string> labels = default, PortalUserContext userContext = default)
         {
             this.Name = name;
             this.DetailOrder = detailOrder;

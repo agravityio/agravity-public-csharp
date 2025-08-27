@@ -36,7 +36,7 @@ namespace Agravity.Public.Model
         /// Initializes a new instance of the <see cref="EntityId" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        public EntityId(string id = default(string))
+        public EntityId(string id = default)
         {
             this.Id = id;
         }

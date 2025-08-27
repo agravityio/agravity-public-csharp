@@ -43,7 +43,7 @@ namespace Agravity.Public.Model
         /// <param name="blobData">blobData.</param>
         /// <param name="blobUploaded">blobUploaded.</param>
         /// <param name="mimeType">mimeType.</param>
-        public VersionedAsset(int? versionNr = default(int?), DateTime? untilDate = default(DateTime?), string versionInfo = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), AssetBlob blobData = default(AssetBlob), DateTime? blobUploaded = default(DateTime?), string mimeType = default(string))
+        public VersionedAsset(int? versionNr = default, DateTime? untilDate = default, string versionInfo = default, DateTime? createdDate = default, string createdBy = default, AssetBlob blobData = default, DateTime? blobUploaded = default, string mimeType = default)
         {
             this.VersionNr = versionNr;
             this.UntilDate = untilDate;

@@ -67,7 +67,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SignalRConnectionInfo</returns>
-        System.Threading.Tasks.Task<SignalRConnectionInfo> HttpSignalRNegotiateAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SignalRConnectionInfo> HttpSignalRNegotiateAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SignalRConnectionInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SignalRConnectionInfo>> HttpSignalRNegotiateWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SignalRConnectionInfo>> HttpSignalRNegotiateWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -231,6 +231,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -273,7 +274,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SignalRConnectionInfo</returns>
-        public async System.Threading.Tasks.Task<SignalRConnectionInfo> HttpSignalRNegotiateAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SignalRConnectionInfo> HttpSignalRNegotiateAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<SignalRConnectionInfo> localVarResponse = await HttpSignalRNegotiateWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -286,7 +287,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SignalRConnectionInfo)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SignalRConnectionInfo>> HttpSignalRNegotiateWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SignalRConnectionInfo>> HttpSignalRNegotiateWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();

@@ -37,7 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="documentcount">documentcount.</param>
         /// <param name="storagesizebytes">storagesizebytes.</param>
-        public SearchAdminStatistics(long? documentcount = default(long?), long? storagesizebytes = default(long?))
+        public SearchAdminStatistics(long? documentcount = default, long? storagesizebytes = default)
         {
             this.Documentcount = documentcount;
             this.Storagesizebytes = storagesizebytes;

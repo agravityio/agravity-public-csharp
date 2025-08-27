@@ -43,7 +43,7 @@ namespace Agravity.Public.Model
         /// <param name="assetType">assetType.</param>
         /// <param name="origBlob">origBlob.</param>
         /// <param name="blobs">blobs.</param>
-        public SharedAsset(string id = default(string), string name = default(string), string description = default(string), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), string assetType = default(string), AssetBlob origBlob = default(AssetBlob), List<AssetBlob> blobs = default(List<AssetBlob>))
+        public SharedAsset(string id = default, string name = default, string description = default, DateTime? createdDate = default, DateTime? modifiedDate = default, string assetType = default, AssetBlob origBlob = default, List<AssetBlob> blobs = default)
         {
             this.Id = id;
             this.Name = name;

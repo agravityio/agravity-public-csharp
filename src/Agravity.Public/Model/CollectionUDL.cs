@@ -40,7 +40,7 @@ namespace Agravity.Public.Model
         /// <param name="entityType">entityType.</param>
         /// <param name="translations">translations.</param>
         /// <param name="id">id.</param>
-        public CollectionUDL(List<EntityIdName> children = default(List<EntityIdName>), string name = default(string), string entityType = default(string), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), string id = default(string))
+        public CollectionUDL(List<EntityIdName> children = default, string name = default, string entityType = default, Dictionary<string, Dictionary<string, object>> translations = default, string id = default)
         {
             this.Children = children;
             this.Name = name;

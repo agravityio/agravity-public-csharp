@@ -40,7 +40,7 @@ namespace Agravity.Public.Model
         /// <param name="error">error.</param>
         /// <param name="lastrun">lastrun.</param>
         /// <param name="history">history.</param>
-        public SearchAdminIndexerStatus(string name = default(string), string status = default(string), string error = default(string), SearchAdminIndexerLastRun lastrun = default(SearchAdminIndexerLastRun), List<SearchAdminIndexerLastRun> history = default(List<SearchAdminIndexerLastRun>))
+        public SearchAdminIndexerStatus(string name = default, string status = default, string error = default, SearchAdminIndexerLastRun lastrun = default, List<SearchAdminIndexerLastRun> history = default)
         {
             this.Name = name;
             this.Status = status;

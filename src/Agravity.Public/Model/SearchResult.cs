@@ -39,7 +39,7 @@ namespace Agravity.Public.Model
         /// <param name="options">options.</param>
         /// <param name="facets">facets.</param>
         /// <param name="count">count.</param>
-        public SearchResult(DataResult dataResult = default(DataResult), AzSearchOptions options = default(AzSearchOptions), List<SearchFacet> facets = default(List<SearchFacet>), long? count = default(long?))
+        public SearchResult(DataResult dataResult = default, AzSearchOptions options = default, List<SearchFacet> facets = default, long? count = default)
         {
             this.DataResult = dataResult;
             this.Options = options;

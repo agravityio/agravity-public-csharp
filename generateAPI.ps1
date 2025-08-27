@@ -65,7 +65,7 @@ if (!(Test-Path "openapi.json") -or (Get-Content "openapi.json" -Raw) -eq "") {
 #npm install @openapitools/openapi-generator-cli -g
 
 # generate API
-$params="packageName=Agravity.Public,library=restsharp,targetFramework=net8.0;net6.0;netstandard2.0,packageVersion="+$apiVersion
+$params="packageName=Agravity.Public,library=restsharp,targetFramework=net8.0;net9.0;netstandard2.0,packageVersion="+$apiVersion
 # Write-Host("Executing: openapi-generator generate -i https://api.agravity.com/v2/swagger.json -g csharp-netcore -o src -p "+$params);
 #npx @openapitools/openapi-generator-cli generate -i openapi.json -g csharp-netcore -o . --additional-properties=$params
 java -jar $env:OPENAPI_GENERATOR generate -i openapi.json -g csharp -o . --additional-properties=$params
@@ -87,12 +87,6 @@ Start-Sleep -s 2
 
 #replace all "Dictionary&gt;" with "Dictionary&lt;string, object&gt;&gt;"
 Get-ChildItem -Recurse -File | ForEach-Object { (Get-Content $_.FullName) -replace "Dictionary&gt;", "Dictionary&lt;string, object&gt;&gt;" | Set-Content $_.FullName }
-
-# wait 2 seconds
-Start-Sleep -s 2
-
-#replace all "StaticDefinedStaticDefinedList" with "StaticDefinedList"
-Get-ChildItem -Recurse -File | ForEach-Object { (Get-Content $_.FullName) -replace "StaticDefinedStaticDefinedList", "StaticDefinedList" | Set-Content $_.FullName }
 
 # go one directory up
 Set-Location ..

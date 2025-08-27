@@ -37,7 +37,7 @@ namespace Agravity.Public.Api
         /// <param name="customonly">This returns only the custom created configurations. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;FrontendAppConfig&gt;</returns>
-        List<FrontendAppConfig> HttpConfigGetFrontendAll(bool? customonly = default(bool?), int operationIndex = 0);
+        List<FrontendAppConfig> HttpConfigGetFrontendAll(bool? customonly = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace Agravity.Public.Api
         /// <param name="customonly">This returns only the custom created configurations. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;FrontendAppConfig&gt;</returns>
-        ApiResponse<List<FrontendAppConfig>> HttpConfigGetFrontendAllWithHttpInfo(bool? customonly = default(bool?), int operationIndex = 0);
+        ApiResponse<List<FrontendAppConfig>> HttpConfigGetFrontendAllWithHttpInfo(bool? customonly = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -70,7 +70,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;FrontendAppConfig&gt;</returns>
-        System.Threading.Tasks.Task<List<FrontendAppConfig>> HttpConfigGetFrontendAllAsync(bool? customonly = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<FrontendAppConfig>> HttpConfigGetFrontendAllAsync(bool? customonly = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -83,7 +83,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;FrontendAppConfig&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<FrontendAppConfig>>> HttpConfigGetFrontendAllWithHttpInfoAsync(bool? customonly = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<FrontendAppConfig>>> HttpConfigGetFrontendAllWithHttpInfoAsync(bool? customonly = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -211,7 +211,7 @@ namespace Agravity.Public.Api
         /// <param name="customonly">This returns only the custom created configurations. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;FrontendAppConfig&gt;</returns>
-        public List<FrontendAppConfig> HttpConfigGetFrontendAll(bool? customonly = default(bool?), int operationIndex = 0)
+        public List<FrontendAppConfig> HttpConfigGetFrontendAll(bool? customonly = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>> localVarResponse = HttpConfigGetFrontendAllWithHttpInfo(customonly);
             return localVarResponse.Data;
@@ -224,7 +224,7 @@ namespace Agravity.Public.Api
         /// <param name="customonly">This returns only the custom created configurations. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;FrontendAppConfig&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>> HttpConfigGetFrontendAllWithHttpInfo(bool? customonly = default(bool?), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>> HttpConfigGetFrontendAllWithHttpInfo(bool? customonly = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -237,6 +237,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -279,7 +280,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;FrontendAppConfig&gt;</returns>
-        public async System.Threading.Tasks.Task<List<FrontendAppConfig>> HttpConfigGetFrontendAllAsync(bool? customonly = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<FrontendAppConfig>> HttpConfigGetFrontendAllAsync(bool? customonly = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>> localVarResponse = await HttpConfigGetFrontendAllWithHttpInfoAsync(customonly, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -293,7 +294,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;FrontendAppConfig&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>>> HttpConfigGetFrontendAllWithHttpInfoAsync(bool? customonly = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<FrontendAppConfig>>> HttpConfigGetFrontendAllWithHttpInfoAsync(bool? customonly = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();

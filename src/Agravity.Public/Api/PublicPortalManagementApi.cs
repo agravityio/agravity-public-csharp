@@ -112,7 +112,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PortalConfiguration</returns>
-        PortalConfiguration HttpPortalsConfigurationGetById(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        PortalConfiguration HttpPortalsConfigurationGetById(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -126,7 +126,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PortalConfiguration</returns>
-        ApiResponse<PortalConfiguration> HttpPortalsConfigurationGetByIdWithHttpInfo(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<PortalConfiguration> HttpPortalsConfigurationGetByIdWithHttpInfo(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -212,7 +212,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> HttpPortalGetAllAssetIdsByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<string>> HttpPortalGetAllAssetIdsByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -225,7 +225,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> HttpPortalGetAllAssetIdsByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> HttpPortalGetAllAssetIdsByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -238,7 +238,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DownloadZipStatus</returns>
-        System.Threading.Tasks.Task<DownloadZipStatus> HttpPortalGetStatusZipByIdAsync(string id, string zipId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DownloadZipStatus> HttpPortalGetStatusZipByIdAsync(string id, string zipId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -252,7 +252,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DownloadZipStatus)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DownloadZipStatus>> HttpPortalGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DownloadZipStatus>> HttpPortalGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -265,7 +265,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DownloadZipRequest</returns>
-        System.Threading.Tasks.Task<DownloadZipRequest> HttpPortalRequestZipByIdAsync(string id, DownloadZipRequest downloadZipRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DownloadZipRequest> HttpPortalRequestZipByIdAsync(string id, DownloadZipRequest downloadZipRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -279,7 +279,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DownloadZipRequest)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DownloadZipRequest>> HttpPortalRequestZipByIdWithHttpInfoAsync(string id, DownloadZipRequest downloadZipRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DownloadZipRequest>> HttpPortalRequestZipByIdWithHttpInfoAsync(string id, DownloadZipRequest downloadZipRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -293,7 +293,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PortalConfiguration</returns>
-        System.Threading.Tasks.Task<PortalConfiguration> HttpPortalsConfigurationGetByIdAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PortalConfiguration> HttpPortalsConfigurationGetByIdAsync(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -308,7 +308,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PortalConfiguration)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PortalConfiguration>> HttpPortalsConfigurationGetByIdWithHttpInfoAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PortalConfiguration>> HttpPortalsConfigurationGetByIdWithHttpInfoAsync(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -319,7 +319,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomClaimsProviderResponseContentTokenIssuanceStart</returns>
-        System.Threading.Tasks.Task<CustomClaimsProviderResponseContentTokenIssuanceStart> HttpPortalsEnhanceTokenAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomClaimsProviderResponseContentTokenIssuanceStart> HttpPortalsEnhanceTokenAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -331,7 +331,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomClaimsProviderResponseContentTokenIssuanceStart)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomClaimsProviderResponseContentTokenIssuanceStart>> HttpPortalsEnhanceTokenWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomClaimsProviderResponseContentTokenIssuanceStart>> HttpPortalsEnhanceTokenWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -343,7 +343,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Portal</returns>
-        System.Threading.Tasks.Task<Portal> HttpPortalsGetByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Portal> HttpPortalsGetByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -356,7 +356,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Portal)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Portal>> HttpPortalsGetByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Portal>> HttpPortalsGetByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -367,7 +367,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomClaimsProviderResponseContentAttributeCollectionSubmit</returns>
-        System.Threading.Tasks.Task<CustomClaimsProviderResponseContentAttributeCollectionSubmit> HttpPortalsSavePortalUserAttributesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CustomClaimsProviderResponseContentAttributeCollectionSubmit> HttpPortalsSavePortalUserAttributesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -379,7 +379,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomClaimsProviderResponseContentAttributeCollectionSubmit)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomClaimsProviderResponseContentAttributeCollectionSubmit>> HttpPortalsSavePortalUserAttributesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CustomClaimsProviderResponseContentAttributeCollectionSubmit>> HttpPortalsSavePortalUserAttributesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -539,6 +539,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -583,7 +584,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> HttpPortalGetAllAssetIdsByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<string>> HttpPortalGetAllAssetIdsByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<List<string>> localVarResponse = await HttpPortalGetAllAssetIdsByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -597,7 +598,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<string>>> HttpPortalGetAllAssetIdsByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<string>>> HttpPortalGetAllAssetIdsByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -701,6 +702,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -747,7 +749,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DownloadZipStatus</returns>
-        public async System.Threading.Tasks.Task<DownloadZipStatus> HttpPortalGetStatusZipByIdAsync(string id, string zipId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DownloadZipStatus> HttpPortalGetStatusZipByIdAsync(string id, string zipId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<DownloadZipStatus> localVarResponse = await HttpPortalGetStatusZipByIdWithHttpInfoAsync(id, zipId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -762,7 +764,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DownloadZipStatus)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<DownloadZipStatus>> HttpPortalGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<DownloadZipStatus>> HttpPortalGetStatusZipByIdWithHttpInfoAsync(string id, string zipId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -874,6 +876,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -920,7 +923,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DownloadZipRequest</returns>
-        public async System.Threading.Tasks.Task<DownloadZipRequest> HttpPortalRequestZipByIdAsync(string id, DownloadZipRequest downloadZipRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DownloadZipRequest> HttpPortalRequestZipByIdAsync(string id, DownloadZipRequest downloadZipRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<DownloadZipRequest> localVarResponse = await HttpPortalRequestZipByIdWithHttpInfoAsync(id, downloadZipRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -935,7 +938,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DownloadZipRequest)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<DownloadZipRequest>> HttpPortalRequestZipByIdWithHttpInfoAsync(string id, DownloadZipRequest downloadZipRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<DownloadZipRequest>> HttpPortalRequestZipByIdWithHttpInfoAsync(string id, DownloadZipRequest downloadZipRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1009,7 +1012,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PortalConfiguration</returns>
-        public PortalConfiguration HttpPortalsConfigurationGetById(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public PortalConfiguration HttpPortalsConfigurationGetById(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<PortalConfiguration> localVarResponse = HttpPortalsConfigurationGetByIdWithHttpInfo(id, translations, acceptLanguage);
             return localVarResponse.Data;
@@ -1024,7 +1027,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PortalConfiguration</returns>
-        public Agravity.Public.Client.ApiResponse<PortalConfiguration> HttpPortalsConfigurationGetByIdWithHttpInfo(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<PortalConfiguration> HttpPortalsConfigurationGetByIdWithHttpInfo(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1043,6 +1046,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1097,7 +1101,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PortalConfiguration</returns>
-        public async System.Threading.Tasks.Task<PortalConfiguration> HttpPortalsConfigurationGetByIdAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PortalConfiguration> HttpPortalsConfigurationGetByIdAsync(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<PortalConfiguration> localVarResponse = await HttpPortalsConfigurationGetByIdWithHttpInfoAsync(id, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1113,7 +1117,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PortalConfiguration)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PortalConfiguration>> HttpPortalsConfigurationGetByIdWithHttpInfoAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<PortalConfiguration>> HttpPortalsConfigurationGetByIdWithHttpInfoAsync(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1209,6 +1213,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1251,7 +1256,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomClaimsProviderResponseContentTokenIssuanceStart</returns>
-        public async System.Threading.Tasks.Task<CustomClaimsProviderResponseContentTokenIssuanceStart> HttpPortalsEnhanceTokenAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomClaimsProviderResponseContentTokenIssuanceStart> HttpPortalsEnhanceTokenAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentTokenIssuanceStart> localVarResponse = await HttpPortalsEnhanceTokenWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1264,7 +1269,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomClaimsProviderResponseContentTokenIssuanceStart)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentTokenIssuanceStart>> HttpPortalsEnhanceTokenWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentTokenIssuanceStart>> HttpPortalsEnhanceTokenWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -1353,6 +1358,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1397,7 +1403,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Portal</returns>
-        public async System.Threading.Tasks.Task<Portal> HttpPortalsGetByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Portal> HttpPortalsGetByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<Portal> localVarResponse = await HttpPortalsGetByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1411,7 +1417,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Portal)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Portal>> HttpPortalsGetByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Portal>> HttpPortalsGetByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1499,6 +1505,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1541,7 +1548,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CustomClaimsProviderResponseContentAttributeCollectionSubmit</returns>
-        public async System.Threading.Tasks.Task<CustomClaimsProviderResponseContentAttributeCollectionSubmit> HttpPortalsSavePortalUserAttributesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CustomClaimsProviderResponseContentAttributeCollectionSubmit> HttpPortalsSavePortalUserAttributesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentAttributeCollectionSubmit> localVarResponse = await HttpPortalsSavePortalUserAttributesWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1554,7 +1561,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CustomClaimsProviderResponseContentAttributeCollectionSubmit)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentAttributeCollectionSubmit>> HttpPortalsSavePortalUserAttributesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CustomClaimsProviderResponseContentAttributeCollectionSubmit>> HttpPortalsSavePortalUserAttributesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();

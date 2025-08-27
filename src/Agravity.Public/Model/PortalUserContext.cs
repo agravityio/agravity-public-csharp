@@ -39,7 +39,7 @@ namespace Agravity.Public.Model
         /// <param name="mandatory">mandatory.</param>
         /// <param name="mapping">mapping.</param>
         /// <param name="options">options.</param>
-        public PortalUserContext(string key = default(string), bool? mandatory = default(bool?), Dictionary<string, string> mapping = default(Dictionary<string, string>), List<string> options = default(List<string>))
+        public PortalUserContext(string key = default, bool? mandatory = default, Dictionary<string, string> mapping = default, List<string> options = default)
         {
             this.Key = key;
             this.Mandatory = mandatory;

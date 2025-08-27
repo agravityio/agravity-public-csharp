@@ -41,7 +41,7 @@ namespace Agravity.Public.Model
         /// <param name="createdDate">createdDate.</param>
         /// <param name="addInfo">addInfo.</param>
         /// <param name="dist">dist.</param>
-        public GroupAllAppData(CollectionType collectionType = default(CollectionType), List<Collection> collections = default(List<Collection>), List<Asset> assets = default(List<Asset>), DateTime? createdDate = default(DateTime?), List<Dictionary<string, object>> addInfo = default(List<Dictionary<string, object>>), DistZipResponse dist = default(DistZipResponse))
+        public GroupAllAppData(CollectionType collectionType = default, List<Collection> collections = default, List<Asset> assets = default, DateTime? createdDate = default, List<Dictionary<string, object>> addInfo = default, DistZipResponse dist = default)
         {
             this.CollectionType = collectionType;
             this.Collections = collections;

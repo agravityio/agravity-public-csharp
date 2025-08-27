@@ -47,7 +47,7 @@ namespace Agravity.Public.Model
         /// <param name="statusTableId">statusTableId.</param>
         /// <param name="format">format.</param>
         /// <param name="properties">properties.</param>
-        public PublishedAsset(string id = default(string), string name = default(string), string target = default(string), string description = default(string), List<string> usecases = default(List<string>), DateTime? createdDate = default(DateTime?), string createdBy = default(string), string url = default(string), string cdn = default(string), string statusTableId = default(string), string format = default(string), Dictionary<string, object> properties = default(Dictionary<string, object>))
+        public PublishedAsset(string id = default, string name = default, string target = default, string description = default, List<string> usecases = default, DateTime? createdDate = default, string createdBy = default, string url = default, string cdn = default, string statusTableId = default, string format = default, Dictionary<string, object> properties = default)
         {
             this.Id = id;
             this.Name = name;

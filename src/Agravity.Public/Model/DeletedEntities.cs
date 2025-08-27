@@ -39,7 +39,7 @@ namespace Agravity.Public.Model
         /// <param name="name">name.</param>
         /// <param name="deleted">deleted.</param>
         /// <param name="entityType">entityType.</param>
-        public DeletedEntities(string id = default(string), string name = default(string), DateTime? deleted = default(DateTime?), string entityType = default(string))
+        public DeletedEntities(string id = default, string name = default, DateTime? deleted = default, string entityType = default)
         {
             this.Id = id;
             this.Name = name;

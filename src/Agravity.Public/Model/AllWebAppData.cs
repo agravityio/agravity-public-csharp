@@ -40,7 +40,7 @@ namespace Agravity.Public.Model
         /// <param name="assets">assets.</param>
         /// <param name="pubAssets">pubAssets.</param>
         /// <param name="createdDate">createdDate.</param>
-        public AllWebAppData(Collection rootCollection = default(Collection), List<Collection> subcollections = default(List<Collection>), List<Asset> assets = default(List<Asset>), List<PublishedAsset> pubAssets = default(List<PublishedAsset>), DateTime? createdDate = default(DateTime?))
+        public AllWebAppData(Collection rootCollection = default, List<Collection> subcollections = default, List<Asset> assets = default, List<PublishedAsset> pubAssets = default, DateTime? createdDate = default)
         {
             this.RootCollection = rootCollection;
             this.Subcollections = subcollections;

@@ -38,7 +38,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CollectionType&gt;</returns>
-        List<CollectionType> HttpCollectionTypesGet(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        List<CollectionType> HttpCollectionTypesGet(bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CollectionType&gt;</returns>
-        ApiResponse<List<CollectionType>> HttpCollectionTypesGetWithHttpInfo(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<List<CollectionType>> HttpCollectionTypesGetWithHttpInfo(bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -64,7 +64,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CollectionType</returns>
-        CollectionType HttpCollectionTypesGetById(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        CollectionType HttpCollectionTypesGetById(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -78,7 +78,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CollectionType</returns>
-        ApiResponse<CollectionType> HttpCollectionTypesGetByIdWithHttpInfo(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<CollectionType> HttpCollectionTypesGetByIdWithHttpInfo(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -91,7 +91,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CollTypeItem&gt;</returns>
-        List<CollTypeItem> HttpGetCollectionTypeItems(bool? includeblueprint = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        List<CollTypeItem> HttpGetCollectionTypeItems(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CollTypeItem&gt;</returns>
-        ApiResponse<List<CollTypeItem>> HttpGetCollectionTypeItemsWithHttpInfo(bool? includeblueprint = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<List<CollTypeItem>> HttpGetCollectionTypeItemsWithHttpInfo(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -127,7 +127,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CollectionType&gt;</returns>
-        System.Threading.Tasks.Task<List<CollectionType>> HttpCollectionTypesGetAsync(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<CollectionType>> HttpCollectionTypesGetAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -141,7 +141,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CollectionType&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CollectionType>>> HttpCollectionTypesGetWithHttpInfoAsync(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<CollectionType>>> HttpCollectionTypesGetWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -155,7 +155,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CollectionType</returns>
-        System.Threading.Tasks.Task<CollectionType> HttpCollectionTypesGetByIdAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CollectionType> HttpCollectionTypesGetByIdAsync(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -170,7 +170,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CollectionType)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CollectionType>> HttpCollectionTypesGetByIdWithHttpInfoAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CollectionType>> HttpCollectionTypesGetByIdWithHttpInfoAsync(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -184,7 +184,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CollTypeItem&gt;</returns>
-        System.Threading.Tasks.Task<List<CollTypeItem>> HttpGetCollectionTypeItemsAsync(bool? includeblueprint = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<CollTypeItem>> HttpGetCollectionTypeItemsAsync(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -199,7 +199,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CollTypeItem&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CollTypeItem>>> HttpGetCollectionTypeItemsWithHttpInfoAsync(bool? includeblueprint = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<CollTypeItem>>> HttpGetCollectionTypeItemsWithHttpInfoAsync(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -328,7 +328,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CollectionType&gt;</returns>
-        public List<CollectionType> HttpCollectionTypesGet(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public List<CollectionType> HttpCollectionTypesGet(bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<List<CollectionType>> localVarResponse = HttpCollectionTypesGetWithHttpInfo(translations, acceptLanguage);
             return localVarResponse.Data;
@@ -342,7 +342,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CollectionType&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<CollectionType>> HttpCollectionTypesGetWithHttpInfo(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<CollectionType>> HttpCollectionTypesGetWithHttpInfo(bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -355,6 +355,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -407,7 +408,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CollectionType&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CollectionType>> HttpCollectionTypesGetAsync(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<CollectionType>> HttpCollectionTypesGetAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<List<CollectionType>> localVarResponse = await HttpCollectionTypesGetWithHttpInfoAsync(translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -422,7 +423,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CollectionType&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollectionType>>> HttpCollectionTypesGetWithHttpInfoAsync(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollectionType>>> HttpCollectionTypesGetWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -489,7 +490,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CollectionType</returns>
-        public CollectionType HttpCollectionTypesGetById(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public CollectionType HttpCollectionTypesGetById(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<CollectionType> localVarResponse = HttpCollectionTypesGetByIdWithHttpInfo(id, translations, acceptLanguage);
             return localVarResponse.Data;
@@ -504,7 +505,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CollectionType</returns>
-        public Agravity.Public.Client.ApiResponse<CollectionType> HttpCollectionTypesGetByIdWithHttpInfo(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<CollectionType> HttpCollectionTypesGetByIdWithHttpInfo(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -523,6 +524,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -577,7 +579,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CollectionType</returns>
-        public async System.Threading.Tasks.Task<CollectionType> HttpCollectionTypesGetByIdAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CollectionType> HttpCollectionTypesGetByIdAsync(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<CollectionType> localVarResponse = await HttpCollectionTypesGetByIdWithHttpInfoAsync(id, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -593,7 +595,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CollectionType)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CollectionType>> HttpCollectionTypesGetByIdWithHttpInfoAsync(string id, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CollectionType>> HttpCollectionTypesGetByIdWithHttpInfoAsync(string id, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -667,7 +669,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CollTypeItem&gt;</returns>
-        public List<CollTypeItem> HttpGetCollectionTypeItems(bool? includeblueprint = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public List<CollTypeItem> HttpGetCollectionTypeItems(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<List<CollTypeItem>> localVarResponse = HttpGetCollectionTypeItemsWithHttpInfo(includeblueprint, translations, acceptLanguage);
             return localVarResponse.Data;
@@ -682,7 +684,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CollTypeItem&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<CollTypeItem>> HttpGetCollectionTypeItemsWithHttpInfo(bool? includeblueprint = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<CollTypeItem>> HttpGetCollectionTypeItemsWithHttpInfo(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -695,6 +697,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -752,7 +755,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CollTypeItem&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CollTypeItem>> HttpGetCollectionTypeItemsAsync(bool? includeblueprint = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<CollTypeItem>> HttpGetCollectionTypeItemsAsync(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<List<CollTypeItem>> localVarResponse = await HttpGetCollectionTypeItemsWithHttpInfoAsync(includeblueprint, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -768,7 +771,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CollTypeItem&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollTypeItem>>> HttpGetCollectionTypeItemsWithHttpInfoAsync(bool? includeblueprint = default(bool?), bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollTypeItem>>> HttpGetCollectionTypeItemsWithHttpInfoAsync(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();

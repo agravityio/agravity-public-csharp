@@ -40,7 +40,7 @@ namespace Agravity.Public.Model
         /// <param name="size">size.</param>
         /// <param name="continuationToken">continuationToken.</param>
         /// <param name="filter">filter.</param>
-        public AssetPageResult(List<Asset> page = default(List<Asset>), int? pageSize = default(int?), int? size = default(int?), string continuationToken = default(string), List<WhereParam> filter = default(List<WhereParam>))
+        public AssetPageResult(List<Asset> page = default, int? pageSize = default, int? size = default, string continuationToken = default, List<WhereParam> filter = default)
         {
             this.Page = page;
             this.PageSize = pageSize;

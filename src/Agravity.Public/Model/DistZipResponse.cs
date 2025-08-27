@@ -38,7 +38,7 @@ namespace Agravity.Public.Model
         /// <param name="url">url.</param>
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="size">size.</param>
-        public DistZipResponse(string url = default(string), DateTime? modifiedDate = default(DateTime?), long? size = default(long?))
+        public DistZipResponse(string url = default, DateTime? modifiedDate = default, long? size = default)
         {
             this.Url = url;
             this.ModifiedDate = modifiedDate;

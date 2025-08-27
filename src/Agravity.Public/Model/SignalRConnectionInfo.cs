@@ -37,7 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="url">url.</param>
         /// <param name="accessToken">accessToken.</param>
-        public SignalRConnectionInfo(string url = default(string), string accessToken = default(string))
+        public SignalRConnectionInfo(string url = default, string accessToken = default)
         {
             this.Url = url;
             this.AccessToken = accessToken;

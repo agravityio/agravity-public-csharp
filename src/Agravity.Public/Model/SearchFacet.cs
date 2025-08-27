@@ -37,7 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="entities">entities.</param>
-        public SearchFacet(string name = default(string), List<SearchFacetEntity> entities = default(List<SearchFacetEntity>))
+        public SearchFacet(string name = default, List<SearchFacetEntity> entities = default)
         {
             this.Name = name;
             this.Entities = entities;

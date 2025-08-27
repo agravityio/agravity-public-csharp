@@ -37,7 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="parent">parent.</param>
-        public RelatedAsset(string id = default(string), bool? parent = default(bool?))
+        public RelatedAsset(string id = default, bool? parent = default)
         {
             this.Id = id;
             this.Parent = parent;

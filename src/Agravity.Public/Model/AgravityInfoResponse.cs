@@ -38,7 +38,7 @@ namespace Agravity.Public.Model
         /// <param name="infoId">infoId.</param>
         /// <param name="infoMessage">infoMessage.</param>
         /// <param name="infoObject">infoObject.</param>
-        public AgravityInfoResponse(string infoId = default(string), string infoMessage = default(string), Object infoObject = default(Object))
+        public AgravityInfoResponse(string infoId = default, string infoMessage = default, Object infoObject = default)
         {
             this.InfoId = infoId;
             this.InfoMessage = infoMessage;

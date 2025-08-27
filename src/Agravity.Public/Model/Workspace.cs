@@ -51,7 +51,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Workspace(string id = default(string), string entityType = default(string), string name = default(string), List<CollectionType> collectionTypes = default(List<CollectionType>), Dictionary<string, Dictionary<string, object>> translations = default(Dictionary<string, Dictionary<string, object>>), int? order = default(int?), List<PermissionEntity> permissions = default(List<PermissionEntity>), string description = default(string), Dictionary<string, object> addProperties = default(Dictionary<string, object>), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public Workspace(string id = default, string entityType = default, string name = default, List<CollectionType> collectionTypes = default, Dictionary<string, Dictionary<string, object>> translations = default, int? order = default, List<PermissionEntity> permissions = default, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
         {
             this.Id = id;
             this.EntityType = entityType;

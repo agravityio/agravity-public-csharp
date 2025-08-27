@@ -41,7 +41,7 @@ namespace Agravity.Public.Model
         /// <param name="url">url.</param>
         /// <param name="fulltoken">fulltoken.</param>
         /// <param name="expires">expires.</param>
-        public SasToken(string token = default(string), string container = default(string), string blob = default(string), string url = default(string), string fulltoken = default(string), DateTime? expires = default(DateTime?))
+        public SasToken(string token = default, string container = default, string blob = default, string url = default, string fulltoken = default, DateTime? expires = default)
         {
             this.Token = token;
             this.Container = container;

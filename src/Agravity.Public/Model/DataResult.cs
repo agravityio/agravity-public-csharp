@@ -39,7 +39,7 @@ namespace Agravity.Public.Model
         /// <param name="sumAssetResults">sumAssetResults.</param>
         /// <param name="collection">collection.</param>
         /// <param name="sumCollectionResults">sumCollectionResults.</param>
-        public DataResult(List<Asset> asset = default(List<Asset>), int? sumAssetResults = default(int?), List<Collection> collection = default(List<Collection>), int? sumCollectionResults = default(int?))
+        public DataResult(List<Asset> asset = default, int? sumAssetResults = default, List<Collection> collection = default, int? sumCollectionResults = default)
         {
             this.Asset = asset;
             this.SumAssetResults = sumAssetResults;

@@ -37,7 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="userContext">userContext.</param>
         /// <param name="role">role.</param>
-        public CustomClaimsProviderResponseClaims(List<string> userContext = default(List<string>), string role = default(string))
+        public CustomClaimsProviderResponseClaims(List<string> userContext = default, string role = default)
         {
             this.UserContext = userContext;
             this.Role = role;

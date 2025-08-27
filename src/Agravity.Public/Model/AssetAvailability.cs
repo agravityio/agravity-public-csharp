@@ -38,7 +38,7 @@ namespace Agravity.Public.Model
         /// <param name="availability">availability.</param>
         /// <param name="availableFrom">availableFrom.</param>
         /// <param name="availableTo">availableTo.</param>
-        public AssetAvailability(string availability = default(string), DateTime? availableFrom = default(DateTime?), DateTime? availableTo = default(DateTime?))
+        public AssetAvailability(string availability = default, DateTime? availableFrom = default, DateTime? availableTo = default)
         {
             this.Availability = availability;
             this.AvailableFrom = availableFrom;

@@ -38,7 +38,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CollectionUDL&gt;</returns>
-        List<CollectionUDL> HttpGetAllUserDefinedLists(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        List<CollectionUDL> HttpGetAllUserDefinedLists(bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CollectionUDL&gt;</returns>
-        ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo(bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -62,7 +62,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        List<string> HttpGetAllowedFilterableItems(string portalId = default(string), int operationIndex = 0);
+        List<string> HttpGetAllowedFilterableItems(string portalId = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -74,7 +74,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> HttpGetAllowedFilterableItemsWithHttpInfo(string portalId = default(string), int operationIndex = 0);
+        ApiResponse<List<string>> HttpGetAllowedFilterableItemsWithHttpInfo(string portalId = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -85,7 +85,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        List<string> HttpGetAllowedSearchableItemNames(string portalId = default(string), int operationIndex = 0);
+        List<string> HttpGetAllowedSearchableItemNames(string portalId = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -97,7 +97,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> HttpGetAllowedSearchableItemNamesWithHttpInfo(string portalId = default(string), int operationIndex = 0);
+        ApiResponse<List<string>> HttpGetAllowedSearchableItemNamesWithHttpInfo(string portalId = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -108,7 +108,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;SearchableItem&gt;</returns>
-        List<SearchableItem> HttpGetAllowedSearchableItems(string portalId = default(string), int operationIndex = 0);
+        List<SearchableItem> HttpGetAllowedSearchableItems(string portalId = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -120,7 +120,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;SearchableItem&gt;</returns>
-        ApiResponse<List<SearchableItem>> HttpGetAllowedSearchableItemsWithHttpInfo(string portalId = default(string), int operationIndex = 0);
+        ApiResponse<List<SearchableItem>> HttpGetAllowedSearchableItemsWithHttpInfo(string portalId = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -163,7 +163,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CollectionUDL&gt;</returns>
-        System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -177,7 +177,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CollectionUDL&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CollectionUDL>>> HttpGetAllUserDefinedListsWithHttpInfoAsync(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<CollectionUDL>>> HttpGetAllUserDefinedListsWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -189,7 +189,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> HttpGetAllowedFilterableItemsAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<string>> HttpGetAllowedFilterableItemsAsync(string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -202,7 +202,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> HttpGetAllowedFilterableItemsWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> HttpGetAllowedFilterableItemsWithHttpInfoAsync(string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -214,7 +214,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> HttpGetAllowedSearchableItemNamesAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<string>> HttpGetAllowedSearchableItemNamesAsync(string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -227,7 +227,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> HttpGetAllowedSearchableItemNamesWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> HttpGetAllowedSearchableItemNamesWithHttpInfoAsync(string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -239,7 +239,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SearchableItem&gt;</returns>
-        System.Threading.Tasks.Task<List<SearchableItem>> HttpGetAllowedSearchableItemsAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<SearchableItem>> HttpGetAllowedSearchableItemsAsync(string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -252,7 +252,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SearchableItem&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<SearchableItem>>> HttpGetAllowedSearchableItemsWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<SearchableItem>>> HttpGetAllowedSearchableItemsWithHttpInfoAsync(string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -263,7 +263,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CollectionUDLListEntity</returns>
-        System.Threading.Tasks.Task<CollectionUDLListEntity> HttpPatchUpdateCachedUserDefinedListsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CollectionUDLListEntity> HttpPatchUpdateCachedUserDefinedListsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -275,7 +275,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CollectionUDLListEntity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CollectionUDLListEntity>> HttpPatchUpdateCachedUserDefinedListsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CollectionUDLListEntity>> HttpPatchUpdateCachedUserDefinedListsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -404,7 +404,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CollectionUDL&gt;</returns>
-        public List<CollectionUDL> HttpGetAllUserDefinedLists(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public List<CollectionUDL> HttpGetAllUserDefinedLists(bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<List<CollectionUDL>> localVarResponse = HttpGetAllUserDefinedListsWithHttpInfo(translations, acceptLanguage);
             return localVarResponse.Data;
@@ -418,7 +418,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CollectionUDL&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo(bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -431,6 +431,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -483,7 +484,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CollectionUDL&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<List<CollectionUDL>> localVarResponse = await HttpGetAllUserDefinedListsWithHttpInfoAsync(translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -498,7 +499,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CollectionUDL&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollectionUDL>>> HttpGetAllUserDefinedListsWithHttpInfoAsync(bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollectionUDL>>> HttpGetAllUserDefinedListsWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -563,7 +564,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        public List<string> HttpGetAllowedFilterableItems(string portalId = default(string), int operationIndex = 0)
+        public List<string> HttpGetAllowedFilterableItems(string portalId = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<List<string>> localVarResponse = HttpGetAllowedFilterableItemsWithHttpInfo(portalId);
             return localVarResponse.Data;
@@ -576,7 +577,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<string>> HttpGetAllowedFilterableItemsWithHttpInfo(string portalId = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<string>> HttpGetAllowedFilterableItemsWithHttpInfo(string portalId = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -589,6 +590,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -636,7 +638,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> HttpGetAllowedFilterableItemsAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<string>> HttpGetAllowedFilterableItemsAsync(string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<List<string>> localVarResponse = await HttpGetAllowedFilterableItemsWithHttpInfoAsync(portalId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -650,7 +652,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<string>>> HttpGetAllowedFilterableItemsWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<string>>> HttpGetAllowedFilterableItemsWithHttpInfoAsync(string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -711,7 +713,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        public List<string> HttpGetAllowedSearchableItemNames(string portalId = default(string), int operationIndex = 0)
+        public List<string> HttpGetAllowedSearchableItemNames(string portalId = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<List<string>> localVarResponse = HttpGetAllowedSearchableItemNamesWithHttpInfo(portalId);
             return localVarResponse.Data;
@@ -724,7 +726,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<string>> HttpGetAllowedSearchableItemNamesWithHttpInfo(string portalId = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<string>> HttpGetAllowedSearchableItemNamesWithHttpInfo(string portalId = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -737,6 +739,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -784,7 +787,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> HttpGetAllowedSearchableItemNamesAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<string>> HttpGetAllowedSearchableItemNamesAsync(string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<List<string>> localVarResponse = await HttpGetAllowedSearchableItemNamesWithHttpInfoAsync(portalId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -798,7 +801,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<string>>> HttpGetAllowedSearchableItemNamesWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<string>>> HttpGetAllowedSearchableItemNamesWithHttpInfoAsync(string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -859,7 +862,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;SearchableItem&gt;</returns>
-        public List<SearchableItem> HttpGetAllowedSearchableItems(string portalId = default(string), int operationIndex = 0)
+        public List<SearchableItem> HttpGetAllowedSearchableItems(string portalId = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<List<SearchableItem>> localVarResponse = HttpGetAllowedSearchableItemsWithHttpInfo(portalId);
             return localVarResponse.Data;
@@ -872,7 +875,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;SearchableItem&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<SearchableItem>> HttpGetAllowedSearchableItemsWithHttpInfo(string portalId = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<SearchableItem>> HttpGetAllowedSearchableItemsWithHttpInfo(string portalId = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -885,6 +888,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -932,7 +936,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;SearchableItem&gt;</returns>
-        public async System.Threading.Tasks.Task<List<SearchableItem>> HttpGetAllowedSearchableItemsAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<SearchableItem>> HttpGetAllowedSearchableItemsAsync(string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<List<SearchableItem>> localVarResponse = await HttpGetAllowedSearchableItemsWithHttpInfoAsync(portalId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -946,7 +950,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;SearchableItem&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<SearchableItem>>> HttpGetAllowedSearchableItemsWithHttpInfoAsync(string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<SearchableItem>>> HttpGetAllowedSearchableItemsWithHttpInfoAsync(string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -1031,6 +1035,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1073,7 +1078,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CollectionUDLListEntity</returns>
-        public async System.Threading.Tasks.Task<CollectionUDLListEntity> HttpPatchUpdateCachedUserDefinedListsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CollectionUDLListEntity> HttpPatchUpdateCachedUserDefinedListsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<CollectionUDLListEntity> localVarResponse = await HttpPatchUpdateCachedUserDefinedListsWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1086,7 +1091,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CollectionUDLListEntity)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CollectionUDLListEntity>> HttpPatchUpdateCachedUserDefinedListsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CollectionUDLListEntity>> HttpPatchUpdateCachedUserDefinedListsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();

@@ -80,7 +80,7 @@ namespace Agravity.Public.Model
         /// <param name="emailTo">emailTo.</param>
         /// <param name="message">message.</param>
         /// <param name="validUntil">validUntil.</param>
-        public DownloadZipRequest(string id = default(string), ZipTypeEnum? zipType = ZipTypeEnum.DOWNLOAD, List<string> assetIds = default(List<string>), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), string zipname = default(string), List<string> emailTo = default(List<string>), string message = default(string), DateTime? validUntil = default(DateTime?))
+        public DownloadZipRequest(string id = default, ZipTypeEnum? zipType = ZipTypeEnum.DOWNLOAD, List<string> assetIds = default, List<SharedAllowedFormat> allowedFormats = default, string zipname = default, List<string> emailTo = default, string message = default, DateTime? validUntil = default)
         {
             this.Id = id;
             this.ZipType = zipType;

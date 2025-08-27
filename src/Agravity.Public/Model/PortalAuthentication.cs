@@ -83,7 +83,7 @@ namespace Agravity.Public.Model
         /// <param name="clientId">clientId.</param>
         /// <param name="tenantId">tenantId.</param>
         /// <param name="password">password.</param>
-        public PortalAuthentication(MethodEnum? method = MethodEnum.UNDEFINED, string issuer = default(string), string clientId = default(string), string tenantId = default(string), string password = default(string))
+        public PortalAuthentication(MethodEnum? method = MethodEnum.UNDEFINED, string issuer = default, string clientId = default, string tenantId = default, string password = default)
         {
             this.Method = method;
             this.Issuer = issuer;

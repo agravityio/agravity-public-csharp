@@ -39,7 +39,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/portal'
+                $ref: "#/components/schemas/portal"
           description: Returns on portal from database.
         "401":
           description: Unauthorized. API Key not provided.
@@ -86,7 +86,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/portalConfiguration'
+                $ref: "#/components/schemas/portalConfiguration"
           description: Returns a full configuration of a portal.
         "401":
           description: Unauthorized. API Key not provided.
@@ -106,7 +106,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/customClaimsProviderResponseContentTokenIssuanceStart'
+                $ref: "#/components/schemas/customClaimsProviderResponseContentTokenIssuanceStart"
           description: Returns CustomClaimsProviderResponseContentTokenIssuanceStart.
         "401":
           description: Unauthorized. API Key not provided.
@@ -125,7 +125,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/customClaimsProviderResponseContentAttributeCollectionSubmit'
+                $ref: "#/components/schemas/customClaimsProviderResponseContentAttributeCollectionSubmit"
           description: Returns CustomClaimsProviderResponseContentAttributeCollectionSubmit
         "401":
           description: Unauthorized. API Key not provided.
@@ -152,7 +152,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/downloadZipRequest'
+              $ref: "#/components/schemas/downloadZipRequest"
         description: The allowed formats are the input which could be added.
         required: true
       responses:
@@ -160,13 +160,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/downloadZipRequest'
+                $ref: "#/components/schemas/downloadZipRequest"
           description: Returns the portal with the given ID.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Not valid portal id! (Code: 00b410fe-97d1-4952-ba0b-327d22514934)<br>Object\
             \ is not a valid DownloadZipRequest. (Code: a51d1697-f56e-4fa3-bde8-3ab44e6cbb0a)<br>No\
             \ allowed formats are given! (Code: 684df4b1-e0c5-4b07-8c81-cb9835e0bd00)<br>No\
@@ -182,7 +182,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Portal not found. (Code: 87d09a21-14d6-4da4-ab69-01e6c87f108c)<br>"
         "401":
           description: Unauthorized. API Key not provided.
@@ -219,13 +219,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/downloadZipStatus'
+                $ref: "#/components/schemas/downloadZipStatus"
           description: Returns the zip request for a portal with the given ID.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Not valid zip request id! (Code: 15331af9-82d6-41ba-a015-47c23f864eec)<br>Zip\
             \ request is no longer available! (Code: 18b7b4aa-6b4a-4da4-b8b3-c7ab1381e28c)"
         "401":
@@ -262,7 +262,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Portal ID is mandatory and not valid. (Code: f2817cb8-8573-4205-b45d-1b9a7f3d8cbb)"
         "401":
           description: Unauthorized. API Key not provided.
@@ -293,7 +293,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/assetMultiPartForm'
+              $ref: "#/components/schemas/assetMultiPartForm"
         description: This endpoint allows to use one asset.
         required: true
       responses:
@@ -301,13 +301,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/searchResult'
+                $ref: "#/components/schemas/searchResult"
           description: Returns a list of similar Assets.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Reverse Asset search failed. Query Asset Content length is\
             \ insuffient (0 or too big). (Code: 76695187-7ace-4a2e-9fd2-7f0170a998d9)<br>Wrong\
             \ content media type for Query Asset.Please upload file with multipart/form-data.\
@@ -369,7 +369,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/assetBlob'
+                $ref: "#/components/schemas/assetBlob"
           description: This function checks if asset exist on storage and returns
             the asset blob (incl. url).
         "401":
@@ -428,14 +428,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/assetBlob'
+                $ref: "#/components/schemas/assetBlob"
           description: Returns the asset blob (incl. URL) for the requested asset
             according to the input parameter(s)
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Asset has to be image! Not allowed on type (Code: ec482f52-0ec8-4a8b-89fd-65b9d6b624cd)"
         "404":
           description: The requested item could not be found.
@@ -489,7 +489,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/collection'
+                  $ref: "#/components/schemas/collection"
                 type: array
           description: Returns all collections of a specific asset.
         "401":
@@ -518,7 +518,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/moveCollectionBody'
+              $ref: "#/components/schemas/moveCollectionBody"
         description: Contains information about this operation.
         required: true
       responses:
@@ -526,7 +526,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Internal error. Request or Database client are null. (Code:\
             \ 21814e91-379c-4c35-8ff9-974147ba6b76)"
         "401":
@@ -595,7 +595,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/assetBlob'
+                $ref: "#/components/schemas/assetBlob"
           description: This function checks if asset exist on storage and returns
             the asset blob (incl. url to download).
         "401":
@@ -634,7 +634,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Asset has to be image! Not allowed on type (Code: ec482f52-0ec8-4a8b-89fd-65b9d6b624cd)"
         "401":
           description: Unauthorized. API Key not provided.
@@ -810,7 +810,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Asset has to be image! Not allowed on type (Code: ec482f52-0ec8-4a8b-89fd-65b9d6b624cd)<br>Asset\
             \ does not have origsize or optimized blob reference. (Code: b6733be7\
             \ -8560-4b1a-8dfc-657ac668ffea)"
@@ -842,7 +842,7 @@ paths:
           application/json:
             schema:
               items:
-                $ref: '#/components/schemas/dynamicImageOperation'
+                $ref: "#/components/schemas/dynamicImageOperation"
               type: array
         description: Operations to be performed on the image directly mapped to c#
           imagemagick sdk
@@ -859,7 +859,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Asset has to be image! Not allowed on type: {type} (Code:\
             \ ec482f52-0ec8-4a8b-89fd-65b9d6b624cd)<br>Not a valid asset used. It\
             \ has to be an asset, not deleted and from type {type} (Code: 320cda1c-7dd8-4b23-9b59-51ccee5e0a98)<br>"
@@ -907,7 +907,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Asset has to be image! Not allowed on type: {type} (Code:\
             \ ec482f52-0ec8-4a8b-89fd-65b9d6b624cd)<br>The ID given is missing or\
             \ not a valid download format ID. (Code: 7ec8d75d-3da4-4dce-8ab2-e52f0cf5f1f1)<br>Not\
@@ -945,7 +945,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/assetAvailability'
+              $ref: "#/components/schemas/assetAvailability"
         description: The values are validated and put directly on the asset.
         required: true
       responses:
@@ -953,13 +953,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/assetAvailability'
+                $ref: "#/components/schemas/assetAvailability"
           description: The values are return which are put on the asset.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Could not parse the asset availability object. (Code: 85ba8328-9181-4d74-a326-4073b17346d8)<br>Object\
             \ is not a valid asset availability object. (Code: 5515ebe5-2751-4760-a864-47812126b9a1)<br>Asset\
             \ availability has a confusing state: {updated.Availability}. (Code: 5515ebe5-2751-4760-a864-47812126b9a1)<br>Ambiguous\
@@ -1016,14 +1016,14 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/assetRelation'
+                  $ref: "#/components/schemas/assetRelation"
                 type: array
           description: Returns all asset relations in database.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Invalid parameter \"assetrelationtypeid\". (Code: 16e4697f-5ba6-4dea-a51a-c2e08eff5faa)<br>Asset\
             \ relation type not found. (Code: 33766cf4-d135-452b-9767-eb2171c5f258)"
         "401":
@@ -1070,13 +1070,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/assetRelation'
+                $ref: "#/components/schemas/assetRelation"
           description: Returns the created asset relation.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Object is not a valid asset_relation. (Code: db336702-2654-4c87-8a17-38994ef5f812)<br>No\
             \ input object given. (Code: 24897b5c-4322-4303-af28-578f374a17a0)<br>Missing\
             \ or invalid parameter \"assetrelationtypeid\" (Code: a0a5b486-972b-44c2-9378-96fc437c91ad)<br>Asset\
@@ -1117,7 +1117,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Error on deleting asset relation ({id}) database - max retry\
             \ count is reached. (Code: 9d8c7b6a-5e4f-3a2d-1b8c-7e6f5d4a3b2c)<br>Asset\
             \ relation type not found. (Code: 33766cf4-d135-452b-9767-eb2171c5f258)<br>The\
@@ -1161,13 +1161,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/assetRelation'
+                $ref: "#/components/schemas/assetRelation"
           description: Returns the requested asset relation.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Asset relation type not found. (Code: 33766cf4-d135-452b-9767-eb2171c5f258)<br>The\
             \ user does not have editor permission on the relation type. (Code: 63cad31c-ed36-4e1e-add4-349782019b68)"
         "401":
@@ -1214,7 +1214,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/assetRelation'
+              $ref: "#/components/schemas/assetRelation"
         description: This endpoint updates an asset relation with ID in the database.
         required: true
       responses:
@@ -1222,13 +1222,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/assetRelation'
+                $ref: "#/components/schemas/assetRelation"
           description: Returns the updated asset relation.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Object is not a valid asset_relation. (Code: 6c5b4a9d-8e7f-3a2d-1b8c-7e6f5d4a3b2c)<br>No\
             \ input object given. (Code: 5b4a9d8c-7e6f-3a2d-1b8c-7e6f5d4a3b2c)<br>Asset\
             \ relation must have at least two different assets. (Code: 4a9d8c7b-6e5f-3a2d-1b8c-7e6f5d4a3b2c)<br>Asset\
@@ -1364,13 +1364,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/assetPageResult'
+                $ref: "#/components/schemas/assetPageResult"
           description: Returns the all assets (from given collection) as array.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Could not query assets. Type: {type} (Code: 2744993d-fba5-4ae3-93df-ff95035c8af7)<br>Not\
             \ allowed to query assets without valid collection id. (Code: 81515ce1-8e13-4a83-84e6-fe8057d55fc5)<br>Collection\
             \ id {collectionId} not found. (Code: a3fe323c-6736-43e6-a9e9-49444f3f1406)"
@@ -1416,7 +1416,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/asset'
+              $ref: "#/components/schemas/asset"
         description: This endpoint creates an unique asset ID and adds the information
           to the database.
         required: true
@@ -1425,13 +1425,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/asset'
+                $ref: "#/components/schemas/asset"
           description: Returns the created simple asset.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "A parameter is null. (Code: 8f9036ff-037d-49a1-aab2-57899e5d30e6)<br>Given\
             \ asset body is not valid. (Code: a51d1697-f56e-4fa3-bde8-3ab44e6cbb0a)<br>Asset\
             \ availability has a confusing state: {updated.Availability}. (Code: 5515ebe5-2751-4760-a864-47812126b9a1)<br>Ambiguous\
@@ -1509,14 +1509,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/asset'
+                $ref: "#/components/schemas/asset"
           description: Returns the the asset with the given ID include type specific
             fields.
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: If the asset with the ID was not found.
         "401":
           description: Unauthorized. API Key not provided.
@@ -1560,7 +1560,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/asset'
+              $ref: "#/components/schemas/asset"
         description: The body has to contain one of the mentioned elements and a valid
           json. Not fitting properties are ignored.
         required: true
@@ -1569,14 +1569,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/asset'
+                $ref: "#/components/schemas/asset"
           description: Returns the updated full (depending on asset type) asset including
             custom fields.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "A parameter is null. (Code: cea84d3b-ccb5-46c9-9768-11e1f81edf6c)<br>Object\
             \ is not a valid asset. (Code: ea836a33-0d64-446f-8f67-2c3af564b18e)<br>Error\
             \ on updating custom items. (Code: 9d044d04-53fb-4b6a-b629-554ad6ea19e2)"
@@ -1607,7 +1607,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/assetMultiPartForm'
+              $ref: "#/components/schemas/assetMultiPartForm"
         description: This endpoint allows to upload one asset which is put onto the
           storage (INBOX).
         required: true
@@ -1616,13 +1616,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/asset'
+                $ref: "#/components/schemas/asset"
           description: Returns the created uploaded asset.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Request or Database client is null. (Code: feda1ab0-1477-4a76-abdd-3fa6fbdd0def)<br>Could\
             \ not find file in multi-part data. (Code: b473c560-3ea1-4065-92e6-607973af9d9c)<br>This\
             \ file is not supported. (Code: 12ac8746-349a-42c0-b73c-33257b73c728)"
@@ -1653,7 +1653,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/publishEntity'
+                $ref: "#/components/schemas/publishEntity"
           description: Returns the all published assets as .
         "401":
           description: Unauthorized. API Key not provided.
@@ -1679,7 +1679,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/publishedAsset'
+              $ref: "#/components/schemas/publishedAsset"
         description: This creates / adds an unique published asset ID and adds the
           information to the asset (in DB).
         required: true
@@ -1688,13 +1688,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/publishedAsset'
+                $ref: "#/components/schemas/publishedAsset"
           description: Returns the created published-asset entity.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Could not publish asset because asset or original blob could\
             \ not be found. (Code: 0da83425-da4e-4586-ae31-ba51e2c84f2c)<br>Could\
             \ not publish an asset which is not active. (Code: be0b47c9-cf24-4cb8-a4ab-f17cdfe6dc4e)<br>Could\
@@ -1740,7 +1740,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/publishedAsset'
+                $ref: "#/components/schemas/publishedAsset"
           description: Returns the published asset with the given ID.
         "401":
           description: Unauthorized. API Key not provided.
@@ -1771,7 +1771,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/versionEntity'
+                $ref: "#/components/schemas/versionEntity"
           description: Returns the VersionEntity where all versioned assets are included.
         "401":
           description: Unauthorized. API Key not provided.
@@ -1800,7 +1800,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/versionedAsset'
+              $ref: "#/components/schemas/versionedAsset"
         description: This VersionedAsset to create empty version (need to upload file
           with metadata to blob storage)
         required: true
@@ -1809,13 +1809,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/versionedAsset'
+                $ref: "#/components/schemas/versionedAsset"
           description: Returns the created version of the asset.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Asset is not active yet. Wait until process is finished. (Code:\
             \ 2e1fbeb0-b405-4985-8bac-aa604d5cd125) <br>or AgravityProcessingException\
             \ occured (see message). (Code: 37eb0897-6c1b-4147-9b6d-d0e756180623)"
@@ -1823,7 +1823,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Asset could not be found in database. (Code: 9a84addc-14b7-4a29-9f33-6f8f35e16bf3)"
         "401":
           description: Unauthorized. API Key not provided.
@@ -1851,7 +1851,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/assetMultiPartForm'
+              $ref: "#/components/schemas/assetMultiPartForm"
         description: This endpoint use form/multi-part data to upload one file which
           is the new version of the given asset.
         required: true
@@ -1860,13 +1860,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/versionedAsset'
+                $ref: "#/components/schemas/versionedAsset"
           description: Returns the created version of the asset.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Asset is not active yet. Wait until process is finished. (Code:\
             \ 2e1fbeb0-b405-4985-8bac-aa604d5cd125) <br>or asset upload failed. Content\
             \ length is insuffient (0 or too big) (Code: b9fd835c-5456-4101-a643-ed5c1d5e5335)\
@@ -1881,7 +1881,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Asset could not be found in database. (Code: 9a84addc-14b7-4a29-9f33-6f8f35e16bf3)"
         "401":
           description: Unauthorized. API Key not provided.
@@ -1917,7 +1917,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/versionedAsset'
+              $ref: "#/components/schemas/versionedAsset"
         description: Only the version_info is used and will be added to the current
           version which is archived (before the old version is restored).
         required: true
@@ -1926,13 +1926,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/versionedAsset'
+                $ref: "#/components/schemas/versionedAsset"
           description: Returns the versioned asset.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "If the version is not a number.<br>If blobs or internal, thumbs\
             \ or optimized are missing. Only assets can be restored which are complete\
             \ processed."
@@ -1972,7 +1972,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Given version of this asset is not a number (Code: 10fb9f76-1ee5-4b58-a642-bf37efa6c230)"
         "401":
           description: Unauthorized. API Key not provided.
@@ -2011,13 +2011,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/versionedAsset'
+                $ref: "#/components/schemas/versionedAsset"
           description: The updated asset version
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Given version of this asset is not a number (Code: 10fb9f76-1ee5-4b58-a642-bf37efa6c230)"
         "401":
           description: Unauthorized. API Key not provided.
@@ -2067,14 +2067,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/assetBlob'
+                $ref: "#/components/schemas/assetBlob"
           description: This function checks if asset exist on storage and returns
             the asset blob (incl. url).
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Given version of this asset is not a number (Code: 7a60606d-764f-4e12-9bc1-ba8512de158a)"
         "401":
           description: Unauthorized. API Key not provided.
@@ -2114,7 +2114,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/sasToken'
+                $ref: "#/components/schemas/sasToken"
           description: Returns SAS-Token for write access for the requested container.
         "401":
           description: Unauthorized. API Key not provided.
@@ -2142,7 +2142,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/sasToken'
+                $ref: "#/components/schemas/sasToken"
           description: Returns SAS-Token for write access for the inbox.
         "401":
           description: Unauthorized. API Key not provided.
@@ -2232,14 +2232,14 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/collection'
+                  $ref: "#/components/schemas/collection"
                 type: array
           description: Returns the all collections as array.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Level not a positive number (Code: 757f7df3-3556-4c59-b5ac-9c7bfda6c3d4)"
         "401":
           description: Unauthorized. API Key not provided.
@@ -2276,7 +2276,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/collection'
+              $ref: "#/components/schemas/collection"
         description: This endpoint creates a unique collection ID and adds the information
           to the database.
         required: true
@@ -2285,13 +2285,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/collection'
+                $ref: "#/components/schemas/collection"
           description: Returns the created collection.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "A parameter is null. (Code: 7dac18af-04ef-4da6-8b6e-e13dd8b027ae)<br>Missing\
             \ or invalid parameter \"collectiontypeid\". (Code: 42a54d68-8a33-4a71-9545-7460f7a1339d)<br>The\
             \ collection type \"<collectiontypeid>\" was not found.. (Code: 203b1950-d942-4692-8e55-0ec5c137167f)<br>Not\
@@ -2334,7 +2334,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Collection with ID {id} is null or not a well formated collection\
             \ id! (Code: 6e59a8c1-564a-411b-ad3b-3b0b78d80644)Collection with ID {id}\
             \ is set as default import collection. Change the DEFAULT_IMPORT_COLLECTION_ID\
@@ -2407,7 +2407,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/collection'
+                $ref: "#/components/schemas/collection"
           description: Returns the collection with the given ID.
         "401":
           description: Unauthorized. API Key not provided.
@@ -2445,7 +2445,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/collection'
+              $ref: "#/components/schemas/collection"
         description: The body has to be a valid collection json.Not fitting properties
           are ignored.
         required: true
@@ -2454,14 +2454,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/collection'
+                $ref: "#/components/schemas/collection"
           description: Returns the updated collection and it includes all specific
             properties from collection type.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Object is not a valid collection json. Parse error. (Code:\
             \ 6910ae7e-6aea-4f15-8773-1c168a66d61d)<br>Can not update. Item value\
             \ of \"{item.name}\" is not of the correct type \"{item.type}\". (Code:\
@@ -2521,7 +2521,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/collection'
+                  $ref: "#/components/schemas/collection"
                 type: array
           description: Returns the array of ancestors collections from the given collection
             in order by path.
@@ -2529,13 +2529,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Given collection id is not valid! (Code: 3f9fda3a-8911-45de-a4a0-34ea9e71e72d)"
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: If the collection with the ID was not found.
         "401":
           description: Unauthorized. API Key not provided.
@@ -2582,7 +2582,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/collection'
+                  $ref: "#/components/schemas/collection"
                 type: array
           description: Returns the array of descendants collections from the given
             collection in order by path.
@@ -2590,13 +2590,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Given collection id is not valid! (Code: 1f07346f-25a5-4338-9f83-cf96cc7af67d)"
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: If the collection with the ID was not found.
         "401":
           description: Unauthorized. API Key not provided.
@@ -2631,7 +2631,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: If the collection with the ID was not found.
         "401":
           description: Unauthorized. API Key not provided.
@@ -2651,7 +2651,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/entityNamesRequest'
+              $ref: "#/components/schemas/entityNamesRequest"
         description: An object with the array of strings with names of the collections
           to fetch.
         required: true
@@ -2660,7 +2660,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/entityListResult'
+                $ref: "#/components/schemas/entityListResult"
           description: Returns an array of EntityIdName objects with the found collections
             and an array of strings with the names which could not be found.
         "401":
@@ -2701,14 +2701,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/secureUploadEntity'
+                $ref: "#/components/schemas/secureUploadEntity"
           description: "Returns 200 (OK) and returns the element - if this still exists,\
             \ is valid and API Key is accepted."
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Not a valid secure upload id! (Code: f233ecb7-9f4e-43df-a6b6-172aa9ee66d0)<br>or\
             \ No API key was provided. Please use 'code' param or 'x-functions-key'\
             \ header property. (Code: a8843706-c481-4859-9555-2423dbdcc1a2)<br>or\
@@ -2723,7 +2723,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Secure upload entity not found for this user. (Code: 27ccd9e4-f5aa-4826-8384-b59451987bb9)<br>or\
             \ Secure upload entity not found. (Code: 639ec439-2ec0-4c4e-9d5b-688be06e2234)<br>or\
             \ Collection on which this secure upload is based, doesn't exist or is\
@@ -2763,7 +2763,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/file'
+              $ref: "#/components/schemas/file"
         description: This endpoint allows to upload one asset which is put onto the
           storage (INBOX). Object has to be FormData (Add file).
         required: true
@@ -2772,13 +2772,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/asset'
+                $ref: "#/components/schemas/asset"
           description: Returns the asset which was created.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Secure upload failed. Content length is insuffient (0 or bigger\
             \ than defined limit - default and maximum: 100 MB) (Code: bf2bdfc4-de75-42e4-add7-6cf7a546a3c0)<br>or\
             \ Not a valid secure upload id! (Code: f233ecb7-9f4e-43df-a6b6-172aa9ee66d0)<br>or\
@@ -2798,7 +2798,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Secure upload entity not found for this user. (Code: 27ccd9e4-f5aa-4826-8384-b59451987bb9)<br>or\
             \ Secure upload entity not found. (Code: 639ec439-2ec0-4c4e-9d5b-688be06e2234)<br>or\
             \ Collection on which this secure upload is based, doesn't exist or is\
@@ -2842,14 +2842,14 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/collectionType'
+                  $ref: "#/components/schemas/collectionType"
                 type: array
           description: Returns the all collection types as array.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Could not create connection to CosmosDB (Code: e244cef3-2665-4757-ba34-0d4d0e71bb9d)"
         "401":
           description: Unauthorized. API Key not provided.
@@ -2895,13 +2895,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/collectionType'
+                $ref: "#/components/schemas/collectionType"
           description: Returns the collection type with the given ID.
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: If the collection type with the ID was not found.
         "401":
           description: Unauthorized. API Key not provided.
@@ -2949,7 +2949,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/collTypeItem'
+                  $ref: "#/components/schemas/collTypeItem"
                 type: array
           description: The collection types items for this item.
         "401":
@@ -2980,20 +2980,20 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/frontendAppConfig'
+                  $ref: "#/components/schemas/frontendAppConfig"
                 type: array
           description: Returns the frontend configations values in store
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "No config table could be found. (Code: 33d6286a-b7a4-428e-9f0b-cf7488d174ac)"
         "401":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "The config table could be be accessed. (Code: b9f176b8-cf22-4815-a90c-5a40611d2cfa)"
         "500":
           description: Internal server error. Please contact administrator.
@@ -3019,7 +3019,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/downloadFormat'
+                  $ref: "#/components/schemas/downloadFormat"
                 type: array
           description: Returns all download formats in database.
         "401":
@@ -3069,7 +3069,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/downloadFormat'
+                  $ref: "#/components/schemas/downloadFormat"
                 type: array
           description: Returns download formats for the shared collection in database.
         "403":
@@ -3128,7 +3128,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Portal ID is mandatory and not valid. {type} (Code: be59e94a-0f76-415f-a6b7-065e3abfc64e)<br>Downloadformat\
             \ is not allowed on other asset type than image (Code: e77d141b-a2b4-4746-8910-5b97b2623cc4)<br>Downloadformat\
             \ with id '{format}' not found. (Code: eb70a990-6a28-40b1-8631-63a085fd8ac3)<br>Tried\
@@ -3153,13 +3153,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityVersion'
+                $ref: "#/components/schemas/agravityVersion"
           description: All information about backend.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Only if any of the input variable are null (Code: 9a6fb6f2-4b7b-4253-a4f3-5a46b7ba0ca8)"
         "404":
           description: Only if assembly could not found (?)
@@ -3211,7 +3211,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/deletedEntities'
+                  $ref: "#/components/schemas/deletedEntities"
                 type: array
           description: A list of entities which are deleted since the given date (last
             modified date = deleted date).
@@ -3219,7 +3219,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Since date could not be more in the future than until date.\
             \ (Code: d362e2d4-b6b1-4547-a97c-058d2f46acfc)<br>Entity type '{entityType}'\
             \ is not valid. (Code: 79abc89e-e072-4cf5-a63a-1573764975c6)<br>Entity\
@@ -3253,13 +3253,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityInfoResponse'
+                $ref: "#/components/schemas/agravityInfoResponse"
           description: Operation successfull
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: Only if instaceId is null
       tags:
       - Public General Management
@@ -3281,13 +3281,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityInfoResponse'
+                $ref: "#/components/schemas/agravityInfoResponse"
           description: Operation successfull
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: Only if instaceId is null
       tags:
       - Public General Management
@@ -3320,7 +3320,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/collectionUDL'
+                  $ref: "#/components/schemas/collectionUDL"
                 type: array
           description: A list of all user defined list entries.
         "401":
@@ -3340,7 +3340,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/collectionUDLListEntity'
+                $ref: "#/components/schemas/collectionUDLListEntity"
           description: A full list of all UDLs and the collection types they are in
             and their permissions.
         "401":
@@ -3369,7 +3369,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Argument is null. (Code: 7e0e127f-d12d-441d-8405-25d91f2b32d6)<br>Argument\
             \ exception: {message} (Code: 35c2fd8d-30ca-4c72-80fd-de91973b9c99)<br>Request\
             \ failed:  {message} (Code: fb5e9c1b-1206-4488-9240-3cc949c23646)<br>General\
@@ -3407,14 +3407,14 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/searchableItem'
+                  $ref: "#/components/schemas/searchableItem"
                 type: array
           description: A list of all searchable items.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Argument is null. (Code: 5e87014c-7ac4-4487-b91d-ce03438d5d45)<br>Argument\
             \ exception: {message} (Code: 1f7fb1e7-dbf4-41a8-b89c-9829067a1ca6)<br>Request\
             \ failed:  {message} (Code: b66c90a6-482e-40ee-b77d-06e001803ae0)<br>General\
@@ -3451,7 +3451,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Argument is null. (Code: e12181d0-371e-47c4-88cc-1d2453a7d9a6)<br>Argument\
             \ exception: {message} (Code: e109ada5-d770-43f3-a6e0-7d869b0bb8e1)<br>Request\
             \ failed:  {message} (Code: 2da00496-7e74-4c11-8bd0-1e92cbc8875a)<br>General\
@@ -3489,7 +3489,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/publishEntity'
+                $ref: "#/components/schemas/publishEntity"
           description: Returns the all published assets as .
         "401":
           description: Unauthorized. API Key not provided.
@@ -3537,7 +3537,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/savedSearch'
+                  $ref: "#/components/schemas/savedSearch"
                 type: array
           description: Returns all saved searches in database.
         "401":
@@ -3705,13 +3705,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/searchResult'
+                $ref: "#/components/schemas/searchResult"
           description: Returns the search result
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: |-
             A required parameter is null. (Code: 870f62fe-827a-4ef3-98e7-7f309244ee00)<br>or provide at least parameter "s=" with search string (url encoded) (Code: de39bfb1-42e3-4edf-9651-5c4952524e69)<br>or limit is not a valid number! Can use 0 for defined limit. (Code: 7115dc96-99e3-47a4-827a-8cc63cc1ab68
             or skip is not a valid number! Can use 0 for defined skip. (Code: ad8237e0-236c-4404-8eaa-d81a9fa4e41c
@@ -3813,13 +3813,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/searchFacet'
+                $ref: "#/components/schemas/searchFacet"
           description: Returns the search result
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "A required parameter is null. (Code: 870f62fe-827a-4ef3-98e7-7f309244ee00)<br>or\
             \ provide at least parameter \"s=\" with search string (url encoded) (Code:\
             \ 180db53c-9789-4588-ac4b-23d0c1eb1c06)<br>or limit is not a valid number!\
@@ -3858,7 +3858,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/searchAdminStatus'
+                $ref: "#/components/schemas/searchAdminStatus"
           description: This gives status about the search.
         "401":
           description: Unauthorized. API Key not provided.
@@ -3932,20 +3932,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/sharedCollectionFull'
+                $ref: "#/components/schemas/sharedCollectionFull"
           description: Returns the shared collection with the given ID.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "A parameter is null (Code: e61dfb16-e486-4c15-8b55-276bd85d291e)<br>or\
             \ not valid shared id! (Code: e1eb7b29-e501-4727-bec3-26f5099b7418)"
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Collection on which this share is based, doesn't exist. (Code:\
             \ 79dde226-ae08-4f4b-b334-de0cad89c994)<br>or Shared collection date expired!\
             \ (Code: 6758d66e-0ce6-4770-a497-01a578eac12c)<br>or Shared collection\
@@ -3984,27 +3984,27 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/downloadZipRequest'
+              $ref: "#/components/schemas/downloadZipRequest"
         description: The request of which assets or download formats should be used..
       responses:
         "201":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/downloadZipRequest'
+                $ref: "#/components/schemas/downloadZipRequest"
           description: Returns the requested download ZIP with created zip entity
             ID.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Not valid shared id! (Code: e1eb7b29-e501-4727-bec3-26f5099b7418)"
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Collection on which this share is based, doesn't exist. (Code:\
             \ 79dde226-ae08-4f4b-b334-de0cad89c994)<br>or Shared collection date expired!\
             \ (Code: 6758d66e-0ce6-4770-a497-01a578eac12c)<br>or Shared collection\
@@ -4053,19 +4053,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/downloadZipStatus'
+                $ref: "#/components/schemas/downloadZipStatus"
           description: Returns the status of the current zip request.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Not valid shared id! (Code: e1eb7b29-e501-4727-bec3-26f5099b7418)"
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Collection on which this share is based, doesn't exist. (Code:\
             \ 79dde226-ae08-4f4b-b334-de0cad89c994)<br>or Shared collection date expired!\
             \ (Code: 6758d66e-0ce6-4770-a497-01a578eac12c)<br>or Shared collection\
@@ -4124,19 +4124,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/quickShareFull'
+                $ref: "#/components/schemas/quickShareFull"
           description: Returns the quick share with the given ID.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Not valid quick share id! (Code: 02141b45-97dd-4474-aefb-a7774f8b538e)"
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Quick share date expired! (Code: 6758d66e-0ce6-4770-a497-01a578eac12c)<br>or\
             \ Quick share was not found. (Code: 412f11e3-5606-4075-a319-74ff1cee6a3e)<br>or\
             \ Quick share date expired! (Code: da53b1d3-83eb-4fec-9f7c-56b571f117b2)<br>"
@@ -4153,13 +4153,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/signalRConnectionInfo'
+                $ref: "#/components/schemas/signalRConnectionInfo"
           description: The signalr connection info for further processing.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Could not negotiate with SignalR. (Code: 50e617b3-93e8-4b15-8072-0b3c12c26ec7)"
         "401":
           description: Unauthorized. API Key not provided.
@@ -4196,7 +4196,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/staticDefinedList'
+                  $ref: "#/components/schemas/staticDefinedList"
                 type: array
           description: Returns all static defined lists in database.
         "401":
@@ -4243,7 +4243,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/staticDefinedList'
+                $ref: "#/components/schemas/staticDefinedList"
           description: Returns a static defined list with the given id.
         "404":
           description: The requested item could not be found.
@@ -4299,7 +4299,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/staticDefinedList'
+              $ref: "#/components/schemas/staticDefinedList"
         description: The values which should be updated.
         required: true
       responses:
@@ -4307,14 +4307,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/staticDefinedList'
+                $ref: "#/components/schemas/staticDefinedList"
           description: "Returns the updated static defined list for values only the\
             \ updated, deleted, added"
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Object is not a valid static_defined_list. (Code: 0970b102-0d79-4c1c-8144-2d6576234b5a)\
             \ <br>No input object given. (Code: 4d2f5034-bf4f-4f19-8f3d-56e3d88b833a)Update\
             \ mode: {given-update-mode} is not a valid update mode. Allowed modes\
@@ -4361,14 +4361,14 @@ paths:
             application/json:
               schema:
                 additionalProperties:
-                  $ref: '#/components/schemas/dictionary_object'
+                  $ref: "#/components/schemas/dictionary_object"
                 type: object
           description: 'Returns the dictionary of the dictionaries with all translations '
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Could not get all translations from {id}! (Code: fd86fae5-1eed-4770-b519-d403b85fa1d0)\
             \ <br/>Could not get entity {id} from database! (Code: eb42dc0d-78ee-4fc9-9a65-d5df472c7a03)"
         "404":
@@ -4419,14 +4419,14 @@ paths:
             application/json:
               schema:
                 additionalProperties:
-                  $ref: '#/components/schemas/dictionary_object'
+                  $ref: "#/components/schemas/dictionary_object"
                 type: object
           description: 'Returns the dictionary of the dictionaries with all translations '
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Could not get all translations from {id}! (Code: fd86fae5-1eed-4770-b519-d403b85fa1d0)\
             \ <br/>Could not get entity {id} from database! (Code: eb42dc0d-78ee-4fc9-9a65-d5df472c7a03)"
         "404":
@@ -4467,14 +4467,14 @@ paths:
             application/json:
               schema:
                 additionalProperties:
-                  $ref: '#/components/schemas/dictionary_object'
+                  $ref: "#/components/schemas/dictionary_object"
                 type: object
           description: 'Returns the dictionary of the dictionaries with all translations '
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Could not get all translations from {id}! (Code: fd86fae5-1eed-4770-b519-d403b85fa1d0)\
             \ <br/>Could not get entity {id} from database! (Code: eb42dc0d-78ee-4fc9-9a65-d5df472c7a03)"
         "404":
@@ -4507,19 +4507,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/allWebAppData'
+                $ref: "#/components/schemas/allWebAppData"
           description: This lists all elements which should be used by the web frontend.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Update failed. (Code: e85183ec-6183-4329-a74f-6ceb963967a3)"
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Collection not found - Never existed, not a collection or\
             \ already deleted. (Code: 1d6325bf-7c1c-41ae-ba95-e41dd037a29f)"
         "401":
@@ -4550,20 +4550,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/groupAllAppData'
+                $ref: "#/components/schemas/groupAllAppData"
           description: This returns all collections and assets from the given collection
             type.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Unknown request method (Code: 2e7570d3-7667-4bc9-89ea-f5d6f5aa84c0)"
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Collection Type not found - Never existed, not a collection\
             \ type or already deleted. (Code: 8f939f77-1ba9-40b7-905e-bef8ddc720a1)<br>or\
             \ the web app data was never created (POST). (Code: 210910ed-68e8-4837-a58f-bfce0591cb49)"
@@ -4605,14 +4605,14 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/workspace'
+                  $ref: "#/components/schemas/workspace"
                 type: array
           description: Returns the all workspaces as array.
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: "Could not create connection to CosmosDB (Code: e244cef3-2665-4757-ba34-0d4d0e71bb9d)"
         "401":
           description: Unauthorized. API Key not provided.
@@ -4658,13 +4658,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/workspace'
+                $ref: "#/components/schemas/workspace"
           description: Returns the workspace with the given ID.
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/agravityErrorResponse'
+                $ref: "#/components/schemas/agravityErrorResponse"
           description: If the workspace with the ID was not found.
         "401":
           description: Unauthorized. API Key not provided.
@@ -5452,20 +5452,20 @@ components:
           target: target
       properties:
         root_collection:
-          $ref: '#/components/schemas/collection'
+          $ref: "#/components/schemas/collection"
         subcollections:
           items:
-            $ref: '#/components/schemas/collection'
+            $ref: "#/components/schemas/collection"
           nullable: true
           type: array
         assets:
           items:
-            $ref: '#/components/schemas/asset'
+            $ref: "#/components/schemas/asset"
           nullable: true
           type: array
         pub_assets:
           items:
-            $ref: '#/components/schemas/publishedAsset'
+            $ref: "#/components/schemas/publishedAsset"
           nullable: true
           type: array
         created_date:
@@ -5725,10 +5725,10 @@ components:
           nullable: true
           type: array
         orig_blob:
-          $ref: '#/components/schemas/assetBlob'
+          $ref: "#/components/schemas/assetBlob"
         blobs:
           items:
-            $ref: '#/components/schemas/assetBlob'
+            $ref: "#/components/schemas/assetBlob"
           nullable: true
           type: array
         collections:
@@ -5760,12 +5760,12 @@ components:
           type: object
         items:
           items:
-            $ref: '#/components/schemas/collTypeItem'
+            $ref: "#/components/schemas/collTypeItem"
           nullable: true
           type: array
         translations:
           additionalProperties:
-            $ref: '#/components/schemas/dictionary_object'
+            $ref: "#/components/schemas/dictionary_object"
           nullable: true
           type: object
         role:
@@ -6099,7 +6099,7 @@ components:
           type: string
         translations:
           additionalProperties:
-            $ref: '#/components/schemas/dictionary_object'
+            $ref: "#/components/schemas/dictionary_object"
           nullable: true
           type: object
         name:
@@ -6639,7 +6639,7 @@ components:
       properties:
         page:
           items:
-            $ref: '#/components/schemas/asset'
+            $ref: "#/components/schemas/asset"
           nullable: true
           type: array
         page_size:
@@ -6655,7 +6655,7 @@ components:
           type: string
         filter:
           items:
-            $ref: '#/components/schemas/whereParam'
+            $ref: "#/components/schemas/whereParam"
           nullable: true
           type: array
       type: object
@@ -6684,7 +6684,7 @@ components:
           type: string
         assets:
           items:
-            $ref: '#/components/schemas/relatedAsset'
+            $ref: "#/components/schemas/relatedAsset"
           nullable: true
           type: array
         status:
@@ -6864,12 +6864,12 @@ components:
           type: object
         items:
           items:
-            $ref: '#/components/schemas/collTypeItem'
+            $ref: "#/components/schemas/collTypeItem"
           nullable: true
           type: array
         translations:
           additionalProperties:
-            $ref: '#/components/schemas/dictionary_object'
+            $ref: "#/components/schemas/dictionary_object"
           nullable: true
           type: object
         role:
@@ -6998,12 +6998,12 @@ components:
           type: string
         items:
           items:
-            $ref: '#/components/schemas/collTypeItem'
+            $ref: "#/components/schemas/collTypeItem"
           nullable: true
           type: array
         translations:
           additionalProperties:
-            $ref: '#/components/schemas/dictionary_object'
+            $ref: "#/components/schemas/dictionary_object"
           nullable: true
           type: object
         order:
@@ -7012,7 +7012,7 @@ components:
           type: integer
         permissions:
           items:
-            $ref: '#/components/schemas/permissionEntity'
+            $ref: "#/components/schemas/permissionEntity"
           nullable: true
           type: array
         permissionless:
@@ -7078,7 +7078,7 @@ components:
       properties:
         children:
           items:
-            $ref: '#/components/schemas/entityIdName'
+            $ref: "#/components/schemas/entityIdName"
           nullable: true
           type: array
         name:
@@ -7089,7 +7089,7 @@ components:
           type: string
         translations:
           additionalProperties:
-            $ref: '#/components/schemas/dictionary_object'
+            $ref: "#/components/schemas/dictionary_object"
           nullable: true
           type: object
         id:
@@ -7168,12 +7168,12 @@ components:
           type: string
         udl_refs:
           items:
-            $ref: '#/components/schemas/collectionUDLReference'
+            $ref: "#/components/schemas/collectionUDLReference"
           nullable: true
           type: array
         udl_entries:
           items:
-            $ref: '#/components/schemas/collectionUDL'
+            $ref: "#/components/schemas/collectionUDL"
           nullable: true
           type: array
         status:
@@ -7222,7 +7222,7 @@ components:
           type: array
         permissions:
           items:
-            $ref: '#/components/schemas/permissionEntity'
+            $ref: "#/components/schemas/permissionEntity"
           nullable: true
           type: array
       type: object
@@ -7297,7 +7297,7 @@ components:
           type: integer
         translations:
           additionalProperties:
-            $ref: '#/components/schemas/dictionary_object'
+            $ref: "#/components/schemas/dictionary_object"
           nullable: true
           type: object
         status:
@@ -7355,7 +7355,7 @@ components:
           - userContext
       properties:
         claims:
-          $ref: '#/components/schemas/customClaimsProviderResponseClaims'
+          $ref: "#/components/schemas/customClaimsProviderResponseClaims"
         '@odata.type':
           nullable: true
           type: string
@@ -7386,7 +7386,7 @@ components:
           - '@odata.type': '@odata.type'
       properties:
         data:
-          $ref: '#/components/schemas/customClaimsProviderResponseDataAttributeCollectionSubmit'
+          $ref: "#/components/schemas/customClaimsProviderResponseDataAttributeCollectionSubmit"
       type: object
     customClaimsProviderResponseContentTokenIssuanceStart:
       example:
@@ -7407,7 +7407,7 @@ components:
               - userContext
       properties:
         data:
-          $ref: '#/components/schemas/customClaimsProviderResponseDataTokenIssuanceStart'
+          $ref: "#/components/schemas/customClaimsProviderResponseDataTokenIssuanceStart"
       type: object
     customClaimsProviderResponseDataAttributeCollectionSubmit:
       example:
@@ -7419,7 +7419,7 @@ components:
       properties:
         actions:
           items:
-            $ref: '#/components/schemas/customClaimsProviderResponseActionAttributeCollectionSubmit'
+            $ref: "#/components/schemas/customClaimsProviderResponseActionAttributeCollectionSubmit"
           nullable: true
           type: array
         '@odata.type':
@@ -7446,7 +7446,7 @@ components:
       properties:
         actions:
           items:
-            $ref: '#/components/schemas/customClaimsProviderResponseActionTokenIssuanceStart'
+            $ref: "#/components/schemas/customClaimsProviderResponseActionTokenIssuanceStart"
           nullable: true
           type: array
         '@odata.type':
@@ -8051,7 +8051,7 @@ components:
       properties:
         asset:
           items:
-            $ref: '#/components/schemas/asset'
+            $ref: "#/components/schemas/asset"
           nullable: true
           type: array
         sum_asset_results:
@@ -8060,7 +8060,7 @@ components:
           type: integer
         collection:
           items:
-            $ref: '#/components/schemas/collection'
+            $ref: "#/components/schemas/collection"
           nullable: true
           type: array
         sum_collection_results:
@@ -8157,7 +8157,7 @@ components:
           type: string
         operations:
           items:
-            $ref: '#/components/schemas/dynamicImageOperation'
+            $ref: "#/components/schemas/dynamicImageOperation"
           nullable: true
           type: array
         extension:
@@ -8177,12 +8177,12 @@ components:
           type: string
         translations:
           additionalProperties:
-            $ref: '#/components/schemas/dictionary_object'
+            $ref: "#/components/schemas/dictionary_object"
           nullable: true
           type: object
         permissions:
           items:
-            $ref: '#/components/schemas/permissionEntity'
+            $ref: "#/components/schemas/permissionEntity"
           nullable: true
           type: array
         name:
@@ -8257,7 +8257,7 @@ components:
           type: array
         allowed_formats:
           items:
-            $ref: '#/components/schemas/sharedAllowedFormat'
+            $ref: "#/components/schemas/sharedAllowedFormat"
           nullable: true
           type: array
         zipname:
@@ -8372,7 +8372,7 @@ components:
           type: string
         translations:
           additionalProperties:
-            $ref: '#/components/schemas/dictionary_object'
+            $ref: "#/components/schemas/dictionary_object"
           nullable: true
           type: object
         id:
@@ -8398,7 +8398,7 @@ components:
       properties:
         entities:
           items:
-            $ref: '#/components/schemas/entityIdName'
+            $ref: "#/components/schemas/entityIdName"
           nullable: true
           type: array
         notfounds:
@@ -9112,15 +9112,15 @@ components:
         - null
       properties:
         collection_type:
-          $ref: '#/components/schemas/collectionType'
+          $ref: "#/components/schemas/collectionType"
         collections:
           items:
-            $ref: '#/components/schemas/collection'
+            $ref: "#/components/schemas/collection"
           nullable: true
           type: array
         assets:
           items:
-            $ref: '#/components/schemas/asset'
+            $ref: "#/components/schemas/asset"
           nullable: true
           type: array
         created_date:
@@ -9129,11 +9129,11 @@ components:
           type: string
         add_info:
           items:
-            $ref: '#/components/schemas/keyValuePair_object'
+            $ref: "#/components/schemas/keyValuePair_object"
           nullable: true
           type: array
         dist:
-          $ref: '#/components/schemas/distZipResponse'
+          $ref: "#/components/schemas/distZipResponse"
       type: object
     keyValuePair_object:
       additionalProperties:
@@ -9292,13 +9292,13 @@ components:
           nullable: true
           type: string
         authentication:
-          $ref: '#/components/schemas/portalAuthentication'
+          $ref: "#/components/schemas/portalAuthentication"
         languages:
           nullable: true
           type: string
         fields:
           items:
-            $ref: '#/components/schemas/portalFields'
+            $ref: "#/components/schemas/portalFields"
           nullable: true
           type: array
         filter:
@@ -9311,12 +9311,12 @@ components:
           type: array
         allowed_formats:
           items:
-            $ref: '#/components/schemas/sharedAllowedFormat'
+            $ref: "#/components/schemas/sharedAllowedFormat"
           nullable: true
           type: array
         asset_icon_rules:
           items:
-            $ref: '#/components/schemas/assetIconRule'
+            $ref: "#/components/schemas/assetIconRule"
           nullable: true
           type: array
         allowed_origins:
@@ -9325,9 +9325,9 @@ components:
           nullable: true
           type: array
         links:
-          $ref: '#/components/schemas/portalLinks'
+          $ref: "#/components/schemas/portalLinks"
         theme:
-          $ref: '#/components/schemas/portalTheme'
+          $ref: "#/components/schemas/portalTheme"
         name:
           nullable: true
           type: string
@@ -9711,27 +9711,27 @@ components:
       properties:
         download_formats:
           items:
-            $ref: '#/components/schemas/downloadFormat'
+            $ref: "#/components/schemas/downloadFormat"
           nullable: true
           type: array
         sdls:
           items:
-            $ref: '#/components/schemas/staticDefinedList'
+            $ref: "#/components/schemas/staticDefinedList"
           nullable: true
           type: array
         udls:
           items:
-            $ref: '#/components/schemas/collectionUDL'
+            $ref: "#/components/schemas/collectionUDL"
           nullable: true
           type: array
         items:
           items:
-            $ref: '#/components/schemas/collTypeItem'
+            $ref: "#/components/schemas/collTypeItem"
           nullable: true
           type: array
         configs:
           items:
-            $ref: '#/components/schemas/frontendAppConfig'
+            $ref: "#/components/schemas/frontendAppConfig"
           nullable: true
           type: array
         id:
@@ -9741,13 +9741,13 @@ components:
           nullable: true
           type: string
         authentication:
-          $ref: '#/components/schemas/portalAuthentication'
+          $ref: "#/components/schemas/portalAuthentication"
         languages:
           nullable: true
           type: string
         fields:
           items:
-            $ref: '#/components/schemas/portalFields'
+            $ref: "#/components/schemas/portalFields"
           nullable: true
           type: array
         filter:
@@ -9760,12 +9760,12 @@ components:
           type: array
         allowed_formats:
           items:
-            $ref: '#/components/schemas/sharedAllowedFormat'
+            $ref: "#/components/schemas/sharedAllowedFormat"
           nullable: true
           type: array
         asset_icon_rules:
           items:
-            $ref: '#/components/schemas/assetIconRule'
+            $ref: "#/components/schemas/assetIconRule"
           nullable: true
           type: array
         allowed_origins:
@@ -9774,9 +9774,9 @@ components:
           nullable: true
           type: array
         links:
-          $ref: '#/components/schemas/portalLinks'
+          $ref: "#/components/schemas/portalLinks"
         theme:
-          $ref: '#/components/schemas/portalTheme'
+          $ref: "#/components/schemas/portalTheme"
         name:
           nullable: true
           type: string
@@ -9845,7 +9845,7 @@ components:
           nullable: true
           type: object
         user_context:
-          $ref: '#/components/schemas/portalUserContext'
+          $ref: "#/components/schemas/portalUserContext"
       type: object
     portalLinks:
       example:
@@ -10040,7 +10040,7 @@ components:
           type: string
         published:
           items:
-            $ref: '#/components/schemas/publishedAsset'
+            $ref: "#/components/schemas/publishedAsset"
           nullable: true
           type: array
         region_of_origin:
@@ -10406,7 +10406,7 @@ components:
       properties:
         page:
           items:
-            $ref: '#/components/schemas/sharedAsset'
+            $ref: "#/components/schemas/sharedAsset"
           nullable: true
           type: array
         page_size:
@@ -10431,12 +10431,12 @@ components:
           type: string
         assets:
           items:
-            $ref: '#/components/schemas/assetIdFormat'
+            $ref: "#/components/schemas/assetIdFormat"
           nullable: true
           type: array
         users:
           items:
-            $ref: '#/components/schemas/entityId'
+            $ref: "#/components/schemas/entityId"
           nullable: true
           type: array
         expires:
@@ -10548,7 +10548,7 @@ components:
           type: boolean
         translations:
           additionalProperties:
-            $ref: '#/components/schemas/dictionary_object'
+            $ref: "#/components/schemas/dictionary_object"
           nullable: true
           type: object
         name:
@@ -10630,7 +10630,7 @@ components:
           type: string
         fields:
           items:
-            $ref: '#/components/schemas/searchableItem'
+            $ref: "#/components/schemas/searchableItem"
           nullable: true
           type: array
       type: object
@@ -10709,10 +10709,10 @@ components:
           nullable: true
           type: string
         lastrun:
-          $ref: '#/components/schemas/searchAdminIndexerLastRun'
+          $ref: "#/components/schemas/searchAdminIndexerLastRun"
         history:
           items:
-            $ref: '#/components/schemas/searchAdminIndexerLastRun'
+            $ref: "#/components/schemas/searchAdminIndexerLastRun"
           nullable: true
           type: array
       type: object
@@ -10732,7 +10732,7 @@ components:
           nullable: true
           type: string
         statistics:
-          $ref: '#/components/schemas/searchAdminStatistics'
+          $ref: "#/components/schemas/searchAdminStatistics"
       type: object
     searchAdminSkillStatus:
       example:
@@ -10808,14 +10808,14 @@ components:
           name: name
       properties:
         index:
-          $ref: '#/components/schemas/searchAdminIndexStatus'
+          $ref: "#/components/schemas/searchAdminIndexStatus"
         indexer:
-          $ref: '#/components/schemas/searchAdminIndexerStatus'
+          $ref: "#/components/schemas/searchAdminIndexerStatus"
         datasource:
-          $ref: '#/components/schemas/searchAdminDataSourceStatus'
+          $ref: "#/components/schemas/searchAdminDataSourceStatus"
         skillsets:
           items:
-            $ref: '#/components/schemas/searchAdminSkillStatus'
+            $ref: "#/components/schemas/searchAdminSkillStatus"
           nullable: true
           type: array
       type: object
@@ -10835,7 +10835,7 @@ components:
           type: string
         entities:
           items:
-            $ref: '#/components/schemas/searchFacetEntity'
+            $ref: "#/components/schemas/searchFacetEntity"
           nullable: true
           type: array
       type: object
@@ -11485,12 +11485,12 @@ components:
           name: name
       properties:
         data_result:
-          $ref: '#/components/schemas/dataResult'
+          $ref: "#/components/schemas/dataResult"
         options:
-          $ref: '#/components/schemas/azSearchOptions'
+          $ref: "#/components/schemas/azSearchOptions"
         facets:
           items:
-            $ref: '#/components/schemas/searchFacet'
+            $ref: "#/components/schemas/searchFacet"
           nullable: true
           type: array
         count:
@@ -11550,7 +11550,7 @@ components:
           nullable: true
           type: string
         sftp_connection:
-          $ref: '#/components/schemas/createSftpUserResult'
+          $ref: "#/components/schemas/createSftpUserResult"
         check_name_for_version:
           nullable: true
           type: boolean
@@ -11766,10 +11766,10 @@ components:
           nullable: true
           type: string
         orig_blob:
-          $ref: '#/components/schemas/assetBlob'
+          $ref: "#/components/schemas/assetBlob"
         blobs:
           items:
-            $ref: '#/components/schemas/assetBlob'
+            $ref: "#/components/schemas/assetBlob"
           nullable: true
           type: array
       type: object
@@ -12107,7 +12107,7 @@ components:
       properties:
         page:
           items:
-            $ref: '#/components/schemas/sharedAsset'
+            $ref: "#/components/schemas/sharedAsset"
           nullable: true
           type: array
         page_size:
@@ -12148,7 +12148,7 @@ components:
           type: boolean
         allowed_formats:
           items:
-            $ref: '#/components/schemas/sharedAllowedFormat'
+            $ref: "#/components/schemas/sharedAllowedFormat"
           nullable: true
           type: array
         password:
@@ -12217,7 +12217,7 @@ components:
           type: string
         translations:
           additionalProperties:
-            $ref: '#/components/schemas/dictionary_object'
+            $ref: "#/components/schemas/dictionary_object"
           nullable: true
           type: object
         values:
@@ -12338,7 +12338,7 @@ components:
           nullable: true
           type: string
         blob_data:
-          $ref: '#/components/schemas/assetBlob'
+          $ref: "#/components/schemas/assetBlob"
         blob_uploaded:
           format: date-time
           nullable: true
@@ -12481,7 +12481,7 @@ components:
           type: string
         versions:
           items:
-            $ref: '#/components/schemas/versionedAsset'
+            $ref: "#/components/schemas/versionedAsset"
           nullable: true
           type: array
         region_of_origin:
@@ -12723,12 +12723,12 @@ components:
           type: string
         collection_types:
           items:
-            $ref: '#/components/schemas/collectionType'
+            $ref: "#/components/schemas/collectionType"
           nullable: true
           type: array
         translations:
           additionalProperties:
-            $ref: '#/components/schemas/dictionary_object'
+            $ref: "#/components/schemas/dictionary_object"
           nullable: true
           type: object
         order:
@@ -12737,7 +12737,7 @@ components:
           type: integer
         permissions:
           items:
-            $ref: '#/components/schemas/permissionEntity'
+            $ref: "#/components/schemas/permissionEntity"
           nullable: true
           type: array
         description:

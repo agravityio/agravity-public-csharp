@@ -38,7 +38,7 @@ namespace Agravity.Public.Model
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
         /// <param name="format">format.</param>
-        public AssetIdFormat(string id = default(string), string name = default(string), string format = default(string))
+        public AssetIdFormat(string id = default, string name = default, string format = default)
         {
             this.Id = id;
             this.Name = name;

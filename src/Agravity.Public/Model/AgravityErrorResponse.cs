@@ -38,7 +38,7 @@ namespace Agravity.Public.Model
         /// <param name="errorId">errorId.</param>
         /// <param name="errorMessage">errorMessage.</param>
         /// <param name="exception">exception.</param>
-        public AgravityErrorResponse(string errorId = default(string), string errorMessage = default(string), string exception = default(string))
+        public AgravityErrorResponse(string errorId = default, string errorMessage = default, string exception = default)
         {
             this.ErrorId = errorId;
             this.ErrorMessage = errorMessage;

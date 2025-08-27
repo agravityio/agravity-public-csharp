@@ -38,7 +38,7 @@ namespace Agravity.Public.Model
         /// <param name="conditions">conditions.</param>
         /// <param name="privacy">privacy.</param>
         /// <param name="impressum">impressum.</param>
-        public PortalLinks(string conditions = default(string), string privacy = default(string), string impressum = default(string))
+        public PortalLinks(string conditions = default, string privacy = default, string impressum = default)
         {
             this.Conditions = conditions;
             this.Privacy = privacy;

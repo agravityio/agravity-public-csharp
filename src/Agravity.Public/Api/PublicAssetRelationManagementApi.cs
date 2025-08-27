@@ -39,7 +39,7 @@ namespace Agravity.Public.Api
         /// <param name="assetrelationtypeid">The ID of the asset relation type, where these asset relations should come from. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetRelation</returns>
-        AssetRelation HttpAssetRelationCreate(bool? translations = default(bool?), string acceptLanguage = default(string), string assetrelationtypeid = default(string), int operationIndex = 0);
+        AssetRelation HttpAssetRelationCreate(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -53,7 +53,7 @@ namespace Agravity.Public.Api
         /// <param name="assetrelationtypeid">The ID of the asset relation type, where these asset relations should come from. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetRelation</returns>
-        ApiResponse<AssetRelation> HttpAssetRelationCreateWithHttpInfo(bool? translations = default(bool?), string acceptLanguage = default(string), string assetrelationtypeid = default(string), int operationIndex = 0);
+        ApiResponse<AssetRelation> HttpAssetRelationCreateWithHttpInfo(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -89,7 +89,7 @@ namespace Agravity.Public.Api
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;AssetRelation&gt;</returns>
-        List<AssetRelation> HttpAssetRelationGetAll(string assetrelationtypeid = default(string), string acceptLanguage = default(string), bool? translations = default(bool?), int operationIndex = 0);
+        List<AssetRelation> HttpAssetRelationGetAll(string assetrelationtypeid = default, string acceptLanguage = default, bool? translations = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -103,7 +103,7 @@ namespace Agravity.Public.Api
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;AssetRelation&gt;</returns>
-        ApiResponse<List<AssetRelation>> HttpAssetRelationGetAllWithHttpInfo(string assetrelationtypeid = default(string), string acceptLanguage = default(string), bool? translations = default(bool?), int operationIndex = 0);
+        ApiResponse<List<AssetRelation>> HttpAssetRelationGetAllWithHttpInfo(string assetrelationtypeid = default, string acceptLanguage = default, bool? translations = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -115,7 +115,7 @@ namespace Agravity.Public.Api
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetRelation</returns>
-        AssetRelation HttpAssetRelationGetById(string id, bool? translations = default(bool?), int operationIndex = 0);
+        AssetRelation HttpAssetRelationGetById(string id, bool? translations = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -128,7 +128,7 @@ namespace Agravity.Public.Api
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetRelation</returns>
-        ApiResponse<AssetRelation> HttpAssetRelationGetByIdWithHttpInfo(string id, bool? translations = default(bool?), int operationIndex = 0);
+        ApiResponse<AssetRelation> HttpAssetRelationGetByIdWithHttpInfo(string id, bool? translations = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -142,7 +142,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetRelation</returns>
-        AssetRelation HttpAssetRelationUpdateById(string id, AssetRelation assetRelation, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        AssetRelation HttpAssetRelationUpdateById(string id, AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -157,7 +157,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetRelation</returns>
-        ApiResponse<AssetRelation> HttpAssetRelationUpdateByIdWithHttpInfo(string id, AssetRelation assetRelation, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0);
+        ApiResponse<AssetRelation> HttpAssetRelationUpdateByIdWithHttpInfo(string id, AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -180,7 +180,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetRelation</returns>
-        System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationCreateAsync(bool? translations = default(bool?), string acceptLanguage = default(string), string assetrelationtypeid = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationCreateAsync(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -195,7 +195,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetRelation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AssetRelation>> HttpAssetRelationCreateWithHttpInfoAsync(bool? translations = default(bool?), string acceptLanguage = default(string), string assetrelationtypeid = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AssetRelation>> HttpAssetRelationCreateWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -207,7 +207,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task HttpAssetRelationDeleteByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task HttpAssetRelationDeleteByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -220,7 +220,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> HttpAssetRelationDeleteByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> HttpAssetRelationDeleteByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -234,7 +234,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AssetRelation&gt;</returns>
-        System.Threading.Tasks.Task<List<AssetRelation>> HttpAssetRelationGetAllAsync(string assetrelationtypeid = default(string), string acceptLanguage = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<AssetRelation>> HttpAssetRelationGetAllAsync(string assetrelationtypeid = default, string acceptLanguage = default, bool? translations = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -249,7 +249,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AssetRelation&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<AssetRelation>>> HttpAssetRelationGetAllWithHttpInfoAsync(string assetrelationtypeid = default(string), string acceptLanguage = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<AssetRelation>>> HttpAssetRelationGetAllWithHttpInfoAsync(string assetrelationtypeid = default, string acceptLanguage = default, bool? translations = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -262,7 +262,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetRelation</returns>
-        System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationGetByIdAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationGetByIdAsync(string id, bool? translations = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -276,7 +276,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetRelation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AssetRelation>> HttpAssetRelationGetByIdWithHttpInfoAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AssetRelation>> HttpAssetRelationGetByIdWithHttpInfoAsync(string id, bool? translations = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -291,7 +291,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetRelation</returns>
-        System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationUpdateByIdAsync(string id, AssetRelation assetRelation, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationUpdateByIdAsync(string id, AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -307,7 +307,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetRelation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AssetRelation>> HttpAssetRelationUpdateByIdWithHttpInfoAsync(string id, AssetRelation assetRelation, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AssetRelation>> HttpAssetRelationUpdateByIdWithHttpInfoAsync(string id, AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -437,7 +437,7 @@ namespace Agravity.Public.Api
         /// <param name="assetrelationtypeid">The ID of the asset relation type, where these asset relations should come from. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetRelation</returns>
-        public AssetRelation HttpAssetRelationCreate(bool? translations = default(bool?), string acceptLanguage = default(string), string assetrelationtypeid = default(string), int operationIndex = 0)
+        public AssetRelation HttpAssetRelationCreate(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<AssetRelation> localVarResponse = HttpAssetRelationCreateWithHttpInfo(translations, acceptLanguage, assetrelationtypeid);
             return localVarResponse.Data;
@@ -452,7 +452,7 @@ namespace Agravity.Public.Api
         /// <param name="assetrelationtypeid">The ID of the asset relation type, where these asset relations should come from. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetRelation</returns>
-        public Agravity.Public.Client.ApiResponse<AssetRelation> HttpAssetRelationCreateWithHttpInfo(bool? translations = default(bool?), string acceptLanguage = default(string), string assetrelationtypeid = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<AssetRelation> HttpAssetRelationCreateWithHttpInfo(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -465,6 +465,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -522,7 +523,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetRelation</returns>
-        public async System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationCreateAsync(bool? translations = default(bool?), string acceptLanguage = default(string), string assetrelationtypeid = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationCreateAsync(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<AssetRelation> localVarResponse = await HttpAssetRelationCreateWithHttpInfoAsync(translations, acceptLanguage, assetrelationtypeid, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -538,7 +539,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetRelation)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetRelation>> HttpAssetRelationCreateWithHttpInfoAsync(bool? translations = default(bool?), string acceptLanguage = default(string), string assetrelationtypeid = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetRelation>> HttpAssetRelationCreateWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -638,6 +639,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -682,7 +684,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task HttpAssetRelationDeleteByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task HttpAssetRelationDeleteByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await HttpAssetRelationDeleteByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -695,7 +697,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Object>> HttpAssetRelationDeleteByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Object>> HttpAssetRelationDeleteByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -761,7 +763,7 @@ namespace Agravity.Public.Api
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;AssetRelation&gt;</returns>
-        public List<AssetRelation> HttpAssetRelationGetAll(string assetrelationtypeid = default(string), string acceptLanguage = default(string), bool? translations = default(bool?), int operationIndex = 0)
+        public List<AssetRelation> HttpAssetRelationGetAll(string assetrelationtypeid = default, string acceptLanguage = default, bool? translations = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<List<AssetRelation>> localVarResponse = HttpAssetRelationGetAllWithHttpInfo(assetrelationtypeid, acceptLanguage, translations);
             return localVarResponse.Data;
@@ -776,7 +778,7 @@ namespace Agravity.Public.Api
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;AssetRelation&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<AssetRelation>> HttpAssetRelationGetAllWithHttpInfo(string assetrelationtypeid = default(string), string acceptLanguage = default(string), bool? translations = default(bool?), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<AssetRelation>> HttpAssetRelationGetAllWithHttpInfo(string assetrelationtypeid = default, string acceptLanguage = default, bool? translations = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -789,6 +791,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -846,7 +849,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AssetRelation&gt;</returns>
-        public async System.Threading.Tasks.Task<List<AssetRelation>> HttpAssetRelationGetAllAsync(string assetrelationtypeid = default(string), string acceptLanguage = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<AssetRelation>> HttpAssetRelationGetAllAsync(string assetrelationtypeid = default, string acceptLanguage = default, bool? translations = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<List<AssetRelation>> localVarResponse = await HttpAssetRelationGetAllWithHttpInfoAsync(assetrelationtypeid, acceptLanguage, translations, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -862,7 +865,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AssetRelation&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<AssetRelation>>> HttpAssetRelationGetAllWithHttpInfoAsync(string assetrelationtypeid = default(string), string acceptLanguage = default(string), bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<AssetRelation>>> HttpAssetRelationGetAllWithHttpInfoAsync(string assetrelationtypeid = default, string acceptLanguage = default, bool? translations = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -932,7 +935,7 @@ namespace Agravity.Public.Api
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetRelation</returns>
-        public AssetRelation HttpAssetRelationGetById(string id, bool? translations = default(bool?), int operationIndex = 0)
+        public AssetRelation HttpAssetRelationGetById(string id, bool? translations = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<AssetRelation> localVarResponse = HttpAssetRelationGetByIdWithHttpInfo(id, translations);
             return localVarResponse.Data;
@@ -946,7 +949,7 @@ namespace Agravity.Public.Api
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetRelation</returns>
-        public Agravity.Public.Client.ApiResponse<AssetRelation> HttpAssetRelationGetByIdWithHttpInfo(string id, bool? translations = default(bool?), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<AssetRelation> HttpAssetRelationGetByIdWithHttpInfo(string id, bool? translations = default, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -965,6 +968,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1014,7 +1018,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetRelation</returns>
-        public async System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationGetByIdAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationGetByIdAsync(string id, bool? translations = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<AssetRelation> localVarResponse = await HttpAssetRelationGetByIdWithHttpInfoAsync(id, translations, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1029,7 +1033,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetRelation)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetRelation>> HttpAssetRelationGetByIdWithHttpInfoAsync(string id, bool? translations = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetRelation>> HttpAssetRelationGetByIdWithHttpInfoAsync(string id, bool? translations = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1100,7 +1104,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetRelation</returns>
-        public AssetRelation HttpAssetRelationUpdateById(string id, AssetRelation assetRelation, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public AssetRelation HttpAssetRelationUpdateById(string id, AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<AssetRelation> localVarResponse = HttpAssetRelationUpdateByIdWithHttpInfo(id, assetRelation, translations, acceptLanguage);
             return localVarResponse.Data;
@@ -1116,7 +1120,7 @@ namespace Agravity.Public.Api
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetRelation</returns>
-        public Agravity.Public.Client.ApiResponse<AssetRelation> HttpAssetRelationUpdateByIdWithHttpInfo(string id, AssetRelation assetRelation, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<AssetRelation> HttpAssetRelationUpdateByIdWithHttpInfo(string id, AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1142,6 +1146,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1198,7 +1203,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetRelation</returns>
-        public async System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationUpdateByIdAsync(string id, AssetRelation assetRelation, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationUpdateByIdAsync(string id, AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<AssetRelation> localVarResponse = await HttpAssetRelationUpdateByIdWithHttpInfoAsync(id, assetRelation, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1215,7 +1220,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetRelation)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetRelation>> HttpAssetRelationUpdateByIdWithHttpInfoAsync(string id, AssetRelation assetRelation, bool? translations = default(bool?), string acceptLanguage = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetRelation>> HttpAssetRelationUpdateByIdWithHttpInfoAsync(string id, AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)

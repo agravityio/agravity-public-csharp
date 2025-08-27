@@ -37,7 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="names">names.</param>
         /// <param name="filter">filter.</param>
-        public EntityNamesRequest(List<string> names = default(List<string>), string filter = default(string))
+        public EntityNamesRequest(List<string> names = default, string filter = default)
         {
             this.Names = names;
             this.Filter = filter;

@@ -46,7 +46,7 @@ namespace Agravity.Public.Model
         /// <param name="varVersion">varVersion.</param>
         /// <param name="vectorSearchEnabled">vectorSearchEnabled.</param>
         /// <param name="region">region.</param>
-        public AgravityVersion(string name = default(string), string company = default(string), string customer = default(string), string contact = default(string), DateTime? updated = default(DateTime?), string clientId = default(string), string tenantId = default(string), string varBase = default(string), string varVersion = default(string), bool? vectorSearchEnabled = default(bool?), string region = default(string))
+        public AgravityVersion(string name = default, string company = default, string customer = default, string contact = default, DateTime? updated = default, string clientId = default, string tenantId = default, string varBase = default, string varVersion = default, bool? vectorSearchEnabled = default, string region = default)
         {
             this.Name = name;
             this.Company = company;

@@ -40,7 +40,7 @@ namespace Agravity.Public.Model
         /// <param name="description">description.</param>
         /// <param name="contentType">contentType.</param>
         /// <param name="sinceApiVersion">sinceApiVersion.</param>
-        public FrontendAppConfig(string key = default(string), string value = default(string), string description = default(string), string contentType = default(string), string sinceApiVersion = default(string))
+        public FrontendAppConfig(string key = default, string value = default, string description = default, string contentType = default, string sinceApiVersion = default)
         {
             this.Key = key;
             this.Value = value;

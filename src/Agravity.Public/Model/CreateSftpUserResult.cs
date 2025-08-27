@@ -37,7 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="url">url.</param>
         /// <param name="password">password.</param>
-        public CreateSftpUserResult(string url = default(string), string password = default(string))
+        public CreateSftpUserResult(string url = default, string password = default)
         {
             this.Url = url;
             this.Password = password;

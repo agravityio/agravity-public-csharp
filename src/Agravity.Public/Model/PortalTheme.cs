@@ -42,7 +42,7 @@ namespace Agravity.Public.Model
         /// <param name="iconEmpty">iconEmpty.</param>
         /// <param name="iconActive">iconActive.</param>
         /// <param name="colors">colors.</param>
-        public PortalTheme(string logoUrl = default(string), string topbarColor = default(string), string backgroundUrl = default(string), string favIcon = default(string), string iconEmpty = default(string), string iconActive = default(string), Dictionary<string, object> colors = default(Dictionary<string, object>))
+        public PortalTheme(string logoUrl = default, string topbarColor = default, string backgroundUrl = default, string favIcon = default, string iconEmpty = default, string iconActive = default, Dictionary<string, object> colors = default)
         {
             this.LogoUrl = logoUrl;
             this.TopbarColor = topbarColor;

@@ -38,7 +38,7 @@ namespace Agravity.Public.Model
         /// <param name="count">count.</param>
         /// <param name="value">value.</param>
         /// <param name="name">name.</param>
-        public SearchFacetEntity(long? count = default(long?), string value = default(string), string name = default(string))
+        public SearchFacetEntity(long? count = default, string value = default, string name = default)
         {
             this.Count = count;
             this.Value = value;

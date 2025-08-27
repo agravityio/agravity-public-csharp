@@ -144,7 +144,7 @@ namespace Agravity.Public.Model
         /// <param name="value">value.</param>
         /// <param name="notPrefix">notPrefix.</param>
         /// <param name="valueType">valueType (default to ValueTypeEnum.String).</param>
-        public WhereParam(OperatorEnum? varOperator = OperatorEnum.Equals, string field = default(string), Object value = default(Object), bool notPrefix = default(bool), ValueTypeEnum? valueType = ValueTypeEnum.String)
+        public WhereParam(OperatorEnum? varOperator = OperatorEnum.Equals, string field = default, Object value = default, bool notPrefix = default, ValueTypeEnum? valueType = ValueTypeEnum.String)
         {
             this.Operator = varOperator;
             this.Field = field;

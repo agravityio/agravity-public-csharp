@@ -37,7 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="entities">entities.</param>
         /// <param name="notfounds">notfounds.</param>
-        public EntityListResult(List<EntityIdName> entities = default(List<EntityIdName>), List<string> notfounds = default(List<string>))
+        public EntityListResult(List<EntityIdName> entities = default, List<string> notfounds = default)
         {
             this.Entities = entities;
             this.Notfounds = notfounds;

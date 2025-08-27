@@ -48,7 +48,7 @@ namespace Agravity.Public.Model
         /// <param name="ids">ids.</param>
         /// <param name="portalId">portalId.</param>
         /// <param name="scopefilter">scopefilter.</param>
-        public AzSearchOptions(string searchString = default(string), int? limit = default(int?), int? skip = default(int?), string collectiontypeid = default(string), string collectionid = default(string), string filter = default(string), string orderby = default(string), string mode = default(string), int? broadness = default(int?), string relId = default(string), string ids = default(string), string portalId = default(string), string scopefilter = default(string))
+        public AzSearchOptions(string searchString = default, int? limit = default, int? skip = default, string collectiontypeid = default, string collectionid = default, string filter = default, string orderby = default, string mode = default, int? broadness = default, string relId = default, string ids = default, string portalId = default, string scopefilter = default)
         {
             this.SearchString = searchString;
             this.Limit = limit;

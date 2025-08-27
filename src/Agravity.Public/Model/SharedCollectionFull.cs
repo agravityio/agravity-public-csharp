@@ -56,7 +56,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public SharedCollectionFull(List<SharedAsset> page = default(List<SharedAsset>), int? pageSize = default(int?), int? size = default(int?), string continuationToken = default(string), string id = default(string), string entityType = default(string), string collectionId = default(string), string url = default(string), DateTime? validUntil = default(DateTime?), string validFor = default(string), string message = default(string), bool? global = default(bool?), List<SharedAllowedFormat> allowedFormats = default(List<SharedAllowedFormat>), string password = default(string), string status = default(string), DateTime? createdDate = default(DateTime?), string createdBy = default(string), DateTime? modifiedDate = default(DateTime?), string modifiedBy = default(string), string pk = default(string), string etag = default(string))
+        public SharedCollectionFull(List<SharedAsset> page = default, int? pageSize = default, int? size = default, string continuationToken = default, string id = default, string entityType = default, string collectionId = default, string url = default, DateTime? validUntil = default, string validFor = default, string message = default, bool? global = default, List<SharedAllowedFormat> allowedFormats = default, string password = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
         {
             this.Page = page;
             this.PageSize = pageSize;

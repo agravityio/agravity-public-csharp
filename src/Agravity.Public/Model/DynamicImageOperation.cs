@@ -37,7 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="operation">operation.</param>
         /// <param name="varParams">varParams.</param>
-        public DynamicImageOperation(string operation = default(string), List<Object> varParams = default(List<Object>))
+        public DynamicImageOperation(string operation = default, List<Object> varParams = default)
         {
             this.Operation = operation;
             this.Params = varParams;

@@ -37,7 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="actions">actions.</param>
         /// <param name="odataType">odataType.</param>
-        public CustomClaimsProviderResponseDataTokenIssuanceStart(List<CustomClaimsProviderResponseActionTokenIssuanceStart> actions = default(List<CustomClaimsProviderResponseActionTokenIssuanceStart>), string odataType = default(string))
+        public CustomClaimsProviderResponseDataTokenIssuanceStart(List<CustomClaimsProviderResponseActionTokenIssuanceStart> actions = default, string odataType = default)
         {
             this.Actions = actions;
             this.OdataType = odataType;

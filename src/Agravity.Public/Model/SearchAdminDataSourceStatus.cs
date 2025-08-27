@@ -37,7 +37,7 @@ namespace Agravity.Public.Model
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="status">status.</param>
-        public SearchAdminDataSourceStatus(string name = default(string), string status = default(string))
+        public SearchAdminDataSourceStatus(string name = default, string status = default)
         {
             this.Name = name;
             this.Status = status;

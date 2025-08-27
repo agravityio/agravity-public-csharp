@@ -61,7 +61,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DeletedEntities&gt;</returns>
-        List<DeletedEntities> HttpGetDeletedEntities(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0);
+        List<DeletedEntities> HttpGetDeletedEntities(string entityType = default, string since = default, string until = default, string portalId = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -76,7 +76,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DeletedEntities&gt;</returns>
-        ApiResponse<List<DeletedEntities>> HttpGetDeletedEntitiesWithHttpInfo(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0);
+        ApiResponse<List<DeletedEntities>> HttpGetDeletedEntitiesWithHttpInfo(string entityType = default, string since = default, string until = default, string portalId = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -142,7 +142,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgravityVersion</returns>
-        System.Threading.Tasks.Task<AgravityVersion> HttpAgravityVersionInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AgravityVersion> HttpAgravityVersionInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -154,7 +154,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgravityVersion)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AgravityVersion>> HttpAgravityVersionInfoWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AgravityVersion>> HttpAgravityVersionInfoWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -169,7 +169,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DeletedEntities&gt;</returns>
-        System.Threading.Tasks.Task<List<DeletedEntities>> HttpGetDeletedEntitiesAsync(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<DeletedEntities>> HttpGetDeletedEntitiesAsync(string entityType = default, string since = default, string until = default, string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -185,7 +185,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DeletedEntities&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<DeletedEntities>>> HttpGetDeletedEntitiesWithHttpInfoAsync(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<DeletedEntities>>> HttpGetDeletedEntitiesWithHttpInfoAsync(string entityType = default, string since = default, string until = default, string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -197,7 +197,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgravityInfoResponse</returns>
-        System.Threading.Tasks.Task<AgravityInfoResponse> HttpTriggerDurableContinueAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AgravityInfoResponse> HttpTriggerDurableContinueAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -210,7 +210,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AgravityInfoResponse>> HttpTriggerDurableContinueWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AgravityInfoResponse>> HttpTriggerDurableContinueWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -222,7 +222,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgravityInfoResponse</returns>
-        System.Threading.Tasks.Task<AgravityInfoResponse> HttpTriggerDurableScchTrainingDoneAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AgravityInfoResponse> HttpTriggerDurableScchTrainingDoneAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -235,7 +235,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AgravityInfoResponse>> HttpTriggerDurableScchTrainingDoneWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AgravityInfoResponse>> HttpTriggerDurableScchTrainingDoneWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -387,6 +387,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -424,7 +425,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgravityVersion</returns>
-        public async System.Threading.Tasks.Task<AgravityVersion> HttpAgravityVersionInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AgravityVersion> HttpAgravityVersionInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<AgravityVersion> localVarResponse = await HttpAgravityVersionInfoWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -437,7 +438,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgravityVersion)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AgravityVersion>> HttpAgravityVersionInfoWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AgravityVersion>> HttpAgravityVersionInfoWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -492,7 +493,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DeletedEntities&gt;</returns>
-        public List<DeletedEntities> HttpGetDeletedEntities(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0)
+        public List<DeletedEntities> HttpGetDeletedEntities(string entityType = default, string since = default, string until = default, string portalId = default, int operationIndex = 0)
         {
             Agravity.Public.Client.ApiResponse<List<DeletedEntities>> localVarResponse = HttpGetDeletedEntitiesWithHttpInfo(entityType, since, until, portalId);
             return localVarResponse.Data;
@@ -508,7 +509,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the request comes from portal this is the indicator. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DeletedEntities&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<DeletedEntities>> HttpGetDeletedEntitiesWithHttpInfo(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<DeletedEntities>> HttpGetDeletedEntitiesWithHttpInfo(string entityType = default, string since = default, string until = default, string portalId = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -521,6 +522,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -583,7 +585,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DeletedEntities&gt;</returns>
-        public async System.Threading.Tasks.Task<List<DeletedEntities>> HttpGetDeletedEntitiesAsync(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<DeletedEntities>> HttpGetDeletedEntitiesAsync(string entityType = default, string since = default, string until = default, string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<List<DeletedEntities>> localVarResponse = await HttpGetDeletedEntitiesWithHttpInfoAsync(entityType, since, until, portalId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -600,7 +602,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DeletedEntities&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<DeletedEntities>>> HttpGetDeletedEntitiesWithHttpInfoAsync(string entityType = default(string), string since = default(string), string until = default(string), string portalId = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<DeletedEntities>>> HttpGetDeletedEntitiesWithHttpInfoAsync(string entityType = default, string since = default, string until = default, string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -705,6 +707,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -744,7 +747,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgravityInfoResponse</returns>
-        public async System.Threading.Tasks.Task<AgravityInfoResponse> HttpTriggerDurableContinueAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AgravityInfoResponse> HttpTriggerDurableContinueAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<AgravityInfoResponse> localVarResponse = await HttpTriggerDurableContinueWithHttpInfoAsync(instanceId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -758,7 +761,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AgravityInfoResponse>> HttpTriggerDurableContinueWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AgravityInfoResponse>> HttpTriggerDurableContinueWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'instanceId' is set
             if (instanceId == null)
@@ -849,6 +852,7 @@ namespace Agravity.Public.Api
             };
 
             var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -888,7 +892,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AgravityInfoResponse</returns>
-        public async System.Threading.Tasks.Task<AgravityInfoResponse> HttpTriggerDurableScchTrainingDoneAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AgravityInfoResponse> HttpTriggerDurableScchTrainingDoneAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Agravity.Public.Client.ApiResponse<AgravityInfoResponse> localVarResponse = await HttpTriggerDurableScchTrainingDoneWithHttpInfoAsync(instanceId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -902,7 +906,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AgravityInfoResponse>> HttpTriggerDurableScchTrainingDoneWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AgravityInfoResponse>> HttpTriggerDurableScchTrainingDoneWithHttpInfoAsync(string instanceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'instanceId' is set
             if (instanceId == null)

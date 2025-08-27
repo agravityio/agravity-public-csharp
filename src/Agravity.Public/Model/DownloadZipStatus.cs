@@ -83,7 +83,7 @@ namespace Agravity.Public.Model
         /// <param name="zipname">zipname.</param>
         /// <param name="size">size.</param>
         /// <param name="url">url.</param>
-        public DownloadZipStatus(string id = default(string), string user = default(string), double? percent = default(double?), double? part = default(double?), int? count = default(int?), string message = default(string), string status = default(string), ZipTypeEnum? zipType = ZipTypeEnum.DOWNLOAD, string zipname = default(string), string size = default(string), string url = default(string))
+        public DownloadZipStatus(string id = default, string user = default, double? percent = default, double? part = default, int? count = default, string message = default, string status = default, ZipTypeEnum? zipType = ZipTypeEnum.DOWNLOAD, string zipname = default, string size = default, string url = default)
         {
             this.Id = id;
             this.User = user;

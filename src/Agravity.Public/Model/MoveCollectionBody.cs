@@ -38,7 +38,7 @@ namespace Agravity.Public.Model
         /// <param name="fromCollectionId">fromCollectionId.</param>
         /// <param name="toCollectionId">toCollectionId.</param>
         /// <param name="operation">operation.</param>
-        public MoveCollectionBody(string fromCollectionId = default(string), string toCollectionId = default(string), string operation = default(string))
+        public MoveCollectionBody(string fromCollectionId = default, string toCollectionId = default, string operation = default)
         {
             this.FromCollectionId = fromCollectionId;
             this.ToCollectionId = toCollectionId;

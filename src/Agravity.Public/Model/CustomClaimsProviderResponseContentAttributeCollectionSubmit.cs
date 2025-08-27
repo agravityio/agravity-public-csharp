@@ -36,7 +36,7 @@ namespace Agravity.Public.Model
         /// Initializes a new instance of the <see cref="CustomClaimsProviderResponseContentAttributeCollectionSubmit" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        public CustomClaimsProviderResponseContentAttributeCollectionSubmit(CustomClaimsProviderResponseDataAttributeCollectionSubmit data = default(CustomClaimsProviderResponseDataAttributeCollectionSubmit))
+        public CustomClaimsProviderResponseContentAttributeCollectionSubmit(CustomClaimsProviderResponseDataAttributeCollectionSubmit data = default)
         {
             this.Data = data;
         }

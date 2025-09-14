@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureFunction4", "AzureFunction4\AzureFunction4.csproj", "{16F28EB0-7538-4EC6-BF42-B701C57F042E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agravity.Public", "..\..\AgravityAPI\agravity-public-csharp\src\Agravity.Public\Agravity.Public.csproj", "{0BC8D83A-BC96-42EE-AA57-FBA2A8D74453}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agravity.Public", "..\..\src\Agravity.Public\Agravity.Public.csproj", "{87ABAFE3-5F6D-3E08-7D2B-54DAE980D51B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{16F28EB0-7538-4EC6-BF42-B701C57F042E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16F28EB0-7538-4EC6-BF42-B701C57F042E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16F28EB0-7538-4EC6-BF42-B701C57F042E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BC8D83A-BC96-42EE-AA57-FBA2A8D74453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BC8D83A-BC96-42EE-AA57-FBA2A8D74453}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BC8D83A-BC96-42EE-AA57-FBA2A8D74453}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BC8D83A-BC96-42EE-AA57-FBA2A8D74453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87ABAFE3-5F6D-3E08-7D2B-54DAE980D51B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87ABAFE3-5F6D-3E08-7D2B-54DAE980D51B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87ABAFE3-5F6D-3E08-7D2B-54DAE980D51B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87ABAFE3-5F6D-3E08-7D2B-54DAE980D51B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

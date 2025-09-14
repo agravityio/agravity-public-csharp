@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **FacetOrder** | **int?** |  | [optional] 
 **Labels** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **UserContext** | [**PortalUserContext**](PortalUserContext.md) |  | [optional] 
+**Format** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

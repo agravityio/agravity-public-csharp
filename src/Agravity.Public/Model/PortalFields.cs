@@ -40,13 +40,15 @@ namespace Agravity.Public.Model
         /// <param name="facetOrder">facetOrder.</param>
         /// <param name="labels">labels.</param>
         /// <param name="userContext">userContext.</param>
-        public PortalFields(string name = default, int? detailOrder = default, int? facetOrder = default, Dictionary<string, string> labels = default, PortalUserContext userContext = default)
+        /// <param name="format">format.</param>
+        public PortalFields(string name = default, int? detailOrder = default, int? facetOrder = default, Dictionary<string, string> labels = default, PortalUserContext userContext = default, string format = default)
         {
             this.Name = name;
             this.DetailOrder = detailOrder;
             this.FacetOrder = facetOrder;
             this.Labels = labels;
             this.UserContext = userContext;
+            this.Format = format;
         }
 
         /// <summary>
@@ -80,6 +82,12 @@ namespace Agravity.Public.Model
         public PortalUserContext UserContext { get; set; }
 
         /// <summary>
+        /// Gets or Sets Format
+        /// </summary>
+        [DataMember(Name = "format", EmitDefaultValue = true)]
+        public string Format { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -92,6 +100,7 @@ namespace Agravity.Public.Model
             sb.Append("  FacetOrder: ").Append(FacetOrder).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");
             sb.Append("  UserContext: ").Append(UserContext).Append("\n");
+            sb.Append("  Format: ").Append(Format).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

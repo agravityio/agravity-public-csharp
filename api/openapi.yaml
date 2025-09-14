@@ -9249,6 +9249,7 @@ components:
         fields:
         - facet_order: 6
           name: name
+          format: format
           user_context:
             mapping:
               key: mapping
@@ -9262,6 +9263,7 @@ components:
             key: labels
         - facet_order: 6
           name: name
+          format: format
           user_context:
             mapping:
               key: mapping
@@ -9636,6 +9638,7 @@ components:
         fields:
         - facet_order: 6
           name: name
+          format: format
           user_context:
             mapping:
               key: mapping
@@ -9649,6 +9652,7 @@ components:
             key: labels
         - facet_order: 6
           name: name
+          format: format
           user_context:
             mapping:
               key: mapping
@@ -9816,6 +9820,7 @@ components:
       example:
         facet_order: 6
         name: name
+        format: format
         user_context:
           mapping:
             key: mapping
@@ -9846,6 +9851,9 @@ components:
           type: object
         user_context:
           $ref: "#/components/schemas/portalUserContext"
+        format:
+          nullable: true
+          type: string
       type: object
     portalLinks:
       example:

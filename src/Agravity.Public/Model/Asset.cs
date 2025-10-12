@@ -76,6 +76,7 @@ namespace Agravity.Public.Model
         /// <param name="blobs">blobs.</param>
         /// <param name="collections">collections.</param>
         /// <param name="failedReason">failedReason.</param>
+        /// <param name="qualityGate">qualityGate.</param>
         /// <param name="regionOfOrigin">regionOfOrigin.</param>
         /// <param name="availability">availability.</param>
         /// <param name="availableFrom">availableFrom.</param>
@@ -93,7 +94,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Asset(string id = default, string entityType = default, string name = default, string assetType = default, List<string> duplicates = default, List<string> keywords = default, AssetBlob origBlob = default, List<AssetBlob> blobs = default, List<string> collections = default, string failedReason = default, string regionOfOrigin = default, string availability = default, DateTime? availableFrom = default, DateTime? availableTo = default, Dictionary<string, object> custom = default, List<CollTypeItem> items = default, Dictionary<string, Dictionary<string, object>> translations = default, RoleEnum? role = RoleEnum.NONE, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
+        public Asset(string id = default, string entityType = default, string name = default, string assetType = default, List<string> duplicates = default, List<string> keywords = default, AssetBlob origBlob = default, List<AssetBlob> blobs = default, List<string> collections = default, string failedReason = default, List<string> qualityGate = default, string regionOfOrigin = default, string availability = default, DateTime? availableFrom = default, DateTime? availableTo = default, Dictionary<string, object> custom = default, List<CollTypeItem> items = default, Dictionary<string, Dictionary<string, object>> translations = default, RoleEnum? role = RoleEnum.NONE, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -105,6 +106,7 @@ namespace Agravity.Public.Model
             this.Blobs = blobs;
             this.Collections = collections;
             this.FailedReason = failedReason;
+            this.QualityGate = qualityGate;
             this.RegionOfOrigin = regionOfOrigin;
             this.Availability = availability;
             this.AvailableFrom = availableFrom;
@@ -183,6 +185,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "failed_reason", EmitDefaultValue = true)]
         public string FailedReason { get; set; }
+
+        /// <summary>
+        /// Gets or Sets QualityGate
+        /// </summary>
+        [DataMember(Name = "quality_gate", EmitDefaultValue = true)]
+        public List<string> QualityGate { get; set; }
 
         /// <summary>
         /// Gets or Sets RegionOfOrigin
@@ -298,6 +306,7 @@ namespace Agravity.Public.Model
             sb.Append("  Blobs: ").Append(Blobs).Append("\n");
             sb.Append("  Collections: ").Append(Collections).Append("\n");
             sb.Append("  FailedReason: ").Append(FailedReason).Append("\n");
+            sb.Append("  QualityGate: ").Append(QualityGate).Append("\n");
             sb.Append("  RegionOfOrigin: ").Append(RegionOfOrigin).Append("\n");
             sb.Append("  Availability: ").Append(Availability).Append("\n");
             sb.Append("  AvailableFrom: ").Append(AvailableFrom).Append("\n");

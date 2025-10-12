@@ -5074,6 +5074,9 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
+          quality_gate:
+          - quality_gate
+          - quality_gate
           items:
           - item_type: item_type
             format: format
@@ -5300,6 +5303,9 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
+          quality_gate:
+          - quality_gate
+          - quality_gate
           items:
           - item_type: item_type
             format: format
@@ -5652,6 +5658,9 @@ components:
         modified_by: modified_by
         created_date: 2000-01-23T04:56:07.000+00:00
         pk: pk
+        quality_gate:
+        - quality_gate
+        - quality_gate
         items:
         - item_type: item_type
           format: format
@@ -5739,6 +5748,11 @@ components:
         failed_reason:
           nullable: true
           type: string
+        quality_gate:
+          items:
+            type: string
+          nullable: true
+          type: array
         region_of_origin:
           nullable: true
           type: string
@@ -6360,6 +6374,9 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
+          quality_gate:
+          - quality_gate
+          - quality_gate
           items:
           - item_type: item_type
             format: format
@@ -6586,6 +6603,9 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
+          quality_gate:
+          - quality_gate
+          - quality_gate
           items:
           - item_type: item_type
             format: format
@@ -7772,6 +7792,9 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
+          quality_gate:
+          - quality_gate
+          - quality_gate
           items:
           - item_type: item_type
             format: format
@@ -7998,6 +8021,9 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
+          quality_gate:
+          - quality_gate
+          - quality_gate
           items:
           - item_type: item_type
             format: format
@@ -8619,6 +8645,9 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
+          quality_gate:
+          - quality_gate
+          - quality_gate
           items:
           - item_type: item_type
             format: format
@@ -8845,6 +8874,9 @@ components:
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
+          quality_gate:
+          - quality_gate
+          - quality_gate
           items:
           - item_type: item_type
             format: format
@@ -11199,6 +11231,9 @@ components:
             modified_by: modified_by
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
+            quality_gate:
+            - quality_gate
+            - quality_gate
             items:
             - item_type: item_type
               format: format
@@ -11425,6 +11460,9 @@ components:
             modified_by: modified_by
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
+            quality_gate:
+            - quality_gate
+            - quality_gate
             items:
             - item_type: item_type
               format: format

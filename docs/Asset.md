@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Blobs** | [**List&lt;AssetBlob&gt;**](AssetBlob.md) |  | [optional] 
 **Collections** | **List&lt;string&gt;** |  | [optional] 
 **FailedReason** | **string** |  | [optional] 
+**QualityGate** | **List&lt;string&gt;** |  | [optional] 
 **RegionOfOrigin** | **string** |  | [optional] 
 **Availability** | **string** |  | [optional] 
 **AvailableFrom** | **DateTime?** |  | [optional] 

@@ -146,6 +146,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'QualityGate'
+        /// </summary>
+        [Fact]
+        public void QualityGateTest()
+        {
+            // TODO unit test for the property 'QualityGate'
+        }
+
+        /// <summary>
         /// Test the property 'RegionOfOrigin'
         /// </summary>
         [Fact]

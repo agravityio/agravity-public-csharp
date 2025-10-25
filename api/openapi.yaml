@@ -7086,15 +7086,18 @@ components:
             key: null
           name: name
           id: id
+          pk: pk
         - entity_type: entity_type
           translations:
             key: null
           name: name
           id: id
+          pk: pk
         translations:
           key: null
         name: name
         id: id
+        pk: pk
       properties:
         children:
           items:
@@ -7113,6 +7116,9 @@ components:
           nullable: true
           type: object
         id:
+          nullable: true
+          type: string
+        pk:
           nullable: true
           type: string
       type: object
@@ -7146,15 +7152,18 @@ components:
               key: null
             name: name
             id: id
+            pk: pk
           - entity_type: entity_type
             translations:
               key: null
             name: name
             id: id
+            pk: pk
           translations:
             key: null
           name: name
           id: id
+          pk: pk
         - entity_type: entity_type
           children:
           - entity_type: entity_type
@@ -7162,15 +7171,18 @@ components:
               key: null
             name: name
             id: id
+            pk: pk
           - entity_type: entity_type
             translations:
               key: null
             name: name
             id: id
+            pk: pk
           translations:
             key: null
           name: name
           id: id
+          pk: pk
         modified_by: modified_by
         id: id
         created_date: 2000-01-23T04:56:07.000+00:00
@@ -8377,8 +8389,12 @@ components:
     entityId:
       example:
         id: id
+        pk: pk
       properties:
         id:
+          nullable: true
+          type: string
+        pk:
           nullable: true
           type: string
       type: object
@@ -8389,6 +8405,7 @@ components:
           key: null
         name: name
         id: id
+        pk: pk
       properties:
         name:
           nullable: true
@@ -8404,6 +8421,9 @@ components:
         id:
           nullable: true
           type: string
+        pk:
+          nullable: true
+          type: string
       type: object
     entityListResult:
       example:
@@ -8413,11 +8433,13 @@ components:
             key: null
           name: name
           id: id
+          pk: pk
         - entity_type: entity_type
           translations:
             key: null
           name: name
           id: id
+          pk: pk
         notfounds:
         - notfounds
         - notfounds
@@ -9479,15 +9501,18 @@ components:
               key: null
             name: name
             id: id
+            pk: pk
           - entity_type: entity_type
             translations:
               key: null
             name: name
             id: id
+            pk: pk
           translations:
             key: null
           name: name
           id: id
+          pk: pk
         - entity_type: entity_type
           children:
           - entity_type: entity_type
@@ -9495,15 +9520,18 @@ components:
               key: null
             name: name
             id: id
+            pk: pk
           - entity_type: entity_type
             translations:
               key: null
             name: name
             id: id
+            pk: pk
           translations:
             key: null
           name: name
           id: id
+          pk: pk
         languages: languages
         asset_icon_rules:
         - color: color
@@ -10118,7 +10146,9 @@ components:
         created_by: created_by
         users:
         - id: id
+          pk: pk
         - id: id
+          pk: pk
         url: url
         continuation_token: continuation_token
         entity_type: entity_type

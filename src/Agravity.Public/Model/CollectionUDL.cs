@@ -40,13 +40,15 @@ namespace Agravity.Public.Model
         /// <param name="entityType">entityType.</param>
         /// <param name="translations">translations.</param>
         /// <param name="id">id.</param>
-        public CollectionUDL(List<EntityIdName> children = default, string name = default, string entityType = default, Dictionary<string, Dictionary<string, object>> translations = default, string id = default)
+        /// <param name="pk">pk.</param>
+        public CollectionUDL(List<EntityIdName> children = default, string name = default, string entityType = default, Dictionary<string, Dictionary<string, object>> translations = default, string id = default, string pk = default)
         {
             this.Children = children;
             this.Name = name;
             this.EntityType = entityType;
             this.Translations = translations;
             this.Id = id;
+            this.Pk = pk;
         }
 
         /// <summary>
@@ -80,6 +82,12 @@ namespace Agravity.Public.Model
         public string Id { get; set; }
 
         /// <summary>
+        /// Gets or Sets Pk
+        /// </summary>
+        [DataMember(Name = "pk", EmitDefaultValue = true)]
+        public string Pk { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -92,6 +100,7 @@ namespace Agravity.Public.Model
             sb.Append("  EntityType: ").Append(EntityType).Append("\n");
             sb.Append("  Translations: ").Append(Translations).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Pk: ").Append(Pk).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

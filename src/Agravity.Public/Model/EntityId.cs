@@ -36,9 +36,11 @@ namespace Agravity.Public.Model
         /// Initializes a new instance of the <see cref="EntityId" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        public EntityId(string id = default)
+        /// <param name="pk">pk.</param>
+        public EntityId(string id = default, string pk = default)
         {
             this.Id = id;
+            this.Pk = pk;
         }
 
         /// <summary>
@@ -46,6 +48,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pk
+        /// </summary>
+        [DataMember(Name = "pk", EmitDefaultValue = true)]
+        public string Pk { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -56,6 +64,7 @@ namespace Agravity.Public.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class EntityId {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Pk: ").Append(Pk).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

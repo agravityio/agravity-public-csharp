@@ -8,6 +8,10 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="10.1.3"/> [10.1.3](https://www.nuget.org/packages/Agravity.Public/v/10.1.3) (2025-10-25)
+
+- Add `pk`(PartitionKey) property to entityIdName (and collectionUDL which inherits this class)
+
 ## AgravityAPI <a name="10.1.2"/> [10.1.2](https://www.nuget.org/packages/Agravity.Public/v/10.1.2) (2025-10-19)
 
 - Just version upgrade to match backend

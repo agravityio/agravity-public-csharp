@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | [optional] 
 **EntityType** | **string** |  | [optional] 
+**Status** | **string** |  | [optional] 
 **Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **Pk** | **string** |  | [optional] 

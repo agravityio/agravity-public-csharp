@@ -17,7 +17,7 @@ info:
     <li>Get version of deployment</li></ul><br/><b>API key is needed to access these\
     \ endpoints.</b><br/><br/>Copyright © Agravity GmbH 2025. All Rights Reserved"
   title: Agravity OpenAPI Documentation - Public Functions
-  version: 10.1.5
+  version: 10.1.6
 servers:
 - url: http://localhost:7072/api
 paths:
@@ -7087,17 +7087,20 @@ components:
           name: name
           id: id
           pk: pk
+          status: status
         - entity_type: entity_type
           translations:
             key: null
           name: name
           id: id
           pk: pk
+          status: status
         translations:
           key: null
         name: name
         id: id
         pk: pk
+        status: status
       properties:
         children:
           items:
@@ -7108,6 +7111,9 @@ components:
           nullable: true
           type: string
         entity_type:
+          nullable: true
+          type: string
+        status:
           nullable: true
           type: string
         translations:
@@ -7153,17 +7159,20 @@ components:
             name: name
             id: id
             pk: pk
+            status: status
           - entity_type: entity_type
             translations:
               key: null
             name: name
             id: id
             pk: pk
+            status: status
           translations:
             key: null
           name: name
           id: id
           pk: pk
+          status: status
         - entity_type: entity_type
           children:
           - entity_type: entity_type
@@ -7172,17 +7181,20 @@ components:
             name: name
             id: id
             pk: pk
+            status: status
           - entity_type: entity_type
             translations:
               key: null
             name: name
             id: id
             pk: pk
+            status: status
           translations:
             key: null
           name: name
           id: id
           pk: pk
+          status: status
         modified_by: modified_by
         id: id
         created_date: 2000-01-23T04:56:07.000+00:00
@@ -8406,11 +8418,15 @@ components:
         name: name
         id: id
         pk: pk
+        status: status
       properties:
         name:
           nullable: true
           type: string
         entity_type:
+          nullable: true
+          type: string
+        status:
           nullable: true
           type: string
         translations:
@@ -8434,12 +8450,14 @@ components:
           name: name
           id: id
           pk: pk
+          status: status
         - entity_type: entity_type
           translations:
             key: null
           name: name
           id: id
           pk: pk
+          status: status
         notfounds:
         - notfounds
         - notfounds
@@ -9502,17 +9520,20 @@ components:
             name: name
             id: id
             pk: pk
+            status: status
           - entity_type: entity_type
             translations:
               key: null
             name: name
             id: id
             pk: pk
+            status: status
           translations:
             key: null
           name: name
           id: id
           pk: pk
+          status: status
         - entity_type: entity_type
           children:
           - entity_type: entity_type
@@ -9521,17 +9542,20 @@ components:
             name: name
             id: id
             pk: pk
+            status: status
           - entity_type: entity_type
             translations:
               key: null
             name: name
             id: id
             pk: pk
+            status: status
           translations:
             key: null
           name: name
           id: id
           pk: pk
+          status: status
         languages: languages
         asset_icon_rules:
         - color: color

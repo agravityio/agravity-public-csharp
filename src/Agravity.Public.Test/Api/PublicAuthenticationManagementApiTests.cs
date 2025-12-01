@@ -56,6 +56,19 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpAuthGetAgravityUserById
+        /// </summary>
+        [Fact]
+        public void HttpAuthGetAgravityUserByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //bool? limit = null;
+            //var response = instance.HttpAuthGetAgravityUserById(id, limit);
+            //Assert.IsType<AgravityUser>(response);
+        }
+
+        /// <summary>
         /// Test HttpAuthGetContainerWriteSasToken
         /// </summary>
         [Fact]

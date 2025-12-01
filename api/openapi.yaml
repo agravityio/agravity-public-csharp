@@ -2157,6 +2157,49 @@ paths:
       - function_key: []
       tags:
       - Public Authentication Management
+  /auth/users/{id}:
+    get:
+      description: This gets the user information about an Agravity User (incl. Online
+        Status). Only full information if requester and userId are the same or it
+        has role Admin.
+      operationId: HttpAuthGetAgravityUserById
+      parameters:
+      - description: The ID of the requested Agravity user.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "(Optional): If the reponse should be limited to name and email."
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agravityUser"
+          description: "Returns the Agravity user. Only if role agravity.admin or\
+            \ user itself get all roles, permissions, shares etc. "
+        "400":
+          description: "The given ID is not a valid Agravity user ID. (Code: 6fdb9e67-d178-4038-b9c8-552fa9ef2a74)"
+        "401":
+          description: Unauthorized. API Key not provided.
+        "404":
+          description: The requested item could not be found.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Authentication Management
   /collections:
     get:
       description: This lists all the collections which are stored in the database
@@ -4707,6 +4750,99 @@ components:
         info_object:
           nullable: true
           type: object
+      type: object
+    agravityUser:
+      example:
+        impersonation: impersonation
+        apikey: apikey
+        online_status:
+          last_connection: 2000-01-23T04:56:07.000+00:00
+          status: status
+        roles:
+        - roles
+        - roles
+        groups:
+        - groups
+        - groups
+        modified_date: 2000-01-23T04:56:07.000+00:00
+        created_by: created_by
+        entity_type: entity_type
+        name: name
+        modified_by: modified_by
+        id: id
+        created_date: 2000-01-23T04:56:07.000+00:00
+        pk: pk
+        email: email
+        _etag: _etag
+        status: status
+      properties:
+        id:
+          nullable: true
+          type: string
+        entity_type:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        email:
+          nullable: true
+          type: string
+        impersonation:
+          nullable: true
+          type: string
+        apikey:
+          nullable: true
+          type: string
+        online_status:
+          $ref: "#/components/schemas/agravityUserOnlineStatus"
+        roles:
+          items:
+            type: string
+          nullable: true
+          type: array
+        groups:
+          items:
+            type: string
+          nullable: true
+          type: array
+        status:
+          nullable: true
+          type: string
+        created_date:
+          format: date-time
+          nullable: true
+          type: string
+        created_by:
+          nullable: true
+          type: string
+        modified_date:
+          format: date-time
+          nullable: true
+          type: string
+        modified_by:
+          nullable: true
+          type: string
+        pk:
+          nullable: true
+          type: string
+        _etag:
+          nullable: true
+          type: string
+      type: object
+    agravityUserOnlineStatus:
+      example:
+        last_connection: 2000-01-23T04:56:07.000+00:00
+        status: status
+      nullable: true
+      properties:
+        status:
+          nullable: true
+          type: string
+        last_connection:
+          format: date-time
+          nullable: true
+          type: string
       type: object
     agravityVersion:
       example:

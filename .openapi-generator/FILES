@@ -5,6 +5,8 @@ api/openapi.yaml
 appveyor.yml
 docs/AgravityErrorResponse.md
 docs/AgravityInfoResponse.md
+docs/AgravityUser.md
+docs/AgravityUserOnlineStatus.md
 docs/AgravityVersion.md
 docs/AllWebAppData.md
 docs/Asset.md
@@ -132,6 +134,8 @@ src/Agravity.Public.Test/Api/PublicWebAppDataApiTests.cs
 src/Agravity.Public.Test/Api/PublicWorkspaceManagementApiTests.cs
 src/Agravity.Public.Test/Model/AgravityErrorResponseTests.cs
 src/Agravity.Public.Test/Model/AgravityInfoResponseTests.cs
+src/Agravity.Public.Test/Model/AgravityUserOnlineStatusTests.cs
+src/Agravity.Public.Test/Model/AgravityUserTests.cs
 src/Agravity.Public.Test/Model/AgravityVersionTests.cs
 src/Agravity.Public.Test/Model/AllWebAppDataTests.cs
 src/Agravity.Public.Test/Model/AssetAvailabilityTests.cs
@@ -250,6 +254,8 @@ src/Agravity.Public/Client/RetryConfiguration.cs
 src/Agravity.Public/Model/AbstractOpenAPISchema.cs
 src/Agravity.Public/Model/AgravityErrorResponse.cs
 src/Agravity.Public/Model/AgravityInfoResponse.cs
+src/Agravity.Public/Model/AgravityUser.cs
+src/Agravity.Public/Model/AgravityUserOnlineStatus.cs
 src/Agravity.Public/Model/AgravityVersion.cs
 src/Agravity.Public/Model/AllWebAppData.cs
 src/Agravity.Public/Model/Asset.cs

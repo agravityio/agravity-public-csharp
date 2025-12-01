@@ -143,6 +143,7 @@ Class | Method | HTTP request | Description
 *PublicAssetVersioningApi* | [**HttpRestoreVersionedAssetsById**](docs/PublicAssetVersioningApi.md#httprestoreversionedassetsbyid) | **POST** /assets/{id}/versions/{vNr}/restore | 
 *PublicAssetVersioningApi* | [**HttpUpdateVersionedAssetsById**](docs/PublicAssetVersioningApi.md#httpupdateversionedassetsbyid) | **POST** /assets/{id}/versions/{vNr} | 
 *PublicAssetVersioningApi* | [**HttpVersionedAssetsGet**](docs/PublicAssetVersioningApi.md#httpversionedassetsget) | **GET** /assets/{id}/versions | 
+*PublicAuthenticationManagementApi* | [**HttpAuthGetAgravityUserById**](docs/PublicAuthenticationManagementApi.md#httpauthgetagravityuserbyid) | **GET** /auth/users/{id} | 
 *PublicAuthenticationManagementApi* | [**HttpAuthGetContainerWriteSasToken**](docs/PublicAuthenticationManagementApi.md#httpauthgetcontainerwritesastoken) | **GET** /auth/containerwrite/{containerName} | 
 *PublicAuthenticationManagementApi* | [**HttpAuthGetInboxContainerWriteSasToken**](docs/PublicAuthenticationManagementApi.md#httpauthgetinboxcontainerwritesastoken) | **GET** /auth/inbox | 
 *PublicCollectionManagementApi* | [**HttpCollectionsCreate**](docs/PublicCollectionManagementApi.md#httpcollectionscreate) | **POST** /collections | 
@@ -206,6 +207,8 @@ Class | Method | HTTP request | Description
 
  - [Model.AgravityErrorResponse](docs/AgravityErrorResponse.md)
  - [Model.AgravityInfoResponse](docs/AgravityInfoResponse.md)
+ - [Model.AgravityUser](docs/AgravityUser.md)
+ - [Model.AgravityUserOnlineStatus](docs/AgravityUserOnlineStatus.md)
  - [Model.AgravityVersion](docs/AgravityVersion.md)
  - [Model.AllWebAppData](docs/AllWebAppData.md)
  - [Model.Asset](docs/Asset.md)

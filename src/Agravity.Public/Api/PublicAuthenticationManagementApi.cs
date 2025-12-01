@@ -31,6 +31,31 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// This gets the user information about an Agravity User (incl. Online Status). Only full information if requester and userId are the same or it has role Admin.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the requested Agravity user.</param>
+        /// <param name="limit">(Optional): If the reponse should be limited to name and email. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AgravityUser</returns>
+        AgravityUser HttpAuthGetAgravityUserById(string id, bool? limit = default, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This gets the user information about an Agravity User (incl. Online Status). Only full information if requester and userId are the same or it has role Admin.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the requested Agravity user.</param>
+        /// <param name="limit">(Optional): If the reponse should be limited to name and email. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AgravityUser</returns>
+        ApiResponse<AgravityUser> HttpAuthGetAgravityUserByIdWithHttpInfo(string id, bool? limit = default, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// This endpoint creates and returns a SAS-Token with write access for the requested container
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
@@ -84,6 +109,33 @@ namespace Agravity.Public.Api
     public interface IPublicAuthenticationManagementApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This gets the user information about an Agravity User (incl. Online Status). Only full information if requester and userId are the same or it has role Admin.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the requested Agravity user.</param>
+        /// <param name="limit">(Optional): If the reponse should be limited to name and email. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AgravityUser</returns>
+        System.Threading.Tasks.Task<AgravityUser> HttpAuthGetAgravityUserByIdAsync(string id, bool? limit = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This gets the user information about an Agravity User (incl. Online Status). Only full information if requester and userId are the same or it has role Admin.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the requested Agravity user.</param>
+        /// <param name="limit">(Optional): If the reponse should be limited to name and email. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AgravityUser)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AgravityUser>> HttpAuthGetAgravityUserByIdWithHttpInfoAsync(string id, bool? limit = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -254,6 +306,173 @@ namespace Agravity.Public.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  This gets the user information about an Agravity User (incl. Online Status). Only full information if requester and userId are the same or it has role Admin.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the requested Agravity user.</param>
+        /// <param name="limit">(Optional): If the reponse should be limited to name and email. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AgravityUser</returns>
+        public AgravityUser HttpAuthGetAgravityUserById(string id, bool? limit = default, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<AgravityUser> localVarResponse = HttpAuthGetAgravityUserByIdWithHttpInfo(id, limit);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This gets the user information about an Agravity User (incl. Online Status). Only full information if requester and userId are the same or it has role Admin.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the requested Agravity user.</param>
+        /// <param name="limit">(Optional): If the reponse should be limited to name and email. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AgravityUser</returns>
+        public Agravity.Public.Client.ApiResponse<AgravityUser> HttpAuthGetAgravityUserByIdWithHttpInfo(string id, bool? limit = default, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAuthenticationManagementApi->HttpAuthGetAgravityUserById");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            localVarRequestOptions.Operation = "PublicAuthenticationManagementApi.HttpAuthGetAgravityUserById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<AgravityUser>("/auth/users/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAuthGetAgravityUserById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This gets the user information about an Agravity User (incl. Online Status). Only full information if requester and userId are the same or it has role Admin.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the requested Agravity user.</param>
+        /// <param name="limit">(Optional): If the reponse should be limited to name and email. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AgravityUser</returns>
+        public async System.Threading.Tasks.Task<AgravityUser> HttpAuthGetAgravityUserByIdAsync(string id, bool? limit = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Agravity.Public.Client.ApiResponse<AgravityUser> localVarResponse = await HttpAuthGetAgravityUserByIdWithHttpInfoAsync(id, limit, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This gets the user information about an Agravity User (incl. Online Status). Only full information if requester and userId are the same or it has role Admin.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the requested Agravity user.</param>
+        /// <param name="limit">(Optional): If the reponse should be limited to name and email. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AgravityUser)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AgravityUser>> HttpAuthGetAgravityUserByIdWithHttpInfoAsync(string id, bool? limit = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAuthenticationManagementApi->HttpAuthGetAgravityUserById");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            localVarRequestOptions.Operation = "PublicAuthenticationManagementApi.HttpAuthGetAgravityUserById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AgravityUser>("/auth/users/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAuthGetAgravityUserById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

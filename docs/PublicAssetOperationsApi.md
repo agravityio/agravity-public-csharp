@@ -747,7 +747,7 @@ No authorization required
 
 <a id="httpimagedynamicedit"></a>
 # **HttpImageDynamicEdit**
-> System.IO.Stream HttpImageDynamicEdit (string id, List<DynamicImageOperation> dynamicImageOperation)
+> System.IO.Stream HttpImageDynamicEdit (string id, List<DynamicImageOperation> dynamicImageOperation, string targetFilename = null)
 
 
 
@@ -777,10 +777,11 @@ namespace Example
             var apiInstance = new PublicAssetOperationsApi(config);
             var id = "id_example";  // string | The ID of the asset.
             var dynamicImageOperation = new List<DynamicImageOperation>(); // List<DynamicImageOperation> | Operations to be performed on the image directly mapped to c# imagemagick sdk
+            var targetFilename = "targetFilename_example";  // string | If the file should have a specific naming. (optional) 
 
             try
             {
-                System.IO.Stream result = apiInstance.HttpImageDynamicEdit(id, dynamicImageOperation);
+                System.IO.Stream result = apiInstance.HttpImageDynamicEdit(id, dynamicImageOperation, targetFilename);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -800,7 +801,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<System.IO.Stream> response = apiInstance.HttpImageDynamicEditWithHttpInfo(id, dynamicImageOperation);
+    ApiResponse<System.IO.Stream> response = apiInstance.HttpImageDynamicEditWithHttpInfo(id, dynamicImageOperation, targetFilename);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -819,6 +820,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the asset. |  |
 | **dynamicImageOperation** | [**List&lt;DynamicImageOperation&gt;**](DynamicImageOperation.md) | Operations to be performed on the image directly mapped to c# imagemagick sdk |  |
+| **targetFilename** | **string** | If the file should have a specific naming. | [optional]  |
 
 ### Return type
 

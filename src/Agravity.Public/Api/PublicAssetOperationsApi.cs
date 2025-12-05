@@ -255,9 +255,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
         /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="targetFilename">If the file should have a specific naming. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
-        System.IO.Stream HttpImageDynamicEdit(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0);
+        System.IO.Stream HttpImageDynamicEdit(string id, List<DynamicImageOperation> dynamicImageOperation, string targetFilename = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -268,9 +269,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
         /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="targetFilename">If the file should have a specific naming. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> HttpImageDynamicEditWithHttpInfo(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0);
+        ApiResponse<System.IO.Stream> HttpImageDynamicEditWithHttpInfo(string id, List<DynamicImageOperation> dynamicImageOperation, string targetFilename = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -572,10 +574,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
         /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="targetFilename">If the file should have a specific naming. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> HttpImageDynamicEditAsync(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.IO.Stream> HttpImageDynamicEditAsync(string id, List<DynamicImageOperation> dynamicImageOperation, string targetFilename = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -586,10 +589,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
         /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="targetFilename">If the file should have a specific naming. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> HttpImageDynamicEditWithHttpInfoAsync(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> HttpImageDynamicEditWithHttpInfoAsync(string id, List<DynamicImageOperation> dynamicImageOperation, string targetFilename = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -2221,11 +2225,12 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
         /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="targetFilename">If the file should have a specific naming. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream HttpImageDynamicEdit(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0)
+        public System.IO.Stream HttpImageDynamicEdit(string id, List<DynamicImageOperation> dynamicImageOperation, string targetFilename = default, int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = HttpImageDynamicEditWithHttpInfo(id, dynamicImageOperation);
+            Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = HttpImageDynamicEditWithHttpInfo(id, dynamicImageOperation, targetFilename);
             return localVarResponse.Data;
         }
 
@@ -2235,9 +2240,10 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
         /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="targetFilename">If the file should have a specific naming. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Agravity.Public.Client.ApiResponse<System.IO.Stream> HttpImageDynamicEditWithHttpInfo(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<System.IO.Stream> HttpImageDynamicEditWithHttpInfo(string id, List<DynamicImageOperation> dynamicImageOperation, string targetFilename = default, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2277,6 +2283,10 @@ namespace Agravity.Public.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (targetFilename != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "target_filename", targetFilename));
+            }
             localVarRequestOptions.Data = dynamicImageOperation;
 
             localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpImageDynamicEdit";
@@ -2308,12 +2318,13 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
         /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="targetFilename">If the file should have a specific naming. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> HttpImageDynamicEditAsync(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<System.IO.Stream> HttpImageDynamicEditAsync(string id, List<DynamicImageOperation> dynamicImageOperation, string targetFilename = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = await HttpImageDynamicEditWithHttpInfoAsync(id, dynamicImageOperation, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<System.IO.Stream> localVarResponse = await HttpImageDynamicEditWithHttpInfoAsync(id, dynamicImageOperation, targetFilename, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2323,10 +2334,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The ID of the asset.</param>
         /// <param name="dynamicImageOperation">Operations to be performed on the image directly mapped to c# imagemagick sdk</param>
+        /// <param name="targetFilename">If the file should have a specific naming. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<System.IO.Stream>> HttpImageDynamicEditWithHttpInfoAsync(string id, List<DynamicImageOperation> dynamicImageOperation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<System.IO.Stream>> HttpImageDynamicEditWithHttpInfoAsync(string id, List<DynamicImageOperation> dynamicImageOperation, string targetFilename = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2366,6 +2378,10 @@ namespace Agravity.Public.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (targetFilename != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "target_filename", targetFilename));
+            }
             localVarRequestOptions.Data = dynamicImageOperation;
 
             localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpImageDynamicEdit";

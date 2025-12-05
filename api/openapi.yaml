@@ -837,6 +837,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: If the file should have a specific naming.
+        explode: true
+        in: query
+        name: target_filename
+        required: false
+        schema:
+          type: string
+        style: form
       requestBody:
         content:
           application/json:

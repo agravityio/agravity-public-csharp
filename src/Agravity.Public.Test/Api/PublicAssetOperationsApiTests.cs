@@ -176,7 +176,8 @@ namespace Agravity.Public.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
             //List<DynamicImageOperation> dynamicImageOperation = null;
-            //var response = instance.HttpImageDynamicEdit(id, dynamicImageOperation);
+            //string targetFilename = null;
+            //var response = instance.HttpImageDynamicEdit(id, dynamicImageOperation, targetFilename);
             //Assert.IsType<System.IO.Stream>(response);
         }
 

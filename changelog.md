@@ -8,6 +8,17 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="10.2.0"/> [10.2.0](https://www.nuget.org/packages/Agravity.Public/v/10.2.0) (2025-12-06)
+
+- #1545 Add endpoint and model to fetch user name and email from public endpoints
+  - Add public GET `/auth/users/{id}` description - This gets the user information about an Agravity User (incl. Online Status). Only full information if requester and userId are the same or it has role Admin.
+  - Add model `AgravityUserOnlineStatus` (inside AgravityUser)
+  - Remove model `UiTutorials` - not used
+- Add support of target file name of HttpImageDynamicEdit endpoint
+  - Add optional `targetFilename` query param to HttpImageDynamicGetFromDownloadId
+  - Add target filename in header "Ay-File-Name" on response of HttpImageDynamicEdit
+- Add enum 'APIKEYUSER' for internal User-API-Key impersonation
+
 ## AgravityAPI <a name="10.1.6"/> [10.1.6](https://www.nuget.org/packages/Agravity.Public/v/10.1.6) (2025-11-16)
 
 - Add property `status` to EntityIdName (which also reflects on collectionUDL)

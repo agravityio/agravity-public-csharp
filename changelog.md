@@ -8,6 +8,10 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="10.2.1"/> [10.2.1](https://www.nuget.org/packages/Agravity.Public/v/10.2.1) (2025-12-14)
+
+- Just version upgrade to match backend
+
 ## AgravityAPI <a name="10.2.0"/> [10.2.0](https://www.nuget.org/packages/Agravity.Public/v/10.2.0) (2025-12-06)
 
 - #1545 Add endpoint and model to fetch user name and email from public endpoints

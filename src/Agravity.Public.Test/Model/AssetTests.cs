@@ -191,6 +191,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Checkout'
+        /// </summary>
+        [Fact]
+        public void CheckoutTest()
+        {
+            // TODO unit test for the property 'Checkout'
+        }
+
+        /// <summary>
         /// Test the property 'Custom'
         /// </summary>
         [Fact]

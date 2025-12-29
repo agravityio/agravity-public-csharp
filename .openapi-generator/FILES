@@ -12,6 +12,7 @@ docs/AllWebAppData.md
 docs/Asset.md
 docs/AssetAvailability.md
 docs/AssetBlob.md
+docs/AssetCheckout.md
 docs/AssetIconRule.md
 docs/AssetIdFormat.md
 docs/AssetPageResult.md
@@ -140,6 +141,7 @@ src/Agravity.Public.Test/Model/AgravityVersionTests.cs
 src/Agravity.Public.Test/Model/AllWebAppDataTests.cs
 src/Agravity.Public.Test/Model/AssetAvailabilityTests.cs
 src/Agravity.Public.Test/Model/AssetBlobTests.cs
+src/Agravity.Public.Test/Model/AssetCheckoutTests.cs
 src/Agravity.Public.Test/Model/AssetIconRuleTests.cs
 src/Agravity.Public.Test/Model/AssetIdFormatTests.cs
 src/Agravity.Public.Test/Model/AssetPageResultTests.cs
@@ -261,6 +263,7 @@ src/Agravity.Public/Model/AllWebAppData.cs
 src/Agravity.Public/Model/Asset.cs
 src/Agravity.Public/Model/AssetAvailability.cs
 src/Agravity.Public/Model/AssetBlob.cs
+src/Agravity.Public/Model/AssetCheckout.cs
 src/Agravity.Public/Model/AssetIconRule.cs
 src/Agravity.Public/Model/AssetIdFormat.cs
 src/Agravity.Public/Model/AssetPageResult.cs

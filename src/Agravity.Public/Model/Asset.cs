@@ -81,6 +81,7 @@ namespace Agravity.Public.Model
         /// <param name="availability">availability.</param>
         /// <param name="availableFrom">availableFrom.</param>
         /// <param name="availableTo">availableTo.</param>
+        /// <param name="checkout">checkout.</param>
         /// <param name="custom">custom.</param>
         /// <param name="items">items.</param>
         /// <param name="translations">translations.</param>
@@ -94,7 +95,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Asset(string id = default, string entityType = default, string name = default, string assetType = default, List<string> duplicates = default, List<string> keywords = default, AssetBlob origBlob = default, List<AssetBlob> blobs = default, List<string> collections = default, string failedReason = default, List<string> qualityGate = default, string regionOfOrigin = default, string availability = default, DateTime? availableFrom = default, DateTime? availableTo = default, Dictionary<string, object> custom = default, List<CollTypeItem> items = default, Dictionary<string, Dictionary<string, object>> translations = default, RoleEnum? role = RoleEnum.NONE, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
+        public Asset(string id = default, string entityType = default, string name = default, string assetType = default, List<string> duplicates = default, List<string> keywords = default, AssetBlob origBlob = default, List<AssetBlob> blobs = default, List<string> collections = default, string failedReason = default, List<string> qualityGate = default, string regionOfOrigin = default, string availability = default, DateTime? availableFrom = default, DateTime? availableTo = default, AssetCheckout checkout = default, Dictionary<string, object> custom = default, List<CollTypeItem> items = default, Dictionary<string, Dictionary<string, object>> translations = default, RoleEnum? role = RoleEnum.NONE, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -111,6 +112,7 @@ namespace Agravity.Public.Model
             this.Availability = availability;
             this.AvailableFrom = availableFrom;
             this.AvailableTo = availableTo;
+            this.Checkout = checkout;
             this.Custom = custom;
             this.Items = items;
             this.Translations = translations;
@@ -217,6 +219,12 @@ namespace Agravity.Public.Model
         public DateTime? AvailableTo { get; set; }
 
         /// <summary>
+        /// Gets or Sets Checkout
+        /// </summary>
+        [DataMember(Name = "checkout", EmitDefaultValue = true)]
+        public AssetCheckout Checkout { get; set; }
+
+        /// <summary>
         /// Gets or Sets Custom
         /// </summary>
         [DataMember(Name = "custom", EmitDefaultValue = true)]
@@ -311,6 +319,7 @@ namespace Agravity.Public.Model
             sb.Append("  Availability: ").Append(Availability).Append("\n");
             sb.Append("  AvailableFrom: ").Append(AvailableFrom).Append("\n");
             sb.Append("  AvailableTo: ").Append(AvailableTo).Append("\n");
+            sb.Append("  Checkout: ").Append(Checkout).Append("\n");
             sb.Append("  Custom: ").Append(Custom).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  Translations: ").Append(Translations).Append("\n");

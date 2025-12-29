@@ -5107,6 +5107,9 @@ components:
           add_properties:
             key: "{}"
           id: id
+          checkout:
+            user_id: user_id
+            checkout_date: 2000-01-23T04:56:07.000+00:00
           _etag: _etag
           duplicates:
           - duplicates
@@ -5336,6 +5339,9 @@ components:
           add_properties:
             key: "{}"
           id: id
+          checkout:
+            user_id: user_id
+            checkout_date: 2000-01-23T04:56:07.000+00:00
           _etag: _etag
           duplicates:
           - duplicates
@@ -5691,6 +5697,9 @@ components:
         add_properties:
           key: "{}"
         id: id
+        checkout:
+          user_id: user_id
+          checkout_date: 2000-01-23T04:56:07.000+00:00
         _etag: _etag
         duplicates:
         - duplicates
@@ -5911,6 +5920,8 @@ components:
           format: date-time
           nullable: true
           type: string
+        checkout:
+          $ref: "#/components/schemas/assetCheckout"
         custom:
           additionalProperties:
             type: object
@@ -6207,6 +6218,20 @@ components:
           nullable: true
           type: string
       type: object
+    assetCheckout:
+      example:
+        user_id: user_id
+        checkout_date: 2000-01-23T04:56:07.000+00:00
+      nullable: true
+      properties:
+        user_id:
+          nullable: true
+          type: string
+        checkout_date:
+          format: date-time
+          nullable: true
+          type: string
+      type: object
     assetIconRule:
       example:
         color: color
@@ -6407,6 +6432,9 @@ components:
           add_properties:
             key: "{}"
           id: id
+          checkout:
+            user_id: user_id
+            checkout_date: 2000-01-23T04:56:07.000+00:00
           _etag: _etag
           duplicates:
           - duplicates
@@ -6636,6 +6664,9 @@ components:
           add_properties:
             key: "{}"
           id: id
+          checkout:
+            user_id: user_id
+            checkout_date: 2000-01-23T04:56:07.000+00:00
           _etag: _etag
           duplicates:
           - duplicates
@@ -7849,6 +7880,9 @@ components:
           add_properties:
             key: "{}"
           id: id
+          checkout:
+            user_id: user_id
+            checkout_date: 2000-01-23T04:56:07.000+00:00
           _etag: _etag
           duplicates:
           - duplicates
@@ -8078,6 +8112,9 @@ components:
           add_properties:
             key: "{}"
           id: id
+          checkout:
+            user_id: user_id
+            checkout_date: 2000-01-23T04:56:07.000+00:00
           _etag: _etag
           duplicates:
           - duplicates
@@ -8718,6 +8755,9 @@ components:
           add_properties:
             key: "{}"
           id: id
+          checkout:
+            user_id: user_id
+            checkout_date: 2000-01-23T04:56:07.000+00:00
           _etag: _etag
           duplicates:
           - duplicates
@@ -8947,6 +8987,9 @@ components:
           add_properties:
             key: "{}"
           id: id
+          checkout:
+            user_id: user_id
+            checkout_date: 2000-01-23T04:56:07.000+00:00
           _etag: _etag
           duplicates:
           - duplicates
@@ -11318,6 +11361,9 @@ components:
             add_properties:
               key: "{}"
             id: id
+            checkout:
+              user_id: user_id
+              checkout_date: 2000-01-23T04:56:07.000+00:00
             _etag: _etag
             duplicates:
             - duplicates
@@ -11547,6 +11593,9 @@ components:
             add_properties:
               key: "{}"
             id: id
+            checkout:
+              user_id: user_id
+              checkout_date: 2000-01-23T04:56:07.000+00:00
             _etag: _etag
             duplicates:
             - duplicates
@@ -12776,6 +12825,10 @@ components:
           - StartsWith
           - ArrayContains
           - ArrayContainsPartial
+          - IsDefined
+          - IsNotDefined
+          - IsEmpty
+          - IsNotEmpty
           type: string
         field:
           type: string

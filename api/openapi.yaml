@@ -96,7 +96,7 @@ info:
     >support@agravity.io</a> or visit <a href=\"https://agravity.io\">https://agravity.io</a>.</p><br/><p>Copyright\
     \ © Agravity GmbH 2026. All Rights Reserved</p>"
   title: Agravity OpenAPI Documentation - Public Functions
-  version: 10.2.1
+  version: 10.2.2
 servers:
 - url: http://localhost:7072/api
 paths:

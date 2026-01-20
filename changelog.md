@@ -8,6 +8,10 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="10.2.3"/> [10.2.3](https://www.nuget.org/packages/Agravity.Public/v/10.2.3) (2026-01-20)
+
+- Just version upgrade to match backend
+
 ## AgravityAPI <a name="10.2.2"/> [10.2.2](https://www.nuget.org/packages/Agravity.Public/v/10.2.2) (2026-01-18)
 
 - Change all contact mails from office@agravity.io to support@agravity.io
@@ -410,17 +414,14 @@ Other changes:
 ## AgravityAPI <a name="6.0.0"/> [6.0.0](https://www.nuget.org/packages/Agravity.Public/6.0.0) (2023-10-02)
 
 - #70 Alternative thumbnails for assets
-
   - Add new optional param previewofto /assetupload endpoint
   - Respect versionendpoint as well for preview
 
 - #784 Add Roles to Permission System
-
   - Add role property to Asset, Collection and CollectionType which can be NONE, VIEWER, EDITOR
   - Change permissions property from workspace and collection to to be an array of PermissionEntity (role and id)
 
 - #974 Add custom configs for frontends
-
   - Update endpoint GET `/config/frontend` - add param `customonly` - This returns only the custom created configurations.
 
 - #930 Allow versioning of assets (not dependent on the type), if not published

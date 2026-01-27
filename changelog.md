@@ -8,20 +8,24 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
-## AgravityAPI <a name="10.2.3"/> [10.2.3](https://www.nuget.org/packages/Agravity.Public/v/10.2.3) (2026-01-20)
+## AgravityAPI <a name="10.2.4"/> [10.2.4](https://www.nuget.org/packages/Agravity.Public/10.2.4) (2026-01-27)
 
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="10.2.2"/> [10.2.2](https://www.nuget.org/packages/Agravity.Public/v/10.2.2) (2026-01-18)
+## AgravityAPI <a name="10.2.3"/> [10.2.3](https://www.nuget.org/packages/Agravity.Public/10.2.3) (2026-01-20)
+
+- Just version upgrade to match backend
+
+## AgravityAPI <a name="10.2.2"/> [10.2.2](https://www.nuget.org/packages/Agravity.Public/10.2.2) (2026-01-18)
 
 - Change all contact mails from office@agravity.io to support@agravity.io
 - Change OpenAPI description
 
-## AgravityAPI <a name="10.2.1"/> [10.2.1](https://www.nuget.org/packages/Agravity.Public/v/10.2.1) (2025-12-14)
+## AgravityAPI <a name="10.2.1"/> [10.2.1](https://www.nuget.org/packages/Agravity.Public/10.2.1) (2025-12-14)
 
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="10.2.0"/> [10.2.0](https://www.nuget.org/packages/Agravity.Public/v/10.2.0) (2025-12-06)
+## AgravityAPI <a name="10.2.0"/> [10.2.0](https://www.nuget.org/packages/Agravity.Public/10.2.0) (2025-12-06)
 
 - #1545 Add endpoint and model to fetch user name and email from public endpoints
   - Add public GET `/auth/users/{id}` description - This gets the user information about an Agravity User (incl. Online Status). Only full information if requester and userId are the same or it has role Admin.
@@ -32,27 +36,27 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
   - Add target filename in header "Ay-File-Name" on response of HttpImageDynamicEdit
 - Add enum 'APIKEYUSER' for internal User-API-Key impersonation
 
-## AgravityAPI <a name="10.1.6"/> [10.1.6](https://www.nuget.org/packages/Agravity.Public/v/10.1.6) (2025-11-16)
+## AgravityAPI <a name="10.1.6"/> [10.1.6](https://www.nuget.org/packages/Agravity.Public/10.1.6) (2025-11-16)
 
 - Add property `status` to EntityIdName (which also reflects on collectionUDL)
 
-## AgravityAPI <a name="10.1.5"/> [10.1.5](https://www.nuget.org/packages/Agravity.Public/v/10.1.5) (2025-11-14)
+## AgravityAPI <a name="10.1.5"/> [10.1.5](https://www.nuget.org/packages/Agravity.Public/10.1.5) (2025-11-14)
 
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="10.1.4"/> [10.1.4](https://www.nuget.org/packages/Agravity.Public/v/10.1.4) (2025-11-13)
+## AgravityAPI <a name="10.1.4"/> [10.1.4](https://www.nuget.org/packages/Agravity.Public/10.1.4) (2025-11-13)
 
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="10.1.3"/> [10.1.3](https://www.nuget.org/packages/Agravity.Public/v/10.1.3) (2025-10-25)
+## AgravityAPI <a name="10.1.3"/> [10.1.3](https://www.nuget.org/packages/Agravity.Public/10.1.3) (2025-10-25)
 
 - Add `pk`(PartitionKey) property to entityIdName (and collectionUDL which inherits this class)
 
-## AgravityAPI <a name="10.1.2"/> [10.1.2](https://www.nuget.org/packages/Agravity.Public/v/10.1.2) (2025-10-19)
+## AgravityAPI <a name="10.1.2"/> [10.1.2](https://www.nuget.org/packages/Agravity.Public/10.1.2) (2025-10-19)
 
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="10.1.1"/> [10.1.1](https://www.nuget.org/packages/Agravity.Public/v/10.1.1) (2025-10-15)
+## AgravityAPI <a name="10.1.1"/> [10.1.1](https://www.nuget.org/packages/Agravity.Public/10.1.1) (2025-10-15)
 
 - Just version upgrade to match backend
 

@@ -8,6 +8,10 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="10.3.1"/> [10.3.1](https://www.nuget.org/packages/Agravity.Public/10.3.1) (2026-03-15)
+
+- Property type change `fs_synced` on asset now of type string (etag of shared file) instead of boolean
+
 ## AgravityAPI <a name="10.3.0"/> [10.3.0](https://www.nuget.org/packages/Agravity.Public/10.3.0) (2026-03-01)
 
 - Add new endpoints to public (which where already available on private)

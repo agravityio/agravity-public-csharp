@@ -8,6 +8,25 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="10.3.0"/> [10.3.0](https://www.nuget.org/packages/Agravity.Public/10.3.0) (2026-03-01)
+
+- Add new endpoints to public (which where already available on private)
+  - Add DELETE `/assetsbulkupdate` - This endpoint updates multiple assets. The containing keywords (tags) will removed if existing. Only custom values are removed on assets which have those items.
+  - Add POST `/assetsbulkupdate` - This endpoint updates multiple assets. The containing keywords (tags) will be distinctly added (no removal). Only custom values are added on assets which have those items.
+  - Add PUT `/assetsbulkupdate` - This endpoint updates multiple assets. The containing keywords (tags) will replace existing. Only custom values are replaced on assets which have those items.
+  - Add DELETE `/assets/{id}`- This endpoint deletes an asset from system (mark them as deleted)
+  - Add GET `/assets/{id}/relations`- This endpoint returns the asset relations
+  - Add GET `/assetrelationtypes`- This endpoint lists all asset relation types in database.
+  - Add GET `/assetrelationtypes/{id}`- This endpoint gets a single asset relation type.
+- Update POST `/assets/{id}/relations` - with better description
+- Update all Public API descriptions (AI generated)
+- Add property `checkout` to asset
+- Add new model `AssetCheckout` which is used on asset
+- Add new models for `assetBulkCheckoutBody`, `assetBulkCheckoutResult`, `assetBulkUpdate`, `assetCheckout`, `assetCheckoutFailure` and `assetCheckoutWarningDetail` for response to PUT `/assets/checkout/bulk`
+- Adding properties `subscription_id` and `enabled_features` to version info model
+- Removing property `vector_search_enabled` from version info model (now inside `enabled_features`)
+- #1565 Move info about file share from add_properties to fs_synced
+
 ## AgravityAPI <a name="10.2.5"/> [10.2.5](https://www.nuget.org/packages/Agravity.Public/10.2.5) (2026-02-01)
 
 - Just version upgrade to match backend

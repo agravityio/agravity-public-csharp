@@ -221,6 +221,8 @@ Class | Method | HTTP request | Description
  - [Model.Asset](docs/Asset.md)
  - [Model.AssetAvailability](docs/AssetAvailability.md)
  - [Model.AssetBlob](docs/AssetBlob.md)
+ - [Model.AssetBulkUpdate](docs/AssetBulkUpdate.md)
+ - [Model.AssetCheckout](docs/AssetCheckout.md)
  - [Model.AssetIconRule](docs/AssetIconRule.md)
  - [Model.AssetIdFormat](docs/AssetIdFormat.md)
  - [Model.AssetPageResult](docs/AssetPageResult.md)

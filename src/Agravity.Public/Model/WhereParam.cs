@@ -96,7 +96,31 @@ namespace Agravity.Public.Model
             /// Enum ArrayContainsPartial for value: ArrayContainsPartial
             /// </summary>
             [EnumMember(Value = "ArrayContainsPartial")]
-            ArrayContainsPartial = 10
+            ArrayContainsPartial = 10,
+
+            /// <summary>
+            /// Enum IsDefined for value: IsDefined
+            /// </summary>
+            [EnumMember(Value = "IsDefined")]
+            IsDefined = 11,
+
+            /// <summary>
+            /// Enum IsNotDefined for value: IsNotDefined
+            /// </summary>
+            [EnumMember(Value = "IsNotDefined")]
+            IsNotDefined = 12,
+
+            /// <summary>
+            /// Enum IsEmpty for value: IsEmpty
+            /// </summary>
+            [EnumMember(Value = "IsEmpty")]
+            IsEmpty = 13,
+
+            /// <summary>
+            /// Enum IsNotEmpty for value: IsNotEmpty
+            /// </summary>
+            [EnumMember(Value = "IsNotEmpty")]
+            IsNotEmpty = 14
         }
 
 

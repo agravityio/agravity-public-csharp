@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Availability** | **string** |  | [optional] 
 **AvailableFrom** | **DateTime?** |  | [optional] 
 **AvailableTo** | **DateTime?** |  | [optional] 
+**Checkout** | [**AssetCheckout**](AssetCheckout.md) |  | [optional] 
 **Custom** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Items** | [**List&lt;CollTypeItem&gt;**](CollTypeItem.md) |  | [optional] 
 **Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 

@@ -81,6 +81,7 @@ namespace Agravity.Public.Model
         /// <param name="availability">availability.</param>
         /// <param name="availableFrom">availableFrom.</param>
         /// <param name="availableTo">availableTo.</param>
+        /// <param name="checkout">checkout.</param>
         /// <param name="custom">custom.</param>
         /// <param name="items">items.</param>
         /// <param name="translations">translations.</param>
@@ -111,6 +112,7 @@ namespace Agravity.Public.Model
             this.Availability = availability;
             this.AvailableFrom = availableFrom;
             this.AvailableTo = availableTo;
+            this.Checkout = checkout;
             this.Custom = custom;
             this.Items = items;
             this.Translations = translations;
@@ -217,6 +219,12 @@ namespace Agravity.Public.Model
         public DateTime? AvailableTo { get; set; }
 
         /// <summary>
+        /// Gets or Sets Checkout
+        /// </summary>
+        [DataMember(Name = "checkout", EmitDefaultValue = true)]
+        public AssetCheckout Checkout { get; set; }
+
+        /// <summary>
         /// Gets or Sets Custom
         /// </summary>
         [DataMember(Name = "custom", EmitDefaultValue = true)]
@@ -311,6 +319,7 @@ namespace Agravity.Public.Model
             sb.Append("  Availability: ").Append(Availability).Append("\n");
             sb.Append("  AvailableFrom: ").Append(AvailableFrom).Append("\n");
             sb.Append("  AvailableTo: ").Append(AvailableTo).Append("\n");
+            sb.Append("  Checkout: ").Append(Checkout).Append("\n");
             sb.Append("  Custom: ").Append(Custom).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  Translations: ").Append(Translations).Append("\n");

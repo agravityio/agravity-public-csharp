@@ -119,6 +119,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'SubscriptionId'
+        /// </summary>
+        [Fact]
+        public void SubscriptionIdTest()
+        {
+            // TODO unit test for the property 'SubscriptionId'
+        }
+
+        /// <summary>
         /// Test the property 'Base'
         /// </summary>
         [Fact]
@@ -137,12 +146,12 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'VectorSearchEnabled'
+        /// Test the property 'EnabledFeatures'
         /// </summary>
         [Fact]
-        public void VectorSearchEnabledTest()
+        public void EnabledFeaturesTest()
         {
-            // TODO unit test for the property 'VectorSearchEnabled'
+            // TODO unit test for the property 'EnabledFeatures'
         }
 
         /// <summary>

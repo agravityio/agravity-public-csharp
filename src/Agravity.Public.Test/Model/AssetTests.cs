@@ -200,6 +200,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'FsSynced'
+        /// </summary>
+        [Fact]
+        public void FsSyncedTest()
+        {
+            // TODO unit test for the property 'FsSynced'
+        }
+
+        /// <summary>
         /// Test the property 'Custom'
         /// </summary>
         [Fact]

@@ -153,6 +153,18 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpGetAssetRelationsById
+        /// </summary>
+        [Fact]
+        public void HttpGetAssetRelationsByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //var response = instance.HttpGetAssetRelationsById(id);
+            //Assert.IsType<List<AssetRelation>>(response);
+        }
+
+        /// <summary>
         /// Test HttpGetSharedAssetBlob
         /// </summary>
         [Fact]

@@ -34,12 +34,13 @@ namespace Agravity.Public.Api
         /// This endpoint creates one asset relation entry in the database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetRelation">This endpoint creates an asset relation in the database.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="assetrelationtypeid">The ID of the asset relation type, where these asset relations should come from. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetRelation</returns>
-        AssetRelation HttpAssetRelationCreate(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0);
+        AssetRelation HttpAssetRelationCreate(AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -48,12 +49,13 @@ namespace Agravity.Public.Api
         /// This endpoint creates one asset relation entry in the database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetRelation">This endpoint creates an asset relation in the database.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="assetrelationtypeid">The ID of the asset relation type, where these asset relations should come from. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetRelation</returns>
-        ApiResponse<AssetRelation> HttpAssetRelationCreateWithHttpInfo(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0);
+        ApiResponse<AssetRelation> HttpAssetRelationCreateWithHttpInfo(AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -174,13 +176,14 @@ namespace Agravity.Public.Api
         /// This endpoint creates one asset relation entry in the database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetRelation">This endpoint creates an asset relation in the database.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="assetrelationtypeid">The ID of the asset relation type, where these asset relations should come from. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetRelation</returns>
-        System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationCreateAsync(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationCreateAsync(AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -189,13 +192,14 @@ namespace Agravity.Public.Api
         /// This endpoint creates one asset relation entry in the database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetRelation">This endpoint creates an asset relation in the database.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="assetrelationtypeid">The ID of the asset relation type, where these asset relations should come from. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetRelation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AssetRelation>> HttpAssetRelationCreateWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<AssetRelation>> HttpAssetRelationCreateWithHttpInfoAsync(AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -432,14 +436,15 @@ namespace Agravity.Public.Api
         ///  This endpoint creates one asset relation entry in the database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetRelation">This endpoint creates an asset relation in the database.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="assetrelationtypeid">The ID of the asset relation type, where these asset relations should come from. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AssetRelation</returns>
-        public AssetRelation HttpAssetRelationCreate(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0)
+        public AssetRelation HttpAssetRelationCreate(AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<AssetRelation> localVarResponse = HttpAssetRelationCreateWithHttpInfo(translations, acceptLanguage, assetrelationtypeid);
+            Agravity.Public.Client.ApiResponse<AssetRelation> localVarResponse = HttpAssetRelationCreateWithHttpInfo(assetRelation, translations, acceptLanguage, assetrelationtypeid);
             return localVarResponse.Data;
         }
 
@@ -447,16 +452,24 @@ namespace Agravity.Public.Api
         ///  This endpoint creates one asset relation entry in the database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetRelation">This endpoint creates an asset relation in the database.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="assetrelationtypeid">The ID of the asset relation type, where these asset relations should come from. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AssetRelation</returns>
-        public Agravity.Public.Client.ApiResponse<AssetRelation> HttpAssetRelationCreateWithHttpInfo(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<AssetRelation> HttpAssetRelationCreateWithHttpInfo(AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0)
         {
+            // verify the required parameter 'assetRelation' is set
+            if (assetRelation == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'assetRelation' when calling PublicAssetRelationManagementApi->HttpAssetRelationCreate");
+            }
+
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -489,6 +502,7 @@ namespace Agravity.Public.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
+            localVarRequestOptions.Data = assetRelation;
 
             localVarRequestOptions.Operation = "PublicAssetRelationManagementApi.HttpAssetRelationCreate";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -517,15 +531,16 @@ namespace Agravity.Public.Api
         ///  This endpoint creates one asset relation entry in the database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetRelation">This endpoint creates an asset relation in the database.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="assetrelationtypeid">The ID of the asset relation type, where these asset relations should come from. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetRelation</returns>
-        public async System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationCreateAsync(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<AssetRelation> HttpAssetRelationCreateAsync(AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            Agravity.Public.Client.ApiResponse<AssetRelation> localVarResponse = await HttpAssetRelationCreateWithHttpInfoAsync(translations, acceptLanguage, assetrelationtypeid, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<AssetRelation> localVarResponse = await HttpAssetRelationCreateWithHttpInfoAsync(assetRelation, translations, acceptLanguage, assetrelationtypeid, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -533,18 +548,26 @@ namespace Agravity.Public.Api
         ///  This endpoint creates one asset relation entry in the database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetRelation">This endpoint creates an asset relation in the database.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="assetrelationtypeid">The ID of the asset relation type, where these asset relations should come from. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetRelation)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetRelation>> HttpAssetRelationCreateWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetRelation>> HttpAssetRelationCreateWithHttpInfoAsync(AssetRelation assetRelation, bool? translations = default, string acceptLanguage = default, string assetrelationtypeid = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'assetRelation' is set
+            if (assetRelation == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'assetRelation' when calling PublicAssetRelationManagementApi->HttpAssetRelationCreate");
+            }
+
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -576,6 +599,7 @@ namespace Agravity.Public.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
             }
+            localVarRequestOptions.Data = assetRelation;
 
             localVarRequestOptions.Operation = "PublicAssetRelationManagementApi.HttpAssetRelationCreate";
             localVarRequestOptions.OperationIndex = operationIndex;

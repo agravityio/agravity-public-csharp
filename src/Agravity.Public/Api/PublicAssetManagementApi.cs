@@ -60,6 +60,70 @@ namespace Agravity.Public.Api
         /// <summary>
         /// 
         /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will removed if existing. Only custom values are removed on assets which have those items.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AgravityInfoResponse</returns>
+        AgravityInfoResponse HttpAssetsBulkDeleteUpdate(AssetBulkUpdate assetBulkUpdate, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will removed if existing. Only custom values are removed on assets which have those items.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AgravityInfoResponse</returns>
+        ApiResponse<AgravityInfoResponse> HttpAssetsBulkDeleteUpdateWithHttpInfo(AssetBulkUpdate assetBulkUpdate, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will be distinctly added (no removal). Only custom values are added on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AgravityInfoResponse</returns>
+        AgravityInfoResponse HttpAssetsBulkPostUpdate(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will be distinctly added (no removal). Only custom values are added on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AgravityInfoResponse</returns>
+        ApiResponse<AgravityInfoResponse> HttpAssetsBulkPostUpdateWithHttpInfo(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will replace existing. Only custom values are replaced on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AgravityInfoResponse</returns>
+        AgravityInfoResponse HttpAssetsBulkPutUpdate(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will replace existing. Only custom values are replaced on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AgravityInfoResponse</returns>
+        ApiResponse<AgravityInfoResponse> HttpAssetsBulkPutUpdateWithHttpInfo(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
         /// <remarks>
         /// This endpoint creates one asset entry in the database.
         /// </remarks>
@@ -86,6 +150,26 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
         ApiResponse<Asset> HttpAssetsCreateWithHttpInfo(string collectionid, Asset asset, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void HttpAssetsDeleteById(string id, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> HttpAssetsDeleteByIdWithHttpInfo(string id, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -237,6 +321,85 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will removed if existing. Only custom values are removed on assets which have those items.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AgravityInfoResponse</returns>
+        System.Threading.Tasks.Task<AgravityInfoResponse> HttpAssetsBulkDeleteUpdateAsync(AssetBulkUpdate assetBulkUpdate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will removed if existing. Only custom values are removed on assets which have those items.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AgravityInfoResponse>> HttpAssetsBulkDeleteUpdateWithHttpInfoAsync(AssetBulkUpdate assetBulkUpdate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will be distinctly added (no removal). Only custom values are added on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AgravityInfoResponse</returns>
+        System.Threading.Tasks.Task<AgravityInfoResponse> HttpAssetsBulkPostUpdateAsync(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will be distinctly added (no removal). Only custom values are added on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AgravityInfoResponse>> HttpAssetsBulkPostUpdateWithHttpInfoAsync(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will replace existing. Only custom values are replaced on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AgravityInfoResponse</returns>
+        System.Threading.Tasks.Task<AgravityInfoResponse> HttpAssetsBulkPutUpdateAsync(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will replace existing. Only custom values are replaced on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AgravityInfoResponse>> HttpAssetsBulkPutUpdateWithHttpInfoAsync(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// This endpoint creates one asset entry in the database.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
@@ -264,6 +427,31 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
         System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetsCreateWithHttpInfoAsync(string collectionid, Asset asset, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task HttpAssetsDeleteByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> HttpAssetsDeleteByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -705,6 +893,501 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will removed if existing. Only custom values are removed on assets which have those items.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AgravityInfoResponse</returns>
+        public AgravityInfoResponse HttpAssetsBulkDeleteUpdate(AssetBulkUpdate assetBulkUpdate, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<AgravityInfoResponse> localVarResponse = HttpAssetsBulkDeleteUpdateWithHttpInfo(assetBulkUpdate);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will removed if existing. Only custom values are removed on assets which have those items.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AgravityInfoResponse</returns>
+        public Agravity.Public.Client.ApiResponse<AgravityInfoResponse> HttpAssetsBulkDeleteUpdateWithHttpInfo(AssetBulkUpdate assetBulkUpdate, int operationIndex = 0)
+        {
+            // verify the required parameter 'assetBulkUpdate' is set
+            if (assetBulkUpdate == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'assetBulkUpdate' when calling PublicAssetManagementApi->HttpAssetsBulkDeleteUpdate");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = assetBulkUpdate;
+
+            localVarRequestOptions.Operation = "PublicAssetManagementApi.HttpAssetsBulkDeleteUpdate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<AgravityInfoResponse>("/assetsbulkupdate", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAssetsBulkDeleteUpdate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will removed if existing. Only custom values are removed on assets which have those items.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AgravityInfoResponse</returns>
+        public async System.Threading.Tasks.Task<AgravityInfoResponse> HttpAssetsBulkDeleteUpdateAsync(AssetBulkUpdate assetBulkUpdate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Agravity.Public.Client.ApiResponse<AgravityInfoResponse> localVarResponse = await HttpAssetsBulkDeleteUpdateWithHttpInfoAsync(assetBulkUpdate, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will removed if existing. Only custom values are removed on assets which have those items.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AgravityInfoResponse>> HttpAssetsBulkDeleteUpdateWithHttpInfoAsync(AssetBulkUpdate assetBulkUpdate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'assetBulkUpdate' is set
+            if (assetBulkUpdate == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'assetBulkUpdate' when calling PublicAssetManagementApi->HttpAssetsBulkDeleteUpdate");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = assetBulkUpdate;
+
+            localVarRequestOptions.Operation = "PublicAssetManagementApi.HttpAssetsBulkDeleteUpdate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<AgravityInfoResponse>("/assetsbulkupdate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAssetsBulkDeleteUpdate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will be distinctly added (no removal). Only custom values are added on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AgravityInfoResponse</returns>
+        public AgravityInfoResponse HttpAssetsBulkPostUpdate(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<AgravityInfoResponse> localVarResponse = HttpAssetsBulkPostUpdateWithHttpInfo(assetBulkUpdate, acceptLanguage);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will be distinctly added (no removal). Only custom values are added on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AgravityInfoResponse</returns>
+        public Agravity.Public.Client.ApiResponse<AgravityInfoResponse> HttpAssetsBulkPostUpdateWithHttpInfo(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0)
+        {
+            // verify the required parameter 'assetBulkUpdate' is set
+            if (assetBulkUpdate == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'assetBulkUpdate' when calling PublicAssetManagementApi->HttpAssetsBulkPostUpdate");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            localVarRequestOptions.Data = assetBulkUpdate;
+
+            localVarRequestOptions.Operation = "PublicAssetManagementApi.HttpAssetsBulkPostUpdate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<AgravityInfoResponse>("/assetsbulkupdate", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAssetsBulkPostUpdate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will be distinctly added (no removal). Only custom values are added on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AgravityInfoResponse</returns>
+        public async System.Threading.Tasks.Task<AgravityInfoResponse> HttpAssetsBulkPostUpdateAsync(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Agravity.Public.Client.ApiResponse<AgravityInfoResponse> localVarResponse = await HttpAssetsBulkPostUpdateWithHttpInfoAsync(assetBulkUpdate, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will be distinctly added (no removal). Only custom values are added on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AgravityInfoResponse>> HttpAssetsBulkPostUpdateWithHttpInfoAsync(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'assetBulkUpdate' is set
+            if (assetBulkUpdate == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'assetBulkUpdate' when calling PublicAssetManagementApi->HttpAssetsBulkPostUpdate");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            localVarRequestOptions.Data = assetBulkUpdate;
+
+            localVarRequestOptions.Operation = "PublicAssetManagementApi.HttpAssetsBulkPostUpdate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<AgravityInfoResponse>("/assetsbulkupdate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAssetsBulkPostUpdate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will replace existing. Only custom values are replaced on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AgravityInfoResponse</returns>
+        public AgravityInfoResponse HttpAssetsBulkPutUpdate(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<AgravityInfoResponse> localVarResponse = HttpAssetsBulkPutUpdateWithHttpInfo(assetBulkUpdate, acceptLanguage);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will replace existing. Only custom values are replaced on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AgravityInfoResponse</returns>
+        public Agravity.Public.Client.ApiResponse<AgravityInfoResponse> HttpAssetsBulkPutUpdateWithHttpInfo(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0)
+        {
+            // verify the required parameter 'assetBulkUpdate' is set
+            if (assetBulkUpdate == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'assetBulkUpdate' when calling PublicAssetManagementApi->HttpAssetsBulkPutUpdate");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            localVarRequestOptions.Data = assetBulkUpdate;
+
+            localVarRequestOptions.Operation = "PublicAssetManagementApi.HttpAssetsBulkPutUpdate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<AgravityInfoResponse>("/assetsbulkupdate", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAssetsBulkPutUpdate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will replace existing. Only custom values are replaced on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AgravityInfoResponse</returns>
+        public async System.Threading.Tasks.Task<AgravityInfoResponse> HttpAssetsBulkPutUpdateAsync(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Agravity.Public.Client.ApiResponse<AgravityInfoResponse> localVarResponse = await HttpAssetsBulkPutUpdateWithHttpInfoAsync(assetBulkUpdate, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetBulkUpdate">This endpoint updates multiple assets. The containing keywords (tags) will replace existing. Only custom values are replaced on assets which have those items.</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AgravityInfoResponse)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AgravityInfoResponse>> HttpAssetsBulkPutUpdateWithHttpInfoAsync(AssetBulkUpdate assetBulkUpdate, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'assetBulkUpdate' is set
+            if (assetBulkUpdate == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'assetBulkUpdate' when calling PublicAssetManagementApi->HttpAssetsBulkPutUpdate");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            localVarRequestOptions.Data = assetBulkUpdate;
+
+            localVarRequestOptions.Operation = "PublicAssetManagementApi.HttpAssetsBulkPutUpdate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<AgravityInfoResponse>("/assetsbulkupdate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAssetsBulkPutUpdate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         ///  This endpoint creates one asset entry in the database.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
@@ -894,6 +1577,159 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpAssetsCreate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void HttpAssetsDeleteById(string id, int operationIndex = 0)
+        {
+            HttpAssetsDeleteByIdWithHttpInfo(id);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Agravity.Public.Client.ApiResponse<Object> HttpAssetsDeleteByIdWithHttpInfo(string id, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetManagementApi->HttpAssetsDeleteById");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "PublicAssetManagementApi.HttpAssetsDeleteById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/assets/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAssetsDeleteById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task HttpAssetsDeleteByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            await HttpAssetsDeleteByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Object>> HttpAssetsDeleteByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetManagementApi->HttpAssetsDeleteById");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "PublicAssetManagementApi.HttpAssetsDeleteById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/assets/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpAssetsDeleteById", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

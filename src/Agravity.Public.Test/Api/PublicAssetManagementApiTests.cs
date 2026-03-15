@@ -73,6 +73,44 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpAssetsBulkDeleteUpdate
+        /// </summary>
+        [Fact]
+        public void HttpAssetsBulkDeleteUpdateTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //AssetBulkUpdate assetBulkUpdate = null;
+            //var response = instance.HttpAssetsBulkDeleteUpdate(assetBulkUpdate);
+            //Assert.IsType<AgravityInfoResponse>(response);
+        }
+
+        /// <summary>
+        /// Test HttpAssetsBulkPostUpdate
+        /// </summary>
+        [Fact]
+        public void HttpAssetsBulkPostUpdateTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //AssetBulkUpdate assetBulkUpdate = null;
+            //string acceptLanguage = null;
+            //var response = instance.HttpAssetsBulkPostUpdate(assetBulkUpdate, acceptLanguage);
+            //Assert.IsType<AgravityInfoResponse>(response);
+        }
+
+        /// <summary>
+        /// Test HttpAssetsBulkPutUpdate
+        /// </summary>
+        [Fact]
+        public void HttpAssetsBulkPutUpdateTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //AssetBulkUpdate assetBulkUpdate = null;
+            //string acceptLanguage = null;
+            //var response = instance.HttpAssetsBulkPutUpdate(assetBulkUpdate, acceptLanguage);
+            //Assert.IsType<AgravityInfoResponse>(response);
+        }
+
+        /// <summary>
         /// Test HttpAssetsCreate
         /// </summary>
         [Fact]
@@ -85,6 +123,17 @@ namespace Agravity.Public.Test.Api
             //string acceptLanguage = null;
             //var response = instance.HttpAssetsCreate(collectionid, asset, translations, acceptLanguage);
             //Assert.IsType<Asset>(response);
+        }
+
+        /// <summary>
+        /// Test HttpAssetsDeleteById
+        /// </summary>
+        [Fact]
+        public void HttpAssetsDeleteByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //instance.HttpAssetsDeleteById(id);
         }
 
         /// <summary>

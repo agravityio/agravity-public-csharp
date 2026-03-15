@@ -114,7 +114,11 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *PublicAIOperationsApi* | [**HttpReverseAssetSearch**](docs/PublicAIOperationsApi.md#httpreverseassetsearch) | **POST** /ai/reverseassetsearch | 
 *PublicAssetManagementApi* | [**HttpAssetUploadFile**](docs/PublicAssetManagementApi.md#httpassetuploadfile) | **POST** /assetsupload | 
+*PublicAssetManagementApi* | [**HttpAssetsBulkDeleteUpdate**](docs/PublicAssetManagementApi.md#httpassetsbulkdeleteupdate) | **DELETE** /assetsbulkupdate | 
+*PublicAssetManagementApi* | [**HttpAssetsBulkPostUpdate**](docs/PublicAssetManagementApi.md#httpassetsbulkpostupdate) | **POST** /assetsbulkupdate | 
+*PublicAssetManagementApi* | [**HttpAssetsBulkPutUpdate**](docs/PublicAssetManagementApi.md#httpassetsbulkputupdate) | **PUT** /assetsbulkupdate | 
 *PublicAssetManagementApi* | [**HttpAssetsCreate**](docs/PublicAssetManagementApi.md#httpassetscreate) | **POST** /assets | 
+*PublicAssetManagementApi* | [**HttpAssetsDeleteById**](docs/PublicAssetManagementApi.md#httpassetsdeletebyid) | **DELETE** /assets/{id} | 
 *PublicAssetManagementApi* | [**HttpAssetsGet**](docs/PublicAssetManagementApi.md#httpassetsget) | **GET** /assets | 
 *PublicAssetManagementApi* | [**HttpAssetsGetById**](docs/PublicAssetManagementApi.md#httpassetsgetbyid) | **GET** /assets/{id} | 
 *PublicAssetManagementApi* | [**HttpPublicAssetsUpdateById**](docs/PublicAssetManagementApi.md#httppublicassetsupdatebyid) | **POST** /assets/{id} | 
@@ -124,6 +128,7 @@ Class | Method | HTTP request | Description
 *PublicAssetOperationsApi* | [**HttpGetAssetBlob**](docs/PublicAssetOperationsApi.md#httpgetassetblob) | **GET** /assets/{id}/blobs | 
 *PublicAssetOperationsApi* | [**HttpGetAssetCollectionsById**](docs/PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections | 
 *PublicAssetOperationsApi* | [**HttpGetAssetDownload**](docs/PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download | 
+*PublicAssetOperationsApi* | [**HttpGetAssetRelationsById**](docs/PublicAssetOperationsApi.md#httpgetassetrelationsbyid) | **GET** /assets/{id}/relations | 
 *PublicAssetOperationsApi* | [**HttpGetSharedAssetBlob**](docs/PublicAssetOperationsApi.md#httpgetsharedassetblob) | **GET** /assets/{id}/blob | 
 *PublicAssetOperationsApi* | [**HttpImageDynamicEdit**](docs/PublicAssetOperationsApi.md#httpimagedynamicedit) | **POST** /assets/{id}/imageedit | 
 *PublicAssetOperationsApi* | [**HttpImageDynamicGetFromDownloadId**](docs/PublicAssetOperationsApi.md#httpimagedynamicgetfromdownloadid) | **GET** /assets/{id}/imageedit/{download_format_id} | 
@@ -136,6 +141,8 @@ Class | Method | HTTP request | Description
 *PublicAssetRelationManagementApi* | [**HttpAssetRelationGetAll**](docs/PublicAssetRelationManagementApi.md#httpassetrelationgetall) | **GET** /assetrelations | 
 *PublicAssetRelationManagementApi* | [**HttpAssetRelationGetById**](docs/PublicAssetRelationManagementApi.md#httpassetrelationgetbyid) | **GET** /assetrelations/{id} | 
 *PublicAssetRelationManagementApi* | [**HttpAssetRelationUpdateById**](docs/PublicAssetRelationManagementApi.md#httpassetrelationupdatebyid) | **POST** /assetrelations/{id} | 
+*PublicAssetRelationTypeManagementApi* | [**HttpAssetRelationTypeGetAll**](docs/PublicAssetRelationTypeManagementApi.md#httpassetrelationtypegetall) | **GET** /assetrelationtypes | 
+*PublicAssetRelationTypeManagementApi* | [**HttpAssetRelationTypeGetById**](docs/PublicAssetRelationTypeManagementApi.md#httpassetrelationtypegetbyid) | **GET** /assetrelationtypes/{id} | 
 *PublicAssetVersioningApi* | [**HttpAssetCreateUploadVersion**](docs/PublicAssetVersioningApi.md#httpassetcreateuploadversion) | **POST** /assets/{id}/versionsupload | 
 *PublicAssetVersioningApi* | [**HttpAssetCreateVersion**](docs/PublicAssetVersioningApi.md#httpassetcreateversion) | **POST** /assets/{id}/versions | 
 *PublicAssetVersioningApi* | [**HttpDeleteVersionedAssetsById**](docs/PublicAssetVersioningApi.md#httpdeleteversionedassetsbyid) | **DELETE** /assets/{id}/versions/{vNr} | 
@@ -218,6 +225,7 @@ Class | Method | HTTP request | Description
  - [Model.AssetIdFormat](docs/AssetIdFormat.md)
  - [Model.AssetPageResult](docs/AssetPageResult.md)
  - [Model.AssetRelation](docs/AssetRelation.md)
+ - [Model.AssetRelationType](docs/AssetRelationType.md)
  - [Model.AzSearchOptions](docs/AzSearchOptions.md)
  - [Model.CollTypeItem](docs/CollTypeItem.md)
  - [Model.Collection](docs/Collection.md)

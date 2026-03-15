@@ -5,7 +5,11 @@ All URIs are relative to *http://localhost:7072/api*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**HttpAssetUploadFile**](PublicAssetManagementApi.md#httpassetuploadfile) | **POST** /assetsupload |  |
+| [**HttpAssetsBulkDeleteUpdate**](PublicAssetManagementApi.md#httpassetsbulkdeleteupdate) | **DELETE** /assetsbulkupdate |  |
+| [**HttpAssetsBulkPostUpdate**](PublicAssetManagementApi.md#httpassetsbulkpostupdate) | **POST** /assetsbulkupdate |  |
+| [**HttpAssetsBulkPutUpdate**](PublicAssetManagementApi.md#httpassetsbulkputupdate) | **PUT** /assetsbulkupdate |  |
 | [**HttpAssetsCreate**](PublicAssetManagementApi.md#httpassetscreate) | **POST** /assets |  |
+| [**HttpAssetsDeleteById**](PublicAssetManagementApi.md#httpassetsdeletebyid) | **DELETE** /assets/{id} |  |
 | [**HttpAssetsGet**](PublicAssetManagementApi.md#httpassetsget) | **GET** /assets |  |
 | [**HttpAssetsGetById**](PublicAssetManagementApi.md#httpassetsgetbyid) | **GET** /assets/{id} |  |
 | [**HttpPublicAssetsUpdateById**](PublicAssetManagementApi.md#httppublicassetsupdatebyid) | **POST** /assets/{id} |  |
@@ -115,6 +119,301 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="httpassetsbulkdeleteupdate"></a>
+# **HttpAssetsBulkDeleteUpdate**
+> AgravityInfoResponse HttpAssetsBulkDeleteUpdate (AssetBulkUpdate assetBulkUpdate)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpAssetsBulkDeleteUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicAssetManagementApi(config);
+            var assetBulkUpdate = new AssetBulkUpdate(); // AssetBulkUpdate | This endpoint updates multiple assets. The containing keywords (tags) will removed if existing. Only custom values are removed on assets which have those items.
+
+            try
+            {
+                AgravityInfoResponse result = apiInstance.HttpAssetsBulkDeleteUpdate(assetBulkUpdate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsBulkDeleteUpdate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpAssetsBulkDeleteUpdateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<AgravityInfoResponse> response = apiInstance.HttpAssetsBulkDeleteUpdateWithHttpInfo(assetBulkUpdate);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsBulkDeleteUpdateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **assetBulkUpdate** | [**AssetBulkUpdate**](AssetBulkUpdate.md) | This endpoint updates multiple assets. The containing keywords (tags) will removed if existing. Only custom values are removed on assets which have those items. |  |
+
+### Return type
+
+[**AgravityInfoResponse**](AgravityInfoResponse.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the info that remove update (delete) was successful. (Code: 35e4ad14-969e-4687-83ca-51c6828b5234) |  -  |
+| **400** | A parameter is null. (Code: 22edc392-b73c-4d89-9710-6aad5edb0c1a)&lt;br&gt;Object is not a valid AssetBulkUpdate object. (Code: 0112ebf9-45cd-4284-b728-2c809faa4e4b)&lt;br&gt;Object is empty and not a valid AssetBulkUpdate object. (Code: f81bee0b-6e4e-4b6e-8f5c-019e498ca845)&lt;br&gt;Not sure what to update. asset_ids is not given. (Code: 93218cdf-4511-46a7-b336-46757d788d74)&lt;br&gt;Not all asset_ids are valid. (Code: 07e041bd-236c-4e48-bfca-89f9f5d340af)&lt;br&gt;Could not find all  asset_ids in database. (Code: aa4e7de0-db79-431a-b684-76d157820775)&lt;br&gt;Could not find all  asset_ids relations in database. (Code: 100b3432-1a26-4618-ba84-b1ac72ab1ec8)&lt;br&gt;Error on updating custom items on asset {asset.Id}. Reason see inner exception.  (Code: 72faa784-ae94-49a9-a30e-1bad3674d432&lt;br&gt;Error on replacing custom items on asset {asset.Id}. Reason see inner exception. (Code: e83b9194-cbfe-43ec-bbfb-6d3fae5ad4d0)&lt;br&gt;The mandatory item &#39;&lt;item.Name&gt;&#39; can not be removed without having default value or is of type &#39;userdefinedlist&#39;. (Code: 85b9c37d-6c66-46c4-9107-f7acf198e68a)&lt;br&gt;Property &#39;&lt;item name&gt;&#39; is mandatory but no default value was set! (Code: 16822359-3639-4610-b075-b39aa9e106a8)&lt;br&gt;Property &#39;&lt;item name&gt;&#39; is not of defined type: &lt;item type&gt;  (Code: 1e9a1470-cfba-4a56-97b0-c44f77671880)&lt;br&gt;Property &#39;&lt;item name&gt;&#39; is mandatory but no value was given! (Code: c23f73ed-89cb-47c1-b653-3ec99c460707) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **404** | If the asset with the ID was not found. |  -  |
+| **403** | Not enough privileges to access item. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="httpassetsbulkpostupdate"></a>
+# **HttpAssetsBulkPostUpdate**
+> AgravityInfoResponse HttpAssetsBulkPostUpdate (AssetBulkUpdate assetBulkUpdate, string acceptLanguage = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpAssetsBulkPostUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicAssetManagementApi(config);
+            var assetBulkUpdate = new AssetBulkUpdate(); // AssetBulkUpdate | This endpoint updates multiple assets. The containing keywords (tags) will be distinctly added (no removal). Only custom values are added on assets which have those items.
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
+
+            try
+            {
+                AgravityInfoResponse result = apiInstance.HttpAssetsBulkPostUpdate(assetBulkUpdate, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsBulkPostUpdate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpAssetsBulkPostUpdateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<AgravityInfoResponse> response = apiInstance.HttpAssetsBulkPostUpdateWithHttpInfo(assetBulkUpdate, acceptLanguage);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsBulkPostUpdateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **assetBulkUpdate** | [**AssetBulkUpdate**](AssetBulkUpdate.md) | This endpoint updates multiple assets. The containing keywords (tags) will be distinctly added (no removal). Only custom values are added on assets which have those items. |  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
+
+### Return type
+
+[**AgravityInfoResponse**](AgravityInfoResponse.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the info that the post update was successful. (Code: 9f12848f-573a-45bb-89ed-c44c44c1cc97) |  -  |
+| **400** | A parameter is null. (Code: 22edc392-b73c-4d89-9710-6aad5edb0c1a)&lt;br&gt;Object is not a valid AssetBulkUpdate object. (Code: 0112ebf9-45cd-4284-b728-2c809faa4e4b)&lt;br&gt;Object is empty and not a valid AssetBulkUpdate object. (Code: f81bee0b-6e4e-4b6e-8f5c-019e498ca845)&lt;br&gt;Not sure what to update. asset_ids is not given. (Code: 93218cdf-4511-46a7-b336-46757d788d74)&lt;br&gt;Not all asset_ids are valid. (Code: 07e041bd-236c-4e48-bfca-89f9f5d340af)&lt;br&gt;Could not find all  asset_ids in database. (Code: aa4e7de0-db79-431a-b684-76d157820775)&lt;br&gt;Could not find all  asset_ids relations in database. (Code: 100b3432-1a26-4618-ba84-b1ac72ab1ec8)&lt;br&gt;Error on updating custom items on asset {asset.Id}. Reason see inner exception.  (Code: 72faa784-ae94-49a9-a30e-1bad3674d432&lt;br&gt;Error on replacing custom items on asset {asset.Id}. Reason see inner exception. (Code: e83b9194-cbfe-43ec-bbfb-6d3fae5ad4d0)&lt;br&gt;The mandatory item &#39;&lt;item.Name&gt;&#39; can not be removed without having default value or is of type &#39;userdefinedlist&#39;. (Code: 85b9c37d-6c66-46c4-9107-f7acf198e68a)&lt;br&gt;Property &#39;&lt;item name&gt;&#39; is mandatory but no default value was set! (Code: 16822359-3639-4610-b075-b39aa9e106a8)&lt;br&gt;Property &#39;&lt;item name&gt;&#39; is not of defined type: &lt;item type&gt;  (Code: 1e9a1470-cfba-4a56-97b0-c44f77671880)&lt;br&gt;Property &#39;&lt;item name&gt;&#39; is mandatory but no value was given! (Code: c23f73ed-89cb-47c1-b653-3ec99c460707) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **404** | If the asset with the ID was not found. |  -  |
+| **403** | Not enough privileges to access item. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="httpassetsbulkputupdate"></a>
+# **HttpAssetsBulkPutUpdate**
+> AgravityInfoResponse HttpAssetsBulkPutUpdate (AssetBulkUpdate assetBulkUpdate, string acceptLanguage = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpAssetsBulkPutUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicAssetManagementApi(config);
+            var assetBulkUpdate = new AssetBulkUpdate(); // AssetBulkUpdate | This endpoint updates multiple assets. The containing keywords (tags) will replace existing. Only custom values are replaced on assets which have those items.
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
+
+            try
+            {
+                AgravityInfoResponse result = apiInstance.HttpAssetsBulkPutUpdate(assetBulkUpdate, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsBulkPutUpdate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpAssetsBulkPutUpdateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<AgravityInfoResponse> response = apiInstance.HttpAssetsBulkPutUpdateWithHttpInfo(assetBulkUpdate, acceptLanguage);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsBulkPutUpdateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **assetBulkUpdate** | [**AssetBulkUpdate**](AssetBulkUpdate.md) | This endpoint updates multiple assets. The containing keywords (tags) will replace existing. Only custom values are replaced on assets which have those items. |  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
+
+### Return type
+
+[**AgravityInfoResponse**](AgravityInfoResponse.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the info that the post update was successful. (Code: de2972b8-d3e3-42ff-8c2c-5bd9b088dfef) |  -  |
+| **400** | A parameter is null. (Code: 22edc392-b73c-4d89-9710-6aad5edb0c1a)&lt;br&gt;Object is not a valid AssetBulkUpdate object. (Code: 0112ebf9-45cd-4284-b728-2c809faa4e4b)&lt;br&gt;Object is empty and not a valid AssetBulkUpdate object. (Code: f81bee0b-6e4e-4b6e-8f5c-019e498ca845)&lt;br&gt;Not sure what to update. asset_ids is not given. (Code: 93218cdf-4511-46a7-b336-46757d788d74)&lt;br&gt;Not all asset_ids are valid. (Code: 07e041bd-236c-4e48-bfca-89f9f5d340af)&lt;br&gt;Could not find all  asset_ids in database. (Code: aa4e7de0-db79-431a-b684-76d157820775)&lt;br&gt;Could not find all  asset_ids relations in database. (Code: 100b3432-1a26-4618-ba84-b1ac72ab1ec8)&lt;br&gt;Error on updating custom items on asset {asset.Id}. Reason see inner exception.  (Code: 72faa784-ae94-49a9-a30e-1bad3674d432&lt;br&gt;Error on replacing custom items on asset {asset.Id}. Reason see inner exception. (Code: e83b9194-cbfe-43ec-bbfb-6d3fae5ad4d0)&lt;br&gt;The mandatory item &#39;&lt;item.Name&gt;&#39; can not be removed without having default value or is of type &#39;userdefinedlist&#39;. (Code: 85b9c37d-6c66-46c4-9107-f7acf198e68a)&lt;br&gt;Property &#39;&lt;item name&gt;&#39; is mandatory but no default value was set! (Code: 16822359-3639-4610-b075-b39aa9e106a8)&lt;br&gt;Property &#39;&lt;item name&gt;&#39; is not of defined type: &lt;item type&gt;  (Code: 1e9a1470-cfba-4a56-97b0-c44f77671880)&lt;br&gt;Property &#39;&lt;item name&gt;&#39; is mandatory but no value was given! (Code: c23f73ed-89cb-47c1-b653-3ec99c460707) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **404** | If the asset with the ID was not found. |  -  |
+| **403** | Not enough privileges to access item. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="httpassetscreate"></a>
 # **HttpAssetsCreate**
 > Asset HttpAssetsCreate (string collectionid, Asset asset, bool? translations = null, string acceptLanguage = null)
@@ -214,6 +513,99 @@ catch (ApiException e)
 | **201** | Returns the created simple asset. |  -  |
 | **400** | A parameter is null. (Code: 8f9036ff-037d-49a1-aab2-57899e5d30e6)&lt;br&gt;Given asset body is not valid. (Code: a51d1697-f56e-4fa3-bde8-3ab44e6cbb0a)&lt;br&gt;Asset availability has a confusing state: {updated.Availability}. (Code: 5515ebe5-2751-4760-a864-47812126b9a1)&lt;br&gt;Ambiguous information: Asset available_from can not be greater or equal as available_to when asset should be available.(Code: 16338bcd-614c-4322-a164-e3112d622392 )&lt;br&gt;Ambiguous information: Asset available_from can not be less or equal as available_to when asset should be locked and is not in the future. (Code: 092ddb50-2af8-49a1-b005-68c9d5c600d1)&lt;br&gt;Not valid asset id. (Code: b2409333-b6d4-4efc-b21e-56c1db9e9d25)&lt;br&gt;Can not create asset with id {input.Id}. Asset already exists. Delete first. (Code: ef721e67-6d4b-4e60-81cf-4be8f14581eb)&lt;br&gt;Error on creating custom items on asset. (Code: 4e780f21-17fc-4125-a9d8-2cf0c23d84d6) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="httpassetsdeletebyid"></a>
+# **HttpAssetsDeleteById**
+> void HttpAssetsDeleteById (string id)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpAssetsDeleteByIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicAssetManagementApi(config);
+            var id = "id_example";  // string | The ID of the asset.
+
+            try
+            {
+                apiInstance.HttpAssetsDeleteById(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsDeleteById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpAssetsDeleteByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    apiInstance.HttpAssetsDeleteByIdWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetManagementApi.HttpAssetsDeleteByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **400** | A parameter is null. (Code: 355e5695-2dcb-4495-87ff-580540ad6274) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **204** | The delete operation of the asset with the given ID was successful. |  -  |
+| **404** | If the asset with the ID was not found. |  -  |
+| **403** | Not enough privileges to access item. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

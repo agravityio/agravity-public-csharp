@@ -96,7 +96,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Asset(string id = default, string entityType = default, string name = default, string assetType = default, List<string> duplicates = default, List<string> keywords = default, AssetBlob origBlob = default, List<AssetBlob> blobs = default, List<string> collections = default, string failedReason = default, List<string> qualityGate = default, string regionOfOrigin = default, string availability = default, DateTime? availableFrom = default, DateTime? availableTo = default, AssetCheckout checkout = default, bool? fsSynced = default, Dictionary<string, object> custom = default, List<CollTypeItem> items = default, Dictionary<string, Dictionary<string, object>> translations = default, RoleEnum? role = RoleEnum.NONE, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
+        public Asset(string id = default, string entityType = default, string name = default, string assetType = default, List<string> duplicates = default, List<string> keywords = default, AssetBlob origBlob = default, List<AssetBlob> blobs = default, List<string> collections = default, string failedReason = default, List<string> qualityGate = default, string regionOfOrigin = default, string availability = default, DateTime? availableFrom = default, DateTime? availableTo = default, AssetCheckout checkout = default, string fsSynced = default, Dictionary<string, object> custom = default, List<CollTypeItem> items = default, Dictionary<string, Dictionary<string, object>> translations = default, RoleEnum? role = RoleEnum.NONE, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -230,7 +230,7 @@ namespace Agravity.Public.Model
         /// Gets or Sets FsSynced
         /// </summary>
         [DataMember(Name = "fs_synced", EmitDefaultValue = true)]
-        public bool? FsSynced { get; set; }
+        public string FsSynced { get; set; }
 
         /// <summary>
         /// Gets or Sets Custom

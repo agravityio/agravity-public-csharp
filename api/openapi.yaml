@@ -5533,7 +5533,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
-          fs_synced: true
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -5766,7 +5766,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
-          fs_synced: true
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -6125,7 +6125,7 @@ components:
           videocodec: videocodec
           md5: md5
         asset_type: asset_type
-        fs_synced: true
+        fs_synced: fs_synced
         add_properties:
           key: "{}"
         id: id
@@ -6356,7 +6356,7 @@ components:
           $ref: "#/components/schemas/assetCheckout"
         fs_synced:
           nullable: true
-          type: boolean
+          type: string
         custom:
           additionalProperties:
             type: object
@@ -6877,7 +6877,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
-          fs_synced: true
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -7110,7 +7110,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
-          fs_synced: true
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -8413,7 +8413,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
-          fs_synced: true
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -8646,7 +8646,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
-          fs_synced: true
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -9290,7 +9290,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
-          fs_synced: true
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -9523,7 +9523,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
-          fs_synced: true
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -11898,7 +11898,7 @@ components:
               videocodec: videocodec
               md5: md5
             asset_type: asset_type
-            fs_synced: true
+            fs_synced: fs_synced
             add_properties:
               key: "{}"
             id: id
@@ -12131,7 +12131,7 @@ components:
               videocodec: videocodec
               md5: md5
             asset_type: asset_type
-            fs_synced: true
+            fs_synced: fs_synced
             add_properties:
               key: "{}"
             id: id

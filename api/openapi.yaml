@@ -25,25 +25,30 @@ info:
     \ published asset information</li><li><strong>Asset Versioning</strong> - Create,\
     \ restore, and manage asset versions; track version history with descriptions</li><li><strong>Asset\
     \ Relations</strong> - Create and manage relationships between assets with hierarchical\
-    \ or standard relations</li><li><strong>Full-Text Search</strong> - Search assets\
-    \ and collections with advanced filtering, facets, and sorting capabilities</li><li><strong>Collection\
-    \ Sharing</strong> - Create shared collections with expiration dates, password\
-    \ protection, and download limits</li><li><strong>Quick Shares</strong> - Create\
-    \ quick share links for rapid asset sharing with expiration management</li><li><strong>Portals</strong>\
-    \ - Full portal management with authentication, custom theming, and asset filtering</li><li><strong>Secure\
-    \ Upload</strong> - Secure file upload endpoints with validation and SAS token\
-    \ generation</li><li><strong>Download Management</strong> - Create ZIP packages\
-    \ of assets with format specifications; track download progress</li><li><strong>Download\
-    \ Formats</strong> - Define and apply custom image transformations and optimizations\
-    \ for downloads</li><li><strong>Authentication</strong> - Generate SAS tokens\
-    \ for container write access; retrieve user information</li><li><strong>Configuration</strong>\
+    \ or standard relations; organize assets into logical groups</li><li><strong>Asset\
+    \ Relation Types</strong> - Retrieve relation type definitions including hierarchical,\
+    \ sequential, and unique-per-asset configurations</li><li><strong>Full-Text Search</strong>\
+    \ - Search assets and collections with advanced filtering, facets, and sorting\
+    \ capabilities</li><li><strong>Collection Sharing</strong> - Create shared collections\
+    \ with expiration dates, password protection, and download limits</li><li><strong>Quick\
+    \ Shares</strong> - Create quick share links for rapid asset sharing with expiration\
+    \ management</li><li><strong>Portals</strong> - Full portal management with authentication,\
+    \ custom theming, and asset filtering</li><li><strong>Secure Upload</strong> -\
+    \ Secure file upload endpoints with validation and SAS token generation</li><li><strong>Download\
+    \ Management</strong> - Create ZIP packages of assets with format specifications;\
+    \ track download progress</li><li><strong>Download Formats</strong> - Define and\
+    \ apply custom image transformations and optimizations for downloads</li><li><strong>Authentication</strong>\
+    \ - Generate SAS tokens for container write access; retrieve user information</li><li><strong>Configuration</strong>\
     \ - Access frontend configuration values and system settings</li><li><strong>Helper\
     \ Tools</strong> - Get searchable items, filterable items, user-defined lists,\
     \ and static defined lists</li><li><strong>Translations</strong> - Retrieve translations\
     \ for all entities in multiple languages</li><li><strong>Deleted Entities Tracking</strong>\
     \ - Track deleted assets, collections, and other entities by date</li></ul><h2>Available\
     \ Endpoints by Category</h2><ul><li><strong>Asset Management</strong> - /assets,\
-    \ /assets/{id}, /assetsupload, /assetrelations</li><li><strong>Asset Operations</strong>\
+    \ /assets/{id}, /assetsupload</li><li><strong>Asset Relations</strong> - /assetrelations,\
+    \ /assetrelations/{id} (create, read, update, delete asset relationships)</li><li><strong>Asset\
+    \ Relation Types</strong> - /assetrelationtypes, /assetrelationtypes/{id} (retrieve\
+    \ relation type definitions and configurations)</li><li><strong>Asset Operations</strong>\
     \ - /assets/{id}/blobs, /assets/{id}/collections, /assets/{id}/tocollection, /assets/{id}/download,\
     \ /assets/{id}/resize, /assets/{id}/imageedit, /assets/{id}/availability</li><li><strong>Asset\
     \ Publishing</strong> - /assets/{id}/publish, /assets/{id}/publish/{pid}</li><li><strong>Asset\
@@ -78,13 +83,14 @@ info:
     \ and bulk download management</li><li>Multi-language content - Translation management\
     \ across all assets and collections</li><li>Real-time monitoring - Deletion tracking\
     \ and version history auditing</li></ul><h2>Key Capabilities</h2><ul><li>Full\
-    \ CRUD operations on assets, collections, and related entities</li><li>Advanced\
-    \ image transformation with ImageMagick integration</li><li>AI-powered reverse\
-    \ image search for asset discovery</li><li>Multi-language support with translation\
-    \ dictionaries</li><li>Granular permission control and role-based access</li><li>Portal\
-    \ creation with custom authentication and theming</li><li>Hierarchical collection\
-    \ organization with dynamic filtering</li><li>Real-time search with faceted navigation\
-    \ and advanced filtering</li><li>Secure sharing with expiration and password protection</li><li>Blob\
+    \ CRUD operations on assets, collections, and related entities</li><li>Asset relationship\
+    \ management with hierarchical and standard relations</li><li>Advanced image transformation\
+    \ with ImageMagick integration</li><li>AI-powered reverse image search for asset\
+    \ discovery</li><li>Multi-language support with translation dictionaries</li><li>Granular\
+    \ permission control and role-based access</li><li>Portal creation with custom\
+    \ authentication and theming</li><li>Hierarchical collection organization with\
+    \ dynamic filtering</li><li>Real-time search with faceted navigation and advanced\
+    \ filtering</li><li>Secure sharing with expiration and password protection</li><li>Blob\
     \ storage integration with SAS token generation</li><li>Comprehensive asset versioning\
     \ and restoration</li><li>SignalR support for real-time notifications</li></ul><h2>Authentication\
     \ &amp; Authorization</h2><p>All endpoints (except public share endpoints) require\
@@ -96,7 +102,7 @@ info:
     >support@agravity.io</a> or visit <a href=\"https://agravity.io\">https://agravity.io</a>.</p><br/><p>Copyright\
     \ © Agravity GmbH 2026. All Rights Reserved</p>"
   title: Agravity OpenAPI Documentation - Public Functions
-  version: 10.2.3
+  version: 10.3.1
 servers:
 - url: http://localhost:7072/api
 paths:
@@ -1065,6 +1071,36 @@ paths:
       - function_key: []
       tags:
       - Public Asset Operations
+  /assets/{id}/relations:
+    get:
+      description: This endpoint returns the asset relations
+      operationId: HttpGetAssetRelationsById
+      parameters:
+      - description: The ID of the asset.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/assetRelation"
+                type: array
+          description: Returns the asset relations for this specific asset.
+        "401":
+          description: Unauthorized. API Key not provided.
+        "404":
+          description: The requested item could not be found.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Operations
   /assetrelations:
     get:
       description: This endpoint lists all asset relations in database.
@@ -1152,6 +1188,13 @@ paths:
         schema:
           type: string
         style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/assetRelation"
+        description: This endpoint creates an asset relation in the database.
+        required: true
       responses:
         "201":
           content:
@@ -1165,7 +1208,10 @@ paths:
               schema:
                 $ref: "#/components/schemas/agravityErrorResponse"
           description: "Object is not a valid asset_relation. (Code: db336702-2654-4c87-8a17-38994ef5f812)<br>No\
-            \ input object given. (Code: 24897b5c-4322-4303-af28-578f374a17a0)<br>Missing\
+            \ input object given. (Code: 24897b5c-4322-4303-af28-578f374a17a0)<br>Not\
+            \ valid asset relation id! (Code: d5b66c4d-209a-4fe7-a4fc-2c36a86e8a6d)<br>Can\
+            \ not create asset relation with id {input.Id}. Asset Relation already\
+            \ exists. Delete first. (Code: 15964d55-b903-4120-8d83-bec54bd26e40)<br>Missing\
             \ or invalid parameter \"assetrelationtypeid\" (Code: a0a5b486-972b-44c2-9378-96fc437c91ad)<br>Asset\
             \ relation type not found. (Code: 33766cf4-d135-452b-9767-eb2171c5f258)<br>Asset\
             \ relation must have at least two different assets. (Code: 5519ac52-aac3-49e4-9cde-925b1ac4e691)<br>Asset\
@@ -1336,6 +1382,94 @@ paths:
       - function_key: []
       tags:
       - Public Asset Relation Management
+  /assetrelationtypes:
+    get:
+      description: This endpoint lists all asset relation types in database.
+      operationId: HttpAssetRelationTypeGetAll
+      parameters:
+      - description: When default language should be returned and the translation
+          dictionary is delivered. (Ignores the "Accept-Language" header)
+        explode: true
+        in: query
+        name: translations
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: The requested language of the response. If not matching it falls
+          back to default language.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/assetRelationType"
+                type: array
+          description: Returns all asset relation types in database.
+        "401":
+          description: Unauthorized. API Key not provided.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Relation Type Management
+  /assetrelationtypes/{id}:
+    get:
+      description: This endpoint gets a single asset relation type.
+      operationId: HttpAssetRelationTypeGetById
+      parameters:
+      - description: The ID of the asset relation type.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: When default language should be returned and the translation
+          dictionary is delivered. (Ignores the "Accept-Language" header)
+        explode: true
+        in: query
+        name: translations
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: The requested language of the response. If not matching it falls
+          back to default language.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/assetRelationType"
+          description: Returns the requested asset relation type.
+        "401":
+          description: Unauthorized. API Key not provided.
+        "404":
+          description: If the asset relation type with the ID was not found.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Relation Type Management
   /assets:
     get:
       description: "This endpoint lists all the assets, which are stored in the database\
@@ -1539,6 +1673,38 @@ paths:
       tags:
       - Public Asset Management
   /assets/{id}:
+    delete:
+      operationId: HttpAssetsDeleteById
+      parameters:
+      - description: The ID of the asset.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agravityErrorResponse"
+          description: "A parameter is null. (Code: 355e5695-2dcb-4495-87ff-580540ad6274)"
+        "401":
+          description: Unauthorized. API Key not provided.
+        "204":
+          description: The delete operation of the asset with the given ID was successful.
+        "404":
+          description: If the asset with the ID was not found.
+        "403":
+          description: Not enough privileges to access item.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Management
     get:
       description: This endpoint returns one single asset (from ID). If the returned
         asset is from a special asset type (e.g. "AssetImage") it returns the full
@@ -1715,6 +1881,180 @@ paths:
             \ file is not supported. (Code: 12ac8746-349a-42c0-b73c-33257b73c728)"
         "401":
           description: Unauthorized. API Key not provided.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Management
+  /assetsbulkupdate:
+    delete:
+      operationId: HttpAssetsBulkDeleteUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/assetBulkUpdate"
+        description: This endpoint updates multiple assets. The containing keywords
+          (tags) will removed if existing. Only custom values are removed on assets
+          which have those items.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agravityInfoResponse"
+          description: "Returns the info that remove update (delete) was successful.\
+            \ (Code: 35e4ad14-969e-4687-83ca-51c6828b5234)"
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agravityErrorResponse"
+          description: "A parameter is null. (Code: 22edc392-b73c-4d89-9710-6aad5edb0c1a)<br>Object\
+            \ is not a valid AssetBulkUpdate object. (Code: 0112ebf9-45cd-4284-b728-2c809faa4e4b)<br>Object\
+            \ is empty and not a valid AssetBulkUpdate object. (Code: f81bee0b-6e4e-4b6e-8f5c-019e498ca845)<br>Not\
+            \ sure what to update. asset_ids is not given. (Code: 93218cdf-4511-46a7-b336-46757d788d74)<br>Not\
+            \ all asset_ids are valid. (Code: 07e041bd-236c-4e48-bfca-89f9f5d340af)<br>Could\
+            \ not find all  asset_ids in database. (Code: aa4e7de0-db79-431a-b684-76d157820775)<br>Could\
+            \ not find all  asset_ids relations in database. (Code: 100b3432-1a26-4618-ba84-b1ac72ab1ec8)<br>Error\
+            \ on updating custom items on asset {asset.Id}. Reason see inner exception.\
+            \  (Code: 72faa784-ae94-49a9-a30e-1bad3674d432<br>Error on replacing custom\
+            \ items on asset {asset.Id}. Reason see inner exception. (Code: e83b9194-cbfe-43ec-bbfb-6d3fae5ad4d0)<br>The\
+            \ mandatory item '<item.Name>' can not be removed without having default\
+            \ value or is of type 'userdefinedlist'. (Code: 85b9c37d-6c66-46c4-9107-f7acf198e68a)<br>Property\
+            \ '<item name>' is mandatory but no default value was set! (Code: 16822359-3639-4610-b075-b39aa9e106a8)<br>Property\
+            \ '<item name>' is not of defined type: <item type>  (Code: 1e9a1470-cfba-4a56-97b0-c44f77671880)<br>Property\
+            \ '<item name>' is mandatory but no value was given! (Code: c23f73ed-89cb-47c1-b653-3ec99c460707)"
+        "401":
+          description: Unauthorized. API Key not provided.
+        "404":
+          description: If the asset with the ID was not found.
+        "403":
+          description: Not enough privileges to access item.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Management
+    post:
+      operationId: HttpAssetsBulkPostUpdate
+      parameters:
+      - description: The requested language of the response. If not matching it falls
+          back to default language.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/assetBulkUpdate"
+        description: This endpoint updates multiple assets. The containing keywords
+          (tags) will be distinctly added (no removal). Only custom values are added
+          on assets which have those items.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agravityInfoResponse"
+          description: "Returns the info that the post update was successful. (Code:\
+            \ 9f12848f-573a-45bb-89ed-c44c44c1cc97)"
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agravityErrorResponse"
+          description: "A parameter is null. (Code: 22edc392-b73c-4d89-9710-6aad5edb0c1a)<br>Object\
+            \ is not a valid AssetBulkUpdate object. (Code: 0112ebf9-45cd-4284-b728-2c809faa4e4b)<br>Object\
+            \ is empty and not a valid AssetBulkUpdate object. (Code: f81bee0b-6e4e-4b6e-8f5c-019e498ca845)<br>Not\
+            \ sure what to update. asset_ids is not given. (Code: 93218cdf-4511-46a7-b336-46757d788d74)<br>Not\
+            \ all asset_ids are valid. (Code: 07e041bd-236c-4e48-bfca-89f9f5d340af)<br>Could\
+            \ not find all  asset_ids in database. (Code: aa4e7de0-db79-431a-b684-76d157820775)<br>Could\
+            \ not find all  asset_ids relations in database. (Code: 100b3432-1a26-4618-ba84-b1ac72ab1ec8)<br>Error\
+            \ on updating custom items on asset {asset.Id}. Reason see inner exception.\
+            \  (Code: 72faa784-ae94-49a9-a30e-1bad3674d432<br>Error on replacing custom\
+            \ items on asset {asset.Id}. Reason see inner exception. (Code: e83b9194-cbfe-43ec-bbfb-6d3fae5ad4d0)<br>The\
+            \ mandatory item '<item.Name>' can not be removed without having default\
+            \ value or is of type 'userdefinedlist'. (Code: 85b9c37d-6c66-46c4-9107-f7acf198e68a)<br>Property\
+            \ '<item name>' is mandatory but no default value was set! (Code: 16822359-3639-4610-b075-b39aa9e106a8)<br>Property\
+            \ '<item name>' is not of defined type: <item type>  (Code: 1e9a1470-cfba-4a56-97b0-c44f77671880)<br>Property\
+            \ '<item name>' is mandatory but no value was given! (Code: c23f73ed-89cb-47c1-b653-3ec99c460707)"
+        "401":
+          description: Unauthorized. API Key not provided.
+        "404":
+          description: If the asset with the ID was not found.
+        "403":
+          description: Not enough privileges to access item.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Management
+    put:
+      operationId: HttpAssetsBulkPutUpdate
+      parameters:
+      - description: The requested language of the response. If not matching it falls
+          back to default language.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/assetBulkUpdate"
+        description: This endpoint updates multiple assets. The containing keywords
+          (tags) will replace existing. Only custom values are replaced on assets
+          which have those items.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agravityInfoResponse"
+          description: "Returns the info that the post update was successful. (Code:\
+            \ de2972b8-d3e3-42ff-8c2c-5bd9b088dfef)"
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agravityErrorResponse"
+          description: "A parameter is null. (Code: 22edc392-b73c-4d89-9710-6aad5edb0c1a)<br>Object\
+            \ is not a valid AssetBulkUpdate object. (Code: 0112ebf9-45cd-4284-b728-2c809faa4e4b)<br>Object\
+            \ is empty and not a valid AssetBulkUpdate object. (Code: f81bee0b-6e4e-4b6e-8f5c-019e498ca845)<br>Not\
+            \ sure what to update. asset_ids is not given. (Code: 93218cdf-4511-46a7-b336-46757d788d74)<br>Not\
+            \ all asset_ids are valid. (Code: 07e041bd-236c-4e48-bfca-89f9f5d340af)<br>Could\
+            \ not find all  asset_ids in database. (Code: aa4e7de0-db79-431a-b684-76d157820775)<br>Could\
+            \ not find all  asset_ids relations in database. (Code: 100b3432-1a26-4618-ba84-b1ac72ab1ec8)<br>Error\
+            \ on updating custom items on asset {asset.Id}. Reason see inner exception.\
+            \  (Code: 72faa784-ae94-49a9-a30e-1bad3674d432<br>Error on replacing custom\
+            \ items on asset {asset.Id}. Reason see inner exception. (Code: e83b9194-cbfe-43ec-bbfb-6d3fae5ad4d0)<br>The\
+            \ mandatory item '<item.Name>' can not be removed without having default\
+            \ value or is of type 'userdefinedlist'. (Code: 85b9c37d-6c66-46c4-9107-f7acf198e68a)<br>Property\
+            \ '<item name>' is mandatory but no default value was set! (Code: 16822359-3639-4610-b075-b39aa9e106a8)<br>Property\
+            \ '<item name>' is not of defined type: <item type>  (Code: 1e9a1470-cfba-4a56-97b0-c44f77671880)<br>Property\
+            \ '<item name>' is mandatory but no value was given! (Code: c23f73ed-89cb-47c1-b653-3ec99c460707)"
+        "401":
+          description: Unauthorized. API Key not provided.
+        "404":
+          description: If the asset with the ID was not found.
+        "403":
+          description: Not enough privileges to access item.
         "500":
           description: Internal server error. Please contact administrator.
       security:
@@ -2424,8 +2764,10 @@ paths:
                 $ref: "#/components/schemas/agravityErrorResponse"
           description: "A parameter is null. (Code: 7dac18af-04ef-4da6-8b6e-e13dd8b027ae)<br>Missing\
             \ or invalid parameter \"collectiontypeid\". (Code: 42a54d68-8a33-4a71-9545-7460f7a1339d)<br>The\
-            \ collection type \"<collectiontypeid>\" was not found.. (Code: 203b1950-d942-4692-8e55-0ec5c137167f)<br>Not\
-            \ valid collection id. (Code: 61a99ef3-c212-4171-8b37-290d8db4af3c)<br>Can\
+            \ collection type \"collectiontypeid\" was not found. (Code: 203b1950-d942-4692-8e55-0ec5c137167f)</br>Property\
+            \ '<item_name>' is not of defined type: <type> (Code: 1e9a1470-cfba-4a56-97b0-c44f77671880)<br>Not\
+            \ valid collection id. (Code: 61a99ef3-c212-4171-8b37-290d8db4af3c)<br>Collection\
+            \ id does not match collection type! (Code: 6da1e562-a1e2-464a-a5e2-7d2621fe21bf)<br>Can\
             \ not create collection with id {input.Id}. Collection already exists.\
             \ Delete first. (Code: 321c4f48-7cc9-4ece-af88-89e95031dfde)<br>Object\
             \ is not a valid collection. (Code: 67dd9a9f-b899-4607-bce8-0b0c4b4eec66)"
@@ -4934,9 +5276,9 @@ components:
     agravityVersion:
       example:
         tenant_id: tenant_id
+        subscription_id: subscription_id
         contact: contact
         name: name
-        vector_search_enabled: true
         company: company
         region: region
         updated: 2000-01-23T04:56:07.000+00:00
@@ -4944,6 +5286,9 @@ components:
         client_id: client_id
         customer: customer
         base: base
+        enabled_features:
+        - enabled_features
+        - enabled_features
       properties:
         name:
           nullable: true
@@ -4967,15 +5312,20 @@ components:
         tenant_id:
           nullable: true
           type: string
+        subscription_id:
+          nullable: true
+          type: string
         base:
           nullable: true
           type: string
         version:
           nullable: true
           type: string
-        vector_search_enabled:
+        enabled_features:
+          items:
+            type: string
           nullable: true
-          type: boolean
+          type: array
         region:
           nullable: true
           type: string
@@ -5183,6 +5533,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -5415,6 +5766,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -5773,6 +6125,7 @@ components:
           videocodec: videocodec
           md5: md5
         asset_type: asset_type
+        fs_synced: fs_synced
         add_properties:
           key: "{}"
         id: id
@@ -6001,6 +6354,9 @@ components:
           type: string
         checkout:
           $ref: "#/components/schemas/assetCheckout"
+        fs_synced:
+          nullable: true
+          type: string
         custom:
           additionalProperties:
             type: object
@@ -6297,6 +6653,19 @@ components:
           nullable: true
           type: string
       type: object
+    assetBulkUpdate:
+      properties:
+        collection_id:
+          nullable: true
+          type: string
+        ref_asset:
+          $ref: "#/components/schemas/asset"
+        asset_ids:
+          items:
+            type: string
+          nullable: true
+          type: array
+      type: object
     assetCheckout:
       example:
         user_id: user_id
@@ -6508,6 +6877,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -6740,6 +7110,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -6961,6 +7332,92 @@ components:
             $ref: "#/components/schemas/relatedAsset"
           nullable: true
           type: array
+        status:
+          nullable: true
+          type: string
+        created_date:
+          format: date-time
+          nullable: true
+          type: string
+        created_by:
+          nullable: true
+          type: string
+        modified_date:
+          format: date-time
+          nullable: true
+          type: string
+        modified_by:
+          nullable: true
+          type: string
+        pk:
+          nullable: true
+          type: string
+        _etag:
+          nullable: true
+          type: string
+      type: object
+    assetRelationType:
+      example:
+        unique_per_asset: true
+        sequential: true
+        description: description
+        modified_date: 2000-01-23T04:56:07.000+00:00
+        created_by: created_by
+        entity_type: entity_type
+        translations:
+          key: null
+        permissions:
+        - role: NONE
+          id: id
+        - role: NONE
+          id: id
+        hierarchical: true
+        name: name
+        modified_by: modified_by
+        add_properties:
+          key: "{}"
+        id: id
+        created_date: 2000-01-23T04:56:07.000+00:00
+        pk: pk
+        _etag: _etag
+        status: status
+      properties:
+        id:
+          nullable: true
+          type: string
+        entity_type:
+          nullable: true
+          type: string
+        hierarchical:
+          nullable: true
+          type: boolean
+        sequential:
+          nullable: true
+          type: boolean
+        unique_per_asset:
+          nullable: true
+          type: boolean
+        translations:
+          additionalProperties:
+            $ref: "#/components/schemas/dictionary_object"
+          nullable: true
+          type: object
+        permissions:
+          items:
+            $ref: "#/components/schemas/permissionEntity"
+          nullable: true
+          type: array
+        name:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+        add_properties:
+          additionalProperties:
+            type: object
+          nullable: true
+          type: object
         status:
           nullable: true
           type: string
@@ -7956,6 +8413,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -8188,6 +8646,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -8831,6 +9290,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -9063,6 +9523,7 @@ components:
             videocodec: videocodec
             md5: md5
           asset_type: asset_type
+          fs_synced: fs_synced
           add_properties:
             key: "{}"
           id: id
@@ -11437,6 +11898,7 @@ components:
               videocodec: videocodec
               md5: md5
             asset_type: asset_type
+            fs_synced: fs_synced
             add_properties:
               key: "{}"
             id: id
@@ -11669,6 +12131,7 @@ components:
               videocodec: videocodec
               md5: md5
             asset_type: asset_type
+            fs_synced: fs_synced
             add_properties:
               key: "{}"
             id: id

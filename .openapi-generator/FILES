@@ -12,11 +12,13 @@ docs/AllWebAppData.md
 docs/Asset.md
 docs/AssetAvailability.md
 docs/AssetBlob.md
+docs/AssetBulkUpdate.md
 docs/AssetCheckout.md
 docs/AssetIconRule.md
 docs/AssetIdFormat.md
 docs/AssetPageResult.md
 docs/AssetRelation.md
+docs/AssetRelationType.md
 docs/AzSearchOptions.md
 docs/CollTypeItem.md
 docs/Collection.md
@@ -59,6 +61,7 @@ docs/PublicAssetManagementApi.md
 docs/PublicAssetOperationsApi.md
 docs/PublicAssetPublishingApi.md
 docs/PublicAssetRelationManagementApi.md
+docs/PublicAssetRelationTypeManagementApi.md
 docs/PublicAssetVersioningApi.md
 docs/PublicAuthenticationManagementApi.md
 docs/PublicCollectionManagementApi.md
@@ -113,6 +116,7 @@ src/Agravity.Public.Test/Api/PublicAssetManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicAssetOperationsApiTests.cs
 src/Agravity.Public.Test/Api/PublicAssetPublishingApiTests.cs
 src/Agravity.Public.Test/Api/PublicAssetRelationManagementApiTests.cs
+src/Agravity.Public.Test/Api/PublicAssetRelationTypeManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicAssetVersioningApiTests.cs
 src/Agravity.Public.Test/Api/PublicAuthenticationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionManagementApiTests.cs
@@ -141,11 +145,13 @@ src/Agravity.Public.Test/Model/AgravityVersionTests.cs
 src/Agravity.Public.Test/Model/AllWebAppDataTests.cs
 src/Agravity.Public.Test/Model/AssetAvailabilityTests.cs
 src/Agravity.Public.Test/Model/AssetBlobTests.cs
+src/Agravity.Public.Test/Model/AssetBulkUpdateTests.cs
 src/Agravity.Public.Test/Model/AssetCheckoutTests.cs
 src/Agravity.Public.Test/Model/AssetIconRuleTests.cs
 src/Agravity.Public.Test/Model/AssetIdFormatTests.cs
 src/Agravity.Public.Test/Model/AssetPageResultTests.cs
 src/Agravity.Public.Test/Model/AssetRelationTests.cs
+src/Agravity.Public.Test/Model/AssetRelationTypeTests.cs
 src/Agravity.Public.Test/Model/AssetTests.cs
 src/Agravity.Public.Test/Model/AzSearchOptionsTests.cs
 src/Agravity.Public.Test/Model/CollTypeItemTests.cs
@@ -217,6 +223,7 @@ src/Agravity.Public/Api/PublicAssetManagementApi.cs
 src/Agravity.Public/Api/PublicAssetOperationsApi.cs
 src/Agravity.Public/Api/PublicAssetPublishingApi.cs
 src/Agravity.Public/Api/PublicAssetRelationManagementApi.cs
+src/Agravity.Public/Api/PublicAssetRelationTypeManagementApi.cs
 src/Agravity.Public/Api/PublicAssetVersioningApi.cs
 src/Agravity.Public/Api/PublicAuthenticationManagementApi.cs
 src/Agravity.Public/Api/PublicCollectionManagementApi.cs
@@ -263,11 +270,13 @@ src/Agravity.Public/Model/AllWebAppData.cs
 src/Agravity.Public/Model/Asset.cs
 src/Agravity.Public/Model/AssetAvailability.cs
 src/Agravity.Public/Model/AssetBlob.cs
+src/Agravity.Public/Model/AssetBulkUpdate.cs
 src/Agravity.Public/Model/AssetCheckout.cs
 src/Agravity.Public/Model/AssetIconRule.cs
 src/Agravity.Public/Model/AssetIdFormat.cs
 src/Agravity.Public/Model/AssetPageResult.cs
 src/Agravity.Public/Model/AssetRelation.cs
+src/Agravity.Public/Model/AssetRelationType.cs
 src/Agravity.Public/Model/AzSearchOptions.cs
 src/Agravity.Public/Model/CollTypeItem.cs
 src/Agravity.Public/Model/Collection.cs

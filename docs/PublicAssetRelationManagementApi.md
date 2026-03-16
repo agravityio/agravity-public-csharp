@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a id="httpassetrelationcreate"></a>
 # **HttpAssetRelationCreate**
-> AssetRelation HttpAssetRelationCreate (bool? translations = null, string acceptLanguage = null, string assetrelationtypeid = null)
+> AssetRelation HttpAssetRelationCreate (AssetRelation assetRelation, bool? translations = null, string acceptLanguage = null, string assetrelationtypeid = null)
 
 
 
@@ -40,13 +40,14 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicAssetRelationManagementApi(config);
+            var assetRelation = new AssetRelation(); // AssetRelation | This endpoint creates an asset relation in the database.
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
             var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
             var assetrelationtypeid = "assetrelationtypeid_example";  // string | The ID of the asset relation type, where these asset relations should come from. (optional) 
 
             try
             {
-                AssetRelation result = apiInstance.HttpAssetRelationCreate(translations, acceptLanguage, assetrelationtypeid);
+                AssetRelation result = apiInstance.HttpAssetRelationCreate(assetRelation, translations, acceptLanguage, assetrelationtypeid);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -66,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<AssetRelation> response = apiInstance.HttpAssetRelationCreateWithHttpInfo(translations, acceptLanguage, assetrelationtypeid);
+    ApiResponse<AssetRelation> response = apiInstance.HttpAssetRelationCreateWithHttpInfo(assetRelation, translations, acceptLanguage, assetrelationtypeid);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -83,6 +84,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
+| **assetRelation** | [**AssetRelation**](AssetRelation.md) | This endpoint creates an asset relation in the database. |  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 | **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 | **assetrelationtypeid** | **string** | The ID of the asset relation type, where these asset relations should come from. | [optional]  |
@@ -97,7 +99,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -105,7 +107,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Returns the created asset relation. |  -  |
-| **400** | Object is not a valid asset_relation. (Code: db336702-2654-4c87-8a17-38994ef5f812)&lt;br&gt;No input object given. (Code: 24897b5c-4322-4303-af28-578f374a17a0)&lt;br&gt;Missing or invalid parameter \&quot;assetrelationtypeid\&quot; (Code: a0a5b486-972b-44c2-9378-96fc437c91ad)&lt;br&gt;Asset relation type not found. (Code: 33766cf4-d135-452b-9767-eb2171c5f258)&lt;br&gt;Asset relation must have at least two different assets. (Code: 5519ac52-aac3-49e4-9cde-925b1ac4e691)&lt;br&gt;Asset with ID {assetId} not found. (Code: 4fc224fb-6e5f-4ca0-b93d-f693a223a740)&lt;br&gt;The user does not have editor permission on all assets in the relation. (Code: 5179e72a-a72e-4731-a476-2de784703315)&lt;br&gt;For hierarchical relations, exactly one asset must be marked as parent. (Code: 1a9d8c7b-6e5f-3a2d-1b8c-7e6f5d4a3b2c)&lt;br&gt;Error on create asset relation in database - max retry count is reached. (Code: 7af65a99-32d8-4e98-b96b-00cd8649fc53)&lt;br&gt;The user does not have editor permission on the relation type. (Code: 63cad31c-ed36-4e1e-add4-349782019b68)&lt;br&gt;The asset relation contains assets that are already part of another relation of the same type. (Code: d3a34fc8-e658-487f-b224-5da2d0843ee1) |  -  |
+| **400** | Object is not a valid asset_relation. (Code: db336702-2654-4c87-8a17-38994ef5f812)&lt;br&gt;No input object given. (Code: 24897b5c-4322-4303-af28-578f374a17a0)&lt;br&gt;Not valid asset relation id! (Code: d5b66c4d-209a-4fe7-a4fc-2c36a86e8a6d)&lt;br&gt;Can not create asset relation with id {input.Id}. Asset Relation already exists. Delete first. (Code: 15964d55-b903-4120-8d83-bec54bd26e40)&lt;br&gt;Missing or invalid parameter \&quot;assetrelationtypeid\&quot; (Code: a0a5b486-972b-44c2-9378-96fc437c91ad)&lt;br&gt;Asset relation type not found. (Code: 33766cf4-d135-452b-9767-eb2171c5f258)&lt;br&gt;Asset relation must have at least two different assets. (Code: 5519ac52-aac3-49e4-9cde-925b1ac4e691)&lt;br&gt;Asset with ID {assetId} not found. (Code: 4fc224fb-6e5f-4ca0-b93d-f693a223a740)&lt;br&gt;The user does not have editor permission on all assets in the relation. (Code: 5179e72a-a72e-4731-a476-2de784703315)&lt;br&gt;For hierarchical relations, exactly one asset must be marked as parent. (Code: 1a9d8c7b-6e5f-3a2d-1b8c-7e6f5d4a3b2c)&lt;br&gt;Error on create asset relation in database - max retry count is reached. (Code: 7af65a99-32d8-4e98-b96b-00cd8649fc53)&lt;br&gt;The user does not have editor permission on the relation type. (Code: 63cad31c-ed36-4e1e-add4-349782019b68)&lt;br&gt;The asset relation contains assets that are already part of another relation of the same type. (Code: d3a34fc8-e658-487f-b224-5da2d0843ee1) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 

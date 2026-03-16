@@ -8,20 +8,51 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
-## AgravityAPI <a name="10.2.3"/> [10.2.3](https://www.nuget.org/packages/Agravity.Public/v/10.2.3) (2026-01-20)
+## AgravityAPI <a name="10.3.1"/> [10.3.1](https://www.nuget.org/packages/Agravity.Public/10.3.1) (2026-03-15)
+
+- Property type change `fs_synced` on asset now of type string (etag of shared file) instead of boolean
+
+## AgravityAPI <a name="10.3.0"/> [10.3.0](https://www.nuget.org/packages/Agravity.Public/10.3.0) (2026-03-01)
+
+- Add new endpoints to public (which where already available on private)
+  - Add DELETE `/assetsbulkupdate` - This endpoint updates multiple assets. The containing keywords (tags) will removed if existing. Only custom values are removed on assets which have those items.
+  - Add POST `/assetsbulkupdate` - This endpoint updates multiple assets. The containing keywords (tags) will be distinctly added (no removal). Only custom values are added on assets which have those items.
+  - Add PUT `/assetsbulkupdate` - This endpoint updates multiple assets. The containing keywords (tags) will replace existing. Only custom values are replaced on assets which have those items.
+  - Add DELETE `/assets/{id}`- This endpoint deletes an asset from system (mark them as deleted)
+  - Add GET `/assets/{id}/relations`- This endpoint returns the asset relations
+  - Add GET `/assetrelationtypes`- This endpoint lists all asset relation types in database.
+  - Add GET `/assetrelationtypes/{id}`- This endpoint gets a single asset relation type.
+- Update POST `/assets/{id}/relations` - with better description
+- Update all Public API descriptions (AI generated)
+- Add property `checkout` to asset
+- Add new model `AssetCheckout` which is used on asset
+- Add new models for `assetBulkCheckoutBody`, `assetBulkCheckoutResult`, `assetBulkUpdate`, `assetCheckout`, `assetCheckoutFailure` and `assetCheckoutWarningDetail` for response to PUT `/assets/checkout/bulk`
+- Adding properties `subscription_id` and `enabled_features` to version info model
+- Removing property `vector_search_enabled` from version info model (now inside `enabled_features`)
+- #1565 Move info about file share from add_properties to fs_synced
+
+## AgravityAPI <a name="10.2.5"/> [10.2.5](https://www.nuget.org/packages/Agravity.Public/10.2.5) (2026-02-01)
 
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="10.2.2"/> [10.2.2](https://www.nuget.org/packages/Agravity.Public/v/10.2.2) (2026-01-18)
+## AgravityAPI <a name="10.2.4"/> [10.2.4](https://www.nuget.org/packages/Agravity.Public/10.2.4) (2026-01-27)
+
+- Just version upgrade to match backend
+
+## AgravityAPI <a name="10.2.3"/> [10.2.3](https://www.nuget.org/packages/Agravity.Public/10.2.3) (2026-01-20)
+
+- Just version upgrade to match backend
+
+## AgravityAPI <a name="10.2.2"/> [10.2.2](https://www.nuget.org/packages/Agravity.Public/10.2.2) (2026-01-18)
 
 - Change all contact mails from office@agravity.io to support@agravity.io
 - Change OpenAPI description
 
-## AgravityAPI <a name="10.2.1"/> [10.2.1](https://www.nuget.org/packages/Agravity.Public/v/10.2.1) (2025-12-14)
+## AgravityAPI <a name="10.2.1"/> [10.2.1](https://www.nuget.org/packages/Agravity.Public/10.2.1) (2025-12-14)
 
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="10.2.0"/> [10.2.0](https://www.nuget.org/packages/Agravity.Public/v/10.2.0) (2025-12-06)
+## AgravityAPI <a name="10.2.0"/> [10.2.0](https://www.nuget.org/packages/Agravity.Public/10.2.0) (2025-12-06)
 
 - #1545 Add endpoint and model to fetch user name and email from public endpoints
   - Add public GET `/auth/users/{id}` description - This gets the user information about an Agravity User (incl. Online Status). Only full information if requester and userId are the same or it has role Admin.
@@ -32,27 +63,27 @@ It will be upgraded when the Agravity Backend is upgraded and will have the same
   - Add target filename in header "Ay-File-Name" on response of HttpImageDynamicEdit
 - Add enum 'APIKEYUSER' for internal User-API-Key impersonation
 
-## AgravityAPI <a name="10.1.6"/> [10.1.6](https://www.nuget.org/packages/Agravity.Public/v/10.1.6) (2025-11-16)
+## AgravityAPI <a name="10.1.6"/> [10.1.6](https://www.nuget.org/packages/Agravity.Public/10.1.6) (2025-11-16)
 
 - Add property `status` to EntityIdName (which also reflects on collectionUDL)
 
-## AgravityAPI <a name="10.1.5"/> [10.1.5](https://www.nuget.org/packages/Agravity.Public/v/10.1.5) (2025-11-14)
+## AgravityAPI <a name="10.1.5"/> [10.1.5](https://www.nuget.org/packages/Agravity.Public/10.1.5) (2025-11-14)
 
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="10.1.4"/> [10.1.4](https://www.nuget.org/packages/Agravity.Public/v/10.1.4) (2025-11-13)
+## AgravityAPI <a name="10.1.4"/> [10.1.4](https://www.nuget.org/packages/Agravity.Public/10.1.4) (2025-11-13)
 
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="10.1.3"/> [10.1.3](https://www.nuget.org/packages/Agravity.Public/v/10.1.3) (2025-10-25)
+## AgravityAPI <a name="10.1.3"/> [10.1.3](https://www.nuget.org/packages/Agravity.Public/10.1.3) (2025-10-25)
 
 - Add `pk`(PartitionKey) property to entityIdName (and collectionUDL which inherits this class)
 
-## AgravityAPI <a name="10.1.2"/> [10.1.2](https://www.nuget.org/packages/Agravity.Public/v/10.1.2) (2025-10-19)
+## AgravityAPI <a name="10.1.2"/> [10.1.2](https://www.nuget.org/packages/Agravity.Public/10.1.2) (2025-10-19)
 
 - Just version upgrade to match backend
 
-## AgravityAPI <a name="10.1.1"/> [10.1.1](https://www.nuget.org/packages/Agravity.Public/v/10.1.1) (2025-10-15)
+## AgravityAPI <a name="10.1.1"/> [10.1.1](https://www.nuget.org/packages/Agravity.Public/10.1.1) (2025-10-15)
 
 - Just version upgrade to match backend
 

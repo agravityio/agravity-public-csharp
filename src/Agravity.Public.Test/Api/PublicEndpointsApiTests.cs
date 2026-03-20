@@ -56,6 +56,22 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpAssetGetBlobDownload
+        /// </summary>
+        [Fact]
+        public void HttpAssetGetBlobDownloadTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string assetId = null;
+            //string format = null;
+            //string portalId = null;
+            //bool? locked = null;
+            //bool? uncompleted = null;
+            //var response = instance.HttpAssetGetBlobDownload(assetId, format, portalId, locked, uncompleted);
+            //Assert.IsType<System.IO.Stream>(response);
+        }
+
+        /// <summary>
         /// Test HttpAssetGetViewForPortal
         /// </summary>
         [Fact]

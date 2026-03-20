@@ -11,6 +11,7 @@ All URIs are relative to *http://localhost:7072/api*
 | [**HttpGetAssetCollectionsById**](PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections |  |
 | [**HttpGetAssetDownload**](PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download |  |
 | [**HttpGetAssetRelationsById**](PublicAssetOperationsApi.md#httpgetassetrelationsbyid) | **GET** /assets/{id}/relations |  |
+| [**HttpGetAssetView**](PublicAssetOperationsApi.md#httpgetassetview) | **GET** /assets/{id}/view |  |
 | [**HttpGetSharedAssetBlob**](PublicAssetOperationsApi.md#httpgetsharedassetblob) | **GET** /assets/{id}/blob |  |
 | [**HttpImageDynamicEdit**](PublicAssetOperationsApi.md#httpimagedynamicedit) | **POST** /assets/{id}/imageedit |  |
 | [**HttpImageDynamicGetFromDownloadId**](PublicAssetOperationsApi.md#httpimagedynamicgetfromdownloadid) | **GET** /assets/{id}/imageedit/{download_format_id} |  |
@@ -741,6 +742,111 @@ catch (ApiException e)
 | **200** | Returns the asset relations for this specific asset. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **404** | The requested item could not be found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="httpgetassetview"></a>
+# **HttpGetAssetView**
+> AssetBlob HttpGetAssetView (string id, string format = null, string portalId = null, bool? locked = null, bool? uncompleted = null)
+
+
+
+This endpoint returns the binary directly to the endpoint
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpGetAssetViewExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicAssetOperationsApi(config);
+            var id = "id_example";  // string | The ID of the asset.
+            var format = "format_example";  // string | (optional) provide the id of any valid download format. Otherwise the original is returned. (optional) 
+            var portalId = "portalId_example";  // string | If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional) 
+            var locked = true;  // bool? | Returns assets on permissions which are locked and accessable (User needs editor permissions). Default: true (optional) 
+            var uncompleted = true;  // bool? | Returns assets which are not in state ACTIVE (User needs editor permissions). Default: true (optional) 
+
+            try
+            {
+                AssetBlob result = apiInstance.HttpGetAssetView(id, format, portalId, locked, uncompleted);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetAssetView: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpGetAssetViewWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<AssetBlob> response = apiInstance.HttpGetAssetViewWithHttpInfo(id, format, portalId, locked, uncompleted);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicAssetOperationsApi.HttpGetAssetViewWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The ID of the asset. |  |
+| **format** | **string** | (optional) provide the id of any valid download format. Otherwise the original is returned. | [optional]  |
+| **portalId** | **string** | If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. | [optional]  |
+| **locked** | **bool?** | Returns assets on permissions which are locked and accessable (User needs editor permissions). Default: true | [optional]  |
+| **uncompleted** | **bool?** | Returns assets which are not in state ACTIVE (User needs editor permissions). Default: true | [optional]  |
+
+### Return type
+
+[**AssetBlob**](AssetBlob.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | This function checks if asset exist on storage and returns the asset blob (incl. url to download). |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **404** | The requested item could not be found. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

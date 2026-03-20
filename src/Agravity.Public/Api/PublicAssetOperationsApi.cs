@@ -244,6 +244,37 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// This endpoint returns the binary directly to the endpoint
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">(optional) provide the id of any valid download format. Otherwise the original is returned. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="locked">Returns assets on permissions which are locked and accessable (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="uncompleted">Returns assets which are not in state ACTIVE (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AssetBlob</returns>
+        AssetBlob HttpGetAssetView(string id, string format = default, string portalId = default, bool? locked = default, bool? uncompleted = default, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns the binary directly to the endpoint
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">(optional) provide the id of any valid download format. Otherwise the original is returned. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="locked">Returns assets on permissions which are locked and accessable (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="uncompleted">Returns assets which are not in state ACTIVE (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AssetBlob</returns>
+        ApiResponse<AssetBlob> HttpGetAssetViewWithHttpInfo(string id, string format = default, string portalId = default, bool? locked = default, bool? uncompleted = default, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// This endpoint checks, if an asset exists, is an image, has original blob, is status active, is part of the shared collection and returns the requested asset blob.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
@@ -582,6 +613,39 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AssetRelation&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<AssetRelation>>> HttpGetAssetRelationsByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns the binary directly to the endpoint
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">(optional) provide the id of any valid download format. Otherwise the original is returned. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="locked">Returns assets on permissions which are locked and accessable (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="uncompleted">Returns assets which are not in state ACTIVE (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AssetBlob</returns>
+        System.Threading.Tasks.Task<AssetBlob> HttpGetAssetViewAsync(string id, string format = default, string portalId = default, bool? locked = default, bool? uncompleted = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns the binary directly to the endpoint
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">(optional) provide the id of any valid download format. Otherwise the original is returned. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="locked">Returns assets on permissions which are locked and accessable (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="uncompleted">Returns assets which are not in state ACTIVE (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AssetBlob)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AssetBlob>> HttpGetAssetViewWithHttpInfoAsync(string id, string format = default, string portalId = default, bool? locked = default, bool? uncompleted = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -2220,6 +2284,209 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpGetAssetRelationsById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint returns the binary directly to the endpoint
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">(optional) provide the id of any valid download format. Otherwise the original is returned. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="locked">Returns assets on permissions which are locked and accessable (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="uncompleted">Returns assets which are not in state ACTIVE (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AssetBlob</returns>
+        public AssetBlob HttpGetAssetView(string id, string format = default, string portalId = default, bool? locked = default, bool? uncompleted = default, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = HttpGetAssetViewWithHttpInfo(id, format, portalId, locked, uncompleted);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint returns the binary directly to the endpoint
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">(optional) provide the id of any valid download format. Otherwise the original is returned. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="locked">Returns assets on permissions which are locked and accessable (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="uncompleted">Returns assets which are not in state ACTIVE (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AssetBlob</returns>
+        public Agravity.Public.Client.ApiResponse<AssetBlob> HttpGetAssetViewWithHttpInfo(string id, string format = default, string portalId = default, bool? locked = default, bool? uncompleted = default, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetOperationsApi->HttpGetAssetView");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (format != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "format", format));
+            }
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+            if (locked != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "locked", locked));
+            }
+            if (uncompleted != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "uncompleted", uncompleted));
+            }
+
+            localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpGetAssetView";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<AssetBlob>("/assets/{id}/view", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpGetAssetView", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint returns the binary directly to the endpoint
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">(optional) provide the id of any valid download format. Otherwise the original is returned. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="locked">Returns assets on permissions which are locked and accessable (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="uncompleted">Returns assets which are not in state ACTIVE (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AssetBlob</returns>
+        public async System.Threading.Tasks.Task<AssetBlob> HttpGetAssetViewAsync(string id, string format = default, string portalId = default, bool? locked = default, bool? uncompleted = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Agravity.Public.Client.ApiResponse<AssetBlob> localVarResponse = await HttpGetAssetViewWithHttpInfoAsync(id, format, portalId, locked, uncompleted, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint returns the binary directly to the endpoint
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the asset.</param>
+        /// <param name="format">(optional) provide the id of any valid download format. Otherwise the original is returned. (optional)</param>
+        /// <param name="portalId">If the request comes from portal this is the indicator. It will be checked if the requested blob is valid for the portal. (optional)</param>
+        /// <param name="locked">Returns assets on permissions which are locked and accessable (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="uncompleted">Returns assets which are not in state ACTIVE (User needs editor permissions). Default: true (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AssetBlob)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<AssetBlob>> HttpGetAssetViewWithHttpInfoAsync(string id, string format = default, string portalId = default, bool? locked = default, bool? uncompleted = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicAssetOperationsApi->HttpGetAssetView");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (format != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "format", format));
+            }
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+            if (locked != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "locked", locked));
+            }
+            if (uncompleted != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "uncompleted", uncompleted));
+            }
+
+            localVarRequestOptions.Operation = "PublicAssetOperationsApi.HttpGetAssetView";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AssetBlob>("/assets/{id}/view", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpGetAssetView", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

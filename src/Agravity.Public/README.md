@@ -129,6 +129,7 @@ Class | Method | HTTP request | Description
 *PublicAssetOperationsApi* | [**HttpGetAssetCollectionsById**](docs/PublicAssetOperationsApi.md#httpgetassetcollectionsbyid) | **GET** /assets/{id}/collections | 
 *PublicAssetOperationsApi* | [**HttpGetAssetDownload**](docs/PublicAssetOperationsApi.md#httpgetassetdownload) | **GET** /assets/{id}/download | 
 *PublicAssetOperationsApi* | [**HttpGetAssetRelationsById**](docs/PublicAssetOperationsApi.md#httpgetassetrelationsbyid) | **GET** /assets/{id}/relations | 
+*PublicAssetOperationsApi* | [**HttpGetAssetView**](docs/PublicAssetOperationsApi.md#httpgetassetview) | **GET** /assets/{id}/view | 
 *PublicAssetOperationsApi* | [**HttpGetSharedAssetBlob**](docs/PublicAssetOperationsApi.md#httpgetsharedassetblob) | **GET** /assets/{id}/blob | 
 *PublicAssetOperationsApi* | [**HttpImageDynamicEdit**](docs/PublicAssetOperationsApi.md#httpimagedynamicedit) | **POST** /assets/{id}/imageedit | 
 *PublicAssetOperationsApi* | [**HttpImageDynamicGetFromDownloadId**](docs/PublicAssetOperationsApi.md#httpimagedynamicgetfromdownloadid) | **GET** /assets/{id}/imageedit/{download_format_id} | 
@@ -170,6 +171,7 @@ Class | Method | HTTP request | Description
 *PublicConfigurationManagementApi* | [**HttpConfigGetFrontendAll**](docs/PublicConfigurationManagementApi.md#httpconfiggetfrontendall) | **GET** /config/frontend | 
 *PublicDownloadFormatManagementApi* | [**HttpDownloadFormatsGetAll**](docs/PublicDownloadFormatManagementApi.md#httpdownloadformatsgetall) | **GET** /downloadformats | 
 *PublicDownloadFormatManagementApi* | [**HttpDownloadFormatsGetAllFromShared**](docs/PublicDownloadFormatManagementApi.md#httpdownloadformatsgetallfromshared) | **GET** /downloadformats-shared | 
+*PublicEndpointsApi* | [**HttpAssetGetBlobDownload**](docs/PublicEndpointsApi.md#httpassetgetblobdownload) | **GET** /public/download | 
 *PublicEndpointsApi* | [**HttpAssetGetViewForPortal**](docs/PublicEndpointsApi.md#httpassetgetviewforportal) | **GET** /public/view | 
 *PublicGeneralManagementApi* | [**HttpAgravityVersionInfo**](docs/PublicGeneralManagementApi.md#httpagravityversioninfo) | **GET** /version | 
 *PublicGeneralManagementApi* | [**HttpGetDeletedEntities**](docs/PublicGeneralManagementApi.md#httpgetdeletedentities) | **GET** /deleted | 

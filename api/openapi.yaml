@@ -693,6 +693,73 @@ paths:
       - function_key: []
       tags:
       - Public Asset Operations
+  /assets/{id}/view:
+    get:
+      description: This endpoint returns the binary directly to the endpoint
+      operationId: HttpGetAssetView
+      parameters:
+      - description: The ID of the asset.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: (optional) provide the id of any valid download format. Otherwise
+          the original is returned.
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: If the request comes from portal this is the indicator. It will
+          be checked if the requested blob is valid for the portal.
+        explode: true
+        in: query
+        name: portal_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Returns assets on permissions which are locked and accessable\
+          \ (User needs editor permissions). Default: true"
+        explode: true
+        in: query
+        name: locked
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "Returns assets which are not in state ACTIVE (User needs editor\
+          \ permissions). Default: true"
+        explode: true
+        in: query
+        name: uncompleted
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/assetBlob"
+          description: This function checks if asset exist on storage and returns
+            the asset blob (incl. url to download).
+        "401":
+          description: Unauthorized. API Key not provided.
+        "404":
+          description: The requested item could not be found.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Asset Operations
   /assets/{id}/resize:
     get:
       description: This endpoint lets you resize/modify the image asset according
@@ -3601,14 +3668,92 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/agravityErrorResponse"
-          description: "Portal ID is mandatory and not valid. {type} (Code: be59e94a-0f76-415f-a6b7-065e3abfc64e)<br>Downloadformat\
-            \ is not allowed on other asset type than image (Code: e77d141b-a2b4-4746-8910-5b97b2623cc4)<br>Downloadformat\
-            \ with id '{format}' not found. (Code: eb70a990-6a28-40b1-8631-63a085fd8ac3)<br>Tried\
-            \ to access not existion blob: {asset.Id} from container: {downloadFormat.OriginContainer}.\
-            \ (Code: 53683b61-67f4-47f9-9392-e7c651175854)<br>General error with message.\
-            \ (Code: 5cd6a8bd-2a53-4b6a-adef-efd898e8c248)<br>Blob with format '{format}'\
-            \ not found. (Code: 5a656869-4678-41dd-a311-af79e319d83f)<br>Get view\
-            \ from asset {asset?.Id} failed. Format '{format}' not found. (Code: 34473124-d3d4-4de0-8112-6798e4728e1f)"
+          description: "Asset ID is mandatory and not valid. (Code: df5f7d40-6333-4501-b3b0-5f0332bb13f6)<br>A\
+            \ valid Portal ID is mandatory. (Code: be59e94a-0f76-415f-a6b7-065e3abfc64e)<br>Downloadformat\
+            \ with id '{format}' not found. (Code: eb70a990-6a28-40b1-8631-63a085fd8ac3)<br>Downloadformat\
+            \ is not allowed on other asset type than image. (Code: e77d141b-a2b4-4746-8910-5b97b2623cc4)<br>Error\
+            \ on preparing downloadformat '{format}' for asset ({asset.Id}). (Code:\
+            \ 9c5f1f3e-2b6a-4f0c-8b3f-3e2f4a4d5e6f)Downloadformat with id '{format}'\
+            \ for asset ({asset.Id}) not found. (Code: 44cc4dde-d95d-4814-a566-0cfca2d48d1b)<br>Blob\
+            \ with format '{format}' not found. (Code: 02327d00-d614-4cfd-924e-61024d1eef4b)<br>Get\
+            \ view from asset {asset.Id} failed. Format '{format}' not found. (Code:\
+            \ b396ed17-7153-45f4-881e-05ed560bf6ba)<br>"
+        "404":
+          description: The requested item could not be found.
+        "500":
+          description: Internal server error. Please contact administrator.
+      tags:
+      - Public Endpoints
+  /public/download:
+    get:
+      description: This endpoint returns the binary data of an asset to be downloaded.
+      operationId: HttpAssetGetBlobDownload
+      parameters:
+      - description: The ID of the asset.
+        explode: true
+        in: query
+        name: asset_id
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: The name of the format (download format) or container.
+        explode: true
+        in: query
+        name: format
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: If the request comes from portal this is the indicator.
+        explode: true
+        in: query
+        name: portal_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Returns assets on permissions which are locked and accessable\
+          \ (User needs editor permissions). Default: false"
+        explode: true
+        in: query
+        name: locked
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "Returns assets which are not in state ACTIVE (User needs editor\
+          \ permissions). Default: false"
+        explode: true
+        in: query
+        name: uncompleted
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/octet-stream:
+              schema:
+                format: binary
+                type: string
+          description: Returns the direct blob for download.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agravityErrorResponse"
+          description: "Asset ID is mandatory and not valid. (Code: 4cfcbea2-e8ce-40b2-a020-63b940850646)<br>A\
+            \ valid Portal ID is mandatory. (Code: 984f8a38-308a-4fc2-a705-2ddc4939f9b7)<br>Downloadformat\
+            \ with id '{format}' not found. (Code: f915aa41-8b93-4ab9-9806-89196e83dc59)<br>Downloadformat\
+            \ is not allowed on other asset type than image. (Code: d0e12349-f98b-499c-a6cb-082e18af4852)<br>Error\
+            \ on preparing downloadformat '{format}' for asset ({asset.Id}). (Code:\
+            \ 0dc61246-574e-45da-99c9-e3ada771579c)<br>Downloadformat with id '{format}'\
+            \ for asset ({asset.Id}) not found. (Code: 57490ca4-7a92-41fb-96e2-59327b04865f)<br>Blob\
+            \ with format '{format}' not found. (Code: 597ac315-4c5d-4b26-90d0-0e2e8d30b0b3)<br>Get\
+            \ download from asset {asset.Id} failed. Format '{format}' not found.\
+            \ (Code: bf00d12f-15a1-4222-a347-77c5b601e506)<br>"
         "404":
           description: The requested item could not be found.
         "500":

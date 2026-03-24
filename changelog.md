@@ -8,11 +8,15 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="10.3.3"/> [10.3.3](https://www.nuget.org/packages/Agravity.Public/10.3.3) (2026-03-24)
+
+- Just version upgrade to match backend
+
 ## AgravityAPI <a name="10.3.2"/> [10.3.2](https://www.nuget.org/packages/Agravity.Public/10.3.2) (2026-03-21)
 
 - #1588 Add public endpoint to download blobs directly which has constant URL
-  - Add query parameter `locked` (bool)  - Returns assets on permissions which are locked and accessable (User needs editor permissions).
-  - Add query parameter `uncompleted` (bool)  - Returns assets which are not in state ACTIVE (User needs editor permissions).
+  - Add query parameter `locked` (bool) - Returns assets on permissions which are locked and accessable (User needs editor permissions).
+  - Add query parameter `uncompleted` (bool) - Returns assets which are not in state ACTIVE (User needs editor permissions).
   - Change the endpoint GET `public/download` - to have locked and uncompleted false on default
   - Change the endpoint GET `assets/{id}/view` - to have locked and uncompleted true on default
 

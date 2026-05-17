@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src\Agravity.Public\Agravity.Public.csproj" />
+  <Project Path="src\Agravity.Public.Test\Agravity.Public.Test.csproj" />
+</Solution>

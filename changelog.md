@@ -8,6 +8,10 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="11.0.0"/> [11.0.0](https://www.nuget.org/packages/Agravity.Public/11.0.0) (2026-05-17)
+
+- .NET10 upgrade (OpenAPI Generator 7.20.0)
+
 ## AgravityAPI <a name="10.3.5"/> [10.3.5](https://www.nuget.org/packages/Agravity.Public/10.3.5) (2026-05-03)
 
 - Just version upgrade to match backend

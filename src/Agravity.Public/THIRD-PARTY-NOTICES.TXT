@@ -20,10 +20,10 @@ https://dot.net/
 License available at https://github.com/dotnet/standard/blob/master/LICENSE.TXT
 
 
-License notice for Newtonsoft.Json (v13.0.3)
+License notice for Newtonsoft.Json (v13.0.4)
 ------------------------------------
 
-https://github.com/JamesNK/Newtonsoft.Json at 0a2e291c0d9c0c7675d445703e51750363a549ef
+https://github.com/JamesNK/Newtonsoft.Json at 4e13299d4b0ec96bd4df9954ef646bd2d1b5bf2a
 
 https://www.newtonsoft.com/json
 
@@ -34,24 +34,26 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for Polly (v8.6.3)
+License notice for Polly (v8.6.6)
 ------------------------------------
 
-https://github.com/App-vNext/Polly at cf50bc52196f3153ca8ca7b2f6900d8d451a4a92
+https://github.com/App-vNext/Polly at 016dd909db880b9d8d07954ff5f4ea3cc1e11c67
 
-Copyright (c) 2015-2025, App vNext
+Copyright (c) 2015-2026, App vNext
 
 Licensed under BSD-3-Clause
 
 Available at https://licenses.nuget.org/BSD-3-Clause
 
 
-License notice for RestSharp (v112.1.0)
+License notice for RestSharp (v114.0.0)
 ------------------------------------
 
-https://github.com/restsharp/RestSharp.git at bf4008f972257908d666b2884ec7fe330b759424
+https://github.com/restsharp/RestSharp.git at 9b2fe0a054eb732d4246ae5e117ffa02c703abd2
 
 https://restsharp.dev/
+
+Copyright © .NET Foundation and Contributors 2026
 
 Licensed under Apache-2.0
 
@@ -72,10 +74,10 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for System.Text.Json (v9.0.8)
+License notice for System.Text.Json (v10.0.8)
 ------------------------------------
 
-https://github.com/dotnet/runtime at aae90fa09086a9be09dac83fa66542232c7269d8
+https://github.com/dotnet/dotnet at 94ea82652cdd4e0f8046b5bd5becbd11461482ca
 
 https://dot.net/
 
@@ -86,10 +88,10 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for Microsoft.Bcl.AsyncInterfaces (v9.0.8)
+License notice for Microsoft.Bcl.AsyncInterfaces (v10.0.8)
 ------------------------------------
 
-https://github.com/dotnet/runtime at aae90fa09086a9be09dac83fa66542232c7269d8
+https://github.com/dotnet/dotnet at 94ea82652cdd4e0f8046b5bd5becbd11461482ca
 
 https://dot.net/
 
@@ -124,32 +126,34 @@ Copyright © Microsoft Corporation.  All rights reserved.
 License available at http://go.microsoft.com/fwlink/?LinkId=329770
 
 
-License notice for Polly.Core (v8.6.3)
+License notice for Polly.Core (v8.6.6)
 ------------------------------------
 
-https://github.com/App-vNext/Polly at cf50bc52196f3153ca8ca7b2f6900d8d451a4a92
+https://github.com/App-vNext/Polly at 016dd909db880b9d8d07954ff5f4ea3cc1e11c67
 
-Copyright (c) 2015-2025, App vNext
+Copyright (c) 2015-2026, App vNext
 
 Licensed under BSD-3-Clause
 
 Available at https://licenses.nuget.org/BSD-3-Clause
 
 
-License notice for System.Buffers (v4.5.1)
+License notice for System.Buffers (v4.6.1)
 ------------------------------------
 
-https://dot.net/
+https://github.com/dotnet/maintenance-packages at 6b84308c9ad012f53240d72c1d716d7e42546483
 
 Copyright © Microsoft Corporation. All rights reserved.
 
-License available at https://github.com/dotnet/corefx/blob/master/LICENSE.TXT
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
 
 
-License notice for System.IO.Pipelines (v9.0.8)
+License notice for System.IO.Pipelines (v10.0.8)
 ------------------------------------
 
-https://github.com/dotnet/runtime at aae90fa09086a9be09dac83fa66542232c7269d8
+https://github.com/dotnet/dotnet at 94ea82652cdd4e0f8046b5bd5becbd11461482ca
 
 https://dot.net/
 
@@ -160,30 +164,46 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for System.Memory (v4.5.5)
+License notice for System.Memory (v4.6.3)
 ------------------------------------
 
-https://dot.net/
+https://github.com/dotnet/maintenance-packages at f62ca0009b038cab4725a720f386623a969d73ad
 
 Copyright © Microsoft Corporation. All rights reserved.
 
-License available at https://github.com/dotnet/corefx/blob/master/LICENSE.TXT
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
 
 
-License notice for System.Numerics.Vectors (v4.4.0)
+License notice for System.Numerics.Vectors (v4.6.1)
 ------------------------------------
 
-https://dot.net/
+https://github.com/dotnet/maintenance-packages at 6b84308c9ad012f53240d72c1d716d7e42546483
 
-Copyright © Microsoft Corporation.  All rights reserved.
+Copyright © Microsoft Corporation. All rights reserved.
 
-License available at https://github.com/dotnet/corefx/blob/master/LICENSE.TXT
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
 
 
-License notice for System.Runtime.CompilerServices.Unsafe (v6.0.0)
+License notice for System.Runtime.CompilerServices.Unsafe (v6.1.2)
 ------------------------------------
 
-https://github.com/dotnet/runtime at 4822e3c3aa77eb82b2fb33c9321f923cf11ddde6
+https://github.com/dotnet/maintenance-packages at f62ca0009b038cab4725a720f386623a969d73ad
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Text.Encodings.Web (v10.0.8)
+------------------------------------
+
+https://github.com/dotnet/dotnet at 94ea82652cdd4e0f8046b5bd5becbd11461482ca
 
 https://dot.net/
 
@@ -194,27 +214,15 @@ Licensed under MIT
 Available at https://licenses.nuget.org/MIT
 
 
-License notice for System.Text.Encodings.Web (v9.0.8)
+License notice for System.Threading.Tasks.Extensions (v4.6.3)
 ------------------------------------
 
-https://github.com/dotnet/runtime at aae90fa09086a9be09dac83fa66542232c7269d8
-
-https://dot.net/
+https://github.com/dotnet/maintenance-packages at f62ca0009b038cab4725a720f386623a969d73ad
 
 Copyright © Microsoft Corporation. All rights reserved.
 
 Licensed under MIT
 
 Available at https://licenses.nuget.org/MIT
-
-
-License notice for System.Threading.Tasks.Extensions (v4.5.4)
-------------------------------------
-
-https://dot.net/
-
-Copyright © Microsoft Corporation. All rights reserved.
-
-License available at https://github.com/dotnet/corefx/blob/master/LICENSE.TXT
 
 

@@ -95,7 +95,6 @@ Set-Location ..
 
 # git discard files
 git checkout -- .\.gitignore
-git checkout -- .\generateAPI.ps1
 git checkout -- .\Agravity.Public.sln
 git checkout -- .\extract_thirdparty_licenses.bat
 git checkout -- .\icon.png
@@ -134,18 +133,25 @@ dotnet pack .\src\Agravity.Public\Agravity.Public.csproj -c Release -o .\out /p:
 # nuget setApiKey xyz
 
 # prompt to publish
-Write-Host "Publish package in version $apiVersion? (y/n)"
+Write-Host ("Publish package in version {0}? (y/n)" -f $apiVersion)
 $publish = Read-Host
 
 # check if publish
 if ($publish -eq "y") {
+    $packagePath = ".\out\Agravity.Public.$apiVersion.nupkg"
+
+    if (!(Test-Path $packagePath)) {
+        Write-Host "Package $packagePath not found. Skipping publish."
+        exit 1
+    }
+
     # publish nuget package
-    dotnet nuget push .\out\Agravity.Public."$apiVersion".nupkg -s https://api.nuget.org/v3/index.json
+    dotnet nuget push $packagePath -s https://api.nuget.org/v3/index.json
 
     $changelogPath = ".\changelog.md"
     $changelogAnchor = "It will be upgraded when the Agravity Backend is upgraded and will have the same version."
     $releaseDate = Get-Date -Format "yyyy-MM-dd"
-    $releaseHeader = "## AgravityAPI <a name=\"$apiVersion\"/> [$apiVersion](https://www.nuget.org/packages/Agravity.Public/$apiVersion) ($releaseDate)"
+    $releaseHeader = '## AgravityAPI <a name="{0}"/> [{0}](https://www.nuget.org/packages/Agravity.Public/{0}) ({1})' -f $apiVersion, $releaseDate
 
     if (Test-Path $changelogPath) {
         $changelog = Get-Content $changelogPath -Raw

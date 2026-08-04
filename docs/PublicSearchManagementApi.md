@@ -6,6 +6,7 @@ All URIs are relative to *http://localhost:7072/api*
 |--------|--------------|-------------|
 | [**HttpGetSearchFacetteByName**](PublicSearchManagementApi.md#httpgetsearchfacettebyname) | **GET** /search/facette |  |
 | [**HttpGlobalSearch**](PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search |  |
+| [**HttpGlobalSearchPost**](PublicSearchManagementApi.md#httpglobalsearchpost) | **POST** /search |  |
 | [**HttpSearchAdminGetStatus**](PublicSearchManagementApi.md#httpsearchadmingetstatus) | **GET** /searchadmin/status |  |
 
 <a id="httpgetsearchfacettebyname"></a>
@@ -127,7 +128,7 @@ catch (ApiException e)
 
 
 
-This endpoint returns a configured max amount of results for search terms.
+This endpoint returns a configured max amount of results for search terms using query parameters.
 
 ### Example
 ```csharp
@@ -243,6 +244,109 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Returns the search result |  -  |
 | **400** | A required parameter is null. (Code: 870f62fe-827a-4ef3-98e7-7f309244ee00)&lt;br&gt;or provide at least parameter \&quot;s&#x3D;\&quot; with search string (url encoded) (Code: de39bfb1-42e3-4edf-9651-5c4952524e69)&lt;br&gt;or limit is not a valid number! Can use 0 for defined limit. (Code: 7115dc96-99e3-47a4-827a-8cc63cc1ab68 or skip is not a valid number! Can use 0 for defined skip. (Code: ad8237e0-236c-4404-8eaa-d81a9fa4e41c or parameter \&quot;collectiontypeid&#x3D;\&quot; is not valid (not in correct format or not found in system). (Code: 330e6abb-e77e-4193-9aa0-9dfce168c674)&lt;br&gt;or parameter \&quot;collectionid&#x3D;\&quot; is not valid (not in correct format or not found in system). (Code: c20f1dfb-0d19-419e-96eb-f5dee44576fe) |  -  |
+| **401** | Unauthorized. API Key not provided. |  -  |
+| **500** | Internal server error. Please contact administrator. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="httpglobalsearchpost"></a>
+# **HttpGlobalSearchPost**
+> SearchResult HttpGlobalSearchPost (AzSearchOptions azSearchOptions, bool? translations = null, string acceptLanguage = null, bool? expose = null)
+
+
+
+This endpoint returns a configured max amount of results for search options in the request body.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Agravity.Public.Api;
+using Agravity.Public.Client;
+using Agravity.Public.Model;
+
+namespace Example
+{
+    public class HttpGlobalSearchPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:7072/api";
+            // Configure API key authorization: function_key
+            config.AddApiKey("x-functions-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-functions-key", "Bearer");
+
+            var apiInstance = new PublicSearchManagementApi(config);
+            var azSearchOptions = new AzSearchOptions(); // AzSearchOptions | Search options for the request body.
+            var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
+            var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
+            var expose = true;  // bool? | This will expose the thumbnail asset blob incl. URL with SAS Token. (optional) 
+
+            try
+            {
+                SearchResult result = apiInstance.HttpGlobalSearchPost(azSearchOptions, translations, acceptLanguage, expose);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PublicSearchManagementApi.HttpGlobalSearchPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the HttpGlobalSearchPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<SearchResult> response = apiInstance.HttpGlobalSearchPostWithHttpInfo(azSearchOptions, translations, acceptLanguage, expose);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PublicSearchManagementApi.HttpGlobalSearchPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **azSearchOptions** | [**AzSearchOptions**](AzSearchOptions.md) | Search options for the request body. |  |
+| **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
+| **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
+| **expose** | **bool?** | This will expose the thumbnail asset blob incl. URL with SAS Token. | [optional]  |
+
+### Return type
+
+[**SearchResult**](SearchResult.md)
+
+### Authorization
+
+[function_key](../README.md#function_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns the search result |  -  |
+| **400** | The request body is invalid. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 

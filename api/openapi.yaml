@@ -4168,7 +4168,7 @@ paths:
   /search:
     get:
       description: This endpoint returns a configured max amount of results for search
-        terms.
+        terms using query parameters.
       operationId: HttpGlobalSearch
       parameters:
       - description: The search string which should be found.
@@ -4333,6 +4333,66 @@ paths:
             A required parameter is null. (Code: 870f62fe-827a-4ef3-98e7-7f309244ee00)<br>or provide at least parameter "s=" with search string (url encoded) (Code: de39bfb1-42e3-4edf-9651-5c4952524e69)<br>or limit is not a valid number! Can use 0 for defined limit. (Code: 7115dc96-99e3-47a4-827a-8cc63cc1ab68
             or skip is not a valid number! Can use 0 for defined skip. (Code: ad8237e0-236c-4404-8eaa-d81a9fa4e41c
             or parameter "collectiontypeid=" is not valid (not in correct format or not found in system). (Code: 330e6abb-e77e-4193-9aa0-9dfce168c674)<br>or parameter "collectionid=" is not valid (not in correct format or not found in system). (Code: c20f1dfb-0d19-419e-96eb-f5dee44576fe)
+        "401":
+          description: Unauthorized. API Key not provided.
+        "500":
+          description: Internal server error. Please contact administrator.
+      security:
+      - function_key: []
+      tags:
+      - Public Search Management
+    post:
+      description: This endpoint returns a configured max amount of results for search
+        options in the request body.
+      operationId: HttpGlobalSearchPost
+      parameters:
+      - description: When default language should be returned and the translation
+          dictionary is delivered. (Ignores the "Accept-Language" header)
+        explode: true
+        in: query
+        name: translations
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: The requested language of the response. If not matching it falls
+          back to default language.
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: This will expose the thumbnail asset blob incl. URL with SAS
+          Token.
+        explode: true
+        in: query
+        name: expose
+        required: false
+        schema:
+          type: boolean
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/azSearchOptions"
+        description: Search options for the request body.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/searchResult"
+          description: Returns the search result
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agravityErrorResponse"
+          description: The request body is invalid.
         "401":
           description: Unauthorized. API Key not provided.
         "500":
@@ -7602,7 +7662,6 @@ components:
         scopefilter: scopefilter
         collectionid: collectionid
         broadness: 5
-      nullable: true
       properties:
         searchString:
           type: string
@@ -10192,6 +10251,7 @@ components:
         pk: pk
         fields:
         - facet_order: 6
+          orfilterable: true
           name: name
           format: format
           user_context:
@@ -10206,6 +10266,7 @@ components:
           labels:
             key: labels
         - facet_order: 6
+          orfilterable: true
           name: name
           format: format
           user_context:
@@ -10593,6 +10654,7 @@ components:
         pk: pk
         fields:
         - facet_order: 6
+          orfilterable: true
           name: name
           format: format
           user_context:
@@ -10607,6 +10669,7 @@ components:
           labels:
             key: labels
         - facet_order: 6
+          orfilterable: true
           name: name
           format: format
           user_context:
@@ -10775,6 +10838,7 @@ components:
     portalFields:
       example:
         facet_order: 6
+        orfilterable: true
         name: name
         format: format
         user_context:
@@ -10800,6 +10864,9 @@ components:
           format: int32
           nullable: true
           type: integer
+        orfilterable:
+          nullable: true
+          type: boolean
         labels:
           additionalProperties:
             type: string

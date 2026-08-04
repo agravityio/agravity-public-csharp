@@ -103,6 +103,21 @@ namespace Agravity.Public.Test.Api
         }
 
         /// <summary>
+        /// Test HttpGlobalSearchPost
+        /// </summary>
+        [Fact]
+        public void HttpGlobalSearchPostTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //AzSearchOptions azSearchOptions = null;
+            //bool? translations = null;
+            //string acceptLanguage = null;
+            //bool? expose = null;
+            //var response = instance.HttpGlobalSearchPost(azSearchOptions, translations, acceptLanguage, expose);
+            //Assert.IsType<SearchResult>(response);
+        }
+
+        /// <summary>
         /// Test HttpSearchAdminGetStatus
         /// </summary>
         [Fact]

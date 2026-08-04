@@ -193,6 +193,7 @@ Class | Method | HTTP request | Description
 *PublicSavedSearchApi* | [**HttpSavedSearchesGetAll**](docs/PublicSavedSearchApi.md#httpsavedsearchesgetall) | **GET** /savedsearches | 
 *PublicSearchManagementApi* | [**HttpGetSearchFacetteByName**](docs/PublicSearchManagementApi.md#httpgetsearchfacettebyname) | **GET** /search/facette | 
 *PublicSearchManagementApi* | [**HttpGlobalSearch**](docs/PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search | 
+*PublicSearchManagementApi* | [**HttpGlobalSearchPost**](docs/PublicSearchManagementApi.md#httpglobalsearchpost) | **POST** /search | 
 *PublicSearchManagementApi* | [**HttpSearchAdminGetStatus**](docs/PublicSearchManagementApi.md#httpsearchadmingetstatus) | **GET** /searchadmin/status | 
 *PublicSharingManagementApi* | [**HttpQuickShareGetById**](docs/PublicSharingManagementApi.md#httpquicksharegetbyid) | **GET** /quickshares/{id} | 
 *PublicSharingManagementApi* | [**HttpSharedCollectionsGetById**](docs/PublicSharingManagementApi.md#httpsharedcollectionsgetbyid) | **GET** /shared/{id} | 

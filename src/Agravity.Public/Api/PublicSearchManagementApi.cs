@@ -70,7 +70,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns a configured max amount of results for search terms.
+        /// This endpoint returns a configured max amount of results for search terms using query parameters.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="s">The search string which should be found.</param>
@@ -97,7 +97,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns a configured max amount of results for search terms.
+        /// This endpoint returns a configured max amount of results for search terms using query parameters.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="s">The search string which should be found.</param>
@@ -119,6 +119,35 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchResult</returns>
         ApiResponse<SearchResult> HttpGlobalSearchWithHttpInfo(string s, int? limit = default, int? skip = default, string collectiontypeid = default, string collectionid = default, string mode = default, bool? expose = default, string filter = default, int? broadness = default, string relId = default, string scopefilter = default, string orderby = default, string ids = default, string portalId = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns a configured max amount of results for search options in the request body.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="azSearchOptions">Search options for the request body.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SearchResult</returns>
+        SearchResult HttpGlobalSearchPost(AzSearchOptions azSearchOptions, bool? translations = default, string acceptLanguage = default, bool? expose = default, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns a configured max amount of results for search options in the request body.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="azSearchOptions">Search options for the request body.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SearchResult</returns>
+        ApiResponse<SearchResult> HttpGlobalSearchPostWithHttpInfo(AzSearchOptions azSearchOptions, bool? translations = default, string acceptLanguage = default, bool? expose = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -196,7 +225,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns a configured max amount of results for search terms.
+        /// This endpoint returns a configured max amount of results for search terms using query parameters.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="s">The search string which should be found.</param>
@@ -224,7 +253,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns a configured max amount of results for search terms.
+        /// This endpoint returns a configured max amount of results for search terms using query parameters.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="s">The search string which should be found.</param>
@@ -247,6 +276,37 @@ namespace Agravity.Public.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<SearchResult>> HttpGlobalSearchWithHttpInfoAsync(string s, int? limit = default, int? skip = default, string collectiontypeid = default, string collectionid = default, string mode = default, bool? expose = default, string filter = default, int? broadness = default, string relId = default, string scopefilter = default, string orderby = default, string ids = default, string portalId = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns a configured max amount of results for search options in the request body.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="azSearchOptions">Search options for the request body.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SearchResult</returns>
+        System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchPostAsync(AzSearchOptions azSearchOptions, bool? translations = default, string acceptLanguage = default, bool? expose = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint returns a configured max amount of results for search options in the request body.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="azSearchOptions">Search options for the request body.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SearchResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SearchResult>> HttpGlobalSearchPostWithHttpInfoAsync(AzSearchOptions azSearchOptions, bool? translations = default, string acceptLanguage = default, bool? expose = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -650,7 +710,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint returns a configured max amount of results for search terms.
+        ///  This endpoint returns a configured max amount of results for search terms using query parameters.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="s">The search string which should be found.</param>
@@ -678,7 +738,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint returns a configured max amount of results for search terms.
+        ///  This endpoint returns a configured max amount of results for search terms using query parameters.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="s">The search string which should be found.</param>
@@ -816,7 +876,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint returns a configured max amount of results for search terms.
+        ///  This endpoint returns a configured max amount of results for search terms using query parameters.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="s">The search string which should be found.</param>
@@ -845,7 +905,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint returns a configured max amount of results for search terms.
+        ///  This endpoint returns a configured max amount of results for search terms using query parameters.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="s">The search string which should be found.</param>
@@ -975,6 +1035,199 @@ namespace Agravity.Public.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("HttpGlobalSearch", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint returns a configured max amount of results for search options in the request body.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="azSearchOptions">Search options for the request body.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SearchResult</returns>
+        public SearchResult HttpGlobalSearchPost(AzSearchOptions azSearchOptions, bool? translations = default, string acceptLanguage = default, bool? expose = default, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = HttpGlobalSearchPostWithHttpInfo(azSearchOptions, translations, acceptLanguage, expose);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint returns a configured max amount of results for search options in the request body.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="azSearchOptions">Search options for the request body.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SearchResult</returns>
+        public Agravity.Public.Client.ApiResponse<SearchResult> HttpGlobalSearchPostWithHttpInfo(AzSearchOptions azSearchOptions, bool? translations = default, string acceptLanguage = default, bool? expose = default, int operationIndex = 0)
+        {
+            // verify the required parameter 'azSearchOptions' is set
+            if (azSearchOptions == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'azSearchOptions' when calling PublicSearchManagementApi->HttpGlobalSearchPost");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            if (expose != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "expose", expose));
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            localVarRequestOptions.Data = azSearchOptions;
+
+            localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpGlobalSearchPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<SearchResult>("/search", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpGlobalSearchPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  This endpoint returns a configured max amount of results for search options in the request body.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="azSearchOptions">Search options for the request body.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SearchResult</returns>
+        public async System.Threading.Tasks.Task<SearchResult> HttpGlobalSearchPostAsync(AzSearchOptions azSearchOptions, bool? translations = default, string acceptLanguage = default, bool? expose = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = await HttpGlobalSearchPostWithHttpInfoAsync(azSearchOptions, translations, acceptLanguage, expose, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  This endpoint returns a configured max amount of results for search options in the request body.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="azSearchOptions">Search options for the request body.</param>
+        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="expose">This will expose the thumbnail asset blob incl. URL with SAS Token. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SearchResult)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchResult>> HttpGlobalSearchPostWithHttpInfoAsync(AzSearchOptions azSearchOptions, bool? translations = default, string acceptLanguage = default, bool? expose = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'azSearchOptions' is set
+            if (azSearchOptions == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'azSearchOptions' when calling PublicSearchManagementApi->HttpGlobalSearchPost");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (translations != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            if (expose != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "expose", expose));
+            }
+            if (acceptLanguage != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
+            }
+            localVarRequestOptions.Data = azSearchOptions;
+
+            localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpGlobalSearchPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SearchResult>("/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpGlobalSearchPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -56,7 +56,7 @@ namespace Agravity.Public.Model
         /// <summary>
         /// Gets or Sets Options
         /// </summary>
-        [DataMember(Name = "options", EmitDefaultValue = true)]
+        [DataMember(Name = "options", EmitDefaultValue = false)]
         public AzSearchOptions Options { get; set; }
 
         /// <summary>

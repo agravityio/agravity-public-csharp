@@ -160,8 +160,17 @@ if ($publish -eq "y") {
             $releaseNotes = "$releaseHeader`r`n`r`n- Just version upgrade to match backend`r`n`r`n"
 
             if ($changelog.Contains($changelogAnchor)) {
-                $escapedAnchor = [regex]::Escape($changelogAnchor)
-                $changelog = [regex]::Replace($changelog, $escapedAnchor, "$0`r`n`r`n$releaseNotes", 1)
+                $anchorWithSpacing = "$changelogAnchor`r`n`r`n"
+                $replacement = "$anchorWithSpacing$releaseNotes"
+
+                if ($changelog.Contains($anchorWithSpacing)) {
+                    $changelog = $changelog.Replace($anchorWithSpacing, $replacement)
+                }
+                else {
+                    $replacement = "$changelogAnchor`r`n`r`n$releaseNotes"
+                    $changelog = $changelog.Replace($changelogAnchor, $replacement)
+                }
+
                 Set-Content $changelogPath $changelog
             }
             else {

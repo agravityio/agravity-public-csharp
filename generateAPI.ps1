@@ -142,6 +142,34 @@ if ($publish -eq "y") {
     # publish nuget package
     dotnet nuget push .\out\Agravity.Public."$apiVersion".nupkg -s https://api.nuget.org/v3/index.json
 
+    $changelogPath = ".\changelog.md"
+    $changelogAnchor = "It will be upgraded when the Agravity Backend is upgraded and will have the same version."
+    $releaseDate = Get-Date -Format "yyyy-MM-dd"
+    $releaseHeader = "## AgravityAPI <a name=\"$apiVersion\"/> [$apiVersion](https://www.nuget.org/packages/Agravity.Public/$apiVersion) ($releaseDate)"
+
+    if (Test-Path $changelogPath) {
+        $changelog = Get-Content $changelogPath -Raw
+
+        if ($changelog -notmatch [regex]::Escape($releaseHeader)) {
+            $releaseNotes = "$releaseHeader`r`n`r`n- Just version upgrade to match backend`r`n`r`n"
+
+            if ($changelog.Contains($changelogAnchor)) {
+                $escapedAnchor = [regex]::Escape($changelogAnchor)
+                $changelog = [regex]::Replace($changelog, $escapedAnchor, "$0`r`n`r`n$releaseNotes", 1)
+                Set-Content $changelogPath $changelog
+            }
+            else {
+                Write-Host "Changelog anchor text not found. Skipping changelog update."
+            }
+        }
+        else {
+            Write-Host "Changelog entry for version $apiVersion already exists."
+        }
+    }
+    else {
+        Write-Host "changelog.md not found. Skipping changelog update."
+    }
+
     code.cmd .\changelog.md
 
     Write-Host "Press any key to finish."

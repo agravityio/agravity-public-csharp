@@ -296,7 +296,38 @@ if ($prepareRelease -eq "y") {
         }
 
         Write-Host "Release commit/tag prepared locally."
-        Write-Host "Next steps: git push origin main ; git push origin $apiVersion"
+
+        $currentBranch = git branch --show-current
+
+        if ([string]::IsNullOrWhiteSpace($currentBranch)) {
+            Write-Host "Current branch name could not be determined."
+            Write-Host ("Next steps: git push origin HEAD ; git push origin refs/tags/{0}" -f $apiVersion)
+        }
+        else {
+            Write-Host ("Push branch '{0}' and tag '{1}' to origin now? (y/n)" -f $currentBranch, $apiVersion)
+            $pushRelease = Read-Host
+
+            if ($pushRelease -eq "y") {
+                git push origin $currentBranch
+
+                if ($LASTEXITCODE -ne 0) {
+                    Write-Host "Branch push failed."
+                    exit 1
+                }
+
+                git push origin "refs/tags/$apiVersion"
+
+                if ($LASTEXITCODE -ne 0) {
+                    Write-Host "Tag push failed."
+                    exit 1
+                }
+
+                Write-Host "Release branch and tag pushed to origin."
+            }
+            else {
+                Write-Host ("Next steps: git push origin {0} ; git push origin refs/tags/{1}" -f $currentBranch, $apiVersion)
+            }
+        }
     }
 }
 else {

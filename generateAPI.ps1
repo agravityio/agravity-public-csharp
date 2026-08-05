@@ -21,7 +21,12 @@ if ($null -eq $env:OPENAPI_GENERATOR) {
     exit
 }
 
-$initialGitStatus = git status --porcelain 2>$null
+$releaseManagedPaths = @(
+    '.\src',
+    '.\docs',
+    '.\changelog.md'
+)
+$initialGitStatus = @(git status --porcelain -- $releaseManagedPaths 2>$null)
 $hadPreExistingChanges = $initialGitStatus.Count -gt 0
 
 # check REST API endpoint /version if backend is running, catch it and if it is not running: exit
@@ -246,7 +251,7 @@ if ($prepareRelease -eq "y") {
         Write-Host "Review the opened files and then run git add/git commit/git tag manually."
     }
     else {
-        git add --all
+        git add --all -- $releaseManagedPaths
         git diff --cached --quiet
         $hasStagedChanges = $LASTEXITCODE -ne 0
 

@@ -136,7 +136,7 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: Push packages to nuget.org
+      - name: Verify package discovery and Azure secret retrieval
         shell: pwsh
         run: |
           $packages = Get-ChildItem -Path '${{ env.PACKAGE_OUTPUT_DIRECTORY }}' -Filter *.nupkg | Where-Object { $_.Name -notlike '*.snupkg' }
@@ -145,6 +145,8 @@ jobs:
             throw 'No .nupkg files were found to publish.'
           }
 
-          foreach ($package in $packages) {
-            dotnet nuget push $package.FullName --source 'https://api.nuget.org/v3/index.json' --api-key '${{ steps.keyvault.outputs.nuget_api_key }}' --skip-duplicate
+          if ([string]::IsNullOrWhiteSpace('${{ steps.keyvault.outputs.nuget_api_key }}')) {
+            throw 'The NuGet API key was not retrieved from Azure Key Vault.'
           }
+
+          $packages | ForEach-Object { Write-Host "Ready to publish: $($_.Name)" }

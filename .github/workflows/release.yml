@@ -1,0 +1,150 @@
+name: Build and publish NuGet package
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - v*
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  BUILD_CONFIGURATION: Release
+  DOTNET_VERSION: 10.0.x
+  SOLUTION_FILE: Agravity.Public.sln
+  PACK_PROJECT: src/Agravity.Public/Agravity.Public.csproj
+  PACKAGE_OUTPUT_DIRECTORY: artifacts/packages
+  KEY_VAULT_NAME: releaseagravitykv
+  NUGET_API_KEY_SECRET_NAME: nuget-org-api-key
+
+jobs:
+  validate:
+    name: Build, test, and pack
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Resolve package version
+        id: version
+        shell: pwsh
+        run: |
+          if ('${{ github.ref_type }}' -eq 'tag' -and '${{ github.ref_name }}'.StartsWith('v')) {
+            $packageVersion = '${{ github.ref_name }}'.Substring(1)
+          }
+          else {
+            [xml]$projectFile = Get-Content '${{ env.PACK_PROJECT }}'
+            $packageVersion = ($projectFile.Project.PropertyGroup.Version | Where-Object { $_ } | Select-Object -First 1)
+          }
+
+          if ([string]::IsNullOrWhiteSpace($packageVersion)) {
+            throw 'Package version could not be resolved.'
+          }
+
+          "package_version=$packageVersion" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+      - name: Restore solution in locked mode
+        shell: pwsh
+        run: |
+          dotnet restore '${{ env.SOLUTION_FILE }}' --locked-mode /p:Version=${{ steps.version.outputs.package_version }} /p:ContinuousIntegrationBuild=true
+
+      - name: Build solution
+        shell: pwsh
+        run: |
+          dotnet build '${{ env.SOLUTION_FILE }}' --configuration '${{ env.BUILD_CONFIGURATION }}' --no-restore /p:Version=${{ steps.version.outputs.package_version }} /p:ContinuousIntegrationBuild=true
+
+      - name: Run tests
+        shell: pwsh
+        run: |
+          dotnet test '${{ env.SOLUTION_FILE }}' --configuration '${{ env.BUILD_CONFIGURATION }}' --no-build --logger trx --results-directory artifacts/test-results
+
+      - name: Pack NuGet package
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path '${{ env.PACKAGE_OUTPUT_DIRECTORY }}' -Force | Out-Null
+          dotnet pack '${{ env.PACK_PROJECT }}' --configuration '${{ env.BUILD_CONFIGURATION }}' --no-build --output '${{ env.PACKAGE_OUTPUT_DIRECTORY }}' /p:Version=${{ steps.version.outputs.package_version }} /p:ContinuousIntegrationBuild=true
+
+      - name: Upload package artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuget-packages
+          path: ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+          if-no-files-found: error
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: artifacts/test-results
+          if-no-files-found: ignore
+
+  publish:
+    name: Publish to NuGet
+    runs-on: windows-latest
+    needs: validate
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    environment: release
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Download package artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: nuget-packages
+          path: ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+
+      - name: Azure login with OIDC
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Read NuGet API key from Azure Key Vault
+        id: keyvault
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            nugetApiKey=$(az keyvault secret show --vault-name '${{ env.KEY_VAULT_NAME }}' --name '${{ env.NUGET_API_KEY_SECRET_NAME }}' --query value --output tsv)
+            if [ -z "$nugetApiKey" ]; then
+              echo 'NuGet API key secret is empty or missing.'
+              exit 1
+            fi
+
+            echo "::add-mask::$nugetApiKey"
+            echo "nuget_api_key=$nugetApiKey" >> "$GITHUB_OUTPUT"
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Push packages to nuget.org
+        shell: pwsh
+        run: |
+          $packages = Get-ChildItem -Path '${{ env.PACKAGE_OUTPUT_DIRECTORY }}' -Filter *.nupkg | Where-Object { $_.Name -notlike '*.snupkg' }
+
+          if (-not $packages) {
+            throw 'No .nupkg files were found to publish.'
+          }
+
+          foreach ($package in $packages) {
+            dotnet nuget push $package.FullName --source 'https://api.nuget.org/v3/index.json' --api-key '${{ steps.keyvault.outputs.nuget_api_key }}' --skip-duplicate
+          }

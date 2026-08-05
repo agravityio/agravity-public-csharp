@@ -1,0 +1,15 @@
+<Project>
+    <PropertyGroup>
+        <!-- Keep local and CI builds deterministic and reproducible. -->
+        <Deterministic>true</Deterministic>
+        <DeterministicSourcePaths>true</DeterministicSourcePaths>
+        <ContinuousIntegrationBuild Condition="'$(TF_BUILD)' == 'True' Or '$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        <RestoreLockedMode Condition="'$(ContinuousIntegrationBuild)' == 'true'">true</RestoreLockedMode>
+        <DebugType>portable</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+</Project>

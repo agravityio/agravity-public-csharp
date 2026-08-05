@@ -1,3 +1,8 @@
+# This script regenerates the SDK into the repository root.
+# The OpenAPI Generator rewrites both ./src and ./docs as generated output.
+# Do not place hand-written documentation under ./docs because it can be overwritten on the next generation run.
+# Keep manual repository documentation in a stable non-generated location such as the repository root.
+
 # check if $env:API_KEY is set, if not: exit
 if ($null -eq $env:AGRAVITY_OPEN_API_KEY) {
     Write-Host "Please set AGRAVITY_OPEN_API_KEY environment variable"
@@ -44,10 +49,13 @@ Write-Host "Generate API with apiVersion: $apiVersion"
 Write-Host "Press any key to continue ..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
-Write-Host "Delete folder .\src"
+Write-Host "Delete all generated folders (.\src, .\docs) and files (.\openapi.json, .\out\Agravity.Public.$apiVersion.nupkg) without error output"
 
 # delete folder .\src without error output
 Remove-Item -Path .\src -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item -Path .\docs -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item -Path .\openapi.json -Force -ErrorAction SilentlyContinue
+Remove-Item -Path ".\out\Agravity.Public.$apiVersion.nupkg" -Force -ErrorAction SilentlyContinue
 
 Write-Host "Calling public API"
 
@@ -65,6 +73,8 @@ if (!(Test-Path "openapi.json") -or (Get-Content "openapi.json" -Raw) -eq "") {
 #npm install @openapitools/openapi-generator-cli -g
 
 # generate API
+# The generator writes repository-level artifacts, including the generated ./docs folder.
+# Treat everything under ./docs as generated content.
 $params="packageName=Agravity.Public,library=restsharp,targetFramework=net8.0;net9.0;net10.0;netstandard2.0,packageVersion="+$apiVersion
 # Write-Host("Executing: openapi-generator generate -i https://api.agravity.com/v2/swagger.json -g csharp-netcore -o src -p "+$params);
 #npx @openapitools/openapi-generator-cli generate -i openapi.json -g csharp-netcore -o . --additional-properties=$params

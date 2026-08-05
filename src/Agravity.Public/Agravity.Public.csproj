@@ -31,7 +31,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageReleaseNotes>
 			The change log for this SDK is made available at
-			https://github.com/agravity-philipp/Agravity.PublicCsharp/blob/main/changelog.md
+			https://github.com/agravityio/agravity-public-csharp/blob/main/README.md
 			at the time of release.
 		</PackageReleaseNotes>
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>

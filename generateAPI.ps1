@@ -21,6 +21,8 @@ if ($null -eq $env:OPENAPI_GENERATOR) {
     exit
 }
 
+$initialGitStatus = git status --porcelain 2>$null
+$hadPreExistingChanges = $initialGitStatus.Count -gt 0
 
 # check REST API endpoint /version if backend is running, catch it and if it is not running: exit
 $version = (Invoke-RestMethod -Uri http://localhost:7072/api/version  -Headers @{"x-functions-key" = $env:AGRAVITY_OPEN_API_KEY} -Method Get -ContentType "application/json" -ErrorAction SilentlyContinue)
@@ -127,7 +129,7 @@ Copy-Item .\README.md .\src\Agravity.Public\README.md
 Start-Sleep -s 2
 
 # echo apiVersion
-Write-Host "Build and Publish with apiVersion: $apiVersion"
+Write-Host "Build and prepare release with apiVersion: $apiVersion"
 
 # build project with release
 dotnet build .\src\Agravity.Public\Agravity.Public.csproj -c Release
@@ -139,64 +141,147 @@ dotnet build .\src\Agravity.Public\Agravity.Public.csproj -c Release
 #create command 
 dotnet pack .\src\Agravity.Public\Agravity.Public.csproj -c Release -o .\out /p:Version=$apiVersion
 
-# Set API Key (once)
-# nuget setApiKey xyz
+$packagePath = ".\out\Agravity.Public.$apiVersion.nupkg"
 
-# prompt to publish
-Write-Host ("Publish package in version {0}? (y/n)" -f $apiVersion)
-$publish = Read-Host
+if (!(Test-Path $packagePath)) {
+    Write-Host "Package $packagePath not found."
+    exit 1
+}
 
-# check if publish
-if ($publish -eq "y") {
-    $packagePath = ".\out\Agravity.Public.$apiVersion.nupkg"
+$lastTag = git describe --tags --abbrev=0 2>$null
+$commitRangeLabel = if ([string]::IsNullOrWhiteSpace($lastTag)) { "repository start" } else { $lastTag }
+$commitLogRange = if ([string]::IsNullOrWhiteSpace($lastTag)) { "HEAD" } else { "$lastTag..HEAD" }
+$releaseNotesBullets = @(
+    git log $commitLogRange --no-merges --pretty=format:"- %s (%h)" 2>$null
+) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
 
-    if (!(Test-Path $packagePath)) {
-        Write-Host "Package $packagePath not found. Skipping publish."
-        exit 1
-    }
+if (-not $releaseNotesBullets) {
+    $releaseNotesBullets = @("- Just version upgrade to match backend")
+}
 
-    # publish nuget package
-    dotnet nuget push $packagePath -s https://api.nuget.org/v3/index.json
+$releaseNotesBulletBlock = [string]::Join("`r`n", $releaseNotesBullets)
 
-    $changelogPath = ".\changelog.md"
-    $changelogAnchor = "It will be upgraded when the Agravity Backend is upgraded and will have the same version."
-    $releaseDate = Get-Date -Format "yyyy-MM-dd"
-    $releaseHeader = '## AgravityAPI <a name="{0}"/> [{0}](https://www.nuget.org/packages/Agravity.Public/{0}) ({1})' -f $apiVersion, $releaseDate
+$changelogPath = ".\changelog.md"
+$changelogAnchor = "It will be upgraded when the Agravity Backend is upgraded and will have the same version."
+$releaseDate = Get-Date -Format "yyyy-MM-dd"
+$releaseHeader = '## AgravityAPI <a name="{0}"/> [{0}](https://www.nuget.org/packages/Agravity.Public/{0}) ({1})' -f $apiVersion, $releaseDate
 
-    if (Test-Path $changelogPath) {
-        $changelog = Get-Content $changelogPath -Raw
+if (Test-Path $changelogPath) {
+    $changelog = Get-Content $changelogPath -Raw
 
-        if ($changelog -notmatch [regex]::Escape($releaseHeader)) {
-            $releaseNotes = "$releaseHeader`r`n`r`n- Just version upgrade to match backend`r`n`r`n"
+    if ($changelog -notmatch [regex]::Escape($releaseHeader)) {
+        $releaseNotes = "$releaseHeader`r`n`r`n$releaseNotesBulletBlock`r`n`r`n"
 
-            if ($changelog.Contains($changelogAnchor)) {
-                $anchorWithSpacing = "$changelogAnchor`r`n`r`n"
-                $replacement = "$anchorWithSpacing$releaseNotes"
+        if ($changelog.Contains($changelogAnchor)) {
+            $anchorWithSpacing = "$changelogAnchor`r`n`r`n"
+            $replacement = "$anchorWithSpacing$releaseNotes"
 
-                if ($changelog.Contains($anchorWithSpacing)) {
-                    $changelog = $changelog.Replace($anchorWithSpacing, $replacement)
-                }
-                else {
-                    $replacement = "$changelogAnchor`r`n`r`n$releaseNotes"
-                    $changelog = $changelog.Replace($changelogAnchor, $replacement)
-                }
-
-                Set-Content $changelogPath $changelog
+            if ($changelog.Contains($anchorWithSpacing)) {
+                $changelog = $changelog.Replace($anchorWithSpacing, $replacement)
             }
             else {
-                Write-Host "Changelog anchor text not found. Skipping changelog update."
+                $replacement = "$changelogAnchor`r`n`r`n$releaseNotes"
+                $changelog = $changelog.Replace($changelogAnchor, $replacement)
             }
+
+            Set-Content $changelogPath $changelog
         }
         else {
-            Write-Host "Changelog entry for version $apiVersion already exists."
+            Write-Host "Changelog anchor text not found. Skipping changelog update."
         }
     }
     else {
-        Write-Host "changelog.md not found. Skipping changelog update."
+        Write-Host "Changelog entry for version $apiVersion already exists."
     }
-
-    code.cmd .\changelog.md
-
-    Write-Host "Press any key to finish."
-    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 }
+else {
+    Write-Host "changelog.md not found. Skipping changelog update."
+}
+
+$releaseNotesPath = ".\out\release-notes.$apiVersion.md"
+$releaseType = if ($apiVersion.Contains("-")) { "Preview" } else { "Stable" }
+$releaseNotesContent = @"
+# Agravity.Public $apiVersion
+
+## Summary
+$releaseNotesBulletBlock
+
+## Release metadata
+- Package version: $apiVersion
+- Release type: $releaseType
+- Git tag: $apiVersion
+- Changes since: $commitRangeLabel
+
+## Publish flow
+- Commit the generated changes to main.
+- Push the commit.
+- Push the git tag $apiVersion.
+- GitHub Actions publishes the package to NuGet.org.
+
+## Notes
+- Replace the summary bullets above before creating a GitHub release.
+"@
+Set-Content -Path $releaseNotesPath -Value $releaseNotesContent
+
+Write-Host "Package prepared: $packagePath"
+Write-Host "Publishing is handled by GitHub Actions after you commit and push a matching git tag."
+Write-Host ("Next release tag: {0}" -f $apiVersion)
+
+Write-Host ("Prepare pipeline release for version {0}? (y/n)" -f $apiVersion)
+$prepareRelease = Read-Host
+
+if (Test-Path $changelogPath) {
+    code.cmd .\changelog.md
+}
+
+if (Test-Path $releaseNotesPath) {
+    code.cmd $releaseNotesPath
+}
+
+if ($prepareRelease -eq "y") {
+    if ($hadPreExistingChanges) {
+        Write-Host "Repository had local changes before generation. Skipping automatic commit and tag creation."
+        Write-Host "Review the opened files and then run git add/git commit/git tag manually."
+    }
+    else {
+        git add --all
+        git diff --cached --quiet
+        $hasStagedChanges = $LASTEXITCODE -ne 0
+
+        if ($hasStagedChanges) {
+            git commit -m "Prepare release $apiVersion"
+
+            if ($LASTEXITCODE -ne 0) {
+                Write-Host "Commit creation failed. Review the repository state before tagging."
+                exit 1
+            }
+        }
+        else {
+            Write-Host "No staged changes detected. Skipping commit creation."
+        }
+
+        git rev-parse --verify --quiet "refs/tags/$apiVersion" | Out-Null
+
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "Tag $apiVersion already exists. Skipping tag creation."
+        }
+        else {
+            git tag -a $apiVersion -m "Agravity.Public $apiVersion"
+
+            if ($LASTEXITCODE -ne 0) {
+                Write-Host "Tag creation failed."
+                exit 1
+            }
+        }
+
+        Write-Host "Release commit/tag prepared locally."
+        Write-Host "Next steps: git push origin main ; git push origin $apiVersion"
+    }
+}
+else {
+    Write-Host "Skipping commit and tag creation."
+    Write-Host "When you are ready, push a commit and the tag $apiVersion to trigger the publish workflow."
+}
+
+Write-Host "Press any key to finish."
+$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")

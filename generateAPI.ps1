@@ -156,9 +156,11 @@ if (!(Test-Path $packagePath)) {
     exit 1
 }
 
-$lastTag = git describe --tags --abbrev=0 2>$null
-$commitRangeLabel = if ([string]::IsNullOrWhiteSpace($lastTag)) { "repository start" } else { $lastTag }
-$commitLogRange = if ([string]::IsNullOrWhiteSpace($lastTag)) { "HEAD" } else { "$lastTag..HEAD" }
+$lastStableTag = @(
+    git tag --list --sort=-v:refname 2>$null
+) | Where-Object { $_ -match '^\d+\.\d+\.\d+$' } | Select-Object -First 1
+$commitRangeLabel = if ([string]::IsNullOrWhiteSpace($lastStableTag)) { "repository start" } else { $lastStableTag }
+$commitLogRange = if ([string]::IsNullOrWhiteSpace($lastStableTag)) { "HEAD" } else { "$lastStableTag..HEAD" }
 $releaseNotesBullets = @(
     git log $commitLogRange --no-merges --pretty=format:"- %s (%h)" 2>$null
 ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
@@ -173,38 +175,6 @@ $changelogPath = ".\changelog.md"
 $changelogAnchor = "It will be upgraded when the Agravity Backend is upgraded and will have the same version."
 $releaseDate = Get-Date -Format "yyyy-MM-dd"
 $releaseHeader = '## AgravityAPI <a name="{0}"/> [{0}](https://www.nuget.org/packages/Agravity.Public/{0}) ({1})' -f $apiVersion, $releaseDate
-
-if (Test-Path $changelogPath) {
-    $changelog = Get-Content $changelogPath -Raw
-
-    if ($changelog -notmatch [regex]::Escape($releaseHeader)) {
-        $releaseNotes = "$releaseHeader`r`n`r`n$releaseNotesBulletBlock`r`n`r`n"
-
-        if ($changelog.Contains($changelogAnchor)) {
-            $anchorWithSpacing = "$changelogAnchor`r`n`r`n"
-            $replacement = "$anchorWithSpacing$releaseNotes"
-
-            if ($changelog.Contains($anchorWithSpacing)) {
-                $changelog = $changelog.Replace($anchorWithSpacing, $replacement)
-            }
-            else {
-                $replacement = "$changelogAnchor`r`n`r`n$releaseNotes"
-                $changelog = $changelog.Replace($changelogAnchor, $replacement)
-            }
-
-            Set-Content $changelogPath $changelog
-        }
-        else {
-            Write-Host "Changelog anchor text not found. Skipping changelog update."
-        }
-    }
-    else {
-        Write-Host "Changelog entry for version $apiVersion already exists."
-    }
-}
-else {
-    Write-Host "changelog.md not found. Skipping changelog update."
-}
 
 $releaseNotesPath = ".\out\release-notes.$apiVersion.md"
 $releaseType = if ($apiVersion.Contains("-")) { "Preview" } else { "Stable" }
@@ -235,18 +205,61 @@ Write-Host "Package prepared: $packagePath"
 Write-Host "Publishing is handled by GitHub Actions after you commit and push a matching git tag."
 Write-Host ("Next release tag: {0}" -f $apiVersion)
 
-if (Test-Path $changelogPath) {
-    code.cmd .\changelog.md
-}
-
 if (Test-Path $releaseNotesPath) {
     code.cmd $releaseNotesPath
 }
 
-Write-Host ("Create local release commit and tag for version {0} after your review? (y/n)" -f $apiVersion)
+Write-Host ("Apply the reviewed release notes summary to changelog.md and create the local release commit/tag for version {0}? (y/n)" -f $apiVersion)
 $prepareRelease = Read-Host
 
 if ($prepareRelease -eq "y") {
+    $reviewedReleaseNotes = Get-Content $releaseNotesPath -Raw
+    $summaryMatch = [regex]::Match($reviewedReleaseNotes, '(?s)## Summary\r?\n(?<summary>.*?)\r?\n## Release metadata')
+
+    if (-not $summaryMatch.Success) {
+        Write-Host "The release notes summary section could not be read. Ensure the file still contains '## Summary' and '## Release metadata'."
+        exit 1
+    }
+
+    $reviewedSummary = $summaryMatch.Groups['summary'].Value.Trim()
+
+    if ([string]::IsNullOrWhiteSpace($reviewedSummary)) {
+        Write-Host "The release notes summary section is empty. Update the release notes before continuing."
+        exit 1
+    }
+
+    if (Test-Path $changelogPath) {
+        $changelog = Get-Content $changelogPath -Raw
+
+        if ($changelog -notmatch [regex]::Escape($releaseHeader)) {
+            $releaseNotes = "$releaseHeader`r`n`r`n$reviewedSummary`r`n`r`n"
+
+            if ($changelog.Contains($changelogAnchor)) {
+                $anchorWithSpacing = "$changelogAnchor`r`n`r`n"
+                $replacement = "$anchorWithSpacing$releaseNotes"
+
+                if ($changelog.Contains($anchorWithSpacing)) {
+                    $changelog = $changelog.Replace($anchorWithSpacing, $replacement)
+                }
+                else {
+                    $replacement = "$changelogAnchor`r`n`r`n$releaseNotes"
+                    $changelog = $changelog.Replace($changelogAnchor, $replacement)
+                }
+
+                Set-Content $changelogPath $changelog
+            }
+            else {
+                Write-Host "Changelog anchor text not found. Skipping changelog update."
+            }
+        }
+        else {
+            Write-Host "Changelog entry for version $apiVersion already exists."
+        }
+    }
+    else {
+        Write-Host "changelog.md not found. Skipping changelog update."
+    }
+
     if ($hadPreExistingChanges) {
         Write-Host "Repository had local changes before generation. Skipping automatic commit and tag creation."
         Write-Host "Review the opened files and then run git add/git commit/git tag manually."

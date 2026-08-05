@@ -83,6 +83,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Orfilterable'
+        /// </summary>
+        [Fact]
+        public void OrfilterableTest()
+        {
+            // TODO unit test for the property 'Orfilterable'
+        }
+
+        /// <summary>
         /// Test the property 'Labels'
         /// </summary>
         [Fact]

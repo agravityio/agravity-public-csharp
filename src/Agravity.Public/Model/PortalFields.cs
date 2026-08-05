@@ -38,14 +38,16 @@ namespace Agravity.Public.Model
         /// <param name="name">name.</param>
         /// <param name="detailOrder">detailOrder.</param>
         /// <param name="facetOrder">facetOrder.</param>
+        /// <param name="orfilterable">orfilterable.</param>
         /// <param name="labels">labels.</param>
         /// <param name="userContext">userContext.</param>
         /// <param name="format">format.</param>
-        public PortalFields(string name = default, int? detailOrder = default, int? facetOrder = default, Dictionary<string, string> labels = default, PortalUserContext userContext = default, string format = default)
+        public PortalFields(string name = default, int? detailOrder = default, int? facetOrder = default, bool? orfilterable = default, Dictionary<string, string> labels = default, PortalUserContext userContext = default, string format = default)
         {
             this.Name = name;
             this.DetailOrder = detailOrder;
             this.FacetOrder = facetOrder;
+            this.Orfilterable = orfilterable;
             this.Labels = labels;
             this.UserContext = userContext;
             this.Format = format;
@@ -68,6 +70,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "facet_order", EmitDefaultValue = true)]
         public int? FacetOrder { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Orfilterable
+        /// </summary>
+        [DataMember(Name = "orfilterable", EmitDefaultValue = true)]
+        public bool? Orfilterable { get; set; }
 
         /// <summary>
         /// Gets or Sets Labels
@@ -98,6 +106,7 @@ namespace Agravity.Public.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  DetailOrder: ").Append(DetailOrder).Append("\n");
             sb.Append("  FacetOrder: ").Append(FacetOrder).Append("\n");
+            sb.Append("  Orfilterable: ").Append(Orfilterable).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");
             sb.Append("  UserContext: ").Append(UserContext).Append("\n");
             sb.Append("  Format: ").Append(Format).Append("\n");

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **DetailOrder** | **int?** |  | [optional] 
 **FacetOrder** | **int?** |  | [optional] 
+**Orfilterable** | **bool?** |  | [optional] 
 **Labels** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **UserContext** | [**PortalUserContext**](PortalUserContext.md) |  | [optional] 
 **Format** | **string** |  | [optional] 

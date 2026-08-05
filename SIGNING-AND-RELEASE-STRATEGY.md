@@ -12,8 +12,8 @@ The current codebase does not show any technical dependency on a strong name ide
 
 The recommended release model is:
 
-1. Build and pack in Azure DevOps only.
-2. Authenticate Azure access through workload identity federation (OIDC).
+1. Build and pack in GitHub Actions only.
+2. Authenticate Azure access through GitHub OIDC workload identity federation.
 3. Store the `nuget.org` API key only in Azure Key Vault.
 4. Publish packages automatically from signed Git tags such as `v11.0.5`.
 5. Keep developer machines free of signing keys and release secrets.
@@ -93,32 +93,34 @@ Recommendation for this repository:
 
 ## Recommended Release Architecture
 
-### Azure DevOps
+### GitHub Actions
 
-- Use one YAML pipeline for validation, packing, and publishing.
+- Use one workflow for validation, packing, and publishing.
 - Run validation on `main` and on pull requests.
 - Publish only from version tags that match `v*`.
 
 ### Azure OIDC Authentication
 
-- Create an Azure Resource Manager service connection that uses workload identity federation.
-- Grant that service connection only the Azure permissions required to read the relevant Key Vault secret.
-- Do not use client secrets or certificates for Azure authentication in the pipeline.
+- Create a Microsoft Entra application or user-assigned identity for GitHub Actions workload identity federation.
+- Add a federated credential that is scoped to this repository and the GitHub `release` environment subject.
+- Grant that identity only the Azure permissions required to read the relevant Key Vault secret.
+- Do not use client secrets or certificates for Azure authentication in the workflow.
 
 ### Azure Key Vault
 
 - Store the `nuget.org` API key as a secret named `nuget-org-api-key`.
-- Restrict Key Vault access to the Azure DevOps federated identity.
+- Restrict Key Vault access to the GitHub federated identity.
 - Keep purge protection enabled.
 
 ### Publishing Flow
 
 1. A maintainer creates a Git tag such as `v11.0.5`.
-2. Azure DevOps restores dependencies in locked mode.
-3. Azure DevOps builds and tests the solution with `ContinuousIntegrationBuild=true`.
-4. Azure DevOps packs the NuGet package with the tag version.
-5. Azure DevOps reads the `nuget.org` API key from Key Vault.
-6. Azure DevOps pushes the generated `.nupkg` file to `nuget.org`.
+2. GitHub Actions restores dependencies in locked mode.
+3. GitHub Actions builds and tests the solution with `ContinuousIntegrationBuild=true`.
+4. GitHub Actions packs the NuGet package with the tag version.
+5. GitHub Actions authenticates to Azure through OIDC.
+6. GitHub Actions reads the `nuget.org` API key from Key Vault.
+7. GitHub Actions pushes the generated `.nupkg` file to `nuget.org`.
 
 ## Reproducibility and Supply-Chain Controls
 
@@ -128,7 +130,7 @@ This repository now uses the following controls:
 - Deterministic source paths.
 - Source Link metadata for repository provenance.
 - Locked package restore in CI.
-- Secrets isolated to Azure DevOps and Azure Key Vault.
+- Secrets isolated to GitHub Actions runtime and Azure Key Vault.
 - No strong name key, PFX, or SNK dependency in the solution projects.
 
 ## Why a Code-Signing Certificate Is Not Worth It Here
@@ -151,13 +153,25 @@ Add a certificate only when one of these becomes true:
 
 ## Final Recommendation
 
+## GitHub Setup Steps
+
+1. Create the GitHub environment `release`.
+2. Create the GitHub repository variables `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, and `AZURE_SUBSCRIPTION_ID`.
+3. Create a Microsoft Entra application or user-assigned managed identity for this repository.
+4. Add a federated credential for the GitHub subject `repo:OWNER/REPOSITORY:environment:release`.
+5. Grant the identity permission to read secrets from the target Key Vault.
+6. Store the `nuget.org` API key in Azure Key Vault as `nuget-org-api-key`.
+7. Push the workflow file under `.github/workflows/release.yml`.
+8. Run the workflow on a pull request or `main` push to validate restore, build, test, and pack.
+9. Create a tag such as `v11.0.5` to publish the package.
+
 Adopt the following architecture decision:
 
 - No Strong Name Signing.
 - No code-signing certificate.
 - No author package signing for now.
-- Azure DevOps YAML pipeline as the only release path.
-- Azure workload identity federation for Azure authentication.
+- GitHub Actions workflow as the only release path.
+- GitHub OIDC workload identity federation for Azure authentication.
 - Azure Key Vault for the `nuget.org` API key.
 - Deterministic and locked CI builds.
 

@@ -47,6 +47,42 @@ function Get-LockedFiles {
     return $lockedFiles
 }
 
+function Restore-VersionMetadataFromHead {
+    param(
+        [string[]]$Paths
+    )
+
+    $metadataLinePatterns = @(
+        '^\s*\* The version of the OpenAPI document: .*$'
+    )
+
+    $candidateFiles = @(
+        git diff --name-only -- $Paths 2>$null
+    ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+
+    foreach ($file in $candidateFiles) {
+        $headLines = @(git show "HEAD:$file" 2>$null)
+
+        if ($LASTEXITCODE -ne 0 -or -not $headLines) {
+            continue
+        }
+
+        $currentLines = Get-Content $file
+
+        foreach ($pattern in $metadataLinePatterns) {
+            $headLine = $headLines | Where-Object { $_ -match $pattern } | Select-Object -First 1
+
+            if ($null -ne $headLine) {
+                $currentLines = $currentLines | ForEach-Object {
+                    if ($_ -match $pattern) { $headLine } else { $_ }
+                }
+            }
+        }
+
+        Set-Content $file $currentLines
+    }
+}
+
 $releaseManagedPaths = @(
     '.\src',
     '.\docs',
@@ -177,6 +213,8 @@ $csproj | Set-Content .\src\Agravity.Public\Agravity.Public.csproj
 
 # copy README.md from root to src
 Copy-Item .\README.md .\src\Agravity.Public\README.md
+
+Restore-VersionMetadataFromHead -Paths @('.\src')
 
 # wait 2 seconds
 Start-Sleep -s 2

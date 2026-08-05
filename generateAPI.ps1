@@ -21,6 +21,32 @@ if ($null -eq $env:OPENAPI_GENERATOR) {
     exit
 }
 
+function Get-LockedFiles {
+    param(
+        [string[]]$Paths
+    )
+
+    $lockedFiles = @()
+
+    foreach ($path in $Paths) {
+        if (!(Test-Path $path)) {
+            continue
+        }
+
+        Get-ChildItem -Path $path -Recurse -File -ErrorAction SilentlyContinue | ForEach-Object {
+            try {
+                $fileStream = [System.IO.File]::Open($_.FullName, [System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
+                $fileStream.Close()
+            }
+            catch [System.IO.IOException] {
+                $lockedFiles += $_.FullName
+            }
+        }
+    }
+
+    return $lockedFiles
+}
+
 $releaseManagedPaths = @(
     '.\src',
     '.\docs',
@@ -59,6 +85,21 @@ $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
 Write-Host "Delete all generated folders (.\src, .\docs) and files (.\openapi.json, .\out\Agravity.Public.$apiVersion.nupkg) without error output"
 
+$lockedGeneratedFiles = Get-LockedFiles -Paths @('.\src', '.\docs')
+
+if ($lockedGeneratedFiles.Count -gt 0) {
+    Write-Host "The generated folders contain locked files. Close Visual Studio/VS Code design-time builds or any process using the SDK before running generateAPI.ps1 again."
+    $lockedGeneratedFiles | Select-Object -First 10 | ForEach-Object { Write-Host "Locked: $_" }
+
+    if ($lockedGeneratedFiles.Count -gt 10) {
+        Write-Host ("... and {0} more locked files." -f ($lockedGeneratedFiles.Count - 10))
+    }
+
+    Write-Host "Press any key to continue ..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+    exit 1
+}
+
 # delete folder .\src without error output
 Remove-Item -Path .\src -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item -Path .\docs -Recurse -Force -ErrorAction SilentlyContinue
@@ -93,18 +134,22 @@ Remove-Item -Path .\openapi.json -Force
 
 #change directory to src
 Set-Location .\src
+$generatedSourceFiles = Get-ChildItem -Recurse -File | Where-Object {
+    $_.FullName -notmatch '\\(bin|obj)\\'
+}
+
 # replace all "Dictionary>" with "Dictionary<string, object>>"
-Get-ChildItem -Recurse -File | ForEach-Object { (Get-Content $_.FullName) -replace "Dictionary>", "Dictionary<string, object>>" | Set-Content $_.FullName }
+$generatedSourceFiles | ForEach-Object { (Get-Content $_.FullName) -replace "Dictionary>", "Dictionary<string, object>>" | Set-Content $_.FullName }
 
 Start-Sleep -s 2
 
 # replace all "Dictionary<string, Object>" with "Dictionary<string, object>"
-Get-ChildItem -Recurse -File | ForEach-Object { (Get-Content $_.FullName) -replace "Dictionary<string, Object>", "Dictionary<string, object>" | Set-Content $_.FullName }
+$generatedSourceFiles | ForEach-Object { (Get-Content $_.FullName) -replace "Dictionary<string, Object>", "Dictionary<string, object>" | Set-Content $_.FullName }
 
 Start-Sleep -s 2
 
 #replace all "Dictionary&gt;" with "Dictionary&lt;string, object&gt;&gt;"
-Get-ChildItem -Recurse -File | ForEach-Object { (Get-Content $_.FullName) -replace "Dictionary&gt;", "Dictionary&lt;string, object&gt;&gt;" | Set-Content $_.FullName }
+$generatedSourceFiles | ForEach-Object { (Get-Content $_.FullName) -replace "Dictionary&gt;", "Dictionary&lt;string, object&gt;&gt;" | Set-Content $_.FullName }
 
 # go one directory up
 Set-Location ..

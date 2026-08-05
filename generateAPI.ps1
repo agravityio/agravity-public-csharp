@@ -24,7 +24,8 @@ if ($null -eq $env:OPENAPI_GENERATOR) {
 $releaseManagedPaths = @(
     '.\src',
     '.\docs',
-    '.\changelog.md'
+    '.\changelog.md',
+    '.\README.md'
 )
 $initialGitStatus = @(git status --porcelain -- $releaseManagedPaths 2>$null)
 $hadPreExistingChanges = $initialGitStatus.Count -gt 0
@@ -234,9 +235,6 @@ Write-Host "Package prepared: $packagePath"
 Write-Host "Publishing is handled by GitHub Actions after you commit and push a matching git tag."
 Write-Host ("Next release tag: {0}" -f $apiVersion)
 
-Write-Host ("Prepare pipeline release for version {0}? (y/n)" -f $apiVersion)
-$prepareRelease = Read-Host
-
 if (Test-Path $changelogPath) {
     code.cmd .\changelog.md
 }
@@ -244,6 +242,9 @@ if (Test-Path $changelogPath) {
 if (Test-Path $releaseNotesPath) {
     code.cmd $releaseNotesPath
 }
+
+Write-Host ("Create local release commit and tag for version {0} after your review? (y/n)" -f $apiVersion)
+$prepareRelease = Read-Host
 
 if ($prepareRelease -eq "y") {
     if ($hadPreExistingChanges) {

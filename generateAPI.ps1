@@ -86,6 +86,7 @@ function Restore-VersionMetadataFromHead {
 $releaseManagedPaths = @(
     '.\src',
     '.\docs',
+    '.\api\openapi.yaml',
     '.\changelog.md',
     '.\README.md'
 )

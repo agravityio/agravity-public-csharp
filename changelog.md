@@ -8,6 +8,11 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="11.1.0-1757.2"/> [11.1.0-1757.2](https://www.nuget.org/packages/Agravity.Public/11.1.0-1757.2) (2026-08-10)
+
+- #1757 Add "OR-Filtering" property to Portal Field (b71abcfe)
+- #1758 Add POST /search - This endpoint returns a configured max amount of results for search options in the request body. (f1cf147d)
+
 ## AgravityAPI <a name="11.1.0-1757.1"/> [11.1.0-1757.1](https://www.nuget.org/packages/Agravity.Public/11.1.0-1757.1) (2026-08-05)
 
 - #1757 Add "OR-Filtering" property to Portal Field (b71abcfe)
@@ -1076,5 +1081,6 @@ Below is a list of any know issues affecting the [recommended minimum version](#
 
 | Issue | Impact | Mitigation | Tracking link |
 | ----- | ------ | ---------- | ------------- |
+
 
 

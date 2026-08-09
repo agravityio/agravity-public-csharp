@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a id="httpgetalluserdefinedlists"></a>
 # **HttpGetAllUserDefinedLists**
-> List&lt;CollectionUDL&gt; HttpGetAllUserDefinedLists (bool? translations = null, string acceptLanguage = null)
+> List&lt;CollectionUDL&gt; HttpGetAllUserDefinedLists (bool? translations = null, string acceptLanguage = null, string portalId = null, string collIds = null)
 
 
 
@@ -42,10 +42,12 @@ namespace Example
             var apiInstance = new PublicHelperToolsApi(config);
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
             var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
+            var portalId = "portalId_example";  // string | A portal ID ignores permissions but the param coll_ids. (optional) 
+            var collIds = "collIds_example";  // string | A comma separated list of parent IDs of UDLs which should be fetched. (optional) 
 
             try
             {
-                List<CollectionUDL> result = apiInstance.HttpGetAllUserDefinedLists(translations, acceptLanguage);
+                List<CollectionUDL> result = apiInstance.HttpGetAllUserDefinedLists(translations, acceptLanguage, portalId, collIds);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -65,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<CollectionUDL>> response = apiInstance.HttpGetAllUserDefinedListsWithHttpInfo(translations, acceptLanguage);
+    ApiResponse<List<CollectionUDL>> response = apiInstance.HttpGetAllUserDefinedListsWithHttpInfo(translations, acceptLanguage, portalId, collIds);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,6 +86,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 | **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
+| **portalId** | **string** | A portal ID ignores permissions but the param coll_ids. | [optional]  |
+| **collIds** | **string** | A comma separated list of parent IDs of UDLs which should be fetched. | [optional]  |
 
 ### Return type
 
@@ -102,6 +106,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **400** | Portal use-case only valid with UDL collection IDs. (Code: 8cc1f14b-887d-4c0f-8a74-c5c479ee27c4) |  -  |
 | **200** | A list of all user defined list entries. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |

@@ -36,9 +36,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="portalId">A portal ID ignores permissions but the param coll_ids. (optional)</param>
+        /// <param name="collIds">A comma separated list of parent IDs of UDLs which should be fetched. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CollectionUDL&gt;</returns>
-        List<CollectionUDL> HttpGetAllUserDefinedLists(bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
+        List<CollectionUDL> HttpGetAllUserDefinedLists(bool? translations = default, string acceptLanguage = default, string portalId = default, string collIds = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -49,9 +51,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="portalId">A portal ID ignores permissions but the param coll_ids. (optional)</param>
+        /// <param name="collIds">A comma separated list of parent IDs of UDLs which should be fetched. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CollectionUDL&gt;</returns>
-        ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo(bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
+        ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo(bool? translations = default, string acceptLanguage = default, string portalId = default, string collIds = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -160,10 +164,12 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="portalId">A portal ID ignores permissions but the param coll_ids. (optional)</param>
+        /// <param name="collIds">A comma separated list of parent IDs of UDLs which should be fetched. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CollectionUDL&gt;</returns>
-        System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync(bool? translations = default, string acceptLanguage = default, string portalId = default, string collIds = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -174,10 +180,12 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="portalId">A portal ID ignores permissions but the param coll_ids. (optional)</param>
+        /// <param name="collIds">A comma separated list of parent IDs of UDLs which should be fetched. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CollectionUDL&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CollectionUDL>>> HttpGetAllUserDefinedListsWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<CollectionUDL>>> HttpGetAllUserDefinedListsWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, string portalId = default, string collIds = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -402,11 +410,13 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="portalId">A portal ID ignores permissions but the param coll_ids. (optional)</param>
+        /// <param name="collIds">A comma separated list of parent IDs of UDLs which should be fetched. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CollectionUDL&gt;</returns>
-        public List<CollectionUDL> HttpGetAllUserDefinedLists(bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
+        public List<CollectionUDL> HttpGetAllUserDefinedLists(bool? translations = default, string acceptLanguage = default, string portalId = default, string collIds = default, int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<List<CollectionUDL>> localVarResponse = HttpGetAllUserDefinedListsWithHttpInfo(translations, acceptLanguage);
+            Agravity.Public.Client.ApiResponse<List<CollectionUDL>> localVarResponse = HttpGetAllUserDefinedListsWithHttpInfo(translations, acceptLanguage, portalId, collIds);
             return localVarResponse.Data;
         }
 
@@ -416,9 +426,11 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="portalId">A portal ID ignores permissions but the param coll_ids. (optional)</param>
+        /// <param name="collIds">A comma separated list of parent IDs of UDLs which should be fetched. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CollectionUDL&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo(bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<CollectionUDL>> HttpGetAllUserDefinedListsWithHttpInfo(bool? translations = default, string acceptLanguage = default, string portalId = default, string collIds = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -446,6 +458,14 @@ namespace Agravity.Public.Api
             if (translations != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+            if (collIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "coll_ids", collIds));
             }
             if (acceptLanguage != null)
             {
@@ -481,12 +501,14 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="portalId">A portal ID ignores permissions but the param coll_ids. (optional)</param>
+        /// <param name="collIds">A comma separated list of parent IDs of UDLs which should be fetched. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CollectionUDL&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<CollectionUDL>> HttpGetAllUserDefinedListsAsync(bool? translations = default, string acceptLanguage = default, string portalId = default, string collIds = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            Agravity.Public.Client.ApiResponse<List<CollectionUDL>> localVarResponse = await HttpGetAllUserDefinedListsWithHttpInfoAsync(translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<List<CollectionUDL>> localVarResponse = await HttpGetAllUserDefinedListsWithHttpInfoAsync(translations, acceptLanguage, portalId, collIds, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -496,10 +518,12 @@ namespace Agravity.Public.Api
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="portalId">A portal ID ignores permissions but the param coll_ids. (optional)</param>
+        /// <param name="collIds">A comma separated list of parent IDs of UDLs which should be fetched. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CollectionUDL&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollectionUDL>>> HttpGetAllUserDefinedListsWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollectionUDL>>> HttpGetAllUserDefinedListsWithHttpInfoAsync(bool? translations = default, string acceptLanguage = default, string portalId = default, string collIds = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -527,6 +551,14 @@ namespace Agravity.Public.Api
             if (translations != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
+            }
+            if (portalId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
+            }
+            if (collIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "coll_ids", collIds));
             }
             if (acceptLanguage != null)
             {

@@ -102,7 +102,7 @@ info:
     >support@agravity.io</a> or visit <a href=\"https://agravity.io\">https://agravity.io</a>.</p><br/><p>Copyright\
     \ © Agravity GmbH 2026. All Rights Reserved</p>"
   title: Agravity OpenAPI Documentation - Public Functions
-  version: 11.1.0-1757.1
+  version: 11.1.0-1757.2
 servers:
 - url: http://localhost:7072/api
 paths:
@@ -3931,7 +3931,31 @@ paths:
         schema:
           type: string
         style: simple
+      - description: A portal ID ignores permissions but the param coll_ids.
+        explode: true
+        in: query
+        name: portal_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: A comma separated list of parent IDs of UDLs which should be
+          fetched.
+        explode: true
+        in: query
+        name: coll_ids
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agravityErrorResponse"
+          description: "Portal use-case only valid with UDL collection IDs. (Code:\
+            \ 8cc1f14b-887d-4c0f-8a74-c5c479ee27c4)"
         "200":
           content:
             application/json:

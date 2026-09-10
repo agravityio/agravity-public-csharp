@@ -83,6 +83,63 @@ function Restore-VersionMetadataFromHead {
     }
 }
 
+function Get-ReleaseNotesBullets {
+    param(
+        [string]$CommitLogRange
+    )
+
+    $entrySeparator = "__AGRAVITY_RELEASE_NOTES_ENTRY__"
+    $fieldSeparator = "__AGRAVITY_RELEASE_NOTES_FIELD__"
+    $rawEntries = @(
+        git log $CommitLogRange --no-merges --pretty=format:"%s$fieldSeparator%b$fieldSeparator$entrySeparator" 2>$null
+    )
+
+    $rawContent = [string]::Join("`n", $rawEntries)
+
+    if ([string]::IsNullOrWhiteSpace($rawContent)) {
+        return @()
+    }
+
+    $notes = New-Object System.Collections.Generic.List[string]
+    $entries = $rawContent -split [regex]::Escape($entrySeparator)
+
+    foreach ($entry in $entries) {
+        $trimmedEntry = $entry.Trim()
+
+        if ([string]::IsNullOrWhiteSpace($trimmedEntry)) {
+            continue
+        }
+
+        $parts = $trimmedEntry -split [regex]::Escape($fieldSeparator), 3
+        $subject = $parts[0].Trim()
+
+        if ([string]::IsNullOrWhiteSpace($subject)) {
+            continue
+        }
+
+        $notes.Add("- $subject")
+
+        if ($parts.Count -lt 2) {
+            continue
+        }
+
+        $bodyLines = $parts[1].Trim() -split "`r?`n"
+
+        foreach ($bodyLine in $bodyLines) {
+            $trimmedBodyLine = $bodyLine.Trim()
+
+            if ([string]::IsNullOrWhiteSpace($trimmedBodyLine)) {
+                continue
+            }
+
+            $trimmedBodyLine = $trimmedBodyLine -replace '^[\-*]\s*', ''
+            $notes.Add("  - $trimmedBodyLine")
+        }
+    }
+
+    return $notes.ToArray()
+}
+
 $releaseManagedPaths = @(
     '.\src',
     '.\docs',
@@ -245,9 +302,7 @@ $lastStableTag = @(
 ) | Where-Object { $_ -match '^\d+\.\d+\.\d+$' } | Select-Object -First 1
 $commitRangeLabel = if ([string]::IsNullOrWhiteSpace($lastStableTag)) { "repository start" } else { $lastStableTag }
 $commitLogRange = if ([string]::IsNullOrWhiteSpace($lastStableTag)) { "HEAD" } else { "$lastStableTag..HEAD" }
-$releaseNotesBullets = @(
-    git log $commitLogRange --no-merges --pretty=format:"- %s (%h)" 2>$null
-) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+$releaseNotesBullets = Get-ReleaseNotesBullets -CommitLogRange $commitLogRange
 
 if (-not $releaseNotesBullets) {
     $releaseNotesBullets = @("- Just version upgrade to match backend")

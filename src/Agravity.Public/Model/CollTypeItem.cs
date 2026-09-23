@@ -40,8 +40,8 @@ namespace Agravity.Public.Model
         /// <param name="name">name.</param>
         /// <param name="itemType">itemType.</param>
         /// <param name="format">format.</param>
-        /// <param name="label">label.</param>
         /// <param name="defaultValue">defaultValue.</param>
+        /// <param name="refId">refId.</param>
         /// <param name="mandatory">mandatory.</param>
         /// <param name="searchable">searchable.</param>
         /// <param name="onlyasset">onlyasset.</param>
@@ -50,6 +50,8 @@ namespace Agravity.Public.Model
         /// <param name="group">group.</param>
         /// <param name="order">order.</param>
         /// <param name="translations">translations.</param>
+        /// <param name="description">description.</param>
+        /// <param name="addProperties">addProperties.</param>
         /// <param name="status">status.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="createdBy">createdBy.</param>
@@ -57,15 +59,15 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public CollTypeItem(string id = default, string entityType = default, string name = default, string itemType = default, string format = default, string label = default, Object defaultValue = default, bool? mandatory = default, bool? searchable = default, bool? onlyasset = default, bool? multi = default, string md5 = default, string group = default, int? order = default, Dictionary<string, Dictionary<string, object>> translations = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
+        public CollTypeItem(string id = default, string entityType = default, string name = default, string itemType = default, string format = default, Object defaultValue = default, string refId = default, bool? mandatory = default, bool? searchable = default, bool? onlyasset = default, bool? multi = default, string md5 = default, string group = default, int? order = default, Dictionary<string, Dictionary<string, object>> translations = default, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
         {
             this.Id = id;
             this.EntityType = entityType;
             this.Name = name;
             this.ItemType = itemType;
             this.Format = format;
-            this.Label = label;
             this.DefaultValue = defaultValue;
+            this.RefId = refId;
             this.Mandatory = mandatory;
             this.Searchable = searchable;
             this.Onlyasset = onlyasset;
@@ -74,6 +76,8 @@ namespace Agravity.Public.Model
             this.Group = group;
             this.Order = order;
             this.Translations = translations;
+            this.Description = description;
+            this.AddProperties = addProperties;
             this.Status = status;
             this.CreatedDate = createdDate;
             this.CreatedBy = createdBy;
@@ -114,16 +118,16 @@ namespace Agravity.Public.Model
         public string Format { get; set; }
 
         /// <summary>
-        /// Gets or Sets Label
-        /// </summary>
-        [DataMember(Name = "label", EmitDefaultValue = true)]
-        public string Label { get; set; }
-
-        /// <summary>
         /// Gets or Sets DefaultValue
         /// </summary>
         [DataMember(Name = "default_value", EmitDefaultValue = true)]
         public Object DefaultValue { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RefId
+        /// </summary>
+        [DataMember(Name = "ref_id", EmitDefaultValue = true)]
+        public string RefId { get; set; }
 
         /// <summary>
         /// Gets or Sets Mandatory
@@ -172,6 +176,18 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "translations", EmitDefaultValue = true)]
         public Dictionary<string, Dictionary<string, object>> Translations { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Description
+        /// </summary>
+        [DataMember(Name = "description", EmitDefaultValue = true)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AddProperties
+        /// </summary>
+        [DataMember(Name = "add_properties", EmitDefaultValue = true)]
+        public Dictionary<string, object> AddProperties { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
@@ -228,8 +244,8 @@ namespace Agravity.Public.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ItemType: ").Append(ItemType).Append("\n");
             sb.Append("  Format: ").Append(Format).Append("\n");
-            sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  DefaultValue: ").Append(DefaultValue).Append("\n");
+            sb.Append("  RefId: ").Append(RefId).Append("\n");
             sb.Append("  Mandatory: ").Append(Mandatory).Append("\n");
             sb.Append("  Searchable: ").Append(Searchable).Append("\n");
             sb.Append("  Onlyasset: ").Append(Onlyasset).Append("\n");
@@ -238,6 +254,8 @@ namespace Agravity.Public.Model
             sb.Append("  Group: ").Append(Group).Append("\n");
             sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  Translations: ").Append(Translations).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  AddProperties: ").Append(AddProperties).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");

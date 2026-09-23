@@ -83,6 +83,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'ItemRefs'
+        /// </summary>
+        [Fact]
+        public void ItemRefsTest()
+        {
+            // TODO unit test for the property 'ItemRefs'
+        }
+
+        /// <summary>
         /// Test the property 'Items'
         /// </summary>
         [Fact]

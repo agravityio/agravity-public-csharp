@@ -1,19 +1,13 @@
-# Agravity.Public.Model.CollectionType
+# Agravity.Public.Model.ItemGroup
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
-**EntityType** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**ItemRefs** | [**List&lt;CollTypeItemRef&gt;**](CollTypeItemRef.md) |  | [optional] 
-**Items** | [**List&lt;CollTypeItem&gt;**](CollTypeItem.md) |  | [optional] 
+**EntityType** | **string** |  | [optional] 
 **Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
-**Order** | **int?** |  | [optional] 
-**Permissions** | [**List&lt;PermissionEntity&gt;**](PermissionEntity.md) |  | [optional] 
-**Permissionless** | **bool?** |  | [optional] 
-**Role** | **string** |  | [optional] [default to RoleEnum.NONE]
 **Description** | **string** |  | [optional] 
 **AddProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **Status** | **string** |  | [optional] 

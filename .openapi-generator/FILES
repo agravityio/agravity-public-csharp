@@ -21,6 +21,7 @@ docs/AssetRelation.md
 docs/AssetRelationType.md
 docs/AzSearchOptions.md
 docs/CollTypeItem.md
+docs/CollTypeItemRef.md
 docs/Collection.md
 docs/CollectionType.md
 docs/CollectionUDL.md
@@ -47,6 +48,7 @@ docs/EntityListResult.md
 docs/EntityNamesRequest.md
 docs/FrontendAppConfig.md
 docs/GroupAllAppData.md
+docs/ItemGroup.md
 docs/MoveCollectionBody.md
 docs/PermissionEntity.md
 docs/Portal.md
@@ -66,6 +68,7 @@ docs/PublicAssetVersioningApi.md
 docs/PublicAuthenticationManagementApi.md
 docs/PublicCollectionManagementApi.md
 docs/PublicCollectionSecureUploadApi.md
+docs/PublicCollectionTypeItemManagementApi.md
 docs/PublicCollectionTypeManagementApi.md
 docs/PublicConfigurationManagementApi.md
 docs/PublicDownloadFormatManagementApi.md
@@ -121,6 +124,7 @@ src/Agravity.Public.Test/Api/PublicAssetVersioningApiTests.cs
 src/Agravity.Public.Test/Api/PublicAuthenticationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionSecureUploadApiTests.cs
+src/Agravity.Public.Test/Api/PublicCollectionTypeItemManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicCollectionTypeManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicConfigurationManagementApiTests.cs
 src/Agravity.Public.Test/Api/PublicDownloadFormatManagementApiTests.cs
@@ -154,6 +158,7 @@ src/Agravity.Public.Test/Model/AssetRelationTests.cs
 src/Agravity.Public.Test/Model/AssetRelationTypeTests.cs
 src/Agravity.Public.Test/Model/AssetTests.cs
 src/Agravity.Public.Test/Model/AzSearchOptionsTests.cs
+src/Agravity.Public.Test/Model/CollTypeItemRefTests.cs
 src/Agravity.Public.Test/Model/CollTypeItemTests.cs
 src/Agravity.Public.Test/Model/CollectionTests.cs
 src/Agravity.Public.Test/Model/CollectionTypeTests.cs
@@ -181,6 +186,7 @@ src/Agravity.Public.Test/Model/EntityListResultTests.cs
 src/Agravity.Public.Test/Model/EntityNamesRequestTests.cs
 src/Agravity.Public.Test/Model/FrontendAppConfigTests.cs
 src/Agravity.Public.Test/Model/GroupAllAppDataTests.cs
+src/Agravity.Public.Test/Model/ItemGroupTests.cs
 src/Agravity.Public.Test/Model/MoveCollectionBodyTests.cs
 src/Agravity.Public.Test/Model/PermissionEntityTests.cs
 src/Agravity.Public.Test/Model/PortalAuthenticationTests.cs
@@ -228,6 +234,7 @@ src/Agravity.Public/Api/PublicAssetVersioningApi.cs
 src/Agravity.Public/Api/PublicAuthenticationManagementApi.cs
 src/Agravity.Public/Api/PublicCollectionManagementApi.cs
 src/Agravity.Public/Api/PublicCollectionSecureUploadApi.cs
+src/Agravity.Public/Api/PublicCollectionTypeItemManagementApi.cs
 src/Agravity.Public/Api/PublicCollectionTypeManagementApi.cs
 src/Agravity.Public/Api/PublicConfigurationManagementApi.cs
 src/Agravity.Public/Api/PublicDownloadFormatManagementApi.cs
@@ -279,6 +286,7 @@ src/Agravity.Public/Model/AssetRelation.cs
 src/Agravity.Public/Model/AssetRelationType.cs
 src/Agravity.Public/Model/AzSearchOptions.cs
 src/Agravity.Public/Model/CollTypeItem.cs
+src/Agravity.Public/Model/CollTypeItemRef.cs
 src/Agravity.Public/Model/Collection.cs
 src/Agravity.Public/Model/CollectionType.cs
 src/Agravity.Public/Model/CollectionUDL.cs
@@ -305,6 +313,7 @@ src/Agravity.Public/Model/EntityListResult.cs
 src/Agravity.Public/Model/EntityNamesRequest.cs
 src/Agravity.Public/Model/FrontendAppConfig.cs
 src/Agravity.Public/Model/GroupAllAppData.cs
+src/Agravity.Public/Model/ItemGroup.cs
 src/Agravity.Public/Model/MoveCollectionBody.cs
 src/Agravity.Public/Model/PermissionEntity.cs
 src/Agravity.Public/Model/Portal.cs

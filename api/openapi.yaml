@@ -3357,6 +3357,15 @@ paths:
         database and not deleted (status "A").
       operationId: HttpCollectionTypesGet
       parameters:
+      - description: "When true, returns the resolved collection type items alongside\
+          \ the item refs."
+        explode: true
+        in: query
+        name: items
+        required: false
+        schema:
+          type: boolean
+        style: form
       - description: When default language should be returned and the translation
           dictionary is delivered. (Ignores the "Accept-Language" header)
         explode: true
@@ -3411,6 +3420,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "When true, returns the resolved collection type items alongside\
+          \ the item refs."
+        explode: true
+        in: query
+        name: items
+        required: false
+        schema:
+          type: boolean
+        style: form
       - description: When default language should be returned and the translation
           dictionary is delivered. (Ignores the "Accept-Language" header)
         explode: true
@@ -3499,6 +3517,100 @@ paths:
       - function_key: []
       tags:
       - Public Collection Type Management
+  /colltypeitems:
+    get:
+      description: Lists all standalone collection type items.
+      operationId: HttpCollTypeItemsGetAll
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/collTypeItem"
+                type: array
+          description: Returns all standalone collection type items.
+        "401":
+          description: Unauthorized. API Key not provided.
+      security:
+      - function_key: []
+      tags:
+      - Public Collection Type Item Management
+  /colltypeitems/{id}:
+    get:
+      description: Gets a single standalone collection type item by ID.
+      operationId: HttpCollTypeItemsGetById
+      parameters:
+      - description: The ID of the collection type item.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/collTypeItem"
+          description: Returns the standalone collection type item.
+        "401":
+          description: Unauthorized. API Key not provided.
+        "404":
+          description: The requested item could not be found.
+      security:
+      - function_key: []
+      tags:
+      - Public Collection Type Item Management
+  /itemgroups:
+    get:
+      description: Lists all item groups.
+      operationId: HttpItemGroupsGetAll
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/itemGroup"
+                type: array
+          description: Returns all item groups.
+        "401":
+          description: Unauthorized. API Key not provided.
+      security:
+      - function_key: []
+      tags:
+      - Public Collection Type Item Management
+  /itemgroups/{id}:
+    get:
+      description: Gets a single item group by ID.
+      operationId: HttpItemGroupsGetById
+      parameters:
+      - description: The ID of the item group.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/itemGroup"
+          description: Returns the item group.
+        "401":
+          description: Unauthorized. API Key not provided.
+        "404":
+          description: The requested item could not be found.
+      security:
+      - function_key: []
+      tags:
+      - Public Collection Type Item Management
   /config/frontend:
     get:
       description: Lists config value only for frontend stored in config table. Optional
@@ -5564,7 +5676,7 @@ components:
         subcollections:
         - parent: parent
           role: NONE
-          level: 6
+          level: 7
           custom:
             key: "{}"
           description: description
@@ -5572,6 +5684,13 @@ components:
           created_by: created_by
           path: path
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           translations:
             key: null
           name: name
@@ -5582,10 +5701,11 @@ components:
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -5597,6 +5717,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -5605,10 +5727,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -5620,6 +5743,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -5632,7 +5757,7 @@ components:
           status: status
         - parent: parent
           role: NONE
-          level: 6
+          level: 7
           custom:
             key: "{}"
           description: description
@@ -5640,6 +5765,13 @@ components:
           created_by: created_by
           path: path
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           translations:
             key: null
           name: name
@@ -5650,10 +5782,11 @@ components:
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -5665,6 +5798,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -5673,10 +5808,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -5688,6 +5824,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -5876,6 +6014,13 @@ components:
           available_from: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           name: name
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
@@ -5884,10 +6029,11 @@ components:
           - quality_gate
           - quality_gate
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -5899,6 +6045,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -5907,10 +6055,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -5922,6 +6071,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -6109,6 +6260,13 @@ components:
           available_from: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           name: name
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
@@ -6117,10 +6275,11 @@ components:
           - quality_gate
           - quality_gate
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -6132,6 +6291,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -6140,10 +6301,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -6155,6 +6317,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -6168,7 +6332,7 @@ components:
         root_collection:
           parent: parent
           role: NONE
-          level: 6
+          level: 7
           custom:
             key: "{}"
           description: description
@@ -6176,6 +6340,13 @@ components:
           created_by: created_by
           path: path
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           translations:
             key: null
           name: name
@@ -6186,10 +6357,11 @@ components:
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -6201,6 +6373,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -6209,10 +6383,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -6224,6 +6399,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -6468,6 +6645,13 @@ components:
         available_from: 2000-01-23T04:56:07.000+00:00
         created_by: created_by
         entity_type: entity_type
+        item_refs:
+        - item_id: item_id
+          group_id: group_id
+          order: 1
+        - item_id: item_id
+          group_id: group_id
+          order: 1
         name: name
         modified_by: modified_by
         created_date: 2000-01-23T04:56:07.000+00:00
@@ -6476,10 +6660,11 @@ components:
         - quality_gate
         - quality_gate
         items:
-        - item_type: item_type
+        - ref_id: ref_id
+          item_type: item_type
           format: format
+          description: description
           default_value: "{}"
-          label: label
           modified_date: 2000-01-23T04:56:07.000+00:00
           mandatory: true
           created_by: created_by
@@ -6491,6 +6676,8 @@ components:
             key: null
           name: name
           modified_by: modified_by
+          add_properties:
+            key: "{}"
           id: id
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
@@ -6499,10 +6686,11 @@ components:
           group: group
           order: 0
           status: status
-        - item_type: item_type
+        - ref_id: ref_id
+          item_type: item_type
           format: format
+          description: description
           default_value: "{}"
-          label: label
           modified_date: 2000-01-23T04:56:07.000+00:00
           mandatory: true
           created_by: created_by
@@ -6514,6 +6702,8 @@ components:
             key: null
           name: name
           modified_by: modified_by
+          add_properties:
+            key: "{}"
           id: id
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
@@ -6591,6 +6781,11 @@ components:
             type: object
           nullable: true
           type: object
+        item_refs:
+          items:
+            $ref: "#/components/schemas/collTypeItemRef"
+          nullable: true
+          type: array
         items:
           items:
             $ref: "#/components/schemas/collTypeItem"
@@ -7220,6 +7415,13 @@ components:
           available_from: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           name: name
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
@@ -7228,10 +7430,11 @@ components:
           - quality_gate
           - quality_gate
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -7243,6 +7446,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -7251,10 +7456,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -7266,6 +7472,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -7453,6 +7661,13 @@ components:
           available_from: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           name: name
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
@@ -7461,10 +7676,11 @@ components:
           - quality_gate
           - quality_gate
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -7476,6 +7692,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -7484,10 +7702,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -7499,6 +7718,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -7674,18 +7895,18 @@ components:
     azSearchOptions:
       example:
         orderby: orderby
-        skip: 4
+        skip: 5
         rel_id: rel_id
         collectiontypeid: collectiontypeid
         filter: filter
         mode: mode
         searchString: searchString
-        limit: 1
+        limit: 4
         ids: ids
         portal_id: portal_id
         scopefilter: scopefilter
         collectionid: collectionid
-        broadness: 5
+        broadness: 9
       properties:
         searchString:
           type: string
@@ -7733,7 +7954,7 @@ components:
       example:
         parent: parent
         role: NONE
-        level: 6
+        level: 7
         custom:
           key: "{}"
         description: description
@@ -7741,6 +7962,13 @@ components:
         created_by: created_by
         path: path
         entity_type: entity_type
+        item_refs:
+        - item_id: item_id
+          group_id: group_id
+          order: 1
+        - item_id: item_id
+          group_id: group_id
+          order: 1
         translations:
           key: null
         name: name
@@ -7751,10 +7979,11 @@ components:
         created_date: 2000-01-23T04:56:07.000+00:00
         pk: pk
         items:
-        - item_type: item_type
+        - ref_id: ref_id
+          item_type: item_type
           format: format
+          description: description
           default_value: "{}"
-          label: label
           modified_date: 2000-01-23T04:56:07.000+00:00
           mandatory: true
           created_by: created_by
@@ -7766,6 +7995,8 @@ components:
             key: null
           name: name
           modified_by: modified_by
+          add_properties:
+            key: "{}"
           id: id
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
@@ -7774,10 +8005,11 @@ components:
           group: group
           order: 0
           status: status
-        - item_type: item_type
+        - ref_id: ref_id
+          item_type: item_type
           format: format
+          description: description
           default_value: "{}"
-          label: label
           modified_date: 2000-01-23T04:56:07.000+00:00
           mandatory: true
           created_by: created_by
@@ -7789,6 +8021,8 @@ components:
             key: null
           name: name
           modified_by: modified_by
+          add_properties:
+            key: "{}"
           id: id
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
@@ -7821,6 +8055,11 @@ components:
             type: object
           nullable: true
           type: object
+        item_refs:
+          items:
+            $ref: "#/components/schemas/collTypeItemRef"
+          nullable: true
+          type: array
         items:
           items:
             $ref: "#/components/schemas/collTypeItem"
@@ -7880,6 +8119,13 @@ components:
         modified_date: 2000-01-23T04:56:07.000+00:00
         created_by: created_by
         entity_type: entity_type
+        item_refs:
+        - item_id: item_id
+          group_id: group_id
+          order: 1
+        - item_id: item_id
+          group_id: group_id
+          order: 1
         translations:
           key: null
         permissions:
@@ -7896,10 +8142,11 @@ components:
         created_date: 2000-01-23T04:56:07.000+00:00
         pk: pk
         items:
-        - item_type: item_type
+        - ref_id: ref_id
+          item_type: item_type
           format: format
+          description: description
           default_value: "{}"
-          label: label
           modified_date: 2000-01-23T04:56:07.000+00:00
           mandatory: true
           created_by: created_by
@@ -7911,6 +8158,8 @@ components:
             key: null
           name: name
           modified_by: modified_by
+          add_properties:
+            key: "{}"
           id: id
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
@@ -7919,10 +8168,11 @@ components:
           group: group
           order: 0
           status: status
-        - item_type: item_type
+        - ref_id: ref_id
+          item_type: item_type
           format: format
+          description: description
           default_value: "{}"
-          label: label
           modified_date: 2000-01-23T04:56:07.000+00:00
           mandatory: true
           created_by: created_by
@@ -7934,6 +8184,8 @@ components:
             key: null
           name: name
           modified_by: modified_by
+          add_properties:
+            key: "{}"
           id: id
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
@@ -7955,6 +8207,11 @@ components:
         name:
           nullable: true
           type: string
+        item_refs:
+          items:
+            $ref: "#/components/schemas/collTypeItemRef"
+          nullable: true
+          type: array
         items:
           items:
             $ref: "#/components/schemas/collTypeItem"
@@ -8211,10 +8468,11 @@ components:
       type: object
     collTypeItem:
       example:
+        ref_id: ref_id
         item_type: item_type
         format: format
+        description: description
         default_value: "{}"
-        label: label
         modified_date: 2000-01-23T04:56:07.000+00:00
         mandatory: true
         created_by: created_by
@@ -8226,6 +8484,8 @@ components:
           key: null
         name: name
         modified_by: modified_by
+        add_properties:
+          key: "{}"
         id: id
         created_date: 2000-01-23T04:56:07.000+00:00
         pk: pk
@@ -8250,12 +8510,12 @@ components:
         format:
           nullable: true
           type: string
-        label:
-          nullable: true
-          type: string
         default_value:
           nullable: true
           type: object
+        ref_id:
+          nullable: true
+          type: string
         mandatory:
           nullable: true
           type: boolean
@@ -8283,6 +8543,14 @@ components:
             $ref: "#/components/schemas/dictionary_object"
           nullable: true
           type: object
+        description:
+          nullable: true
+          type: string
+        add_properties:
+          additionalProperties:
+            type: object
+          nullable: true
+          type: object
         status:
           nullable: true
           type: string
@@ -8306,6 +8574,23 @@ components:
         _etag:
           nullable: true
           type: string
+      type: object
+    collTypeItemRef:
+      example:
+        item_id: item_id
+        group_id: group_id
+        order: 1
+      properties:
+        item_id:
+          nullable: true
+          type: string
+        group_id:
+          nullable: true
+          type: string
+        order:
+          format: int32
+          nullable: true
+          type: integer
       type: object
     createSftpUserResult:
       example:
@@ -8438,12 +8723,12 @@ components:
       type: object
     dataResult:
       example:
-        sum_collection_results: 7
-        sum_asset_results: 1
+        sum_collection_results: 1
+        sum_asset_results: 6
         collection:
         - parent: parent
           role: NONE
-          level: 6
+          level: 7
           custom:
             key: "{}"
           description: description
@@ -8451,6 +8736,13 @@ components:
           created_by: created_by
           path: path
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           translations:
             key: null
           name: name
@@ -8461,10 +8753,11 @@ components:
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -8476,6 +8769,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -8484,10 +8779,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -8499,6 +8795,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -8511,7 +8809,7 @@ components:
           status: status
         - parent: parent
           role: NONE
-          level: 6
+          level: 7
           custom:
             key: "{}"
           description: description
@@ -8519,6 +8817,13 @@ components:
           created_by: created_by
           path: path
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           translations:
             key: null
           name: name
@@ -8529,10 +8834,11 @@ components:
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -8544,6 +8850,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -8552,10 +8860,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -8567,6 +8876,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -8755,6 +9066,13 @@ components:
           available_from: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           name: name
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
@@ -8763,10 +9081,11 @@ components:
           - quality_gate
           - quality_gate
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -8778,6 +9097,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -8786,10 +9107,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -8801,6 +9123,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -8988,6 +9312,13 @@ components:
           available_from: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           name: name
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
@@ -8996,10 +9327,11 @@ components:
           - quality_gate
           - quality_gate
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -9011,6 +9343,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -9019,10 +9353,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -9034,6 +9369,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -9632,6 +9969,13 @@ components:
           available_from: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           name: name
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
@@ -9640,10 +9984,11 @@ components:
           - quality_gate
           - quality_gate
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -9655,6 +10000,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -9663,10 +10010,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -9678,6 +10026,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -9865,6 +10215,13 @@ components:
           available_from: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           name: name
           modified_by: modified_by
           created_date: 2000-01-23T04:56:07.000+00:00
@@ -9873,10 +10230,11 @@ components:
           - quality_gate
           - quality_gate
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -9888,6 +10246,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -9896,10 +10256,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -9911,6 +10272,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -9924,7 +10287,7 @@ components:
         collections:
         - parent: parent
           role: NONE
-          level: 6
+          level: 7
           custom:
             key: "{}"
           description: description
@@ -9932,6 +10295,13 @@ components:
           created_by: created_by
           path: path
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           translations:
             key: null
           name: name
@@ -9942,10 +10312,11 @@ components:
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -9957,6 +10328,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -9965,10 +10338,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -9980,6 +10354,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -9992,7 +10368,7 @@ components:
           status: status
         - parent: parent
           role: NONE
-          level: 6
+          level: 7
           custom:
             key: "{}"
           description: description
@@ -10000,6 +10376,13 @@ components:
           created_by: created_by
           path: path
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           translations:
             key: null
           name: name
@@ -10010,10 +10393,11 @@ components:
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -10025,6 +10409,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -10033,10 +10419,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -10048,6 +10435,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -10069,6 +10458,13 @@ components:
           modified_date: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           translations:
             key: null
           permissions:
@@ -10085,10 +10481,11 @@ components:
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -10100,6 +10497,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -10108,10 +10507,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -10123,6 +10523,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -10161,6 +10563,69 @@ components:
           type: array
         dist:
           $ref: "#/components/schemas/distZipResponse"
+      type: object
+    itemGroup:
+      example:
+        entityType: entityType
+        description: description
+        modified_date: 2000-01-23T04:56:07.000+00:00
+        created_by: created_by
+        translations:
+          key: null
+        name: name
+        modified_by: modified_by
+        add_properties:
+          key: "{}"
+        id: id
+        created_date: 2000-01-23T04:56:07.000+00:00
+        pk: pk
+        _etag: _etag
+        status: status
+      properties:
+        id:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        entityType:
+          type: string
+        translations:
+          additionalProperties:
+            $ref: "#/components/schemas/dictionary_object"
+          nullable: true
+          type: object
+        description:
+          nullable: true
+          type: string
+        add_properties:
+          additionalProperties:
+            type: object
+          nullable: true
+          type: object
+        status:
+          nullable: true
+          type: string
+        created_date:
+          format: date-time
+          nullable: true
+          type: string
+        created_by:
+          nullable: true
+          type: string
+        modified_date:
+          format: date-time
+          nullable: true
+          type: string
+        modified_by:
+          nullable: true
+          type: string
+        pk:
+          nullable: true
+          type: string
+        _etag:
+          nullable: true
+          type: string
       type: object
     keyValuePair_object:
       additionalProperties:
@@ -10708,10 +11173,11 @@ components:
           labels:
             key: labels
         items:
-        - item_type: item_type
+        - ref_id: ref_id
+          item_type: item_type
           format: format
+          description: description
           default_value: "{}"
-          label: label
           modified_date: 2000-01-23T04:56:07.000+00:00
           mandatory: true
           created_by: created_by
@@ -10723,6 +11189,8 @@ components:
             key: null
           name: name
           modified_by: modified_by
+          add_properties:
+            key: "{}"
           id: id
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
@@ -10731,10 +11199,11 @@ components:
           group: group
           order: 0
           status: status
-        - item_type: item_type
+        - ref_id: ref_id
+          item_type: item_type
           format: format
+          description: description
           default_value: "{}"
-          label: label
           modified_date: 2000-01-23T04:56:07.000+00:00
           mandatory: true
           created_by: created_by
@@ -10746,6 +11215,8 @@ components:
             key: null
           name: name
           modified_by: modified_by
+          add_properties:
+            key: "{}"
           id: id
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
@@ -11917,26 +12388,26 @@ components:
       example:
         options:
           orderby: orderby
-          skip: 4
+          skip: 5
           rel_id: rel_id
           collectiontypeid: collectiontypeid
           filter: filter
           mode: mode
           searchString: searchString
-          limit: 1
+          limit: 4
           ids: ids
           portal_id: portal_id
           scopefilter: scopefilter
           collectionid: collectionid
-          broadness: 5
-        count: 9
+          broadness: 9
+        count: 6
         data_result:
-          sum_collection_results: 7
-          sum_asset_results: 1
+          sum_collection_results: 1
+          sum_asset_results: 6
           collection:
           - parent: parent
             role: NONE
-            level: 6
+            level: 7
             custom:
               key: "{}"
             description: description
@@ -11944,6 +12415,13 @@ components:
             created_by: created_by
             path: path
             entity_type: entity_type
+            item_refs:
+            - item_id: item_id
+              group_id: group_id
+              order: 1
+            - item_id: item_id
+              group_id: group_id
+              order: 1
             translations:
               key: null
             name: name
@@ -11954,10 +12432,11 @@ components:
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
             items:
-            - item_type: item_type
+            - ref_id: ref_id
+              item_type: item_type
               format: format
+              description: description
               default_value: "{}"
-              label: label
               modified_date: 2000-01-23T04:56:07.000+00:00
               mandatory: true
               created_by: created_by
@@ -11969,6 +12448,8 @@ components:
                 key: null
               name: name
               modified_by: modified_by
+              add_properties:
+                key: "{}"
               id: id
               created_date: 2000-01-23T04:56:07.000+00:00
               pk: pk
@@ -11977,10 +12458,11 @@ components:
               group: group
               order: 0
               status: status
-            - item_type: item_type
+            - ref_id: ref_id
+              item_type: item_type
               format: format
+              description: description
               default_value: "{}"
-              label: label
               modified_date: 2000-01-23T04:56:07.000+00:00
               mandatory: true
               created_by: created_by
@@ -11992,6 +12474,8 @@ components:
                 key: null
               name: name
               modified_by: modified_by
+              add_properties:
+                key: "{}"
               id: id
               created_date: 2000-01-23T04:56:07.000+00:00
               pk: pk
@@ -12004,7 +12488,7 @@ components:
             status: status
           - parent: parent
             role: NONE
-            level: 6
+            level: 7
             custom:
               key: "{}"
             description: description
@@ -12012,6 +12496,13 @@ components:
             created_by: created_by
             path: path
             entity_type: entity_type
+            item_refs:
+            - item_id: item_id
+              group_id: group_id
+              order: 1
+            - item_id: item_id
+              group_id: group_id
+              order: 1
             translations:
               key: null
             name: name
@@ -12022,10 +12513,11 @@ components:
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
             items:
-            - item_type: item_type
+            - ref_id: ref_id
+              item_type: item_type
               format: format
+              description: description
               default_value: "{}"
-              label: label
               modified_date: 2000-01-23T04:56:07.000+00:00
               mandatory: true
               created_by: created_by
@@ -12037,6 +12529,8 @@ components:
                 key: null
               name: name
               modified_by: modified_by
+              add_properties:
+                key: "{}"
               id: id
               created_date: 2000-01-23T04:56:07.000+00:00
               pk: pk
@@ -12045,10 +12539,11 @@ components:
               group: group
               order: 0
               status: status
-            - item_type: item_type
+            - ref_id: ref_id
+              item_type: item_type
               format: format
+              description: description
               default_value: "{}"
-              label: label
               modified_date: 2000-01-23T04:56:07.000+00:00
               mandatory: true
               created_by: created_by
@@ -12060,6 +12555,8 @@ components:
                 key: null
               name: name
               modified_by: modified_by
+              add_properties:
+                key: "{}"
               id: id
               created_date: 2000-01-23T04:56:07.000+00:00
               pk: pk
@@ -12248,6 +12745,13 @@ components:
             available_from: 2000-01-23T04:56:07.000+00:00
             created_by: created_by
             entity_type: entity_type
+            item_refs:
+            - item_id: item_id
+              group_id: group_id
+              order: 1
+            - item_id: item_id
+              group_id: group_id
+              order: 1
             name: name
             modified_by: modified_by
             created_date: 2000-01-23T04:56:07.000+00:00
@@ -12256,10 +12760,11 @@ components:
             - quality_gate
             - quality_gate
             items:
-            - item_type: item_type
+            - ref_id: ref_id
+              item_type: item_type
               format: format
+              description: description
               default_value: "{}"
-              label: label
               modified_date: 2000-01-23T04:56:07.000+00:00
               mandatory: true
               created_by: created_by
@@ -12271,6 +12776,8 @@ components:
                 key: null
               name: name
               modified_by: modified_by
+              add_properties:
+                key: "{}"
               id: id
               created_date: 2000-01-23T04:56:07.000+00:00
               pk: pk
@@ -12279,10 +12786,11 @@ components:
               group: group
               order: 0
               status: status
-            - item_type: item_type
+            - ref_id: ref_id
+              item_type: item_type
               format: format
+              description: description
               default_value: "{}"
-              label: label
               modified_date: 2000-01-23T04:56:07.000+00:00
               mandatory: true
               created_by: created_by
@@ -12294,6 +12802,8 @@ components:
                 key: null
               name: name
               modified_by: modified_by
+              add_properties:
+                key: "{}"
               id: id
               created_date: 2000-01-23T04:56:07.000+00:00
               pk: pk
@@ -12481,6 +12991,13 @@ components:
             available_from: 2000-01-23T04:56:07.000+00:00
             created_by: created_by
             entity_type: entity_type
+            item_refs:
+            - item_id: item_id
+              group_id: group_id
+              order: 1
+            - item_id: item_id
+              group_id: group_id
+              order: 1
             name: name
             modified_by: modified_by
             created_date: 2000-01-23T04:56:07.000+00:00
@@ -12489,10 +13006,11 @@ components:
             - quality_gate
             - quality_gate
             items:
-            - item_type: item_type
+            - ref_id: ref_id
+              item_type: item_type
               format: format
+              description: description
               default_value: "{}"
-              label: label
               modified_date: 2000-01-23T04:56:07.000+00:00
               mandatory: true
               created_by: created_by
@@ -12504,6 +13022,8 @@ components:
                 key: null
               name: name
               modified_by: modified_by
+              add_properties:
+                key: "{}"
               id: id
               created_date: 2000-01-23T04:56:07.000+00:00
               pk: pk
@@ -12512,10 +13032,11 @@ components:
               group: group
               order: 0
               status: status
-            - item_type: item_type
+            - ref_id: ref_id
+              item_type: item_type
               format: format
+              description: description
               default_value: "{}"
-              label: label
               modified_date: 2000-01-23T04:56:07.000+00:00
               mandatory: true
               created_by: created_by
@@ -12527,6 +13048,8 @@ components:
                 key: null
               name: name
               modified_by: modified_by
+              add_properties:
+                key: "{}"
               id: id
               created_date: 2000-01-23T04:56:07.000+00:00
               pk: pk
@@ -13384,6 +13907,8 @@ components:
           videocodec: videocodec
           md5: md5
         mime_type: mime_type
+        translations:
+          key: null
         version_info: version_info
         until_date: 2000-01-23T04:56:07.000+00:00
         created_date: 2000-01-23T04:56:07.000+00:00
@@ -13417,6 +13942,11 @@ components:
         mime_type:
           nullable: true
           type: string
+        translations:
+          additionalProperties:
+            $ref: "#/components/schemas/dictionary_object"
+          nullable: true
+          type: object
       type: object
     versionEntity:
       example:
@@ -13474,6 +14004,8 @@ components:
             videocodec: videocodec
             md5: md5
           mime_type: mime_type
+          translations:
+            key: null
           version_info: version_info
           until_date: 2000-01-23T04:56:07.000+00:00
           created_date: 2000-01-23T04:56:07.000+00:00
@@ -13530,11 +14062,15 @@ components:
             videocodec: videocodec
             md5: md5
           mime_type: mime_type
+          translations:
+            key: null
           version_info: version_info
           until_date: 2000-01-23T04:56:07.000+00:00
           created_date: 2000-01-23T04:56:07.000+00:00
           blob_uploaded: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
+        translations:
+          key: null
         modified_by: modified_by
         id: id
         created_date: 2000-01-23T04:56:07.000+00:00
@@ -13558,6 +14094,11 @@ components:
         region_of_origin:
           nullable: true
           type: string
+        translations:
+          additionalProperties:
+            $ref: "#/components/schemas/dictionary_object"
+          nullable: true
+          type: object
         status:
           nullable: true
           type: string
@@ -13634,6 +14175,13 @@ components:
           modified_date: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           translations:
             key: null
           permissions:
@@ -13650,10 +14198,11 @@ components:
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -13665,6 +14214,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -13673,10 +14224,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -13688,6 +14240,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -13704,6 +14258,13 @@ components:
           modified_date: 2000-01-23T04:56:07.000+00:00
           created_by: created_by
           entity_type: entity_type
+          item_refs:
+          - item_id: item_id
+            group_id: group_id
+            order: 1
+          - item_id: item_id
+            group_id: group_id
+            order: 1
           translations:
             key: null
           permissions:
@@ -13720,10 +14281,11 @@ components:
           created_date: 2000-01-23T04:56:07.000+00:00
           pk: pk
           items:
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -13735,6 +14297,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk
@@ -13743,10 +14307,11 @@ components:
             group: group
             order: 0
             status: status
-          - item_type: item_type
+          - ref_id: ref_id
+            item_type: item_type
             format: format
+            description: description
             default_value: "{}"
-            label: label
             modified_date: 2000-01-23T04:56:07.000+00:00
             mandatory: true
             created_by: created_by
@@ -13758,6 +14323,8 @@ components:
               key: null
             name: name
             modified_by: modified_by
+            add_properties:
+              key: "{}"
             id: id
             created_date: 2000-01-23T04:56:07.000+00:00
             pk: pk

@@ -3,7 +3,7 @@
  *
  * <p>The Agravity Public API provides comprehensive access to digital asset management functionality for technical integrations, portals, and third-party applications. These endpoints are designed for programmatic access with API key authentication.</p><br/><h2>Access &amp; Security</h2><br/><b>API key is required to access these endpoints.</b><br/><ul><li>API Key Authentication - Each request requires a valid API key in headers or parameters</li><li>Portal-Aware - Many endpoints support portal context for multi-tenant scenarios</li><li>Service-to-Service Communication - Designed for backend-to-backend integrations</li><li>Stable &amp; Versioned - Public API versioning ensures backward compatibility</li></ul><h2>Core Features &amp; Operations</h2><ul><li><strong>Asset Management</strong> - Create, retrieve, update assets with full metadata support; manage versions and publish assets</li><li><strong>Collection Management</strong> - Create and organize collections hierarchically; retrieve collection type definitions and structures</li><li><strong>Asset Operations</strong> - Retrieve asset blobs (thumbnails, optimized, original); rotate and resize images; find similar assets using AI reverse search</li><li><strong>Image Editing</strong> - Apply transformations to images with advanced parameters (resize, crop, filter, color space, DPI, quality, depth)</li><li><strong>Asset Publishing</strong> - Publish assets to various targets (Vimeo, CDN); manage published asset information</li><li><strong>Asset Versioning</strong> - Create, restore, and manage asset versions; track version history with descriptions</li><li><strong>Asset Relations</strong> - Create and manage relationships between assets with hierarchical or standard relations; organize assets into logical groups</li><li><strong>Asset Relation Types</strong> - Retrieve relation type definitions including hierarchical, sequential, and unique-per-asset configurations</li><li><strong>Full-Text Search</strong> - Search assets and collections with advanced filtering, facets, and sorting capabilities</li><li><strong>Collection Sharing</strong> - Create shared collections with expiration dates, password protection, and download limits</li><li><strong>Quick Shares</strong> - Create quick share links for rapid asset sharing with expiration management</li><li><strong>Portals</strong> - Full portal management with authentication, custom theming, and asset filtering</li><li><strong>Secure Upload</strong> - Secure file upload endpoints with validation and SAS token generation</li><li><strong>Download Management</strong> - Create ZIP packages of assets with format specifications; track download progress</li><li><strong>Download Formats</strong> - Define and apply custom image transformations and optimizations for downloads</li><li><strong>Authentication</strong> - Generate SAS tokens for container write access; retrieve user information</li><li><strong>Configuration</strong> - Access frontend configuration values and system settings</li><li><strong>Helper Tools</strong> - Get searchable items, filterable items, user-defined lists, and static defined lists</li><li><strong>Translations</strong> - Retrieve translations for all entities in multiple languages</li><li><strong>Deleted Entities Tracking</strong> - Track deleted assets, collections, and other entities by date</li></ul><h2>Available Endpoints by Category</h2><ul><li><strong>Asset Management</strong> - /assets, /assets/{id}, /assetsupload</li><li><strong>Asset Relations</strong> - /assetrelations, /assetrelations/{id} (create, read, update, delete asset relationships)</li><li><strong>Asset Relation Types</strong> - /assetrelationtypes, /assetrelationtypes/{id} (retrieve relation type definitions and configurations)</li><li><strong>Asset Operations</strong> - /assets/{id}/blobs, /assets/{id}/collections, /assets/{id}/tocollection, /assets/{id}/download, /assets/{id}/resize, /assets/{id}/imageedit, /assets/{id}/availability</li><li><strong>Asset Publishing</strong> - /assets/{id}/publish, /assets/{id}/publish/{pid}</li><li><strong>Asset Versioning</strong> - /assets/{id}/versions, /assets/{id}/versionsupload, /assets/{id}/versions/{vNr}/restore</li><li><strong>AI Operations</strong> - /ai/reverseassetsearch (find similar assets using image)</li><li><strong>Collection Management</strong> - /collections, /collections/{id}, /collections/{id}/ancestors, /collections/{id}/descendants, /collections/{id}/previews, /collectionsbynames</li><li><strong>Collection Types</strong> - /collectiontypes, /collectiontypes/{id}, /collectiontypesitems</li><li><strong>Search</strong> - /search, /search/facette, /searchadmin/status</li><li><strong>Saved Searches</strong> - /savedsearches</li><li><strong>Collection Sharing</strong> - /shared/{id}, /shared/{id}/zip, /quickshares/{id}</li><li><strong>Secure Upload</strong> - /secureupload/{id}, /secureupload/{id}/upload</li><li><strong>Portal Management</strong> - /portals/{id}, /portals/{id}/config, /portals/{id}/zip, /portals/{id}/assetids, /portalsenhancetoken, /portalssaveuserattributes</li><li><strong>Authentication</strong> - /auth/containerwrite/{containerName}, /auth/inbox, /auth/users/{id}</li><li><strong>Download Formats</strong> - /downloadformats, /downloadformats-shared</li><li><strong>Configuration</strong> - /config/frontend</li><li><strong>Static Defined Lists</strong> - /staticdefinedlists, /staticdefinedlists/{id}</li><li><strong>User-Defined Lists</strong> - /helper/userdefinedlists</li><li><strong>Helper Tools</strong> - /helper/searchableitemnames, /helper/searchableitems, /helper/filterableitems</li><li><strong>Translations</strong> - /translations/{id}, /translations/{id}/{property}, /translations/{id}/custom/{customField}</li><li><strong>Web App Data</strong> - /webappdata/{id}, /data/collectiontype/{id}</li><li><strong>Workspace Management</strong> - /workspaces, /workspaces/{id}</li><li><strong>General</strong> - /version, /deleted, /durable/{instanceId}, /public/view, /signalr/negotiate</li></ul><h2>Typical Use Cases</h2><ul><li>E-commerce platforms - Product image management and dynamic optimization</li><li>Marketing automation - Asset distribution across channels with version control</li><li>Portal systems - Multi-tenant asset galleries with custom theming and permissions</li><li>Headless CMS integration - Content delivery with dynamic transformations</li><li>Mobile applications - Asset retrieval with mobile-optimized formats</li><li>AI-powered workflows - Reverse image search and automatic metadata generation</li><li>Asset sharing platforms - Secure sharing with expiration and password protection</li><li>Digital distribution - ZIP creation and bulk download management</li><li>Multi-language content - Translation management across all assets and collections</li><li>Real-time monitoring - Deletion tracking and version history auditing</li></ul><h2>Key Capabilities</h2><ul><li>Full CRUD operations on assets, collections, and related entities</li><li>Asset relationship management with hierarchical and standard relations</li><li>Advanced image transformation with ImageMagick integration</li><li>AI-powered reverse image search for asset discovery</li><li>Multi-language support with translation dictionaries</li><li>Granular permission control and role-based access</li><li>Portal creation with custom authentication and theming</li><li>Hierarchical collection organization with dynamic filtering</li><li>Real-time search with faceted navigation and advanced filtering</li><li>Secure sharing with expiration and password protection</li><li>Blob storage integration with SAS token generation</li><li>Comprehensive asset versioning and restoration</li><li>SignalR support for real-time notifications</li></ul><h2>Authentication &amp; Authorization</h2><p>All endpoints (except public share endpoints) require API key authentication. The API key can be provided:</p><ul><li>As query parameter: ?code=YOUR_API_KEY</li><li>As header: x-functions-key: YOUR_API_KEY</li></ul><p>Portal endpoints may have additional authentication methods (OAuth, Azure AD, Auth0, password) depending on portal configuration.</p><h2>Support</h2><p>For technical support or integration questions, contact <a href=\"mailto:support@agravity.io\">support@agravity.io</a> or visit <a href=\"https://agravity.io\">https://agravity.io</a>.</p><br/><p>Copyright © Agravity GmbH 2026. All Rights Reserved</p>
  *
- * The version of the OpenAPI document: 11.0.4
+ * The version of the OpenAPI document: 11.1.1
  * Contact: support@agravity.io
  * Generated by: https://github.com/openapitools/openapi-generator.git
  */
@@ -24,197 +24,209 @@ namespace Agravity.Public.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPublicCollectionTypeManagementApiSync : IApiAccessor
+    public interface IPublicCollectionTypeItemManagementApiSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
+        /// Lists all standalone collection type items.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;CollectionType&gt;</returns>
-        List<CollectionType> HttpCollectionTypesGet(bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
-        /// </remarks>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;CollectionType&gt;</returns>
-        ApiResponse<List<CollectionType>> HttpCollectionTypesGetWithHttpInfo(bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Returns one single collection type (from ID).
-        /// </remarks>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the collection type.</param>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CollectionType</returns>
-        CollectionType HttpCollectionTypesGetById(string id, bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Returns one single collection type (from ID).
-        /// </remarks>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the collection type.</param>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CollectionType</returns>
-        ApiResponse<CollectionType> HttpCollectionTypesGetByIdWithHttpInfo(string id, bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// This method returns a list of collection types items. (Regardless of the permissions)
-        /// </remarks>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CollTypeItem&gt;</returns>
-        List<CollTypeItem> HttpGetCollectionTypeItems(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
+        List<CollTypeItem> HttpCollTypeItemsGetAll(int operationIndex = 0);
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This method returns a list of collection types items. (Regardless of the permissions)
+        /// Lists all standalone collection type items.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CollTypeItem&gt;</returns>
-        ApiResponse<List<CollTypeItem>> HttpGetCollectionTypeItemsWithHttpInfo(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0);
+        ApiResponse<List<CollTypeItem>> HttpCollTypeItemsGetAllWithHttpInfo(int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Gets a single standalone collection type item by ID.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the collection type item.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CollTypeItem</returns>
+        CollTypeItem HttpCollTypeItemsGetById(string id, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Gets a single standalone collection type item by ID.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the collection type item.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CollTypeItem</returns>
+        ApiResponse<CollTypeItem> HttpCollTypeItemsGetByIdWithHttpInfo(string id, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Lists all item groups.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ItemGroup&gt;</returns>
+        List<ItemGroup> HttpItemGroupsGetAll(int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Lists all item groups.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ItemGroup&gt;</returns>
+        ApiResponse<List<ItemGroup>> HttpItemGroupsGetAllWithHttpInfo(int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Gets a single item group by ID.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the item group.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ItemGroup</returns>
+        ItemGroup HttpItemGroupsGetById(string id, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Gets a single item group by ID.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the item group.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ItemGroup</returns>
+        ApiResponse<ItemGroup> HttpItemGroupsGetByIdWithHttpInfo(string id, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPublicCollectionTypeManagementApiAsync : IApiAccessor
+    public interface IPublicCollectionTypeItemManagementApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
+        /// Lists all standalone collection type items.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;CollectionType&gt;</returns>
-        System.Threading.Tasks.Task<List<CollectionType>> HttpCollectionTypesGetAsync(bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
-        /// </remarks>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;CollectionType&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CollectionType>>> HttpCollectionTypesGetWithHttpInfoAsync(bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Returns one single collection type (from ID).
-        /// </remarks>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the collection type.</param>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CollectionType</returns>
-        System.Threading.Tasks.Task<CollectionType> HttpCollectionTypesGetByIdAsync(string id, bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Returns one single collection type (from ID).
-        /// </remarks>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the collection type.</param>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CollectionType)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CollectionType>> HttpCollectionTypesGetByIdWithHttpInfoAsync(string id, bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// This method returns a list of collection types items. (Regardless of the permissions)
-        /// </remarks>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CollTypeItem&gt;</returns>
-        System.Threading.Tasks.Task<List<CollTypeItem>> HttpGetCollectionTypeItemsAsync(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<CollTypeItem>> HttpCollTypeItemsGetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This method returns a list of collection types items. (Regardless of the permissions)
+        /// Lists all standalone collection type items.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CollTypeItem&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CollTypeItem>>> HttpGetCollectionTypeItemsWithHttpInfoAsync(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<CollTypeItem>>> HttpCollTypeItemsGetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Gets a single standalone collection type item by ID.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the collection type item.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CollTypeItem</returns>
+        System.Threading.Tasks.Task<CollTypeItem> HttpCollTypeItemsGetByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Gets a single standalone collection type item by ID.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the collection type item.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CollTypeItem)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CollTypeItem>> HttpCollTypeItemsGetByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Lists all item groups.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ItemGroup&gt;</returns>
+        System.Threading.Tasks.Task<List<ItemGroup>> HttpItemGroupsGetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Lists all item groups.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ItemGroup&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ItemGroup>>> HttpItemGroupsGetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Gets a single item group by ID.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the item group.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ItemGroup</returns>
+        System.Threading.Tasks.Task<ItemGroup> HttpItemGroupsGetByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Gets a single item group by ID.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the item group.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ItemGroup)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ItemGroup>> HttpItemGroupsGetByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPublicCollectionTypeManagementApi : IPublicCollectionTypeManagementApiSync, IPublicCollectionTypeManagementApiAsync
+    public interface IPublicCollectionTypeItemManagementApi : IPublicCollectionTypeItemManagementApiSync, IPublicCollectionTypeItemManagementApiAsync
     {
 
     }
@@ -222,23 +234,23 @@ namespace Agravity.Public.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class PublicCollectionTypeManagementApi : IPublicCollectionTypeManagementApi
+    public partial class PublicCollectionTypeItemManagementApi : IPublicCollectionTypeItemManagementApi
     {
         private Agravity.Public.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCollectionTypeManagementApi"/> class.
+        /// Initializes a new instance of the <see cref="PublicCollectionTypeItemManagementApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PublicCollectionTypeManagementApi() : this((string)null)
+        public PublicCollectionTypeItemManagementApi() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCollectionTypeManagementApi"/> class.
+        /// Initializes a new instance of the <see cref="PublicCollectionTypeItemManagementApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PublicCollectionTypeManagementApi(string basePath)
+        public PublicCollectionTypeItemManagementApi(string basePath)
         {
             this.Configuration = Agravity.Public.Client.Configuration.MergeConfigurations(
                 Agravity.Public.Client.GlobalConfiguration.Instance,
@@ -250,12 +262,12 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCollectionTypeManagementApi"/> class
+        /// Initializes a new instance of the <see cref="PublicCollectionTypeItemManagementApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public PublicCollectionTypeManagementApi(Agravity.Public.Client.Configuration configuration)
+        public PublicCollectionTypeItemManagementApi(Agravity.Public.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -269,13 +281,13 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PublicCollectionTypeManagementApi"/> class
+        /// Initializes a new instance of the <see cref="PublicCollectionTypeItemManagementApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public PublicCollectionTypeManagementApi(Agravity.Public.Client.ISynchronousClient client, Agravity.Public.Client.IAsynchronousClient asyncClient, Agravity.Public.Client.IReadableConfiguration configuration)
+        public PublicCollectionTypeItemManagementApi(Agravity.Public.Client.ISynchronousClient client, Agravity.Public.Client.IAsynchronousClient asyncClient, Agravity.Public.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -329,394 +341,24 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
+        ///  Lists all standalone collection type items.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;CollectionType&gt;</returns>
-        public List<CollectionType> HttpCollectionTypesGet(bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
-        {
-            Agravity.Public.Client.ApiResponse<List<CollectionType>> localVarResponse = HttpCollectionTypesGetWithHttpInfo(items, translations, acceptLanguage);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
-        /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;CollectionType&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<CollectionType>> HttpCollectionTypesGetWithHttpInfo(bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
-        {
-            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            if (items != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "items", items));
-            }
-            if (translations != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
-            }
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-
-            localVarRequestOptions.Operation = "PublicCollectionTypeManagementApi.HttpCollectionTypesGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (function_key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<CollectionType>>("/collectiontypes", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("HttpCollectionTypesGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
-        /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;CollectionType&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CollectionType>> HttpCollectionTypesGetAsync(bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
-        {
-            Agravity.Public.Client.ApiResponse<List<CollectionType>> localVarResponse = await HttpCollectionTypesGetWithHttpInfoAsync(items, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  This lists all available collection types which are stored in the database and not deleted (status \&quot;A\&quot;).
-        /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;CollectionType&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollectionType>>> HttpCollectionTypesGetWithHttpInfoAsync(bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
-        {
-
-            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            if (items != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "items", items));
-            }
-            if (translations != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
-            }
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-
-            localVarRequestOptions.Operation = "PublicCollectionTypeManagementApi.HttpCollectionTypesGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (function_key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<CollectionType>>("/collectiontypes", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("HttpCollectionTypesGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Returns one single collection type (from ID).
-        /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the collection type.</param>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CollectionType</returns>
-        public CollectionType HttpCollectionTypesGetById(string id, bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
-        {
-            Agravity.Public.Client.ApiResponse<CollectionType> localVarResponse = HttpCollectionTypesGetByIdWithHttpInfo(id, items, translations, acceptLanguage);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  Returns one single collection type (from ID).
-        /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the collection type.</param>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CollectionType</returns>
-        public Agravity.Public.Client.ApiResponse<CollectionType> HttpCollectionTypesGetByIdWithHttpInfo(string id, bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicCollectionTypeManagementApi->HttpCollectionTypesGetById");
-            }
-
-            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (items != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "items", items));
-            }
-            if (translations != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
-            }
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-
-            localVarRequestOptions.Operation = "PublicCollectionTypeManagementApi.HttpCollectionTypesGetById";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (function_key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<CollectionType>("/collectiontypes/{id}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("HttpCollectionTypesGetById", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Returns one single collection type (from ID).
-        /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the collection type.</param>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CollectionType</returns>
-        public async System.Threading.Tasks.Task<CollectionType> HttpCollectionTypesGetByIdAsync(string id, bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
-        {
-            Agravity.Public.Client.ApiResponse<CollectionType> localVarResponse = await HttpCollectionTypesGetByIdWithHttpInfoAsync(id, items, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  Returns one single collection type (from ID).
-        /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of the collection type.</param>
-        /// <param name="items">When true, returns the resolved collection type items alongside the item refs. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CollectionType)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CollectionType>> HttpCollectionTypesGetByIdWithHttpInfoAsync(string id, bool? items = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null)
-            {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicCollectionTypeManagementApi->HttpCollectionTypesGetById");
-            }
-
-
-            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (items != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "items", items));
-            }
-            if (translations != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
-            }
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
-
-            localVarRequestOptions.Operation = "PublicCollectionTypeManagementApi.HttpCollectionTypesGetById";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (function_key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<CollectionType>("/collectiontypes/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("HttpCollectionTypesGetById", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  This method returns a list of collection types items. (Regardless of the permissions)
-        /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;CollTypeItem&gt;</returns>
-        public List<CollTypeItem> HttpGetCollectionTypeItems(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
+        public List<CollTypeItem> HttpCollTypeItemsGetAll(int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<List<CollTypeItem>> localVarResponse = HttpGetCollectionTypeItemsWithHttpInfo(includeblueprint, translations, acceptLanguage);
+            Agravity.Public.Client.ApiResponse<List<CollTypeItem>> localVarResponse = HttpCollTypeItemsGetAllWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  This method returns a list of collection types items. (Regardless of the permissions)
+        ///  Lists all standalone collection type items.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;CollTypeItem&gt;</returns>
-        public Agravity.Public.Client.ApiResponse<List<CollTypeItem>> HttpGetCollectionTypeItemsWithHttpInfo(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<List<CollTypeItem>> HttpCollTypeItemsGetAllWithHttpInfo(int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -741,20 +383,8 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (includeblueprint != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "includeblueprint", includeblueprint));
-            }
-            if (translations != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
-            }
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
 
-            localVarRequestOptions.Operation = "PublicCollectionTypeManagementApi.HttpGetCollectionTypeItems";
+            localVarRequestOptions.Operation = "PublicCollectionTypeItemManagementApi.HttpCollTypeItemsGetAll";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (function_key) required
@@ -764,10 +394,10 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<CollTypeItem>>("/collectiontypesitems", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<CollTypeItem>>("/colltypeitems", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("HttpGetCollectionTypeItems", localVarResponse);
+                Exception _exception = this.ExceptionFactory("HttpCollTypeItemsGetAll", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -778,32 +408,26 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This method returns a list of collection types items. (Regardless of the permissions)
+        ///  Lists all standalone collection type items.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;CollTypeItem&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CollTypeItem>> HttpGetCollectionTypeItemsAsync(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<CollTypeItem>> HttpCollTypeItemsGetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            Agravity.Public.Client.ApiResponse<List<CollTypeItem>> localVarResponse = await HttpGetCollectionTypeItemsWithHttpInfoAsync(includeblueprint, translations, acceptLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<List<CollTypeItem>> localVarResponse = await HttpCollTypeItemsGetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  This method returns a list of collection types items. (Regardless of the permissions)
+        ///  Lists all standalone collection type items.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeblueprint">True if the blueprint items should be included. (optional)</param>
-        /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;CollTypeItem&gt;)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollTypeItem>>> HttpGetCollectionTypeItemsWithHttpInfoAsync(bool? includeblueprint = default, bool? translations = default, string acceptLanguage = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<CollTypeItem>>> HttpCollTypeItemsGetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -828,20 +452,8 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (includeblueprint != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "includeblueprint", includeblueprint));
-            }
-            if (translations != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "translations", translations));
-            }
-            if (acceptLanguage != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept-Language", Agravity.Public.Client.ClientUtils.ParameterToString(acceptLanguage)); // header parameter
-            }
 
-            localVarRequestOptions.Operation = "PublicCollectionTypeManagementApi.HttpGetCollectionTypeItems";
+            localVarRequestOptions.Operation = "PublicCollectionTypeItemManagementApi.HttpCollTypeItemsGetAll";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (function_key) required
@@ -851,11 +463,458 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<CollTypeItem>>("/collectiontypesitems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<CollTypeItem>>("/colltypeitems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("HttpGetCollectionTypeItems", localVarResponse);
+                Exception _exception = this.ExceptionFactory("HttpCollTypeItemsGetAll", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Gets a single standalone collection type item by ID.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the collection type item.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CollTypeItem</returns>
+        public CollTypeItem HttpCollTypeItemsGetById(string id, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<CollTypeItem> localVarResponse = HttpCollTypeItemsGetByIdWithHttpInfo(id);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Gets a single standalone collection type item by ID.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the collection type item.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CollTypeItem</returns>
+        public Agravity.Public.Client.ApiResponse<CollTypeItem> HttpCollTypeItemsGetByIdWithHttpInfo(string id, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicCollectionTypeItemManagementApi->HttpCollTypeItemsGetById");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "PublicCollectionTypeItemManagementApi.HttpCollTypeItemsGetById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<CollTypeItem>("/colltypeitems/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpCollTypeItemsGetById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Gets a single standalone collection type item by ID.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the collection type item.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CollTypeItem</returns>
+        public async System.Threading.Tasks.Task<CollTypeItem> HttpCollTypeItemsGetByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Agravity.Public.Client.ApiResponse<CollTypeItem> localVarResponse = await HttpCollTypeItemsGetByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Gets a single standalone collection type item by ID.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the collection type item.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CollTypeItem)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<CollTypeItem>> HttpCollTypeItemsGetByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicCollectionTypeItemManagementApi->HttpCollTypeItemsGetById");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "PublicCollectionTypeItemManagementApi.HttpCollTypeItemsGetById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<CollTypeItem>("/colltypeitems/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpCollTypeItemsGetById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Lists all item groups.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;ItemGroup&gt;</returns>
+        public List<ItemGroup> HttpItemGroupsGetAll(int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<List<ItemGroup>> localVarResponse = HttpItemGroupsGetAllWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Lists all item groups.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;ItemGroup&gt;</returns>
+        public Agravity.Public.Client.ApiResponse<List<ItemGroup>> HttpItemGroupsGetAllWithHttpInfo(int operationIndex = 0)
+        {
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "PublicCollectionTypeItemManagementApi.HttpItemGroupsGetAll";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<ItemGroup>>("/itemgroups", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpItemGroupsGetAll", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Lists all item groups.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ItemGroup&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ItemGroup>> HttpItemGroupsGetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Agravity.Public.Client.ApiResponse<List<ItemGroup>> localVarResponse = await HttpItemGroupsGetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Lists all item groups.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ItemGroup&gt;)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<List<ItemGroup>>> HttpItemGroupsGetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "PublicCollectionTypeItemManagementApi.HttpItemGroupsGetAll";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ItemGroup>>("/itemgroups", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpItemGroupsGetAll", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Gets a single item group by ID.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the item group.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ItemGroup</returns>
+        public ItemGroup HttpItemGroupsGetById(string id, int operationIndex = 0)
+        {
+            Agravity.Public.Client.ApiResponse<ItemGroup> localVarResponse = HttpItemGroupsGetByIdWithHttpInfo(id);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Gets a single item group by ID.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the item group.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ItemGroup</returns>
+        public Agravity.Public.Client.ApiResponse<ItemGroup> HttpItemGroupsGetByIdWithHttpInfo(string id, int operationIndex = 0)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicCollectionTypeItemManagementApi->HttpItemGroupsGetById");
+            }
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "PublicCollectionTypeItemManagementApi.HttpItemGroupsGetById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ItemGroup>("/itemgroups/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpItemGroupsGetById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Gets a single item group by ID.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the item group.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ItemGroup</returns>
+        public async System.Threading.Tasks.Task<ItemGroup> HttpItemGroupsGetByIdAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Agravity.Public.Client.ApiResponse<ItemGroup> localVarResponse = await HttpItemGroupsGetByIdWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Gets a single item group by ID.
+        /// </summary>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The ID of the item group.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ItemGroup)</returns>
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<ItemGroup>> HttpItemGroupsGetByIdWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'id' when calling PublicCollectionTypeItemManagementApi->HttpItemGroupsGetById");
+            }
+
+
+            Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Agravity.Public.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Agravity.Public.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "PublicCollectionTypeItemManagementApi.HttpItemGroupsGetById";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (function_key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-functions-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-functions-key", this.Configuration.GetApiKeyWithPrefix("x-functions-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ItemGroup>("/itemgroups/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("HttpItemGroupsGetById", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

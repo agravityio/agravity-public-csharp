@@ -39,6 +39,7 @@ namespace Agravity.Public.Model
         /// <param name="entityType">entityType.</param>
         /// <param name="versions">versions.</param>
         /// <param name="regionOfOrigin">regionOfOrigin.</param>
+        /// <param name="translations">translations.</param>
         /// <param name="status">status.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="createdBy">createdBy.</param>
@@ -46,12 +47,13 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public VersionEntity(string id = default, string entityType = default, List<VersionedAsset> versions = default, string regionOfOrigin = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
+        public VersionEntity(string id = default, string entityType = default, List<VersionedAsset> versions = default, string regionOfOrigin = default, Dictionary<string, Dictionary<string, object>> translations = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
         {
             this.Id = id;
             this.EntityType = entityType;
             this.Versions = versions;
             this.RegionOfOrigin = regionOfOrigin;
+            this.Translations = translations;
             this.Status = status;
             this.CreatedDate = createdDate;
             this.CreatedBy = createdBy;
@@ -84,6 +86,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "region_of_origin", EmitDefaultValue = true)]
         public string RegionOfOrigin { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Translations
+        /// </summary>
+        [DataMember(Name = "translations", EmitDefaultValue = true)]
+        public Dictionary<string, Dictionary<string, object>> Translations { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
@@ -139,6 +147,7 @@ namespace Agravity.Public.Model
             sb.Append("  EntityType: ").Append(EntityType).Append("\n");
             sb.Append("  Versions: ").Append(Versions).Append("\n");
             sb.Append("  RegionOfOrigin: ").Append(RegionOfOrigin).Append("\n");
+            sb.Append("  Translations: ").Append(Translations).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");

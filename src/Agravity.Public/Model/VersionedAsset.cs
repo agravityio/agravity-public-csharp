@@ -43,7 +43,8 @@ namespace Agravity.Public.Model
         /// <param name="blobData">blobData.</param>
         /// <param name="blobUploaded">blobUploaded.</param>
         /// <param name="mimeType">mimeType.</param>
-        public VersionedAsset(int? versionNr = default, DateTime? untilDate = default, string versionInfo = default, DateTime? createdDate = default, string createdBy = default, AssetBlob blobData = default, DateTime? blobUploaded = default, string mimeType = default)
+        /// <param name="translations">translations.</param>
+        public VersionedAsset(int? versionNr = default, DateTime? untilDate = default, string versionInfo = default, DateTime? createdDate = default, string createdBy = default, AssetBlob blobData = default, DateTime? blobUploaded = default, string mimeType = default, Dictionary<string, Dictionary<string, object>> translations = default)
         {
             this.VersionNr = versionNr;
             this.UntilDate = untilDate;
@@ -53,6 +54,7 @@ namespace Agravity.Public.Model
             this.BlobData = blobData;
             this.BlobUploaded = blobUploaded;
             this.MimeType = mimeType;
+            this.Translations = translations;
         }
 
         /// <summary>
@@ -104,6 +106,12 @@ namespace Agravity.Public.Model
         public string MimeType { get; set; }
 
         /// <summary>
+        /// Gets or Sets Translations
+        /// </summary>
+        [DataMember(Name = "translations", EmitDefaultValue = true)]
+        public Dictionary<string, Dictionary<string, object>> Translations { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -119,6 +127,7 @@ namespace Agravity.Public.Model
             sb.Append("  BlobData: ").Append(BlobData).Append("\n");
             sb.Append("  BlobUploaded: ").Append(BlobUploaded).Append("\n");
             sb.Append("  MimeType: ").Append(MimeType).Append("\n");
+            sb.Append("  Translations: ").Append(Translations).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

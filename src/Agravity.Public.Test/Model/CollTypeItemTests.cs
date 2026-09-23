@@ -101,21 +101,21 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'Label'
-        /// </summary>
-        [Fact]
-        public void LabelTest()
-        {
-            // TODO unit test for the property 'Label'
-        }
-
-        /// <summary>
         /// Test the property 'DefaultValue'
         /// </summary>
         [Fact]
         public void DefaultValueTest()
         {
             // TODO unit test for the property 'DefaultValue'
+        }
+
+        /// <summary>
+        /// Test the property 'RefId'
+        /// </summary>
+        [Fact]
+        public void RefIdTest()
+        {
+            // TODO unit test for the property 'RefId'
         }
 
         /// <summary>
@@ -188,6 +188,24 @@ namespace Agravity.Public.Test.Model
         public void TranslationsTest()
         {
             // TODO unit test for the property 'Translations'
+        }
+
+        /// <summary>
+        /// Test the property 'Description'
+        /// </summary>
+        [Fact]
+        public void DescriptionTest()
+        {
+            // TODO unit test for the property 'Description'
+        }
+
+        /// <summary>
+        /// Test the property 'AddProperties'
+        /// </summary>
+        [Fact]
+        public void AddPropertiesTest()
+        {
+            // TODO unit test for the property 'AddProperties'
         }
 
         /// <summary>

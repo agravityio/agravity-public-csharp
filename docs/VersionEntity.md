@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **EntityType** | **string** |  | [optional] 
 **Versions** | [**List&lt;VersionedAsset&gt;**](VersionedAsset.md) |  | [optional] 
 **RegionOfOrigin** | **string** |  | [optional] 
+**Translations** | **Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;** |  | [optional] 
 **Status** | **string** |  | [optional] 
 **CreatedDate** | **DateTime?** |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 

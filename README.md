@@ -165,6 +165,10 @@ Class | Method | HTTP request | Description
 *PublicCollectionManagementApi* | [**HttpPublicPostCollectionsGetByNames**](docs/PublicCollectionManagementApi.md#httppublicpostcollectionsgetbynames) | **POST** /collectionsbynames | 
 *PublicCollectionSecureUploadApi* | [**HttpSecureUploadEntityCheckById**](docs/PublicCollectionSecureUploadApi.md#httpsecureuploadentitycheckbyid) | **GET** /secureupload/{id} | 
 *PublicCollectionSecureUploadApi* | [**HttpSecureUploadFileById**](docs/PublicCollectionSecureUploadApi.md#httpsecureuploadfilebyid) | **POST** /secureupload/{id}/upload | 
+*PublicCollectionTypeItemManagementApi* | [**HttpCollTypeItemsGetAll**](docs/PublicCollectionTypeItemManagementApi.md#httpcolltypeitemsgetall) | **GET** /colltypeitems | 
+*PublicCollectionTypeItemManagementApi* | [**HttpCollTypeItemsGetById**](docs/PublicCollectionTypeItemManagementApi.md#httpcolltypeitemsgetbyid) | **GET** /colltypeitems/{id} | 
+*PublicCollectionTypeItemManagementApi* | [**HttpItemGroupsGetAll**](docs/PublicCollectionTypeItemManagementApi.md#httpitemgroupsgetall) | **GET** /itemgroups | 
+*PublicCollectionTypeItemManagementApi* | [**HttpItemGroupsGetById**](docs/PublicCollectionTypeItemManagementApi.md#httpitemgroupsgetbyid) | **GET** /itemgroups/{id} | 
 *PublicCollectionTypeManagementApi* | [**HttpCollectionTypesGet**](docs/PublicCollectionTypeManagementApi.md#httpcollectiontypesget) | **GET** /collectiontypes | 
 *PublicCollectionTypeManagementApi* | [**HttpCollectionTypesGetById**](docs/PublicCollectionTypeManagementApi.md#httpcollectiontypesgetbyid) | **GET** /collectiontypes/{id} | 
 *PublicCollectionTypeManagementApi* | [**HttpGetCollectionTypeItems**](docs/PublicCollectionTypeManagementApi.md#httpgetcollectiontypeitems) | **GET** /collectiontypesitems | 
@@ -233,6 +237,7 @@ Class | Method | HTTP request | Description
  - [Model.AssetRelationType](docs/AssetRelationType.md)
  - [Model.AzSearchOptions](docs/AzSearchOptions.md)
  - [Model.CollTypeItem](docs/CollTypeItem.md)
+ - [Model.CollTypeItemRef](docs/CollTypeItemRef.md)
  - [Model.Collection](docs/Collection.md)
  - [Model.CollectionType](docs/CollectionType.md)
  - [Model.CollectionUDL](docs/CollectionUDL.md)
@@ -259,6 +264,7 @@ Class | Method | HTTP request | Description
  - [Model.EntityNamesRequest](docs/EntityNamesRequest.md)
  - [Model.FrontendAppConfig](docs/FrontendAppConfig.md)
  - [Model.GroupAllAppData](docs/GroupAllAppData.md)
+ - [Model.ItemGroup](docs/ItemGroup.md)
  - [Model.MoveCollectionBody](docs/MoveCollectionBody.md)
  - [Model.PermissionEntity](docs/PermissionEntity.md)
  - [Model.Portal](docs/Portal.md)

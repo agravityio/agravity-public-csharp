@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a id="httpcollectiontypesget"></a>
 # **HttpCollectionTypesGet**
-> List&lt;CollectionType&gt; HttpCollectionTypesGet (bool? translations = null, string acceptLanguage = null)
+> List&lt;CollectionType&gt; HttpCollectionTypesGet (bool? items = null, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -38,12 +38,13 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicCollectionTypeManagementApi(config);
+            var items = true;  // bool? | When true, returns the resolved collection type items alongside the item refs. (optional) 
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
             var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                List<CollectionType> result = apiInstance.HttpCollectionTypesGet(translations, acceptLanguage);
+                List<CollectionType> result = apiInstance.HttpCollectionTypesGet(items, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -63,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<List<CollectionType>> response = apiInstance.HttpCollectionTypesGetWithHttpInfo(translations, acceptLanguage);
+    ApiResponse<List<CollectionType>> response = apiInstance.HttpCollectionTypesGetWithHttpInfo(items, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -80,6 +81,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
+| **items** | **bool?** | When true, returns the resolved collection type items alongside the item refs. | [optional]  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 | **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
@@ -109,7 +111,7 @@ catch (ApiException e)
 
 <a id="httpcollectiontypesgetbyid"></a>
 # **HttpCollectionTypesGetById**
-> CollectionType HttpCollectionTypesGetById (string id, bool? translations = null, string acceptLanguage = null)
+> CollectionType HttpCollectionTypesGetById (string id, bool? items = null, bool? translations = null, string acceptLanguage = null)
 
 
 
@@ -138,12 +140,13 @@ namespace Example
 
             var apiInstance = new PublicCollectionTypeManagementApi(config);
             var id = "id_example";  // string | The ID of the collection type.
+            var items = true;  // bool? | When true, returns the resolved collection type items alongside the item refs. (optional) 
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
             var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
             try
             {
-                CollectionType result = apiInstance.HttpCollectionTypesGetById(id, translations, acceptLanguage);
+                CollectionType result = apiInstance.HttpCollectionTypesGetById(id, items, translations, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -163,7 +166,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<CollectionType> response = apiInstance.HttpCollectionTypesGetByIdWithHttpInfo(id, translations, acceptLanguage);
+    ApiResponse<CollectionType> response = apiInstance.HttpCollectionTypesGetByIdWithHttpInfo(id, items, translations, acceptLanguage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -181,6 +184,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The ID of the collection type. |  |
+| **items** | **bool?** | When true, returns the resolved collection type items alongside the item refs. | [optional]  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 | **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 

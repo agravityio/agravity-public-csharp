@@ -126,5 +126,14 @@ namespace Agravity.Public.Test.Model
         {
             // TODO unit test for the property 'MimeType'
         }
+
+        /// <summary>
+        /// Test the property 'Translations'
+        /// </summary>
+        [Fact]
+        public void TranslationsTest()
+        {
+            // TODO unit test for the property 'Translations'
+        }
     }
 }

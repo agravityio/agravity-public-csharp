@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost:7072/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**HttpGetSearchFacetteByName**](PublicSearchManagementApi.md#httpgetsearchfacettebyname) | **GET** /search/facette |  |
+| [**HttpGetSearchFacetByName**](PublicSearchManagementApi.md#httpgetsearchfacetbyname) | **GET** /search/facet |  |
 | [**HttpGlobalSearch**](PublicSearchManagementApi.md#httpglobalsearch) | **GET** /search |  |
 | [**HttpGlobalSearchPost**](PublicSearchManagementApi.md#httpglobalsearchpost) | **POST** /search |  |
 | [**HttpSearchAdminGetStatus**](PublicSearchManagementApi.md#httpsearchadmingetstatus) | **GET** /searchadmin/status |  |
 
-<a id="httpgetsearchfacettebyname"></a>
-# **HttpGetSearchFacetteByName**
-> SearchFacet HttpGetSearchFacetteByName (string name, string s, string collectiontypeid = null, string collectionid = null, string mode = null, string filter = null, string scopefilter = null, string ids = null, string portalId = null)
+<a id="httpgetsearchfacetbyname"></a>
+# **HttpGetSearchFacetByName**
+> SearchFacet HttpGetSearchFacetByName (string name, string s, string collectiontypeid = null, string collectionid = null, string mode = null, string filter = null, string scopefilter = null, string ids = null, string portalId = null)
 
 
 
-This endpoint returns one facette based on the search parameters.
+This endpoint returns one facet based on the search parameters.
 
 ### Example
 ```csharp
@@ -27,7 +27,7 @@ using Agravity.Public.Model;
 
 namespace Example
 {
-    public class HttpGetSearchFacetteByNameExample
+    public class HttpGetSearchFacetByNameExample
     {
         public static void Main()
         {
@@ -39,7 +39,7 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicSearchManagementApi(config);
-            var name = "name_example";  // string | The name of the facette.
+            var name = "name_example";  // string | The name of the facet.
             var s = "s_example";  // string | The search string which should be found.
             var collectiontypeid = "collectiontypeid_example";  // string | Limits the result on all collections from the given collectiontypeid parameter. (optional) 
             var collectionid = "collectionid_example";  // string | Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional) 
@@ -51,12 +51,12 @@ namespace Example
 
             try
             {
-                SearchFacet result = apiInstance.HttpGetSearchFacetteByName(name, s, collectiontypeid, collectionid, mode, filter, scopefilter, ids, portalId);
+                SearchFacet result = apiInstance.HttpGetSearchFacetByName(name, s, collectiontypeid, collectionid, mode, filter, scopefilter, ids, portalId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PublicSearchManagementApi.HttpGetSearchFacetteByName: " + e.Message);
+                Debug.Print("Exception when calling PublicSearchManagementApi.HttpGetSearchFacetByName: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -65,20 +65,20 @@ namespace Example
 }
 ```
 
-#### Using the HttpGetSearchFacetteByNameWithHttpInfo variant
+#### Using the HttpGetSearchFacetByNameWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<SearchFacet> response = apiInstance.HttpGetSearchFacetteByNameWithHttpInfo(name, s, collectiontypeid, collectionid, mode, filter, scopefilter, ids, portalId);
+    ApiResponse<SearchFacet> response = apiInstance.HttpGetSearchFacetByNameWithHttpInfo(name, s, collectiontypeid, collectionid, mode, filter, scopefilter, ids, portalId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PublicSearchManagementApi.HttpGetSearchFacetteByNameWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling PublicSearchManagementApi.HttpGetSearchFacetByNameWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -88,7 +88,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **name** | **string** | The name of the facette. |  |
+| **name** | **string** | The name of the facet. |  |
 | **s** | **string** | The search string which should be found. |  |
 | **collectiontypeid** | **string** | Limits the result on all collections from the given collectiontypeid parameter. | [optional]  |
 | **collectionid** | **string** | Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. | [optional]  |

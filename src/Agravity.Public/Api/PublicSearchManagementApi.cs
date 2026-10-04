@@ -1,7 +1,7 @@
 /*
  * Agravity OpenAPI Documentation - Public Functions
  *
- * <p>The Agravity Public API provides comprehensive access to digital asset management functionality for technical integrations, portals, and third-party applications. These endpoints are designed for programmatic access with API key authentication.</p><br/><h2>Access &amp; Security</h2><br/><b>API key is required to access these endpoints.</b><br/><ul><li>API Key Authentication - Each request requires a valid API key in headers or parameters</li><li>Portal-Aware - Many endpoints support portal context for multi-tenant scenarios</li><li>Service-to-Service Communication - Designed for backend-to-backend integrations</li><li>Stable &amp; Versioned - Public API versioning ensures backward compatibility</li></ul><h2>Core Features &amp; Operations</h2><ul><li><strong>Asset Management</strong> - Create, retrieve, update assets with full metadata support; manage versions and publish assets</li><li><strong>Collection Management</strong> - Create and organize collections hierarchically; retrieve collection type definitions and structures</li><li><strong>Asset Operations</strong> - Retrieve asset blobs (thumbnails, optimized, original); rotate and resize images; find similar assets using AI reverse search</li><li><strong>Image Editing</strong> - Apply transformations to images with advanced parameters (resize, crop, filter, color space, DPI, quality, depth)</li><li><strong>Asset Publishing</strong> - Publish assets to various targets (Vimeo, CDN); manage published asset information</li><li><strong>Asset Versioning</strong> - Create, restore, and manage asset versions; track version history with descriptions</li><li><strong>Asset Relations</strong> - Create and manage relationships between assets with hierarchical or standard relations; organize assets into logical groups</li><li><strong>Asset Relation Types</strong> - Retrieve relation type definitions including hierarchical, sequential, and unique-per-asset configurations</li><li><strong>Full-Text Search</strong> - Search assets and collections with advanced filtering, facets, and sorting capabilities</li><li><strong>Collection Sharing</strong> - Create shared collections with expiration dates, password protection, and download limits</li><li><strong>Quick Shares</strong> - Create quick share links for rapid asset sharing with expiration management</li><li><strong>Portals</strong> - Full portal management with authentication, custom theming, and asset filtering</li><li><strong>Secure Upload</strong> - Secure file upload endpoints with validation and SAS token generation</li><li><strong>Download Management</strong> - Create ZIP packages of assets with format specifications; track download progress</li><li><strong>Download Formats</strong> - Define and apply custom image transformations and optimizations for downloads</li><li><strong>Authentication</strong> - Generate SAS tokens for container write access; retrieve user information</li><li><strong>Configuration</strong> - Access frontend configuration values and system settings</li><li><strong>Helper Tools</strong> - Get searchable items, filterable items, user-defined lists, and static defined lists</li><li><strong>Translations</strong> - Retrieve translations for all entities in multiple languages</li><li><strong>Deleted Entities Tracking</strong> - Track deleted assets, collections, and other entities by date</li></ul><h2>Available Endpoints by Category</h2><ul><li><strong>Asset Management</strong> - /assets, /assets/{id}, /assetsupload</li><li><strong>Asset Relations</strong> - /assetrelations, /assetrelations/{id} (create, read, update, delete asset relationships)</li><li><strong>Asset Relation Types</strong> - /assetrelationtypes, /assetrelationtypes/{id} (retrieve relation type definitions and configurations)</li><li><strong>Asset Operations</strong> - /assets/{id}/blobs, /assets/{id}/collections, /assets/{id}/tocollection, /assets/{id}/download, /assets/{id}/resize, /assets/{id}/imageedit, /assets/{id}/availability</li><li><strong>Asset Publishing</strong> - /assets/{id}/publish, /assets/{id}/publish/{pid}</li><li><strong>Asset Versioning</strong> - /assets/{id}/versions, /assets/{id}/versionsupload, /assets/{id}/versions/{vNr}/restore</li><li><strong>AI Operations</strong> - /ai/reverseassetsearch (find similar assets using image)</li><li><strong>Collection Management</strong> - /collections, /collections/{id}, /collections/{id}/ancestors, /collections/{id}/descendants, /collections/{id}/previews, /collectionsbynames</li><li><strong>Collection Types</strong> - /collectiontypes, /collectiontypes/{id}, /collectiontypesitems</li><li><strong>Search</strong> - /search, /search/facette, /searchadmin/status</li><li><strong>Saved Searches</strong> - /savedsearches</li><li><strong>Collection Sharing</strong> - /shared/{id}, /shared/{id}/zip, /quickshares/{id}</li><li><strong>Secure Upload</strong> - /secureupload/{id}, /secureupload/{id}/upload</li><li><strong>Portal Management</strong> - /portals/{id}, /portals/{id}/config, /portals/{id}/zip, /portals/{id}/assetids, /portalsenhancetoken, /portalssaveuserattributes</li><li><strong>Authentication</strong> - /auth/containerwrite/{containerName}, /auth/inbox, /auth/users/{id}</li><li><strong>Download Formats</strong> - /downloadformats, /downloadformats-shared</li><li><strong>Configuration</strong> - /config/frontend</li><li><strong>Static Defined Lists</strong> - /staticdefinedlists, /staticdefinedlists/{id}</li><li><strong>User-Defined Lists</strong> - /helper/userdefinedlists</li><li><strong>Helper Tools</strong> - /helper/searchableitemnames, /helper/searchableitems, /helper/filterableitems</li><li><strong>Translations</strong> - /translations/{id}, /translations/{id}/{property}, /translations/{id}/custom/{customField}</li><li><strong>Web App Data</strong> - /webappdata/{id}, /data/collectiontype/{id}</li><li><strong>Workspace Management</strong> - /workspaces, /workspaces/{id}</li><li><strong>General</strong> - /version, /deleted, /durable/{instanceId}, /public/view, /signalr/negotiate</li></ul><h2>Typical Use Cases</h2><ul><li>E-commerce platforms - Product image management and dynamic optimization</li><li>Marketing automation - Asset distribution across channels with version control</li><li>Portal systems - Multi-tenant asset galleries with custom theming and permissions</li><li>Headless CMS integration - Content delivery with dynamic transformations</li><li>Mobile applications - Asset retrieval with mobile-optimized formats</li><li>AI-powered workflows - Reverse image search and automatic metadata generation</li><li>Asset sharing platforms - Secure sharing with expiration and password protection</li><li>Digital distribution - ZIP creation and bulk download management</li><li>Multi-language content - Translation management across all assets and collections</li><li>Real-time monitoring - Deletion tracking and version history auditing</li></ul><h2>Key Capabilities</h2><ul><li>Full CRUD operations on assets, collections, and related entities</li><li>Asset relationship management with hierarchical and standard relations</li><li>Advanced image transformation with ImageMagick integration</li><li>AI-powered reverse image search for asset discovery</li><li>Multi-language support with translation dictionaries</li><li>Granular permission control and role-based access</li><li>Portal creation with custom authentication and theming</li><li>Hierarchical collection organization with dynamic filtering</li><li>Real-time search with faceted navigation and advanced filtering</li><li>Secure sharing with expiration and password protection</li><li>Blob storage integration with SAS token generation</li><li>Comprehensive asset versioning and restoration</li><li>SignalR support for real-time notifications</li></ul><h2>Authentication &amp; Authorization</h2><p>All endpoints (except public share endpoints) require API key authentication. The API key can be provided:</p><ul><li>As query parameter: ?code=YOUR_API_KEY</li><li>As header: x-functions-key: YOUR_API_KEY</li></ul><p>Portal endpoints may have additional authentication methods (OAuth, Azure AD, Auth0, password) depending on portal configuration.</p><h2>Support</h2><p>For technical support or integration questions, contact <a href=\"mailto:support@agravity.io\">support@agravity.io</a> or visit <a href=\"https://agravity.io\">https://agravity.io</a>.</p><br/><p>Copyright © Agravity GmbH 2026. All Rights Reserved</p>
+ * <p>The Agravity Public API provides comprehensive access to digital asset management functionality for technical integrations, portals, and third-party applications. These endpoints are designed for programmatic access with API key authentication.</p><br/><h2>Access &amp; Security</h2><br/><b>API key is required to access these endpoints.</b><br/><ul><li>API Key Authentication - Each request requires a valid API key in headers or parameters</li><li>Portal-Aware - Many endpoints support portal context for multi-tenant scenarios</li><li>Service-to-Service Communication - Designed for backend-to-backend integrations</li><li>Stable &amp; Versioned - Public API versioning ensures backward compatibility</li></ul><h2>Core Features &amp; Operations</h2><ul><li><strong>Asset Management</strong> - Create, retrieve, update assets with full metadata support; manage versions and publish assets</li><li><strong>Collection Management</strong> - Create and organize collections hierarchically; retrieve collection type definitions and structures</li><li><strong>Asset Operations</strong> - Retrieve asset blobs (thumbnails, optimized, original); rotate and resize images; find similar assets using AI reverse search</li><li><strong>Image Editing</strong> - Apply transformations to images with advanced parameters (resize, crop, filter, color space, DPI, quality, depth)</li><li><strong>Asset Publishing</strong> - Publish assets to various targets (Vimeo, CDN); manage published asset information</li><li><strong>Asset Versioning</strong> - Create, restore, and manage asset versions; track version history with descriptions</li><li><strong>Asset Relations</strong> - Create and manage relationships between assets with hierarchical or standard relations; organize assets into logical groups</li><li><strong>Asset Relation Types</strong> - Retrieve relation type definitions including hierarchical, sequential, and unique-per-asset configurations</li><li><strong>Full-Text Search</strong> - Search assets and collections with advanced filtering, facets, and sorting capabilities</li><li><strong>Collection Sharing</strong> - Create shared collections with expiration dates, password protection, and download limits</li><li><strong>Quick Shares</strong> - Create quick share links for rapid asset sharing with expiration management</li><li><strong>Portals</strong> - Full portal management with authentication, custom theming, and asset filtering</li><li><strong>Secure Upload</strong> - Secure file upload endpoints with validation and SAS token generation</li><li><strong>Download Management</strong> - Create ZIP packages of assets with format specifications; track download progress</li><li><strong>Download Formats</strong> - Define and apply custom image transformations and optimizations for downloads</li><li><strong>Authentication</strong> - Generate SAS tokens for container write access; retrieve user information</li><li><strong>Configuration</strong> - Access frontend configuration values and system settings</li><li><strong>Helper Tools</strong> - Get searchable items, filterable items, user-defined lists, and static defined lists</li><li><strong>Translations</strong> - Retrieve translations for all entities in multiple languages</li><li><strong>Deleted Entities Tracking</strong> - Track deleted assets, collections, and other entities by date</li></ul><h2>Available Endpoints by Category</h2><ul><li><strong>Asset Management</strong> - /assets, /assets/{id}, /assetsupload</li><li><strong>Asset Relations</strong> - /assetrelations, /assetrelations/{id} (create, read, update, delete asset relationships)</li><li><strong>Asset Relation Types</strong> - /assetrelationtypes, /assetrelationtypes/{id} (retrieve relation type definitions and configurations)</li><li><strong>Asset Operations</strong> - /assets/{id}/blobs, /assets/{id}/collections, /assets/{id}/tocollection, /assets/{id}/download, /assets/{id}/resize, /assets/{id}/imageedit, /assets/{id}/availability</li><li><strong>Asset Publishing</strong> - /assets/{id}/publish, /assets/{id}/publish/{pid}</li><li><strong>Asset Versioning</strong> - /assets/{id}/versions, /assets/{id}/versionsupload, /assets/{id}/versions/{vNr}/restore</li><li><strong>AI Operations</strong> - /ai/reverseassetsearch (find similar assets using image)</li><li><strong>Collection Management</strong> - /collections, /collections/{id}, /collections/{id}/ancestors, /collections/{id}/descendants, /collections/{id}/previews, /collectionsbynames</li><li><strong>Collection Types</strong> - /collectiontypes, /collectiontypes/{id}, /collectiontypesitems</li><li><strong>Search</strong> - /search, /search/facet, /searchadmin/status</li><li><strong>Saved Searches</strong> - /savedsearches</li><li><strong>Collection Sharing</strong> - /shared/{id}, /shared/{id}/zip, /quickshares/{id}</li><li><strong>Secure Upload</strong> - /secureupload/{id}, /secureupload/{id}/upload</li><li><strong>Portal Management</strong> - /portals/{id}, /portals/{id}/config, /portals/{id}/zip, /portals/{id}/assetids, /portalsenhancetoken, /portalssaveuserattributes</li><li><strong>Authentication</strong> - /auth/containerwrite/{containerName}, /auth/inbox, /auth/users/{id}</li><li><strong>Download Formats</strong> - /downloadformats, /downloadformats-shared</li><li><strong>Configuration</strong> - /config/frontend</li><li><strong>Static Defined Lists</strong> - /staticdefinedlists, /staticdefinedlists/{id}</li><li><strong>User-Defined Lists</strong> - /helper/userdefinedlists</li><li><strong>Helper Tools</strong> - /helper/searchableitemnames, /helper/searchableitems, /helper/filterableitems</li><li><strong>Translations</strong> - /translations/{id}, /translations/{id}/{property}, /translations/{id}/custom/{customField}</li><li><strong>Web App Data</strong> - /webappdata/{id}, /data/collectiontype/{id}</li><li><strong>Workspace Management</strong> - /workspaces, /workspaces/{id}</li><li><strong>General</strong> - /version, /deleted, /durable/{instanceId}, /public/view, /signalr/negotiate</li></ul><h2>Typical Use Cases</h2><ul><li>E-commerce platforms - Product image management and dynamic optimization</li><li>Marketing automation - Asset distribution across channels with version control</li><li>Portal systems - Multi-tenant asset galleries with custom theming and permissions</li><li>Headless CMS integration - Content delivery with dynamic transformations</li><li>Mobile applications - Asset retrieval with mobile-optimized formats</li><li>AI-powered workflows - Reverse image search and automatic metadata generation</li><li>Asset sharing platforms - Secure sharing with expiration and password protection</li><li>Digital distribution - ZIP creation and bulk download management</li><li>Multi-language content - Translation management across all assets and collections</li><li>Real-time monitoring - Deletion tracking and version history auditing</li></ul><h2>Key Capabilities</h2><ul><li>Full CRUD operations on assets, collections, and related entities</li><li>Asset relationship management with hierarchical and standard relations</li><li>Advanced image transformation with ImageMagick integration</li><li>AI-powered reverse image search for asset discovery</li><li>Multi-language support with translation dictionaries</li><li>Granular permission control and role-based access</li><li>Portal creation with custom authentication and theming</li><li>Hierarchical collection organization with dynamic filtering</li><li>Real-time search with faceted navigation and advanced filtering</li><li>Secure sharing with expiration and password protection</li><li>Blob storage integration with SAS token generation</li><li>Comprehensive asset versioning and restoration</li><li>SignalR support for real-time notifications</li></ul><h2>Authentication &amp; Authorization</h2><p>All endpoints (except public share endpoints) require API key authentication. The API key can be provided:</p><ul><li>As query parameter: ?code=YOUR_API_KEY</li><li>As header: x-functions-key: YOUR_API_KEY</li></ul><p>Portal endpoints may have additional authentication methods (OAuth, Azure AD, Auth0, password) depending on portal configuration.</p><h2>Support</h2><p>For technical support or integration questions, contact <a href=\"mailto:support@agravity.io\">support@agravity.io</a> or visit <a href=\"https://agravity.io\">https://agravity.io</a>.</p><br/><p>Copyright © Agravity GmbH 2026. All Rights Reserved</p>
  *
  * The version of the OpenAPI document: 11.0.4
  * Contact: support@agravity.io
@@ -31,10 +31,10 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns one facette based on the search parameters.
+        /// This endpoint returns one facet based on the search parameters.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">The name of the facette.</param>
+        /// <param name="name">The name of the facet.</param>
         /// <param name="s">The search string which should be found.</param>
         /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
@@ -45,16 +45,16 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchFacet</returns>
-        SearchFacet HttpGetSearchFacetteByName(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0);
+        SearchFacet HttpGetSearchFacetByName(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0);
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns one facette based on the search parameters.
+        /// This endpoint returns one facet based on the search parameters.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">The name of the facette.</param>
+        /// <param name="name">The name of the facet.</param>
         /// <param name="s">The search string which should be found.</param>
         /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
@@ -65,7 +65,7 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchFacet</returns>
-        ApiResponse<SearchFacet> HttpGetSearchFacetteByNameWithHttpInfo(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0);
+        ApiResponse<SearchFacet> HttpGetSearchFacetByNameWithHttpInfo(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -184,10 +184,10 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns one facette based on the search parameters.
+        /// This endpoint returns one facet based on the search parameters.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">The name of the facette.</param>
+        /// <param name="name">The name of the facet.</param>
         /// <param name="s">The search string which should be found.</param>
         /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
@@ -199,16 +199,16 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchFacet</returns>
-        System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetteByNameAsync(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetByNameAsync(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// This endpoint returns one facette based on the search parameters.
+        /// This endpoint returns one facet based on the search parameters.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">The name of the facette.</param>
+        /// <param name="name">The name of the facet.</param>
         /// <param name="s">The search string which should be found.</param>
         /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
@@ -220,7 +220,7 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchFacet)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchFacet>> HttpGetSearchFacetteByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<SearchFacet>> HttpGetSearchFacetByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -453,10 +453,10 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint returns one facette based on the search parameters.
+        ///  This endpoint returns one facet based on the search parameters.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">The name of the facette.</param>
+        /// <param name="name">The name of the facet.</param>
         /// <param name="s">The search string which should be found.</param>
         /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
@@ -467,17 +467,17 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchFacet</returns>
-        public SearchFacet HttpGetSearchFacetteByName(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0)
+        public SearchFacet HttpGetSearchFacetByName(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<SearchFacet> localVarResponse = HttpGetSearchFacetteByNameWithHttpInfo(name, s, collectiontypeid, collectionid, mode, filter, scopefilter, ids, portalId);
+            Agravity.Public.Client.ApiResponse<SearchFacet> localVarResponse = HttpGetSearchFacetByNameWithHttpInfo(name, s, collectiontypeid, collectionid, mode, filter, scopefilter, ids, portalId);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  This endpoint returns one facette based on the search parameters.
+        ///  This endpoint returns one facet based on the search parameters.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">The name of the facette.</param>
+        /// <param name="name">The name of the facet.</param>
         /// <param name="s">The search string which should be found.</param>
         /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
@@ -488,18 +488,18 @@ namespace Agravity.Public.Api
         /// <param name="portalId">If the search should be redirected to a specific portal. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchFacet</returns>
-        public Agravity.Public.Client.ApiResponse<SearchFacet> HttpGetSearchFacetteByNameWithHttpInfo(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<SearchFacet> HttpGetSearchFacetByNameWithHttpInfo(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0)
         {
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'name' when calling PublicSearchManagementApi->HttpGetSearchFacetteByName");
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'name' when calling PublicSearchManagementApi->HttpGetSearchFacetByName");
             }
 
             // verify the required parameter 's' is set
             if (s == null)
             {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 's' when calling PublicSearchManagementApi->HttpGetSearchFacetteByName");
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 's' when calling PublicSearchManagementApi->HttpGetSearchFacetByName");
             }
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -556,7 +556,7 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
             }
 
-            localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpGetSearchFacetteByName";
+            localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpGetSearchFacetByName";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (function_key) required
@@ -566,10 +566,10 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<SearchFacet>("/search/facette", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<SearchFacet>("/search/facet", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("HttpGetSearchFacetteByName", localVarResponse);
+                Exception _exception = this.ExceptionFactory("HttpGetSearchFacetByName", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -580,10 +580,10 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  This endpoint returns one facette based on the search parameters.
+        ///  This endpoint returns one facet based on the search parameters.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">The name of the facette.</param>
+        /// <param name="name">The name of the facet.</param>
         /// <param name="s">The search string which should be found.</param>
         /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
@@ -595,17 +595,17 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchFacet</returns>
-        public async System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetteByNameAsync(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<SearchFacet> HttpGetSearchFacetByNameAsync(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            Agravity.Public.Client.ApiResponse<SearchFacet> localVarResponse = await HttpGetSearchFacetteByNameWithHttpInfoAsync(name, s, collectiontypeid, collectionid, mode, filter, scopefilter, ids, portalId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<SearchFacet> localVarResponse = await HttpGetSearchFacetByNameWithHttpInfoAsync(name, s, collectiontypeid, collectionid, mode, filter, scopefilter, ids, portalId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  This endpoint returns one facette based on the search parameters.
+        ///  This endpoint returns one facet based on the search parameters.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name">The name of the facette.</param>
+        /// <param name="name">The name of the facet.</param>
         /// <param name="s">The search string which should be found.</param>
         /// <param name="collectiontypeid">Limits the result on all collections from the given collectiontypeid parameter. (optional)</param>
         /// <param name="collectionid">Limits the result on collection id (and siblings). Will be overwritten by collectiontypeid parameter. (optional)</param>
@@ -617,18 +617,18 @@ namespace Agravity.Public.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchFacet)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchFacet>> HttpGetSearchFacetteByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchFacet>> HttpGetSearchFacetByNameWithHttpInfoAsync(string name, string s, string collectiontypeid = default, string collectionid = default, string mode = default, string filter = default, string scopefilter = default, string ids = default, string portalId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'name' is set
             if (name == null)
             {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'name' when calling PublicSearchManagementApi->HttpGetSearchFacetteByName");
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 'name' when calling PublicSearchManagementApi->HttpGetSearchFacetByName");
             }
 
             // verify the required parameter 's' is set
             if (s == null)
             {
-                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 's' when calling PublicSearchManagementApi->HttpGetSearchFacetteByName");
+                throw new Agravity.Public.Client.ApiException(400, "Missing required parameter 's' when calling PublicSearchManagementApi->HttpGetSearchFacetByName");
             }
 
 
@@ -685,7 +685,7 @@ namespace Agravity.Public.Api
                 localVarRequestOptions.QueryParameters.Add(Agravity.Public.Client.ClientUtils.ParameterToMultiMap("", "portal_id", portalId));
             }
 
-            localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpGetSearchFacetteByName";
+            localVarRequestOptions.Operation = "PublicSearchManagementApi.HttpGetSearchFacetByName";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (function_key) required
@@ -695,11 +695,11 @@ namespace Agravity.Public.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<SearchFacet>("/search/facette", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SearchFacet>("/search/facet", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("HttpGetSearchFacetteByName", localVarResponse);
+                Exception _exception = this.ExceptionFactory("HttpGetSearchFacetByName", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

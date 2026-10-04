@@ -57,7 +57,7 @@ info:
     \ Management</strong> - /collections, /collections/{id}, /collections/{id}/ancestors,\
     \ /collections/{id}/descendants, /collections/{id}/previews, /collectionsbynames</li><li><strong>Collection\
     \ Types</strong> - /collectiontypes, /collectiontypes/{id}, /collectiontypesitems</li><li><strong>Search</strong>\
-    \ - /search, /search/facette, /searchadmin/status</li><li><strong>Saved Searches</strong>\
+    \ - /search, /search/facet, /searchadmin/status</li><li><strong>Saved Searches</strong>\
     \ - /savedsearches</li><li><strong>Collection Sharing</strong> - /shared/{id},\
     \ /shared/{id}/zip, /quickshares/{id}</li><li><strong>Secure Upload</strong> -\
     \ /secureupload/{id}, /secureupload/{id}/upload</li><li><strong>Portal Management</strong>\
@@ -102,7 +102,7 @@ info:
     >support@agravity.io</a> or visit <a href=\"https://agravity.io\">https://agravity.io</a>.</p><br/><p>Copyright\
     \ © Agravity GmbH 2026. All Rights Reserved</p>"
   title: Agravity OpenAPI Documentation - Public Functions
-  version: 11.1.1
+  version: 12.0.0-1806-facets_renaming
 servers:
 - url: http://localhost:7072/api
 paths:
@@ -4537,12 +4537,12 @@ paths:
       - function_key: []
       tags:
       - Public Search Management
-  /search/facette:
+  /search/facet:
     get:
-      description: This endpoint returns one facette based on the search parameters.
-      operationId: HttpGetSearchFacetteByName
+      description: This endpoint returns one facet based on the search parameters.
+      operationId: HttpGetSearchFacetByName
       parameters:
-      - description: The name of the facette.
+      - description: The name of the facet.
         explode: true
         in: query
         name: name

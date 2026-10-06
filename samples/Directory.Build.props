@@ -1,0 +1,3 @@
+<Project>
+    <!-- Samples are standalone: do not inherit the library build settings (deterministic builds, lock files, source link) from the repository root. -->
+</Project>

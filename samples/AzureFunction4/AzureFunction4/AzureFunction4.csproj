@@ -10,7 +10,7 @@
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 
-		<PackageReference Include="Agravity.Public" Version="10.0.1" />
+		<PackageReference Include="Agravity.Public" Version="11.1.3" />
 		<!--<ProjectReference Include="..\..\..\src\Agravity.Public\Agravity.Public.csproj" />-->
 
 		<PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.23.0" />

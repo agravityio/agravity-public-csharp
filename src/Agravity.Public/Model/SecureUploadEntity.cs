@@ -45,6 +45,12 @@ namespace Agravity.Public.Model
         /// <param name="message">message.</param>
         /// <param name="sftpConnection">sftpConnection.</param>
         /// <param name="checkNameForVersion">checkNameForVersion.</param>
+        /// <param name="checkExtensionForVersion">checkExtensionForVersion.</param>
+        /// <param name="assetMetadataItems">assetMetadataItems.</param>
+        /// <param name="assetMetadataOptionalItems">assetMetadataOptionalItems.</param>
+        /// <param name="assetMetadataFields">assetMetadataFields.</param>
+        /// <param name="assetMetadataSdls">assetMetadataSdls.</param>
+        /// <param name="assetMetadataUdls">assetMetadataUdls.</param>
         /// <param name="status">status.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="createdBy">createdBy.</param>
@@ -52,7 +58,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public SecureUploadEntity(string id = default, string entityType = default, string collectionId = default, string url = default, DateTime? validUntil = default, string password = default, List<string> assetTags = default, string message = default, CreateSftpUserResult sftpConnection = default, bool? checkNameForVersion = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
+        public SecureUploadEntity(string id = default, string entityType = default, string collectionId = default, string url = default, DateTime? validUntil = default, string password = default, List<string> assetTags = default, string message = default, CreateSftpUserResult sftpConnection = default, bool? checkNameForVersion = default, bool? checkExtensionForVersion = default, List<string> assetMetadataItems = default, List<string> assetMetadataOptionalItems = default, List<CollTypeItem> assetMetadataFields = default, List<StaticDefinedList> assetMetadataSdls = default, List<CollectionUDL> assetMetadataUdls = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -64,6 +70,12 @@ namespace Agravity.Public.Model
             this.Message = message;
             this.SftpConnection = sftpConnection;
             this.CheckNameForVersion = checkNameForVersion;
+            this.CheckExtensionForVersion = checkExtensionForVersion;
+            this.AssetMetadataItems = assetMetadataItems;
+            this.AssetMetadataOptionalItems = assetMetadataOptionalItems;
+            this.AssetMetadataFields = assetMetadataFields;
+            this.AssetMetadataSdls = assetMetadataSdls;
+            this.AssetMetadataUdls = assetMetadataUdls;
             this.Status = status;
             this.CreatedDate = createdDate;
             this.CreatedBy = createdBy;
@@ -134,6 +146,42 @@ namespace Agravity.Public.Model
         public bool? CheckNameForVersion { get; set; }
 
         /// <summary>
+        /// Gets or Sets CheckExtensionForVersion
+        /// </summary>
+        [DataMember(Name = "check_extension_for_version", EmitDefaultValue = true)]
+        public bool? CheckExtensionForVersion { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AssetMetadataItems
+        /// </summary>
+        [DataMember(Name = "asset_metadata_items", EmitDefaultValue = true)]
+        public List<string> AssetMetadataItems { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AssetMetadataOptionalItems
+        /// </summary>
+        [DataMember(Name = "asset_metadata_optional_items", EmitDefaultValue = true)]
+        public List<string> AssetMetadataOptionalItems { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AssetMetadataFields
+        /// </summary>
+        [DataMember(Name = "asset_metadata_fields", EmitDefaultValue = true)]
+        public List<CollTypeItem> AssetMetadataFields { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AssetMetadataSdls
+        /// </summary>
+        [DataMember(Name = "asset_metadata_sdls", EmitDefaultValue = true)]
+        public List<StaticDefinedList> AssetMetadataSdls { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AssetMetadataUdls
+        /// </summary>
+        [DataMember(Name = "asset_metadata_udls", EmitDefaultValue = true)]
+        public List<CollectionUDL> AssetMetadataUdls { get; set; }
+
+        /// <summary>
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = true)]
@@ -193,6 +241,12 @@ namespace Agravity.Public.Model
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  SftpConnection: ").Append(SftpConnection).Append("\n");
             sb.Append("  CheckNameForVersion: ").Append(CheckNameForVersion).Append("\n");
+            sb.Append("  CheckExtensionForVersion: ").Append(CheckExtensionForVersion).Append("\n");
+            sb.Append("  AssetMetadataItems: ").Append(AssetMetadataItems).Append("\n");
+            sb.Append("  AssetMetadataOptionalItems: ").Append(AssetMetadataOptionalItems).Append("\n");
+            sb.Append("  AssetMetadataFields: ").Append(AssetMetadataFields).Append("\n");
+            sb.Append("  AssetMetadataSdls: ").Append(AssetMetadataSdls).Append("\n");
+            sb.Append("  AssetMetadataUdls: ").Append(AssetMetadataUdls).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");

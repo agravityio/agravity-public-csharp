@@ -146,6 +146,60 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'CheckExtensionForVersion'
+        /// </summary>
+        [Fact]
+        public void CheckExtensionForVersionTest()
+        {
+            // TODO unit test for the property 'CheckExtensionForVersion'
+        }
+
+        /// <summary>
+        /// Test the property 'AssetMetadataItems'
+        /// </summary>
+        [Fact]
+        public void AssetMetadataItemsTest()
+        {
+            // TODO unit test for the property 'AssetMetadataItems'
+        }
+
+        /// <summary>
+        /// Test the property 'AssetMetadataOptionalItems'
+        /// </summary>
+        [Fact]
+        public void AssetMetadataOptionalItemsTest()
+        {
+            // TODO unit test for the property 'AssetMetadataOptionalItems'
+        }
+
+        /// <summary>
+        /// Test the property 'AssetMetadataFields'
+        /// </summary>
+        [Fact]
+        public void AssetMetadataFieldsTest()
+        {
+            // TODO unit test for the property 'AssetMetadataFields'
+        }
+
+        /// <summary>
+        /// Test the property 'AssetMetadataSdls'
+        /// </summary>
+        [Fact]
+        public void AssetMetadataSdlsTest()
+        {
+            // TODO unit test for the property 'AssetMetadataSdls'
+        }
+
+        /// <summary>
+        /// Test the property 'AssetMetadataUdls'
+        /// </summary>
+        [Fact]
+        public void AssetMetadataUdlsTest()
+        {
+            // TODO unit test for the property 'AssetMetadataUdls'
+        }
+
+        /// <summary>
         /// Test the property 'Status'
         /// </summary>
         [Fact]

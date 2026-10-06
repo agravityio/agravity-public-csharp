@@ -3332,7 +3332,10 @@ paths:
             \ (Code: d8e07922-173d-420c-a75c-539a5a182ad1)<br>or Wrong content media\
             \ type. Please upload file with multipart/form-data. (Code: 4cdc8bde-e79f-4f52-a4cc-7b7c4d967b3c)<br>or\
             \ Could not find file in multi-part data. (Code: 00440233-ef4a-48a1-ad7d-824232d7a17f)<br>or\
-            \ This file is not supported. (Code: 4b086d7e-dda3-4530-9d23-41a32a91b0fe)"
+            \ This file is not supported. (Code: 4b086d7e-dda3-4530-9d23-41a32a91b0fe)<br>or\
+            \ a required asset metadata value is missing or empty. (Code: e12e80d5-9cc0-43b8-86b5-49f7602ebcfa)<br>or\
+            \ a given asset metadata value is not of the type of its item. (Code:\
+            \ 492f2077-c5ce-46c8-bcb6-993ea81f7ea9)"
         "404":
           content:
             application/json:
@@ -13108,6 +13111,148 @@ components:
           url: url
           password: password
         check_name_for_version: true
+        check_extension_for_version: true
+        asset_metadata_items:
+        - asset_metadata_items
+        - asset_metadata_items
+        asset_metadata_optional_items:
+        - asset_metadata_optional_items
+        - asset_metadata_optional_items
+        asset_metadata_fields:
+        - id: id
+          entity_type: entity_type
+          name: name
+          item_type: item_type
+          format: format
+          default_value: "{}"
+          ref_id: ref_id
+          mandatory: true
+          searchable: true
+          onlyasset: true
+          multi: true
+          md5: md5
+          group: group
+          order: 0
+          translations:
+            key: null
+          description: description
+          add_properties:
+            key: "{}"
+        status: status
+        created_date: 2000-01-23T04:56:07.000+00:00
+        created_by: created_by
+        modified_date: 2000-01-23T04:56:07.000+00:00
+        modified_by: modified_by
+        pk: pk
+        _etag: _etag
+        - id: id
+          entity_type: entity_type
+          name: name
+          item_type: item_type
+          format: format
+          default_value: "{}"
+          ref_id: ref_id
+          mandatory: true
+          searchable: true
+          onlyasset: true
+          multi: true
+          md5: md5
+          group: group
+          order: 0
+          translations:
+            key: null
+          description: description
+          add_properties:
+            key: "{}"
+          status: status
+          created_date: 2000-01-23T04:56:07.000+00:00
+          created_by: created_by
+          modified_date: 2000-01-23T04:56:07.000+00:00
+          modified_by: modified_by
+          pk: pk
+          _etag: _etag
+        asset_metadata_sdls:
+        - id: id
+          entity_type: entity_type
+          translations:
+            key: null
+          values:
+          - values
+          - values
+          name: name
+          description: description
+          add_properties:
+            key: "{}"
+          status: status
+          created_date: 2000-01-23T04:56:07.000+00:00
+          created_by: created_by
+          modified_date: 2000-01-23T04:56:07.000+00:00
+          modified_by: modified_by
+          pk: pk
+          _etag: _etag
+        - id: id
+          entity_type: entity_type
+          translations:
+            key: null
+          values:
+          - values
+          - values
+          name: name
+          description: description
+          add_properties:
+            key: "{}"
+          status: status
+          created_date: 2000-01-23T04:56:07.000+00:00
+          created_by: created_by
+          modified_date: 2000-01-23T04:56:07.000+00:00
+          modified_by: modified_by
+          pk: pk
+          _etag: _etag
+        asset_metadata_udls:
+        - children:
+          - name: name
+            entity_type: entity_type
+            status: status
+            translations:
+              key: null
+            id: id
+            pk: pk
+          - name: name
+            entity_type: entity_type
+            status: status
+            translations:
+              key: null
+            id: id
+            pk: pk
+          name: name
+          entity_type: entity_type
+          status: status
+          translations:
+            key: null
+          id: id
+          pk: pk
+        - children:
+          - name: name
+            entity_type: entity_type
+            status: status
+            translations:
+              key: null
+            id: id
+            pk: pk
+          - name: name
+            entity_type: entity_type
+            status: status
+            translations:
+              key: null
+            id: id
+            pk: pk
+          name: name
+          entity_type: entity_type
+          status: status
+          translations:
+            key: null
+          id: id
+          pk: pk
         status: status
         created_date: 2000-01-23T04:56:07.000+00:00
         created_by: created_by
@@ -13148,6 +13293,34 @@ components:
         check_name_for_version:
           nullable: true
           type: boolean
+        check_extension_for_version:
+          nullable: true
+          type: boolean
+        asset_metadata_items:
+          items:
+            type: string
+          nullable: true
+          type: array
+        asset_metadata_optional_items:
+          items:
+            type: string
+          nullable: true
+          type: array
+        asset_metadata_fields:
+          items:
+            $ref: "#/components/schemas/collTypeItem"
+          nullable: true
+          type: array
+        asset_metadata_sdls:
+          items:
+            $ref: "#/components/schemas/staticDefinedList"
+          nullable: true
+          type: array
+        asset_metadata_udls:
+          items:
+            $ref: "#/components/schemas/collectionUDL"
+          nullable: true
+          type: array
         status:
           nullable: true
           type: string

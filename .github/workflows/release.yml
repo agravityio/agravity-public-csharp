@@ -21,8 +21,6 @@ env:
   SOLUTION_FILE: Agravity.Public.sln
   PACK_PROJECT: src/Agravity.Public/Agravity.Public.csproj
   PACKAGE_OUTPUT_DIRECTORY: artifacts/packages
-  KEY_VAULT_NAME: releaseagravitykv
-  NUGET_API_KEY_SECRET_NAME: nuget-org-api-key
 
 jobs:
   validate:
@@ -112,34 +110,21 @@ jobs:
           name: nuget-packages
           path: ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
 
-      - name: Azure login with OIDC
-        uses: azure/login@v2
-        with:
-          client-id: ${{ vars.AZURE_CLIENT_ID }}
-          tenant-id: ${{ vars.AZURE_TENANT_ID }}
-          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
-
-      - name: Read NuGet API key from Azure Key Vault
-        id: keyvault
-        uses: azure/cli@v2
-        with:
-          inlineScript: |
-            nugetApiKey=$(az keyvault secret show --vault-name '${{ env.KEY_VAULT_NAME }}' --name '${{ env.NUGET_API_KEY_SECRET_NAME }}' --query value --output tsv)
-            if [ -z "$nugetApiKey" ]; then
-              echo 'NuGet API key secret is empty or missing.'
-              exit 1
-            fi
-
-            echo "::add-mask::$nugetApiKey"
-            echo "nuget_api_key=$nugetApiKey" >> "$GITHUB_OUTPUT"
-
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
+      - name: NuGet login with OIDC
+        id: nuget-login
+        uses: NuGet/login@v1
+        with:
+          user: Agravity-Philipp
+
       - name: Publish package to NuGet.org
         shell: pwsh
+        env:
+          NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
         run: |
           $packages = Get-ChildItem -Path '${{ env.PACKAGE_OUTPUT_DIRECTORY }}' -Filter *.nupkg | Where-Object { $_.Name -notlike '*.snupkg' }
 
@@ -147,10 +132,10 @@ jobs:
             throw 'No .nupkg files were found to publish.'
           }
 
-          if ([string]::IsNullOrWhiteSpace('${{ steps.keyvault.outputs.nuget_api_key }}')) {
-            throw 'The NuGet API key was not retrieved from Azure Key Vault.'
+          if ([string]::IsNullOrWhiteSpace($env:NUGET_API_KEY)) {
+            throw 'The temporary NuGet API key was not retrieved through OIDC.'
           }
 
           $packages | ForEach-Object {
-            dotnet nuget push $_.FullName --api-key '${{ steps.keyvault.outputs.nuget_api_key }}' --source 'https://api.nuget.org/v3/index.json' --skip-duplicate
+            dotnet nuget push $_.FullName --api-key $env:NUGET_API_KEY --source 'https://api.nuget.org/v3/index.json' --skip-duplicate
           }

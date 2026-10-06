@@ -30,12 +30,12 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Set up .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
@@ -79,7 +79,7 @@ jobs:
           dotnet pack '${{ env.PACK_PROJECT }}' --configuration '${{ env.BUILD_CONFIGURATION }}' --no-build --output '${{ env.PACKAGE_OUTPUT_DIRECTORY }}' /p:Version=${{ steps.version.outputs.package_version }} /p:ContinuousIntegrationBuild=true
 
       - name: Upload package artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: nuget-packages
           path: ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
@@ -87,7 +87,7 @@ jobs:
 
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: test-results
           path: artifacts/test-results
@@ -95,7 +95,7 @@ jobs:
 
   publish:
     name: Publish to NuGet
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: validate
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
     environment: release
@@ -105,13 +105,13 @@ jobs:
 
     steps:
       - name: Download package artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: nuget-packages
           path: ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
 
       - name: Set up .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 

@@ -15,9 +15,9 @@ $packagesConfig = $packagesConfig -replace "<package id=""Agravity.Public"" vers
 $packagesConfig | Set-Content .\samples\NetFrameworkFormUpload\NetFrameworkFormUpload\packages.config
 
 #update csproj with new apiVersion
-$csproj = Get-Content .\samples\AzureFunction40\AzureFunction40.csproj
+$csproj = Get-Content .\samples\AzureFunction4\AzureFunction4\AzureFunction4.csproj
 $csproj = $csproj -replace "<PackageReference Include=""Agravity.Public"" Version="".*"" />", "<PackageReference Include=""Agravity.Public"" Version=""$apiVersion"" />"
-$csproj | Set-Content .\samples\AzureFunction40\AzureFunction40.csproj
+$csproj | Set-Content .\samples\AzureFunction4\AzureFunction4\AzureFunction4.csproj
 
 #update csproj with new apiVersion
 $csproj = Get-Content .\samples\NetFrameworkFormUpload\NetFrameworkFormUpload\NetFrameworkFormUpload.csproj

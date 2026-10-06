@@ -15,7 +15,7 @@
 		<Description>The Agravity Public API which is created via openapi-generator.</Description>
 		<Copyright>Copyright Agravity GmbH</Copyright>
 		<RootNamespace>Agravity.Public</RootNamespace>
-		<Version>12.0.0-1806-facets_renaming</Version>
+		<Version>12.0.0-alpha.1</Version>
 		<PackageProjectUrl>https://github.com/agravityio/agravity-public-csharp</PackageProjectUrl>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>

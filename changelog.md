@@ -8,6 +8,23 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="12.0.0-alpha.1"/> [12.0.0-alpha.1](https://www.nuget.org/packages/Agravity.Public/12.0.0-alpha.1) (2026-10-06)
+
+- CollectionTypItem redesign and SecureUpload update API:   - Add `PublicCollectionTypeItemManagementService` for public item/item-group read access   - Add `items` query param to `CollectionTypeManagementService`/`PublicCollectionTypeManagementService` to resolve item refs alongside items Models:   - Add `CollTypeItemRef` and `ItemGroup` (private and public)   - Add `item_refs` to `Asset`, `Collection`, `CollectionType`, `CollTypeItemBlueprint`   - Replace `label` with `ref_id` and add `description`/`add_properties` on `CollTypeItem`   - Add `translations` to `VersionEntity` and `VersionedAsset`   - Change `ExportFieldDefinition.default_value` type from `any` to `string`
+- WIP: Facet renaming
+- Update Generator from 7.20.0 to 7.25.0
+- Add Item Groups and Collection Type Item Refs management
+  - APIs:
+  - Add `PublicCollectionTypeItemManagementService` for public item/item-group read access
+  - Add `items` query param to `CollectionTypeManagementService`/`PublicCollectionTypeManagementService` to resolve item refs alongside items
+  - Models:
+  - Add `CollTypeItemRef` and `ItemGroup` (private and public)
+  - Add `item_refs` to `Asset`, `Collection`, `CollectionType`, `CollTypeItemBlueprint`
+  - Replace `label` with `ref_id` and add `description`/`add_properties` on `CollTypeItem`
+  - Add `translations` to `VersionEntity` and `VersionedAsset`
+  - Change `ExportFieldDefinition.default_value` type from `any` to `string`
+  - Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+
 ## AgravityAPI <a name="11.1.3"/> [11.1.3](https://www.nuget.org/packages/Agravity.Public/11.1.3) (2026-10-05)
 
 - Upgrade openapi generator
@@ -1098,6 +1115,7 @@ Below is a list of any know issues affecting the [recommended minimum version](#
 
 | Issue | Impact | Mitigation | Tracking link |
 | ----- | ------ | ---------- | ------------- |
+
 
 
 

@@ -68,7 +68,8 @@ namespace Agravity.Public.Test.Api
             //System.IO.Stream file = null;
             //string filename = null;
             //string previewof = null;
-            //var response = instance.HttpAssetCreateUploadVersion(id, name, collectionid, file, filename, previewof);
+            //string id2 = null;
+            //var response = instance.HttpAssetCreateUploadVersion(id, name, collectionid, file, filename, previewof, id2);
             //Assert.IsType<VersionedAsset>(response);
         }
 

@@ -16,9 +16,11 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a id="httpassetuploadfile"></a>
 # **HttpAssetUploadFile**
-> Asset HttpAssetUploadFile (string acceptLanguage = null, string name = null, string collectionid = null, System.IO.Stream file = null, string filename = null, string previewof = null)
+> Asset HttpAssetUploadFile (string acceptLanguage = null, string name = null, string collectionid = null, System.IO.Stream file = null, string filename = null, string previewof = null, string id = null)
 
 
+
+This endpoint allows to upload one asset which is put onto the storage (INBOX). Collection ID is mandatory! The optional field \"id\" sets a custom asset id (\"a\" followed by 24 letters or digits); it must not belong to an existing asset and can not be combined with \"previewof\". The id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.
 
 ### Example
 ```csharp
@@ -48,10 +50,11 @@ namespace Example
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
             var filename = "filename_example";  // string |  (optional) 
             var previewof = "previewof_example";  // string |  (optional) 
+            var id = "id_example";  // string |  (optional) 
 
             try
             {
-                Asset result = apiInstance.HttpAssetUploadFile(acceptLanguage, name, collectionid, file, filename, previewof);
+                Asset result = apiInstance.HttpAssetUploadFile(acceptLanguage, name, collectionid, file, filename, previewof, id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -71,7 +74,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Asset> response = apiInstance.HttpAssetUploadFileWithHttpInfo(acceptLanguage, name, collectionid, file, filename, previewof);
+    ApiResponse<Asset> response = apiInstance.HttpAssetUploadFileWithHttpInfo(acceptLanguage, name, collectionid, file, filename, previewof, id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -94,6 +97,7 @@ catch (ApiException e)
 | **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 | **filename** | **string** |  | [optional]  |
 | **previewof** | **string** |  | [optional]  |
+| **id** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -113,7 +117,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Returns the created uploaded asset. |  -  |
-| **400** | Request or Database client is null. (Code: feda1ab0-1477-4a76-abdd-3fa6fbdd0def)&lt;br&gt;Could not find file in multi-part data. (Code: b473c560-3ea1-4065-92e6-607973af9d9c)&lt;br&gt;This file is not supported. (Code: 12ac8746-349a-42c0-b73c-33257b73c728) |  -  |
+| **400** | Request or Database client is null. (Code: feda1ab0-1477-4a76-abdd-3fa6fbdd0def)&lt;br&gt;Could not find file in multi-part data. (Code: b473c560-3ea1-4065-92e6-607973af9d9c)&lt;br&gt;This file is not supported. (Code: 12ac8746-349a-42c0-b73c-33257b73c728)&lt;br&gt;A custom asset id can not be combined with \&quot;previewof\&quot;, because a preview upload does not create an asset. (Code: abb6bc66-d2d6-4fcc-909e-3a1f396e1a1d)&lt;br&gt;Custom asset id \&quot;{id}\&quot; is not valid. It has to start with \&quot;a\&quot; followed by 24 letters or digits. (Code: 7314d350-e0fb-48a2-8a11-52dc6e18467c)&lt;br&gt;Can not create asset with id {id}. Asset already exists. Use POST /api/assets/{id}/versionsupload to upload a new version. (Code: 00436356-beb9-4590-afd2-43394d75adae) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 
@@ -445,7 +449,7 @@ namespace Example
 
             var apiInstance = new PublicAssetManagementApi(config);
             var collectionid = "collectionid_example";  // string | The ID of the collection where this assets should be assigned.
-            var asset = new Asset(); // Asset | This endpoint creates an unique asset ID and adds the information to the database.
+            var asset = new Asset(); // Asset | This endpoint creates an unique asset ID and adds the information to the database. An optional \"id\" sets a custom asset id; the id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.
             var translations = true;  // bool? | When default language should be returned and the translation dictionary is delivered. (Ignores the \"Accept-Language\" header) (optional) 
             var acceptLanguage = "acceptLanguage_example";  // string | The requested language of the response. If not matching it falls back to default language. (optional) 
 
@@ -489,7 +493,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **collectionid** | **string** | The ID of the collection where this assets should be assigned. |  |
-| **asset** | [**Asset**](Asset.md) | This endpoint creates an unique asset ID and adds the information to the database. |  |
+| **asset** | [**Asset**](Asset.md) | This endpoint creates an unique asset ID and adds the information to the database. An optional \&quot;id\&quot; sets a custom asset id; the id of a deleted asset is reused: the deleted asset is purged and can no longer be restored. |  |
 | **translations** | **bool?** | When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) | [optional]  |
 | **acceptLanguage** | **string** | The requested language of the response. If not matching it falls back to default language. | [optional]  |
 
@@ -511,7 +515,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Returns the created simple asset. |  -  |
-| **400** | A parameter is null. (Code: 8f9036ff-037d-49a1-aab2-57899e5d30e6)&lt;br&gt;Given asset body is not valid. (Code: a51d1697-f56e-4fa3-bde8-3ab44e6cbb0a)&lt;br&gt;Asset availability has a confusing state: {updated.Availability}. (Code: 5515ebe5-2751-4760-a864-47812126b9a1)&lt;br&gt;Ambiguous information: Asset available_from can not be greater or equal as available_to when asset should be available.(Code: 16338bcd-614c-4322-a164-e3112d622392 )&lt;br&gt;Ambiguous information: Asset available_from can not be less or equal as available_to when asset should be locked and is not in the future. (Code: 092ddb50-2af8-49a1-b005-68c9d5c600d1)&lt;br&gt;Not valid asset id. (Code: b2409333-b6d4-4efc-b21e-56c1db9e9d25)&lt;br&gt;Can not create asset with id {input.Id}. Asset already exists. Delete first. (Code: ef721e67-6d4b-4e60-81cf-4be8f14581eb)&lt;br&gt;Error on creating custom items on asset. (Code: 4e780f21-17fc-4125-a9d8-2cf0c23d84d6) |  -  |
+| **400** | A parameter is null. (Code: 8f9036ff-037d-49a1-aab2-57899e5d30e6)&lt;br&gt;Given asset body is not valid. (Code: a51d1697-f56e-4fa3-bde8-3ab44e6cbb0a)&lt;br&gt;Asset availability has a confusing state: {updated.Availability}. (Code: 5515ebe5-2751-4760-a864-47812126b9a1)&lt;br&gt;Ambiguous information: Asset available_from can not be greater or equal as available_to when asset should be available.(Code: 16338bcd-614c-4322-a164-e3112d622392 )&lt;br&gt;Ambiguous information: Asset available_from can not be less or equal as available_to when asset should be locked and is not in the future. (Code: 092ddb50-2af8-49a1-b005-68c9d5c600d1)&lt;br&gt;Not valid asset id. (Code: b2409333-b6d4-4efc-b21e-56c1db9e9d25)&lt;br&gt;Can not create asset with id {input.Id}. Asset already exists. Delete first. (Code: ef721e67-6d4b-4e60-81cf-4be8f14581eb)&lt;br&gt;Can not create asset with id {id}. Asset already exists. Use POST /api/assets/{id}/versionsupload to upload a new version. (Only if the asset was created in the meantime.) (Code: 00436356-beb9-4590-afd2-43394d75adae)&lt;br&gt;Error on creating custom items on asset. (Code: 4e780f21-17fc-4125-a9d8-2cf0c23d84d6) |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |
 

@@ -8,6 +8,37 @@ The format is based on [Keep a changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does not adheres to [Semantic versioning](https://semver.org/spec/v2.0.0.html).
 It will be upgraded when the Agravity Backend is upgraded and will have the same version.
 
+## AgravityAPI <a name="12.0.0"/> [12.0.0](https://www.nuget.org/packages/Agravity.Public/12.0.0) (2026-11-02)
+
+- Build and publishing
+  - Fix warnings in the build pipeline with the latest (fixed) versions
+  - Update the sample to the latest stable release
+  - Publish to NuGet with trusted publishing instead of an API key
+  - Update the OpenAPI Generator from 7.20.0 to 7.25.0
+- Item Redesign
+  - Breaking: Collection type items are standalone entities with their own id in the format `i<random>_<name>`. One item can be used by several collection types. Existing data is migrated automatically.
+  - Add read access to collection type items and item groups: `GET /colltypeitems`, `GET /colltypeitems/{id}`, `GET /itemgroups`, `GET /itemgroups/{id}`
+  - Add models `CollTypeItemRef` (`item_id`, `group_id`, `order`) and `ItemGroup` (`id`, `name`, `description`, `translations`)
+  - Breaking: `CollectionType` has the new property `item_refs`. `GET /collectiontypes` and `GET /collectiontypes/{id}` return the resolved `items` only with the new query parameter `items=true`
+  - Breaking: `CollTypeItem`: removed `label` (merged into `name`). `order` is optional and no longer used (order and group come from `item_refs`). Added `ref_id`, `search_target_id`, `description` and `add_properties`
+  - Breaking: `Asset` and `Collection` have `item_ids` (list of strings) instead of an embedded `items` list. With `items=true`, the resolved `items` are still returned
+  - Breaking: Keys of custom fields (`custom`) are now item ids (`i<random>_<name>`) instead of `<name>_<id>`. This affects request bodies, the `fields` parameter, search filters and sorting on `custom/…`, and `GET /translations/{id}/custom/{customField}`
+  - `GET /translations/{id}` and `GET /translations/{id}/{property}` support item groups
+  - Empty `translations` are left out of responses
+- Search
+  - Breaking: `GET /search/facette` is renamed to `GET /search/facet`. The operation `HttpGetSearchFacetteByName` is renamed to `HttpGetSearchFacetByName`
+  - With `search_target_id` on `CollTypeItem`, an item can be linked to another item for search. Filters on a linked item use the target item. Sorting by a linked item is ignored
+  - Add `pendingupdate` (`None`, `Run`, `Recreate`) to `SearchAdminIndexerStatus` (`GET /searchadmin/status`)
+- Secure upload
+  - Add `asset_metadata_items`, `asset_metadata_optional_items`, `asset_metadata_fields`, `asset_metadata_sdls`, `asset_metadata_udls` and `check_extension_for_version` to `SecureUploadEntity`
+  - Breaking: `GET /secureupload/{id}` no longer returns internal fields (created/modified, `pk`, `etag`) or connection data
+  - `POST /secureupload/{id}/upload` enforces the mandatory asset metadata of the secure upload
+- Assets and versions
+  - `POST /assets` (property `id`) and `POST /assetsupload` (form field `id`) accept a custom asset id: `a` followed by 24 letters or digits. It cannot be combined with `previewof`
+  - Add `translations` to `VersionEntity` and `VersionedAsset`
+- Change publishing from API Key to NuGet trusted publishing
+- Update Generator from 7.20.0 to 7.25.0
+
 ## AgravityAPI <a name="12.0.0-alpha.1"/> [12.0.0-alpha.1](https://www.nuget.org/packages/Agravity.Public/12.0.0-alpha.1) (2026-10-06)
 
 - CollectionTypItem redesign and SecureUpload update API:   - Add `PublicCollectionTypeItemManagementService` for public item/item-group read access   - Add `items` query param to `CollectionTypeManagementService`/`PublicCollectionTypeManagementService` to resolve item refs alongside items Models:   - Add `CollTypeItemRef` and `ItemGroup` (private and public)   - Add `item_refs` to `Asset`, `Collection`, `CollectionType`, `CollTypeItemBlueprint`   - Replace `label` with `ref_id` and add `description`/`add_properties` on `CollTypeItem`   - Add `translations` to `VersionEntity` and `VersionedAsset`   - Change `ExportFieldDefinition.default_value` type from `any` to `string`
@@ -1115,6 +1146,7 @@ Below is a list of any know issues affecting the [recommended minimum version](#
 
 | Issue | Impact | Mitigation | Tracking link |
 | ----- | ------ | ---------- | ------------- |
+
 
 
 

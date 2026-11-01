@@ -718,7 +718,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Collection with ID {id} is null or not a well formated collection id! (Code: 6e59a8c1-564a-411b-ad3b-3b0b78d80644)Collection with ID {id} is set as default import collection. Change the DEFAULT_IMPORT_COLLECTION_ID to another collection or DV (Default Value). (Code: c0c98df2-6f3d-481b-ae1d-89f60a86be68)&lt;br&gt; |  -  |
+| **400** | Collection with ID {id} is null or not a well formated collection id! (Code: 6e59a8c1-564a-411b-ad3b-3b0b78d80644)Collection with ID {id} is set as default import collection. Change the DEFAULT_IMPORT_COLLECTION_ID to another collection or DV (Default Value). (Code: c0c98df2-6f3d-481b-ae1d-89f60a86be68)&lt;br&gt;Collection could not be deleted, it is used as default value of a CollectionTypeItem. (Code: b5a1f0d3-6c2e-4e79-8d14-92c7e3a0f6b8)&lt;br&gt; |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **204** | The delete operation of the collection with the given ID was successful. |  -  |
 | **404** | If the collection with the ID was not found. |  -  |

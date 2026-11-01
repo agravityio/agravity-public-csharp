@@ -40,9 +40,10 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id2"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VersionedAsset</returns>
-        VersionedAsset HttpAssetCreateUploadVersion(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0);
+        VersionedAsset HttpAssetCreateUploadVersion(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id2 = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -57,9 +58,10 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id2"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VersionedAsset</returns>
-        ApiResponse<VersionedAsset> HttpAssetCreateUploadVersionWithHttpInfo(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0);
+        ApiResponse<VersionedAsset> HttpAssetCreateUploadVersionWithHttpInfo(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id2 = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -234,10 +236,11 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id2"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VersionedAsset</returns>
-        System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateUploadVersionAsync(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateUploadVersionAsync(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id2 = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -252,10 +255,11 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id2"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VersionedAsset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VersionedAsset>> HttpAssetCreateUploadVersionWithHttpInfoAsync(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<VersionedAsset>> HttpAssetCreateUploadVersionWithHttpInfoAsync(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id2 = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -550,11 +554,12 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id2"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VersionedAsset</returns>
-        public VersionedAsset HttpAssetCreateUploadVersion(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0)
+        public VersionedAsset HttpAssetCreateUploadVersion(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id2 = default, int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = HttpAssetCreateUploadVersionWithHttpInfo(id, name, collectionid, file, filename, previewof);
+            Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = HttpAssetCreateUploadVersionWithHttpInfo(id, name, collectionid, file, filename, previewof, id2);
             return localVarResponse.Data;
         }
 
@@ -568,9 +573,10 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id2"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VersionedAsset</returns>
-        public Agravity.Public.Client.ApiResponse<VersionedAsset> HttpAssetCreateUploadVersionWithHttpInfo(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<VersionedAsset> HttpAssetCreateUploadVersionWithHttpInfo(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id2 = default, int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -623,6 +629,10 @@ namespace Agravity.Public.Api
             {
                 localVarRequestOptions.FormParameters.Add("previewof", Agravity.Public.Client.ClientUtils.ParameterToString(previewof)); // form parameter
             }
+            if (id2 != null)
+            {
+                localVarRequestOptions.FormParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id2)); // form parameter
+            }
 
             localVarRequestOptions.Operation = "PublicAssetVersioningApi.HttpAssetCreateUploadVersion";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -657,12 +667,13 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id2"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VersionedAsset</returns>
-        public async System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateUploadVersionAsync(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<VersionedAsset> HttpAssetCreateUploadVersionAsync(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id2 = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = await HttpAssetCreateUploadVersionWithHttpInfoAsync(id, name, collectionid, file, filename, previewof, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<VersionedAsset> localVarResponse = await HttpAssetCreateUploadVersionWithHttpInfoAsync(id, name, collectionid, file, filename, previewof, id2, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -676,10 +687,11 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id2"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VersionedAsset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionedAsset>> HttpAssetCreateUploadVersionWithHttpInfoAsync(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<VersionedAsset>> HttpAssetCreateUploadVersionWithHttpInfoAsync(string id, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id2 = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -731,6 +743,10 @@ namespace Agravity.Public.Api
             if (previewof != null)
             {
                 localVarRequestOptions.FormParameters.Add("previewof", Agravity.Public.Client.ClientUtils.ParameterToString(previewof)); // form parameter
+            }
+            if (id2 != null)
+            {
+                localVarRequestOptions.FormParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id2)); // form parameter
             }
 
             localVarRequestOptions.Operation = "PublicAssetVersioningApi.HttpAssetCreateUploadVersion";

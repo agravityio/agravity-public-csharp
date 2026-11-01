@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Searchable** | **bool?** |  | [optional] 
 **Onlyasset** | **bool?** |  | [optional] 
 **Multi** | **bool?** |  | [optional] 
+**SearchTargetId** | **string** |  | [optional] 
 **Md5** | **string** |  | [optional] 
 **Group** | **string** |  | [optional] 
 **Order** | **int?** |  | [optional] 

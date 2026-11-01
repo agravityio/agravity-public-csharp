@@ -30,22 +30,8 @@ namespace Agravity.Public.Api
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="collectionid"> (optional)</param>
-        /// <param name="file"> (optional)</param>
-        /// <param name="filename"> (optional)</param>
-        /// <param name="previewof"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Asset</returns>
-        Asset HttpAssetUploadFile(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint allows to upload one asset which is put onto the storage (INBOX). Collection ID is mandatory! The optional field \&quot;id\&quot; sets a custom asset id (\&quot;a\&quot; followed by 24 letters or digits); it must not belong to an existing asset and can not be combined with \&quot;previewof\&quot;. The id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
@@ -54,9 +40,28 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>Asset</returns>
+        Asset HttpAssetUploadFile(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// This endpoint allows to upload one asset which is put onto the storage (INBOX). Collection ID is mandatory! The optional field \&quot;id\&quot; sets a custom asset id (\&quot;a\&quot; followed by 24 letters or digits); it must not belong to an existing asset and can not be combined with \&quot;previewof\&quot;. The id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.
+        /// </remarks>
+        /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
+        /// <param name="name"> (optional)</param>
+        /// <param name="collectionid"> (optional)</param>
+        /// <param name="file"> (optional)</param>
+        /// <param name="filename"> (optional)</param>
+        /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
-        ApiResponse<Asset> HttpAssetUploadFileWithHttpInfo(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0);
+        ApiResponse<Asset> HttpAssetUploadFileWithHttpInfo(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -129,7 +134,7 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
-        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database. An optional \&quot;id\&quot; sets a custom asset id; the id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -144,7 +149,7 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
-        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database. An optional \&quot;id\&quot; sets a custom asset id; the id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -286,7 +291,7 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint allows to upload one asset which is put onto the storage (INBOX). Collection ID is mandatory! The optional field \&quot;id\&quot; sets a custom asset id (\&quot;a\&quot; followed by 24 letters or digits); it must not belong to an existing asset and can not be combined with \&quot;previewof\&quot;. The id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
@@ -295,16 +300,17 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        System.Threading.Tasks.Task<Asset> HttpAssetUploadFileAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Asset> HttpAssetUploadFileAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint allows to upload one asset which is put onto the storage (INBOX). Collection ID is mandatory! The optional field \&quot;id\&quot; sets a custom asset id (\&quot;a\&quot; followed by 24 letters or digits); it must not belong to an existing asset and can not be combined with \&quot;previewof\&quot;. The id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
@@ -313,10 +319,11 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetUploadFileWithHttpInfoAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Asset>> HttpAssetUploadFileWithHttpInfoAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -404,7 +411,7 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
-        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database. An optional \&quot;id\&quot; sets a custom asset id; the id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -420,7 +427,7 @@ namespace Agravity.Public.Api
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
-        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database. An optional \&quot;id\&quot; sets a custom asset id; the id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -682,7 +689,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  
+        ///  This endpoint allows to upload one asset which is put onto the storage (INBOX). Collection ID is mandatory! The optional field \&quot;id\&quot; sets a custom asset id (\&quot;a\&quot; followed by 24 letters or digits); it must not belong to an existing asset and can not be combined with \&quot;previewof\&quot;. The id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
@@ -691,16 +698,17 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Asset</returns>
-        public Asset HttpAssetUploadFile(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0)
+        public Asset HttpAssetUploadFile(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = HttpAssetUploadFileWithHttpInfo(acceptLanguage, name, collectionid, file, filename, previewof);
+            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = HttpAssetUploadFileWithHttpInfo(acceptLanguage, name, collectionid, file, filename, previewof, id);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        ///  This endpoint allows to upload one asset which is put onto the storage (INBOX). Collection ID is mandatory! The optional field \&quot;id\&quot; sets a custom asset id (\&quot;a\&quot; followed by 24 letters or digits); it must not belong to an existing asset and can not be combined with \&quot;previewof\&quot;. The id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
@@ -709,9 +717,10 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
-        public Agravity.Public.Client.ApiResponse<Asset> HttpAssetUploadFileWithHttpInfo(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<Asset> HttpAssetUploadFileWithHttpInfo(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -761,6 +770,10 @@ namespace Agravity.Public.Api
             {
                 localVarRequestOptions.FormParameters.Add("previewof", Agravity.Public.Client.ClientUtils.ParameterToString(previewof)); // form parameter
             }
+            if (id != null)
+            {
+                localVarRequestOptions.FormParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // form parameter
+            }
 
             localVarRequestOptions.Operation = "PublicAssetManagementApi.HttpAssetUploadFile";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -786,7 +799,7 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  
+        ///  This endpoint allows to upload one asset which is put onto the storage (INBOX). Collection ID is mandatory! The optional field \&quot;id\&quot; sets a custom asset id (\&quot;a\&quot; followed by 24 letters or digits); it must not belong to an existing asset and can not be combined with \&quot;previewof\&quot;. The id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
@@ -795,17 +808,18 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        public async System.Threading.Tasks.Task<Asset> HttpAssetUploadFileAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Asset> HttpAssetUploadFileAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = await HttpAssetUploadFileWithHttpInfoAsync(acceptLanguage, name, collectionid, file, filename, previewof, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<Asset> localVarResponse = await HttpAssetUploadFileWithHttpInfoAsync(acceptLanguage, name, collectionid, file, filename, previewof, id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        ///  This endpoint allows to upload one asset which is put onto the storage (INBOX). Collection ID is mandatory! The optional field \&quot;id\&quot; sets a custom asset id (\&quot;a\&quot; followed by 24 letters or digits); it must not belong to an existing asset and can not be combined with \&quot;previewof\&quot;. The id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
@@ -814,10 +828,11 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Asset>> HttpAssetUploadFileWithHttpInfoAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<Asset>> HttpAssetUploadFileWithHttpInfoAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -866,6 +881,10 @@ namespace Agravity.Public.Api
             if (previewof != null)
             {
                 localVarRequestOptions.FormParameters.Add("previewof", Agravity.Public.Client.ClientUtils.ParameterToString(previewof)); // form parameter
+            }
+            if (id != null)
+            {
+                localVarRequestOptions.FormParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // form parameter
             }
 
             localVarRequestOptions.Operation = "PublicAssetManagementApi.HttpAssetUploadFile";
@@ -1392,7 +1411,7 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
-        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database. An optional \&quot;id\&quot; sets a custom asset id; the id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1408,7 +1427,7 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
-        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database. An optional \&quot;id\&quot; sets a custom asset id; the id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1490,7 +1509,7 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
-        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database. An optional \&quot;id\&quot; sets a custom asset id; the id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1507,7 +1526,7 @@ namespace Agravity.Public.Api
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="collectionid">The ID of the collection where this assets should be assigned.</param>
-        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database.</param>
+        /// <param name="asset">This endpoint creates an unique asset ID and adds the information to the database. An optional \&quot;id\&quot; sets a custom asset id; the id of a deleted asset is reused: the deleted asset is purged and can no longer be restored.</param>
         /// <param name="translations">When default language should be returned and the translation dictionary is delivered. (Ignores the \&quot;Accept-Language\&quot; header) (optional)</param>
         /// <param name="acceptLanguage">The requested language of the response. If not matching it falls back to default language. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>

@@ -31,10 +31,10 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
+        /// Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
@@ -44,10 +44,10 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
+        /// Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
@@ -81,10 +81,10 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
+        /// Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -95,10 +95,10 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
+        /// Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -117,10 +117,10 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
+        /// Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -131,10 +131,10 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
+        /// Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -171,10 +171,10 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
+        /// Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -186,10 +186,10 @@ namespace Agravity.Public.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
+        /// Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </remarks>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -317,10 +317,10 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
+        ///  Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
@@ -331,10 +331,10 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
+        ///  Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dictionary&lt;string, Dictionary&lt;string, Object&gt;&gt;</returns>
@@ -399,10 +399,10 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
+        ///  Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -414,10 +414,10 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
+        ///  Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -657,10 +657,10 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
+        ///  Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -672,10 +672,10 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
+        ///  Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -748,10 +748,10 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
+        ///  Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -764,10 +764,10 @@ namespace Agravity.Public.Api
         }
 
         /// <summary>
-        ///  Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
+        ///  Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format, Item Group)
         /// </summary>
         /// <exception cref="Agravity.Public.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).</param>
+        /// <param name="id">The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).</param>
         /// <param name="property">Limit to one specific property (key)</param>
         /// <param name="items">If the items should be included (only for entity type Collection and Asset). (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>

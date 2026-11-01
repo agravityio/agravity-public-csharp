@@ -84,7 +84,7 @@ namespace Agravity.Public.Model
         /// <param name="checkout">checkout.</param>
         /// <param name="fsSynced">fsSynced.</param>
         /// <param name="custom">custom.</param>
-        /// <param name="itemRefs">itemRefs.</param>
+        /// <param name="itemIds">itemIds.</param>
         /// <param name="items">items.</param>
         /// <param name="translations">translations.</param>
         /// <param name="role">role (default to RoleEnum.NONE).</param>
@@ -97,7 +97,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Asset(string id = default, string entityType = default, string name = default, string assetType = default, List<string> duplicates = default, List<string> keywords = default, AssetBlob origBlob = default, List<AssetBlob> blobs = default, List<string> collections = default, string failedReason = default, List<string> qualityGate = default, string regionOfOrigin = default, string availability = default, DateTime? availableFrom = default, DateTime? availableTo = default, AssetCheckout checkout = default, string fsSynced = default, Dictionary<string, object> custom = default, List<CollTypeItemRef> itemRefs = default, List<CollTypeItem> items = default, Dictionary<string, Dictionary<string, object>> translations = default, RoleEnum? role = RoleEnum.NONE, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
+        public Asset(string id = default, string entityType = default, string name = default, string assetType = default, List<string> duplicates = default, List<string> keywords = default, AssetBlob origBlob = default, List<AssetBlob> blobs = default, List<string> collections = default, string failedReason = default, List<string> qualityGate = default, string regionOfOrigin = default, string availability = default, DateTime? availableFrom = default, DateTime? availableTo = default, AssetCheckout checkout = default, string fsSynced = default, Dictionary<string, object> custom = default, List<string> itemIds = default, List<CollTypeItem> items = default, Dictionary<string, Dictionary<string, object>> translations = default, RoleEnum? role = RoleEnum.NONE, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -117,7 +117,7 @@ namespace Agravity.Public.Model
             this.Checkout = checkout;
             this.FsSynced = fsSynced;
             this.Custom = custom;
-            this.ItemRefs = itemRefs;
+            this.ItemIds = itemIds;
             this.Items = items;
             this.Translations = translations;
             this.Role = role;
@@ -241,10 +241,10 @@ namespace Agravity.Public.Model
         public Dictionary<string, object> Custom { get; set; }
 
         /// <summary>
-        /// Gets or Sets ItemRefs
+        /// Gets or Sets ItemIds
         /// </summary>
-        [DataMember(Name = "item_refs", EmitDefaultValue = true)]
-        public List<CollTypeItemRef> ItemRefs { get; set; }
+        [DataMember(Name = "item_ids", EmitDefaultValue = true)]
+        public List<string> ItemIds { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
@@ -338,7 +338,7 @@ namespace Agravity.Public.Model
             sb.Append("  Checkout: ").Append(Checkout).Append("\n");
             sb.Append("  FsSynced: ").Append(FsSynced).Append("\n");
             sb.Append("  Custom: ").Append(Custom).Append("\n");
-            sb.Append("  ItemRefs: ").Append(ItemRefs).Append("\n");
+            sb.Append("  ItemIds: ").Append(ItemIds).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  Translations: ").Append(Translations).Append("\n");
             sb.Append("  Role: ").Append(Role).Append("\n");

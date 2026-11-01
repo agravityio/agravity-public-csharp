@@ -102,7 +102,7 @@ info:
     >support@agravity.io</a> or visit <a href=\"https://agravity.io\">https://agravity.io</a>.</p><br/><p>Copyright\
     \ © Agravity GmbH 2026. All Rights Reserved</p>"
   title: Agravity OpenAPI Documentation - Public Functions
-  version: 12.0.0-alpha.1
+  version: 12.0.0
 servers:
 - url: http://localhost:7072/api
 paths:
@@ -1705,8 +1705,10 @@ paths:
           application/json:
             schema:
               $ref: "#/components/schemas/asset"
-        description: This endpoint creates an unique asset ID and adds the information
-          to the database.
+        description: "This endpoint creates an unique asset ID and adds the information\
+          \ to the database. An optional \"id\" sets a custom asset id; the id of\
+          \ a deleted asset is reused: the deleted asset is purged and can no longer\
+          \ be restored."
         required: true
       responses:
         "201":
@@ -1729,8 +1731,11 @@ paths:
             \ equal as available_to when asset should be locked and is not in the\
             \ future. (Code: 092ddb50-2af8-49a1-b005-68c9d5c600d1)<br>Not valid asset\
             \ id. (Code: b2409333-b6d4-4efc-b21e-56c1db9e9d25)<br>Can not create asset\
-            \ with id {input.Id}. Asset already exists. Delete first. (Code: ef721e67-6d4b-4e60-81cf-4be8f14581eb)<br>Error\
-            \ on creating custom items on asset. (Code: 4e780f21-17fc-4125-a9d8-2cf0c23d84d6)"
+            \ with id {input.Id}. Asset already exists. Delete first. (Code: ef721e67-6d4b-4e60-81cf-4be8f14581eb)<br>Can\
+            \ not create asset with id {id}. Asset already exists. Use POST /api/assets/{id}/versionsupload\
+            \ to upload a new version. (Only if the asset was created in the meantime.)\
+            \ (Code: 00436356-beb9-4590-afd2-43394d75adae)<br>Error on creating custom\
+            \ items on asset. (Code: 4e780f21-17fc-4125-a9d8-2cf0c23d84d6)"
         "401":
           description: Unauthorized. API Key not provided.
         "500":
@@ -1912,6 +1917,12 @@ paths:
       - Public Asset Management
   /assetsupload:
     post:
+      description: "This endpoint allows to upload one asset which is put onto the\
+        \ storage (INBOX). Collection ID is mandatory! The optional field \"id\" sets\
+        \ a custom asset id (\"a\" followed by 24 letters or digits); it must not\
+        \ belong to an existing asset and can not be combined with \"previewof\".\
+        \ The id of a deleted asset is reused: the deleted asset is purged and can\
+        \ no longer be restored."
       operationId: HttpAssetUploadFile
       parameters:
       - description: The requested language of the response. If not matching it falls
@@ -1945,7 +1956,13 @@ paths:
                 $ref: "#/components/schemas/agravityErrorResponse"
           description: "Request or Database client is null. (Code: feda1ab0-1477-4a76-abdd-3fa6fbdd0def)<br>Could\
             \ not find file in multi-part data. (Code: b473c560-3ea1-4065-92e6-607973af9d9c)<br>This\
-            \ file is not supported. (Code: 12ac8746-349a-42c0-b73c-33257b73c728)"
+            \ file is not supported. (Code: 12ac8746-349a-42c0-b73c-33257b73c728)<br>A\
+            \ custom asset id can not be combined with \"previewof\", because a preview\
+            \ upload does not create an asset. (Code: abb6bc66-d2d6-4fcc-909e-3a1f396e1a1d)<br>Custom\
+            \ asset id \"{id}\" is not valid. It has to start with \"a\" followed\
+            \ by 24 letters or digits. (Code: 7314d350-e0fb-48a2-8a11-52dc6e18467c)<br>Can\
+            \ not create asset with id {id}. Asset already exists. Use POST /api/assets/{id}/versionsupload\
+            \ to upload a new version. (Code: 00436356-beb9-4590-afd2-43394d75adae)"
         "401":
           description: Unauthorized. API Key not provided.
         "500":
@@ -2877,7 +2894,9 @@ paths:
           description: "Collection with ID {id} is null or not a well formated collection\
             \ id! (Code: 6e59a8c1-564a-411b-ad3b-3b0b78d80644)Collection with ID {id}\
             \ is set as default import collection. Change the DEFAULT_IMPORT_COLLECTION_ID\
-            \ to another collection or DV (Default Value). (Code: c0c98df2-6f3d-481b-ae1d-89f60a86be68)<br>"
+            \ to another collection or DV (Default Value). (Code: c0c98df2-6f3d-481b-ae1d-89f60a86be68)<br>Collection\
+            \ could not be deleted, it is used as default value of a CollectionTypeItem.\
+            \ (Code: b5a1f0d3-6c2e-4e79-8d14-92c7e3a0f6b8)<br>"
         "401":
           description: Unauthorized. API Key not provided.
         "204":
@@ -5136,7 +5155,9 @@ paths:
             \ mode: {given-update-mode} is not a valid update mode. Allowed modes\
             \ are: add, delete, replace (Code: cb08ff14-4c6b-4d88-a1d7-7b39897d78e6)Error\
             \ on create static defined list in database - max retry count is reached.\
-            \ (Code: a524c4cf-392e-4e37-9597-12cdce014757)"
+            \ (Code: a524c4cf-392e-4e37-9597-12cdce014757)<br>Value of the static\
+            \ defined list could not be removed, it is used as default value of a\
+            \ CollectionTypeItem. (Code: 0f6a4d9b-2e81-4c37-b3d5-7a91c8e24f60)"
         "404":
           description: If the static defined list with the ID was not found.
         "401":
@@ -5150,11 +5171,11 @@ paths:
   /translations/{id}:
     get:
       description: "Get all the translations of a whole entity (Asset, Collection,\
-        \ Collection Type, Download Format)"
+        \ Collection Type, Download Format, Item Group)"
       operationId: HttpTranslationsById
       parameters:
       - description: "The ID of any translateable entity (Asset, Collection, Collection\
-          \ Type, Download Format)."
+          \ Type, Download Format, Item Group)."
         explode: false
         in: path
         name: id
@@ -5200,11 +5221,11 @@ paths:
   /translations/{id}/{property}:
     get:
       description: "Get the translations of a specific field on the entity (Asset,\
-        \ Collection, Collection Type, Download Format)"
+        \ Collection, Collection Type, Download Format, Item Group)"
       operationId: HttpTranslationsByIdFilterByProperty
       parameters:
       - description: "The ID of any translateable entity (Asset, Collection, Collection\
-          \ Type, Download Format)."
+          \ Type, Download Format, Item Group)."
         explode: false
         in: path
         name: id
@@ -5681,16 +5702,12 @@ components:
           entity_type: entity_type
           parent: parent
           path: path
-          level: 7
+          level: 6
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -5703,6 +5720,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -5729,6 +5747,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -5763,16 +5782,12 @@ components:
           entity_type: entity_type
           parent: parent
           path: path
-          level: 7
+          level: 6
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -5785,6 +5800,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -5811,6 +5827,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -5844,16 +5861,12 @@ components:
           entity_type: entity_type
           parent: parent
           path: path
-          level: 7
+          level: 6
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -5866,6 +5879,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -5892,6 +5906,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -6095,13 +6110,9 @@ components:
           fs_synced: fs_synced
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -6114,6 +6125,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -6140,6 +6152,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -6341,13 +6354,9 @@ components:
           fs_synced: fs_synced
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -6360,6 +6369,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -6386,6 +6396,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -6644,13 +6655,9 @@ components:
         fs_synced: fs_synced
         custom:
           key: "{}"
-        item_refs:
-        - item_id: item_id
-          group_id: group_id
-          order: 1
-        - item_id: item_id
-          group_id: group_id
-          order: 1
+        item_ids:
+        - item_ids
+        - item_ids
         items:
         - id: id
           entity_type: entity_type
@@ -6663,6 +6670,7 @@ components:
           searchable: true
           onlyasset: true
           multi: true
+          search_target_id: search_target_id
           md5: md5
           group: group
           order: 0
@@ -6689,6 +6697,7 @@ components:
           searchable: true
           onlyasset: true
           multi: true
+          search_target_id: search_target_id
           md5: md5
           group: group
           order: 0
@@ -6784,9 +6793,9 @@ components:
             type: object
           nullable: true
           type: object
-        item_refs:
+        item_ids:
           items:
-            $ref: "#/components/schemas/collTypeItemRef"
+            type: string
           nullable: true
           type: array
         items:
@@ -7224,6 +7233,8 @@ components:
           type: string
         previewof:
           type: string
+        id:
+          type: string
       type: object
     assetPageResult:
       example:
@@ -7401,13 +7412,9 @@ components:
           fs_synced: fs_synced
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -7420,6 +7427,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -7446,6 +7454,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -7647,13 +7656,9 @@ components:
           fs_synced: fs_synced
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -7666,6 +7671,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -7692,6 +7698,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -7898,14 +7905,14 @@ components:
     azSearchOptions:
       example:
         searchString: searchString
-        limit: 4
-        skip: 5
+        limit: 1
+        skip: 4
         collectiontypeid: collectiontypeid
         collectionid: collectionid
         filter: filter
         orderby: orderby
         mode: mode
-        broadness: 9
+        broadness: 5
         rel_id: rel_id
         ids: ids
         portal_id: portal_id
@@ -7959,16 +7966,12 @@ components:
         entity_type: entity_type
         parent: parent
         path: path
-        level: 7
+        level: 6
         custom:
           key: "{}"
-        item_refs:
-        - item_id: item_id
-          group_id: group_id
-          order: 1
-        - item_id: item_id
-          group_id: group_id
-          order: 1
+        item_ids:
+        - item_ids
+        - item_ids
         items:
         - id: id
           entity_type: entity_type
@@ -7981,6 +7984,7 @@ components:
           searchable: true
           onlyasset: true
           multi: true
+          search_target_id: search_target_id
           md5: md5
           group: group
           order: 0
@@ -8007,6 +8011,7 @@ components:
           searchable: true
           onlyasset: true
           multi: true
+          search_target_id: search_target_id
           md5: md5
           group: group
           order: 0
@@ -8058,9 +8063,9 @@ components:
             type: object
           nullable: true
           type: object
-        item_refs:
+        item_ids:
           items:
-            $ref: "#/components/schemas/collTypeItemRef"
+            type: string
           nullable: true
           type: array
         items:
@@ -8123,10 +8128,10 @@ components:
         item_refs:
         - item_id: item_id
           group_id: group_id
-          order: 1
+          order: 0
         - item_id: item_id
           group_id: group_id
-          order: 1
+          order: 0
         items:
         - id: id
           entity_type: entity_type
@@ -8139,6 +8144,7 @@ components:
           searchable: true
           onlyasset: true
           multi: true
+          search_target_id: search_target_id
           md5: md5
           group: group
           order: 0
@@ -8165,6 +8171,7 @@ components:
           searchable: true
           onlyasset: true
           multi: true
+          search_target_id: search_target_id
           md5: md5
           group: group
           order: 0
@@ -8182,7 +8189,7 @@ components:
           _etag: _etag
         translations:
           key: null
-        order: 0
+        order: 6
         permissions:
         - id: id
           role: NONE
@@ -8482,6 +8489,7 @@ components:
         searchable: true
         onlyasset: true
         multi: true
+        search_target_id: search_target_id
         md5: md5
         group: group
         order: 0
@@ -8531,6 +8539,9 @@ components:
         multi:
           nullable: true
           type: boolean
+        search_target_id:
+          nullable: true
+          type: string
         md5:
           nullable: true
           type: string
@@ -8582,7 +8593,7 @@ components:
       example:
         item_id: item_id
         group_id: group_id
-        order: 1
+        order: 0
       properties:
         item_id:
           nullable: true
@@ -8900,13 +8911,9 @@ components:
           fs_synced: fs_synced
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -8919,6 +8926,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -8945,6 +8953,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -9146,13 +9155,9 @@ components:
           fs_synced: fs_synced
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -9165,6 +9170,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -9191,6 +9197,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -9219,22 +9226,18 @@ components:
           modified_by: modified_by
           pk: pk
           _etag: _etag
-        sum_asset_results: 6
+        sum_asset_results: 1
         collection:
         - id: id
           entity_type: entity_type
           parent: parent
           path: path
-          level: 7
+          level: 6
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -9247,6 +9250,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -9273,6 +9277,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -9306,16 +9311,12 @@ components:
           entity_type: entity_type
           parent: parent
           path: path
-          level: 7
+          level: 6
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -9328,6 +9329,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -9354,6 +9356,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -9383,7 +9386,7 @@ components:
           modified_by: modified_by
           pk: pk
           _etag: _etag
-        sum_collection_results: 1
+        sum_collection_results: 7
       nullable: true
       properties:
         asset:
@@ -9801,10 +9804,10 @@ components:
           item_refs:
           - item_id: item_id
             group_id: group_id
-            order: 1
+            order: 0
           - item_id: item_id
             group_id: group_id
-            order: 1
+            order: 0
           items:
           - id: id
             entity_type: entity_type
@@ -9817,6 +9820,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -9843,6 +9847,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -9860,7 +9865,7 @@ components:
             _etag: _etag
           translations:
             key: null
-          order: 0
+          order: 6
           permissions:
           - id: id
             role: NONE
@@ -9883,16 +9888,12 @@ components:
           entity_type: entity_type
           parent: parent
           path: path
-          level: 7
+          level: 6
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -9905,6 +9906,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -9931,6 +9933,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -9964,16 +9967,12 @@ components:
           entity_type: entity_type
           parent: parent
           path: path
-          level: 7
+          level: 6
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -9986,6 +9985,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -10012,6 +10012,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -10215,13 +10216,9 @@ components:
           fs_synced: fs_synced
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -10234,6 +10231,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -10260,6 +10258,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -10461,13 +10460,9 @@ components:
           fs_synced: fs_synced
           custom:
             key: "{}"
-          item_refs:
-          - item_id: item_id
-            group_id: group_id
-            order: 1
-          - item_id: item_id
-            group_id: group_id
-            order: 1
+          item_ids:
+          - item_ids
+          - item_ids
           items:
           - id: id
             entity_type: entity_type
@@ -10480,6 +10475,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -10506,6 +10502,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -11058,6 +11055,7 @@ components:
           searchable: true
           onlyasset: true
           multi: true
+          search_target_id: search_target_id
           md5: md5
           group: group
           order: 0
@@ -11084,6 +11082,7 @@ components:
           searchable: true
           onlyasset: true
           multi: true
+          search_target_id: search_target_id
           md5: md5
           group: group
           order: 0
@@ -12211,6 +12210,7 @@ components:
         name: name
         status: status
         error: error
+        pendingupdate: pendingupdate
         lastrun:
           status: status
           starttime: 2000-01-23T04:56:07.000+00:00
@@ -12237,6 +12237,9 @@ components:
           nullable: true
           type: string
         error:
+          nullable: true
+          type: string
+        pendingupdate:
           nullable: true
           type: string
         lastrun:
@@ -12308,6 +12311,7 @@ components:
           name: name
           status: status
           error: error
+          pendingupdate: pendingupdate
           lastrun:
             status: status
             starttime: 2000-01-23T04:56:07.000+00:00
@@ -12564,13 +12568,9 @@ components:
             fs_synced: fs_synced
             custom:
               key: "{}"
-            item_refs:
-            - item_id: item_id
-              group_id: group_id
-              order: 1
-            - item_id: item_id
-              group_id: group_id
-              order: 1
+            item_ids:
+            - item_ids
+            - item_ids
             items:
             - id: id
               entity_type: entity_type
@@ -12583,6 +12583,7 @@ components:
               searchable: true
               onlyasset: true
               multi: true
+              search_target_id: search_target_id
               md5: md5
               group: group
               order: 0
@@ -12609,6 +12610,7 @@ components:
               searchable: true
               onlyasset: true
               multi: true
+              search_target_id: search_target_id
               md5: md5
               group: group
               order: 0
@@ -12810,13 +12812,9 @@ components:
             fs_synced: fs_synced
             custom:
               key: "{}"
-            item_refs:
-            - item_id: item_id
-              group_id: group_id
-              order: 1
-            - item_id: item_id
-              group_id: group_id
-              order: 1
+            item_ids:
+            - item_ids
+            - item_ids
             items:
             - id: id
               entity_type: entity_type
@@ -12829,6 +12827,7 @@ components:
               searchable: true
               onlyasset: true
               multi: true
+              search_target_id: search_target_id
               md5: md5
               group: group
               order: 0
@@ -12855,6 +12854,7 @@ components:
               searchable: true
               onlyasset: true
               multi: true
+              search_target_id: search_target_id
               md5: md5
               group: group
               order: 0
@@ -12883,22 +12883,18 @@ components:
             modified_by: modified_by
             pk: pk
             _etag: _etag
-          sum_asset_results: 6
+          sum_asset_results: 1
           collection:
           - id: id
             entity_type: entity_type
             parent: parent
             path: path
-            level: 7
+            level: 6
             custom:
               key: "{}"
-            item_refs:
-            - item_id: item_id
-              group_id: group_id
-              order: 1
-            - item_id: item_id
-              group_id: group_id
-              order: 1
+            item_ids:
+            - item_ids
+            - item_ids
             items:
             - id: id
               entity_type: entity_type
@@ -12911,6 +12907,7 @@ components:
               searchable: true
               onlyasset: true
               multi: true
+              search_target_id: search_target_id
               md5: md5
               group: group
               order: 0
@@ -12937,6 +12934,7 @@ components:
               searchable: true
               onlyasset: true
               multi: true
+              search_target_id: search_target_id
               md5: md5
               group: group
               order: 0
@@ -12970,16 +12968,12 @@ components:
             entity_type: entity_type
             parent: parent
             path: path
-            level: 7
+            level: 6
             custom:
               key: "{}"
-            item_refs:
-            - item_id: item_id
-              group_id: group_id
-              order: 1
-            - item_id: item_id
-              group_id: group_id
-              order: 1
+            item_ids:
+            - item_ids
+            - item_ids
             items:
             - id: id
               entity_type: entity_type
@@ -12992,6 +12986,7 @@ components:
               searchable: true
               onlyasset: true
               multi: true
+              search_target_id: search_target_id
               md5: md5
               group: group
               order: 0
@@ -13018,6 +13013,7 @@ components:
               searchable: true
               onlyasset: true
               multi: true
+              search_target_id: search_target_id
               md5: md5
               group: group
               order: 0
@@ -13047,17 +13043,17 @@ components:
             modified_by: modified_by
             pk: pk
             _etag: _etag
-          sum_collection_results: 1
+          sum_collection_results: 7
         options:
           searchString: searchString
-          limit: 4
-          skip: 5
+          limit: 1
+          skip: 4
           collectiontypeid: collectiontypeid
           collectionid: collectionid
           filter: filter
           orderby: orderby
           mode: mode
-          broadness: 9
+          broadness: 5
           rel_id: rel_id
           ids: ids
           portal_id: portal_id
@@ -13079,7 +13075,7 @@ components:
           - count: 9
             value: value
             name: name
-        count: 6
+        count: 9
       properties:
         data_result:
           $ref: "#/components/schemas/dataResult"
@@ -13130,6 +13126,7 @@ components:
           searchable: true
           onlyasset: true
           multi: true
+          search_target_id: search_target_id
           md5: md5
           group: group
           order: 0
@@ -13156,6 +13153,7 @@ components:
           searchable: true
           onlyasset: true
           multi: true
+          search_target_id: search_target_id
           md5: md5
           group: group
           order: 0
@@ -14348,10 +14346,10 @@ components:
           item_refs:
           - item_id: item_id
             group_id: group_id
-            order: 1
+            order: 0
           - item_id: item_id
             group_id: group_id
-            order: 1
+            order: 0
           items:
           - id: id
             entity_type: entity_type
@@ -14364,6 +14362,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -14390,6 +14389,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -14407,7 +14407,7 @@ components:
             _etag: _etag
           translations:
             key: null
-          order: 0
+          order: 6
           permissions:
           - id: id
             role: NONE
@@ -14431,10 +14431,10 @@ components:
           item_refs:
           - item_id: item_id
             group_id: group_id
-            order: 1
+            order: 0
           - item_id: item_id
             group_id: group_id
-            order: 1
+            order: 0
           items:
           - id: id
             entity_type: entity_type
@@ -14447,6 +14447,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -14473,6 +14474,7 @@ components:
             searchable: true
             onlyasset: true
             multi: true
+            search_target_id: search_target_id
             md5: md5
             group: group
             order: 0
@@ -14490,7 +14492,7 @@ components:
             _etag: _etag
           translations:
             key: null
-          order: 0
+          order: 6
           permissions:
           - id: id
             role: NONE

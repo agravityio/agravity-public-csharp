@@ -110,12 +110,12 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'ItemRefs'
+        /// Test the property 'ItemIds'
         /// </summary>
         [Fact]
-        public void ItemRefsTest()
+        public void ItemIdsTest()
         {
-            // TODO unit test for the property 'ItemRefs'
+            // TODO unit test for the property 'ItemIds'
         }
 
         /// <summary>

@@ -68,7 +68,8 @@ namespace Agravity.Public.Test.Api
             //System.IO.Stream file = null;
             //string filename = null;
             //string previewof = null;
-            //var response = instance.HttpAssetUploadFile(acceptLanguage, name, collectionid, file, filename, previewof);
+            //string id = null;
+            //var response = instance.HttpAssetUploadFile(acceptLanguage, name, collectionid, file, filename, previewof, id);
             //Assert.IsType<Asset>(response);
         }
 

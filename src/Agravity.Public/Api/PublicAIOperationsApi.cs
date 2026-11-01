@@ -40,9 +40,10 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchResult</returns>
-        SearchResult HttpReverseAssetSearch(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0);
+        SearchResult HttpReverseAssetSearch(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -57,9 +58,10 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchResult</returns>
-        ApiResponse<SearchResult> HttpReverseAssetSearchWithHttpInfo(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0);
+        ApiResponse<SearchResult> HttpReverseAssetSearchWithHttpInfo(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -82,10 +84,11 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchResult</returns>
-        System.Threading.Tasks.Task<SearchResult> HttpReverseAssetSearchAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<SearchResult> HttpReverseAssetSearchAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -100,10 +103,11 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchResult>> HttpReverseAssetSearchWithHttpInfoAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<SearchResult>> HttpReverseAssetSearchWithHttpInfoAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -234,11 +238,12 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchResult</returns>
-        public SearchResult HttpReverseAssetSearch(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0)
+        public SearchResult HttpReverseAssetSearch(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0)
         {
-            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = HttpReverseAssetSearchWithHttpInfo(acceptLanguage, name, collectionid, file, filename, previewof);
+            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = HttpReverseAssetSearchWithHttpInfo(acceptLanguage, name, collectionid, file, filename, previewof, id);
             return localVarResponse.Data;
         }
 
@@ -252,9 +257,10 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchResult</returns>
-        public Agravity.Public.Client.ApiResponse<SearchResult> HttpReverseAssetSearchWithHttpInfo(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0)
+        public Agravity.Public.Client.ApiResponse<SearchResult> HttpReverseAssetSearchWithHttpInfo(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0)
         {
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
 
@@ -304,6 +310,10 @@ namespace Agravity.Public.Api
             {
                 localVarRequestOptions.FormParameters.Add("previewof", Agravity.Public.Client.ClientUtils.ParameterToString(previewof)); // form parameter
             }
+            if (id != null)
+            {
+                localVarRequestOptions.FormParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // form parameter
+            }
 
             localVarRequestOptions.Operation = "PublicAIOperationsApi.HttpReverseAssetSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -338,12 +348,13 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchResult</returns>
-        public async System.Threading.Tasks.Task<SearchResult> HttpReverseAssetSearchAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<SearchResult> HttpReverseAssetSearchAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = await HttpReverseAssetSearchWithHttpInfoAsync(acceptLanguage, name, collectionid, file, filename, previewof, operationIndex, cancellationToken).ConfigureAwait(false);
+            Agravity.Public.Client.ApiResponse<SearchResult> localVarResponse = await HttpReverseAssetSearchWithHttpInfoAsync(acceptLanguage, name, collectionid, file, filename, previewof, id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -357,10 +368,11 @@ namespace Agravity.Public.Api
         /// <param name="file"> (optional)</param>
         /// <param name="filename"> (optional)</param>
         /// <param name="previewof"> (optional)</param>
+        /// <param name="id"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchResult)</returns>
-        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchResult>> HttpReverseAssetSearchWithHttpInfoAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Agravity.Public.Client.ApiResponse<SearchResult>> HttpReverseAssetSearchWithHttpInfoAsync(string acceptLanguage = default, string name = default, string collectionid = default, System.IO.Stream file = default, string filename = default, string previewof = default, string id = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Agravity.Public.Client.RequestOptions localVarRequestOptions = new Agravity.Public.Client.RequestOptions();
@@ -409,6 +421,10 @@ namespace Agravity.Public.Api
             if (previewof != null)
             {
                 localVarRequestOptions.FormParameters.Add("previewof", Agravity.Public.Client.ClientUtils.ParameterToString(previewof)); // form parameter
+            }
+            if (id != null)
+            {
+                localVarRequestOptions.FormParameters.Add("id", Agravity.Public.Client.ClientUtils.ParameterToString(id)); // form parameter
             }
 
             localVarRequestOptions.Operation = "PublicAIOperationsApi.HttpReverseAssetSearch";

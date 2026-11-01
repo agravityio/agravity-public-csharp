@@ -46,6 +46,7 @@ namespace Agravity.Public.Model
         /// <param name="searchable">searchable.</param>
         /// <param name="onlyasset">onlyasset.</param>
         /// <param name="multi">multi.</param>
+        /// <param name="searchTargetId">searchTargetId.</param>
         /// <param name="md5">md5.</param>
         /// <param name="group">group.</param>
         /// <param name="order">order.</param>
@@ -59,7 +60,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public CollTypeItem(string id = default, string entityType = default, string name = default, string itemType = default, string format = default, Object defaultValue = default, string refId = default, bool? mandatory = default, bool? searchable = default, bool? onlyasset = default, bool? multi = default, string md5 = default, string group = default, int? order = default, Dictionary<string, Dictionary<string, object>> translations = default, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
+        public CollTypeItem(string id = default, string entityType = default, string name = default, string itemType = default, string format = default, Object defaultValue = default, string refId = default, bool? mandatory = default, bool? searchable = default, bool? onlyasset = default, bool? multi = default, string searchTargetId = default, string md5 = default, string group = default, int? order = default, Dictionary<string, Dictionary<string, object>> translations = default, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -72,6 +73,7 @@ namespace Agravity.Public.Model
             this.Searchable = searchable;
             this.Onlyasset = onlyasset;
             this.Multi = multi;
+            this.SearchTargetId = searchTargetId;
             this.Md5 = md5;
             this.Group = group;
             this.Order = order;
@@ -152,6 +154,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "multi", EmitDefaultValue = true)]
         public bool? Multi { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SearchTargetId
+        /// </summary>
+        [DataMember(Name = "search_target_id", EmitDefaultValue = true)]
+        public string SearchTargetId { get; set; }
 
         /// <summary>
         /// Gets or Sets Md5
@@ -250,6 +258,7 @@ namespace Agravity.Public.Model
             sb.Append("  Searchable: ").Append(Searchable).Append("\n");
             sb.Append("  Onlyasset: ").Append(Onlyasset).Append("\n");
             sb.Append("  Multi: ").Append(Multi).Append("\n");
+            sb.Append("  SearchTargetId: ").Append(SearchTargetId).Append("\n");
             sb.Append("  Md5: ").Append(Md5).Append("\n");
             sb.Append("  Group: ").Append(Group).Append("\n");
             sb.Append("  Order: ").Append(Order).Append("\n");

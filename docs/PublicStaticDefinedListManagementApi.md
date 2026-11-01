@@ -306,7 +306,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Returns the updated static defined list for values only the updated, deleted, added |  -  |
-| **400** | Object is not a valid static_defined_list. (Code: 0970b102-0d79-4c1c-8144-2d6576234b5a) &lt;br&gt;No input object given. (Code: 4d2f5034-bf4f-4f19-8f3d-56e3d88b833a)Update mode: {given-update-mode} is not a valid update mode. Allowed modes are: add, delete, replace (Code: cb08ff14-4c6b-4d88-a1d7-7b39897d78e6)Error on create static defined list in database - max retry count is reached. (Code: a524c4cf-392e-4e37-9597-12cdce014757) |  -  |
+| **400** | Object is not a valid static_defined_list. (Code: 0970b102-0d79-4c1c-8144-2d6576234b5a) &lt;br&gt;No input object given. (Code: 4d2f5034-bf4f-4f19-8f3d-56e3d88b833a)Update mode: {given-update-mode} is not a valid update mode. Allowed modes are: add, delete, replace (Code: cb08ff14-4c6b-4d88-a1d7-7b39897d78e6)Error on create static defined list in database - max retry count is reached. (Code: a524c4cf-392e-4e37-9597-12cdce014757)&lt;br&gt;Value of the static defined list could not be removed, it is used as default value of a CollectionTypeItem. (Code: 0f6a4d9b-2e81-4c37-b3d5-7a91c8e24f60) |  -  |
 | **404** | If the static defined list with the ID was not found. |  -  |
 | **401** | Unauthorized. API Key not provided. |  -  |
 | **500** | Internal server error. Please contact administrator. |  -  |

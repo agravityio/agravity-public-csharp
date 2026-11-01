@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 
 
-Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format)
+Get all the translations of a whole entity (Asset, Collection, Collection Type, Download Format, Item Group)
 
 ### Example
 ```csharp
@@ -38,7 +38,7 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicTranslationManagementApi(config);
-            var id = "id_example";  // string | The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).
+            var id = "id_example";  // string | The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).
             var items = true;  // bool? | If the items should be included (only for entity type Collection and Asset). (optional) 
 
             try
@@ -80,7 +80,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | The ID of any translateable entity (Asset, Collection, Collection Type, Download Format). |  |
+| **id** | **string** | The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group). |  |
 | **items** | **bool?** | If the items should be included (only for entity type Collection and Asset). | [optional]  |
 
 ### Return type
@@ -214,7 +214,7 @@ catch (ApiException e)
 
 
 
-Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format)
+Get the translations of a specific field on the entity (Asset, Collection, Collection Type, Download Format, Item Group)
 
 ### Example
 ```csharp
@@ -238,7 +238,7 @@ namespace Example
             // config.AddApiKeyPrefix("x-functions-key", "Bearer");
 
             var apiInstance = new PublicTranslationManagementApi(config);
-            var id = "id_example";  // string | The ID of any translateable entity (Asset, Collection, Collection Type, Download Format).
+            var id = "id_example";  // string | The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group).
             var property = "property_example";  // string | Limit to one specific property (key)
             var items = true;  // bool? | If the items should be included (only for entity type Collection and Asset). (optional) 
 
@@ -281,7 +281,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | The ID of any translateable entity (Asset, Collection, Collection Type, Download Format). |  |
+| **id** | **string** | The ID of any translateable entity (Asset, Collection, Collection Type, Download Format, Item Group). |  |
 | **property** | **string** | Limit to one specific property (key) |  |
 | **items** | **bool?** | If the items should be included (only for entity type Collection and Asset). | [optional]  |
 

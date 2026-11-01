@@ -155,6 +155,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'SearchTargetId'
+        /// </summary>
+        [Fact]
+        public void SearchTargetIdTest()
+        {
+            // TODO unit test for the property 'SearchTargetId'
+        }
+
+        /// <summary>
         /// Test the property 'Md5'
         /// </summary>
         [Fact]

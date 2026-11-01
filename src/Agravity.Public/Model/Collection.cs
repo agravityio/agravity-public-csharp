@@ -72,7 +72,7 @@ namespace Agravity.Public.Model
         /// <param name="path">path.</param>
         /// <param name="level">level.</param>
         /// <param name="custom">custom.</param>
-        /// <param name="itemRefs">itemRefs.</param>
+        /// <param name="itemIds">itemIds.</param>
         /// <param name="items">items.</param>
         /// <param name="translations">translations.</param>
         /// <param name="role">role (default to RoleEnum.NONE).</param>
@@ -86,7 +86,7 @@ namespace Agravity.Public.Model
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="pk">pk.</param>
         /// <param name="etag">etag.</param>
-        public Collection(string id = default, string entityType = default, string parent = default, string path = default, int? level = default, Dictionary<string, object> custom = default, List<CollTypeItemRef> itemRefs = default, List<CollTypeItem> items = default, Dictionary<string, Dictionary<string, object>> translations = default, RoleEnum? role = RoleEnum.NONE, string name = default, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
+        public Collection(string id = default, string entityType = default, string parent = default, string path = default, int? level = default, Dictionary<string, object> custom = default, List<string> itemIds = default, List<CollTypeItem> items = default, Dictionary<string, Dictionary<string, object>> translations = default, RoleEnum? role = RoleEnum.NONE, string name = default, string description = default, Dictionary<string, object> addProperties = default, string status = default, DateTime? createdDate = default, string createdBy = default, DateTime? modifiedDate = default, string modifiedBy = default, string pk = default, string etag = default)
         {
             this.Id = id;
             this.EntityType = entityType;
@@ -94,7 +94,7 @@ namespace Agravity.Public.Model
             this.Path = path;
             this.Level = level;
             this.Custom = custom;
-            this.ItemRefs = itemRefs;
+            this.ItemIds = itemIds;
             this.Items = items;
             this.Translations = translations;
             this.Role = role;
@@ -147,10 +147,10 @@ namespace Agravity.Public.Model
         public Dictionary<string, object> Custom { get; set; }
 
         /// <summary>
-        /// Gets or Sets ItemRefs
+        /// Gets or Sets ItemIds
         /// </summary>
-        [DataMember(Name = "item_refs", EmitDefaultValue = true)]
-        public List<CollTypeItemRef> ItemRefs { get; set; }
+        [DataMember(Name = "item_ids", EmitDefaultValue = true)]
+        public List<string> ItemIds { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
@@ -238,7 +238,7 @@ namespace Agravity.Public.Model
             sb.Append("  Path: ").Append(Path).Append("\n");
             sb.Append("  Level: ").Append(Level).Append("\n");
             sb.Append("  Custom: ").Append(Custom).Append("\n");
-            sb.Append("  ItemRefs: ").Append(ItemRefs).Append("\n");
+            sb.Append("  ItemIds: ").Append(ItemIds).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  Translations: ").Append(Translations).Append("\n");
             sb.Append("  Role: ").Append(Role).Append("\n");

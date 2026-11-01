@@ -83,6 +83,15 @@ namespace Agravity.Public.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Pendingupdate'
+        /// </summary>
+        [Fact]
+        public void PendingupdateTest()
+        {
+            // TODO unit test for the property 'Pendingupdate'
+        }
+
+        /// <summary>
         /// Test the property 'Lastrun'
         /// </summary>
         [Fact]

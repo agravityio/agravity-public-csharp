@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost:7072/api*
 
 <a id="httpreverseassetsearch"></a>
 # **HttpReverseAssetSearch**
-> SearchResult HttpReverseAssetSearch (string acceptLanguage = null, string name = null, string collectionid = null, System.IO.Stream file = null, string filename = null, string previewof = null)
+> SearchResult HttpReverseAssetSearch (string acceptLanguage = null, string name = null, string collectionid = null, System.IO.Stream file = null, string filename = null, string previewof = null, string id = null)
 
 
 
@@ -42,10 +42,11 @@ namespace Example
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
             var filename = "filename_example";  // string |  (optional) 
             var previewof = "previewof_example";  // string |  (optional) 
+            var id = "id_example";  // string |  (optional) 
 
             try
             {
-                SearchResult result = apiInstance.HttpReverseAssetSearch(acceptLanguage, name, collectionid, file, filename, previewof);
+                SearchResult result = apiInstance.HttpReverseAssetSearch(acceptLanguage, name, collectionid, file, filename, previewof, id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -65,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<SearchResult> response = apiInstance.HttpReverseAssetSearchWithHttpInfo(acceptLanguage, name, collectionid, file, filename, previewof);
+    ApiResponse<SearchResult> response = apiInstance.HttpReverseAssetSearchWithHttpInfo(acceptLanguage, name, collectionid, file, filename, previewof, id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -88,6 +89,7 @@ catch (ApiException e)
 | **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 | **filename** | **string** |  | [optional]  |
 | **previewof** | **string** |  | [optional]  |
+| **id** | **string** |  | [optional]  |
 
 ### Return type
 

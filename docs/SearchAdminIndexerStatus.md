@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **Status** | **string** |  | [optional] 
 **Error** | **string** |  | [optional] 
+**Pendingupdate** | **string** |  | [optional] 
 **Lastrun** | [**SearchAdminIndexerLastRun**](SearchAdminIndexerLastRun.md) |  | [optional] 
 **History** | [**List&lt;SearchAdminIndexerLastRun&gt;**](SearchAdminIndexerLastRun.md) |  | [optional] 
 

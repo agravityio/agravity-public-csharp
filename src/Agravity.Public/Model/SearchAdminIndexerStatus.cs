@@ -38,13 +38,15 @@ namespace Agravity.Public.Model
         /// <param name="name">name.</param>
         /// <param name="status">status.</param>
         /// <param name="error">error.</param>
+        /// <param name="pendingupdate">pendingupdate.</param>
         /// <param name="lastrun">lastrun.</param>
         /// <param name="history">history.</param>
-        public SearchAdminIndexerStatus(string name = default, string status = default, string error = default, SearchAdminIndexerLastRun lastrun = default, List<SearchAdminIndexerLastRun> history = default)
+        public SearchAdminIndexerStatus(string name = default, string status = default, string error = default, string pendingupdate = default, SearchAdminIndexerLastRun lastrun = default, List<SearchAdminIndexerLastRun> history = default)
         {
             this.Name = name;
             this.Status = status;
             this.Error = error;
+            this.Pendingupdate = pendingupdate;
             this.Lastrun = lastrun;
             this.History = history;
         }
@@ -66,6 +68,12 @@ namespace Agravity.Public.Model
         /// </summary>
         [DataMember(Name = "error", EmitDefaultValue = true)]
         public string Error { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pendingupdate
+        /// </summary>
+        [DataMember(Name = "pendingupdate", EmitDefaultValue = true)]
+        public string Pendingupdate { get; set; }
 
         /// <summary>
         /// Gets or Sets Lastrun
@@ -90,6 +98,7 @@ namespace Agravity.Public.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Error: ").Append(Error).Append("\n");
+            sb.Append("  Pendingupdate: ").Append(Pendingupdate).Append("\n");
             sb.Append("  Lastrun: ").Append(Lastrun).Append("\n");
             sb.Append("  History: ").Append(History).Append("\n");
             sb.Append("}\n");
